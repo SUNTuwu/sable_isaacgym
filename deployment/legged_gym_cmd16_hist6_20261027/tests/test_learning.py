@@ -131,6 +131,10 @@ class LearningTests(unittest.TestCase):
         torch.testing.assert_close(policy.action_std[2:],torch.full((3,15),.04))
         torch.testing.assert_close(policy.act_inference(raw),original,atol=0,rtol=0)
         self.assertTrue((policy.act(raw)[:,-1]==0.).all())
+        from ppo_history import mean_shift_kl
+        before=torch.zeros(5,15);after=before.clone();after[:,0]=.02;after[:,-1]=10.
+        kl=mean_shift_kl(before,after,policy.distribution_std(raw),policy.execution_mask)
+        self.assertAlmostEqual(float(kl),(.5*2+.125*3)/5,places=6)
 
     def test_clearance_and_target_costs_keep_signal_after_clipping(self):
         import ast

@@ -9,6 +9,11 @@ def timeout_bootstrap(rewards, timeouts, terminal_values, gamma):
     return rewards + gamma*terminal_values.reshape_as(rewards)*timeouts.to(rewards.dtype)
 
 
+def mean_shift_kl(before,after,std,mask):
+    """Exact fixed-variance Gaussian KL, excluding unexecuted dimensions."""
+    return (((after-before).square()/(2*std.square()))*mask).sum(-1).mean()
+
+
 def restore_optimizers(algorithm, checkpoint):
     """Restore learning state only after the launcher checks compatibility."""
     for name in ('optimizer_state_dict','auxiliary_optimizer_state_dict'):
@@ -62,6 +67,7 @@ class HistoryPPO(PPO):
         optimizer_before = copy.deepcopy(self.auxiliary_optimizer.state_dict())
         with torch.no_grad():
             mean_before = self.actor_critic.act_inference(batch['raw'])
+            distribution_std = self.actor_critic.distribution_std(batch['raw']).detach()
         for ids in torch.randperm(count, device=self.device).split(1024):
             raw = batch['raw'][ids]
             loss, stats = encoder.auxiliary_loss(raw[:, :306], batch['velocity'][ids], batch['next_proprio'][ids], batch['done'][ids])
@@ -74,8 +80,7 @@ class HistoryPPO(PPO):
             self.auxiliary_optimizer.step()
         with torch.no_grad():
             after = self.actor_critic.act_inference(batch['raw'])
-            std = self.actor_critic.std.clamp(min=.02)
-            shift = (((after-mean_before).square()/(2*std.square()))*self.actor_critic.execution_mask).sum(-1).mean()
+            shift = mean_shift_kl(mean_before,after,distribution_std,self.actor_critic.execution_mask)
             accepted = bool(torch.isfinite(shift) and shift <= self.auxiliary_policy_kl_limit)
         if not accepted:
             encoder.load_state_dict(weights_before, strict=True)
@@ -85,8 +90,12 @@ class HistoryPPO(PPO):
         elif float(shift) < self.auxiliary_policy_kl_limit*.1:
             for group in self.auxiliary_optimizer.param_groups:
                 group['lr'] = min(self.auxiliary_learning_rate_max,group['lr']*1.1)
+        with torch.no_grad():
+            _,stats=encoder.auxiliary_loss(batch['raw'][:,:306],batch['velocity'],batch['next_proprio'],batch['done'])
         self.last_auxiliary_metrics = {'encoder_update_accepted': accepted, 'encoder_policy_kl': float(shift),
             'encoder_velocity_mse': float(stats['velocity_mse']), 'encoder_prediction_mse': float(stats['next_proprio_mse']),
             'auxiliary_examples': count, 'auxiliary_learning_rate':self.auxiliary_optimizer.param_groups[0]['lr'],
+            'encoder_metric_state':'Committed encoder after acceptance/rollback, evaluated over the whole auxiliary batch',
+            'encoder_policy_kl_std':'Actual symmetrized command-conditioned exploration distribution',
             'labels': 'same-time ROOT velocity and pre-reset next proprioception; done pairs masked'}
         return values

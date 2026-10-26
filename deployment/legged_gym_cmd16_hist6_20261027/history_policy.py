@@ -35,8 +35,7 @@ class HistoryActorCritic(ActorCritic):
     def forward(self, observations):
         return self.act_inference(observations)
 
-    def update_distribution(self, observations):
-        mean = self.act_inference(observations)
+    def distribution_std(self, observations):
         # Positive even for frozen dimensions. Frozen dimensions do not contribute
         # to policy likelihood, entropy, executed action, or exploration.
         permutation = [0, 1, 7, 8, 9, 10, 11, 2, 3, 4, 5, 6, 13, 12, 14]
@@ -49,7 +48,11 @@ class HistoryActorCritic(ActorCritic):
             moving=(torch.sqrt(vx.square()+vy.square())>.01)|(yaw.abs()>.08)
             novel=(vx<.03)&moving
             std=torch.where(novel[:,None],std.clamp(min=self.novel_command_std_floor),std)
-        self.distribution = Normal(mean, mean * 0. + std)
+        return std.expand(observations.shape[0],-1)
+
+    def update_distribution(self, observations):
+        mean = self.act_inference(observations)
+        self.distribution = Normal(mean,self.distribution_std(observations))
 
     def act(self, observations, **kwargs):
         self.update_distribution(observations)
