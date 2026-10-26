@@ -1,5 +1,5 @@
 {
-  "updated_unix": 1793049791.123865,
+  "updated_unix": 1793050372.4162927,
   "goal_complete": false,
   "teacher": {
     "run": "stand5_20261027_v44_stride80_all",
@@ -7,15 +7,15 @@
     "verified": true,
     "manifest": "planning/cmd16_hist6_baseline/teacher_manifest.json"
   },
-  "current_run": "runs/cmd16_hist6_s2_dagger_20261027_050031",
-  "current_deadline": "2026-10-27T05:20:32.001302+08:00",
+  "current_run": "runs/cmd16_hist6_s2_ppo_20261027_052700",
+  "current_deadline": "2026-10-27T05:47:00.444961+08:00",
   "current_processes": {
-    "supervisor": 372362,
-    "training": 372371,
-    "evaluation_video_monitor": 372471
+    "supervisor": 383796,
+    "training": 384817,
+    "evaluation_video_monitor": 384906
   },
   "pre_migration_commit": "a95854cf4042b7994731e7a02d9761be8fd195d7",
-  "latest_pushed_commit": "72ad576",
+  "latest_pushed_commit": "136ff16",
   "completed": [
     "326/90/92/15 schema and six-frame cache",
     "full raw-input mirror projection and history encoder",
@@ -46,13 +46,18 @@
     "Student error along live teacher trajectories averaged0.00225rad, but true reset first decision averaged0.07894rad.",
     "Initial S1 collector used BaseTask.reset hidden physics step; development collector now includes true t=0. Old dataset/runtime remain immutable.",
     "DAgger retains and oversamples true startup observations plus student-visited states. Mixtures are supervised data, never ordinary PPO.",
-    "Native rigid-body origins agree with FK within0.8micrometers; development critic uses native poses except fresh resets to reduce overhead."
+    "Native rigid-body origins agree with FK within0.8micrometers; development critic uses native poses except fresh resets to reduce overhead.",
+    "Final DAgger three-seed failures concentrate in start/stop survival and lateral velocity oscillation; fixed forward survival passedallseedgroups.",
+    "New PPO launched052700 for20minutes after fullparentarchive; runtime77files verified; no teacher/reference execution.",
+    "1024env smoke showed encoder updates can shift the actor; rollback+auxiliary learning-rate reduction is active.",
+    "New combined evaluation/video first16s report took187.5s while other acceptance evaluations sharedGPU; actualtimestamps retained."
   ],
   "next_work": [
-    "Inspect final DAgger evaluation and three-seed acceptance; verify parent archive before next fresh round.",
-    "If S2 fails, use fresh student-only PPO atoriginalcommands; S3 launch requires explicit S2 assessment pass.",
-    "Continue S3 translation/yaw thenS5frequency; physical measured acceptance remainsrequired.",
-    "Keep monitoring180s andfinalvideos; do not edit frozen runtimes or resumefrozenrounds."
+    "Check live PPO processes and next independent checkpoint reports; avoid changing frozen runtime.",
+    "Complete S2 independent regression gate with three fixedseeds before S3. Current DAgger base did notpass.",
+    "Continue S3 translation/yaw learning and laterS5 frequency; do not claim success frominterface or clockconfiguration.",
+    "Development S5 expands0.9–1.1 to0.8–1.2Hz after completed-episode survivalcondition; retain/validate actualallfoot landingfrequency.",
+    "Observe PPO stability; current early completed-episode survival is biased toward earlyfailures before20s timeouts. Use independent16s evaluations for performance."
   ],
   "evidence": [
     "results/cmd16_hist6/preflight/teacher_adapter.json",
@@ -67,12 +72,19 @@
     "results/cmd16_hist6/motor_envelope_probe.json",
     "results/cmd16_hist6/preflight/scripted_motor_no_reference.json"
   ],
-  "current_status": "DAgger15040 saved atdeadline; final independent evaluation/video and archive in progress; three-seed S2 acceptance running",
+  "current_status": "1024env S2 teacher-free PPO live; DAgger final three-seed acceptance failed, raw reports preserved",
   "dagger_final": {
     "iteration": 15040,
     "sha256": "e6dac5a717c43de43737bc16b57c7f1b015e8de5a014e2b2d039ba4817d16133",
     "student_fraction": 1.0,
-    "acceptance_passed": false
+    "acceptance_passed": false,
+    "archive_verified": true,
+    "assessment": "runs/cmd16_hist6_dagger_acceptance_20261027_052134/reports/assessment.json",
+    "seed_survival": {
+      "1347": 1.0,
+      "947": 0.9583333730697632,
+      "1147": 0.9791666865348816
+    }
   },
   "current_acceptance": "runs/cmd16_hist6_dagger_acceptance_20261027_052134/reports"
 }

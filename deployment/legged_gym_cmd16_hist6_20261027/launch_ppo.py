@@ -37,10 +37,16 @@ def main():
         assert a.checkpoint.resolve().parent==parent/'checkpoints'
         cp=dict(path=str(a.checkpoint.resolve()),sha256=sha256(a.checkpoint))
     assert sha256(cp['path'])==cp['sha256']
+    parent_config=read_json(parent/'config.json',{})
+    continuation=parent_config.get('stage')==a.stage and 'on-policy PPO' in parent_config.get('algorithm','')
+    gate_source=a.acceptance
     if a.stage in ('S3','S5'):
-        if not a.acceptance:raise ValueError('New curriculum requires prior stage acceptance')
-        gate=read_json(a.acceptance)
-        assert gate['passed'] and gate['checkpoint_sha256']==cp['sha256']
+        if continuation:
+            gate_source=parent/'parent_acceptance.json'
+        if not gate_source:raise ValueError('New curriculum requires prior stage acceptance')
+        gate=read_json(gate_source)
+        assert gate['passed']
+        if not continuation:assert gate['checkpoint_sha256']==cp['sha256']
         assert gate['stage']==('S2' if a.stage=='S3' else 'S3')
     source=Path(__file__).resolve().parent
     run=ROOT/'runs'/('cmd16_hist6_'+a.stage.lower()+'_ppo_'+time.strftime('%Y%m%d_%H%M%S'))
@@ -49,14 +55,15 @@ def main():
     shutil.copytree(source/'assets',runtime/'assets')
     shutil.copytree(source/'tests',runtime/'tests',ignore=shutil.ignore_patterns('__pycache__'))
     for n in ('teacher_manifest.json','baseline_metrics.json'):shutil.copy2(parent/n,run/n)
-    if a.acceptance:shutil.copy2(a.acceptance,run/'parent_acceptance.json')
+    if gate_source:shutil.copy2(gate_source,run/'parent_acceptance.json')
     files={str(f.relative_to(runtime)):sha256(f) for f in runtime.rglob('*') if f.is_file()}
     atomic_json(run/'runtime_manifest.json',{'files':files,'created_unix':time.time()})
     prefs=read_json(ROOT/'results/legged_gym/training_preferences.json')
     start=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8)))
     deadline=(start+datetime.timedelta(seconds=prefs['default_duration_s'])).isoformat()
     cmd=[sys.executable,'-u',str(runtime/'train_ppo.py'),'--run',str(run),'--teacher',str(run/'teacher_manifest.json'),
-        '--resume',cp['path'],'--deadline',deadline,'--stage',a.stage,'--num-envs',str(a.num_envs)]
+        '--resume',cp['path'],'--deadline',deadline,'--stage',a.stage,'--num-envs',str(a.num_envs),
+        '--critic-warmup-updates','0' if continuation else '10']
     atomic_json(run/'launch.json',{'command':cmd,'deadline':deadline,'preferences':prefs,'parent':cp,'stage':a.stage+'_PPO','automatic_resume':False})
     with (run/'train.log').open('w') as log:training=subprocess.Popen(cmd,stdout=log,stderr=subprocess.STDOUT)
     until=time.time()+150

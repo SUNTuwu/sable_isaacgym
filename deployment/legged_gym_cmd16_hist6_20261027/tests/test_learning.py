@@ -12,9 +12,17 @@ from ppo_history import HistoryPPO, timeout_bootstrap
 from step_events import StepEvents
 from acceptance import assess
 from evaluation_scenarios import scenarios
+from curriculum import next_frequency_range
 
 
 class LearningTests(unittest.TestCase):
+    def test_frequency_expansion_requires_completed_episodes(self):
+        self.assertEqual(next_frequency_range('S5',[.9,1.1],0,1.,600),[.9,1.1])
+        self.assertEqual(next_frequency_range('S5',[.9,1.1],300,.89,600),[.9,1.1])
+        self.assertEqual(next_frequency_range('S5',[.9,1.1],300,1.,60),[.9,1.1])
+        self.assertEqual(next_frequency_range('S3',[.9,1.1],300,1.,600),[.9,1.1])
+        self.assertEqual(next_frequency_range('S5',[.9,1.1],300,.95,600),[.8,1.2])
+
     def test_acceptance_rejects_missing_events_and_nonresponsive_clocks(self):
         baseline = {'teacher_sha256':'t'*64,'regression_limits':{'xy_rmse_max_m_s':.053,'forward_rmse_max_m_s':.03},
             'new_capability_limits':{'evaluation_seeds':[947,1147,1347],'environments_per_seed':32,

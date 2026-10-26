@@ -13,6 +13,7 @@ from migration_env import create_migration_env
 from migration_config import student_config
 from history_policy import HistoryActorCritic
 from ppo_history import HistoryPPO
+from curriculum import next_frequency_range
 from teacher_adapter import verify_teacher_manifest
 from run_io import atomic_json, append_json, sha256
 
@@ -51,6 +52,11 @@ def main():
     policy = HistoryActorCritic().to(env.device)
     parent = torch.load(str(a.resume), map_location=env.device)
     policy.load_state_dict(parent['model_state_dict'], strict=True)
+    if a.stage == 'S5' and parent.get('stage') == 'S5' and 'frequency_range' in parent:
+        previous = parent['frequency_range']
+        if list(previous) not in ([.9,1.1],[.8,1.2]):
+            raise ValueError('Unrecognized previous frequency curriculum bounds')
+        cfg.migration.command_ranges['frequency'] = list(previous)
     algorithm = HistoryPPO(policy, device=env.device, num_learning_epochs=4, num_mini_batches=4,
         clip_param=.15, gamma=.99, lam=.95, value_loss_coef=1., entropy_coef=.001,
         learning_rate=a.learning_rate, max_grad_norm=1., use_clipped_value_loss=True,
@@ -83,7 +89,7 @@ def main():
             torch.save(dict(model_state_dict=policy.state_dict(), optimizer_state_dict=algorithm.optimizer.state_dict(),
                 auxiliary_optimizer_state_dict=algorithm.auxiliary_optimizer.state_dict(),
                 iter=iteration, schema=parent['schema'], teacher_sha256=teacher['sha256'],
-                stage=a.stage, reason=reason, metrics=metrics), str(part))
+                stage=a.stage, frequency_range=list(cfg.migration.command_ranges['frequency']), reason=reason, metrics=metrics), str(part))
             part.replace(cp)
         atomic_json(a.run/'checkpoint.json', dict(path=str(cp.resolve()), sha256=sha256(cp),
             iteration=iteration, reason=reason, updated_unix=time.time()))
@@ -116,12 +122,20 @@ def main():
             if time.time()-last_report >= 30 or iteration == a.max_updates:
                 rows = env.last_episode_records[-512:]
                 survival = 1.-float(np.mean([r[1] for r in rows])) if rows else None
+                frequency = next_frequency_range(a.stage,cfg.migration.command_ranges['frequency'],
+                    len(rows),survival,time.time()-start)
+                if frequency != cfg.migration.command_ranges['frequency']:
+                    cfg.migration.command_ranges['frequency'] = frequency
+                    append_json(a.run/'events.jsonl',dict(event='frequency_range_expanded',range_hz=frequency,
+                        time=time.time(),iteration=iteration,completed_episodes=len(rows),survival_fraction=survival,
+                        independent_acceptance=False))
                 metrics = dict(value_loss=value_loss, surrogate_loss=surrogate_loss,
                     mean_reward_per_control_step=reward_mean/a.rollout_steps,
                     control_steps=control_steps, environment_steps=control_steps*a.num_envs,
                     completed_episode_survival=survival, recent_completed_episodes=len(rows),
                     critic_warmup=warmup, reference_execution_calls=env.reference_execution_calls,
                     learning_rate=algorithm.learning_rate, mean_std=float(policy.std[:14].mean()),
+                    frequency_range_hz=list(cfg.migration.command_ranges['frequency']),
                     **algorithm.last_auxiliary_metrics)
                 status.update(iteration=iteration, metrics=metrics, updated_unix=time.time())
                 atomic_json(a.run/'status.json', status)
