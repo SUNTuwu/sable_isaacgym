@@ -3,12 +3,39 @@ import argparse
 import json
 import math
 from pathlib import Path
-from evaluation_scenarios import scenarios
+from evaluation_scenarios import scenarios,transition_segments
 from run_io import atomic_json, sha256
 
 
 def number(value):
     return isinstance(value, (float, int)) and math.isfinite(value)
+
+
+def assess_velocity_transitions(stage,segments,limits):
+    failures=[]
+    lookup={(r['name'],r['segment_start_s']):r for r in segments}
+    for name,times in transition_segments(stage).items():
+        previous=None
+        for start in times:
+            row=lookup.get((name,start),{})
+            actual,desired=row.get('mean_actual'),row.get('mean_command')
+            if not actual or not desired or row.get('samples',0)<1:
+                failures.append('%s_segment%g:missing_velocity_samples'%(name,start));previous=None;continue
+            if not number(row.get('xy_rmse_m_s')) or row['xy_rmse_m_s']>limits['xy_rmse_m_s']:
+                failures.append('%s_segment%g:xy_tracking'%(name,start))
+            if not number(row.get('yaw_rmse_rad_s')) or row['yaw_rmse_rad_s']>limits['yaw_rmse_rad_s']:
+                failures.append('%s_segment%g:yaw_tracking'%(name,start))
+            if max(abs(x) for x in desired)<1e-5:
+                if math.hypot(*actual[:2])>.02 or abs(actual[2])>.1:
+                    failures.append('%s_segment%g:did_not_stop'%(name,start))
+            if previous is not None:
+                for axis in range(3):
+                    requested=desired[axis]-previous['mean_command'][axis]
+                    achieved=actual[axis]-previous['mean_actual'][axis]
+                    if abs(requested)>1e-4 and achieved/requested<limits['mean_command_gain_min']:
+                        failures.append('%s_segment%g:axis%d_insufficient_change'%(name,start,axis))
+            previous=row
+    return failures
 
 
 def assess(stage, reports, baseline):
@@ -94,6 +121,8 @@ def assess(stage, reports, baseline):
                 if all(number(x) for x in measured):
                     if min(measured[1]-measured[0],measured[1]-measured[2]) < limits['frequency_switch_difference_min_hz']:
                         failures.append(prefix+'foot%d:insufficient_actual_frequency_switch'%foot)
+        if stage in ('S3','S5'):
+            failures.extend(prefix+f for f in assess_velocity_transitions(stage,report.get('velocity_segments',[]),limits))
     return {'stage':stage, 'passed':not failures, 'failures':failures,
             'checkpoint_sha256':reports[0].get('checkpoint_sha256') if reports else None,
             'evaluation_seeds':sorted(r.get('seed',-1) for r in reports),

@@ -75,18 +75,21 @@ def main():
     last_landing = torch.full((n, 4), -1., device=env.device)
     step_counts = torch.zeros(n, 4, dtype=torch.long, device=env.device)
     events, trace = [], []
+    segment_sums = {}
     telemetry = EvaluationTelemetry(env)
     started = time.time()
     with torch.no_grad():
         for step in range(round(a.seconds/env.dt)):
             t = step*env.dt
             metric_valid = torch.ones(n, dtype=torch.bool, device=env.device)
+            segments_this_step = []
             for g, (name, initial) in enumerate(groups):
                 values, changed = scheduled_commands(name, initial, t)
                 sl = slice(g*a.envs_per_scenario, (g+1)*a.envs_per_scenario)
                 commands[sl, :3] = commands.new_tensor(values[:3])
                 commands[sl, 5] = values[3]
                 metric_valid[sl] = t >= 1. and (changed == 0. or t-changed >= .75)
+                segments_this_step.append((g,name,changed,sl))
             env.set_commands(commands)
             obs = env.get_observations()
             action = torch.zeros(n, 15, device=env.device) if policy is None else policy.act_inference(obs)
@@ -106,6 +109,10 @@ def main():
             error_yaw = (yaw-desired[:, 2]).square()
             values = torch.cat((error_xy, error_yaw[:, None], xy, yaw[:, None], desired, torch.ones(n, 1, device=env.device)), 1)
             sums += values*valid[:, None]
+            for g,name,changed,sl in segments_this_step:
+                key=(g,name,changed)
+                if key not in segment_sums:segment_sums[key]=torch.zeros(a.envs_per_scenario,10,device=env.device)
+                segment_sums[key] += values[sl]*valid[sl,None]
             duration += alive*env.dt
             contact = s['force'] > 1.
             takeoff = prior_contact & ~contact
@@ -196,6 +203,14 @@ def main():
         'evaluator_sha256': sha256(__file__), 'environment_sha256': sha256(Path(__file__).with_name('migration_env.py')),
         'created_unix': time.time(), 'wall_seconds': time.time()-started, 'accepted_locomotion': False,
         'measurement_scope': '20ms control-rate samples; original episodes only; genuine2mm/60ms/5mm unsigned landing events; missing events remain missing'}
+    result['velocity_segments']=[]
+    for (g,name,changed),values in segment_sums.items():
+        total=values.sum(0).cpu().numpy();count=float(total[9])
+        result['velocity_segments'].append({'name':name,'segment_start_s':changed,'samples':int(count),
+            'mean_command':(total[6:9]/count).tolist() if count else None,
+            'mean_actual':(total[3:6]/count).tolist() if count else None,
+            'xy_rmse_m_s':float(np.sqrt(total[:2].sum()/count)) if count else None,
+            'yaw_rmse_rad_s':float(np.sqrt(total[2]/count)) if count else None})
     a.output.parent.mkdir(parents=True, exist_ok=True)
     result['diagnostics'] = telemetry.finish(groups,a.envs_per_scenario)
     if video is not None:

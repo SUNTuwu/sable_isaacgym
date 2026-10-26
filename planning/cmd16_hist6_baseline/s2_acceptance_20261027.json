@@ -1,0 +1,640 @@
+{
+  "stage": "S2",
+  "passed": true,
+  "failures": [],
+  "checkpoint_sha256": "c227f0dafab1a3c70d47ef7b0c66c2853ea01873bf6b71c0c2a0a5f9e49467db",
+  "evaluation_seeds": [
+    947,
+    1147,
+    1347
+  ],
+  "scope": "Three independent seeds, every requested scenario, actual motion and all four foot events",
+  "reports": [
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s2_acceptance_20261027_055701/reports/seed947.json",
+      "sha256": "243008e64481964282bebe43e5ef730d96a4d4199e59b83ec16808829c66c518"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s2_acceptance_20261027_055701/reports/seed1147.json",
+      "sha256": "5b99c75ff210d6c7471d54ab24924fe468d2f1f89c122a6334317c774ea95c27"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s2_acceptance_20261027_055701/reports/seed1347.json",
+      "sha256": "6933289d3e81bbca691f8f3fa25216afa03a0fee2ec677fd09ba6afd5fa7c3e0"
+    }
+  ],
+  "summaries": [
+    {
+      "seed": 947,
+      "num_envs": 48,
+      "horizon_s": 16.0,
+      "survival_fraction": 1.0,
+      "velocity_rmse_m_s": 0.01791824818070239,
+      "scenarios": [
+        {
+          "name": "forward09",
+          "initial_command": [
+            0.09,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 6000,
+          "xy_rmse_m_s": 0.050580806201901744,
+          "forward_rmse_m_s": 0.016340079304414355,
+          "yaw_rmse_rad_s": 0.3849237064219675,
+          "mean_actual_xyz_command_units": [
+            0.0964684933423996,
+            -0.0009941903408616781,
+            -0.0014058907981961966
+          ],
+          "mean_command": [
+            0.08999993652105331,
+            0.0,
+            0.0035519422963261604
+          ],
+          "steps_per_foot": [
+            118,
+            117,
+            118,
+            118
+          ]
+        },
+        {
+          "name": "forward105",
+          "initial_command": [
+            0.105,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 6000,
+          "xy_rmse_m_s": 0.04512204186772608,
+          "forward_rmse_m_s": 0.019334974682402264,
+          "yaw_rmse_rad_s": 0.24668773389324694,
+          "mean_actual_xyz_command_units": [
+            0.11335108429193497,
+            -0.00017977686366066337,
+            -0.004679102450609207
+          ],
+          "mean_command": [
+            0.10500030219554901,
+            0.0,
+            0.008428976871073246
+          ],
+          "steps_per_foot": [
+            117,
+            116,
+            119,
+            117
+          ]
+        },
+        {
+          "name": "forward12",
+          "initial_command": [
+            0.12,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 6000,
+          "xy_rmse_m_s": 0.0422955614874095,
+          "forward_rmse_m_s": 0.0179541475974786,
+          "yaw_rmse_rad_s": 0.2657457599271733,
+          "mean_actual_xyz_command_units": [
+            0.12030861526727676,
+            -0.00011365222599124536,
+            -0.007207188755273819
+          ],
+          "mean_command": [
+            0.12000054121017456,
+            0.0,
+            0.014911568723618984
+          ],
+          "steps_per_foot": [
+            116,
+            117,
+            118,
+            117
+          ]
+        },
+        {
+          "name": "stop",
+          "initial_command": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 6000,
+          "xy_rmse_m_s": 0.010259349528682035,
+          "forward_rmse_m_s": 0.006335576619047603,
+          "yaw_rmse_rad_s": 0.189122967258849,
+          "mean_actual_xyz_command_units": [
+            -0.0003895242989528924,
+            -1.3104700883559417e-05,
+            -0.00022856057330500335
+          ],
+          "mean_command": [
+            0.0,
+            0.0,
+            0.015160215087234974
+          ],
+          "steps_per_foot": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "start_stop",
+          "initial_command": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 5088,
+          "xy_rmse_m_s": 0.04140101248368551,
+          "forward_rmse_m_s": 0.01678239321684524,
+          "yaw_rmse_rad_s": 0.3213921235227795,
+          "mean_actual_xyz_command_units": [
+            0.07966930419206619,
+            -0.0006514503620564938,
+            -0.00444097351282835
+          ],
+          "mean_command": [
+            0.07325462996959686,
+            0.0,
+            0.028293771669268608
+          ],
+          "steps_per_foot": [
+            90,
+            93,
+            92,
+            86
+          ]
+        },
+        {
+          "name": "speed_switch",
+          "initial_command": [
+            0.09,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 5392,
+          "xy_rmse_m_s": 0.04786543043679058,
+          "forward_rmse_m_s": 0.017064985993200492,
+          "yaw_rmse_rad_s": 0.31974492722958414,
+          "mean_actual_xyz_command_units": [
+            0.10462596267461777,
+            -0.0009248919668607414,
+            -0.0043966262601315975
+          ],
+          "mean_command": [
+            0.09943609684705734,
+            0.0,
+            0.01548745483160019
+          ],
+          "steps_per_foot": [
+            116,
+            117,
+            118,
+            116
+          ]
+        }
+      ],
+      "asset_sha256": "34473dded541fa4540ea5575f7cf837b78fdba957e3bf059ceaac2b545c87b65",
+      "manifest_sha256": "21ad9dfb35d41fe62b77bef90fefff4b9a2909845e21c9f86eeee0874c87eea7",
+      "reference_execution_calls": 0
+    },
+    {
+      "seed": 1147,
+      "num_envs": 48,
+      "horizon_s": 16.0,
+      "survival_fraction": 1.0,
+      "velocity_rmse_m_s": 0.01820215585554527,
+      "scenarios": [
+        {
+          "name": "forward09",
+          "initial_command": [
+            0.09,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 6000,
+          "xy_rmse_m_s": 0.05035901243635807,
+          "forward_rmse_m_s": 0.01633883172376544,
+          "yaw_rmse_rad_s": 0.370915966185542,
+          "mean_actual_xyz_command_units": [
+            0.09708254039287567,
+            -0.0011078107636421919,
+            -0.0021707979030907154
+          ],
+          "mean_command": [
+            0.08999993652105331,
+            0.0,
+            0.004283605143427849
+          ],
+          "steps_per_foot": [
+            117,
+            115,
+            118,
+            119
+          ]
+        },
+        {
+          "name": "forward105",
+          "initial_command": [
+            0.105,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 6000,
+          "xy_rmse_m_s": 0.04545994414433926,
+          "forward_rmse_m_s": 0.019669754265480285,
+          "yaw_rmse_rad_s": 0.2808061276019954,
+          "mean_actual_xyz_command_units": [
+            0.11306013911962509,
+            -0.0002457590017002076,
+            0.0004956230986863375
+          ],
+          "mean_command": [
+            0.10500030219554901,
+            0.0,
+            -0.011332397349178791
+          ],
+          "steps_per_foot": [
+            117,
+            116,
+            116,
+            120
+          ]
+        },
+        {
+          "name": "forward12",
+          "initial_command": [
+            0.12,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 6000,
+          "xy_rmse_m_s": 0.0425594258442252,
+          "forward_rmse_m_s": 0.018441767225696647,
+          "yaw_rmse_rad_s": 0.29363379378106397,
+          "mean_actual_xyz_command_units": [
+            0.11975879222154617,
+            -0.0001448580587748438,
+            -0.004771552048623562
+          ],
+          "mean_command": [
+            0.12000054121017456,
+            0.0,
+            0.011996373534202576
+          ],
+          "steps_per_foot": [
+            114,
+            118,
+            117,
+            117
+          ]
+        },
+        {
+          "name": "stop",
+          "initial_command": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 6000,
+          "xy_rmse_m_s": 0.010331250782016755,
+          "forward_rmse_m_s": 0.006457087232497425,
+          "yaw_rmse_rad_s": 0.18256644097723368,
+          "mean_actual_xyz_command_units": [
+            -0.0004741246812045574,
+            8.906088737603568e-07,
+            -0.00031491441768594086
+          ],
+          "mean_command": [
+            0.0,
+            0.0,
+            0.013395735062658787
+          ],
+          "steps_per_foot": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "start_stop",
+          "initial_command": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 5088,
+          "xy_rmse_m_s": 0.04181057292908753,
+          "forward_rmse_m_s": 0.016792341498991233,
+          "yaw_rmse_rad_s": 0.34159462373016813,
+          "mean_actual_xyz_command_units": [
+            0.08010666072368622,
+            -0.0004113908507861197,
+            -0.007919799536466599
+          ],
+          "mean_command": [
+            0.07325462996959686,
+            0.0,
+            0.10096638649702072
+          ],
+          "steps_per_foot": [
+            89,
+            96,
+            87,
+            88
+          ]
+        },
+        {
+          "name": "speed_switch",
+          "initial_command": [
+            0.09,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 5392,
+          "xy_rmse_m_s": 0.04804383264326632,
+          "forward_rmse_m_s": 0.017178977744868148,
+          "yaw_rmse_rad_s": 0.3357925781620696,
+          "mean_actual_xyz_command_units": [
+            0.10429122298955917,
+            -0.0013527668779715896,
+            -0.005810357164591551
+          ],
+          "mean_command": [
+            0.09943609684705734,
+            0.0,
+            -0.03155665099620819
+          ],
+          "steps_per_foot": [
+            119,
+            113,
+            117,
+            118
+          ]
+        }
+      ],
+      "asset_sha256": "34473dded541fa4540ea5575f7cf837b78fdba957e3bf059ceaac2b545c87b65",
+      "manifest_sha256": "21ad9dfb35d41fe62b77bef90fefff4b9a2909845e21c9f86eeee0874c87eea7",
+      "reference_execution_calls": 0
+    },
+    {
+      "seed": 1347,
+      "num_envs": 48,
+      "horizon_s": 16.0,
+      "survival_fraction": 1.0,
+      "velocity_rmse_m_s": 0.018125110275108477,
+      "scenarios": [
+        {
+          "name": "forward09",
+          "initial_command": [
+            0.09,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 6000,
+          "xy_rmse_m_s": 0.05008463531088192,
+          "forward_rmse_m_s": 0.016196345000562884,
+          "yaw_rmse_rad_s": 0.3877978945678406,
+          "mean_actual_xyz_command_units": [
+            0.0963582992553711,
+            -0.0008039752719923854,
+            -0.0034574142191559076
+          ],
+          "mean_command": [
+            0.08999993652105331,
+            0.0,
+            0.025413258001208305
+          ],
+          "steps_per_foot": [
+            115,
+            117,
+            119,
+            119
+          ]
+        },
+        {
+          "name": "forward105",
+          "initial_command": [
+            0.105,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 6000,
+          "xy_rmse_m_s": 0.04515167811567787,
+          "forward_rmse_m_s": 0.019499870014572544,
+          "yaw_rmse_rad_s": 0.2514421902720944,
+          "mean_actual_xyz_command_units": [
+            0.11328058689832687,
+            -0.0001384404458804056,
+            -0.004248492419719696
+          ],
+          "mean_command": [
+            0.10500030219554901,
+            0.0,
+            0.005466953385621309
+          ],
+          "steps_per_foot": [
+            116,
+            116,
+            119,
+            117
+          ]
+        },
+        {
+          "name": "forward12",
+          "initial_command": [
+            0.12,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 6000,
+          "xy_rmse_m_s": 0.04225927769448218,
+          "forward_rmse_m_s": 0.01852005252400881,
+          "yaw_rmse_rad_s": 0.32840976916212433,
+          "mean_actual_xyz_command_units": [
+            0.11932429671287537,
+            -0.00010920515342149884,
+            -0.004568490199744701
+          ],
+          "mean_command": [
+            0.12000054121017456,
+            0.0,
+            0.00914420373737812
+          ],
+          "steps_per_foot": [
+            118,
+            117,
+            118,
+            116
+          ]
+        },
+        {
+          "name": "stop",
+          "initial_command": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 6000,
+          "xy_rmse_m_s": 0.010166772135724257,
+          "forward_rmse_m_s": 0.005786602789869451,
+          "yaw_rmse_rad_s": 0.19344761375729588,
+          "mean_actual_xyz_command_units": [
+            -0.00021204689983278513,
+            -8.807710401015356e-06,
+            0.0004869550175499171
+          ],
+          "mean_command": [
+            0.0,
+            0.0,
+            0.023685649037361145
+          ],
+          "steps_per_foot": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "start_stop",
+          "initial_command": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 5088,
+          "xy_rmse_m_s": 0.041463795147198355,
+          "forward_rmse_m_s": 0.016680559508022122,
+          "yaw_rmse_rad_s": 0.3366308373533451,
+          "mean_actual_xyz_command_units": [
+            0.07978169620037079,
+            -0.00035734756966121495,
+            -0.008652799762785435
+          ],
+          "mean_command": [
+            0.07325462996959686,
+            0.0,
+            0.050457414239645004
+          ],
+          "steps_per_foot": [
+            88,
+            96,
+            93,
+            87
+          ]
+        },
+        {
+          "name": "speed_switch",
+          "initial_command": [
+            0.09,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "survival_fraction": 1.0,
+          "mean_duration_s": 16.00017547607422,
+          "knee_failure_fraction": 0.0,
+          "samples": 5392,
+          "xy_rmse_m_s": 0.048721408762274515,
+          "forward_rmse_m_s": 0.017703150958437327,
+          "yaw_rmse_rad_s": 0.30260427269529583,
+          "mean_actual_xyz_command_units": [
+            0.10505842417478561,
+            -0.0002052070340141654,
+            -0.0019930696580559015
+          ],
+          "mean_command": [
+            0.09943609684705734,
+            0.0,
+            0.010412550531327724
+          ],
+          "steps_per_foot": [
+            116,
+            116,
+            117,
+            120
+          ]
+        }
+      ],
+      "asset_sha256": "34473dded541fa4540ea5575f7cf837b78fdba957e3bf059ceaac2b545c87b65",
+      "manifest_sha256": "21ad9dfb35d41fe62b77bef90fefff4b9a2909845e21c9f86eeee0874c87eea7",
+      "reference_execution_calls": 0
+    }
+  ]
+}

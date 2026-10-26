@@ -10,8 +10,8 @@ from observation_schema import pack
 from history_policy import HistoryActorCritic
 from ppo_history import HistoryPPO, timeout_bootstrap
 from step_events import StepEvents
-from acceptance import assess
-from evaluation_scenarios import scenarios
+from acceptance import assess,assess_velocity_transitions
+from evaluation_scenarios import scenarios,scheduled_commands,transition_segments
 from curriculum import next_frequency_range
 
 
@@ -40,11 +40,22 @@ class LearningTests(unittest.TestCase):
             for name, segment, f in [('frequency08',0,.8),('frequency12',0,1.2),('frequency_switch',0,.8),('frequency_switch',8,1.2),('frequency_switch',20,.8)]:
                 report['frequency_scenarios'].append({'name':name,'segment_start_s':segment,
                     'feet':[{'foot':i,'measured_frequency_hz':f,'interval_count':10,'environments':4} for i in range(4)]})
+            report['velocity_segments']=[]
+            commands=dict(scenarios('S5'))
+            for name,times in transition_segments('S5').items():
+                for start in times:
+                    value,_=scheduled_commands(name,commands[name],start)
+                    report['velocity_segments'].append({'name':name,'segment_start_s':start,'samples':20,
+                        'mean_command':value[:3],'mean_actual':value[:3], 'xy_rmse_m_s':.01,'yaw_rmse_rad_s':.1})
             reports.append(report)
         self.assertTrue(assess('S5',reports,baseline)['passed'])
         broken = copy.deepcopy(reports)
         broken[0]['frequency_scenarios'][-1]['feet'].pop()
         self.assertFalse(assess('S5',broken,baseline)['passed'])
+        broken=copy.deepcopy(reports)
+        for segment in broken[0]['velocity_segments']:
+            if segment['name']=='speed_switch':segment['mean_actual']=[.105,0.,0.]
+        self.assertTrue(any('insufficient_change' in f for f in assess('S5',broken,baseline)['failures']))
         broken = copy.deepcopy(reports)
         for report in broken:
             for row in report['frequency_scenarios']:
