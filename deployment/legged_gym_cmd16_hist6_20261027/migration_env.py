@@ -334,6 +334,9 @@ class MigrationRobot(SableRobot):
     def _reward_gait_clearance(self):
         return ((self.foot_clearance-self.gait_target_clearance)/self.commands16[:, 10:11]).square().clamp(max=9.).mean(1)
 
+    def _reward_alive(self):
+        return (~self.true_fall).float()
+
     def _reward_swing_peak_shortfall(self):
         value = super()._reward_swing_peak_shortfall()
         return value/self.commands16[:, 5] if self.omni else value

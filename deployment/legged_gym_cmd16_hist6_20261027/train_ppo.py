@@ -81,6 +81,7 @@ def main():
         critic_warmup_updates=a.critic_warmup_updates, optimizer_restore=False,
         command_ranges=cfg.migration.command_ranges, reward_weights=vars(cfg.rewards.scales),
         velocity_error_scale_m_s=cfg.migration.velocity_error_scale_m_s,
+        unclipped_gait_costs=cfg.migration.unclipped_gait_costs,
         minimum_action_std=cfg.migration.minimum_action_std,
         novel_command_std_floor=cfg.migration.novel_command_std_floor,
         exploration_scope='Floor only for moving commands with vx<.03m/s; forward/stop retain learned noise. No change to deterministic actor.',

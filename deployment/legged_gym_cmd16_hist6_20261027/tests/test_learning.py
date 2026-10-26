@@ -132,6 +132,31 @@ class LearningTests(unittest.TestCase):
         torch.testing.assert_close(policy.act_inference(raw),original,atol=0,rtol=0)
         self.assertTrue((policy.act(raw)[:,-1]==0.).all())
 
+    def test_clearance_and_target_costs_keep_signal_after_clipping(self):
+        import ast
+        from pathlib import Path
+        from types import SimpleNamespace
+        tree=ast.parse((Path(__file__).parents[1]/'sable_env.py').read_text())
+        method=next(m for c in tree.body if isinstance(c,ast.ClassDef) and c.name=='SableRobot'
+            for m in c.body if isinstance(m,ast.FunctionDef) and m.name=='compute_reward')
+        scope={'torch':torch};exec(compile(ast.Module(body=[method],type_ignores=[]),'<actual_reward_aggregator>','exec'),scope)
+        def run(gait,unclipped):
+            names=['base','gait_clearance','target_limits','alive']
+            values=[.2,gait,-.1,.06]
+            env=SimpleNamespace(cfg=SimpleNamespace(rewards=SimpleNamespace(only_positive_rewards=True),
+                migration=SimpleNamespace(unclipped_gait_costs=unclipped)),
+                reward_names=names,reward_functions=[lambda v=v:torch.tensor([v]) for v in values],
+                reward_scales=dict.fromkeys(names,1.),episode_sums={n:torch.zeros(1) for n in names},
+                rew_buf=torch.zeros(1),capture_eval=True,eval_snapshot={})
+            scope['compute_reward'](env)
+            components=env.eval_snapshot['weighted_rewards']
+            torch.testing.assert_close(sum(v for n,v in components.items() if n!='total'),env.rew_buf)
+            return env.rew_buf.item()
+        self.assertAlmostEqual(run(-.4,False),0.,places=6)
+        self.assertAlmostEqual(run(-.39,False),0.,places=6)
+        self.assertAlmostEqual(run(-.4,True),-.24,places=6)
+        self.assertAlmostEqual(run(-.39,True)-run(-.4,True),.01,places=6)
+
     def test_terminal_bootstrap_and_actual_ppo_update(self):
         torch.manual_seed(11)
         policy = HistoryActorCritic(actor_hidden_dims=(32, 16), critic_hidden_dims=(32, 16))

@@ -39,6 +39,7 @@ def student_config(teacher_run, stage='S2', num_envs=1024):
     # for the old stride/clearance costs when positive reward is clipped to zero.
     # This direct command error survives that clipping, as the yaw error does.
     cfg.rewards.scales.velocity_error = -2.
+    cfg.migration.unclipped_gait_costs = stage in ('S3','S5')
     if stage in ('S3', 'S5'):
         cfg.commands.heading_command = False
         # Direction-dependent teacher preferences conflict with omni motion.
@@ -50,6 +51,9 @@ def student_config(teacher_run, stage='S2', num_envs=1024):
         cfg.rewards.scales.tracking_lin_vel = 8.
         cfg.rewards.scales.tracking_ang_vel = 3.
         cfg.rewards.scales.yaw_rate_error = -2.
+        # Keep per-step survival preferable to an early terminal transition
+        # while restoring the clearance signal previously lost to clipping.
+        cfg.rewards.scales.alive = 3.
     cfg.migration.minimum_action_std = .02
     cfg.migration.novel_command_std_floor = .04 if stage=='S3' else 0.
     return cfg

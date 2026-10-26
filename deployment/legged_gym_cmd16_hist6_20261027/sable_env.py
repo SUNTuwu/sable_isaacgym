@@ -366,10 +366,12 @@ class SableRobot(LeggedRobot):
         self.rew_buf[:] = 0.
         posture=torch.zeros_like(self.rew_buf)
         diagnostic = {} if getattr(self,'capture_eval',False) else None
+        unclipped_gait = getattr(getattr(self.cfg,'migration',None),'unclipped_gait_costs',False)
         for name,function in zip(self.reward_names,self.reward_functions):
             value=function()*self.reward_scales[name]
             if diagnostic is not None:diagnostic[name]=value.clone()
-            if name in ('velocity_error','waist_vertical_acceleration','ankle_event_angle','yaw_rate_error','stride_shortfall','stride_variance','hind_landing_width','proximal_acceleration_peak','swing_peak_balance','swing_peak_shortfall'):posture+=value
+            if (name in ('velocity_error','waist_vertical_acceleration','ankle_event_angle','yaw_rate_error','stride_shortfall','stride_variance','hind_landing_width','proximal_acceleration_peak','swing_peak_balance','swing_peak_shortfall')
+                    or (unclipped_gait and name in ('gait_clearance','target_limits'))):posture+=value
             else:self.rew_buf+=value
             self.episode_sums[name]+=value
         if self.cfg.rewards.only_positive_rewards:
