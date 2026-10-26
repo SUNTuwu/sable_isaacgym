@@ -21,6 +21,7 @@ class HistoryActorCritic(ActorCritic):
         self.history_encoder = HistoryEncoder()
         self.register_buffer('execution_mask', torch.tensor([1.] * 14 + [0. if freeze_waist else 1.]))
         self.freeze_waist = freeze_waist
+        self.novel_command_std_floor = 0.
 
     def branch(self, raw):
         velocity, latent = self.history_encoder(raw[:, :306])
@@ -40,6 +41,14 @@ class HistoryActorCritic(ActorCritic):
         # to policy likelihood, entropy, executed action, or exploration.
         permutation = [0, 1, 7, 8, 9, 10, 11, 2, 3, 4, 5, 6, 13, 12, 14]
         std = ((self.std + self.std[permutation]) * .5).clamp(min=1e-4)
+        if self.novel_command_std_floor:
+            # This is state-conditioned stochastic exploration only. The
+            # deterministic exported actor is unchanged. Keep the learned
+            # forward gait and true stop at their original noise level.
+            vx,vy,yaw=observations[:,306]*.2,observations[:,307]*.1,observations[:,308]
+            moving=(torch.sqrt(vx.square()+vy.square())>.01)|(yaw.abs()>.08)
+            novel=(vx<.03)&moving
+            std=torch.where(novel[:,None],std.clamp(min=self.novel_command_std_floor),std)
         self.distribution = Normal(mean, mean * 0. + std)
 
     def act(self, observations, **kwargs):

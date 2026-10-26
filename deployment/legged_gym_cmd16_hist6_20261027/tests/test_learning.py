@@ -103,6 +103,35 @@ class LearningTests(unittest.TestCase):
         torch.testing.assert_close(c.value(torch.full((5,),3.)),(first+target)*.5)
         torch.testing.assert_close(c.target,target)
 
+    def test_velocity_sampler_includes_all_direct_motion_families(self):
+        from curriculum import sample_velocity_commands
+        torch.manual_seed(123)
+        commands=torch.zeros(20000,16)
+        sample_velocity_commands(commands,torch.arange(len(commands)),'S3',
+            {'vx':[-.04,.12],'vy':[-.04,.04],'yaw_rate':[-.35,.35],'frequency':[.9,1.1]})
+        x,y,w=commands[:,:3].unbind(1)
+        pure_reverse=(x<=-.02)&(y==0)&(w==0)
+        pure_lateral=(x==0)&(y.abs()>=.02)&(w==0)
+        pure_yaw=(x==0)&(y==0)&(w.abs()>=.15)
+        for mask in (pure_reverse,pure_lateral,pure_yaw):
+            self.assertGreater(float(mask.float().mean()),.13)
+            self.assertLess(float(mask.float().mean()),.17)
+        self.assertTrue((x>=-.04).all() and (x<=.12).all())
+        self.assertTrue((y.abs()<=.04).all() and (w.abs()<=.35).all())
+        self.assertTrue((commands[:,5]==1.).all())
+
+    def test_novel_exploration_preserves_forward_stop_and_deterministic_actor(self):
+        policy=HistoryActorCritic(actor_hidden_dims=(32,16),critic_hidden_dims=(32,16),init_noise_std=.02)
+        c=torch.tensor([CommandSpec.defaults(.08,.1,.07,-.69)]).repeat(5,1)
+        c[:,:3]=torch.tensor([[.105,0.,0.],[0.,0.,0.],[-.04,0.,0.],[0.,.04,0.],[0.,0.,.35]])
+        raw=pack(torch.randn(5,6,51),c,torch.zeros(5,4));original=policy.act_inference(raw)
+        policy.novel_command_std_floor=.04
+        policy.update_distribution(raw)
+        torch.testing.assert_close(policy.action_std[:2],torch.full((2,15),.02))
+        torch.testing.assert_close(policy.action_std[2:],torch.full((3,15),.04))
+        torch.testing.assert_close(policy.act_inference(raw),original,atol=0,rtol=0)
+        self.assertTrue((policy.act(raw)[:,-1]==0.).all())
+
     def test_terminal_bootstrap_and_actual_ppo_update(self):
         torch.manual_seed(11)
         policy = HistoryActorCritic(actor_hidden_dims=(32, 16), critic_hidden_dims=(32, 16))

@@ -57,6 +57,9 @@ def main():
     policy = HistoryActorCritic().to(env.device)
     parent = torch.load(str(a.resume), map_location=env.device)
     policy.load_state_dict(parent['model_state_dict'], strict=True)
+    policy.novel_command_std_floor=cfg.migration.novel_command_std_floor
+    with torch.no_grad():
+        policy.std[:14].clamp_(min=cfg.migration.minimum_action_std)
     if a.stage == 'S5' and parent.get('stage') == 'S5' and 'frequency_range' in parent:
         previous = parent['frequency_range']
         if list(previous) not in ([.9,1.1],[.8,1.2]):
@@ -65,7 +68,8 @@ def main():
     algorithm = HistoryPPO(policy, device=env.device, num_learning_epochs=4, num_mini_batches=4,
         clip_param=.15, gamma=.99, lam=.95, value_loss_coef=1., entropy_coef=.001,
         learning_rate=a.learning_rate, max_grad_norm=1., use_clipped_value_loss=True,
-        schedule='fixed', desired_kl=None, auxiliary_learning_rate=2e-5)
+        schedule='fixed', desired_kl=None, auxiliary_learning_rate=2e-5,
+        minimum_action_std=cfg.migration.minimum_action_std)
     algorithm.init_storage(a.num_envs, a.rollout_steps, [326], [92], [15])
     a.run.mkdir(parents=True, exist_ok=True)
     (a.run/'checkpoints').mkdir(exist_ok=True)
@@ -77,6 +81,10 @@ def main():
         critic_warmup_updates=a.critic_warmup_updates, optimizer_restore=False,
         command_ranges=cfg.migration.command_ranges, reward_weights=vars(cfg.rewards.scales),
         velocity_error_scale_m_s=cfg.migration.velocity_error_scale_m_s,
+        minimum_action_std=cfg.migration.minimum_action_std,
+        novel_command_std_floor=cfg.migration.novel_command_std_floor,
+        exploration_scope='Floor only for moving commands with vx<.03m/s; forward/stop retain learned noise. No change to deterministic actor.',
+        command_sampling='25% old forward,10%stop,15%purelateral abs.02-.04,15%pureyaw abs.15-.35,15%purereverse -.04to-.02,20%combined' if a.stage in ('S3','S5') else 'old forward and stop',
         moving_start_curriculum=dict(enabled=cfg.migration.moving_start_training,
             fraction=cfg.migration.moving_start_fraction,hold_s=cfg.migration.moving_start_hold_s,
             blend_s=cfg.migration.moving_start_blend_s,direct_start_fraction=.25,
@@ -151,6 +159,8 @@ def main():
                     completed_episode_survival=survival, recent_completed_episodes=len(rows),
                     critic_warmup=warmup, reference_execution_calls=env.reference_execution_calls,
                     learning_rate=algorithm.learning_rate, mean_std=float(policy.std[:14].mean()),
+                    novel_command_std_floor=policy.novel_command_std_floor,
+                    mean_std_scope='Learned base parameters; low-forward moving-command distribution also applies the explicit novel-command floor',
                     frequency_range_hz=list(cfg.migration.command_ranges['frequency']),
                     **algorithm.last_auxiliary_metrics)
                 status.update(iteration=iteration, metrics=metrics, updated_unix=time.time())

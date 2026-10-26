@@ -50,4 +50,6 @@ def student_config(teacher_run, stage='S2', num_envs=1024):
         cfg.rewards.scales.tracking_lin_vel = 8.
         cfg.rewards.scales.tracking_ang_vel = 3.
         cfg.rewards.scales.yaw_rate_error = -2.
+    cfg.migration.minimum_action_std = .02
+    cfg.migration.novel_command_std_floor = .04 if stage=='S3' else 0.
     return cfg

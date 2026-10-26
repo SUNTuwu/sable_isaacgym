@@ -60,9 +60,14 @@ def sample_velocity_commands(commands, ids, stage, ranges):
     commands[ids[(family >= .25) & (family < .35)], :3] = 0.
     lateral = (family >= .35) & (family < .5)
     commands[ids[lateral], 0] = 0.
+    commands[ids[lateral], 1] = (torch.where(torch.rand(n,device=commands.device)<.5,-1.,1.)*uniform(.02,.04))[lateral]
     commands[ids[lateral], 2] = 0.
     turn = (family >= .5) & (family < .65)
     commands[ids[turn], :2] = 0.
+    commands[ids[turn], 2] = (torch.where(torch.rand(n,device=commands.device)<.5,-1.,1.)*uniform(.15,.35))[turn]
+    reverse = (family >= .65) & (family < .8)
+    commands[ids[reverse], 0] = uniform(ranges['vx'][0],-.02)[reverse]
+    commands[ids[reverse], 1:3] = 0.
     commands[ids, 5] = uniform(*ranges['frequency']) if stage == 'S5' else 1.
 
 

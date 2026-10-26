@@ -10,8 +10,9 @@ def timeout_bootstrap(rewards, timeouts, terminal_values, gamma):
 
 
 class HistoryPPO(PPO):
-    def __init__(self, *args, auxiliary_learning_rate=5e-5, auxiliary_policy_kl_limit=.01, **kwargs):
+    def __init__(self, *args, auxiliary_learning_rate=5e-5, auxiliary_policy_kl_limit=.01, minimum_action_std=.02, **kwargs):
         super().__init__(*args, **kwargs)
+        self.minimum_action_std=minimum_action_std
         self.auxiliary_optimizer = torch.optim.Adam(self.actor_critic.history_encoder.parameters(), lr=auxiliary_learning_rate)
         self.auxiliary_learning_rate_max = auxiliary_learning_rate
         self.auxiliary_policy_kl_limit = auxiliary_policy_kl_limit
@@ -37,7 +38,7 @@ class HistoryPPO(PPO):
     def update(self):
         values = super().update()
         with torch.no_grad():
-            self.actor_critic.std.clamp_(.02, .35)
+            self.actor_critic.std.clamp_(self.minimum_action_std, .35)
             if self.actor_critic.freeze_waist:
                 self.actor_critic.std[-1] = .04
         if not self.auxiliary_rollout:
