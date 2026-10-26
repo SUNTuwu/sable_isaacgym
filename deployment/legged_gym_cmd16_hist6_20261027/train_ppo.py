@@ -47,6 +47,11 @@ def main():
     torch.manual_seed(a.seed)
     np.random.seed(a.seed)
     cfg = student_config(teacher['run'], stage=a.stage, num_envs=a.num_envs)
+    cfg.migration.moving_start_training = a.stage in ('S3','S5')
+    if cfg.migration.moving_start_training:
+        # Sample transitions explicitly before policy inference, rather than
+        # changing the commanded target inside a physics/reward interval.
+        cfg.commands.resampling_time = cfg.env.episode_length_s+1.
     cfg.reference.file = '/intentionally_absent_ppo_reference.json'
     env = create_migration_env(cfg, noise=True)
     policy = HistoryActorCritic().to(env.device)
@@ -72,6 +77,10 @@ def main():
         critic_warmup_updates=a.critic_warmup_updates, optimizer_restore=False,
         command_ranges=cfg.migration.command_ranges, reward_weights=vars(cfg.rewards.scales),
         velocity_error_scale_m_s=cfg.migration.velocity_error_scale_m_s,
+        moving_start_curriculum=dict(enabled=cfg.migration.moving_start_training,
+            fraction=cfg.migration.moving_start_fraction,hold_s=cfg.migration.moving_start_hold_s,
+            blend_s=cfg.migration.moving_start_blend_s,direct_start_fraction=.25,
+            evaluation_uses_direct_starts=True),
         auxiliary_labels='same-time ROOT velocity, pre-reset next clean proprioception, done mask',
         timeout_bootstrap='pre-reset terminal-state critic value; exactly once')
     atomic_json(a.run/'config.json', config)
@@ -107,6 +116,8 @@ def main():
             reward_mean = 0.
             with torch.no_grad():
                 for _ in range(a.rollout_steps):
+                    env.prepare_training_commands()
+                    obs, critic = env.get_observations(), env.get_privileged_observations()
                     velocity = env.base_lin_vel.clone()
                     action = algorithm.act(obs, critic)
                     obs, critic, rewards, done, info = env.step(action)

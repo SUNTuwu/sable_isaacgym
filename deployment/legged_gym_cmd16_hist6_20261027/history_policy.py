@@ -3,7 +3,8 @@ import torch
 from torch import nn
 from torch.distributions import Normal
 from rsl_rl.modules import ActorCritic
-from action_schema import ActionSpec
+from action_schema import ActionSpec, ACTION_INDEX, ACTION_SIGN
+from command_schema import COMMAND_SCALES
 from observation_schema import mirror_raw, mirror_critic
 from history_encoder import HistoryEncoder
 
@@ -72,7 +73,33 @@ class DeploymentPolicy(nn.Module):
     """Export includes history encoding, both mirror branches, and waist mask."""
     def __init__(self, policy):
         super().__init__()
-        self.policy = policy
+        self.actor = policy.actor
+        self.encoder = policy.history_encoder
+        # Registered buffers follow map_location / .to(device). Python
+        # new_tensor constants in a traced function otherwise pin the CPU.
+        self.register_buffer('execution_mask',policy.execution_mask.detach().clone())
+        self.register_buffer('action_index',torch.tensor(ACTION_INDEX,dtype=torch.long))
+        self.register_buffer('action_sign',torch.tensor(ACTION_SIGN,dtype=torch.float32))
+        self.register_buffer('proprio_index',torch.tensor(list(range(6))+
+            [offset+i for offset in (6,21,36) for i in ACTION_INDEX],dtype=torch.long))
+        self.register_buffer('proprio_sign',torch.tensor([-1.,1.,-1.,1.,-1.,1.]+list(ACTION_SIGN)*3))
+        self.register_buffer('command_scales',torch.tensor(COMMAND_SCALES))
+        self.register_buffer('command_sign',torch.tensor([1.,-1.,-1.,1.,1.,1.,1.,1.,1.,1.,1.,-1.,-1.,1.,1.,1.]))
+        self.register_buffer('clock_index',torch.tensor([1,0,3,2],dtype=torch.long))
+
+    def branch(self,raw):
+        velocity,latent=self.encoder(raw[:,:306])
+        return self.actor(torch.cat((raw[:,:51],raw[:,306:322],raw[:,322:326],velocity*2.,latent),-1))
 
     def forward(self, raw):
-        return self.policy.act_inference(raw)
+        history=raw[:,:306].reshape(-1,6,51)
+        reflected_history=history.index_select(2,self.proprio_index)*self.proprio_sign
+        command=raw[:,306:322]*self.command_scales
+        reflected_command=command*self.command_sign
+        fr,hl,hr=command[:,6],command[:,7],command[:,8]
+        reflected_command[:,6]=torch.remainder(-fr,1.)
+        reflected_command[:,7]=torch.remainder(hr-fr,1.)
+        reflected_command[:,8]=torch.remainder(hl-fr,1.)
+        reflected=torch.cat((reflected_history.flatten(1),reflected_command/self.command_scales,
+            raw[:,322:326].index_select(1,self.clock_index)),-1)
+        return .5*(self.branch(raw)+self.branch(reflected).index_select(1,self.action_index)*self.action_sign)*self.execution_mask

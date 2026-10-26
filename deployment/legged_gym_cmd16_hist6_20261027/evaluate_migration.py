@@ -29,6 +29,7 @@ def main():
     p.add_argument('--seconds', type=float, default=16.)
     p.add_argument('--seed', type=int, default=947)
     p.add_argument('--video-dir', type=Path)
+    p.add_argument('--deployment-trace', type=Path)
     a = p.parse_args()
     if not a.teacher_control and not a.checkpoint:
         p.error('--checkpoint is required for student evaluation')
@@ -76,6 +77,8 @@ def main():
     step_counts = torch.zeros(n, 4, dtype=torch.long, device=env.device)
     events, trace = [], []
     segment_sums = {}
+    reward_sums = {}
+    deployment_trace = []
     telemetry = EvaluationTelemetry(env)
     started = time.time()
     with torch.no_grad():
@@ -93,8 +96,14 @@ def main():
             env.set_commands(commands)
             obs = env.get_observations()
             action = torch.zeros(n, 15, device=env.device) if policy is None else policy.act_inference(obs)
+            trace_input = obs.clone() if a.deployment_trace and not a.teacher_control else None
             obs, _, _, done, _ = env.step(action)
             s = env.eval_snapshot
+            if trace_input is not None:
+                # Full pre-reset target from this exact action, including failed
+                # transitions; never substitute the post-reset default target.
+                deployment_trace.append({'raw':trace_input.cpu(),'action':action.cpu(),
+                    'target':s['executed_target'].cpu(),'time_s':t})
             if video is not None:
                 video.sample(step,done,s,commands[0])
             world_velocity = quat_apply(s['base_quat'], s['velocity_local'])
@@ -104,6 +113,9 @@ def main():
             yaw = yaw_heading if env.omni else s['angular_velocity_local'][:, 2]
             desired = commands[:, :3].clone() if env.omni else s['commands'][:, :3]
             valid = alive & metric_valid
+            for key,value in s['weighted_rewards'].items():
+                if key not in reward_sums:reward_sums[key]=torch.zeros(n,device=env.device)
+                reward_sums[key] += value*valid
             telemetry.update(s,commands,alive,valid)
             error_xy = (xy-desired[:, :2]).square()
             error_yaw = (yaw-desired[:, 2]).square()
@@ -213,6 +225,21 @@ def main():
             'yaw_rmse_rad_s':float(np.sqrt(total[2]/count)) if count else None})
     a.output.parent.mkdir(parents=True, exist_ok=True)
     result['diagnostics'] = telemetry.finish(groups,a.envs_per_scenario)
+    result['weighted_rewards_per_second'] = []
+    for g,(name,_) in enumerate(groups):
+        sl=slice(g*a.envs_per_scenario,(g+1)*a.envs_per_scenario)
+        count=float(sums[sl,9].sum())
+        values={k:float(v[sl].sum())/(max(count,1)*env.dt) for k,v in reward_sums.items()}
+        if count:
+            assert abs(sum(v for k,v in values.items() if k!='total')-values['total'])<1e-3
+        result['weighted_rewards_per_second'].append({'name':name,'samples':int(count),'values':values})
+    if a.deployment_trace:
+        if a.teacher_control:raise ValueError('Deployment parity needs a student checkpoint')
+        a.deployment_trace.parent.mkdir(parents=True,exist_ok=True)
+        torch.save({'schema':'sable-deployment-trace/1','checkpoint_sha256':checkpoint_sha,
+            'suite':a.suite,'seed':a.seed,'scenario_names':[name for name,_ in groups],
+            'envs_per_scenario':a.envs_per_scenario,'samples':deployment_trace},str(a.deployment_trace))
+        result['deployment_trace']={'path':str(a.deployment_trace),'sha256':sha256(a.deployment_trace)}
     if video is not None:
         video.close()
         result['video_receipt'] = str(a.video_dir/'recording_receipt.json')

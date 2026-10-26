@@ -4,6 +4,39 @@ import torch
 STAGES = ('S1', 'S2', 'S3', 'S5')
 
 
+class MovingStartCurriculum:
+    """Training-only commands; all actions still come from the current student.
+
+    Some new-direction samples begin with learned forward locomotion and then
+    cross to their real target. A quarter always start at the requested command.
+    Evaluation bypasses this object and retains direct starts from rest.
+    """
+    def __init__(self, num_envs, device, fraction=.75, hold_s=2., blend_s=2.):
+        self.target = torch.zeros(num_envs, 3, device=device)
+        self.start = self.target.clone()
+        self.sample_time = torch.zeros(num_envs, device=device)
+        self.enabled = torch.zeros(num_envs, dtype=torch.bool, device=device)
+        self.fraction, self.hold_s, self.blend_s = fraction, hold_s, blend_s
+
+    def resample(self, ids, target, age, draws=None):
+        self.target[ids] = target
+        self.start[ids] = target
+        draws = torch.rand(len(ids), device=target.device) if draws is None else draws
+        novel = (target[:, 0] < .08) | (target[:, 1:].abs().sum(1) > .01)
+        moving = (target[:, :2].norm(dim=1) > .01) | (target[:, 2].abs() > .08)
+        selected = novel & moving & (draws < self.fraction)
+        chosen = ids[selected]
+        self.start[chosen, 0] = .105
+        self.start[chosen, 1:] = 0.
+        self.enabled[ids] = selected
+        self.sample_time[ids] = age
+
+    def value(self, age):
+        alpha = ((age-self.sample_time-self.hold_s)/self.blend_s).clamp(0., 1.)
+        alpha = alpha.square()*(3.-2.*alpha)
+        return torch.lerp(self.start, self.target, alpha[:, None])
+
+
 def sample_velocity_commands(commands, ids, stage, ranges):
     n = len(ids)
     if not n:

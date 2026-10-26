@@ -33,7 +33,8 @@ def student_config(teacher_run, stage='S2', num_envs=1024):
     cfg.migration = SimpleNamespace(stage=stage, freeze_waist=True, history_noise_level=0.,
         command_ranges={'vx': [-.04, .12], 'vy': [-.04, .04], 'yaw_rate': [-.35, .35],
                         'frequency': [.9, 1.1]}, target_interpolation='hold_full_target',
-        velocity_error_scale_m_s=.05)
+        velocity_error_scale_m_s=.05, moving_start_training=False,
+        moving_start_fraction=.75, moving_start_hold_s=2., moving_start_blend_s=2.)
     # The full-target student can otherwise trade increased lateral oscillation
     # for the old stride/clearance costs when positive reward is clipped to zero.
     # This direct command error survives that clipping, as the yaw error does.

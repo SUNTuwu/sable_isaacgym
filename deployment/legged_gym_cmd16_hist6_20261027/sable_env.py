@@ -365,16 +365,24 @@ class SableRobot(LeggedRobot):
         # its negative cost survives the legacy positive-only reward clipping.
         self.rew_buf[:] = 0.
         posture=torch.zeros_like(self.rew_buf)
+        diagnostic = {} if getattr(self,'capture_eval',False) else None
         for name,function in zip(self.reward_names,self.reward_functions):
             value=function()*self.reward_scales[name]
+            if diagnostic is not None:diagnostic[name]=value.clone()
             if name in ('velocity_error','waist_vertical_acceleration','ankle_event_angle','yaw_rate_error','stride_shortfall','stride_variance','hind_landing_width','proximal_acceleration_peak','swing_peak_balance','swing_peak_shortfall'):posture+=value
             else:self.rew_buf+=value
             self.episode_sums[name]+=value
-        if self.cfg.rewards.only_positive_rewards:self.rew_buf.clamp_(min=0.)
+        if self.cfg.rewards.only_positive_rewards:
+            if diagnostic is not None:diagnostic['positive_clip_adjustment']=(-self.rew_buf).clamp(min=0.)
+            self.rew_buf.clamp_(min=0.)
         self.rew_buf+=posture
         if 'termination' in self.reward_scales:
             value=self._reward_termination()*self.reward_scales['termination']
             self.rew_buf+=value;self.episode_sums['termination']+=value
+            if diagnostic is not None:diagnostic['termination']=value.clone()
+        if diagnostic is not None:
+            diagnostic['total']=self.rew_buf.clone()
+            self.eval_snapshot['weighted_rewards']=diagnostic
 
     def _reward_swing_peak_balance(self):return self.swing_peak_balance_cost
 

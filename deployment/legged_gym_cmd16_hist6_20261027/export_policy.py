@@ -10,20 +10,20 @@ from history_policy import HistoryActorCritic, DeploymentPolicy
 from action_schema import ACTION_NAMES, ActionSpec
 from command_schema import COMMAND_NAMES, COMMAND_SCALES, CommandSpec
 from model_mapping import ModelMapping
-from observation_schema import pack
-from gait_clock import clocks
+from observation_schema import pack, HistoryBuffer
+from gait_clock import clocks, GaitClock
 from run_io import atomic_json, sha256
 
 
 class FullTargetPolicy(nn.Module):
     def __init__(self, policy, defaults, limits):
         super().__init__()
-        self.policy = policy
+        self.policy = DeploymentPolicy(policy)
         self.register_buffer('default_angles', defaults)
         self.register_buffer('limits', limits)
 
     def forward(self, raw):
-        action = self.policy.act_inference(raw)
+        action = self.policy(raw)
         target = self.default_angles + .35*action
         return torch.maximum(torch.minimum(target, self.limits[:, 1]), self.limits[:, 0])
 
@@ -33,6 +33,7 @@ def main():
     p.add_argument('--checkpoint', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--acceptance', type=Path)
+    p.add_argument('--deployment-trace', type=Path)
     a = p.parse_args()
     if a.output.exists():
         raise FileExistsError('An export is immutable; choose a new output directory')
@@ -69,9 +70,40 @@ def main():
         for _ in range(500):target_policy(raw[:1])
         elapsed = (time.perf_counter()-start)/500
     accepted = None
+    trace_validation = None
+    if a.deployment_trace:
+        recorded=torch.load(str(a.deployment_trace),map_location='cpu')
+        assert recorded['checkpoint_sha256']==sha256(a.checkpoint)
+        assert recorded['samples']
+        trace_validation={'trace_sha256':sha256(a.deployment_trace),'samples':len(recorded['samples']),
+                          'devices':{},'absolute_tolerance':1e-5}
+        for device in (['cpu','cuda:0'] if torch.cuda.is_available() else ['cpu']):
+            actor=torch.jit.load(str(a.output/'actor_raw326.ts'),map_location=device).eval()
+            target=torch.jit.load(str(a.output/'target_raw326.ts'),map_location=device).eval()
+            actor_error=target_error=0.
+            with torch.no_grad():
+                for row in recorded['samples']:
+                    x=row['raw'].to(device)
+                    actor_error=max(actor_error,float((actor(x)-row['action'].to(device)).abs().max()))
+                    target_error=max(target_error,float((target(x)-row['target'].to(device)).abs().max()))
+            assert max(actor_error,target_error)<1e-5,(device,actor_error,target_error)
+            trace_validation['devices'][device]={'actor_max_error':actor_error,'target_max_error':target_error}
+    # Include history insertion, current command packing, clock filtering and
+    # integration as well as both mirrored encoder/actor branches. This is
+    # compute latency on the server CPU, excluding sensors and motor I/O.
+    history=HistoryBuffer(1,'cpu');clock=GaitClock(1,'cpu')
+    sample_proprio=raw[:1,:51];sample_command=commands[:1]
+    with torch.no_grad():
+        start=time.perf_counter()
+        for sample_id in range(500):
+            history.sample(sample_proprio,sample_id)
+            target_policy(pack(history.data,sample_command,clock.values(sample_command,True)))
+            clock.advance(sample_command,True)
+        chain_elapsed=(time.perf_counter()-start)/500
     if a.acceptance:
         accepted = json.loads(a.acceptance.read_text())
         assert accepted['passed'] and accepted['stage']=='S5' and accepted['checkpoint_sha256']==sha256(a.checkpoint)
+        assert trace_validation is not None,'Accepted export requires recorded simulator-input parity'
         shutil.copy2(a.acceptance,a.output/'acceptance.json')
     for name in ('command_schema.py','action_schema.py','observation_schema.py','gait_clock.py'):
         shutil.copy2(source/name,a.output/name)
@@ -94,6 +126,8 @@ def main():
         aux_reward_coeff=1.,output='actor_raw326 returns15 dimensionless offsets; target_raw326 returns15 limited full absolute joint targets in radians',
         asset_sha256=sha256(source/'assets/sable.xml'),manifest_sha256=sha256(source/'assets/physical_manifest.json'),
         numerical_max_errors=errors,cpu_complete_policy_latency_seconds=elapsed,
+        recorded_trace_validation=trace_validation,cpu_history_clock_policy_latency_seconds=chain_elapsed,
+        latency_scope='Server CPU compute only; history insertion, command normalization, phase update, mirror encoder/actor and joint limits; excludes physical I/O',
         limitations='Simulation export; mass, contact and actuator calibration are not hardware validation. No claim that all16 command dimensions have been learned.',
         created_unix=time.time())
     atomic_json(a.output/'contract.json',contract)

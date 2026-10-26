@@ -16,7 +16,7 @@ from action_schema import ActionSpec
 from observation_schema import HistoryBuffer, proprioception, pack
 from gait_clock import GaitClock, local_phases
 from model_mapping import ModelMapping, heading_velocity, quat_apply, quat_inverse
-from curriculum import sample_velocity_commands
+from curriculum import sample_velocity_commands, MovingStartCurriculum
 from motor_envelope import motor_torques
 
 
@@ -82,6 +82,11 @@ class MigrationRobot(SableRobot):
             [('L_shoulder_pitch', 'R_shoulder_pitch'), ('L_hip_pitch', 'R_hip_pitch')]], device=self.device)
         from step_events import StepEvents
         self.actual_steps = StepEvents(self.num_envs, self.device, self.dt)
+        self.moving_start = None
+        if self.omni and self.cfg.migration.moving_start_training:
+            self.moving_start = MovingStartCurriculum(self.num_envs,self.device,
+                self.cfg.migration.moving_start_fraction,self.cfg.migration.moving_start_hold_s,
+                self.cfg.migration.moving_start_blend_s)
 
     def attach_teacher(self, checkpoint, sha256, student_fraction=0.):
         if self.omni:
@@ -146,7 +151,6 @@ class MigrationRobot(SableRobot):
         self.history.sample(current, self.common_step_counter)
         self.obs_buf = pack(self.history.data, self.commands16, self.clock.values(self.commands16, self.omni))
         self.privileged_obs_buf = self._critic(self.clean_proprio)
-        self._pending_reset_ids = torch.zeros(0, dtype=torch.long, device=self.device)
 
     def _resample_commands(self, ids):
         if not hasattr(self, 'commands16'):
@@ -158,8 +162,23 @@ class MigrationRobot(SableRobot):
             self.commands16[ids, 0] = self.fixed_command
         else:
             sample_velocity_commands(self.commands16, ids, self.cfg.migration.stage, self.cfg.migration.command_ranges)
+            if self.moving_start is not None:
+                self.moving_start.resample(ids,self.commands16[ids,:3],self.episode_length_buf[ids]*self.dt)
+                self.commands16[ids,:3] = self.moving_start.start[ids]
         self.commands[ids, :3] = self.commands16[ids, :3]
         self.commands[ids, 3] = 0.
+
+    def prepare_training_commands(self):
+        if self.moving_start is None or self.command_override is not None:
+            return
+        self.commands16[:,:3] = self.moving_start.value(self.episode_length_buf*self.dt)
+        self.commands[:,:3] = self.commands16[:,:3]
+        # Only current commands/clocks change before the on-policy action.
+        # Reuse the already sampled proprioception and private state.
+        clock = self.clock.values(self.commands16,self.omni)
+        self.obs_buf = pack(self.history.data,self.commands16,clock)
+        self.privileged_obs_buf[:,51:67] = CommandSpec.normalize(self.commands16)
+        self.privileged_obs_buf[:,67:71] = clock
 
     def set_commands(self, commands):
         CommandSpec.validate(commands)
@@ -175,6 +194,9 @@ class MigrationRobot(SableRobot):
         super().reset_idx(ids)
         if not len(ids) or not hasattr(self, 'history'):
             return
+        if self.moving_start is not None:
+            # LeggedRobot samples commands before clearing episode age.
+            self.moving_start.sample_time[ids] = 0.
         self.executed_target[ids] = self.default_dof_pos[:, self.active]
         self.task_speed[ids] = 0.
         self.clock.reset_from_teacher(ids, self.gait_phase_offset[ids], self.commands16[ids])
@@ -235,6 +257,9 @@ class MigrationRobot(SableRobot):
     def _post_physics_step_callback(self):
         LeggedRobot._post_physics_step_callback(self)
         self.gym.refresh_rigid_body_state_tensor(self.sim)
+        # Fresh-reset FK remains authoritative across repeated observations
+        # until physics has actually refreshed the native rigid-body poses.
+        self._pending_reset_ids = torch.zeros(0, dtype=torch.long, device=self.device)
         self._refresh_proprio_state()
         if not self.omni:
             self.commands16[:, :3] = self.commands[:, :3]

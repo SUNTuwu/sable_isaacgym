@@ -49,6 +49,7 @@ def main():
     expected_config=student_config(read_json(parent/'teacher_manifest.json')['run'],a.stage,a.num_envs)
     same_rewards=(parent_config.get('reward_weights')==vars(expected_config.rewards.scales)
                   and parent_config.get('velocity_error_scale_m_s')==expected_config.migration.velocity_error_scale_m_s)
+    same_curriculum=parent_config.get('moving_start_curriculum',{}).get('enabled',False)==(a.stage in ('S3','S5'))
     gate_source=a.acceptance
     if a.stage in ('S3','S5'):
         if continuation:
@@ -74,7 +75,7 @@ def main():
     deadline=(start+datetime.timedelta(seconds=prefs['default_duration_s'])).isoformat()
     cmd=[sys.executable,'-u',str(runtime/'train_ppo.py'),'--run',str(run),'--teacher',str(run/'teacher_manifest.json'),
         '--resume',cp['path'],'--deadline',deadline,'--stage',a.stage,'--num-envs',str(a.num_envs),
-        '--critic-warmup-updates','0' if continuation and same_rewards else '10']
+        '--critic-warmup-updates','0' if continuation and same_rewards and same_curriculum else '10']
     atomic_json(run/'launch.json',{'command':cmd,'deadline':deadline,'preferences':prefs,'parent':cp,'stage':a.stage+'_PPO','automatic_resume':False})
     with (run/'train.log').open('w') as log:training=subprocess.Popen(cmd,stdout=log,stderr=subprocess.STDOUT)
     until=time.time()+150

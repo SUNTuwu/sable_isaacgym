@@ -91,6 +91,18 @@ class LearningTests(unittest.TestCase):
         xy += .01
         self.assertFalse(detector.update(xy, ~contact, clear*0, age, moving).any())
 
+    def test_moving_start_curriculum_preserves_goal_and_direct_samples(self):
+        from curriculum import MovingStartCurriculum
+        c=MovingStartCurriculum(5,'cpu')
+        target=torch.tensor([[0.,.04,0.],[-.04,0.,0.],[0.,0.,.35],[0.,0.,0.],[.105,0.,0.]])
+        c.resample(torch.arange(5),target,torch.zeros(5),draws=torch.tensor([0.,1.,0.,0.,0.]))
+        first=c.value(torch.zeros(5))
+        torch.testing.assert_close(first[[0,2]],torch.tensor([[.105,0.,0.],[.105,0.,0.]]))
+        torch.testing.assert_close(first[[1,3,4]],target[[1,3,4]])
+        torch.testing.assert_close(c.value(torch.full((5,),4.)),target)
+        torch.testing.assert_close(c.value(torch.full((5,),3.)),(first+target)*.5)
+        torch.testing.assert_close(c.target,target)
+
     def test_terminal_bootstrap_and_actual_ppo_update(self):
         torch.manual_seed(11)
         policy = HistoryActorCritic(actor_hidden_dims=(32, 16), critic_hidden_dims=(32, 16))
