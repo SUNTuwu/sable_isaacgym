@@ -11,6 +11,7 @@ import sys
 import tarfile
 import time
 from run_io import atomic_json,sha256,read_json
+from migration_config import student_config
 
 ROOT=Path('/root/gpufree-data/projects/sable-isaacgym')
 
@@ -21,6 +22,7 @@ def main():
     p.add_argument('--stage',choices=['S2','S3','S5'],required=True)
     p.add_argument('--acceptance',type=Path)
     p.add_argument('--checkpoint',type=Path)
+    p.add_argument('--select-best-regression',action='store_true')
     p.add_argument('--num-envs',type=int,default=1024)
     a=p.parse_args()
     parent=a.parent_run.resolve()
@@ -33,12 +35,20 @@ def main():
     receipt=read_json(parent/'backup_receipt.json')
     assert sha256(receipt['archive'])==receipt['sha256']
     cp=read_json(parent/'checkpoint.json')
+    selection=None
+    if a.select_best_regression:
+        if a.stage!='S2' or a.checkpoint:raise ValueError('Automatic regression selection is S2-only and excludes --checkpoint')
+        from select_regression_checkpoint import select_checkpoint
+        cp,selection=select_checkpoint(parent,read_json(parent/'baseline_metrics.json'))
     if a.checkpoint:
         assert a.checkpoint.resolve().parent==parent/'checkpoints'
         cp=dict(path=str(a.checkpoint.resolve()),sha256=sha256(a.checkpoint))
     assert sha256(cp['path'])==cp['sha256']
     parent_config=read_json(parent/'config.json',{})
     continuation=parent_config.get('stage')==a.stage and 'on-policy PPO' in parent_config.get('algorithm','')
+    expected_config=student_config(read_json(parent/'teacher_manifest.json')['run'],a.stage,a.num_envs)
+    same_rewards=(parent_config.get('reward_weights')==vars(expected_config.rewards.scales)
+                  and parent_config.get('velocity_error_scale_m_s')==expected_config.migration.velocity_error_scale_m_s)
     gate_source=a.acceptance
     if a.stage in ('S3','S5'):
         if continuation:
@@ -56,6 +66,7 @@ def main():
     shutil.copytree(source/'tests',runtime/'tests',ignore=shutil.ignore_patterns('__pycache__'))
     for n in ('teacher_manifest.json','baseline_metrics.json'):shutil.copy2(parent/n,run/n)
     if gate_source:shutil.copy2(gate_source,run/'parent_acceptance.json')
+    if selection:atomic_json(run/'parent_checkpoint_selection.json',selection)
     files={str(f.relative_to(runtime)):sha256(f) for f in runtime.rglob('*') if f.is_file()}
     atomic_json(run/'runtime_manifest.json',{'files':files,'created_unix':time.time()})
     prefs=read_json(ROOT/'results/legged_gym/training_preferences.json')
@@ -63,7 +74,7 @@ def main():
     deadline=(start+datetime.timedelta(seconds=prefs['default_duration_s'])).isoformat()
     cmd=[sys.executable,'-u',str(runtime/'train_ppo.py'),'--run',str(run),'--teacher',str(run/'teacher_manifest.json'),
         '--resume',cp['path'],'--deadline',deadline,'--stage',a.stage,'--num-envs',str(a.num_envs),
-        '--critic-warmup-updates','0' if continuation else '10']
+        '--critic-warmup-updates','0' if continuation and same_rewards else '10']
     atomic_json(run/'launch.json',{'command':cmd,'deadline':deadline,'preferences':prefs,'parent':cp,'stage':a.stage+'_PPO','automatic_resume':False})
     with (run/'train.log').open('w') as log:training=subprocess.Popen(cmd,stdout=log,stderr=subprocess.STDOUT)
     until=time.time()+150

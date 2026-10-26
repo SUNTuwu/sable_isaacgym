@@ -312,6 +312,10 @@ class MigrationRobot(SableRobot):
         velocity = self.heading_linear_velocity if self.omni else self.base_lin_vel[:, :2]
         return torch.exp(-(self.commands[:, :2]-velocity).square().sum(1)/self.cfg.rewards.tracking_sigma)
 
+    def _reward_velocity_error(self):
+        velocity = self.heading_linear_velocity if self.omni else self.base_lin_vel[:, :2]
+        return ((velocity-self.commands[:, :2])/self.cfg.migration.velocity_error_scale_m_s).square().sum(1)
+
     def _reward_yaw_rate_error(self):
         actual = self.heading_yaw_rate if self.omni else self.base_ang_vel[:, 2]
         return (actual-self.commands[:, 2]).square()

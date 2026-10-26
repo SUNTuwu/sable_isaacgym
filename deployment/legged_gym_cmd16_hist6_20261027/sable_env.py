@@ -367,7 +367,7 @@ class SableRobot(LeggedRobot):
         posture=torch.zeros_like(self.rew_buf)
         for name,function in zip(self.reward_names,self.reward_functions):
             value=function()*self.reward_scales[name]
-            if name in ('waist_vertical_acceleration','ankle_event_angle','yaw_rate_error','stride_shortfall','stride_variance','hind_landing_width','proximal_acceleration_peak','swing_peak_balance','swing_peak_shortfall'):posture+=value
+            if name in ('velocity_error','waist_vertical_acceleration','ankle_event_angle','yaw_rate_error','stride_shortfall','stride_variance','hind_landing_width','proximal_acceleration_peak','swing_peak_balance','swing_peak_shortfall'):posture+=value
             else:self.rew_buf+=value
             self.episode_sums[name]+=value
         if self.cfg.rewards.only_positive_rewards:self.rew_buf.clamp_(min=0.)

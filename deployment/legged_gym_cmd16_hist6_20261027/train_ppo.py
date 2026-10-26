@@ -71,6 +71,7 @@ def main():
         algorithm='on-policy PPO; no teacher/reference execution; separate auxiliary encoder updates',
         critic_warmup_updates=a.critic_warmup_updates, optimizer_restore=False,
         command_ranges=cfg.migration.command_ranges, reward_weights=vars(cfg.rewards.scales),
+        velocity_error_scale_m_s=cfg.migration.velocity_error_scale_m_s,
         auxiliary_labels='same-time ROOT velocity, pre-reset next clean proprioception, done mask',
         timeout_bootstrap='pre-reset terminal-state critic value; exactly once')
     atomic_json(a.run/'config.json', config)
