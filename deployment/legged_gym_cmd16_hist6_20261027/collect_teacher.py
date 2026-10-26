@@ -74,7 +74,15 @@ def main():
     fields = {k: [] for k in ('raw', 'target', 'velocity', 'next_proprio', 'done')}
     shard_paths = []
     started = time.time()
-    obs, _ = env.reset()
+    # Include the true initial decision at t=0. BaseTask.reset() performs a hidden
+    # zero-action physics interval, which omitted the student's deployment start.
+    env.reset_idx(torch.arange(env.num_envs, device=env.device))
+    env.base_quat = env.root_states[:, 3:7]
+    env.base_lin_vel = quat_rotate_inverse(env.base_quat, env.root_states[:, 7:10])
+    env.base_ang_vel = quat_rotate_inverse(env.base_quat, env.root_states[:, 10:13])
+    env.projected_gravity = quat_rotate_inverse(env.base_quat, env.gravity_vec)
+    env.compute_observations()
+    obs = env.get_observations()
     episodes = 0
     with torch.no_grad():
         for step in range(round(a.seconds / env.dt)):
@@ -107,6 +115,7 @@ def main():
         'seconds_per_env': a.seconds, 'substep_target_observations': substep_count[0],
         'samples': round(a.seconds/env.dt)*a.num_envs, 'shards': shard_paths,
         'reset_count': episodes, 'wall_seconds': time.time()-started, 'measurements': measurements,
+        'initial_observation': 'true_reset_state_before_first_physics_interval',
         'supervision': 'same-time ROOT velocity; complete clamped final-substep target; next clean proprioception masked at resets'})
     atomic_json(a.output / 'status.json', {'status': 'complete', 'samples': round(a.seconds/env.dt)*a.num_envs,
                                          'updated_unix': time.time()})

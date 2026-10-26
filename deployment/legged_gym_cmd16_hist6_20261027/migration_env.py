@@ -74,6 +74,9 @@ class MigrationRobot(SableRobot):
         self.terminal_proprio = self.clean_proprio.clone()
         self.terminal_velocity = torch.zeros(self.num_envs, 3, device=self.device)
         self.teacher_target_label = torch.zeros(self.num_envs, 15, device=self.device)
+        self._pending_reset_ids = torch.zeros(0, dtype=torch.long, device=self.device)
+        self.height_body_indices = torch.tensor([[self.body_names.index(n) for n in names] for names in
+            [('L_shoulder_pitch', 'R_shoulder_pitch'), ('L_hip_pitch', 'R_hip_pitch')]], device=self.device)
 
     def attach_teacher(self, checkpoint, sha256, student_fraction=0.):
         if self.omni:
@@ -100,8 +103,18 @@ class MigrationRobot(SableRobot):
             self.obs_scales.ang_vel, self.obs_scales.dof_vel)
 
     def _critic(self, clean):
-        heights, roll, feet, lowest = self.mapping.task_measurements(self.root_states[:, :3],
-            self.base_quat, self.dof_pos, self.dof_names)
+        # Native hinge-origin poses agree with asset FK (verified in the GPU
+        # probe). Only freshly reset bodies need FK before the next physics step.
+        heights = self.rigid_states[:, self.height_body_indices, 2].mean(-1)
+        x, y, z, w = self.base_quat.unbind(-1)
+        roll = torch.atan2(2*(y*z+w*x), 1-2*(x*x+y*y))
+        feet = self.foot_center_world.clone() if hasattr(self, 'foot_center_world') else torch.zeros(self.num_envs, 4, 3, device=self.device)
+        lowest = self.foot_clearance.clone()
+        ids = self._pending_reset_ids
+        if len(ids):
+            h, r, f, low = self.mapping.task_measurements(self.root_states[ids, :3],
+                self.base_quat[ids], self.dof_pos[ids], self.dof_names)
+            heights[ids], roll[ids], feet[ids], lowest[ids] = h, r, f, low
         self.task_heights = heights
         self.task_chest_roll = roll
         self.task_foot_centers = feet
@@ -128,6 +141,7 @@ class MigrationRobot(SableRobot):
         self.history.sample(current, self.common_step_counter)
         self.obs_buf = pack(self.history.data, self.commands16, self.clock.values(self.commands16, self.omni))
         self.privileged_obs_buf = self._critic(self.clean_proprio)
+        self._pending_reset_ids = torch.zeros(0, dtype=torch.long, device=self.device)
 
     def _resample_commands(self, ids):
         if not hasattr(self, 'commands16'):
@@ -160,6 +174,7 @@ class MigrationRobot(SableRobot):
         self.task_speed[ids] = 0.
         self.clock.reset_from_teacher(ids, self.gait_phase_offset[ids])
         self.history.reset(ids)
+        self._pending_reset_ids = ids.clone()
         if self.teacher is not None:
             self.teacher.reset(ids)
 
