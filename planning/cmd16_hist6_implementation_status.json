@@ -1,5 +1,5 @@
 {
-  "updated_unix": 1793051931.668105,
+  "updated_unix": 1793053731.4765966,
   "goal_complete": false,
   "teacher": {
     "run": "stand5_20261027_v44_stride80_all",
@@ -7,15 +7,15 @@
     "verified": true,
     "manifest": "planning/cmd16_hist6_baseline/teacher_manifest.json"
   },
-  "current_run": "runs/cmd16_hist6_s2_ppo_20261027_054920",
-  "current_deadline": "2026-10-27T06:09:20.109633+08:00",
+  "current_run": "runs/cmd16_hist6_s3_ppo_20261027_061709",
+  "current_deadline": "2026-10-27T06:37:09.436660+08:00",
   "current_processes": {
-    "supervisor": 395015,
-    "training": 395331,
-    "evaluation_video_monitor": 395397
+    "supervisor": 407480,
+    "training": 407484,
+    "evaluation_video_monitor": 407549
   },
   "pre_migration_commit": "a95854cf4042b7994731e7a02d9761be8fd195d7",
-  "latest_pushed_commit": "aa60082",
+  "latest_pushed_commit": "a868850",
   "completed": [
     "326/90/92/15 schema and six-frame cache",
     "full raw-input mirror projection and history encoder",
@@ -38,13 +38,16 @@
     "Post-clipping velocitycost tested with realaggregator and twoGPU PPOupdates",
     "Phase-offset circular smoothing wired into clocks/rewards; constantlegacyclocks exactidentity; crossing0/1 unitcheck",
     "Rich pre-reset50Hz telemetry forpose,contact,slipproxy,velocity/acceleration/torque/work, with scope labels",
-    "S3/S5 acceptance additionally requiresactualfour-foot steps; slidingalonecannotpass"
+    "S3/S5 acceptance additionally requiresactualfour-foot steps; slidingalonecannotpass",
+    "S2 three-seed independent regression accepted",
+    "S3 actualnewcommand baseline andtwoGPU PPOupdates verified",
+    "Formal S3 started with acceptedcheckpoint, inheritedproof andfresh frozenruntime",
+    "14-scenario velocity evaluator includeslateral/yawreversal andstop; segment responsechecks added"
   ],
   "not_achieved": [
-    "S2 independent walking regression",
-    "S3 translation and yaw learning",
-    "S5 measured frequency switching",
-    "multi-seed acceptance and deployment package"
+    "S3 translation/yaw tracking and actual motion fromrest in reverse/lateral/pureturn",
+    "S5 actual footfrequency switching",
+    "Final accepted-model deployment package and recorded-log parity"
   ],
   "findings": [
     "First BC independent evaluation: all walking groups failed, static group survived; overall4/24. Preserve raw reports.",
@@ -59,15 +62,21 @@
     "First pure PPO completed223 at0547. Survival improved, but laterXY RMSE worsened to0.057–0.065m/s; final/archive all82filesverified.",
     "Second S2 selects first-PPO23 by independent regression, not reward; adds velocity_error=-2*sum((xy_actual-xy_command)/0.05)^2 afterpositiveclipping.",
     "Same-state torque comparison invoked the exact originalv44 method for120substeps across3speedcases; maximumdifference1.49e-7Nm.",
-    "Second-PPO34 independent24env16s:24/24 survival, XYRMSE [.05026,.04505,.04225,.01005,.04195,.04771]; not yetthree-seed accepted."
+    "Second-PPO34 independent24env16s:24/24 survival, XYRMSE [.05026,.04505,.04225,.01005,.04195,.04771]; not yetthree-seed accepted.",
+    "S2 complete independent proof:3seeds947/1147/1347,48env each,16seconds,all144survived andallregressionthresholdspassed.",
+    "S3 untrained transferbaseline12scenarios48env16s seed2147:48/48survived, butreverse/lateral/pureturn actualvelocitiesnearzero;combined alreadyrespondedtoyaw whilemovingforward.",
+    "FormalS3 launched061709,1024env,deadline063709; originalforward/stride/event-angle costs removed perplan, directXYcostretained and trueheading/yawused.",
+    "S3 checkpoint35 independent14scenarios56env16s allsurvived; forwardcommandsfollowbetter, newpuremotionsstillapproximatelyzero andfailtruefootstepchecks.",
+    "S3/S5 evaluator nowrecords eachvelocitycommandsegment and requiresobserved response >=50% ofcommandchange; smallRMSEwithconstantdefaultspeedcannotpass."
   ],
   "next_work": [
-    "Revalidate live secondS2 PPO and candidate34 acceptance process398906; do not change currentfrozenruntime.",
-    "If candidate34 three-seed S2 acceptance passes, stop/save currentround atsafeupdate and launch freshS3 fromacceptedcheckpoint34 afterverifiedparentarchive.",
-    "S3 freshcontroller baseline andrealPPOsmoke beforefullround; allcommandframes andactualstepgates alreadyimplemented.",
-    "If candidate34 fails, inspectper-scenario evidence and latestcheckpoints, continuingnewcostlearning withoutrelaxingthresholds.",
-    "Developmentsource richtelemetry andphasefilter changes are notin currentfrozenrun.12CPUtests plusGPU2s probespassed.",
-    "Remaininggoal: actualtranslation/yaw learning andfrequency switching; completionunproven."
+    "Revalidate liveS3 processes407480/407484/407549 and latestindependent checkpoint reports; freeze currentruntime.",
+    "Assess pure reverse/lateral/yaw learning. If they remainstanding despite goodforwardbehavior, consider gradual command curriculum that beginssome trainingepisodeswithstudentforwardmotion then transitions to requestednewcommands; keep independenttestsfromrest and never useteacher to supervisenewdirections.",
+    "Consider command-aligned motion reward or reward-term diagnostics only when currentlearning evidence supports achange; currentS3 isfirst20minround.",
+    "S3 acceptance requires3seeds,all14scenarios,per-segment velocityresponse,actualfour-foot stepping anddefaultcadence. S5 lateradds.8/1.2Hz switchingandreturn over28s.",
+    "Export finalaccepted model withrecorded raw326/actions/targets comparisons; currentexportprobe usesrandom rawinputs andCPUtiming, real-log andGPU parity remain toadd.",
+    "Improve S3/S5 videos toshownewcommandscenarios; current integratedperiodic video alwaysshowsfirstforward09environment.",
+    "Remaininggoal isnotcomplete; no full16-commandability orhardwarevalidation claim."
   ],
   "evidence": [
     "results/cmd16_hist6/preflight/teacher_adapter.json",
@@ -84,9 +93,13 @@
     "results/cmd16_hist6/control_and_velocity_reward_probe.json",
     "results/cmd16_hist6/velocity_cost_smoke_validation.json",
     "results/cmd16_hist6/rich_evaluation_smoke.json",
-    "results/cmd16_hist6/preflight/phase_smoothing_no_reference.json"
+    "results/cmd16_hist6/preflight/phase_smoothing_no_reference.json",
+    "planning/cmd16_hist6_baseline/s2_acceptance_20261027.json",
+    "runs/cmd16_hist6_s3_baseline_20261027_060415/baseline.json",
+    "results/cmd16_hist6/s3_ppo_smoke_validation.json",
+    "results/cmd16_hist6/transition_evaluator_smoke.json"
   ],
-  "current_status": "Second S2 PPO with direct post-clipping XY velocity cost; candidate34 now in three-seed acceptance",
+  "current_status": "S2 accepted144/144 across3seeds; S3 fullomni PPO live from acceptedcheckpoint34",
   "dagger_final": {
     "iteration": 15040,
     "sha256": "e6dac5a717c43de43737bc16b57c7f1b015e8de5a014e2b2d039ba4817d16133",
@@ -100,5 +113,12 @@
       "1147": 0.9791666865348816
     }
   },
-  "current_acceptance": "runs/cmd16_hist6_s2_acceptance_20261027_055701/reports"
+  "current_acceptance": "planning/cmd16_hist6_baseline/s2_acceptance_20261027.json",
+  "s2_accepted_checkpoint": {
+    "path": "runs/cmd16_hist6_s2_ppo_20261027_054920/checkpoints/model_000034.pt",
+    "sha256": "c227f0dafab1a3c70d47ef7b0c66c2853ea01873bf6b71c0c2a0a5f9e49467db",
+    "evidence": "runs/cmd16_hist6_s2_acceptance_20261027_055701/reports/assessment.json",
+    "survived": 144,
+    "episodes": 144
+  }
 }
