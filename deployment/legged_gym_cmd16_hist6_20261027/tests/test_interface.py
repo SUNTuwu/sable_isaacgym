@@ -37,6 +37,10 @@ class InterfaceTests(unittest.TestCase):
         updated = pack(h.data, self.commands, torch.zeros(7, 4))
         self.assertTrue(torch.equal(raw[:, :306], updated[:, :306]))
         self.assertFalse(torch.equal(raw[:, 306], updated[:, 306]))
+        h.reset(torch.tensor([2]))
+        h.sample(p + 400, 2)
+        self.assertTrue(torch.equal(h.data[2], (p[2]+400)[None].expand(6, -1)))
+        self.assertTrue(torch.equal(h.data[0, 0], p[0]+300))
 
     def test_mirror_and_clock_rebasing(self):
         self.commands[:, 6:9] = torch.rand(7, 3)
@@ -122,6 +126,28 @@ class InterfaceTests(unittest.TestCase):
         xy, yaw = heading_velocity(q, v, torch.tensor([[0., 0., .4]]))
         torch.testing.assert_close(xy, torch.tensor([[1., 0.]]), atol=1e-6, rtol=1e-6)
         torch.testing.assert_close(yaw, torch.tensor([.4]), atol=1e-6, rtol=1e-6)
+
+    def test_mirror_matches_physical_fk(self):
+        base = Path(__file__).resolve().parents[1] / 'assets'
+        m = ModelMapping(base/'sable.xml', base/'physical_manifest.json')
+        names = list(m.manifest['default_angles'])
+        default = torch.tensor([m.manifest['default_angles'][name] for name in names])
+        active = ActionSpec.indices(names, 'cpu')
+        offset = torch.randn(8, 15)*.03
+        q = default.repeat(8, 1)
+        reflected = q.clone()
+        q[:, active] += offset
+        reflected[:, active] += ActionSpec.mirror(offset)
+        passive, hip = names.index('R_hip_roll_mimic'), names.index('hip_roll')
+        q[:, passive] = -q[:, hip]
+        reflected[:, passive] = -reflected[:, hip]
+        position = torch.tensor([m.manifest['init_position']]).repeat(8, 1)
+        rotation = torch.tensor([m.manifest['init_quat_xyzw']]).repeat(8, 1)
+        h, _, feet, low = m.task_measurements(position, rotation, q, names)
+        hm, _, fm, lm = m.task_measurements(position, rotation, reflected, names)
+        torch.testing.assert_close(fm, feet[:, [1, 0, 3, 2]]*torch.tensor([1., -1., 1.]), atol=2e-6, rtol=2e-6)
+        torch.testing.assert_close(hm, h, atol=2e-6, rtol=2e-6)
+        torch.testing.assert_close(lm, low[:, [1, 0, 3, 2]], atol=2e-6, rtol=2e-6)
 
 
 if __name__ == '__main__':

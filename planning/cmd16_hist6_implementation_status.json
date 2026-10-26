@@ -1,0 +1,60 @@
+{
+  "updated_unix": 1793048601.8261964,
+  "goal_complete": false,
+  "teacher": {
+    "run": "stand5_20261027_v44_stride80_all",
+    "iteration": 9470,
+    "verified": true,
+    "manifest": "planning/cmd16_hist6_baseline/teacher_manifest.json"
+  },
+  "current_run": "runs/cmd16_hist6_s2_dagger_20261027_050031",
+  "current_deadline": "2026-10-27T05:20:32.001302+08:00",
+  "current_processes": {
+    "supervisor": 372362,
+    "training": 372371,
+    "evaluation_video_monitor": 372471
+  },
+  "pre_migration_commit": "a95854cf4042b7994731e7a02d9761be8fd195d7",
+  "latest_pushed_commit": "72ad576",
+  "completed": [
+    "326/90/92/15 schema and six-frame cache",
+    "full raw-input mirror projection and history encoder",
+    "teacher final checkpoint/archive verification",
+    "512000 complete-target teacher samples,64000 held-out",
+    "S1 BC trained and archived at90050",
+    "independent no-reference execution probe",
+    "teacher-adapter24env16s survival24/24",
+    "CPU tests and TorchScript numerical comparison",
+    "11111 migration dashboard and180s evaluation/video monitor",
+    "two real DAgger updates smoke; formal DAgger now live"
+  ],
+  "not_achieved": [
+    "S2 independent walking regression",
+    "S3 translation and yaw learning",
+    "S5 measured frequency switching",
+    "multi-seed acceptance and deployment package"
+  ],
+  "findings": [
+    "First BC independent evaluation: all walking groups failed, static group survived; overall4/24. Preserve raw reports.",
+    "Student error along live teacher trajectories averaged0.00225rad, but true reset first decision averaged0.07894rad.",
+    "Initial S1 collector used BaseTask.reset hidden physics step; development collector now includes true t=0. Old dataset/runtime remain immutable.",
+    "DAgger retains and oversamples true startup observations plus student-visited states. Mixtures are supervised data, never ordinary PPO.",
+    "Native rigid-body origins agree with FK within0.8micrometers; development critic uses native poses except fresh resets to reduce overhead."
+  ],
+  "next_work": [
+    "Inspect current real DAgger processes and independent reports; do not restart on monitoring timeout.",
+    "Continue building actual PPO with named auxiliary rollout labels and terminal-state timeout bootstrap.",
+    "Before S3, finish omnidirectional moving/contact/width handling; do not leave forward-only eligibility gates active for pure yaw/lateral tasks.",
+    "Before S5, normalize phase-event costs by per-env commanded period; evaluate real landing frequency and transition differences, not configured clocks.",
+    "Strengthen stage_gate: require all named scenarios, mean command directional gain, multi-seed survival and frequency response; current helper is provisional and must not declare goal complete.",
+    "Record final video/evaluation before archiving formal rounds; retain all parent hashes."
+  ],
+  "evidence": [
+    "results/cmd16_hist6/preflight/teacher_adapter.json",
+    "results/cmd16_hist6/preflight/no_reference.json",
+    "results/cmd16_hist6/preflight/fast_critic_no_reference.json",
+    "runs/cmd16_hist6_validation_20261027/teacher_adapter_24env16s.json",
+    "results/cmd16_hist6/student_live_teacher_diagnostic.json",
+    "results/cmd16_hist6/dagger_smoke_validation.json"
+  ]
+}
