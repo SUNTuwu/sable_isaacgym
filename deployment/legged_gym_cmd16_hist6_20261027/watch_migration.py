@@ -37,12 +37,14 @@ def main():
                   'checkpoint_sha256': cp['sha256'], 'started_unix': start, 'final': terminal}
         atomic_json(record, dict(marker, status='evaluating'))
         output = a.run/'evaluations'/('independent_%06d_%s.json' % (cp['iteration'],stamp))
+        directory = ROOT/'results/legged_gym/videos'/('%s_%06d_%s'%(a.run.name,cp['iteration'],stamp))
         command = [sys.executable, str(runtime/'evaluate_migration.py'), '--checkpoint', cp['path'],
             '--teacher', str(teacher), '--output', str(output), '--suite', a.stage,
-            '--envs-per-scenario', '4', '--seconds', '16']
+            '--envs-per-scenario', '4', '--seconds', '28' if a.stage=='S5' else '16',
+            '--video-dir',str(directory)]
         try:
             with (a.run/'independent_evaluation.log').open('a') as log:
-                result = subprocess.run(command, stdout=log, stderr=subprocess.STDOUT, timeout=240)
+                result = subprocess.run(command, stdout=log, stderr=subprocess.STDOUT, timeout=360)
             if result.returncode:
                 raise RuntimeError('Evaluator exit%d'%result.returncode)
             report = read_json(output)
@@ -52,15 +54,6 @@ def main():
                 low_survival_count = low_survival_count+1 if report['survival_fraction']<.5 else 0
             if low_survival_count >= 3 and not terminal:
                 (a.run/'STOP').write_text('Three independent checkpoint evaluations below50% survival; save for diagnosis, do not resume this run.\n')
-            directory = ROOT/'results/legged_gym/videos'/('%s_%06d_%s'%(a.run.name,cp['iteration'],stamp))
-            directory.mkdir(parents=True,exist_ok=True)
-            atomic_json(record, dict(marker,status='recording'))
-            with (directory/'record.log').open('w') as log:
-                result = subprocess.run([sys.executable,str(runtime/'record_migration_video.py'),
-                    '--checkpoint',cp['path'],'--teacher',str(teacher),'--output-dir',str(directory),
-                    '--stage',a.stage,'--seconds','8'],stdout=log,stderr=subprocess.STDOUT,timeout=240)
-            if result.returncode:
-                raise RuntimeError('Recorder exit%d'%result.returncode)
             receipt = read_json(directory/'recording_receipt.json')
             assert receipt['checkpoint_sha256']==cp['sha256'] and sha256(receipt['video'])==receipt['video_sha256']
             subprocess.run(['ffmpeg','-v','error','-i',receipt['video'],'-f','null','-'],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.PIPE)

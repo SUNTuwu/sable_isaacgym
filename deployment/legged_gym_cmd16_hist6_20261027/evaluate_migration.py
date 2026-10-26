@@ -14,38 +14,7 @@ from teacher_adapter import verify_teacher_manifest
 from run_io import atomic_json, sha256
 
 
-def scenarios(suite):
-    old = [('forward09', [.09, 0., 0., 1.]), ('forward105', [.105, 0., 0., 1.]),
-           ('forward12', [.12, 0., 0., 1.])]
-    if suite == 'forward':
-        return old
-    base = old + [('stop', [0., 0., 0., 1.]), ('start_stop', [0., 0., 0., 1.]),
-                  ('speed_switch', [.09, 0., 0., 1.])]
-    if suite == 'S2':
-        return base
-    base += [('reverse', [-.04, 0., 0., 1.]), ('left', [0., .04, 0., 1.]),
-             ('right', [0., -.04, 0., 1.]), ('turn_left', [0., 0., .35, 1.]),
-             ('turn_right', [0., 0., -.35, 1.]), ('combined', [.07, .03, .25, 1.])]
-    if suite == 'S5':
-        base += [('frequency08', [.09, 0., 0., .8]), ('frequency12', [.09, 0., 0., 1.2]),
-                 ('frequency_switch', [.09, 0., 0., .8])]
-    return base
-
-
-def scheduled_commands(name, initial, t):
-    values = list(initial)
-    changed = 0.
-    if name == 'start_stop':
-        if t >= 11: values[0], changed = .09, 11.
-        elif t >= 8: values[0], changed = 0., 8.
-        elif t >= 2: values[0], changed = .105, 2.
-    if name == 'speed_switch':
-        if t >= 10: values[0], changed = .09, 10.
-        elif t >= 5: values[0], changed = .12, 5.
-    if name == 'frequency_switch':
-        if t >= 20: values[3], changed = .8, 20.
-        elif t >= 8: values[3], changed = 1.2, 8.
-    return values, changed
+from evaluation_scenarios import scenarios, scheduled_commands
 
 
 def main():
@@ -58,6 +27,7 @@ def main():
     p.add_argument('--envs-per-scenario', type=int, default=8)
     p.add_argument('--seconds', type=float, default=16.)
     p.add_argument('--seed', type=int, default=947)
+    p.add_argument('--video-dir', type=Path)
     a = p.parse_args()
     if not a.teacher_control and not a.checkpoint:
         p.error('--checkpoint is required for student evaluation')
@@ -71,7 +41,7 @@ def main():
         cfg.reference.file = '/intentionally_absent_student_reference.json'
     torch.manual_seed(a.seed)
     np.random.seed(a.seed)
-    env = create_migration_env(cfg, noise=False)
+    env = create_migration_env(cfg, noise=False, camera=bool(a.video_dir))
     env.reset_noise = .015
     env.capture_eval = True
     if a.teacher_control:
@@ -86,6 +56,10 @@ def main():
         iteration = cp['iter']
         checkpoint_sha = sha256(a.checkpoint)
     obs, _ = env.reset()
+    video = None
+    if a.video_dir:
+        from evaluation_video import EvaluationVideo
+        video = EvaluationVideo(env,a.video_dir,a.checkpoint,iteration,a.seed)
     commands = env.commands16.clone()
     alive = torch.ones(n, device=env.device, dtype=torch.bool)
     duration = torch.zeros(n, device=env.device)
@@ -116,6 +90,8 @@ def main():
             action = torch.zeros(n, 15, device=env.device) if policy is None else policy.act_inference(obs)
             obs, _, _, done, _ = env.step(action)
             s = env.eval_snapshot
+            if video is not None:
+                video.sample(step,done,s,commands[0])
             world_velocity = quat_apply(s['base_quat'], s['velocity_local'])
             world_omega = quat_apply(s['base_quat'], s['angular_velocity_local'])
             xy_heading, yaw_heading = heading_velocity(s['base_quat'], world_velocity, world_omega)
@@ -148,6 +124,7 @@ def main():
                          'interval_s': float(interval[e, f]) if previous >= 0 else None}
                 # Intervals straddling command changes are transition data, not steady frequency evidence.
                 _, changed = scheduled_commands(event['scenario'], groups[e//a.envs_per_scenario][1], t)
+                event['segment_start_s'] = changed
                 event['steady_interval'] = previous >= max(1., changed+.75)
                 events.append(event)
             last_landing[qualified] = t+env.dt
@@ -182,9 +159,17 @@ def main():
     for name, initial in groups:
         if not name.startswith('frequency'):
             continue
-        for target in sorted({e['command_frequency_hz'] for e in events if e['scenario']==name}):
-            intervals = [e['interval_s'] for e in events if e['scenario']==name and e['command_frequency_hz']==target and e['steady_interval'] and e['interval_s']]
+        segments = [(0., initial[3])] if name != 'frequency_switch' else [(0., .8), (8., 1.2), (20., .8)]
+        for changed, target in segments:
+            selected = [e for e in events if e['scenario']==name and abs(e['command_frequency_hz']-target)<1e-5 and e['segment_start_s']==changed and e['steady_interval'] and e['interval_s']]
+            intervals = [e['interval_s'] for e in selected]
+            feet = []
+            for foot in range(4):
+                fi = [e['interval_s'] for e in selected if e['foot']==foot]
+                feet.append({'foot':foot, 'measured_frequency_hz':float(1/np.median(fi)) if fi else None,
+                             'interval_count':len(fi), 'environments':len({e['environment'] for e in selected if e['foot']==foot})})
             frequencies.append({'name': name, 'command_frequency_hz': target,
+                'segment_start_s':changed, 'feet':feet,
                 'measured_frequency_hz': float(1/np.median(intervals)) if intervals else None,
                 'interval_count': len(intervals)})
     result = {'schema': 'sable-cmd16-independent-evaluation/1', 'iteration': iteration,
@@ -200,6 +185,9 @@ def main():
         'created_unix': time.time(), 'wall_seconds': time.time()-started, 'accepted_locomotion': False,
         'measurement_scope': '20ms control-rate samples; original episodes only; genuine2mm/60ms/5mm unsigned landing events; missing events remain missing'}
     a.output.parent.mkdir(parents=True, exist_ok=True)
+    if video is not None:
+        video.close()
+        result['video_receipt'] = str(a.video_dir/'recording_receipt.json')
     atomic_json(a.output, result)
     print(json.dumps({k:v for k,v in result.items() if k not in ('events','trace','body_names','dof_names')}), flush=True)
     env.gym.destroy_sim(env.sim)

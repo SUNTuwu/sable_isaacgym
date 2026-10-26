@@ -1,5 +1,5 @@
 {
-  "updated_unix": 1793048601.8261964,
+  "updated_unix": 1793049791.123865,
   "goal_complete": false,
   "teacher": {
     "run": "stand5_20261027_v44_stride80_all",
@@ -26,7 +26,14 @@
     "teacher-adapter24env16s survival24/24",
     "CPU tests and TorchScript numerical comparison",
     "11111 migration dashboard and180s evaluation/video monitor",
-    "two real DAgger updates smoke; formal DAgger now live"
+    "two real DAgger updates smoke; formal DAgger now live",
+    "Teacher-free PPO runner with terminal-state timeout bootstrap and named auxiliary labels",
+    "CPU10tests; real GPU PPO updates at32env and1024env; actor andcritic changed, no reference calls",
+    "Encoder update rollback and reduced learning rate when policy KL exceeds0.01",
+    "Omnidirectional motion activation and unsigned true-air landing events",
+    "Fail-closed three-seed acceptance with per-foot actual frequency switches",
+    "Complete raw326 TorchScript and fulltarget export numerical consistency; exported candidate notaccepted",
+    "Combined independent evaluation/video GPU smoke; actualsource retained"
   ],
   "not_achieved": [
     "S2 independent walking regression",
@@ -42,12 +49,10 @@
     "Native rigid-body origins agree with FK within0.8micrometers; development critic uses native poses except fresh resets to reduce overhead."
   ],
   "next_work": [
-    "Inspect current real DAgger processes and independent reports; do not restart on monitoring timeout.",
-    "Continue building actual PPO with named auxiliary rollout labels and terminal-state timeout bootstrap.",
-    "Before S3, finish omnidirectional moving/contact/width handling; do not leave forward-only eligibility gates active for pure yaw/lateral tasks.",
-    "Before S5, normalize phase-event costs by per-env commanded period; evaluate real landing frequency and transition differences, not configured clocks.",
-    "Strengthen stage_gate: require all named scenarios, mean command directional gain, multi-seed survival and frequency response; current helper is provisional and must not declare goal complete.",
-    "Record final video/evaluation before archiving formal rounds; retain all parent hashes."
+    "Inspect final DAgger evaluation and three-seed acceptance; verify parent archive before next fresh round.",
+    "If S2 fails, use fresh student-only PPO atoriginalcommands; S3 launch requires explicit S2 assessment pass.",
+    "Continue S3 translation/yaw thenS5frequency; physical measured acceptance remainsrequired.",
+    "Keep monitoring180s andfinalvideos; do not edit frozen runtimes or resumefrozenrounds."
   ],
   "evidence": [
     "results/cmd16_hist6/preflight/teacher_adapter.json",
@@ -55,6 +60,19 @@
     "results/cmd16_hist6/preflight/fast_critic_no_reference.json",
     "runs/cmd16_hist6_validation_20261027/teacher_adapter_24env16s.json",
     "results/cmd16_hist6/student_live_teacher_diagnostic.json",
-    "results/cmd16_hist6/dagger_smoke_validation.json"
-  ]
+    "results/cmd16_hist6/dagger_smoke_validation.json",
+    "results/cmd16_hist6/ppo1024_smoke_validation.json",
+    "results/cmd16_hist6/integrated_video_smoke.json",
+    "results/cmd16_hist6/export_probe_20261027_0517/contract.json",
+    "results/cmd16_hist6/motor_envelope_probe.json",
+    "results/cmd16_hist6/preflight/scripted_motor_no_reference.json"
+  ],
+  "current_status": "DAgger15040 saved atdeadline; final independent evaluation/video and archive in progress; three-seed S2 acceptance running",
+  "dagger_final": {
+    "iteration": 15040,
+    "sha256": "e6dac5a717c43de43737bc16b57c7f1b015e8de5a014e2b2d039ba4817d16133",
+    "student_fraction": 1.0,
+    "acceptance_passed": false
+  },
+  "current_acceptance": "runs/cmd16_hist6_dagger_acceptance_20261027_052134/reports"
 }

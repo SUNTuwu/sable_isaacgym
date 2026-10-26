@@ -17,6 +17,7 @@ from observation_schema import HistoryBuffer, proprioception, pack
 from gait_clock import GaitClock, local_phases
 from model_mapping import ModelMapping, heading_velocity, quat_apply, quat_inverse
 from curriculum import sample_velocity_commands
+from motor_envelope import motor_torques
 
 
 class TaskGaitSignals(GaitSignals):
@@ -34,8 +35,9 @@ class TaskGaitSignals(GaitSignals):
         ramp = ramp.square() * (3-2*ramp)
         activation = (env.task_speed/.03).clamp(0, 1) * ramp
         if env.omni:
-            activation *= env.clock.moving
-        swing = (local >= beta) & (env.task_speed[:, None] > .001)
+            activation = env.clock.moving.float()*ramp
+        moving = env.clock.moving if env.omni else env.task_speed > .001
+        swing = (local >= beta) & moving[:, None]
         env.gait_swing_weight = (progress/.15).clamp(0, 1)*((1-progress)/.15).clamp(0, 1)*swing*activation[:, None]
         env.gait_target_clearance = torch.sin(math.pi*progress).square()*c[:, 10:11]*swing*activation[:, None]
         env.task_contact_activation = activation
@@ -63,6 +65,7 @@ class MigrationRobot(SableRobot):
         self.history = HistoryBuffer(self.num_envs, self.device)
         self.executed_target = self.default_dof_pos[:, self.active].expand(self.num_envs, -1).clone()
         self.student_target = self.executed_target.clone()
+        self.full_student_target = self.default_dof_pos.expand(self.num_envs, -1).clone()
         self.teacher = None
         self.student_fraction = 1.
         self.reference_execution_calls = 0
@@ -77,6 +80,8 @@ class MigrationRobot(SableRobot):
         self._pending_reset_ids = torch.zeros(0, dtype=torch.long, device=self.device)
         self.height_body_indices = torch.tensor([[self.body_names.index(n) for n in names] for names in
             [('L_shoulder_pitch', 'R_shoulder_pitch'), ('L_hip_pitch', 'R_hip_pitch')]], device=self.device)
+        from step_events import StepEvents
+        self.actual_steps = StepEvents(self.num_envs, self.device, self.dt)
 
     def attach_teacher(self, checkpoint, sha256, student_fraction=0.):
         if self.omni:
@@ -175,6 +180,7 @@ class MigrationRobot(SableRobot):
         self.clock.reset_from_teacher(ids, self.gait_phase_offset[ids])
         self.history.reset(ids)
         self._pending_reset_ids = ids.clone()
+        self.actual_steps.reset(ids)
         if self.teacher is not None:
             self.teacher.reset(ids)
 
@@ -198,6 +204,9 @@ class MigrationRobot(SableRobot):
             self.teacher_target_label = self.teacher.prepare()
         self.student_target = ActionSpec.target(actions, self.default_dof_pos[:, self.active],
             self.hard_limits[self.active], self.cfg.migration.freeze_waist)
+        self.full_student_target[:, self.active] = self.student_target
+        if self.teacher is None or self.student_fraction >= 1.:
+            self.executed_target.copy_(self.student_target)
         wanted = self.commands[:, 0].clamp(0, .09)
         if self.omni:
             wanted = torch.maximum(self.commands16[:, :2].norm(dim=1), self.commands16[:, 2].abs()*.06)
@@ -209,29 +218,19 @@ class MigrationRobot(SableRobot):
 
     def _compute_torques(self, actions):
         self.substep_index += 1
-        target = self.default_dof_pos.expand(self.num_envs, -1).clone()
-        target[:, self.active] = self.student_target
+        target = self.full_student_target
         if self.teacher is not None and self.student_fraction < 1.:
             teacher_target = self.teacher.target(self.substep_index/self.cfg.control.decimation)
             target = (1-self.student_fraction)*teacher_target + self.student_fraction*target
+            target = torch.maximum(torch.minimum(target, self.hard_limits[:, 1]), self.hard_limits[:, 0])
+            self.executed_target.copy_(target[:, self.active])
             self.reference_execution_calls += 1
-        target = torch.maximum(torch.minimum(target, self.hard_limits[:, 1]), self.hard_limits[:, 0])
-        self.executed_target.copy_(target[:, self.active])
         if self.record_substep_targets:
             self.substep_targets.append(target[:2].clone())
         if self.teacher is not None and self.substep_index == self.cfg.control.decimation:
             self.teacher.finish(self.executed_target, self.student_fraction == 0.)
-        wanted = self.p_gains*(target-self.dof_pos)-self.d_gains*self.dof_vel
-        v = self.dof_vel
-        rpm = v.abs()*60/(2*math.pi)
-        large_limit = torch.where(rpm <= 245.1, 1.95-(1.95-.78)*rpm/245.1,
-            .78*(421.3-rpm)/(421.3-245.1)).clamp(min=0)
-        small_limit = self.torque_limits*(1-v.abs()/self.max_speed).clamp(min=0)
-        driving_limit = torch.where(self.large, large_limit, small_limit)
-        limit = torch.where(wanted*v < 0, self.torque_limits, driving_limit)
-        torque = torch.maximum(torch.minimum(wanted, limit), -limit)
-        torque[:, self.dependent] = 0.
-        return torque
+        return motor_torques(target, self.dof_pos, self.dof_vel, self.p_gains, self.d_gains,
+                             self.torque_limits, self.max_speed, self.large, self.dependent)
 
     def _post_physics_step_callback(self):
         LeggedRobot._post_physics_step_callback(self)
@@ -245,9 +244,13 @@ class MigrationRobot(SableRobot):
             (self.foot_center_world[:, 2, :2]-self.foot_center_world[:, 3, :2]).norm(dim=1)], 1)
         local = local_phases(self.clock.phase, self.commands16)
         eligible = (self.task_speed > .02) & (self.episode_length_buf*self.dt >= self.cfg.reference.ramp_s)
+        if self.omni:
+            eligible = self.clock.moving & (self.episode_length_buf*self.dt >= self.cfg.reference.ramp_s)
         target = self.commands16[:, 10:11].expand(-1, 4)
         self.swing_peak_balance_cost = self.peak_balance.update(self.foot_clearance,
             local >= self.commands16[:, 9:10], eligible, target)
+        if self.omni:
+            self.swing_peak_balance_cost /= self.commands16[:, 5]
         q = self.base_quat
         x, y, z, w = q.unbind(1)
         forward = torch.stack((1-2*(y*y+z*z), 2*(x*y+w*z)), 1)
@@ -255,9 +258,12 @@ class MigrationRobot(SableRobot):
         age = self.episode_length_buf*self.dt
         moving_command = self.commands[:, 0]
         if self.omni:
-            moving_command = torch.maximum(self.commands16[:, :2].norm(dim=1), self.commands16[:, 2].abs()*.06)
+            moving_command = self.clock.moving.float()*.03
         self.stride_progress.update(self.foot_center_world[:, :, :2], self.contact_forces[:, self.feet_indices, 2] > 1.,
             self.foot_clearance, forward, self.commands[:, 0], age, self.base_lin_vel[:, 0])
+        actual_landings = self.actual_steps.update(self.foot_center_world[:, :, :2],
+            self.contact_forces[:, self.feet_indices, 2] > 1., self.foot_clearance, age,
+            self.clock.moving if self.omni else self.commands[:, 0] > .02)
         axis = self.foot_long_axis_world[:, 2:]
         self.hind_foot_angle_deg = torch.acos((axis[:, :, :2]*forward[:, None]).sum(-1).clamp(-1, 1))*180/math.pi
         self.hind_landing_forward_m = ((self.foot_contact_point[:, 2:, :2]-self.rigid_states[:, self.hind_hip_bodies, :2])*forward[:, None]).sum(-1)
@@ -266,7 +272,8 @@ class MigrationRobot(SableRobot):
             self.hind_foot_angle_deg, moving_command, self.base_lin_vel[:, 0], age)
         self.ankle_events.update(contact, self.foot_clearance[:, 2:], self.hind_foot_angle_deg,
             self.foot_center_world[:, 2:, :2], moving_command, age)
-        self.hind_width.update(self.foot_contact_point[:, 2:, :2], contact, self.stride_progress.hind_landing,
+        hind_landings = actual_landings[:, 2:] if self.omni else self.stride_progress.hind_landing
+        self.hind_width.update(self.foot_contact_point[:, 2:, :2], contact, hind_landings,
             forward, moving_command, age)
         self.knee_contact_detector.update()
         velocity = self.heading_linear_velocity if self.omni else self.base_lin_vel[:, :2]
@@ -297,6 +304,10 @@ class MigrationRobot(SableRobot):
     def _reward_gait_clearance(self):
         return ((self.foot_clearance-self.gait_target_clearance)/self.commands16[:, 10:11]).square().clamp(max=9.).mean(1)
 
+    def _reward_swing_peak_shortfall(self):
+        value = super()._reward_swing_peak_shortfall()
+        return value/self.commands16[:, 5] if self.omni else value
+
     def _reward_tracking_lin_vel(self):
         velocity = self.heading_linear_velocity if self.omni else self.base_lin_vel[:, :2]
         return torch.exp(-(self.commands[:, :2]-velocity).square().sum(1)/self.cfg.rewards.tracking_sigma)
@@ -321,7 +332,7 @@ class MigrationRobot(SableRobot):
         return reward
 
 
-def create_migration_env(cfg, noise=True):
+def create_migration_env(cfg, noise=True, camera=False):
     cfg.noise.add_noise = noise
     cfg.domain_rand.randomize_friction = noise
     params = gymapi.SimParams()
@@ -339,4 +350,10 @@ def create_migration_env(cfg, noise=True):
     params.physx.contact_collection = gymapi.ContactCollection.CC_ALL_SUBSTEPS
     params.physx.max_gpu_contact_pairs = 2**22
     params.physx.default_buffer_size_multiplier = 5.
+    if camera:
+        class CameraRobot(MigrationRobot):
+            def create_sim(self):
+                self.graphics_device_id = 0
+                return super().create_sim()
+        return CameraRobot(cfg, params, gymapi.SIM_PHYSX, 'cuda:0', True)
     return MigrationRobot(cfg, params, gymapi.SIM_PHYSX, 'cuda:0', True)

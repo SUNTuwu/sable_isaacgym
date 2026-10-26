@@ -34,30 +34,5 @@ def sample_velocity_commands(commands, ids, stage, ranges):
 
 
 def stage_gate(stage, report, baseline):
-    failures = []
-    if report.get('survival_fraction', 0.) < .9:
-        failures.append('survival_below90percent')
-    if report.get('reference_execution_calls', 1) != 0:
-        failures.append('reference_execution_dependency')
-    if stage == 'S2':
-        allowed = max(baseline['velocity_rmse_m_s'] * 1.1, baseline['velocity_rmse_m_s'] + .003)
-        if report.get('velocity_rmse_m_s', float('inf')) > allowed:
-            failures.append('old_domain_velocity_regression')
-    elif stage in ('S3', 'S5'):
-        # Predeclared SI thresholds; per-scenario pass is required, not only mean.
-        for scenario in report.get('scenarios', []):
-            if scenario['survival_fraction'] < .9:
-                failures.append(scenario['name'] + ':survival')
-            if scenario['xy_rmse_m_s'] > .035:
-                failures.append(scenario['name'] + ':xy_tracking')
-            if scenario['yaw_rmse_rad_s'] > .30:
-                failures.append(scenario['name'] + ':yaw_tracking')
-        if not report.get('scenarios'):
-            failures.append('missing_velocity_scenarios')
-        if stage == 'S5':
-            for scenario in report.get('frequency_scenarios', []):
-                if scenario.get('measured_frequency_hz') is None or abs(scenario['measured_frequency_hz'] - scenario['command_frequency_hz']) > .15:
-                    failures.append(scenario['name'] + ':actual_touchdown_frequency')
-            if not report.get('frequency_scenarios'):
-                failures.append('missing_frequency_scenarios')
-    return {'stage': stage, 'passed': not failures, 'failures': failures}
+    from acceptance import assess
+    return assess(stage, report if isinstance(report,list) else [report], baseline)
