@@ -1,5 +1,5 @@
 {
-  "updated_unix": 1793053731.4765966,
+  "updated_unix": 1793054599.4730165,
   "goal_complete": false,
   "teacher": {
     "run": "stand5_20261027_v44_stride80_all",
@@ -15,7 +15,7 @@
     "supervisor_pid": 418059
   },
   "pre_migration_commit": "a95854cf4042b7994731e7a02d9761be8fd195d7",
-  "latest_pushed_commit": "a868850",
+  "latest_pushed_commit": "ebe9a2b",
   "completed": [
     "326/90/92/15 schema and six-frame cache",
     "full raw-input mirror projection and history encoder",
@@ -26,7 +26,7 @@
     "teacher-adapter24env16s survival24/24",
     "CPU tests and TorchScript numerical comparison",
     "11111 migration dashboard and180s evaluation/video monitor",
-    "two real DAgger updates smoke; formal DAgger now live",
+    "DAgger completed15040 and archived; later S2 PPO passed acceptance",
     "Teacher-free PPO runner with terminal-state timeout bootstrap and named auxiliary labels",
     "CPU10tests; real GPU PPO updates at32env and1024env; actor andcritic changed, no reference calls",
     "Encoder update rollback and reduced learning rate when policy KL exceeds0.01",
@@ -42,12 +42,16 @@
     "S2 three-seed independent regression accepted",
     "S3 actualnewcommand baseline andtwoGPU PPOupdates verified",
     "Formal S3 started with acceptedcheckpoint, inheritedproof andfresh frozenruntime",
-    "14-scenario velocity evaluator includeslateral/yawreversal andstop; segment responsechecks added"
+    "14-scenario velocity evaluator includeslateral/yawreversal andstop; segment responsechecks added",
+    "Training-only command transitions with25% direct starts; real12-update and2048-env2-update PPOsmokes passed",
+    "Repeated fresh-reset critic readings retain FK until native physics refresh; command timing GPUerrors0",
+    "Actual simulator log parity onCPU/CUDA across400samples and28env; portable TorchScript constants fixed",
+    "Reward component diagnostics preserve original aggregation and verify their sum including clipping"
   ],
   "not_achieved": [
-    "S3 translation/yaw tracking and actual motion fromrest in reverse/lateral/pureturn",
-    "S5 actual footfrequency switching",
-    "Final accepted-model deployment package and recorded-log parity"
+    "S3 direct-start translation/yaw tracking and actual four-foot stepping across3seeds",
+    "S5 actual footfrequency switching across3seeds",
+    "Final accepted-model deployment package (unaccepted probe already passed real-log CPU/CUDA parity)"
   ],
   "findings": [
     "First BC independent evaluation: all walking groups failed, static group survived; overall4/24. Preserve raw reports.",
@@ -70,13 +74,12 @@
     "S3/S5 evaluator nowrecords eachvelocitycommandsegment and requiresobserved response >=50% ofcommandchange; smallRMSEwithconstantdefaultspeedcannotpass."
   ],
   "next_work": [
-    "Revalidate liveS3 processes407480/407484/407549 and latestindependent checkpoint reports; freeze currentruntime.",
-    "Assess pure reverse/lateral/yaw learning. If they remainstanding despite goodforwardbehavior, consider gradual command curriculum that beginssome trainingepisodeswithstudentforwardmotion then transitions to requestednewcommands; keep independenttestsfromrest and never useteacher to supervisenewdirections.",
-    "Consider command-aligned motion reward or reward-term diagnostics only when currentlearning evidence supports achange; currentS3 isfirst20minround.",
-    "S3 acceptance requires3seeds,all14scenarios,per-segment velocityresponse,actualfour-foot stepping anddefaultcadence. S5 lateradds.8/1.2Hz switchingandreturn over28s.",
-    "Export finalaccepted model withrecorded raw326/actions/targets comparisons; currentexportprobe usesrandom rawinputs andCPUtiming, real-log andGPU parity remain toadd.",
-    "Improve S3/S5 videos toshownewcommandscenarios; current integratedperiodic video alwaysshowsfirstforward09environment.",
-    "Remaininggoal isnotcomplete; no full16-commandability orhardwarevalidation claim."
+    "Revalidate current2048env S3 run and its independent14-scenario reports; preserve frozenruntime; deadline07:00:05+08.",
+    "Measure whether moving-start training transfers to independent direct starts inreverse,lateral,pureturn; select further learning changes from measured results.",
+    "S3 acceptance still requires3seeds/all14scenarios/per-segment velocity response/actualfour-foot steps/defaultcadence; only then enterS5.",
+    "S5 should use directstarts after acceptedS3 and expand frequency.9–1.1 to.8–1.2 oncompletedepisodecurriculum; evaluate28s actualstep events including.8→1.2→.8.",
+    "Scenario-videoGPUsmoke passed, visually checked allfourpredeterminedS3 views withfeet inframe. Next frozenruntime usesfourviews andfull28sS5 frequencyswitch; currentrun video remains oldforward09 view.",
+    "Export finalacceptedcheckpoint using same recorded-log CPU/CUDA parity. Do not label currentprobe accepted."
   ],
   "evidence": [
     "results/cmd16_hist6/preflight/teacher_adapter.json",
@@ -97,9 +100,14 @@
     "planning/cmd16_hist6_baseline/s2_acceptance_20261027.json",
     "runs/cmd16_hist6_s3_baseline_20261027_060415/baseline.json",
     "results/cmd16_hist6/s3_ppo_smoke_validation.json",
-    "results/cmd16_hist6/transition_evaluator_smoke.json"
+    "results/cmd16_hist6/transition_evaluator_smoke.json",
+    "results/cmd16_hist6/moving_start_validation.json",
+    "results/cmd16_hist6/moving_start_gpu_probe.json",
+    "results/cmd16_hist6/s3_reward_diagnostic.json",
+    "results/cmd16_hist6/export_trace_probe_v2_20261027_0638/contract.json",
+    "results/cmd16_hist6/scenario_video_smoke_v2/recording_receipt.json"
   ],
-  "current_status": "S2 accepted144/144 across3seeds; S3 fullomni PPO live from acceptedcheckpoint34",
+  "current_status": "S2 accepted144/144; second S3 round live2048env, student-only moving-start curriculum; direct-start new capabilities not yet accepted",
   "dagger_final": {
     "iteration": 15040,
     "sha256": "e6dac5a717c43de43737bc16b57c7f1b015e8de5a014e2b2d039ba4817d16133",

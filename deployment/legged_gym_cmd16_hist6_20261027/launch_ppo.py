@@ -49,7 +49,7 @@ def main():
     expected_config=student_config(read_json(parent/'teacher_manifest.json')['run'],a.stage,a.num_envs)
     same_rewards=(parent_config.get('reward_weights')==vars(expected_config.rewards.scales)
                   and parent_config.get('velocity_error_scale_m_s')==expected_config.migration.velocity_error_scale_m_s)
-    same_curriculum=parent_config.get('moving_start_curriculum',{}).get('enabled',False)==(a.stage in ('S3','S5'))
+    same_curriculum=parent_config.get('moving_start_curriculum',{}).get('enabled',False)==(a.stage=='S3')
     gate_source=a.acceptance
     if a.stage in ('S3','S5'):
         if continuation:

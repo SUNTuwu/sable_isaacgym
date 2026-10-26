@@ -61,6 +61,9 @@ def main():
                 'checkpoint_sha256':cp['sha256'],'sha256':receipt['video_sha256'],'published_unix':time.time(),
                 'created_unix':receipt['created_unix'],'description':'学生实际独立回放；无教师与参考执行。固定种子947，未筛选；'+('发生跌倒，保留失败片段。' if receipt['fell'] else '本片段未跌倒。'),
                 'recording_receipt':str(directory/'recording_receipt.json'),'final':terminal}
+            if receipt.get('views'):
+                video['views']=receipt['views']
+                video['description']+=' 固定场景：'+', '.join(v['scenario'] for v in receipt['views'])+'。'
             atomic_json(directory/'published_receipt.json', video)
             if read_json(ROOT/'runs/current.json',{}).get('run_dir')==str(a.run):
                 atomic_json(ROOT/'results/legged_gym/side_video_preview.json',video)

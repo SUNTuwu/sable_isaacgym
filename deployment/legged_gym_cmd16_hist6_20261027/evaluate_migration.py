@@ -61,7 +61,7 @@ def main():
     video = None
     if a.video_dir:
         from evaluation_video import EvaluationVideo
-        video = EvaluationVideo(env,a.video_dir,a.checkpoint,iteration,a.seed)
+        video = EvaluationVideo(env,a.video_dir,a.checkpoint,iteration,a.seed,groups,a.envs_per_scenario)
     commands = env.commands16.clone()
     alive = torch.ones(n, device=env.device, dtype=torch.bool)
     duration = torch.zeros(n, device=env.device)
@@ -105,7 +105,7 @@ def main():
                 deployment_trace.append({'raw':trace_input.cpu(),'action':action.cpu(),
                     'target':s['executed_target'].cpu(),'time_s':t})
             if video is not None:
-                video.sample(step,done,s,commands[0])
+                video.sample(step,done,s,commands)
             world_velocity = quat_apply(s['base_quat'], s['velocity_local'])
             world_omega = quat_apply(s['base_quat'], s['angular_velocity_local'])
             xy_heading, yaw_heading = heading_velocity(s['base_quat'], world_velocity, world_omega)

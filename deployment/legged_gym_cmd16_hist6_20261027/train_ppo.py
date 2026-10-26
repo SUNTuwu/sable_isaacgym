@@ -47,7 +47,7 @@ def main():
     torch.manual_seed(a.seed)
     np.random.seed(a.seed)
     cfg = student_config(teacher['run'], stage=a.stage, num_envs=a.num_envs)
-    cfg.migration.moving_start_training = a.stage in ('S3','S5')
+    cfg.migration.moving_start_training = a.stage == 'S3'
     if cfg.migration.moving_start_training:
         # Sample transitions explicitly before policy inference, rather than
         # changing the commanded target inside a physics/reward interval.
