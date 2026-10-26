@@ -1,0 +1,103 @@
+{
+  "teacher_iteration": 9470,
+  "teacher_sha256": "90db35a8ad73b33854c7c6cb6cc7a51f6bbecd08c8680ff0950b8d50492cd48b",
+  "source_evaluation": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/latest_evaluation.json",
+  "survival_fraction": 1.0,
+  "velocity_rmse_m_s": 0.026871365565052843,
+  "xy_velocity_rmse_m_s": 0.04807907504847426,
+  "summary": {
+    "knee_ground_failure_fraction": 0.0,
+    "survival_5s": 1.0,
+    "survival_16s": 1.0,
+    "median_displacement_m": 1.9745445251464844,
+    "mean_displacement_m": 1.936253547668457,
+    "mean_duration_s": 16.00000075995922,
+    "mean_min_foot_steps": 15.0,
+    "max_coupling_error_rad": 0.00041928142309188843,
+    "moving_all_four_fraction": 1.0,
+    "median_abs_heading_change_deg": 3.3950640497467415,
+    "median_path_m": 2.1069700671505416,
+    "mean_peak_clearance_m": [
+      0.023341417778283358,
+      0.023462324403226376,
+      0.022076483660688002,
+      0.022696366378416617
+    ],
+    "score": 2.3745445251464843
+  },
+  "velocity_groups": [
+    {
+      "command_forward_m_s": 0.09,
+      "samples": 6008,
+      "observed_environment_seconds": 120.16000570729375,
+      "environments_observed": 8,
+      "mean_actual_velocity_xyz_m_s": [
+        0.10636575652978392,
+        4.9852783705184444e-05,
+        0.0390381552715662
+      ],
+      "rmse_velocity_xyz_m_s": [
+        0.028195528884515913,
+        0.04651613926729865,
+        0.0488045875258531
+      ],
+      "forward_bias_m_s": 0.01636575652978392,
+      "yaw_rate_rmse_rad_s": 0.32947156868437794
+    },
+    {
+      "command_forward_m_s": 0.105,
+      "samples": 6008,
+      "observed_environment_seconds": 120.16000570729375,
+      "environments_observed": 8,
+      "mean_actual_velocity_xyz_m_s": [
+        0.11965116638982899,
+        0.0009538584232159906,
+        0.04672460997668693
+      ],
+      "rmse_velocity_xyz_m_s": [
+        0.02800054960510515,
+        0.03759544735881119,
+        0.05377802363768113
+      ],
+      "forward_bias_m_s": 0.014651166389828996,
+      "yaw_rate_rmse_rad_s": 0.32297046497002213
+    },
+    {
+      "command_forward_m_s": 0.12,
+      "samples": 6008,
+      "observed_environment_seconds": 120.16000570729375,
+      "environments_observed": 8,
+      "mean_actual_velocity_xyz_m_s": [
+        0.12484964278691539,
+        0.0003677565106534484,
+        0.05005437993970697
+      ],
+      "rmse_velocity_xyz_m_s": [
+        0.024232049742574348,
+        0.03451684568604829,
+        0.0569623465995825
+      ],
+      "forward_bias_m_s": 0.004849642786915395,
+      "yaw_rate_rmse_rad_s": 0.33555215840133723
+    }
+  ],
+  "scope": "Final teacher24env16s old-domain baseline; no student success claim",
+  "regression_limits": {
+    "survival_fraction_min": 0.9,
+    "forward_rmse_max_m_s": 0.029871365565052842,
+    "xy_rmse_max_m_s": 0.052886982553321686
+  },
+  "new_capability_limits": {
+    "xy_rmse_m_s": 0.035,
+    "yaw_rmse_rad_s": 0.3,
+    "mean_command_gain_min": 0.5,
+    "frequency_error_hz": 0.1,
+    "frequency_switch_difference_min_hz": 0.25,
+    "evaluation_seeds": [
+      947,
+      1147,
+      1347
+    ],
+    "environments_per_seed": 32
+  }
+}

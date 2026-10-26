@@ -1,0 +1,446 @@
+{
+  "schema": "sable-frozen-teacher/1",
+  "completion_verified": true,
+  "selection": "User-designated final v44 checkpoint, not best-checkpoint selection",
+  "run": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all",
+  "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/checkpoints/model_009470.pt",
+  "sha256": "90db35a8ad73b33854c7c6cb6cc7a51f6bbecd08c8680ff0950b8d50492cd48b",
+  "iteration": 9470,
+  "archive": {
+    "archive": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all_backup.tar.gz",
+    "sha256": "2a85b17e043ad148d8b592efba6a483b32a9b636f1e68c4adefbe02984ecdf63",
+    "bytes": 41771490,
+    "created_unix": 1793047140.2274158,
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/checkpoints/model_009470.pt",
+      "iteration": 9470,
+      "sha256": "90db35a8ad73b33854c7c6cb6cc7a51f6bbecd08c8680ff0950b8d50492cd48b",
+      "runtime_sha256": "ca604eb8a5fec76149729c9be567d769e64729533406a66c51512cd50f7ed37f",
+      "reason": "final",
+      "updated_unix": 1793047016.621869
+    }
+  },
+  "created_unix": 1793047189.1314273,
+  "files": [
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/ankle_events.py",
+      "sha256": "bc349a9918299977cabbe19815f386bf4e7388e3a2f4a45a9eda40e7a3c4344e"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/ankle_phase.py",
+      "sha256": "77c278497bf21addad1a1b730ea60a467a25fea617ad09a1b4a95e1a588429c4"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/ankle_stance.py",
+      "sha256": "594458550de7e238c6f1812f948da78957572fe579a288270fad21d923ffb434"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/archive_guided_probes.py",
+      "sha256": "5dcdf573236f451880db2131f3cd6a59650ec664b252e751c8cf974ae867f468"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/archive_test_run.py",
+      "sha256": "445350eaa1375dd976e039225539643e96049e10b3092278c0baf6786aef326c"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/authored_model.json",
+      "sha256": "7fcba68acf10c1f1f9b7ac05ca1ca2a24fe19fbbae80217ee4fc7b7c1affe507"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/gait_reference.json",
+      "sha256": "771b32bc4de4858b25feab21d5770c995f970daf5423649a91351a9a2e9e9499"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/L_ankle_pitch_visual.obj",
+      "sha256": "f9e8961c3a38be1af63d2214b945c0c0797ee09ab76d5baad6de5be925ad8f74"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/L_elbow_pitch_visual.obj",
+      "sha256": "f580a4cc2ebcc4a8b7db607d5eb0c4aa172d650f30d25fa4735e11ab962d9f8c"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/L_foot_visual.obj",
+      "sha256": "8cfb427d1ee1e1366bb78869750f583f729e90681498fb295fcc655c1c891037"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/L_hand_visual.obj",
+      "sha256": "691cad5b3b5b756ba7dd37c7f22eb3c1ea7fc2eca2bcad9577eaeda01a9f316e"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/L_hip_pitch_visual.obj",
+      "sha256": "e230e62e439c87c7c955b4f267aaebd7108b26646ca57af69e5971c75b9af9ed"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/L_hip_roll_visual.obj",
+      "sha256": "a058c8141975e14fa0b2d9b826d1da481f02cde2d26fef6eb200ace4730c6cd2"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/L_knee_pitch_visual.obj",
+      "sha256": "2000312a753542d1ca12f2e6b1b54a0c87f4a04ead7e43c285bd218335f080fe"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/L_shoulder_pitch_visual.obj",
+      "sha256": "2009637108a019883196b573ab631ac492b4db1dcd562090a9f7a8aa75a3e5e0"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/L_shoulder_roll_visual.obj",
+      "sha256": "ec69d87a8423bca2031836728d05bbc8eeb2a005a1f43ac492a4dee633c1d555"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/L_wrist_fixed_visual.obj",
+      "sha256": "06f241b221a0329db1ea62b2a5087bf5f2fce6e84cfc974bae5d3cf58c91db11"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/R_ankle_pitch_visual.obj",
+      "sha256": "295669cb764b3d7032b18696cf354fc22854f786c1da3dc93a00399369ee7128"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/R_elbow_pitch_visual.obj",
+      "sha256": "892d7d44deb450bc346f52d7c7f7131c7cc2dc4b8d9f861cca6e7bec3ff2cdf8"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/R_foot_visual.obj",
+      "sha256": "8cfb427d1ee1e1366bb78869750f583f729e90681498fb295fcc655c1c891037"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/R_hand_visual.obj",
+      "sha256": "b7dcca62e3981675347dd8e7e9c5e27e29236b993787fc5290b3e3df6c2b4c3e"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/R_hip_pitch_visual.obj",
+      "sha256": "5c9d818d2deb5fbe907f5e0d1eabae3b2a9eea30edeb5d255af1c6d466adad27"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/R_hip_roll_visual.obj",
+      "sha256": "1d7ca57a84718902b6c81dad5c941cf47430170bb7b9509a0a9d4d32b5f1108b"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/R_knee_pitch_visual.obj",
+      "sha256": "8970c4ca0771014521be8f3c83ba29f653bd1de6e92dfa7c240014a689211587"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/R_shoulder_pitch_visual.obj",
+      "sha256": "295f4d6eff23689448cc79b4e9d1781fb5b20cc753b88fcbf043e3ed28f21264"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/R_shoulder_roll_visual.obj",
+      "sha256": "a452d9e9907a6512b1c2ac8da9688375b9f98b98322cc76a943f4fffc0908b9e"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/R_wrist_fixed_visual.obj",
+      "sha256": "feb069952b64efae015eb44282b1c345e06e0f18ac8d763f976bf9dc5c389414"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/spine_pitch_visual.obj",
+      "sha256": "f50f157cc970c4cf7b43997c5176191b93169f6f32327e2d18db8fedd03e292e"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/meshes/spine_roll_visual.obj",
+      "sha256": "0f6f23886a99af363b302181d071bb9d76e569c1edee88962ad72887fb6795f7"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/physical_manifest.json",
+      "sha256": "21ad9dfb35d41fe62b77bef90fefff4b9a2909845e21c9f86eeee0874c87eea7"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/sable.xml",
+      "sha256": "34473dded541fa4540ea5575f7cf837b78fdba957e3bf059ceaac2b545c87b65"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/audit_guided_tracking.py",
+      "sha256": "1b9aeb3bf672c0d6601800480ba4f0e3ff9c939b04155903c6bf6c07cc57beb8"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/build_asset.py",
+      "sha256": "2e8d4e8df42522821be8f7a3d017e7e27e394d6c8bf8df3d4d568e793710e84c"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/capture_probe_sources.py",
+      "sha256": "b592ec915f3663a57efe1d08637692a706b951623e5e9a490b3111db7d610a34"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_ankle_phase.py",
+      "sha256": "2f1c7f2a7732384b6722b36b70a7e8e80650edd6f398a83bf683e937c659781d"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_cadence_and_stride.py",
+      "sha256": "bef6cb9c98589d81a41f7a800fa0a842124ee5e3c7458960a3bebaf5becd5fb9"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_checkpoint_save.py",
+      "sha256": "da48031d572834ad9de515a5b33d48e23e1fdba0979bf5a26889f5b1b10293e6"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_deadline.py",
+      "sha256": "395f575a1e40d72ffff32392c479c78fa3b217b9e782a60a600e6aac17216d22"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_gait_signals.py",
+      "sha256": "731f2ade30aabec3531dd13677941f23f98267a8566659a39ab47dab32e77579"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_guided_stage.py",
+      "sha256": "579f0ea9941dc6989de9780af8a0bd2b15c264cdc4b7b64588220682b14ad23c"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_guided_transfer.py",
+      "sha256": "f60758f95cf1a90dadc15a521a8bf68516423512b3929611374377866fa9df00"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_hind_stride40.py",
+      "sha256": "2af61fbabdedb0bf20d49aa3679527e48d96a822f9e72d1e0caa20b34db9c1ab"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_hind_stride50.py",
+      "sha256": "a4a076c5d1497126c0579e354201201c3e936d5c079ed899e479fe88fe4abc5b"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_hip_stand_reward.py",
+      "sha256": "58038024f1c584a711cee17c84368ce19c6fbb8212b2b4eb0c6dbe0661d65c80"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_inline_transfer.py",
+      "sha256": "392bd60816666c842c6e54d57472a89e78cdddfd1261fcf2ea15654d830f975d"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_knee_stand_reward.py",
+      "sha256": "5ace27c1cd8903948ef0a41cdaae3b1d7168809bcac99cd578856399fed65ae8"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_knee_termination.py",
+      "sha256": "a9b70ac156e004c18dbc0b42871f7371ce28cf27bb9c98c398d6b188a085662c"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_lift_transfer.py",
+      "sha256": "b5f11bb56fed5edd0177744907d73983cf092349b5a447dd7033ad9a405ac292"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_new_rewards.py",
+      "sha256": "9b7fd41d48866d23529eceb57eca86df79c17ddb2cab8709ab16f8f31585de5f"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_powered_transfer.py",
+      "sha256": "db0c44d0fe6db5ba9f5d056d8f7027ecd0b687b44dc87fa30c9a96771af3b937"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_ppo_deadline.py",
+      "sha256": "a6ef0d5746b0ceeab68f077f9c05e1ee41a227b7e4c17c7eee681ad9fa1d2a82"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_reward_revision.py",
+      "sha256": "1b7c162c4fbe833e16476d483d6cc082f5f6bc6d7b719fc6362d04f05c06b224"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_rigid_velocity.py",
+      "sha256": "bd8685e570ca2a0b152be0318341e2ece3a02e58680866f8fd58743b5cc0eb53"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_spacing_reward.py",
+      "sha256": "87b245ae45a9e38956731889b07bd67a52c9a1c187ffb43c7360a2b2dac357bf"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_stance50.py",
+      "sha256": "93901113a4a5ab5852f1d8cb94dd0ed5021aefb83a35bde3b6a7285531f3b072"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_stance_rewards.py",
+      "sha256": "4e56f793c96614175a6ad9efa4830c671eac2f4a338ffdcf99e0121d81c1b8f8"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_stride50_reward.py",
+      "sha256": "f08b16df8e869f1e3860ed943760948476f28b034340018984c164f33040161f"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_stride_all.py",
+      "sha256": "98aae1d26ec37e4ebbb3b52f129292d85bca0228ebced5b7ca9d3b4899ed22b1"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_swing_peak_balance.py",
+      "sha256": "91345e8a540b3e860eb0e73b0567b2e1c6030b0f21f1c0fc5001b1bf3a0d7bac"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_symmetry_geometry.py",
+      "sha256": "6cd5173b73e2f324c16d93a0f709d69bc10fd999c025f256f6a97bfeef929890"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/check_timeout_flags.py",
+      "sha256": "d5ee88dfca3752dc6105c7ece980d27d786004c91f8ecc4dc92263f877c2db00"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/dashboard.py",
+      "sha256": "66d4a7ae2b66aeed63c8f5566147eedb9160130b235495f16cb60c191c6debee"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/diagnose_policy.py",
+      "sha256": "4f53f224a07fb07289af8af861dcea271aa80d7f647a4865c569667feff9235c"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/equivariant_policy.py",
+      "sha256": "f41f0e37cafea63703edc52fb57c4e5cb3b40fdb0ddde646c461855505c98e0b"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/evaluate.py",
+      "sha256": "20d20770c6fa02c486617484751775936794ab5c045b74dd146c9813751bdb94"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/evaluate_noise_domains.py",
+      "sha256": "11ebacb241313b9a319e501f4acc66e6ec192fc12a04bd62be977cc8a92cf5c3"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/evaluate_resets.py",
+      "sha256": "b44dcf8dfdbfe767b102667514245e416046f7adf93dfcc03606ff697b5e5f85"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/evaluate_training_domains.py",
+      "sha256": "32d5eba847dce561f06dfc9b9185cfdf49a3af0e23a6224fdfdbbd442a3c8227"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/gait_audit.py",
+      "sha256": "b533830ed1ea0c5b4b2ebb241f3f293d2e620bf27dfe09908aa7a17d7467abc8"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/gait_support.py",
+      "sha256": "42782c78385a2540bbd3dd982104ef32c9917e3315a6539158b9ba7a2e607216"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/guided_reference.py",
+      "sha256": "7b8bfe8d5d055e6a9d4d23e270f02549c07c72a50e6847deb76261bf5629904c"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/hind_landing_width.py",
+      "sha256": "30884422f085ebb471f7d7020c9b1372bbc8adbdd05ba329c7d6857060c390e5"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/knee_contact.py",
+      "sha256": "478f8ab07f9aa8acb771da98220f01c031e22acaccd00a8d4d91c85e975656cd"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/landing_stride_rewards.py",
+      "sha256": "dd42f090adeb8f86c8b9c11dd8cdb6cc4def63f4f830d54a24af9188d3bb2886"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/operator_feedback.py",
+      "sha256": "1af70e64b9f39261ac386e13687f16db35b28c476d904d888a53ea86de388a21"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/package_side_video.py",
+      "sha256": "110705fe952e293ff0c933528a482ad6d9e233561c9a1ac4990abfa596204118"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/peak_acceleration.py",
+      "sha256": "3ef2afd12818bf769c3ef0bdb4f348c095ff4d62f70d941b9f7c7c88d0a6da1b"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/policy_symmetry.py",
+      "sha256": "f86dca02c346ac9ea81375651075b24821a39edf86c222661be31b845521f12a"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/powered_transfer.py",
+      "sha256": "5f9ee5295418383dfe874bd23abe47ce7cdd94590e713bf5ed5171900c96d19b"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/preflight.py",
+      "sha256": "05058cf141e2db92fe9effcabb31f62860277600d65c3c9ada053c04b80a0918"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/priority_metrics.py",
+      "sha256": "c1bc8fa60e264dae643b1c85a2589ff6adfa893effec56f0d678238c575e25ed"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/probe_guided_curriculum.py",
+      "sha256": "ea29929b1df51f7ae3d364691e05e222ad7707847263cb824697d39563db9d03"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/probe_lift_reachability.py",
+      "sha256": "a46c6b3789ceb7f70d3c586971c6a4b74eb59da83d296b7be754008782d852e5"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/probe_mirror_policy.py",
+      "sha256": "a33252fd6a421471afeb3035a17a70f6198cc7a7cdc8ef06bb1b1b52c575ad1e"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/probe_reference_strength.py",
+      "sha256": "1b6a401bd0cb3bf557a0d9683223d6890a4c1b67f1f338e1ecf5b79975e948e9"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/progress_report.py",
+      "sha256": "4c07700126b5f949305e595658e68d544a4532304a3de0e64b40181f91ed8c05"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/record_side_video.py",
+      "sha256": "2f2f2b96aba15209b33c2210bd9b1ef0914da0746af22973ef88e24d4f7dc5b3"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/run_io.py",
+      "sha256": "ec07264ee0200c563b04fdf34bad7c3c1fd71e85338753f895e3a3216bf2af12"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/sable_config.py",
+      "sha256": "a372062675531ed5ce3e1f0a3cc2820c6a7a6c57c5211fcb01c085254efb45aa"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/sable_env.py",
+      "sha256": "4994b56139f11aa813babb790675ab6625fcfcb0dbadc7640f0511ffe3f36642"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/smoke_services.py",
+      "sha256": "f3c98633a7f8650bf3e9869c1d1918e234b73cb898a70cfc20dd2fe7b5f6e3d9"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/stride_progress.py",
+      "sha256": "308fd96b9624c457ea7ef803000d589808273b7d69207efa3f244b94827a6b2b"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/supervise.py",
+      "sha256": "8c36327eb7924840ddc8cf8ce81baaf395431306e1fc794cd0ad58aaa8d776dd"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/swing_peak_balance.py",
+      "sha256": "0357dd692a46af17e17a8e5fb831b75eed093fb78f99b4bfc12a9b0b6e391d14"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/sync_bundle.py",
+      "sha256": "50e4b7131d76496330c979c32659c0988c1c9197611951a769bada1be90aacb6"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/train.py",
+      "sha256": "3d59c53cb3b48839f226d28f153601c4f85830c342bf9ed62c9dc524fc8ab145"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/velocity_metrics.py",
+      "sha256": "fdc46bcbf0a912d210f75fb6083a31051cafe7918b8018863f98aeda43b23150"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/verify_static.py",
+      "sha256": "3e5add285ab3301e7c85d6fb26772861e7f26a3d8943d77d3f0203eb243b95f2"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/waist_acceleration.py",
+      "sha256": "5f4ca2daeb825d5d0d9a7ee0ca03ec1fb24dea1e12ac6720689293cd7a69e5c4"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/config.json",
+      "sha256": "5d66d6fb5f785dc39d65be4ddb02bf21d94633d01c43639d4a079eafbdfb9765"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime_manifest.json",
+      "sha256": "ca604eb8a5fec76149729c9be567d769e64729533406a66c51512cd50f7ed37f"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/checkpoint.json",
+      "sha256": "94f9b6ae35124015918450b7982b0108d09da228b69fd489e0ac0c75092f6f49"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/completion.json",
+      "sha256": "e9e0c04f0d7cd7e886bdc4e75e55a8f023017b42e1e3e1e6cbe6e418ee06f074"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/latest_evaluation.json",
+      "sha256": "51cc73c3fbf4cd8fefbe19eea14a0fa4f2b76a15d8992870e47f172dedf0d60c"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/checkpoints/model_009470.pt",
+      "sha256": "90db35a8ad73b33854c7c6cb6cc7a51f6bbecd08c8680ff0950b8d50492cd48b"
+    }
+  ]
+}
