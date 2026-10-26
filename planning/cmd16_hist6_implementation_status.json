@@ -1,5 +1,5 @@
 {
-  "updated_unix": 1793055930.2204633,
+  "updated_unix": 1793057283.9399555,
   "goal_complete": false,
   "teacher": {
     "run": "stand5_20261027_v44_stride80_all",
@@ -7,15 +7,15 @@
     "verified": true,
     "manifest": "planning/cmd16_hist6_baseline/teacher_manifest.json"
   },
-  "current_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_070259",
-  "current_deadline": "2026-10-27T07:22:59.078105+08:00",
+  "current_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_072548",
+  "current_deadline": "2026-10-27T07:45:48.637825+08:00",
   "current_processes": {
-    "training_pid": 429619,
-    "monitor_pid": 429688,
-    "supervisor_pid": 429324
+    "training_pid": 440348,
+    "monitor_pid": 440420,
+    "supervisor_pid": 436067
   },
   "pre_migration_commit": "a95854cf4042b7994731e7a02d9761be8fd195d7",
-  "latest_pushed_commit": "cf36c3b",
+  "latest_pushed_commit": "1ee4f82",
   "completed": [
     "326/90/92/15 schema and six-frame cache",
     "full raw-input mirror projection and history encoder",
@@ -49,7 +49,11 @@
     "Reward component diagnostics preserve original aggregation and verify their sum including clipping",
     "Explicit pure-reverse command family added; purelateral/yaw samples exclude stopped deadzone",
     "Noise diagnosed inone96env batch at.02/.04/.06 with10s originalepisodes; uniform.06 rejected becauseforward0/8survived; conditional.04 leavesknownforward andstopnoiseunchanged",
-    "15 CPUunit tests andconditionalexploration realPPOupdate validation passed"
+    "15 CPUunit tests andconditionalexploration realPPOupdate validation passed",
+    "Clearance reward clipping diagnosed on20env6s direct scenarios; aggregate reconstructed exactly",
+    "S3/S5 gait_clearance andtarget_limits costssurvivepositive clipping; alive3/s added;16CPUtests andrealPPOupdates passed",
+    "Same-controller120substep torque comparison stillmax1.49e-7Nm; no physicalasset change",
+    "Optimizer continuation helper verified withrealPPO: initialstatesexact andallAdamstepsadvanced16; activefourthruntime remainsolderfrozenec12c7a"
   ],
   "not_achieved": [
     "S3 direct-start translation/yaw tracking and actual four-foot stepping across3seeds",
@@ -77,12 +81,13 @@
     "S3/S5 evaluator nowrecords eachvelocitycommandsegment and requiresobserved response >=50% ofcommandchange; smallRMSEwithconstantdefaultspeedcannotpass."
   ],
   "next_work": [
-    "Check live third S3 training and 180s independent14-scenario measurements/videos; deadline07:22:59+08. Source/runtime frozen;15 CPUtests andtwo realPPOupdates passed.",
-    "Judge whether explicit purereverse sampling and conditional low-forward exploration.04 unlock hind stepping. Prior moving-start-only round189 survived56/56 but failednew motion/steps; do not equate survival withsuccess.",
-    "Current third-round videos usepredetermined forward/reverse/lateral/turn panels; confirm firstpublication.",
-    "If newhind stepping remainsabsent aftertraining, diagnose command/gait reward gradients and clipping using weighted_rewards_per_second. Considercommand-consistent soft footmotion rewards or curriculum changes from evidence; do notadd executionreferences orchange physicalassets/acceptance thresholds.",
-    "Only after three-seedS3 acceptance enterS5 at.9–1.1Hz,then.8–1.2 basedcompletedepisodecondition. NewdevelopmentS5 disables moving-start training andconditionalnoise.",
-    "Final acceptedmodel mustpass recorded-log CPU/CUDA exportparity again. Existingprobe passed but isunacceptedcheckpoint168; do notclaimfull16dimensions orhardwarevalidation."
+    "Prioritize measured learning in livefourthS3 round, deadline07:45:48+08. Watch actual hind step counts, direction/switch gain,XY/yaw errors andcadence; firstchanged-policy evaluation aftercriticwarmup isneeded. Keep runtime frozen.",
+    "Reward values across previous/current runs are not directly comparable becausealive3/s andaggregation changed. Only independentmotion/step metrics supportprogress.",
+    "If acheckpoint passes all14scenarios inone independentseed, runfull3-seedS3 acceptance whiletrainingcontinues. Only acceptedcheckpoint canenterS5. Do notrelaxfixedthresholds orreplace missingfoot events withzeros.",
+    "If no newhindgait emerges, use measuredreward/geometry evidence tochoose nextchanges. Considercommand-consistent softfootmotion guidance without addingexecutionreferences, forcingjointtrajectories or alteringphysicalassets. Avoidgeneralframeworkpolish in place oflearning work.",
+    "S5 usesdirectstarts, no conditionalnovel-noise floor, frequency.9–1.1 then.8–1.2 with completedepisodecurriculum,28s actual-foot-event switchandreturn tests.",
+    "Development1ee4f82 restoresoptimizer/auxiliary state only for same stage/config and identicaltraining code; realone-update proof passed. Activeec12c7a runtime predates this change; nextlauncher must respectsource/versionchecks.",
+    "Final acceptedmodel mustpass recorded-log CPU/CUDA exportparity again. Existingunacceptedprobe168 already passed; no full16-command orhardwarevalidation claim."
   ],
   "evidence": [
     "results/cmd16_hist6/preflight/teacher_adapter.json",
@@ -111,9 +116,13 @@
     "results/cmd16_hist6/scenario_video_smoke_v2/recording_receipt.json",
     "results/cmd16_hist6/exploration_comparison.json",
     "results/cmd16_hist6/conditional_exploration_validation.json",
-    "results/cmd16_hist6/exploration_curriculum_tests.log"
+    "results/cmd16_hist6/exploration_curriculum_tests.log",
+    "planning/cmd16_hist6_baseline/s3_reward_diagnostic_20261027.json",
+    "results/cmd16_hist6/unclipped_gait_validation.json",
+    "results/cmd16_hist6/unclipped_gait_tests.log",
+    "results/cmd16_hist6/optimizer_restore_validation.json"
   ],
-  "current_status": "S2 accepted144/144; third S3 round live2048env, explicit pure-reverse sampling and conditional noisefloor.04. New direction/frequency acceptance not achieved.",
+  "current_status": "S2 accepted144/144; fourth S3 round live2048env, gait/target-limit costs afterclipping plusalive3/s. New direction/frequency acceptance not achieved.",
   "dagger_final": {
     "iteration": 15040,
     "sha256": "e6dac5a717c43de43737bc16b57c7f1b015e8de5a014e2b2d039ba4817d16133",
@@ -135,37 +144,30 @@
     "survived": 144,
     "episodes": 144
   },
-  "updated_at": "2026-10-27T07:05:30.220466",
-  "current_stage": "S3_PPO_conditional_exploration",
+  "updated_at": "2026-10-27T07:28:03.939960",
+  "current_stage": "S3_PPO_unclipped_gait",
   "latest_findings": {
-    "source_commit": "cf36c3b",
-    "parent_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_064005",
-    "parent_checkpoint": 189,
+    "active_source_commit": "ec12c7a",
+    "development_source_commit": "1ee4f82",
+    "parent_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_070259",
+    "parent_checkpoint": 203,
     "parent_survival": "56/56",
-    "parent_new_direction_status": "reverse no genuine steps; lateral/turn onlyfront steps; combined missingonehind foot",
+    "parent_new_direction_status": "No complete hind stepping in reverse/lateral/pureturn; combined missingonehind foot",
     "parent_archive": {
-      "archive": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/cmd16_hist6_s3_ppo_20261027_064005.tar.gz",
-      "sha256": "5d3ac030dc95f39715d3302502c49cef5b4ae519af8b5ffd042223e6d344d2e3",
-      "verified_files": 86,
+      "archive": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/cmd16_hist6_s3_ppo_20261027_070259.tar.gz",
+      "sha256": "6d8427193a58f5778d9391476e3ac35c5dc372d735121b415951c097b766e21b",
+      "verified_files": 87,
       "final_checkpoint_and_frozen_runtime_verified": true,
-      "created_unix": 1793055777.717529
+      "created_unix": 1793057147.6868303
     },
-    "current_config": {
-      "moving_start": {
-        "enabled": true,
-        "fraction": 0.75,
-        "hold_s": 2.0,
-        "blend_s": 2.0,
-        "direct_start_fraction": 0.25,
-        "evaluation_uses_direct_starts": true
-      },
-      "command_sampling": "25% old forward,10%stop,15%purelateral abs.02-.04,15%pureyaw abs.15-.35,15%purereverse -.04to-.02,20%combined",
-      "base_std_floor": 0.02,
-      "novel_command_std_floor": 0.04,
-      "novel_activation": "moving command and vx<.03m/s"
+    "current_changes": {
+      "gait_clearance_and_target_limits_after_clipping": true,
+      "alive_reward_per_second": 3.0,
+      "unchanged_physical_controller_max_torque_error_nm": 1.4901161193847656e-07
     },
-    "noise_probe": "results/cmd16_hist6/exploration_comparison.json",
-    "conditional_real_PPO_probe": "results/cmd16_hist6/conditional_exploration_validation.json"
+    "diagnosis": "planning/cmd16_hist6_baseline/s3_reward_diagnostic_20261027.json",
+    "PPO_validation": "results/cmd16_hist6/unclipped_gait_validation.json",
+    "optimizer_restore_validation": "results/cmd16_hist6/optimizer_restore_validation.json"
   },
   "remaining_acceptance": [
     "S3 translation/yaw including direct starts and switches, actual stepping, three seeds",
