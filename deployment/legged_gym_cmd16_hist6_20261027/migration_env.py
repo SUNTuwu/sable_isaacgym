@@ -27,7 +27,7 @@ class TaskGaitSignals(GaitSignals):
     def update(self, env):
         super().update(env)  # Geometry from unchanged capsule endpoints.
         c = env.commands16
-        local = local_phases(env.clock.phase, c)
+        local = env.clock.local_phases(c)
         beta = c[:, 9:10]
         progress = ((local-beta)/(1-beta)).clamp(0, 1)
         age = env.episode_length_buf * env.dt
@@ -177,7 +177,7 @@ class MigrationRobot(SableRobot):
             return
         self.executed_target[ids] = self.default_dof_pos[:, self.active]
         self.task_speed[ids] = 0.
-        self.clock.reset_from_teacher(ids, self.gait_phase_offset[ids])
+        self.clock.reset_from_teacher(ids, self.gait_phase_offset[ids], self.commands16[ids])
         self.history.reset(ids)
         self._pending_reset_ids = ids.clone()
         self.actual_steps.reset(ids)
@@ -242,7 +242,7 @@ class MigrationRobot(SableRobot):
         self.gait_signals.update(self)
         self.foot_pair_distance = torch.stack([(self.foot_center_world[:, 0, :2]-self.foot_center_world[:, 1, :2]).norm(dim=1),
             (self.foot_center_world[:, 2, :2]-self.foot_center_world[:, 3, :2]).norm(dim=1)], 1)
-        local = local_phases(self.clock.phase, self.commands16)
+        local = self.clock.local_phases(self.commands16)
         eligible = (self.task_speed > .02) & (self.episode_length_buf*self.dt >= self.cfg.reference.ramp_s)
         if self.omni:
             eligible = self.clock.moving & (self.episode_length_buf*self.dt >= self.cfg.reference.ramp_s)
@@ -292,6 +292,11 @@ class MigrationRobot(SableRobot):
         self.extras['terminal_critic'] = self.terminal_critic
         self.extras['next_clean_proprio'] = self.terminal_proprio
         self.extras['next_velocity'] = self.terminal_velocity
+        if getattr(self,'capture_eval',False):
+            self.eval_snapshot.update(joint_velocity=self.dof_vel.clone(),
+                joint_acceleration=((self.dof_vel-self.last_dof_vel)/self.dt).clone(),
+                motor_torque=self.torques.clone(),executed_target=self.executed_target.clone(),
+                foot_link_origin_velocity_xy=self.rigid_states[:,self.feet_indices,7:9].clone())
 
     def _reward_target_limits(self):
         raw = self.default_dof_pos[:, self.active] + self.actions*.35

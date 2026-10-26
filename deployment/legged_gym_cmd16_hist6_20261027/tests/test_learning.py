@@ -35,7 +35,8 @@ class LearningTests(unittest.TestCase):
                 'reference_execution_calls':0,'num_envs':60,'horizon_s':28,'suite':'S5','scenarios':[], 'frequency_scenarios':[]}
             for name, command in scenarios('S5'):
                 report['scenarios'].append({'name':name,'survival_fraction':1.,'xy_rmse_m_s':.01,
-                    'yaw_rmse_rad_s':.1,'mean_command':command[:3],'mean_actual_xyz_command_units':command[:3]})
+                    'yaw_rmse_rad_s':.1,'mean_command':command[:3],'mean_actual_xyz_command_units':command[:3],
+                    'four_feet_stepping_fraction':1.,'steady_frequency_per_foot_hz':[command[3]]*4})
             for name, segment, f in [('frequency08',0,.8),('frequency12',0,1.2),('frequency_switch',0,.8),('frequency_switch',8,1.2),('frequency_switch',20,.8)]:
                 report['frequency_scenarios'].append({'name':name,'segment_start_s':segment,
                     'feet':[{'foot':i,'measured_frequency_hz':f,'interval_count':10,'environments':4} for i in range(4)]})
@@ -54,6 +55,10 @@ class LearningTests(unittest.TestCase):
             if row['name']=='left':row['mean_actual_xyz_command_units']=[0.,0.,0.]
         self.assertFalse(assess('S5',broken,baseline)['passed'])
         self.assertFalse(assess('S5',reports[:1],baseline)['passed'])
+        broken = copy.deepcopy(reports)
+        for row in broken[0]['scenarios']:
+            if row['name']=='turn_left':row['four_feet_stepping_fraction']=0.
+        self.assertFalse(assess('S5',broken,baseline)['passed'])
 
     def test_actual_step_requires_continuous_air_and_unsigned_travel(self):
         detector = StepEvents(2, 'cpu', .02)

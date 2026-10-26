@@ -53,6 +53,15 @@ def assess(stage, reports, baseline):
                 yaw = row.get('yaw_rmse_rad_s')
                 if not number(yaw) or yaw > limits['yaw_rmse_rad_s']:
                     failures.append(key+'yaw_tracking')
+                if name not in ('stop','start_stop'):
+                    if row.get('four_feet_stepping_fraction',0.) < .9:
+                        failures.append(key+'insufficient_actual_four_foot_steps')
+                    # New velocity skills must walk, not pass by sliding with
+                    # planted feet. Frequency-switch segments have their own gate.
+                    if not name.startswith('frequency'):
+                        measured = row.get('steady_frequency_per_foot_hz',[])
+                        if len(measured)!=4 or any(not number(f) or abs(f-1.)>.15 for f in measured):
+                            failures.append(key+'default_actual_cadence')
             desired, actual = row.get('mean_command'), row.get('mean_actual_xyz_command_units')
             if desired is None or actual is None:
                 failures.append(key+'missing_motion_samples')

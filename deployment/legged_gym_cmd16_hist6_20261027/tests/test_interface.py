@@ -75,6 +75,21 @@ class InterfaceTests(unittest.TestCase):
         clock.advance(self.commands, True)
         self.assertTrue(clock.moving.all())
 
+    def test_phase_command_shortest_path_and_legacy_identity(self):
+        clock=GaitClock(7,'cpu')
+        clock.phase.copy_(torch.rand(7))
+        torch.testing.assert_close(clock.values(self.commands),clocks(clock.phase,self.commands),rtol=0,atol=0)
+        initial=self.commands.clone();initial[:,6:9]=.99
+        clock.reset_from_teacher(torch.arange(7),torch.zeros(7),initial)
+        self.commands[:,6:9]=.01
+        before=clock.phase_offsets.clone()
+        clock.advance(self.commands)
+        change=shortest_phase_delta(clock.phase_offsets,before)
+        self.assertTrue(((change>0)&(change<.02)).all())
+        self.assertTrue((self.commands[:,6:9]==.01).all())
+        for _ in range(100):clock.advance(self.commands)
+        self.assertLess(float(shortest_phase_delta(clock.phase_offsets,self.commands[:,6:9]).abs().max()),1e-5)
+
     def test_full_target_and_frozen_waist(self):
         default = torch.linspace(-1, 1, 15)
         limits = torch.stack((default - .6, default + .7), -1)

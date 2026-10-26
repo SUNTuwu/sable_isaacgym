@@ -12,6 +12,7 @@ from history_policy import HistoryActorCritic
 from model_mapping import heading_velocity, quat_apply
 from teacher_adapter import verify_teacher_manifest
 from run_io import atomic_json, sha256
+from evaluation_telemetry import EvaluationTelemetry
 
 
 from evaluation_scenarios import scenarios, scheduled_commands
@@ -74,6 +75,7 @@ def main():
     last_landing = torch.full((n, 4), -1., device=env.device)
     step_counts = torch.zeros(n, 4, dtype=torch.long, device=env.device)
     events, trace = [], []
+    telemetry = EvaluationTelemetry(env)
     started = time.time()
     with torch.no_grad():
         for step in range(round(a.seconds/env.dt)):
@@ -99,6 +101,7 @@ def main():
             yaw = yaw_heading if env.omni else s['angular_velocity_local'][:, 2]
             desired = commands[:, :3].clone() if env.omni else s['commands'][:, :3]
             valid = alive & metric_valid
+            telemetry.update(s,commands,alive,valid)
             error_xy = (xy-desired[:, :2]).square()
             error_yaw = (yaw-desired[:, 2]).square()
             values = torch.cat((error_xy, error_yaw[:, None], xy, yaw[:, None], desired, torch.ones(n, 1, device=env.device)), 1)
@@ -143,6 +146,11 @@ def main():
         sl = slice(g*a.envs_per_scenario, (g+1)*a.envs_per_scenario)
         total = sums[sl].sum(0).cpu().numpy()
         count = float(total[9])
+        minimum_steps = max(2,int(max(a.seconds-2.,0.)*initial[3]*.5))
+        steady_frequency = []
+        for foot in range(4):
+            intervals = [e['interval_s'] for e in events if e['scenario']==name and e['foot']==foot and e['steady_interval'] and e['interval_s']]
+            steady_frequency.append(float(1/np.median(intervals)) if intervals else None)
         rows.append({'name': name, 'initial_command': initial,
             'survival_fraction': float((~falls[sl]).float().mean()), 'mean_duration_s': float(duration[sl].mean()),
             'knee_failure_fraction': float(knee_falls[sl].float().mean()), 'samples': int(count),
@@ -151,7 +159,11 @@ def main():
             'yaw_rmse_rad_s': float(np.sqrt(total[2]/count)) if count else None,
             'mean_actual_xyz_command_units': (total[3:6]/count).tolist() if count else None,
             'mean_command': (total[6:9]/count).tolist() if count else None,
-            'steps_per_foot': step_counts[sl].sum(0).cpu().tolist()})
+            'steps_per_foot': step_counts[sl].sum(0).cpu().tolist(),
+            'steps_per_environment':step_counts[sl].cpu().tolist(),
+            'minimum_completed_steps_for_motion_check':minimum_steps,
+            'four_feet_stepping_fraction':float((step_counts[sl].min(1).values>=minimum_steps).float().mean()),
+            'steady_frequency_per_foot_hz':steady_frequency})
     forward_rows = rows[:3]
     count = sum(r['samples'] for r in forward_rows)
     velocity_rmse = (sum(r['samples']*r['forward_rmse_m_s']**2 for r in forward_rows if r['samples'])/count)**.5 if count else None
@@ -185,11 +197,13 @@ def main():
         'created_unix': time.time(), 'wall_seconds': time.time()-started, 'accepted_locomotion': False,
         'measurement_scope': '20ms control-rate samples; original episodes only; genuine2mm/60ms/5mm unsigned landing events; missing events remain missing'}
     a.output.parent.mkdir(parents=True, exist_ok=True)
+    result['diagnostics'] = telemetry.finish(groups,a.envs_per_scenario)
     if video is not None:
         video.close()
         result['video_receipt'] = str(a.video_dir/'recording_receipt.json')
+    result.update(created_unix=time.time(),wall_seconds=time.time()-started)
     atomic_json(a.output, result)
-    print(json.dumps({k:v for k,v in result.items() if k not in ('events','trace','body_names','dof_names')}), flush=True)
+    print(json.dumps({k:v for k,v in result.items() if k not in ('events','trace','body_names','dof_names','diagnostics')}), flush=True)
     env.gym.destroy_sim(env.sim)
 
 

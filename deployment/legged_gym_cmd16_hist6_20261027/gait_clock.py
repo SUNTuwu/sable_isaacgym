@@ -22,11 +22,13 @@ def clocks(phase, commands):
 class GaitClock:
     def __init__(self, num_envs, device, dt=.02):
         self.phase = torch.zeros(num_envs, device=device)
+        self.phase_offsets = torch.tensor([.5,.25,.75],device=device).repeat(num_envs,1)
         self.moving = torch.ones(num_envs, dtype=torch.bool, device=device)
         self.dt = dt
 
-    def reset_from_teacher(self, ids, old_phase):
+    def reset_from_teacher(self, ids, old_phase, commands=None):
         self.phase[ids] = torch.remainder(old_phase + .75, 1.)
+        self.phase_offsets[ids] = self.phase_offsets.new_tensor([.5,.25,.75]) if commands is None else torch.remainder(commands[:,6:9],1.)
         self.moving[ids] = True
 
     def advance(self, commands, stop_curriculum=False):
@@ -36,10 +38,19 @@ class GaitClock:
             self.moving = torch.where(self.moving, intent > .6, intent > 1.)
         else:
             self.moving[:] = True
+        self.phase_offsets = self.smooth_offsets(self.phase_offsets,commands[:,6:9])
         self.phase = torch.remainder(self.phase + commands[:, 5] * self.dt * self.moving, 1.)
 
+    def effective_commands(self,commands):
+        effective=commands.clone()
+        effective[:,6:9]=self.phase_offsets
+        return effective
+
+    def local_phases(self,commands):
+        return local_phases(self.phase,self.effective_commands(commands))
+
     def values(self, commands, stop_curriculum=False):
-        values = clocks(self.phase, commands)
+        values = clocks(self.phase, self.effective_commands(commands))
         return values * self.moving[:, None] if stop_curriculum else values
 
     def smooth_offsets(self, current, target, tau_s=.2):

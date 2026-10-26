@@ -88,6 +88,7 @@ def main():
         coordinates='meters, seconds, radians; +X forward,+Y left,+Z up; S0-S2 teacher body-frame compatibility, S3/S5 velocity commands use heading-aligned horizontal frame',
         history_reset='Repeat current fresh proprioception six times; previous executed target resets to default; append once per20ms control sample only',
         phase_update='Integrate phase += frequency*0.02 modulo1; do not reset phase on a frequency command change',
+        phase_command_transition='GaitClock filters the three requested relative phases along the shortest circular distance, time constant0.2s; raw command fields remain current requested commands; clocks/reward phases use filtered offsets',
         clocks='Four current sin(2*pi*u) values; u=local/(2*beta) in stance, else0.5+(local-beta)/(2*(1-beta)); phase offsets FL0,FRcommand6,HLcommand7,HRcommand8; use provided GaitClock stop hysteresis',
         control_period_s=.02,physics_period_s=.0005,physics_substeps_per_control=40,target_interpolation='hold full joint target throughout control interval',
         aux_reward_coeff=1.,output='actor_raw326 returns15 dimensionless offsets; target_raw326 returns15 limited full absolute joint targets in radians',

@@ -1,5 +1,5 @@
 {
-  "updated_unix": 1793050372.4162927,
+  "updated_unix": 1793051931.668105,
   "goal_complete": false,
   "teacher": {
     "run": "stand5_20261027_v44_stride80_all",
@@ -7,15 +7,15 @@
     "verified": true,
     "manifest": "planning/cmd16_hist6_baseline/teacher_manifest.json"
   },
-  "current_run": "runs/cmd16_hist6_s2_ppo_20261027_052700",
-  "current_deadline": "2026-10-27T05:47:00.444961+08:00",
+  "current_run": "runs/cmd16_hist6_s2_ppo_20261027_054920",
+  "current_deadline": "2026-10-27T06:09:20.109633+08:00",
   "current_processes": {
-    "supervisor": 383796,
-    "training": 384817,
-    "evaluation_video_monitor": 384906
+    "supervisor": 395015,
+    "training": 395331,
+    "evaluation_video_monitor": 395397
   },
   "pre_migration_commit": "a95854cf4042b7994731e7a02d9761be8fd195d7",
-  "latest_pushed_commit": "136ff16",
+  "latest_pushed_commit": "aa60082",
   "completed": [
     "326/90/92/15 schema and six-frame cache",
     "full raw-input mirror projection and history encoder",
@@ -33,7 +33,12 @@
     "Omnidirectional motion activation and unsigned true-air landing events",
     "Fail-closed three-seed acceptance with per-foot actual frequency switches",
     "Complete raw326 TorchScript and fulltarget export numerical consistency; exported candidate notaccepted",
-    "Combined independent evaluation/video GPU smoke; actualsource retained"
+    "Combined independent evaluation/video GPU smoke; actualsource retained",
+    "Actual legacy control substep torque equivalence checked",
+    "Post-clipping velocitycost tested with realaggregator and twoGPU PPOupdates",
+    "Phase-offset circular smoothing wired into clocks/rewards; constantlegacyclocks exactidentity; crossing0/1 unitcheck",
+    "Rich pre-reset50Hz telemetry forpose,contact,slipproxy,velocity/acceleration/torque/work, with scope labels",
+    "S3/S5 acceptance additionally requiresactualfour-foot steps; slidingalonecannotpass"
   ],
   "not_achieved": [
     "S2 independent walking regression",
@@ -50,14 +55,19 @@
     "Final DAgger three-seed failures concentrate in start/stop survival and lateral velocity oscillation; fixed forward survival passedallseedgroups.",
     "New PPO launched052700 for20minutes after fullparentarchive; runtime77files verified; no teacher/reference execution.",
     "1024env smoke showed encoder updates can shift the actor; rollback+auxiliary learning-rate reduction is active.",
-    "New combined evaluation/video first16s report took187.5s while other acceptance evaluations sharedGPU; actualtimestamps retained."
+    "New combined evaluation/video first16s report took187.5s while other acceptance evaluations sharedGPU; actualtimestamps retained.",
+    "First pure PPO completed223 at0547. Survival improved, but laterXY RMSE worsened to0.057–0.065m/s; final/archive all82filesverified.",
+    "Second S2 selects first-PPO23 by independent regression, not reward; adds velocity_error=-2*sum((xy_actual-xy_command)/0.05)^2 afterpositiveclipping.",
+    "Same-state torque comparison invoked the exact originalv44 method for120substeps across3speedcases; maximumdifference1.49e-7Nm.",
+    "Second-PPO34 independent24env16s:24/24 survival, XYRMSE [.05026,.04505,.04225,.01005,.04195,.04771]; not yetthree-seed accepted."
   ],
   "next_work": [
-    "Check live PPO processes and next independent checkpoint reports; avoid changing frozen runtime.",
-    "Complete S2 independent regression gate with three fixedseeds before S3. Current DAgger base did notpass.",
-    "Continue S3 translation/yaw learning and laterS5 frequency; do not claim success frominterface or clockconfiguration.",
-    "Development S5 expands0.9–1.1 to0.8–1.2Hz after completed-episode survivalcondition; retain/validate actualallfoot landingfrequency.",
-    "Observe PPO stability; current early completed-episode survival is biased toward earlyfailures before20s timeouts. Use independent16s evaluations for performance."
+    "Revalidate live secondS2 PPO and candidate34 acceptance process398906; do not change currentfrozenruntime.",
+    "If candidate34 three-seed S2 acceptance passes, stop/save currentround atsafeupdate and launch freshS3 fromacceptedcheckpoint34 afterverifiedparentarchive.",
+    "S3 freshcontroller baseline andrealPPOsmoke beforefullround; allcommandframes andactualstepgates alreadyimplemented.",
+    "If candidate34 fails, inspectper-scenario evidence and latestcheckpoints, continuingnewcostlearning withoutrelaxingthresholds.",
+    "Developmentsource richtelemetry andphasefilter changes are notin currentfrozenrun.12CPUtests plusGPU2s probespassed.",
+    "Remaininggoal: actualtranslation/yaw learning andfrequency switching; completionunproven."
   ],
   "evidence": [
     "results/cmd16_hist6/preflight/teacher_adapter.json",
@@ -70,9 +80,13 @@
     "results/cmd16_hist6/integrated_video_smoke.json",
     "results/cmd16_hist6/export_probe_20261027_0517/contract.json",
     "results/cmd16_hist6/motor_envelope_probe.json",
-    "results/cmd16_hist6/preflight/scripted_motor_no_reference.json"
+    "results/cmd16_hist6/preflight/scripted_motor_no_reference.json",
+    "results/cmd16_hist6/control_and_velocity_reward_probe.json",
+    "results/cmd16_hist6/velocity_cost_smoke_validation.json",
+    "results/cmd16_hist6/rich_evaluation_smoke.json",
+    "results/cmd16_hist6/preflight/phase_smoothing_no_reference.json"
   ],
-  "current_status": "1024env S2 teacher-free PPO live; DAgger final three-seed acceptance failed, raw reports preserved",
+  "current_status": "Second S2 PPO with direct post-clipping XY velocity cost; candidate34 now in three-seed acceptance",
   "dagger_final": {
     "iteration": 15040,
     "sha256": "e6dac5a717c43de43737bc16b57c7f1b015e8de5a014e2b2d039ba4817d16133",
@@ -86,5 +100,5 @@
       "1147": 0.9791666865348816
     }
   },
-  "current_acceptance": "runs/cmd16_hist6_dagger_acceptance_20261027_052134/reports"
+  "current_acceptance": "runs/cmd16_hist6_s2_acceptance_20261027_055701/reports"
 }
