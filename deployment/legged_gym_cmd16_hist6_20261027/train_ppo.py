@@ -12,7 +12,7 @@ import torch
 from migration_env import create_migration_env
 from migration_config import student_config
 from history_policy import HistoryActorCritic
-from ppo_history import HistoryPPO
+from ppo_history import HistoryPPO, restore_optimizers
 from curriculum import next_frequency_range
 from teacher_adapter import verify_teacher_manifest
 from run_io import atomic_json, append_json, sha256
@@ -38,6 +38,7 @@ def main():
     p.add_argument('--critic-warmup-updates', type=int, default=10)
     p.add_argument('--learning-rate', type=float, default=5e-5)
     p.add_argument('--seed', type=int, default=44)
+    p.add_argument('--restore-optimizer',action='store_true')
     a = p.parse_args()
     deadline = datetime.datetime.fromisoformat(a.deadline).timestamp()
     assert deadline > time.time()
@@ -71,6 +72,10 @@ def main():
         schedule='fixed', desired_kl=None, auxiliary_learning_rate=2e-5,
         minimum_action_std=cfg.migration.minimum_action_std)
     algorithm.init_storage(a.num_envs, a.rollout_steps, [326], [92], [15])
+    if a.restore_optimizer:
+        if parent.get('stage')!=a.stage or a.critic_warmup_updates:
+            raise ValueError('Optimizer restoration requires same stage and no new critic warmup')
+        restore_optimizers(algorithm,parent)
     a.run.mkdir(parents=True, exist_ok=True)
     (a.run/'checkpoints').mkdir(exist_ok=True)
     atomic_json(a.run/'schema.json', parent['schema'])
@@ -78,7 +83,7 @@ def main():
         learning_rate=a.learning_rate, seed=a.seed, teacher_sha256=teacher['sha256'],
         parent_checkpoint=str(a.resume), parent_sha256=sha256(a.resume),
         algorithm='on-policy PPO; no teacher/reference execution; separate auxiliary encoder updates',
-        critic_warmup_updates=a.critic_warmup_updates, optimizer_restore=False,
+        critic_warmup_updates=a.critic_warmup_updates, optimizer_restore=a.restore_optimizer,
         command_ranges=cfg.migration.command_ranges, reward_weights=vars(cfg.rewards.scales),
         velocity_error_scale_m_s=cfg.migration.velocity_error_scale_m_s,
         unclipped_gait_costs=cfg.migration.unclipped_gait_costs,

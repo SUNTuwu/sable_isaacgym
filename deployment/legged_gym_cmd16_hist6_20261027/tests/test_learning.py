@@ -195,6 +195,19 @@ class LearningTests(unittest.TestCase):
             if name.startswith('history_encoder.'):
                 torch.testing.assert_close(value,original[name],rtol=0,atol=0)
 
+        # Identical continuation restores Adam step counters/moments and the
+        # auxiliary learning rate; a fresh rollout buffer is still used.
+        from ppo_history import restore_optimizers
+        continued=HistoryPPO(policy,gamma=.9,num_learning_epochs=1,num_mini_batches=1)
+        restore_optimizers(continued,{'optimizer_state_dict':ppo.optimizer.state_dict(),
+            'auxiliary_optimizer_state_dict':ppo.auxiliary_optimizer.state_dict()})
+        before=ppo.optimizer.state_dict();after=continued.optimizer.state_dict()
+        self.assertEqual(before['param_groups'],after['param_groups'])
+        self.assertTrue(before['state'])
+        for key,state in before['state'].items():
+            for name,value in state.items():torch.testing.assert_close(after['state'][key][name],value,rtol=0,atol=0)
+        self.assertEqual(continued.auxiliary_optimizer.param_groups[0]['lr'],ppo.auxiliary_optimizer.param_groups[0]['lr'])
+
 
 if __name__ == '__main__':
     unittest.main()

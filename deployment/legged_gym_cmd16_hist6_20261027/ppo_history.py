@@ -9,6 +9,15 @@ def timeout_bootstrap(rewards, timeouts, terminal_values, gamma):
     return rewards + gamma*terminal_values.reshape_as(rewards)*timeouts.to(rewards.dtype)
 
 
+def restore_optimizers(algorithm, checkpoint):
+    """Restore learning state only after the launcher checks compatibility."""
+    for name in ('optimizer_state_dict','auxiliary_optimizer_state_dict'):
+        if name not in checkpoint:raise ValueError('Missing checkpoint '+name)
+    algorithm.optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+    algorithm.auxiliary_optimizer.load_state_dict(checkpoint['auxiliary_optimizer_state_dict'])
+    algorithm.learning_rate=algorithm.optimizer.param_groups[0]['lr']
+
+
 class HistoryPPO(PPO):
     def __init__(self, *args, auxiliary_learning_rate=5e-5, auxiliary_policy_kl_limit=.01, minimum_action_std=.02, **kwargs):
         super().__init__(*args, **kwargs)

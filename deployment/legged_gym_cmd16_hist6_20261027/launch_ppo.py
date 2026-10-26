@@ -63,6 +63,14 @@ def main():
         if not continuation:assert gate['checkpoint_sha256']==cp['sha256']
         assert gate['stage']==('S2' if a.stage=='S3' else 'S3')
     source=Path(__file__).resolve().parent
+    # Exclude process/diagnostic entrypoints, never physics, policy, curriculum
+    # or optimizer implementations. A code change deliberately resets Adam.
+    nontraining={'train_ppo.py','launch_ppo.py','watch_migration.py','export_policy.py','select_regression_checkpoint.py'}
+    training_files=[f for f in source.glob('*.py') if f.name not in nontraining
+        and not f.name.startswith(('evaluate_','evaluation_','probe_','check_'))]
+    same_training_code=all((parent/'runtime'/f.name).exists() and sha256(parent/'runtime'/f.name)==sha256(f) for f in training_files)
+    restore_optimizer=(continuation and same_rewards and same_curriculum and same_exploration and same_training_code
+        and parent_config.get('num_envs')==a.num_envs and parent_config.get('learning_rate')==5e-5)
     run=ROOT/'runs'/('cmd16_hist6_'+a.stage.lower()+'_ppo_'+time.strftime('%Y%m%d_%H%M%S'))
     runtime=run/'runtime';runtime.mkdir(parents=True)
     for f in source.glob('*.py'):shutil.copy2(f,runtime/f.name)
@@ -78,7 +86,8 @@ def main():
     deadline=(start+datetime.timedelta(seconds=prefs['default_duration_s'])).isoformat()
     cmd=[sys.executable,'-u',str(runtime/'train_ppo.py'),'--run',str(run),'--teacher',str(run/'teacher_manifest.json'),
         '--resume',cp['path'],'--deadline',deadline,'--stage',a.stage,'--num-envs',str(a.num_envs),
-        '--critic-warmup-updates','0' if continuation and same_rewards and same_curriculum and same_exploration else '10']
+        '--critic-warmup-updates','0' if continuation and same_rewards and same_curriculum and same_exploration and same_training_code else '10']
+    if restore_optimizer:cmd.append('--restore-optimizer')
     atomic_json(run/'launch.json',{'command':cmd,'deadline':deadline,'preferences':prefs,'parent':cp,'stage':a.stage+'_PPO','automatic_resume':False})
     with (run/'train.log').open('w') as log:training=subprocess.Popen(cmd,stdout=log,stderr=subprocess.STDOUT)
     until=time.time()+150
