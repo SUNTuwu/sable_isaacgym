@@ -122,12 +122,16 @@ def main():
             if time.time()-last_report >= 30 or iteration == a.max_updates:
                 rows = env.last_episode_records[-512:]
                 survival = 1.-float(np.mean([r[1] for r in rows])) if rows else None
+                # Keep the larger completed-episode window for curriculum decisions;
+                # a short window can be biased by a synchronized timeout cohort.
+                curriculum_rows = env.last_episode_records
+                curriculum_survival = 1.-float(np.mean([r[1] for r in curriculum_rows])) if curriculum_rows else None
                 frequency = next_frequency_range(a.stage,cfg.migration.command_ranges['frequency'],
-                    len(rows),survival,time.time()-start)
+                    len(curriculum_rows),curriculum_survival,time.time()-start,max(256,env.num_envs))
                 if frequency != cfg.migration.command_ranges['frequency']:
                     cfg.migration.command_ranges['frequency'] = frequency
                     append_json(a.run/'events.jsonl',dict(event='frequency_range_expanded',range_hz=frequency,
-                        time=time.time(),iteration=iteration,completed_episodes=len(rows),survival_fraction=survival,
+                        time=time.time(),iteration=iteration,completed_episodes=len(curriculum_rows),survival_fraction=curriculum_survival,
                         independent_acceptance=False))
                 metrics = dict(value_loss=value_loss, surrogate_loss=surrogate_loss,
                     mean_reward_per_control_step=reward_mean/a.rollout_steps,

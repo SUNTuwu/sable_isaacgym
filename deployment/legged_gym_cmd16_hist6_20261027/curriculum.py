@@ -38,13 +38,13 @@ def stage_gate(stage, report, baseline):
     return assess(stage, report if isinstance(report,list) else [report], baseline)
 
 
-def next_frequency_range(stage, current, completed_episodes, survival_fraction, elapsed_seconds):
+def next_frequency_range(stage, current, completed_episodes, survival_fraction, elapsed_seconds, minimum_episodes=256):
     """Expand only the frequency range after actual completed training episodes.
 
     This is a training curriculum condition, never independent acceptance.
     """
     if stage != 'S5' or list(current) != [.9,1.1]:
         return list(current)
-    if completed_episodes >= 256 and survival_fraction is not None and survival_fraction >= .9 and elapsed_seconds >= 240:
+    if completed_episodes >= minimum_episodes and survival_fraction is not None and survival_fraction >= .9 and elapsed_seconds >= 240:
         return [.8,1.2]
     return list(current)

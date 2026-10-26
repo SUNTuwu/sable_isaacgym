@@ -22,6 +22,7 @@ class LearningTests(unittest.TestCase):
         self.assertEqual(next_frequency_range('S5',[.9,1.1],300,1.,60),[.9,1.1])
         self.assertEqual(next_frequency_range('S3',[.9,1.1],300,1.,600),[.9,1.1])
         self.assertEqual(next_frequency_range('S5',[.9,1.1],300,.95,600),[.8,1.2])
+        self.assertEqual(next_frequency_range('S5',[.9,1.1],300,.95,600,1024),[.9,1.1])
 
     def test_acceptance_rejects_missing_events_and_nonresponsive_clocks(self):
         baseline = {'teacher_sha256':'t'*64,'regression_limits':{'xy_rmse_max_m_s':.053,'forward_rmse_max_m_s':.03},
