@@ -1,0 +1,949 @@
+{
+  "created_unix": 1793059016.1487026,
+  "independent_task_acceptance": false,
+  "active_training_run": "runs/cmd16_hist6_s3_ppo_20261027_074834",
+  "source_commit": "da3b4cf",
+  "validation": {
+    "real_4096_PPO_smoke_updates": 2,
+    "cpu_tests_passed": 16,
+    "PPO_kl_probe_updates": 12,
+    "finite": true,
+    "reference_execution_calls": 0
+  },
+  "throughput": [
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_batch2048_smoke_20261027_073020",
+      "num_envs": 2048,
+      "seconds": 28.508655309677124,
+      "environment_steps": 147456,
+      "environment_steps_per_second": 5172.323927531818,
+      "reference_execution_calls": 0
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_batch4096_smoke_20261027_073055",
+      "num_envs": 4096,
+      "seconds": 32.04149055480957,
+      "environment_steps": 294912,
+      "environment_steps_per_second": 9204.066193347937,
+      "reference_execution_calls": 0
+    }
+  ],
+  "hind_noise": [
+    {
+      "name": "forward",
+      "command": [
+        0.105,
+        0.0,
+        0.0
+      ],
+      "std": 0.04,
+      "survival_fraction": 0.5,
+      "mean_original_duration_s": 7.702519416809082,
+      "mean_peak_per_foot_m": [
+        0.026247801259160042,
+        0.03492116183042526,
+        0.04074651375412941,
+        0.05336792767047882
+      ],
+      "actual_completed_steps_per_foot": [
+        49.0,
+        51.0,
+        50.0,
+        50.0
+      ]
+    },
+    {
+      "name": "reverse",
+      "command": [
+        -0.04,
+        0.0,
+        0.0
+      ],
+      "std": 0.04,
+      "survival_fraction": 1.0,
+      "mean_original_duration_s": 10.000039100646973,
+      "mean_peak_per_foot_m": [
+        0.020338507369160652,
+        0.020437907427549362,
+        0.004782692529261112,
+        0.005364744458347559
+      ],
+      "actual_completed_steps_per_foot": [
+        68.0,
+        69.0,
+        6.0,
+        0.0
+      ]
+    },
+    {
+      "name": "lateral",
+      "command": [
+        0.0,
+        0.04,
+        0.0
+      ],
+      "std": 0.04,
+      "survival_fraction": 0.875,
+      "mean_original_duration_s": 8.832534790039062,
+      "mean_peak_per_foot_m": [
+        0.023701893165707588,
+        0.02700062096118927,
+        0.0058511714451014996,
+        0.020206138491630554
+      ],
+      "actual_completed_steps_per_foot": [
+        58.0,
+        61.0,
+        9.0,
+        48.0
+      ]
+    },
+    {
+      "name": "yaw",
+      "command": [
+        0.0,
+        0.0,
+        0.35
+      ],
+      "std": 0.04,
+      "survival_fraction": 1.0,
+      "mean_original_duration_s": 10.000039100646973,
+      "mean_peak_per_foot_m": [
+        0.024765193462371826,
+        0.025907497853040695,
+        0.00823530089110136,
+        0.008355114609003067
+      ],
+      "actual_completed_steps_per_foot": [
+        64.0,
+        63.0,
+        17.0,
+        13.0
+      ]
+    },
+    {
+      "name": "forward",
+      "command": [
+        0.105,
+        0.0,
+        0.0
+      ],
+      "std": 0.08,
+      "survival_fraction": 0.0,
+      "mean_original_duration_s": 2.4199984073638916,
+      "mean_peak_per_foot_m": [
+        0.045456260442733765,
+        0.03084144927561283,
+        0.07328370213508606,
+        0.04079333320260048
+      ],
+      "actual_completed_steps_per_foot": [
+        7.0,
+        8.0,
+        7.0,
+        7.0
+      ]
+    },
+    {
+      "name": "reverse",
+      "command": [
+        -0.04,
+        0.0,
+        0.0
+      ],
+      "std": 0.08,
+      "survival_fraction": 1.0,
+      "mean_original_duration_s": 10.000039100646973,
+      "mean_peak_per_foot_m": [
+        0.020118504762649536,
+        0.021504919975996017,
+        0.009149085730314255,
+        0.008470450527966022
+      ],
+      "actual_completed_steps_per_foot": [
+        67.0,
+        67.0,
+        21.0,
+        18.0
+      ]
+    },
+    {
+      "name": "lateral",
+      "command": [
+        0.0,
+        0.04,
+        0.0
+      ],
+      "std": 0.08,
+      "survival_fraction": 0.25,
+      "mean_original_duration_s": 5.490007400512695,
+      "mean_peak_per_foot_m": [
+        0.025125250220298767,
+        0.04879714921116829,
+        0.0064923446625471115,
+        0.06458386778831482
+      ],
+      "actual_completed_steps_per_foot": [
+        35.0,
+        29.0,
+        1.0,
+        50.0
+      ]
+    },
+    {
+      "name": "yaw",
+      "command": [
+        0.0,
+        0.0,
+        0.35
+      ],
+      "std": 0.08,
+      "survival_fraction": 0.375,
+      "mean_original_duration_s": 8.29751968383789,
+      "mean_peak_per_foot_m": [
+        0.02907867170870304,
+        0.0432029664516449,
+        0.020443744957447052,
+        0.05318495258688927
+      ],
+      "actual_completed_steps_per_foot": [
+        54.0,
+        46.0,
+        18.0,
+        36.0
+      ]
+    },
+    {
+      "name": "forward",
+      "command": [
+        0.105,
+        0.0,
+        0.0
+      ],
+      "std": 0.16,
+      "survival_fraction": 0.0,
+      "mean_original_duration_s": 1.2749993801116943,
+      "mean_peak_per_foot_m": [
+        0.040026407688856125,
+        0.03627081587910652,
+        0.05882527679204941,
+        0.06293512135744095
+      ],
+      "actual_completed_steps_per_foot": [
+        3.0,
+        1.0,
+        2.0,
+        3.0
+      ]
+    },
+    {
+      "name": "reverse",
+      "command": [
+        -0.04,
+        0.0,
+        0.0
+      ],
+      "std": 0.16,
+      "survival_fraction": 0.0,
+      "mean_original_duration_s": 3.2799975872039795,
+      "mean_peak_per_foot_m": [
+        0.03193582221865654,
+        0.03558468818664551,
+        0.05544775351881981,
+        0.05407484248280525
+      ],
+      "actual_completed_steps_per_foot": [
+        18.0,
+        16.0,
+        20.0,
+        15.0
+      ]
+    },
+    {
+      "name": "lateral",
+      "command": [
+        0.0,
+        0.04,
+        0.0
+      ],
+      "std": 0.16,
+      "survival_fraction": 0.0,
+      "mean_original_duration_s": 1.5149991512298584,
+      "mean_peak_per_foot_m": [
+        0.024673551321029663,
+        0.058677323162555695,
+        0.009864402003586292,
+        0.07887014001607895
+      ],
+      "actual_completed_steps_per_foot": [
+        3.0,
+        1.0,
+        2.0,
+        5.0
+      ]
+    },
+    {
+      "name": "yaw",
+      "command": [
+        0.0,
+        0.0,
+        0.35
+      ],
+      "std": 0.16,
+      "survival_fraction": 0.0,
+      "mean_original_duration_s": 1.9124988317489624,
+      "mean_peak_per_foot_m": [
+        0.03679245710372925,
+        0.048758603632450104,
+        0.04097319766879082,
+        0.05828326568007469
+      ],
+      "actual_completed_steps_per_foot": [
+        5.0,
+        5.0,
+        12.0,
+        9.0
+      ]
+    },
+    {
+      "name": "forward",
+      "command": [
+        0.105,
+        0.0,
+        0.0
+      ],
+      "std": 0.24,
+      "survival_fraction": 0.0,
+      "mean_original_duration_s": 0.899999737739563,
+      "mean_peak_per_foot_m": [
+        0.03970349580049515,
+        0.02895490452647209,
+        0.06428495049476624,
+        0.04501935467123985
+      ],
+      "actual_completed_steps_per_foot": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "reverse",
+      "command": [
+        -0.04,
+        0.0,
+        0.0
+      ],
+      "std": 0.24,
+      "survival_fraction": 0.0,
+      "mean_original_duration_s": 1.7624989748001099,
+      "mean_peak_per_foot_m": [
+        0.03815769776701927,
+        0.03507956489920616,
+        0.05469122156500816,
+        0.04908149689435959
+      ],
+      "actual_completed_steps_per_foot": [
+        7.0,
+        6.0,
+        11.0,
+        11.0
+      ]
+    },
+    {
+      "name": "lateral",
+      "command": [
+        0.0,
+        0.04,
+        0.0
+      ],
+      "std": 0.24,
+      "survival_fraction": 0.0,
+      "mean_original_duration_s": 1.1699994802474976,
+      "mean_peak_per_foot_m": [
+        0.02084183692932129,
+        0.061823658645153046,
+        0.013973087072372437,
+        0.0860268622636795
+      ],
+      "actual_completed_steps_per_foot": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "yaw",
+      "command": [
+        0.0,
+        0.0,
+        0.35
+      ],
+      "std": 0.24,
+      "survival_fraction": 0.0,
+      "mean_original_duration_s": 1.2149994373321533,
+      "mean_peak_per_foot_m": [
+        0.046529680490493774,
+        0.034657400101423264,
+        0.07313196361064911,
+        0.03081255592405796
+      ],
+      "actual_completed_steps_per_foot": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "PPO_changes": [
+    {
+      "update": 1,
+      "after_ppo": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.09288353472948074,
+          "kl_p95": 0.1822785884141922,
+          "likelihood_ratio_outside_clip_fraction": 0.67041015625
+        },
+        "novel": {
+          "count": 576,
+          "kl_mean": 0.011138476431369781,
+          "kl_p95": 0.02173122763633728,
+          "likelihood_ratio_outside_clip_fraction": 0.2951388955116272
+        },
+        "known": {
+          "count": 3520,
+          "kl_mean": 0.10626000165939331,
+          "kl_p95": 0.18471525609493256,
+          "likelihood_ratio_outside_clip_fraction": 0.7318181395530701
+        }
+      },
+      "after_auxiliary": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.09280598163604736,
+          "kl_p95": 0.1821872889995575,
+          "likelihood_ratio_outside_clip_fraction": 0.66845703125
+        },
+        "novel": {
+          "count": 576,
+          "kl_mean": 0.011138476431369781,
+          "kl_p95": 0.02173122763633728,
+          "likelihood_ratio_outside_clip_fraction": 0.2951388955116272
+        },
+        "known": {
+          "count": 3520,
+          "kl_mean": 0.10616975277662277,
+          "kl_p95": 0.18462726473808289,
+          "likelihood_ratio_outside_clip_fraction": 0.7295454144477844
+        }
+      }
+    },
+    {
+      "update": 2,
+      "after_ppo": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.01820727251470089,
+          "kl_p95": 0.029595032334327698,
+          "likelihood_ratio_outside_clip_fraction": 0.39208984375
+        },
+        "novel": {
+          "count": 576,
+          "kl_mean": 0.0052856155671179295,
+          "kl_p95": 0.009975284337997437,
+          "likelihood_ratio_outside_clip_fraction": 0.1284722238779068
+        },
+        "known": {
+          "count": 3520,
+          "kl_mean": 0.02032172679901123,
+          "kl_p95": 0.03026728518307209,
+          "likelihood_ratio_outside_clip_fraction": 0.43522724509239197
+        }
+      },
+      "after_auxiliary": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.02260439656674862,
+          "kl_p95": 0.03534398972988129,
+          "likelihood_ratio_outside_clip_fraction": 0.431884765625
+        },
+        "novel": {
+          "count": 576,
+          "kl_mean": 0.005674861371517181,
+          "kl_p95": 0.010395482182502747,
+          "likelihood_ratio_outside_clip_fraction": 0.1440972238779068
+        },
+        "known": {
+          "count": 3520,
+          "kl_mean": 0.02537468448281288,
+          "kl_p95": 0.036015987396240234,
+          "likelihood_ratio_outside_clip_fraction": 0.4789772629737854
+        }
+      }
+    },
+    {
+      "update": 3,
+      "after_ppo": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.023670602589845657,
+          "kl_p95": 0.044417381286621094,
+          "likelihood_ratio_outside_clip_fraction": 0.438720703125
+        },
+        "novel": {
+          "count": 577,
+          "kl_mean": 0.007354462053626776,
+          "kl_p95": 0.01220556627959013,
+          "likelihood_ratio_outside_clip_fraction": 0.21143847703933716
+        },
+        "known": {
+          "count": 3519,
+          "kl_mean": 0.026345914229750633,
+          "kl_p95": 0.04486707225441933,
+          "likelihood_ratio_outside_clip_fraction": 0.4759874939918518
+        }
+      },
+      "after_auxiliary": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.03566163778305054,
+          "kl_p95": 0.05585257709026337,
+          "likelihood_ratio_outside_clip_fraction": 0.533935546875
+        },
+        "novel": {
+          "count": 577,
+          "kl_mean": 0.009115676395595074,
+          "kl_p95": 0.014688325114548206,
+          "likelihood_ratio_outside_clip_fraction": 0.2634315490722656
+        },
+        "known": {
+          "count": 3519,
+          "kl_mean": 0.040014296770095825,
+          "kl_p95": 0.05637460947036743,
+          "likelihood_ratio_outside_clip_fraction": 0.578289270401001
+        }
+      }
+    },
+    {
+      "update": 4,
+      "after_ppo": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.016944222152233124,
+          "kl_p95": 0.03832978010177612,
+          "likelihood_ratio_outside_clip_fraction": 0.34423828125
+        },
+        "novel": {
+          "count": 577,
+          "kl_mean": 0.004741153214126825,
+          "kl_p95": 0.008434499613940716,
+          "likelihood_ratio_outside_clip_fraction": 0.12998266518115997
+        },
+        "known": {
+          "count": 3519,
+          "kl_mean": 0.01894512213766575,
+          "kl_p95": 0.039068374782800674,
+          "likelihood_ratio_outside_clip_fraction": 0.3793691396713257
+        }
+      },
+      "after_auxiliary": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.018854152411222458,
+          "kl_p95": 0.04033234715461731,
+          "likelihood_ratio_outside_clip_fraction": 0.36669921875
+        },
+        "novel": {
+          "count": 577,
+          "kl_mean": 0.005011006724089384,
+          "kl_p95": 0.009905458427965641,
+          "likelihood_ratio_outside_clip_fraction": 0.14211438596248627
+        },
+        "known": {
+          "count": 3519,
+          "kl_mean": 0.021123969927430153,
+          "kl_p95": 0.040929198265075684,
+          "likelihood_ratio_outside_clip_fraction": 0.403523713350296
+        }
+      }
+    },
+    {
+      "update": 5,
+      "after_ppo": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.045343559235334396,
+          "kl_p95": 0.08065028488636017,
+          "likelihood_ratio_outside_clip_fraction": 0.582275390625
+        },
+        "novel": {
+          "count": 577,
+          "kl_mean": 0.010861699469387531,
+          "kl_p95": 0.02136918529868126,
+          "likelihood_ratio_outside_clip_fraction": 0.2582322359085083
+        },
+        "known": {
+          "count": 3519,
+          "kl_mean": 0.05099744722247124,
+          "kl_p95": 0.08158710598945618,
+          "likelihood_ratio_outside_clip_fraction": 0.6354077458381653
+        }
+      },
+      "after_auxiliary": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.042981237173080444,
+          "kl_p95": 0.07618445158004761,
+          "likelihood_ratio_outside_clip_fraction": 0.567138671875
+        },
+        "novel": {
+          "count": 577,
+          "kl_mean": 0.010102626867592335,
+          "kl_p95": 0.019101357087492943,
+          "likelihood_ratio_outside_clip_fraction": 0.2547660171985626
+        },
+        "known": {
+          "count": 3519,
+          "kl_mean": 0.04837224632501602,
+          "kl_p95": 0.07717261463403702,
+          "likelihood_ratio_outside_clip_fraction": 0.6183574795722961
+        }
+      }
+    },
+    {
+      "update": 6,
+      "after_ppo": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.09142804145812988,
+          "kl_p95": 0.13528728485107422,
+          "likelihood_ratio_outside_clip_fraction": 0.69091796875
+        },
+        "novel": {
+          "count": 577,
+          "kl_mean": 0.0176098495721817,
+          "kl_p95": 0.030005324631929398,
+          "likelihood_ratio_outside_clip_fraction": 0.39514732360839844
+        },
+        "known": {
+          "count": 3519,
+          "kl_mean": 0.10353178530931473,
+          "kl_p95": 0.13585492968559265,
+          "likelihood_ratio_outside_clip_fraction": 0.7394145727157593
+        }
+      },
+      "after_auxiliary": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.09170059859752655,
+          "kl_p95": 0.13920509815216064,
+          "likelihood_ratio_outside_clip_fraction": 0.693359375
+        },
+        "novel": {
+          "count": 577,
+          "kl_mean": 0.018452564254403114,
+          "kl_p95": 0.03167208284139633,
+          "likelihood_ratio_outside_clip_fraction": 0.38648179173469543
+        },
+        "known": {
+          "count": 3519,
+          "kl_mean": 0.1037108525633812,
+          "kl_p95": 0.13991715013980865,
+          "likelihood_ratio_outside_clip_fraction": 0.7436771392822266
+        }
+      }
+    },
+    {
+      "update": 7,
+      "after_ppo": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.08558934926986694,
+          "kl_p95": 0.14802394807338715,
+          "likelihood_ratio_outside_clip_fraction": 0.689697265625
+        },
+        "novel": {
+          "count": 980,
+          "kl_mean": 0.033206552267074585,
+          "kl_p95": 0.04542536661028862,
+          "likelihood_ratio_outside_clip_fraction": 0.5489795804023743
+        },
+        "known": {
+          "count": 3116,
+          "kl_mean": 0.10206403583288193,
+          "kl_p95": 0.15114662051200867,
+          "likelihood_ratio_outside_clip_fraction": 0.7339538335800171
+        }
+      },
+      "after_auxiliary": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.08610361069440842,
+          "kl_p95": 0.1527143269777298,
+          "likelihood_ratio_outside_clip_fraction": 0.6904296875
+        },
+        "novel": {
+          "count": 980,
+          "kl_mean": 0.033752020448446274,
+          "kl_p95": 0.0463758185505867,
+          "likelihood_ratio_outside_clip_fraction": 0.5571428537368774
+        },
+        "known": {
+          "count": 3116,
+          "kl_mean": 0.10256848484277725,
+          "kl_p95": 0.1564548909664154,
+          "likelihood_ratio_outside_clip_fraction": 0.7323492169380188
+        }
+      }
+    },
+    {
+      "update": 8,
+      "after_ppo": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.027279360219836235,
+          "kl_p95": 0.058541715145111084,
+          "likelihood_ratio_outside_clip_fraction": 0.466796875
+        },
+        "novel": {
+          "count": 2006,
+          "kl_mean": 0.013557055033743382,
+          "kl_p95": 0.017438337206840515,
+          "likelihood_ratio_outside_clip_fraction": 0.3354935348033905
+        },
+        "known": {
+          "count": 2090,
+          "kl_mean": 0.04045014828443527,
+          "kl_p95": 0.06276705861091614,
+          "likelihood_ratio_outside_clip_fraction": 0.5928229689598083
+        }
+      },
+      "after_auxiliary": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.025560185313224792,
+          "kl_p95": 0.056987464427948,
+          "likelihood_ratio_outside_clip_fraction": 0.443603515625
+        },
+        "novel": {
+          "count": 2006,
+          "kl_mean": 0.013199744746088982,
+          "kl_p95": 0.018364936113357544,
+          "likelihood_ratio_outside_clip_fraction": 0.3215354084968567
+        },
+        "known": {
+          "count": 2090,
+          "kl_mean": 0.037423841655254364,
+          "kl_p95": 0.06382476538419724,
+          "likelihood_ratio_outside_clip_fraction": 0.5607655644416809
+        }
+      }
+    },
+    {
+      "update": 9,
+      "after_ppo": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.013762321323156357,
+          "kl_p95": 0.03252632915973663,
+          "likelihood_ratio_outside_clip_fraction": 0.2734375
+        },
+        "novel": {
+          "count": 2207,
+          "kl_mean": 0.005315053276717663,
+          "kl_p95": 0.007437955588102341,
+          "likelihood_ratio_outside_clip_fraction": 0.12233801931142807
+        },
+        "known": {
+          "count": 1889,
+          "kl_mean": 0.02363162860274315,
+          "kl_p95": 0.03368392959237099,
+          "likelihood_ratio_outside_clip_fraction": 0.44997352361679077
+        }
+      },
+      "after_auxiliary": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.013195371255278587,
+          "kl_p95": 0.030135780572891235,
+          "likelihood_ratio_outside_clip_fraction": 0.271728515625
+        },
+        "novel": {
+          "count": 2207,
+          "kl_mean": 0.0053289663046598434,
+          "kl_p95": 0.007816162891685963,
+          "likelihood_ratio_outside_clip_fraction": 0.12460353970527649
+        },
+        "known": {
+          "count": 1889,
+          "kl_mean": 0.022386031225323677,
+          "kl_p95": 0.03135903924703598,
+          "likelihood_ratio_outside_clip_fraction": 0.4436209797859192
+        }
+      }
+    },
+    {
+      "update": 10,
+      "after_ppo": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.00449918070808053,
+          "kl_p95": 0.012134119868278503,
+          "likelihood_ratio_outside_clip_fraction": 0.112548828125
+        },
+        "novel": {
+          "count": 2210,
+          "kl_mean": 0.002373527502641082,
+          "kl_p95": 0.004543727729469538,
+          "likelihood_ratio_outside_clip_fraction": 0.042533937841653824
+        },
+        "known": {
+          "count": 1886,
+          "kl_mean": 0.006990004796534777,
+          "kl_p95": 0.012926682829856873,
+          "likelihood_ratio_outside_clip_fraction": 0.19459174573421478
+        }
+      },
+      "after_auxiliary": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.005075404420495033,
+          "kl_p95": 0.012623623013496399,
+          "likelihood_ratio_outside_clip_fraction": 0.128173828125
+        },
+        "novel": {
+          "count": 2210,
+          "kl_mean": 0.0030499433632940054,
+          "kl_p95": 0.005716550629585981,
+          "likelihood_ratio_outside_clip_fraction": 0.06470588594675064
+        },
+        "known": {
+          "count": 1886,
+          "kl_mean": 0.007448824122548103,
+          "kl_p95": 0.013474613428115845,
+          "likelihood_ratio_outside_clip_fraction": 0.20254507660865784
+        }
+      }
+    },
+    {
+      "update": 11,
+      "after_ppo": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.0040026078931987286,
+          "kl_p95": 0.011066734790802002,
+          "likelihood_ratio_outside_clip_fraction": 0.09375
+        },
+        "novel": {
+          "count": 2208,
+          "kl_mean": 0.00221221218816936,
+          "kl_p95": 0.00398883456364274,
+          "likelihood_ratio_outside_clip_fraction": 0.033061593770980835
+        },
+        "known": {
+          "count": 1888,
+          "kl_mean": 0.006096460856497288,
+          "kl_p95": 0.012056410312652588,
+          "likelihood_ratio_outside_clip_fraction": 0.16472457349300385
+        }
+      },
+      "after_auxiliary": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.004871338605880737,
+          "kl_p95": 0.009126201272010803,
+          "likelihood_ratio_outside_clip_fraction": 0.127685546875
+        },
+        "novel": {
+          "count": 2208,
+          "kl_mean": 0.0034711339976638556,
+          "kl_p95": 0.0061640264466404915,
+          "likelihood_ratio_outside_clip_fraction": 0.07971014827489853
+        },
+        "known": {
+          "count": 1888,
+          "kl_mean": 0.006508866790682077,
+          "kl_p95": 0.010500679723918438,
+          "likelihood_ratio_outside_clip_fraction": 0.1837923675775528
+        }
+      }
+    },
+    {
+      "update": 12,
+      "after_ppo": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.014836754649877548,
+          "kl_p95": 0.04611419141292572,
+          "likelihood_ratio_outside_clip_fraction": 0.304931640625
+        },
+        "novel": {
+          "count": 2208,
+          "kl_mean": 0.00721337553113699,
+          "kl_p95": 0.014723365195095539,
+          "likelihood_ratio_outside_clip_fraction": 0.19519928097724915
+        },
+        "known": {
+          "count": 1888,
+          "kl_mean": 0.023752233013510704,
+          "kl_p95": 0.050345901399850845,
+          "likelihood_ratio_outside_clip_fraction": 0.4332627058029175
+        }
+      },
+      "after_auxiliary": {
+        "all": {
+          "count": 4096,
+          "kl_mean": 0.018185358494520187,
+          "kl_p95": 0.05312122404575348,
+          "likelihood_ratio_outside_clip_fraction": 0.36083984375
+        },
+        "novel": {
+          "count": 2208,
+          "kl_mean": 0.009133122861385345,
+          "kl_p95": 0.017418302595615387,
+          "likelihood_ratio_outside_clip_fraction": 0.24728260934352875
+        },
+        "known": {
+          "count": 1888,
+          "kl_mean": 0.028771869838237762,
+          "kl_p95": 0.05805932730436325,
+          "likelihood_ratio_outside_clip_fraction": 0.4936440587043762
+        }
+      }
+    }
+  ],
+  "decisions": [
+    "Do not raise hind noise uniformly: .08 harms lateral/yaw survival and .16/.24 failed all groups in this diagnostic.",
+    "Reverse-specific .08 hind noise is a candidate only:8/8 survived and more real hind landings than .04 in one seed; no formal training change yet.",
+    "Diagnostic forward noise keptothercoordinates.04; formal known-forward exploration remainsbase~.02. These failed stochastic diagnostic groups are not formal independent evaluations.",
+    "PPO novel-command mean KL .0022-.0332 in this short sample; keep LR5e-5 for active frozenrun. First update old-domain KL .106 indicates measurable shift, but probe alone doesnot prove a global LR change helps.",
+    "Preserve existing signed60mm last-touchdown width penalty; stale point diagnostic isnot permission to relax it.",
+    "FourthS3 final194 retained56/56survival but earlier reverse hind steps were lost. FifthS3 needs actual independent new-direction gait evidence."
+  ],
+  "evidence": [
+    {
+      "path": "results/cmd16_hist6/conditional_variance_validation.json",
+      "sha256": "5cab1f70232381d275832aeb81f0a35d33a41ee04d2d376daa70c6ca40a61e8c"
+    },
+    {
+      "path": "results/cmd16_hist6/batch_benchmark_20261027_073020/results.json",
+      "sha256": "cbd2931e9d1187ce1ae39fb8c19d091ab0529376e98891e3645c4322ceb3c090"
+    },
+    {
+      "path": "results/cmd16_hist6/hind_exploration_comparison.json",
+      "sha256": "4aedb1ad61e068a8f0a20905ae502d73c1745c163fa8e95a79ccdfbbbc9affe6"
+    },
+    {
+      "path": "results/cmd16_hist6/ppo_update_kl_diagnostic.json",
+      "sha256": "b1a08467b8084264df28823120baf2282c5e35f808823516d2301ad81b190497"
+    },
+    {
+      "path": "results/cmd16_hist6/landing_width_age_diagnostic.json",
+      "sha256": "18f14578a396aacbd162b55e51d59ec03cca6ffa76985cc5a8d9158f7c94e150"
+    }
+  ]
+}
