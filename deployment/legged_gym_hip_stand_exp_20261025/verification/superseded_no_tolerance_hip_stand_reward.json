@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "checks": {
+    "zero_at_standard_stand": true,
+    "strictly_increasing": true,
+    "increasing_slope": true,
+    "finite_in_range": true,
+    "opposite_deviation_same_cost": true,
+    "left_right_symmetric": true,
+    "elbows_knees_not_locked_by_this_term": true,
+    "survives_positive_reward_clip": true,
+    "episode_posture_sum_once": true,
+    "death_cost_preserved": true
+  },
+  "reference_deg": [
+    [
+      -14.00000286102295,
+      -14.00000286102295
+    ]
+  ],
+  "deviation_deg": [
+    0.0,
+    10.0,
+    20.0,
+    30.0,
+    38.0
+  ],
+  "cost_per_second": [
+    0.0,
+    0.1405336856842041,
+    0.7301673293113708,
+    2.194528102874756,
+    4.531044960021973
+  ],
+  "aggregated_control_step_rewards": [
+    0.0,
+    -0.0028106740210205317,
+    -0.014603347517549992,
+    -0.043890565633773804,
+    -5.090620994567871
+  ],
+  "source_sha256": {
+    "sable_env.py": "9ec703ac7584ba14944d1fc744c8d3190912244956f3562ccfadff0db5059308",
+    "sable_config.py": "162f1df5906d754210647cdaec2e77ef7ffd27453b3200c203fa2c7c015763b4",
+    "check_hip_stand_reward.py": "3d7ef8e0d63a465bc1c3509b3b8c50911ffa0ae668818e7cbd544a661e78d929",
+    "assets/physical_manifest.json": "d532bb4c167d0ad74dd09d59e557fa2189a4152f57c334ce283535bc08e15937"
+  }
+}

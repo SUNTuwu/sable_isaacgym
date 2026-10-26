@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "knee_free_lower_deg": [
+    70.99999237060547,
+    70.99999237060547
+  ],
+  "knee_free_upper_deg": [
+    90.99999237060547,
+    90.99999237060547
+  ],
+  "stride_distances_m": [
+    0.009999999776482582,
+    0.02500000037252903,
+    0.05000000074505806,
+    0.07500000298023224,
+    0.10000000149011612,
+    0.15000000596046448,
+    -0.10000000149011612
+  ],
+  "stride_reward_fraction": [
+    0.009176150895655155,
+    0.032058604061603546,
+    0.11920293420553207,
+    0.35608574748039246,
+    1.0,
+    1.0,
+    0.0
+  ],
+  "stride_exponent": 4,
+  "stride_cap_m": 0.1,
+  "physical_assets_changed": false,
+  "source_sha256": {
+    "sable_config.py": "17ebb0fa0fd10abe998ee4e070a72fd5a127d30541a3853bdc50cfd9c96c57c9",
+    "sable_env.py": "31e2c2e1ae3e64f0b3e59e2148c7811d37fd22d9c7b4f2461fc0e2a8f366aa4f",
+    "stride_progress.py": "1eec50df60ac9414f5f1862be1fd9bb64f400004603cace45ea9054bccde528c",
+    "evaluate.py": "be96a98e3f1e1c4761520f7713a6823b4979728ec3f2f77a0a1c1085d923357f"
+  }
+}

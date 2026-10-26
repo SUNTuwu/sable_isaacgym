@@ -1,0 +1,21 @@
+{
+  "status": "packages_installed_runtime_validation_pending_gpu_boot",
+  "timestamp_utc": "2026-10-24T16:19:54Z",
+  "ssh_authentication": "password via external Windows Credential Manager helper",
+  "project_root": "/root/gpufree-data/projects/sable-isaacgym",
+  "environment": "/root/gpufree-data/envs/sable-isaacgym-py38",
+  "pip_check_passed": true,
+  "runtime_verified": false,
+  "blocker": "libcarb.gym.plugin.so cannot load /usr/lib/x86_64-linux-gnu/libcuda.so.1: file too short",
+  "system_disk_used_before_and_after": "156 MiB (df rounded)",
+  "training_started": false,
+  "source": {
+    "official_source": "https://developer.nvidia.com/isaac-gym-preview-4",
+    "archive_path": "/root/gpufree-data/cache/sable-legged-gym/IsaacGym_Preview_4_Package.tar.gz.partial",
+    "archive_sha256": "c51d77ac1144b91b356f439c7313d8d59468147e37187ebffe7cdbc3154fdb8f",
+    "archive_bytes": 201141673,
+    "uncompressed_bytes": 683581792,
+    "members": 1215,
+    "version": "1.0.preview4"
+  }
+}

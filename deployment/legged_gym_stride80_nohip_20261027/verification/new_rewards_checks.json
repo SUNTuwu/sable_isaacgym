@@ -1,0 +1,63 @@
+{
+  "signed_stride80_points_m": [
+    0.0,
+    0.05000000074505806,
+    0.07900000363588333,
+    0.07999999821186066,
+    0.08100000023841858,
+    0.10000000149011612,
+    0.11999999731779099
+  ],
+  "signed_stride80_scores": [
+    -1.0,
+    -0.06495911628007889,
+    -0.0009565780637785792,
+    0.0,
+    0.004130800254642963,
+    1.0,
+    1.0
+  ],
+  "hip_posture_removed": true,
+  "passed": true,
+  "correct_30_to110_cycle_reward_reversal_event_cost": [
+    0.9999999976158154,
+    0.0,
+    0.0
+  ],
+  "wrong_direction": [
+    0.0,
+    0.8903508198261258,
+    0.0
+  ],
+  "body_only_reward": 0.0,
+  "park_reward": 0.0,
+  "drag_reward": 0.0,
+  "backward_reward": 0.0,
+  "width60_boundary_yaw_and_foreaft_invariance": true,
+  "acceleration150_threshold": true,
+  "negative_cost_survives_clipping": true,
+  "active_reward_count": 29,
+  "removed_keys": [
+    "hip_stand_exp",
+    "ankle_stance_motion",
+    "ankle_stance_reversal",
+    "hind_foot_angle",
+    "foot_spacing",
+    "stand_still",
+    "dof_vel",
+    "feet_stumble"
+  ],
+  "source_sha256": {
+    "ankle_phase.py": "de504ff7d39d87c6f83a456b8114b23d049ba5ac8fd01d9cd0ccf1ec851a1c63",
+    "ankle_stance.py": "594458550de7e238c6f1812f948da78957572fe579a288270fad21d923ffb434",
+    "hind_landing_width.py": "30884422f085ebb471f7d7020c9b1372bbc8adbdd05ba329c7d6857060c390e5",
+    "peak_acceleration.py": "3ef2afd12818bf769c3ef0bdb4f348c095ff4d62f70d941b9f7c7c88d0a6da1b",
+    "sable_env.py": "820103fc76aedf4128d424204f8ce750061468fbb5da605793c21a658699a356",
+    "sable_config.py": "29122c9f9ef1e9a7735d1db45d2e7656a60081ff6886e28e45b3b7d517b00be6",
+    "evaluate.py": "2e6ddd010971ac1e9f8b205a033994e2ac1c4dcdb5d937696057aafe04a0b26a",
+    "train.py": "44668124a54f1512828f5b51a80d4031ca035729e133bf6eeeb886b1df78a5d1",
+    "supervise.py": "4bed2a7a76a83e6ea799ef3f6ebd39a2dbb674ff1a51628b79cafef4ed0f7497",
+    "progress_report.py": "b8a7df102f0176ad7ac5a1cde75a4d1f2c3782b352d32288879fa7dde3d9a13a",
+    "landing_stride_rewards.py": "dd42f090adeb8f86c8b9c11dd8cdb6cc4def63f4f830d54a24af9188d3bb2886"
+  }
+}

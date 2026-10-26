@@ -1,0 +1,44 @@
+# Immutable experiment artifacts remain on the data disk and in run archives.
+/runs/
+/logs/
+/manual_replays/
+/postrun/
+/待删除/
+/install.lock
+/results/**
+!/results/legged_gym/
+!/results/legged_gym/*.py
+!/results/legged_gym/training_preferences.json
+
+# NVIDIA SDK is installed separately under its own license.
+/vendor/isaacgym/
+/vendor/legged_gym/resources/
+**/.git/
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.log
+*.partial
+*.pt
+*.pth
+*.onnx
+*.mp4
+*.avi
+*.tar
+*.tar.gz
+*.zip
+*.blend1
+events.out.tfevents.*
+
+# Credentials and machine-specific state never belong in source control.
+.env
+.env.*
+!.env.example
+.ssh/
+.aws/
+.codex/
+.agents/
+*.pem
+*.key
+id_rsa*
+id_ed25519*

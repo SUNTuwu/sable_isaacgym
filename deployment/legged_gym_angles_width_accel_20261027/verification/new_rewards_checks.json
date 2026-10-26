@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "correct_30_to110_cycle_reward_reversal_event_cost": [
+    0.9999999976158154,
+    0.0,
+    0.0
+  ],
+  "wrong_direction": [
+    0.0,
+    0.8903508198261258,
+    0.0
+  ],
+  "body_only_reward": 0.0,
+  "park_reward": 0.0,
+  "drag_reward": 0.0,
+  "backward_reward": 0.0,
+  "width60_boundary_yaw_and_foreaft_invariance": true,
+  "acceleration150_threshold": true,
+  "negative_cost_survives_clipping": true,
+  "active_reward_count": 30,
+  "removed_keys": [
+    "ankle_stance_motion",
+    "ankle_stance_reversal",
+    "hind_foot_angle",
+    "foot_spacing",
+    "stand_still",
+    "dof_vel",
+    "feet_stumble"
+  ],
+  "source_sha256": {
+    "ankle_phase.py": "de504ff7d39d87c6f83a456b8114b23d049ba5ac8fd01d9cd0ccf1ec851a1c63",
+    "ankle_stance.py": "594458550de7e238c6f1812f948da78957572fe579a288270fad21d923ffb434",
+    "hind_landing_width.py": "30884422f085ebb471f7d7020c9b1372bbc8adbdd05ba329c7d6857060c390e5",
+    "peak_acceleration.py": "3ef2afd12818bf769c3ef0bdb4f348c095ff4d62f70d941b9f7c7c88d0a6da1b",
+    "sable_env.py": "6c1c5464a022535af61419937bab69d41f9dd84aec0a6e1eb8ecb840e9016c40",
+    "sable_config.py": "4988fa1a4a678c67f5bab7fd33d1655b6c12fe24becde861e0f622f1540d62bc",
+    "evaluate.py": "e4fdaa0317379916dc1febe9b25ab6afe86abf35db37fde017eb02b75feafc21",
+    "train.py": "c3f392cefb4de7e17ab5bde04719c105438ee7bc4dac923760c5a7e8cdd98f3a"
+  }
+}

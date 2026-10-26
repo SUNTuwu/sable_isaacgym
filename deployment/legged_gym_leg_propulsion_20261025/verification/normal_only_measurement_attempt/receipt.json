@@ -1,0 +1,6 @@
+{
+  "created_unix": 1792938727.2041638,
+  "status": "not_valid_for_horizontal_propulsion",
+  "reason": "Measured net contact tensor XY approximately1e-6N, all positive contribution ~1e-8W despite locomotion; cannot infer friction contribution from this tensor. No PPO run used this reward.",
+  "archive_sha256": "14328c2d80f9770c85220129a8563041583cc5729a8567260b489c2a8eab6e1a"
+}

@@ -1,0 +1,42 @@
+2026-10-25 下午模型交接（香港时间）
+
+本轮范围：仅同步模型。用户之后会在服务器启动 Codex，由远端任务负责新训练。
+本地任务没有启动 PPO、参数搜索或新训练，也没有修改训练奖励/网络代码。
+
+修改：L_hip_pitch 和 R_hip_pitch 上限从 +70° 改为 +24°，下限保持 -85°。
+Blender 文件中的 LIMIT_ROTATION、本次导出的 robot_description、authored_model 和 sable.xml 已同步。
+保存后用独立后台 Blender 重新打开验证，动画键及控制柄、所有网格、骨架静止变换和其他限位保持一致。
+物理 XML 仅两个髋 pitch 的 range 上限变化；22 个 OBJ 文件逐字节一致。
+物理清单仅 authored_sha256 变化：质量、惯量、初始状态、默认站姿和接触形状没有改变。
+保留 13 个独立执行器、单电机反向后髋 roll 联动，以及腰 pitch -40° 的第 5 帧站姿。
+
+主要路径（相对 /root/gpufree-data/projects/sable-isaacgym）：
+  blender/sable_rig.blend                     可编辑派生模型
+  blender/draft.blend                         受保护参考，不覆盖再生成
+  robot_authoring/source/original_draft_2026-10-24.blend  原始命名零件来源
+  robot_authoring/exports/                    当前视觉、骨架、姿态和末端碰撞导出
+  deployment/legged_gym/assets/                当前 MJCF 物理资产及清单
+  results/model_sync/20261025_hip_pitch24/     本次审计、传输清单和同步收据
+
+新训练交给远端 Codex：
+  用户希望四条腿真实交替迈步，并指出当前有跪姿爬行、后腿不离地。
+  此观察应作为待验证的诊断；仅更改角度上限尚不能证明原因或改进。
+  旧 gait_reference.json 的 source_asset_sha256/source_manifest_sha256 已过期。
+  其原始髋参考范围约 -26.81° 至 +0.945°，静态上仍在新限位内，但没有重新验证动力学。
+  使用固定参考前应验证/重建并保存正确出处，不要直接把旧哈希替换为新哈希来声称已经验证。
+  先检查新限位导入、默认站姿、膝/躯干接触、每只后足离地高度/持续时间和着地位移。
+  保留原有严格足步数指标；位移、奖励增加或前腿迈步不能代替四足步态完成。
+  使用新 run、冻结新的 runtime 和明确的新截止时间；旧 v11/checkpoint/归档全部保留。
+  旧 10:00 停训时间属于已经完成的上一轮，不能复用为当前截止。
+  所有训练、环境、缓存和输出继续放在 /root/gpufree-data；不运行本地 Windows RL。
+  1.5 kg 总质量和惯量仍是仿真假设，未做硬件验证。
+
+Codex 代理：
+  /usr/local/bin/codex 启动包装脚本自动设置 HTTP_PROXY、HTTPS_PROXY、ALL_PROXY。
+  本机代理为 http://127.0.0.1:7890；mihomo-service status 查看状态。
+  默认优先 Japan 魔女の旅々，失效后使用测速延迟最低的可用日本节点。
+  节点与订阅凭据位于项目之外的私有配置，不要输出或写入训练日志。
+
+启动远端 Codex：
+  cd /root/gpufree-data/projects/sable-isaacgym
+  codex

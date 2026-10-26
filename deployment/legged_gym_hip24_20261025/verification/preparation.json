@@ -1,0 +1,49 @@
+{
+  "created_unix": 1792907055.4627497,
+  "model_sync_files_verified": 92,
+  "parent_sha256": "f16adb49b1f59e108c84d3839667012cdfc7dfeba29edfc8623e8477fed970e0",
+  "training_started": false,
+  "gpu_available": false,
+  "port_access_available": false,
+  "blocker": "Current execution sandbox has no NVIDIA devices and disallows socket operations",
+  "priorities": [
+    "kneeling/crawling",
+    "elbow range of motion",
+    "foot clearance",
+    "short steps"
+  ],
+  "scope": "Prepared candidate only. No dynamic validation, PPO, or dashboard activation has occurred.",
+  "last_probe_unix": 1792907482.3941212,
+  "host_gpu_model": "NVIDIA GeForce RTX 4090",
+  "host_driver_detected": true,
+  "missing_device_nodes": [
+    "/dev/nvidia0",
+    "/dev/nvidiactl",
+    "/dev/nvidia-uvm"
+  ],
+  "cuda_error": 304,
+  "socket_errno": 1,
+  "formal_run_created": false,
+  "current_run_changed": false,
+  "dashboard_activated": false,
+  "checks_passed": [
+    "92 synced model files",
+    "62 immutable v11 runtime files",
+    "hip limits and asset delta",
+    "reference recomputation",
+    "100-pose static mirror symmetry",
+    "synthetic post-settling metrics",
+    "dummy-child deadline/save/archive integration"
+  ],
+  "pending": [
+    "GPU fixed-base coupling",
+    "GPU 16-second standing",
+    "runtime hip limit import",
+    "timeout and gait signals",
+    "one actual PPO update",
+    "24-environment parent and reference-only replay",
+    "projected actor/critic migration",
+    "HTTP service authentication",
+    "formal one-hour run"
+  ]
+}

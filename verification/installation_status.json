@@ -1,0 +1,44 @@
+{
+  "status": "gpu_runtime_verified",
+  "timestamp_utc": "2026-10-24T17:19:35Z",
+  "ssh_authentication": "password via external Windows Credential Manager helper",
+  "project_root": "/root/gpufree-data/projects/sable-isaacgym",
+  "environment": "/root/gpufree-data/envs/sable-isaacgym-py38",
+  "pip_check_passed": true,
+  "runtime_verified": true,
+  "blocker": null,
+  "training_started": false,
+  "source": {
+    "official_source": "https://developer.nvidia.com/isaac-gym-preview-4",
+    "archive_path": "/root/gpufree-data/cache/sable-legged-gym/IsaacGym_Preview_4_Package.tar.gz.partial",
+    "archive_sha256": "c51d77ac1144b91b356f439c7313d8d59468147e37187ebffe7cdbc3154fdb8f",
+    "archive_bytes": 201141673,
+    "uncompressed_bytes": 683581792,
+    "members": 1215,
+    "version": "1.0.preview4"
+  },
+  "endpoint": "root@183.147.142.40:30030",
+  "environment_reused": true,
+  "sdk_reused": true,
+  "compiled_tensor_bridge_reused": true,
+  "gpu_name": "NVIDIA GeForce RTX 4090",
+  "driver_version": "580.126.09",
+  "checks": {
+    "gpu_physx_contact": "passed",
+    "cuda_root_tensor": "passed",
+    "sdk_anymal_12_dof_torque_tensor": "passed",
+    "cuda_dof_rigidbody_contact_tensors": "passed",
+    "indexed_dof_reset": "passed"
+  },
+  "scope": "Headless GPU physics and articulation interfaces only; no custom-robot acceptance, training, viewer or camera rendering.",
+  "script_sha256": {
+    "verify_articulation.py": "bfd4c3fe7725997317c5d0e593d9205ef361c50c6cf1ea2413a2ea1ad6c3921a",
+    "verify.py": "e258494b2d728e9c7e4944572b199bbd9c971c79f6e8b29a378095bd30acfa2c",
+    "download_torch.py": "9f674b1955661c35d9e2d010a451262699479bcf724dd1646aaf58cc150aff06",
+    "runtime.sh": "112e5f3a7eecb3430aba86066be1732de477714806f2dbf27b18eb7b00d1c508",
+    "install.sh": "02624aea0705f36bfa31cf62ff80644e8335fe0a7ea3bbdaca2325d21a022ff4",
+    "README.md": "aeb771674b488135bfdd28504c34c6f9fb42e241fbb4d47ffaf0b651a62ee90d",
+    "bootstrap_download.py": "22a914200161c28c863492e279d17193c6efd9a7eb67af57405b08ace6e799f4"
+  },
+  "disk_after": "Filesystem                                                          1B-blocks        Used   Available Use% Mounted on\noverlay                                                           31526391808   196079616 31313534976   1% /\n/dev/mapper/lvmdata-pvc--47ed7f5c--553b--4312--b937--ce9c01e64ebb 52521566208 15984459776 36520329216  31% /root/gpufree-data\n"
+}

@@ -1,0 +1,2986 @@
+{
+  "schema": "sable-robot-authoring/1",
+  "source_blend": "robot_authoring/source/original_draft_2026-10-24.blend",
+  "source_sha256": "74650ec404d4eb396c35019fcdf78c79b929cd3ee89fc302d82b816288b73341",
+  "authored_blend": "blender/sable_rig.blend",
+  "pose_reference_blend": "blender/draft.blend",
+  "pose_reference_sha256": "04e5ae0ed39c407404443db40be376f5263a6e710a2631d0cadbb0d505fd6283",
+  "units": {
+    "length": "meter",
+    "angle": "radian",
+    "world_up": "Z",
+    "forward": "+X",
+    "left": "+Y"
+  },
+  "export_scope": "visual USD skeleton/animation, terminal capsule collision USD and joint metadata; not a complete physics articulation",
+  "ready_for_training": false,
+  "pending": [
+    "confirmed limits",
+    "mass and inertia",
+    "remaining body/link collisions and collision filtering",
+    "actuator torque-speed envelope",
+    "simulator importer and validation"
+  ],
+  "independent_actuator_count": 15,
+  "joints": [
+    {
+      "name": "ROOT",
+      "parent": null,
+      "position": [
+        -0.004999999888241291,
+        0.0,
+        0.1134643703699112
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits_deg": null,
+      "actuated": false,
+      "source_key": null,
+      "kind": "floating",
+      "limits_rad": null,
+      "zero_position_world_m": [
+        -0.004999999888241291,
+        0.0,
+        0.1134643703699112
+      ],
+      "zero_axis_world": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.004999999888241291
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.1134643703699112
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.004999999888241291
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.1134643703699112
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    },
+    {
+      "name": "spine_pitch",
+      "parent": "ROOT",
+      "position": [
+        -0.004999999888241291,
+        0.0,
+        0.1134643703699112
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits_deg": [
+        -90.00000250447816,
+        45.00000125223908
+      ],
+      "actuated": true,
+      "source_key": "spine_pitch",
+      "kind": "revolute",
+      "limits_rad": [
+        -1.5707963705062866,
+        0.7853981852531433
+      ],
+      "zero_position_world_m": [
+        -0.004999999888241291,
+        0.0,
+        0.1134643703699112
+      ],
+      "zero_axis_world": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.004999999888241291
+        ],
+        [
+          0.0,
+          0.9999999403953552,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.1134643703699112
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999403953552,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    },
+    {
+      "name": "spine_roll",
+      "parent": "spine_pitch",
+      "position": [
+        -0.03717663511633873,
+        -1.1641532182693481e-10,
+        0.1134643703699112
+      ],
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_deg": [
+        -90.00000250447816,
+        90.00000250447816
+      ],
+      "actuated": true,
+      "source_key": "spine_roll",
+      "kind": "revolute",
+      "limits_rad": [
+        -1.5707963705062866,
+        1.5707963705062866
+      ],
+      "zero_position_world_m": [
+        -0.03717663511633873,
+        -1.1641532182693481e-10,
+        0.1134643703699112
+      ],
+      "zero_axis_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.03717663511633873
+        ],
+        [
+          -0.9999999403953552,
+          0.0,
+          0.0,
+          -1.8626450382086546e-09
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.1134643703699112
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.03217663615942001
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          -1.862645149230957e-09
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    },
+    {
+      "name": "hip_roll",
+      "parent": "spine_roll",
+      "position": [
+        -0.080807164311409,
+        0.017475686967372894,
+        0.10682498663663864
+      ],
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_deg": [
+        -30.000000834826057,
+        30.000000834826057
+      ],
+      "actuated": true,
+      "source_key": "hip_roll",
+      "kind": "revolute",
+      "limits_rad": [
+        -0.5235987901687622,
+        0.5235987901687622
+      ],
+      "zero_position_world_m": [
+        -0.080807164311409,
+        0.017475686967372894,
+        0.10682498663663864
+      ],
+      "zero_axis_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.080807164311409
+        ],
+        [
+          -0.9999999403953552,
+          0.0,
+          0.0,
+          0.017475685104727745
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.10682498663663864
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.017475688830018044
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.04363052919507027
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0066393837332725525
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    },
+    {
+      "name": "L_shoulder_roll",
+      "parent": "ROOT",
+      "position": [
+        0.07903292030096054,
+        0.00800000037997961,
+        0.10346437245607376
+      ],
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_deg": [
+        -30.000000834826057,
+        30.000000834826057
+      ],
+      "actuated": true,
+      "source_key": "shoulder_roll",
+      "kind": "revolute",
+      "limits_rad": [
+        -0.5235987901687622,
+        0.5235987901687622
+      ],
+      "zero_position_world_m": [
+        0.07903292030096054,
+        0.00800000037997961,
+        0.10346437245607376
+      ],
+      "zero_axis_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.07903292030096054
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          0.008000001311302185
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.10346437245607376
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.08403292298316956
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          0.008000001311302185
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.009999997913837433
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    },
+    {
+      "name": "L_shoulder_pitch",
+      "parent": "L_shoulder_roll",
+      "position": [
+        0.0949999988079071,
+        0.02199908345937729,
+        0.10391122102737427
+      ],
+      "axis": [
+        0.08715582638978958,
+        0.9961947798728943,
+        0.0
+      ],
+      "limits_deg": [
+        -74.99999867197056,
+        90.00000250447816
+      ],
+      "actuated": true,
+      "source_key": "shoulder_pitch",
+      "kind": "revolute",
+      "limits_rad": [
+        -1.3089969158172607,
+        1.5707963705062866
+      ],
+      "zero_position_world_m": [
+        0.0949999988079071,
+        0.02199908345937729,
+        0.10391122102737427
+      ],
+      "zero_axis_world": [
+        0.08715582638978958,
+        0.9961947798728943,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          0.9961946606636047,
+          0.08715581893920898,
+          0.0,
+          0.0949999988079071
+        ],
+        [
+          -0.08715587854385376,
+          0.9961946606636047,
+          0.0,
+          0.02199908345937729
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.10391122102737427
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          0.08715587854385376,
+          -0.9961946606636047,
+          0.0,
+          -0.013999082148075104
+        ],
+        [
+          0.9961946606636047,
+          0.08715581893920898,
+          0.0,
+          0.015967078506946564
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0004468485713005066
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    },
+    {
+      "name": "L_elbow_pitch",
+      "parent": "L_shoulder_pitch",
+      "position": [
+        0.0949999988079071,
+        0.02199908345937729,
+        0.05991122126579285
+      ],
+      "axis": [
+        0.08715582638978958,
+        0.9961947798728943,
+        0.0
+      ],
+      "limits_deg": [
+        -135.00000034162267,
+        -39.99999883637168
+      ],
+      "actuated": true,
+      "source_key": "elbow_pitch",
+      "kind": "revolute",
+      "limits_rad": [
+        -2.356194496154785,
+        -0.6981316804885864
+      ],
+      "zero_position_world_m": [
+        0.0949999988079071,
+        0.02199908345937729,
+        0.05991122126579285
+      ],
+      "zero_axis_world": [
+        0.08715582638978958,
+        0.9961947798728943,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          0.9961946606636047,
+          0.08715581893920898,
+          0.0,
+          0.0949999988079071
+        ],
+        [
+          -0.08715587854385376,
+          0.9961946606636047,
+          0.0,
+          0.02199908159673214
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.05991122126579285
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          1.0,
+          -7.450580596923828e-09,
+          0.0,
+          -8.149072527885437e-10
+        ],
+        [
+          7.450580596923828e-09,
+          1.0,
+          0.0,
+          -9.313225746154785e-10
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.04399999976158142
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    },
+    {
+      "name": "L_wrist_fixed",
+      "parent": "L_elbow_pitch",
+      "position": [
+        0.0949999988079071,
+        0.02199908345937729,
+        0.01991122029721737
+      ],
+      "axis": [
+        0.08715582638978958,
+        0.9961947798728943,
+        0.0
+      ],
+      "limits_deg": [
+        0.0,
+        0.0
+      ],
+      "actuated": false,
+      "source_key": "wrist_fixed",
+      "kind": "fixed",
+      "limits_rad": [
+        0.0,
+        0.0
+      ],
+      "zero_position_world_m": [
+        0.0949999988079071,
+        0.02199908345937729,
+        0.01991122029721737
+      ],
+      "zero_axis_world": [
+        0.08715582638978958,
+        0.9961947798728943,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          0.9961946606636047,
+          0.08715581893920898,
+          0.0,
+          0.0949999988079071
+        ],
+        [
+          -0.08715587854385376,
+          0.9961946606636047,
+          0.0,
+          0.02199908159673214
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.01991122215986252
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          1.0,
+          -7.450580596923828e-09,
+          0.0,
+          -8.149072527885437e-10
+        ],
+        [
+          7.450580596923828e-09,
+          1.0,
+          0.0,
+          -9.313225746154785e-10
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.03999999538064003
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    },
+    {
+      "name": "L_hip_pitch",
+      "parent": "hip_roll",
+      "position": [
+        -0.06499999761581421,
+        0.023910868912935257,
+        0.10391122102737427
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits_deg": [
+        -84.99999667351618,
+        24.000000667860846
+      ],
+      "actuated": true,
+      "source_key": "hip_pitch",
+      "kind": "revolute",
+      "limits_rad": [
+        -1.483529806137085,
+        0.41887903213500977
+      ],
+      "zero_position_world_m": [
+        -0.06499999761581421,
+        0.023910868912935257,
+        0.10391122102737427
+      ],
+      "zero_axis_world": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.06499999761581421
+        ],
+        [
+          0.0,
+          0.9999999403953552,
+          0.0,
+          0.023910867050290108
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.10391122102737427
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          0.0,
+          -1.0,
+          0.0,
+          -0.006435183808207512
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.015807166695594788
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0029137656092643738
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    },
+    {
+      "name": "L_knee_pitch",
+      "parent": "L_hip_pitch",
+      "position": [
+        -0.06499999761581421,
+        0.023910868912935257,
+        0.05991122126579285
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits_deg": [
+        45.00000125223908,
+        135.00000034162267
+      ],
+      "actuated": true,
+      "source_key": "knee_pitch",
+      "kind": "revolute",
+      "limits_rad": [
+        0.7853981852531433,
+        2.356194496154785
+      ],
+      "zero_position_world_m": [
+        -0.06499999761581421,
+        0.023910868912935257,
+        0.05991122126579285
+      ],
+      "zero_axis_world": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.06499999761581421
+        ],
+        [
+          0.0,
+          0.9999998807907104,
+          0.0,
+          0.023910867050290108
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.05991122126579285
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          1.862645149230957e-09
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.04399999976158142
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    },
+    {
+      "name": "L_ankle_pitch",
+      "parent": "L_knee_pitch",
+      "position": [
+        -0.06499999761581421,
+        0.023910868912935257,
+        0.0049112215638160706
+      ],
+      "axis": [
+        0,
+        -1,
+        0
+      ],
+      "limits_deg": [
+        0.0,
+        159.99999534548672
+      ],
+      "actuated": true,
+      "source_key": "ankle_pitch",
+      "kind": "revolute",
+      "motor_template_source": "膝关节pitch-dc1628",
+      "limits_rad": [
+        0.0,
+        2.7925267219543457
+      ],
+      "zero_position_world_m": [
+        -0.06499999761581421,
+        0.023910868912935257,
+        0.0049112215638160706
+      ],
+      "zero_axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          -1.0,
+          0.0,
+          0.0,
+          -0.06499999761581421
+        ],
+        [
+          0.0,
+          -0.9999998807907104,
+          0.0,
+          0.023910867050290108
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0049112215638160706
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          -1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.054999999701976776
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    },
+    {
+      "name": "R_hip_roll_mimic",
+      "parent": "spine_roll",
+      "position": [
+        -0.080807164311409,
+        -0.017475686967372894,
+        0.10682498663663864
+      ],
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_deg": [
+        -30.000000834826057,
+        30.000000834826057
+      ],
+      "actuated": false,
+      "source_key": "hip_roll",
+      "kind": "revolute",
+      "limits_rad": [
+        -0.5235987901687622,
+        0.5235987901687622
+      ],
+      "zero_position_world_m": [
+        -0.080807164311409,
+        -0.017475686967372894,
+        0.10682498663663864
+      ],
+      "zero_axis_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.080807164311409
+        ],
+        [
+          -0.9999999403953552,
+          0.0,
+          0.0,
+          -0.017475688830018044
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.10682498663663864
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.017475688830018044
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.04363052919507027
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0066393837332725525
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation",
+      "mimic": {
+        "joint": "hip_roll",
+        "multiplier": -1.0,
+        "offset_rad": 0.0
+      }
+    },
+    {
+      "name": "R_shoulder_roll",
+      "parent": "ROOT",
+      "position": [
+        0.07903292030096054,
+        -0.00800000037997961,
+        0.10346437245607376
+      ],
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_deg": [
+        -30.000000834826057,
+        30.000000834826057
+      ],
+      "actuated": true,
+      "source_key": "shoulder_roll",
+      "kind": "revolute",
+      "limits_rad": [
+        -0.5235987901687622,
+        0.5235987901687622
+      ],
+      "zero_position_world_m": [
+        0.07903292030096054,
+        -0.00800000037997961,
+        0.10346437245607376
+      ],
+      "zero_axis_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.07903292030096054
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          -0.008000001311302185
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.10346437245607376
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.08403292298316956
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          -0.008000001311302185
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.009999997913837433
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    },
+    {
+      "name": "R_shoulder_pitch",
+      "parent": "R_shoulder_roll",
+      "position": [
+        0.0949999988079071,
+        -0.02199908345937729,
+        0.10391122102737427
+      ],
+      "axis": [
+        -0.08715581893920898,
+        0.9961947202682495,
+        0.0
+      ],
+      "limits_deg": [
+        -74.99999867197056,
+        90.00000250447816
+      ],
+      "actuated": true,
+      "source_key": "shoulder_pitch",
+      "kind": "revolute",
+      "limits_rad": [
+        -1.3089969158172607,
+        1.5707963705062866
+      ],
+      "zero_position_world_m": [
+        0.0949999988079071,
+        -0.02199908345937729,
+        0.10391122102737427
+      ],
+      "zero_axis_world": [
+        -0.08715581893920898,
+        0.9961947202682495,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          0.9961947202682495,
+          -0.08715581893920898,
+          0.0,
+          0.0949999988079071
+        ],
+        [
+          0.08715593814849854,
+          0.9961947202682495,
+          0.0,
+          -0.02199908345937729
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.10391122102737427
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          -0.08715593814849854,
+          -0.9961947202682495,
+          0.0,
+          0.013999082148075104
+        ],
+        [
+          0.9961947202682495,
+          -0.08715581893920898,
+          0.0,
+          0.015967078506946564
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0004468485713005066
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    },
+    {
+      "name": "R_elbow_pitch",
+      "parent": "R_shoulder_pitch",
+      "position": [
+        0.0949999988079071,
+        -0.02199908345937729,
+        0.05991122126579285
+      ],
+      "axis": [
+        -0.08715581893920898,
+        0.9961947202682495,
+        0.0
+      ],
+      "limits_deg": [
+        -135.00000034162267,
+        -39.99999883637168
+      ],
+      "actuated": true,
+      "source_key": "elbow_pitch",
+      "kind": "revolute",
+      "limits_rad": [
+        -2.356194496154785,
+        -0.6981316804885864
+      ],
+      "zero_position_world_m": [
+        0.0949999988079071,
+        -0.02199908345937729,
+        0.05991122126579285
+      ],
+      "zero_axis_world": [
+        -0.08715581893920898,
+        0.9961947202682495,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          0.9961947202682495,
+          -0.08715581893920898,
+          0.0,
+          0.0949999988079071
+        ],
+        [
+          0.08715593814849854,
+          0.9961947202682495,
+          0.0,
+          -0.02199908159673214
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.05991122126579285
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          0.9999999403953552,
+          0.0,
+          0.0,
+          -4.656612873077393e-10
+        ],
+        [
+          0.0,
+          0.9999999403953552,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.043999992311000824
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    },
+    {
+      "name": "R_wrist_fixed",
+      "parent": "R_elbow_pitch",
+      "position": [
+        0.0949999988079071,
+        -0.02199908345937729,
+        0.01991122029721737
+      ],
+      "axis": [
+        -0.08715581893920898,
+        0.9961947202682495,
+        0.0
+      ],
+      "limits_deg": [
+        0.0,
+        0.0
+      ],
+      "actuated": false,
+      "source_key": "wrist_fixed",
+      "kind": "fixed",
+      "limits_rad": [
+        0.0,
+        0.0
+      ],
+      "zero_position_world_m": [
+        0.0949999988079071,
+        -0.02199908345937729,
+        0.01991122029721737
+      ],
+      "zero_axis_world": [
+        -0.08715581893920898,
+        0.9961947202682495,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          0.9961947202682495,
+          -0.08715581893920898,
+          0.0,
+          0.0949999988079071
+        ],
+        [
+          0.08715593814849854,
+          0.9961947202682495,
+          0.0,
+          -0.02199908159673214
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.01991122215986252
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          0.9999999403953552,
+          0.0,
+          0.0,
+          -4.656612873077393e-10
+        ],
+        [
+          0.0,
+          0.9999999403953552,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.03999999165534973
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    },
+    {
+      "name": "R_hip_pitch",
+      "parent": "R_hip_roll_mimic",
+      "position": [
+        -0.06499999761581421,
+        -0.023910868912935257,
+        0.10391122102737427
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits_deg": [
+        -84.99999667351618,
+        24.000000667860846
+      ],
+      "actuated": true,
+      "source_key": "hip_pitch",
+      "kind": "revolute",
+      "limits_rad": [
+        -1.483529806137085,
+        0.41887903213500977
+      ],
+      "zero_position_world_m": [
+        -0.06499999761581421,
+        -0.023910868912935257,
+        0.10391122102737427
+      ],
+      "zero_axis_world": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.06499999761581421
+        ],
+        [
+          0.0,
+          0.9999999403953552,
+          0.0,
+          -0.023910870775580406
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.10391122102737427
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          0.0,
+          -1.0,
+          0.0,
+          0.006435183808207512
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.015807166695594788
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0029137656092643738
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    },
+    {
+      "name": "R_knee_pitch",
+      "parent": "R_hip_pitch",
+      "position": [
+        -0.06499999761581421,
+        -0.023910868912935257,
+        0.05991122126579285
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits_deg": [
+        45.00000125223908,
+        135.00000034162267
+      ],
+      "actuated": true,
+      "source_key": "knee_pitch",
+      "kind": "revolute",
+      "limits_rad": [
+        0.7853981852531433,
+        2.356194496154785
+      ],
+      "zero_position_world_m": [
+        -0.06499999761581421,
+        -0.023910868912935257,
+        0.05991122126579285
+      ],
+      "zero_axis_world": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.06499999761581421
+        ],
+        [
+          0.0,
+          0.9999999403953552,
+          0.0,
+          -0.023910870775580406
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.05991122126579285
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -1.862645149230957e-09
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.04399999976158142
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    },
+    {
+      "name": "R_ankle_pitch",
+      "parent": "R_knee_pitch",
+      "position": [
+        -0.06499999761581421,
+        -0.023910868912935257,
+        0.0049112215638160706
+      ],
+      "axis": [
+        0,
+        -1,
+        0
+      ],
+      "limits_deg": [
+        0.0,
+        159.99999534548672
+      ],
+      "actuated": true,
+      "source_key": "ankle_pitch",
+      "kind": "revolute",
+      "motor_template_source": "膝关节pitch-dc1628",
+      "limits_rad": [
+        0.0,
+        2.7925267219543457
+      ],
+      "zero_position_world_m": [
+        -0.06499999761581421,
+        -0.023910868912935257,
+        0.0049112215638160706
+      ],
+      "zero_axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "rest_matrix_armature": [
+        [
+          -1.0,
+          0.0,
+          0.0,
+          -0.06499999761581421
+        ],
+        [
+          0.0,
+          -0.9999999403953552,
+          0.0,
+          -0.023910870775580406
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0049112215638160706
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rest_matrix_parent": [
+        [
+          -1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0,
+          -1.862645149230957e-09
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.054999999701976776
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "joint_local_axis": [
+        0,
+        1,
+        0
+      ],
+      "mass_kg": null,
+      "inertia_kg_m2": null,
+      "encoder_zero_offset_rad": null,
+      "limit_status": "temporary, awaiting user hardware range confirmation"
+    }
+  ],
+  "meshes": [
+    {
+      "object": "spine_pitch_visual",
+      "source_object": "腰pitch-dc1628",
+      "source_key": "spine_pitch",
+      "side": 1,
+      "bone": "ROOT",
+      "source_vertices": 64,
+      "faces": 34
+    },
+    {
+      "object": "spine_roll_visual",
+      "source_object": "腰roll-dc1628-速比38比15",
+      "source_key": "spine_roll",
+      "side": 1,
+      "bone": "spine_pitch",
+      "source_vertices": 64,
+      "faces": 34
+    },
+    {
+      "object": "L_hip_roll_visual",
+      "source_object": "左右髋联动roll-dc1628",
+      "source_key": "hip_roll",
+      "side": 1,
+      "bone": "spine_roll",
+      "source_vertices": 64,
+      "faces": 34
+    },
+    {
+      "object": "L_shoulder_roll_visual",
+      "source_object": "肩膀roll-dc1628",
+      "source_key": "shoulder_roll",
+      "side": 1,
+      "bone": "ROOT",
+      "source_vertices": 180,
+      "faces": 111
+    },
+    {
+      "object": "L_shoulder_pitch_visual",
+      "source_object": "肩膀pitch-3505",
+      "source_key": "shoulder_pitch",
+      "side": 1,
+      "bone": "L_shoulder_roll",
+      "source_vertices": 64,
+      "faces": 34
+    },
+    {
+      "object": "L_elbow_pitch_visual",
+      "source_object": "肘关节pitch-dc1628",
+      "source_key": "elbow_pitch",
+      "side": 1,
+      "bone": "L_shoulder_pitch",
+      "source_vertices": 210,
+      "faces": 144
+    },
+    {
+      "object": "L_wrist_fixed_visual",
+      "source_object": "手腕pitch-步进丝杆-仿真暂时固定",
+      "source_key": "wrist_fixed",
+      "side": 1,
+      "bone": "L_wrist_fixed",
+      "source_vertices": 12,
+      "faces": 7
+    },
+    {
+      "object": "L_hand_visual",
+      "source_object": "手",
+      "source_key": "hand",
+      "side": 1,
+      "bone": "L_wrist_fixed",
+      "source_vertices": 8,
+      "faces": 6,
+      "authored_vertex_count": 514,
+      "authored_face_count": 544,
+      "geometry_revision": "30 mm capsule, proximal sphere at joint; fixed mounting angle in collision metadata"
+    },
+    {
+      "object": "L_hip_pitch_visual",
+      "source_object": "髋关节pitch-3505",
+      "source_key": "hip_pitch",
+      "side": 1,
+      "bone": "hip_roll",
+      "source_vertices": 64,
+      "faces": 34
+    },
+    {
+      "object": "L_knee_pitch_visual",
+      "source_object": "膝关节pitch-dc1628",
+      "source_key": "knee_pitch",
+      "side": 1,
+      "bone": "L_hip_pitch",
+      "source_vertices": 210,
+      "faces": 144
+    },
+    {
+      "object": "L_ankle_pitch_visual",
+      "source_object": "膝关节pitch-dc1628",
+      "source_key": "ankle_pitch",
+      "side": 1,
+      "bone": "L_knee_pitch",
+      "source_vertices": 210,
+      "faces": 144,
+      "motor_template": "L_knee_pitch_visual"
+    },
+    {
+      "object": "L_foot_visual",
+      "source_object": "脚板",
+      "source_key": "foot",
+      "side": 1,
+      "bone": "L_ankle_pitch",
+      "source_vertices": 8,
+      "faces": 6,
+      "authored_vertex_count": 514,
+      "authored_face_count": 544,
+      "geometry_revision": "40 mm capsule; powered ankle; zero along downward shank"
+    },
+    {
+      "object": "R_hip_roll_visual",
+      "source_object": "左右髋联动roll-dc1628",
+      "source_key": "hip_roll",
+      "side": -1,
+      "bone": "spine_roll",
+      "source_vertices": 64,
+      "faces": 34
+    },
+    {
+      "object": "R_shoulder_roll_visual",
+      "source_object": "肩膀roll-dc1628",
+      "source_key": "shoulder_roll",
+      "side": -1,
+      "bone": "ROOT",
+      "source_vertices": 180,
+      "faces": 111
+    },
+    {
+      "object": "R_shoulder_pitch_visual",
+      "source_object": "肩膀pitch-3505",
+      "source_key": "shoulder_pitch",
+      "side": -1,
+      "bone": "R_shoulder_roll",
+      "source_vertices": 64,
+      "faces": 34
+    },
+    {
+      "object": "R_elbow_pitch_visual",
+      "source_object": "肘关节pitch-dc1628",
+      "source_key": "elbow_pitch",
+      "side": -1,
+      "bone": "R_shoulder_pitch",
+      "source_vertices": 210,
+      "faces": 144
+    },
+    {
+      "object": "R_wrist_fixed_visual",
+      "source_object": "手腕pitch-步进丝杆-仿真暂时固定",
+      "source_key": "wrist_fixed",
+      "side": -1,
+      "bone": "R_wrist_fixed",
+      "source_vertices": 12,
+      "faces": 7
+    },
+    {
+      "object": "R_hand_visual",
+      "source_object": "手",
+      "source_key": "hand",
+      "side": -1,
+      "bone": "R_wrist_fixed",
+      "source_vertices": 8,
+      "faces": 6,
+      "authored_vertex_count": 514,
+      "authored_face_count": 544,
+      "geometry_revision": "30 mm capsule, proximal sphere at joint; fixed mounting angle in collision metadata"
+    },
+    {
+      "object": "R_hip_pitch_visual",
+      "source_object": "髋关节pitch-3505",
+      "source_key": "hip_pitch",
+      "side": -1,
+      "bone": "R_hip_roll_mimic",
+      "source_vertices": 64,
+      "faces": 34
+    },
+    {
+      "object": "R_knee_pitch_visual",
+      "source_object": "膝关节pitch-dc1628",
+      "source_key": "knee_pitch",
+      "side": -1,
+      "bone": "R_hip_pitch",
+      "source_vertices": 210,
+      "faces": 144
+    },
+    {
+      "object": "R_ankle_pitch_visual",
+      "source_object": "膝关节pitch-dc1628",
+      "source_key": "ankle_pitch",
+      "side": -1,
+      "bone": "R_knee_pitch",
+      "source_vertices": 210,
+      "faces": 144,
+      "motor_template": "R_knee_pitch_visual"
+    },
+    {
+      "object": "R_foot_visual",
+      "source_object": "脚板",
+      "source_key": "foot",
+      "side": -1,
+      "bone": "R_ankle_pitch",
+      "source_vertices": 8,
+      "faces": 6,
+      "authored_vertex_count": 514,
+      "authored_face_count": 544,
+      "geometry_revision": "40 mm capsule; powered ankle; zero along downward shank"
+    }
+  ],
+  "source_allowlist": {
+    "shoulder_roll": "肩膀roll-dc1628",
+    "shoulder_pitch": "肩膀pitch-3505",
+    "elbow_pitch": "肘关节pitch-dc1628",
+    "wrist_fixed": "手腕pitch-步进丝杆-仿真暂时固定",
+    "hand": "手",
+    "spine_pitch": "腰pitch-dc1628",
+    "spine_roll": "腰roll-dc1628-速比38比15",
+    "hip_roll": "左右髋联动roll-dc1628",
+    "hip_pitch": "髋关节pitch-3505",
+    "knee_pitch": "膝关节pitch-dc1628",
+    "ankle_fixed": "踝关节pitch-步进丝杆-仿真暂时固定",
+    "foot": "脚板",
+    "ankle_pitch": "膝关节pitch-dc1628"
+  },
+  "assembly_revision": "straight_waist_v1: user annotation overrides draft; rear spine-roll height is fixed",
+  "waist_rearward_offset_m": 0.005,
+  "hip_roll_lowering_revision": "opposed_hip_roll_down_10mm_v1",
+  "hip_roll_lowering_m": 0.01,
+  "shoulder_roll_lowering_revision": "shoulder_roll_down_10mm_v1",
+  "shoulder_roll_lowering_m": 0.01,
+  "layout_revision": "waist_90_50_forearm40_wrist20_ankle70_v2",
+  "motor_offset_revision": "independent_mount_offsets_torso100_60_chest_root_roll_v1",
+  "straight_limb_revision": "vertical_44_40_50_manual_roll_sync_v1",
+  "straight_limb_deltas_world_m": {
+    "spine_roll": [
+      -0.005,
+      0.0,
+      0.0
+    ],
+    "L_shoulder_roll": [
+      0.008,
+      0.0,
+      0.0
+    ],
+    "L_elbow_pitch": [
+      0.009999997913837433,
+      -0.0040000006556510925,
+      -2.3841857654804954e-10
+    ],
+    "L_wrist_fixed": [
+      0.009999997913837433,
+      -0.0040000006556510925,
+      -1.1324882420726823e-09
+    ],
+    "L_knee_pitch": [
+      -0.009999997913837433,
+      -0.004999998956918716,
+      -2.3841857654804954e-10
+    ],
+    "L_ankle_fixed": [
+      -0.009999997913837433,
+      -0.004999998956918716,
+      -4.246830942467028e-10
+    ],
+    "R_shoulder_roll": [
+      0.008,
+      0.0,
+      0.0
+    ],
+    "R_elbow_pitch": [
+      0.009999997913837433,
+      0.0040000006556510925,
+      -2.3841857654804954e-10
+    ],
+    "R_wrist_fixed": [
+      0.009999997913837433,
+      0.0040000006556510925,
+      -1.1324882420726823e-09
+    ],
+    "R_knee_pitch": [
+      -0.009999997913837433,
+      0.004999998956918716,
+      -2.3841857654804954e-10
+    ],
+    "R_ankle_fixed": [
+      -0.009999997913837433,
+      0.004999998956918716,
+      -4.246830942467028e-10
+    ]
+  },
+  "manual_roll_sync": {
+    "shoulder_roll_both_world_m": [
+      0.008,
+      0,
+      0
+    ],
+    "spine_roll_world_m": [
+      -0.005,
+      0,
+      0
+    ],
+    "source": "User-saved left shoulder / waist motor object translations, synchronized to pivots; right shoulder mirrored"
+  },
+  "motor_offsets_world_m": {
+    "spine_roll": [
+      0.001,
+      0,
+      0
+    ],
+    "L_shoulder_roll": [
+      -0.004,
+      0,
+      0
+    ],
+    "L_shoulder_pitch": [
+      0.009999999217689043,
+      -0.004,
+      0
+    ],
+    "L_hip_pitch": [
+      -0.010000000186264513,
+      -0.005,
+      0
+    ],
+    "R_shoulder_roll": [
+      -0.004,
+      0,
+      0
+    ],
+    "R_shoulder_pitch": [
+      0.009999999217689043,
+      0.004,
+      0
+    ],
+    "R_hip_pitch": [
+      -0.010000000186264513,
+      0.005,
+      0
+    ]
+  },
+  "chest_root_control": {
+    "revision": "existing_ROOT_global_roll_about_waist_pitch_v1",
+    "bone": "ROOT",
+    "parent": null,
+    "roll_axis": "local X / world +X at zero",
+    "physical_actuators_added": 0
+  },
+  "shoulder_pitch_mount_revision": "shoulder_pitch_toein5_outward2mm_v1",
+  "shoulder_pitch_mounting": {
+    "L": {
+      "yaw_world_z_deg": -5,
+      "outward_offset_m": 0.002,
+      "pivot_before_m": [
+        0.08500000089406967,
+        0.023999083787202835,
+        0.10391122102737427
+      ],
+      "transform_world": [
+        [
+          0.9961946980917455,
+          0.08715574274765817,
+          0.0,
+          -0.0017682073071331045
+        ],
+        [
+          -0.08715574274765817,
+          0.9961946980917455,
+          0.0,
+          0.009499561970806055
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "probes": [
+        {
+          "outward_offset_m": 0.0,
+          "penetrating": true,
+          "pairs": [
+            {
+              "roll_component": 0,
+              "pitch_component": 0,
+              "roll_vertices": 144,
+              "pitch_vertices": 64,
+              "intersecting_triangle_pairs": 44,
+              "roll_closed": true,
+              "pitch_closed": true,
+              "containment": false,
+              "penetrating": true
+            },
+            {
+              "roll_component": 1,
+              "pitch_component": 0,
+              "roll_vertices": 36,
+              "pitch_vertices": 64,
+              "intersecting_triangle_pairs": 0,
+              "roll_closed": false,
+              "pitch_closed": true,
+              "containment": false,
+              "penetrating": false
+            }
+          ],
+          "method": "Actual triangle surfaces (BVH) plus closed-component ray-parity containment; authoring zero only",
+          "surface_tolerance_m": 1e-09,
+          "touching_surfaces_count_as_interference": true,
+          "scope": "Mesh intersection; containment only for closed components; not a full motion-envelope or hardware-clearance certificate"
+        },
+        {
+          "outward_offset_m": 0.001,
+          "penetrating": true,
+          "pairs": [
+            {
+              "roll_component": 0,
+              "pitch_component": 0,
+              "roll_vertices": 144,
+              "pitch_vertices": 64,
+              "intersecting_triangle_pairs": 32,
+              "roll_closed": true,
+              "pitch_closed": true,
+              "containment": false,
+              "penetrating": true
+            },
+            {
+              "roll_component": 1,
+              "pitch_component": 0,
+              "roll_vertices": 36,
+              "pitch_vertices": 64,
+              "intersecting_triangle_pairs": 0,
+              "roll_closed": false,
+              "pitch_closed": true,
+              "containment": false,
+              "penetrating": false
+            }
+          ],
+          "method": "Actual triangle surfaces (BVH) plus closed-component ray-parity containment; authoring zero only",
+          "surface_tolerance_m": 1e-09,
+          "touching_surfaces_count_as_interference": true,
+          "scope": "Mesh intersection; containment only for closed components; not a full motion-envelope or hardware-clearance certificate"
+        },
+        {
+          "outward_offset_m": 0.002,
+          "penetrating": false,
+          "pairs": [
+            {
+              "roll_component": 0,
+              "pitch_component": 0,
+              "roll_vertices": 144,
+              "pitch_vertices": 64,
+              "intersecting_triangle_pairs": 0,
+              "roll_closed": true,
+              "pitch_closed": true,
+              "containment": false,
+              "penetrating": false
+            },
+            {
+              "roll_component": 1,
+              "pitch_component": 0,
+              "roll_vertices": 36,
+              "pitch_vertices": 64,
+              "intersecting_triangle_pairs": 0,
+              "roll_closed": false,
+              "pitch_closed": true,
+              "containment": false,
+              "penetrating": false
+            }
+          ],
+          "method": "Actual triangle surfaces (BVH) plus closed-component ray-parity containment; authoring zero only",
+          "surface_tolerance_m": 1e-09,
+          "touching_surfaces_count_as_interference": true,
+          "scope": "Mesh intersection; containment only for closed components; not a full motion-envelope or hardware-clearance certificate"
+        }
+      ]
+    },
+    "R": {
+      "yaw_world_z_deg": 5,
+      "outward_offset_m": 0.002,
+      "pivot_before_m": [
+        0.08500000089406967,
+        -0.023999083787202835,
+        0.10391122102737427
+      ],
+      "transform_world": [
+        [
+          0.9961946980917455,
+          -0.08715574274765817,
+          0.0,
+          -0.0017682073071331045
+        ],
+        [
+          0.08715574274765817,
+          0.9961946980917455,
+          0.0,
+          -0.009499561970806055
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "probes": [
+        {
+          "outward_offset_m": 0.0,
+          "penetrating": true,
+          "pairs": [
+            {
+              "roll_component": 0,
+              "pitch_component": 0,
+              "roll_vertices": 144,
+              "pitch_vertices": 64,
+              "intersecting_triangle_pairs": 44,
+              "roll_closed": true,
+              "pitch_closed": true,
+              "containment": false,
+              "penetrating": true
+            },
+            {
+              "roll_component": 1,
+              "pitch_component": 0,
+              "roll_vertices": 36,
+              "pitch_vertices": 64,
+              "intersecting_triangle_pairs": 0,
+              "roll_closed": false,
+              "pitch_closed": true,
+              "containment": false,
+              "penetrating": false
+            }
+          ],
+          "method": "Actual triangle surfaces (BVH) plus closed-component ray-parity containment; authoring zero only",
+          "surface_tolerance_m": 1e-09,
+          "touching_surfaces_count_as_interference": true,
+          "scope": "Mesh intersection; containment only for closed components; not a full motion-envelope or hardware-clearance certificate"
+        },
+        {
+          "outward_offset_m": 0.001,
+          "penetrating": true,
+          "pairs": [
+            {
+              "roll_component": 0,
+              "pitch_component": 0,
+              "roll_vertices": 144,
+              "pitch_vertices": 64,
+              "intersecting_triangle_pairs": 32,
+              "roll_closed": true,
+              "pitch_closed": true,
+              "containment": false,
+              "penetrating": true
+            },
+            {
+              "roll_component": 1,
+              "pitch_component": 0,
+              "roll_vertices": 36,
+              "pitch_vertices": 64,
+              "intersecting_triangle_pairs": 0,
+              "roll_closed": false,
+              "pitch_closed": true,
+              "containment": false,
+              "penetrating": false
+            }
+          ],
+          "method": "Actual triangle surfaces (BVH) plus closed-component ray-parity containment; authoring zero only",
+          "surface_tolerance_m": 1e-09,
+          "touching_surfaces_count_as_interference": true,
+          "scope": "Mesh intersection; containment only for closed components; not a full motion-envelope or hardware-clearance certificate"
+        },
+        {
+          "outward_offset_m": 0.002,
+          "penetrating": false,
+          "pairs": [
+            {
+              "roll_component": 0,
+              "pitch_component": 0,
+              "roll_vertices": 144,
+              "pitch_vertices": 64,
+              "intersecting_triangle_pairs": 0,
+              "roll_closed": true,
+              "pitch_closed": true,
+              "containment": false,
+              "penetrating": false
+            },
+            {
+              "roll_component": 1,
+              "pitch_component": 0,
+              "roll_vertices": 36,
+              "pitch_vertices": 64,
+              "intersecting_triangle_pairs": 0,
+              "roll_closed": false,
+              "pitch_closed": true,
+              "containment": false,
+              "penetrating": false
+            }
+          ],
+          "method": "Actual triangle surfaces (BVH) plus closed-component ray-parity containment; authoring zero only",
+          "surface_tolerance_m": 1e-09,
+          "touching_surfaces_count_as_interference": true,
+          "scope": "Mesh intersection; containment only for closed components; not a full motion-envelope or hardware-clearance certificate"
+        }
+      ]
+    }
+  },
+  "fixed_terminal_mounting": {
+    "wrist_deg": 20.0,
+    "ankle_deg": null,
+    "reference": "Downward limb extension = 0 deg; positive toward local limb forward; front limb includes its inward mounting yaw",
+    "applied_to": "wrist fixed capsule geometry; ankle is actuated when powered_ankle is present"
+  },
+  "powered_ankle": {
+    "revision": "powered_ankle_shank55_foot40_20261026",
+    "joints": [
+      "L_ankle_pitch",
+      "R_ankle_pitch"
+    ],
+    "angle_reference": "relative to downward shank extension, forward positive",
+    "axis_world_zero": [
+      0,
+      -1,
+      0
+    ],
+    "standard_stand_deg": 70,
+    "limits_deg": [
+      0,
+      160
+    ],
+    "shank_length_m": 0.055,
+    "foot_total_length_m": 0.04,
+    "motor_source": "膝关节pitch-dc1628",
+    "housing_binding": "shank / knee_pitch",
+    "physical_calibration": "pending; geometry reuse only",
+    "housing_mount_revision": "ankle_housing_inline_20261026",
+    "housing_mount": {
+      "L": {
+        "rotation_about_world_y_deg": -43.10175789310118,
+        "translation_along_shaft_m": [
+          0.0,
+          -0.0003947801887989044,
+          0.0
+        ],
+        "housing_center_world_zero_m": [
+          -0.06499999761581421,
+          0.023910868912935257,
+          0.022406794130802155
+        ],
+        "housing_center_distance_along_shank_m": 0.017495572566986084,
+        "housing_center_line_error_m": 0.0,
+        "shaft_axis_line_error_m": 1.3405640153507647e-08,
+        "shaft_axis_world": [
+          -5.2039062836684025e-08,
+          1.0,
+          -4.472717662906689e-08
+        ],
+        "shaft_geometry_center_world_zero_m": [
+          -0.06499999016523361,
+          0.0235160980373621,
+          0.004911232739686966
+        ],
+        "joint_pivot_world_m": [
+          -0.06499999761581421,
+          0.023910868912935257,
+          0.0049112215638160706
+        ],
+        "rigid_shape_max_pair_distance_error_m": 1.1175870895385742e-08,
+        "transform_world": [
+          [
+            0.730141282081604,
+            0.0,
+            -0.6832962036132812,
+            -0.014184997417032719
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.0003947801887989044
+          ],
+          [
+            0.6832962036132812,
+            0.0,
+            0.730141282081604,
+            0.045739587396383286
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "R": {
+        "rotation_about_world_y_deg": -43.10175789310118,
+        "translation_along_shaft_m": [
+          0.0,
+          0.0003947801887989044,
+          0.0
+        ],
+        "housing_center_world_zero_m": [
+          -0.06499999761581421,
+          -0.023910868912935257,
+          0.022406794130802155
+        ],
+        "housing_center_distance_along_shank_m": 0.017495572566986084,
+        "housing_center_line_error_m": 0.0,
+        "shaft_axis_line_error_m": 1.3405640153507647e-08,
+        "shaft_axis_world": [
+          5.2039062836684025e-08,
+          1.0,
+          4.472717662906689e-08
+        ],
+        "shaft_geometry_center_world_zero_m": [
+          -0.06499999016523361,
+          -0.0235160980373621,
+          0.004911232739686966
+        ],
+        "joint_pivot_world_m": [
+          -0.06499999761581421,
+          -0.023910868912935257,
+          0.0049112215638160706
+        ],
+        "rigid_shape_max_pair_distance_error_m": 1.1175870895385742e-08,
+        "transform_world": [
+          [
+            0.730141282081604,
+            0.0,
+            -0.6832962036132812,
+            -0.014184997417032719
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0003947801887989044
+          ],
+          [
+            0.6832962036132812,
+            0.0,
+            0.730141282081604,
+            0.045739587396383286
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    }
+  },
+  "torso_horizontal_measurements_m": {
+    "L": {
+      "waist_to_shoulder": 0.0999999986961484,
+      "waist_to_hip": 0.05999999772757292
+    },
+    "R": {
+      "waist_to_shoulder": 0.0999999986961484,
+      "waist_to_hip": 0.05999999772757292
+    }
+  },
+  "upper_limb_length_revision": "upper_arm_and_thigh_44mm_v1",
+  "upper_limb_measurements": {
+    "L_upper_arm": {
+      "center_distance_m": 0.04399999951037832,
+      "distal_height_world_m": 0.05991122126579285
+    },
+    "L_thigh": {
+      "center_distance_m": 0.04399999951037832,
+      "distal_height_world_m": 0.05991122126579285
+    },
+    "R_upper_arm": {
+      "center_distance_m": 0.04399999951037832,
+      "distal_height_world_m": 0.05991122126579285
+    },
+    "R_thigh": {
+      "center_distance_m": 0.04399999951037832,
+      "distal_height_world_m": 0.05991122126579285
+    }
+  },
+  "terminal_geometry_revision": "terminal_capsules_v1",
+  "hind_assembly_revision": "knee_motor_front_side_shank_50mm_v1",
+  "knee_motor_mounting": {
+    "L": {
+      "rotation_world_y_deg": 86.47581816071046,
+      "pivot_world_m": [
+        -0.052731480449438095,
+        0.028910867869853973,
+        0.05991122126579285
+      ],
+      "reference_elbow_housing_offset_m": [
+        0.011957659696539238,
+        9.080395102500916e-09,
+        0.01277745419388844
+      ],
+      "knee_housing_offset_before_m": [
+        -0.012015234678983688,
+        0.00039477849430922043,
+        0.012717276397678584
+      ],
+      "knee_housing_offset_after_m": [
+        0.011954651214182377,
+        0.00039477850077673793,
+        0.012774243950843811
+      ]
+    },
+    "R": {
+      "rotation_world_y_deg": 86.47581816071046,
+      "pivot_world_m": [
+        -0.052731480449438095,
+        -0.028910867869853973,
+        0.05991122126579285
+      ],
+      "reference_elbow_housing_offset_m": [
+        0.011957659696539238,
+        -9.080395102500916e-09,
+        0.01277745419388844
+      ],
+      "knee_housing_offset_before_m": [
+        -0.012015234678983688,
+        -0.00039477849430922043,
+        0.012717276397678584
+      ],
+      "knee_housing_offset_after_m": [
+        0.011954651214182377,
+        -0.00039477850077673793,
+        0.012774243950843811
+      ]
+    }
+  },
+  "elbow_motor_mount_revision": "elbow_housings_rear_side_v1",
+  "elbow_motor_mounting": {
+    "L": {
+      "rotation_world_y_deg": -86.20348805503991,
+      "pivot_world_m": [
+        0.08093786984682083,
+        0.023999083787202835,
+        0.05991122126579285
+      ],
+      "housing_offset_before_m": [
+        0.011957659696539238,
+        9.080395102500916e-09,
+        0.01277745419388844
+      ],
+      "housing_offset_after_m": [
+        -0.01195766031742096,
+        9.080395102500916e-09,
+        0.012777453288435936
+      ],
+      "method": "rigid rotation about unchanged output axis; mirrored side-view center placement"
+    },
+    "R": {
+      "rotation_world_y_deg": -86.20348805503991,
+      "pivot_world_m": [
+        0.08093786984682083,
+        -0.023999083787202835,
+        0.05991122126579285
+      ],
+      "housing_offset_before_m": [
+        0.011957659696539238,
+        -9.080395102500916e-09,
+        0.01277745419388844
+      ],
+      "housing_offset_after_m": [
+        -0.01195766031742096,
+        -9.080395102500916e-09,
+        0.012777453288435936
+      ],
+      "method": "rigid rotation about unchanged output axis; mirrored side-view center placement"
+    }
+  },
+  "lower_limb_measurements": {
+    "L_forearm": {
+      "center_distance_m": 0.0399999994947575
+    },
+    "L_shank": {
+      "center_distance_m": 0.054999999850988385
+    },
+    "R_forearm": {
+      "center_distance_m": 0.0399999994947575
+    },
+    "R_shank": {
+      "center_distance_m": 0.054999999850988385
+    }
+  },
+  "collision_shapes": [
+    {
+      "name": "L_hand_contact",
+      "visual_object": "L_hand_visual",
+      "bone": "L_wrist_fixed",
+      "type": "capsule",
+      "radius_m": 0.004999999422580004,
+      "cylinder_length_m": 0.020000004209578037,
+      "total_length_m": 0.030000003054738045,
+      "center_bone_m": [
+        0.003420203924179077,
+        0.0,
+        -0.009396928362548351
+      ],
+      "axis_bone": [
+        0.3420201539993286,
+        0.0,
+        -0.9396926164627075
+      ],
+      "center_world_zero_m": [
+        0.09840718527993006,
+        0.02170099294073085,
+        0.010514292841660482
+      ],
+      "axis_world_zero": [
+        0.34071865342161006,
+        -0.029809019626209157,
+        -0.9396926207859084
+      ],
+      "endpoints_bone_m": [
+        [
+          1.862645149230957e-09,
+          0.0,
+          -9.313225746154785e-10
+        ],
+        [
+          0.006840405985713005,
+          0.0,
+          -0.018793854862451553
+        ]
+      ],
+      "source": "Original named terminal dimensions retained; proximal hemisphere center at wrist/ankle pivot; user-specified sagittal mounting angle",
+      "blender_simulation_active": false,
+      "native_usd_collision_enabled": true,
+      "proximal_sphere_center_world_zero_m": [
+        0.09499999802857308,
+        0.02199908319973464,
+        0.019911221027374276
+      ],
+      "mount_angle_deg": 20.0,
+      "mount_angle_reference": "Downward forearm extension = 0 deg; positive toward this limb forward direction, including its 5 deg inward mounting yaw",
+      "mount_mode": "fixed geometry; not a new actuated coordinate"
+    },
+    {
+      "name": "L_foot_contact",
+      "visual_object": "L_foot_visual",
+      "bone": "L_ankle_pitch",
+      "type": "capsule",
+      "radius_m": 0.005000001285225153,
+      "cylinder_length_m": 0.029999997429549695,
+      "total_length_m": 0.04,
+      "center_bone_m": [
+        0.0,
+        -1.862645149230957e-09,
+        -0.014999998733401299
+      ],
+      "axis_bone": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "center_world_zero_m": [
+        -0.06499999761581421,
+        0.023910868912935257,
+        -0.010088777169585228
+      ],
+      "axis_world_zero": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "endpoints_bone_m": [
+        [
+          0.0,
+          -1.862645149230957e-09,
+          0.0
+        ],
+        [
+          0.0,
+          -1.862645149230957e-09,
+          -0.029999997466802597
+        ]
+      ],
+      "source": "40 mm total length requested by user; existing radius preserved; proximal sphere at powered ankle shaft",
+      "blender_simulation_active": false,
+      "native_usd_collision_enabled": true,
+      "proximal_sphere_center_world_zero_m": [
+        -0.06499999761581421,
+        0.023910868912935257,
+        0.0049112215638160706
+      ],
+      "mount_angle_deg": 0,
+      "mount_angle_reference": "downward extension of forearm/shank = 0 deg; forward (+X) positive",
+      "mount_mode": "actuated ankle pitch; angle is joint coordinate",
+      "standard_stand_angle_deg": 70
+    },
+    {
+      "name": "R_hand_contact",
+      "visual_object": "R_hand_visual",
+      "bone": "R_wrist_fixed",
+      "type": "capsule",
+      "radius_m": 0.004999999422580004,
+      "cylinder_length_m": 0.020000004209578037,
+      "total_length_m": 0.030000003054738045,
+      "center_bone_m": [
+        0.003420203924179077,
+        0.0,
+        -0.009396928362548351
+      ],
+      "axis_bone": [
+        0.3420201539993286,
+        0.0,
+        -0.9396926164627075
+      ],
+      "center_world_zero_m": [
+        0.09840718527993006,
+        -0.02170099294073085,
+        0.010514292841660482
+      ],
+      "axis_world_zero": [
+        0.34071865342161006,
+        0.029809019626209157,
+        -0.9396926207859084
+      ],
+      "endpoints_bone_m": [
+        [
+          1.862645149230957e-09,
+          0.0,
+          -9.313225746154785e-10
+        ],
+        [
+          0.006840405985713005,
+          0.0,
+          -0.018793854862451553
+        ]
+      ],
+      "source": "Original named terminal dimensions retained; proximal hemisphere center at wrist/ankle pivot; user-specified sagittal mounting angle",
+      "blender_simulation_active": false,
+      "native_usd_collision_enabled": true,
+      "proximal_sphere_center_world_zero_m": [
+        0.09499999802857308,
+        -0.02199908319973464,
+        0.019911221027374276
+      ],
+      "mount_angle_deg": 20.0,
+      "mount_angle_reference": "Downward forearm extension = 0 deg; positive toward this limb forward direction, including its 5 deg inward mounting yaw",
+      "mount_mode": "fixed geometry; not a new actuated coordinate"
+    },
+    {
+      "name": "R_foot_contact",
+      "visual_object": "R_foot_visual",
+      "bone": "R_ankle_pitch",
+      "type": "capsule",
+      "radius_m": 0.005000001285225153,
+      "cylinder_length_m": 0.029999997429549695,
+      "total_length_m": 0.04,
+      "center_bone_m": [
+        0.0,
+        0.0,
+        -0.014999998733401299
+      ],
+      "axis_bone": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "center_world_zero_m": [
+        -0.06499999761581421,
+        -0.023910868912935257,
+        -0.010088777169585228
+      ],
+      "axis_world_zero": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "endpoints_bone_m": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -0.029999997466802597
+        ]
+      ],
+      "source": "40 mm total length requested by user; existing radius preserved; proximal sphere at powered ankle shaft",
+      "blender_simulation_active": false,
+      "native_usd_collision_enabled": true,
+      "proximal_sphere_center_world_zero_m": [
+        -0.06499999761581421,
+        -0.023910868912935257,
+        0.0049112215638160706
+      ],
+      "mount_angle_deg": 0,
+      "mount_angle_reference": "downward extension of forearm/shank = 0 deg; forward (+X) positive",
+      "mount_mode": "actuated ankle pitch; angle is joint coordinate",
+      "standard_stand_angle_deg": 70
+    }
+  ],
+  "collision_usd": {
+    "path": "foot_colliders.usda",
+    "type": "native UsdGeomCapsule + UsdPhysicsCollisionAPI",
+    "count": 4,
+    "scope": "terminal collider definitions; no complete robot mass/inertia/articulation yet"
+  },
+  "usd": {
+    "path": "robot_visual.usdc",
+    "sha256": "3037d2a4e1f3e13bc6fc0b595f5ff9ac826ae621d05e90aaa8c91549d3360f5e",
+    "skeletons": 1,
+    "mesh_count": 22,
+    "meters_per_unit": 1.0,
+    "up_axis": "Z"
+  },
+  "notes": [
+    "Do not treat the mirrored rear-roll output as an independent actuator.",
+    "Guide rods are display-only and excluded from robot export.",
+    "The source was reassembled rigidly into a new modeling zero; encoder offset is unknown."
+  ]
+}

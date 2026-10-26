@@ -1,0 +1,139 @@
+{
+  "revision": "ankle_housing_inline_20261026",
+  "rig_sha256": "2ccb37b5400e9abaa7acb56e9d9a2520f5c9c836cf303def12f4f423e92f799d",
+  "draft_sha256": "04e5ae0ed39c407404443db40be376f5263a6e710a2631d0cadbb0d505fd6283",
+  "validation_passed": true,
+  "mounting": {
+    "L": {
+      "rotation_about_world_y_deg": -43.10175789310118,
+      "translation_along_shaft_m": [
+        0.0,
+        -0.0003947801887989044,
+        0.0
+      ],
+      "housing_center_world_zero_m": [
+        -0.06499999761581421,
+        0.023910868912935257,
+        0.022406794130802155
+      ],
+      "housing_center_distance_along_shank_m": 0.017495572566986084,
+      "housing_center_line_error_m": 0.0,
+      "shaft_axis_line_error_m": 1.3405640153507647e-08,
+      "shaft_axis_world": [
+        -5.2039062836684025e-08,
+        1.0,
+        -4.472717662906689e-08
+      ],
+      "shaft_geometry_center_world_zero_m": [
+        -0.06499999016523361,
+        0.0235160980373621,
+        0.004911232739686966
+      ],
+      "joint_pivot_world_m": [
+        -0.06499999761581421,
+        0.023910868912935257,
+        0.0049112215638160706
+      ],
+      "rigid_shape_max_pair_distance_error_m": 1.1175870895385742e-08,
+      "transform_world": [
+        [
+          0.730141282081604,
+          0.0,
+          -0.6832962036132812,
+          -0.014184997417032719
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0003947801887989044
+        ],
+        [
+          0.6832962036132812,
+          0.0,
+          0.730141282081604,
+          0.045739587396383286
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "R": {
+      "rotation_about_world_y_deg": -43.10175789310118,
+      "translation_along_shaft_m": [
+        0.0,
+        0.0003947801887989044,
+        0.0
+      ],
+      "housing_center_world_zero_m": [
+        -0.06499999761581421,
+        -0.023910868912935257,
+        0.022406794130802155
+      ],
+      "housing_center_distance_along_shank_m": 0.017495572566986084,
+      "housing_center_line_error_m": 0.0,
+      "shaft_axis_line_error_m": 1.3405640153507647e-08,
+      "shaft_axis_world": [
+        5.2039062836684025e-08,
+        1.0,
+        4.472717662906689e-08
+      ],
+      "shaft_geometry_center_world_zero_m": [
+        -0.06499999016523361,
+        -0.0235160980373621,
+        0.004911232739686966
+      ],
+      "joint_pivot_world_m": [
+        -0.06499999761581421,
+        -0.023910868912935257,
+        0.0049112215638160706
+      ],
+      "rigid_shape_max_pair_distance_error_m": 1.1175870895385742e-08,
+      "transform_world": [
+        [
+          0.730141282081604,
+          0.0,
+          -0.6832962036132812,
+          -0.014184997417032719
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0003947801887989044
+        ],
+        [
+          0.6832962036132812,
+          0.0,
+          0.730141282081604,
+          0.045739587396383286
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  },
+  "current_training_run": "stand5_20261026_v28_ankle_inline",
+  "deadline": "2026-10-26T20:54:58.122737+08:00",
+  "hip_penalty": {
+    "preferred_max_deg": -9,
+    "weight": -2.5,
+    "exponential_scale_deg": 15,
+    "physical_limits_deg": [
+      -85,
+      24
+    ],
+    "boundary_test": "deployment/legged_gym_ankle_inline_20261026/verification/inline_transfer_checks.json"
+  },
+  "model_changes": "Only two ankle motor mesh rigid placements; axes/pivots/55mm shanks/40mm pads/poses/limits unchanged",
+  "web_fix": "Both fixed and powered ankle names resolve to hind chains; zero browser JS errors",
+  "scope": "Static model and remote simulation checks; not hardware validation"
+}

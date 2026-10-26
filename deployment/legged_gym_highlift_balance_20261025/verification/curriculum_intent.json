@@ -1,0 +1,30 @@
+{
+  "created_unix": 1792933097.3404396,
+  "user_instruction_id": "da0cefbb1ecb48ce97050f6fb527ce40",
+  "parent": "runs/stand5_20261025_v20_guided_clearance32/checkpoints/model_004650.pt",
+  "full_reference_height_m": 0.018,
+  "reference_strength": 0.75,
+  "reward_height_target_m": 0.0135,
+  "new_reward": "Per completed planned swing compare actual capsule-bottom peak with latest completed opposite-foot peak; mean squared difference normalized by target. Four events/period normalized toper-second weight-0.5. Applied after ordinary positive reward clipping. Equal low peaks have zero cost but no bonus; independent height tracking retained.",
+  "hip_band_deg": 5,
+  "hip_standard_deg": -14,
+  "hip_penalty_weight": -2.5,
+  "knee_ground_death": true,
+  "speed_range_m_s": [
+    0.03,
+    0.06
+  ],
+  "deadline": "2026-10-25T22:00:00+08:00",
+  "initial_evidence": "height13p5mm_4650_24env.json is inference only:24/24 survival,24/24 strict2mm four-foot progression; median per-environment peaks14.64/14.68/10.89/10.74mm. Completed-swing>10mm prevalence awaits new evaluator.",
+  "source_methods": [
+    {
+      "url": "https://github.com/Improbable-AI/walk-these-ways/blob/master/go1_gym/envs/rewards/corl_rewards.py",
+      "use": "Phase/contact/clearance idea; robot-specific height and completed paired-peak implementation are local adaptations."
+    },
+    {
+      "url": "https://github.com/leggedrobotics/legged_gym/blob/master/legged_gym/envs/base/legged_robot.py",
+      "use": "Existing official framework and air-time style history, pinned vendor unchanged."
+    }
+  ],
+  "progression": "First verify actual completed swing heights and stability afterlearning; then test larger stride/speed independently. Do not treat2mm step criterion as10mm success."
+}

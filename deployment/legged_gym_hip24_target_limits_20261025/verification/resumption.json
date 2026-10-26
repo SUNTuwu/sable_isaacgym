@@ -1,0 +1,10 @@
+{
+  "created_unix": 1792909720.048748,
+  "user_requested_resume": true,
+  "deadline": "2026-10-25T15:24:30+08:00",
+  "deadline_basis": "Working assumption: approximately one hour from resumption; optional time selection remains pending, honor an earlier stop if selected.",
+  "deadline_explicitly_confirmed": false,
+  "parent_iteration": 2724,
+  "previous_pause_receipt": "results/legged_gym/pause_request_20261025_afternoon.json",
+  "formal_training_started": false
+}

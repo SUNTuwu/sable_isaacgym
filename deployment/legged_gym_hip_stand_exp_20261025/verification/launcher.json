@@ -1,0 +1,8 @@
+{
+  "pid": 67694,
+  "deadline": "2026-10-25T19:00:00+08:00",
+  "tolerance_deg": 10,
+  "review_after_training_seconds": 1800,
+  "created_unix": 1792919535.301678,
+  "log": "/root/gpufree-data/projects/sable-isaacgym/deployment/legged_gym_hip_stand_exp_20261025/verification/launch_1900.log"
+}

@@ -1,0 +1,8 @@
+{
+  "created_unix": 1792935273.4708183,
+  "parent": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261025_v21_highlift_balance/checkpoints/model_005000.pt",
+  "parent_sha256": "49fa13e45c3ebc59536fea7e0bf8e1b8cb8703853d432904d23f9e0fb9af6886",
+  "selection_evaluation": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261025_v21_highlift_balance/evaluations/eval_005000.json",
+  "speed_evidence": "results/legged_gym/speed_stride_4800.json",
+  "scope": "Parent5000 retains newly learned low-speed lift; faster-range baseline of this exact parent required beforeformal launch."
+}

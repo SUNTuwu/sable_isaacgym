@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "samples": 100,
+  "seed": 947,
+  "max_capsule_point_reflection_error_m": 5.855055329462289e-11,
+  "max_total_com_reflection_error_m": 6.8974409517252866e-12,
+  "max_world_inertia_reflection_error_kg_m2": 2.2213758610334366e-12,
+  "reference_table_pair_error_rad": 8.733677148153873e-08,
+  "mirrored_joint_limits_passed": true,
+  "observation_involution_errors": {
+    "48": 0.0,
+    "50": 0.0,
+    "52": 0.0
+  },
+  "asset_sha256": "16dfa3fb0e3a2c563cb533a81288b841e3e4601407d5a11a67d4eea210c0e92c",
+  "manifest_sha256": "d532bb4c167d0ad74dd09d59e557fa2189a4152f57c334ce283535bc08e15937",
+  "mirror_source_sha256": "caa345957c99130eaaafb50b4380fa8e523a51c5c522dd3778bf125e72cd378f",
+  "checker_sha256": "954c93c5ffe1be4c35346e845222fcf0d247e97f2b88860ef39bea6dfb36691d",
+  "created_unix": 1792943170.5868332,
+  "scope": "Static kinematic/inertial symmetry for current model and coupled coordinates only. Does not prove exact PhysX dynamics/tendon symmetry, stability or policy benefit."
+}

@@ -1,0 +1,31 @@
+{
+  "rms_velocity_error_m_s": {
+    "reported_direct": 0.006476118694990873,
+    "reported_minus_omega_cross_com": 0.006412617066767379,
+    "reported_plus_omega_cross_com": 0.006539932912516094
+  },
+  "best": "reported_minus_omega_cross_com",
+  "local_com_m": [
+    [
+      0.000702843361068517,
+      8.194932161131874e-05,
+      0.006674290634691715
+    ],
+    [
+      0.000702843361068517,
+      -8.194932161131874e-05,
+      0.006674290634691715
+    ],
+    [
+      0.0012170597910881042,
+      -0.0009502379689365625,
+      0.01137345191091299
+    ],
+    [
+      0.0012170597910881042,
+      0.0009502379689365625,
+      0.01137345191091299
+    ]
+  ],
+  "scope": "fixed root raised 0.1m, slow joint motion, finite-difference body origins"
+}

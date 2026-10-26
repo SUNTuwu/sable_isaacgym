@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "cases": [
+    "inside bounds zero",
+    "left hip overshoot",
+    "right hip mirrored overshoot",
+    "larger overshoot quadratic"
+  ],
+  "unweighted_values": [
+    0.0,
+    0.00999998115003109,
+    0.00999998115003109,
+    0.03999992460012436
+  ],
+  "scale": -2.0,
+  "scope": "CPU check of actual candidate reward method; not PPO or physical validation."
+}

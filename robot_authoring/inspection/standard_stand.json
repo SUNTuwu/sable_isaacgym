@@ -1,0 +1,69 @@
+{
+  "rig_sha256": "d735c6910c4e201755c57ad9c9728168bbfd8e673a54f2d62a046044de51af88",
+  "source_rig_sha256": "d72a26334d5a67f3d103e04c3bf42c50fb3c3864a0ea79ba240991bec5a57e74",
+  "frame": 5,
+  "source_frame": 6,
+  "angles_rad": {
+    "spine_pitch": -0.6981316208839417,
+    "spine_roll": -0.0,
+    "hip_roll": -0.0,
+    "L_shoulder_roll": -0.0,
+    "L_shoulder_pitch": 0.471235454082489,
+    "L_elbow_pitch": -1.0646508932113647,
+    "L_hip_pitch": -0.24434615671634674,
+    "L_knee_pitch": 1.5882495641708374,
+    "R_hip_roll_mimic": -0.0,
+    "R_shoulder_roll": -0.0,
+    "R_shoulder_pitch": 0.471235454082489,
+    "R_elbow_pitch": -1.0646507740020752,
+    "R_hip_pitch": -0.24434615671634674,
+    "R_knee_pitch": 1.5882494449615479
+  },
+  "angles_deg": {
+    "spine_pitch": -39.9999954212771,
+    "spine_roll": -0.0,
+    "hip_roll": -0.0,
+    "L_shoulder_roll": -0.0,
+    "L_shoulder_pitch": 26.99980267585752,
+    "L_elbow_pitch": -61.000002835844505,
+    "L_hip_pitch": -14.000003520088862,
+    "L_knee_pitch": 90.99999684048139,
+    "R_hip_roll_mimic": -0.0,
+    "R_shoulder_roll": -0.0,
+    "R_shoulder_pitch": 26.99980267585752,
+    "R_elbow_pitch": -60.99999600565534,
+    "R_hip_pitch": -14.000003520088862,
+    "R_knee_pitch": 90.99999001029222
+  },
+  "root_matrix_world": [
+    [
+      0.9743700623512268,
+      0.0,
+      0.22495104372501373,
+      -0.004999999888241291
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      -0.22495104372501373,
+      0.0,
+      0.9743700623512268,
+      0.1134643703699112
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "protected_files_sha256": {
+    "blender/draft.blend": "04e5ae0ed39c407404443db40be376f5263a6e710a2631d0cadbb0d505fd6283",
+    "robot_authoring/source/original_draft_2026-10-24.blend": "74650ec404d4eb396c35019fcdf78c79b929cd3ee89fc302d82b816288b73341"
+  },
+  "scope": "Blender standard-pose symmetry/limits verified; physical import and standing validation pending"
+}

@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "correct_cycle_reward_reversal_event_cost": [
+    0.7999999213218691,
+    0.0,
+    0.0
+  ],
+  "wrong_direction": [
+    0.0,
+    0.6933333396911628,
+    0.0
+  ],
+  "body_only_reward": 0.0,
+  "park_reward": 0.0,
+  "drag_reward": 0.0,
+  "backward_reward": 0.0,
+  "dt01": [
+    0.7999999314546576,
+    0.0,
+    0.0
+  ],
+  "reset_cleared": true,
+  "negative_cost_survives_clipping": true,
+  "source_sha256": {
+    "ankle_phase.py": "de504ff7d39d87c6f83a456b8114b23d049ba5ac8fd01d9cd0ccf1ec851a1c63",
+    "sable_env.py": "e7efe96ebc01658b95e338fc3f6551af2f40198604a8dda01ab9a7ab471095c2",
+    "sable_config.py": "5ffaffdbe043ecdd7144ac2a32fe518fddaa6f81911b2b9d41a02755df1581b7",
+    "evaluate.py": "cb423a2a450d04d083722e24d8ffbfe79dbbc8d2864a16498a9eb9e25f9d3a93"
+  }
+}

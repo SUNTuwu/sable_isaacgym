@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "tracking_lag_cycles": {
+    "correct": [
+      0.0,
+      0.0
+    ],
+    "lagging": [
+      0.2209796041401569,
+      0.0
+    ],
+    "body_only": [
+      2.2049006192479284,
+      0.0
+    ],
+    "wrong": [
+      2.2049006192479284,
+      0.91999992609024
+    ],
+    "stalled": [
+      0.2537734365835786,
+      0.0
+    ],
+    "backward": [
+      0.2537734365835786,
+      0.0
+    ],
+    "park": [
+      0.0,
+      0.0
+    ]
+  },
+  "negative_cost_survives_positive_clip": true,
+  "lag_0_5_5point001_35_200_deg_weighted_cost": [
+    -0.0,
+    -0.0,
+    -8.887600877471868e-09,
+    -8.0,
+    -128.0
+  ],
+  "old_positive_motion_reward_removed": true,
+  "hip_posture_removed": true,
+  "signed_stride80_scores": [
+    -1.0,
+    -0.06495911628007889,
+    -0.0009565780637785792,
+    0.0,
+    0.004130800254642963,
+    1.0,
+    1.0
+  ],
+  "active_reward_count": 29,
+  "removed_keys": [
+    "ankle_phase_motion",
+    "hip_stand_exp",
+    "ankle_stance_motion",
+    "ankle_stance_reversal",
+    "hind_foot_angle",
+    "foot_spacing",
+    "stand_still",
+    "dof_vel",
+    "feet_stumble"
+  ],
+  "source_sha256": {
+    "ankle_phase.py": "77c278497bf21addad1a1b730ea60a467a25fea617ad09a1b4a95e1a588429c4",
+    "ankle_stance.py": "594458550de7e238c6f1812f948da78957572fe579a288270fad21d923ffb434",
+    "hind_landing_width.py": "30884422f085ebb471f7d7020c9b1372bbc8adbdd05ba329c7d6857060c390e5",
+    "peak_acceleration.py": "3ef2afd12818bf769c3ef0bdb4f348c095ff4d62f70d941b9f7c7c88d0a6da1b",
+    "sable_env.py": "e2e1fd5f925020315d58bb53759993287fae2f52f0e41e960791c70981fbf823",
+    "sable_config.py": "f8f385290b573707aa8dec8f14f3ddb77725197ffbb10be09a64c542954eb460",
+    "evaluate.py": "a2a7d5b12c404c7e1938e5fb2d214100ce1d95a2c36fd5bfd8cce646b46aedbc",
+    "train.py": "21f23475a43adefc9dcf20892b2b65981f3b47b1f719298c58fb98ab561899af",
+    "supervise.py": "4bed2a7a76a83e6ea799ef3f6ebd39a2dbb674ff1a51628b79cafef4ed0f7497",
+    "progress_report.py": "b8a7df102f0176ad7ac5a1cde75a4d1f2c3782b352d32288879fa7dde3d9a13a",
+    "landing_stride_rewards.py": "dd42f090adeb8f86c8b9c11dd8cdb6cc4def63f4f830d54a24af9188d3bb2886"
+  }
+}

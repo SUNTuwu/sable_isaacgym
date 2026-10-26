@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "training": false,
+  "stand_deg": [
+    90.99999237060547,
+    90.99999237060547
+  ],
+  "free_lower_deg": [
+    80.99999237060547,
+    80.99999237060547
+  ],
+  "free_upper_deg": [
+    100.99999237060547,
+    100.99999237060547
+  ],
+  "offsets_deg": [
+    -40.0,
+    -20.0,
+    -11.0,
+    -10.0,
+    0.0,
+    10.0,
+    11.0,
+    20.0,
+    40.0
+  ],
+  "raw_cost": [
+    4.389056205749512,
+    0.28106755018234253,
+    0.0022724345326423645,
+    0.0,
+    0.0,
+    0.0,
+    0.0022724345326423645,
+    0.28106755018234253,
+    4.389056205749512
+  ],
+  "negative_cost_survives_clipping": true,
+  "scope": "Actual reward function unit checks only; no PPO or gait validation",
+  "source_sha256": {
+    "sable_env.py": "6a6074c6e16aae4d2d941175593c7ebd62f5eab26d4d9ee505c7b0a0ad30e2a4",
+    "sable_config.py": "61d6801964a34355048f55185305ff771d53fd553a1af17baf4d0135dbd043fc"
+  }
+}

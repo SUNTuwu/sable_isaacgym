@@ -1,0 +1,14 @@
+{
+  "run": "stance50_ppo_smoke_20261027",
+  "baseline": "/root/gpufree-data/projects/sable-isaacgym/runs/stance50_ppo_smoke_20261027/evaluations/initial_stance50_24env.json",
+  "survival_16s": 0.0,
+  "mean_duration_s": 1.0483333831264947,
+  "phase_offsets": [
+    0.75,
+    0.25,
+    0.0,
+    0.5
+  ],
+  "preserved": true,
+  "revision": "Test diagonal pairs at the same1Hz/50% duty; preserve the failed original phase evidence."
+}

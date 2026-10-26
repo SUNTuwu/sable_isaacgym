@@ -1,0 +1,493 @@
+{
+  "schema": "sable-independent-evaluation/1",
+  "checkpoint": "runs/stand5_20261025_v22_highlift_speed/checkpoints/model_005314.pt",
+  "checkpoint_sha256": "03d0ce03ac5834ea93cdd8bc27acbc77c5442ad33567d30c0d768c06d550593b",
+  "iteration": 5314,
+  "runtime_sha256": "b1b625bee2b45ea4fc8b8e09eebf71611e79828b60db40a2475c6f9f1f166901",
+  "evaluator_sha256": "3d5df3eb053ee4e10b4496ff59a1c51e6041d544950076dfb245dbd79b5e6a23",
+  "diagnostics_sha256": "c1bc8fa60e264dae643b1c85a2589ff6adfa893effec56f0d678238c575e25ed",
+  "created_unix": 1792940274.3104017,
+  "wall_seconds": 0.1264798641204834,
+  "horizon_s": 3.0,
+  "num_envs": 6,
+  "seed": 947,
+  "zero_actions": false,
+  "command_set_m_s": [
+    0.03,
+    0.06,
+    0.09
+  ],
+  "summary": {
+    "knee_ground_failure_fraction": 0.0,
+    "survival_5s": 0.0,
+    "survival_16s": 0.0,
+    "median_displacement_m": 0.00018959911540150642,
+    "mean_displacement_m": 0.00020175210374873132,
+    "mean_duration_s": 0.020000000949949026,
+    "mean_min_foot_steps": 0.0,
+    "max_coupling_error_rad": 0.004737287759780884,
+    "moving_all_four_fraction": 0.0,
+    "median_abs_heading_change_deg": 0.0,
+    "median_path_m": 0.0015444556483998895,
+    "mean_peak_clearance_m": [
+      0.003113170930494865,
+      0.0013052731131513913,
+      0.0017964149204393227,
+      9.398596982161204e-08
+    ],
+    "score": 0.00018959911540150642
+  },
+  "accepted_locomotion": false,
+  "kinematic_reference_enabled": true,
+  "zero_policy_residual": false,
+  "mirror_policy": true,
+  "reference_strength": 0.75,
+  "step_definition": "capsule clearance >=2mm and contact-off >=60ms then landing, foot travel >=5mm; first 0.5s excluded",
+  "step_definition_zh": "足底离地至少2mm并持续60ms，重新着地时足中心移动至少5mm；最初0.5秒不计。",
+  "domain": "flat floor, explicit material_friction settings recorded below, deterministic policy, 0.015rad initial joint perturbation; simulation only",
+  "swing_peak_diagnostics": {
+    "definition": "Actual capsule-bottom peak within each complete planned swing after startup; no 60ms duration condition in this peak metric; no-lift swings are counted.",
+    "completed_swings_per_foot": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "swings_peak_above10mm_per_foot": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "fraction_above10mm_per_foot": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "median_peak_m_per_foot": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "paired_peak_rmse_m_front_hind": [
+      null,
+      null
+    ],
+    "samples": [
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "samples": [
+    {
+      "command_m_s": 0.03,
+      "duration_s": 0.020000000949949026,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.0004879320040345192,
+      "steps_per_foot": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.06,
+      "duration_s": 0.020000000949949026,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.00018631760030984879,
+      "steps_per_foot": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.09,
+      "duration_s": 0.020000000949949026,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 4.6193599700927734e-05,
+      "steps_per_foot": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.03,
+      "duration_s": 0.020000000949949026,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 3.135204315185547e-05,
+      "steps_per_foot": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.06,
+      "duration_s": 0.020000000949949026,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.00019288063049316406,
+      "steps_per_foot": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.09,
+      "duration_s": 0.020000000949949026,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.0002658367156982422,
+      "steps_per_foot": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "priority_diagnostics": {
+    "schema": "sable-priority-diagnostics/1",
+    "settling_excluded_s": 1.0,
+    "hip_reference_deg": [
+      -14.000003520088862,
+      -14.000003520088862
+    ],
+    "hip_tolerance_deg": 5.0,
+    "joint_pair_order": [
+      "L",
+      "R"
+    ],
+    "foot_order": [
+      "LF",
+      "RF",
+      "LH",
+      "RH"
+    ],
+    "body_contact_scope": "Knee motor meshes are on hip_pitch rigid bodies; elbow meshes are on shoulder_pitch bodies. Net force may include self-contact; not a direct kneeling classifier.",
+    "knee_contact_bodies": [
+      "L_hip_pitch",
+      "R_hip_pitch"
+    ],
+    "elbow_contact_bodies": [
+      "L_shoulder_pitch",
+      "R_shoulder_pitch"
+    ],
+    "range_scope": "Per-environment p95-p05 over actual joint samples, then median across environments.",
+    "median_across_environments": {},
+    "samples": [
+      {
+        "env": 0,
+        "samples_after_1s": 0
+      },
+      {
+        "env": 1,
+        "samples_after_1s": 0
+      },
+      {
+        "env": 2,
+        "samples_after_1s": 0
+      },
+      {
+        "env": 3,
+        "samples_after_1s": 0
+      },
+      {
+        "env": 4,
+        "samples_after_1s": 0
+      },
+      {
+        "env": 5,
+        "samples_after_1s": 0
+      }
+    ]
+  },
+  "knee_contact_rule": {
+    "enabled": true,
+    "margin_m": 0.0005,
+    "method": "Existing knee motor collision primitives vs plane z=0, checked each 20ms control step; cylinder support bound conservative for tessellation"
+  },
+  "asset_sha256": "16dfa3fb0e3a2c563cb533a81288b841e3e4601407d5a11a67d4eea210c0e92c",
+  "manifest_sha256": "d532bb4c167d0ad74dd09d59e557fa2189a4152f57c334ce283535bc08e15937",
+  "body_names": [
+    "ROOT",
+    "spine_pitch",
+    "spine_roll",
+    "hip_roll",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "L_ankle_fixed",
+    "R_hip_roll_mimic",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "R_ankle_fixed",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "L_wrist_fixed",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch",
+    "R_wrist_fixed"
+  ],
+  "dof_names": [
+    "spine_pitch",
+    "spine_roll",
+    "hip_roll",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "R_hip_roll_mimic",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch"
+  ],
+  "foot_order": [
+    "L_wrist_fixed",
+    "R_wrist_fixed",
+    "L_ankle_fixed",
+    "R_ankle_fixed"
+  ],
+  "trace": [
+    {
+      "t": 0.020000000949949026,
+      "body_xyz": [
+        [
+          -0.004512067884206772,
+          -0.003084753639996052,
+          0.1246190071105957
+        ],
+        [
+          -0.004512075334787369,
+          -0.003084753639996052,
+          0.1246190071105957
+        ],
+        [
+          -0.03332245722413063,
+          -0.002398463897407055,
+          0.1103072464466095
+        ],
+        [
+          -0.06997184455394745,
+          0.016633694991469383,
+          0.08690419048070908
+        ],
+        [
+          -0.054941900074481964,
+          0.023157520219683647,
+          0.09249959886074066
+        ],
+        [
+          -0.02516743913292885,
+          0.030679769814014435,
+          0.06098932772874832
+        ],
+        [
+          -0.060922883450984955,
+          0.03454919159412384,
+          0.026253540068864822
+        ],
+        [
+          -0.06890593469142914,
+          -0.01809293031692505,
+          0.08309321850538254
+        ],
+        [
+          -0.05346611887216568,
+          -0.024745231494307518,
+          0.08723169565200806
+        ],
+        [
+          -0.023681746795773506,
+          -0.023357851430773735,
+          0.054874856024980545
+        ],
+        [
+          -0.06296607106924057,
+          -0.02191586047410965,
+          0.02397724613547325
+        ],
+        [
+          0.07468476891517639,
+          0.008228461258113384,
+          0.09588918089866638
+        ],
+        [
+          0.0901741236448288,
+          0.022625265643000603,
+          0.09390590339899063
+        ],
+        [
+          0.06139633059501648,
+          0.027233557775616646,
+          0.06094225496053696
+        ],
+        [
+          0.07621756196022034,
+          0.028848567977547646,
+          0.023824570700526237
+        ],
+        [
+          0.0749073252081871,
+          -0.0077239396050572395,
+          0.09467621147632599
+        ],
+        [
+          0.09089236706495285,
+          -0.02122187428176403,
+          0.09101484715938568
+        ],
+        [
+          0.0630420669913292,
+          -0.02273920364677906,
+          0.05698460713028908
+        ],
+        [
+          0.07762713730335236,
+          -0.0193875040858984,
+          0.019889559596776962
+        ]
+      ],
+      "force": [
+        0.0,
+        8.017927169799805,
+        0.0,
+        2.4760565757751465
+      ],
+      "q": [
+        -0.699000358581543,
+        0.03729996457695961,
+        0.07425533980131149,
+        -0.2876724898815155,
+        1.54395592212677,
+        -0.07242179661989212,
+        -0.28206419944763184,
+        1.6473753452301025,
+        0.018834589049220085,
+        0.47679564356803894,
+        -1.0960907936096191,
+        -0.05135359615087509,
+        0.45232954621315,
+        -1.0660767555236816
+      ],
+      "clearance_m": [
+        0.003884723875671625,
+        1.83936208486557e-07,
+        0.0033879983238875866,
+        -2.2114254534244537e-06
+      ],
+      "knee_clearance_m": [
+        0.05293255299329758,
+        0.047231242060661316
+      ]
+    }
+  ],
+  "material_friction": {
+    "plane": 0.0,
+    "front_scale": 0.05,
+    "nominal_front_floor_mu": 0.05,
+    "nominal_rear_floor_mu": 1.0,
+    "combination": "arithmetic mean, validated by isolated sliding deceleration",
+    "scope": "Temporary simulation materials; not hardware friction. Both batch arms have matched material remapping; non-foot/foot self-contact friction differs from parent."
+  }
+}

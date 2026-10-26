@@ -1,0 +1,4 @@
+{
+  "created_unix": 1792907663.3704424,
+  "reason": "Importer reveals elbow/knee bodies have zero collision shapes; check ownership before proposing contact penalty changes. No formal run started."
+}

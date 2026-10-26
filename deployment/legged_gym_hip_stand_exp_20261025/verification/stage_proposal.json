@@ -1,0 +1,23 @@
+{
+  "created_unix": 1792919114.0360932,
+  "request": "thighs near standard stand, exponentially increasing deviation penalty, avoid limits",
+  "status": "candidate awaiting validation",
+  "joints": [
+    "L_hip_pitch",
+    "R_hip_pitch"
+  ],
+  "reference": "frame-5 default_joint_angles from current physical manifest (-14 degrees each)",
+  "scale_deg": 15,
+  "weight_per_second": -0.5,
+  "cost": "mean(exp(max(abs(q-qstand)-10deg,0)/15deg)-1-max(abs(q-qstand)-10deg,0)/15deg)",
+  "aggregation": "subtract after existing positive reward clipping; termination penalty retained",
+  "supersedes": "unlaunched 15mm knee-clearance reward candidate; no knee clearance shaping is enabled here",
+  "tolerance_deg": 10,
+  "free_range_deg": [
+    -24,
+    -4
+  ],
+  "updated_unix": 1792919504.8625543,
+  "review_after_training_seconds": 1800,
+  "conditional_change": "If independent replay still shows kneeling/near-ground crouch, narrow tolerance to +/-5 degrees in a new frozen run; keep 19:00 deadline"
+}

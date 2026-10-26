@@ -1,0 +1,308 @@
+{
+  "passed": false,
+  "mismatched_steps": 15,
+  "runtime": "runs/stand5_20261025_v4_walk/runtime",
+  "env_sha256": "84e9d30e4030a3a47044fd9e8a8974a0a081eaffa30b1ef3dc9a94a7788c0859",
+  "records": [
+    {
+      "step": 0,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 1,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 2,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 3,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 4,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 5,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 6,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 7,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 8,
+      "actual_timeout": [
+        true,
+        true
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": true
+    },
+    {
+      "step": 9,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": false
+    },
+    {
+      "step": 10,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": false
+    },
+    {
+      "step": 11,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": false
+    },
+    {
+      "step": 12,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": false
+    },
+    {
+      "step": 13,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": false
+    },
+    {
+      "step": 14,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": false
+    },
+    {
+      "step": 15,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": false
+    },
+    {
+      "step": 16,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": false
+    },
+    {
+      "step": 17,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": false
+    },
+    {
+      "step": 18,
+      "actual_timeout": [
+        true,
+        true
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": true
+    },
+    {
+      "step": 19,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": false
+    },
+    {
+      "step": 20,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": false
+    },
+    {
+      "step": 21,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": false
+    },
+    {
+      "step": 22,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": false
+    },
+    {
+      "step": 23,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": false
+    },
+    {
+      "step": 24,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": false
+    }
+  ]
+}

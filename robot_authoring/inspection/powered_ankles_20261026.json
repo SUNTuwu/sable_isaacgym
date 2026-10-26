@@ -1,0 +1,42 @@
+{
+  "revision": "powered_ankle_shank55_foot40_20261026",
+  "current_rig": "blender/sable_rig.blend",
+  "rig_sha256": "3ab47126baae0632fa713b5c42a33b536ca573bd00be01333dee082f6efce060",
+  "draft_preserved_sha256": "04e5ae0ed39c407404443db40be376f5263a6e710a2631d0cadbb0d505fd6283",
+  "before_backup": "/root/gpufree-data/projects/sable-isaacgym/results/model_sync/20261026_powered_ankles/before",
+  "validation": "/root/gpufree-data/projects/sable-isaacgym/results/model_sync/20261026_powered_ankles/validation.json",
+  "validation_passed": true,
+  "independent_actuators": 15,
+  "training_started": false,
+  "old_training_assets_and_runs_modified": false,
+  "motor_geometry": "rigid copy of same-side knee dc1628; no motor calibration inferred",
+  "angle_zero": "downward shank extension, forward positive, world -Y axis at modeling zero",
+  "standard_stand_ankle_deg": 70,
+  "ankle_limits_deg": [
+    0,
+    160
+  ],
+  "shank_mm": 55,
+  "rear_capsule_total_mm": 40,
+  "rear_capsule_radius_mm": 5,
+  "exports": {
+    "blender/sable_rig.blend": "3ab47126baae0632fa713b5c42a33b536ca573bd00be01333dee082f6efce060",
+    "robot_authoring/exports/robot_description.json": "81699ee8d7e4abc185f7644f344b03107254586c6a84233f2d9cad12ed2bb573",
+    "robot_authoring/exports/poses.json": "af823c10ba7e3b49adaf90675d507d94848094293ab7bf4ffb44771e259f3bb4",
+    "robot_authoring/exports/robot_visual.usdc": "892739217ff4166d46c72507db3d93273a15a966c1cc04c851fdb056ae287682",
+    "robot_authoring/exports/foot_colliders.usda": "f99f74f8b3ed2018d91bb42f8a1ea2e40614587e3141ab21f675105d8595cac0"
+  },
+  "limitations": [
+    "Static authoring/animation and USD checks only; no dynamics or hardware validation.",
+    "Old physics assets, gait references and policies have not been migrated to the two new actuators.",
+    "Source saved by Blender 5.2; edited with installed 5.1.1. Original backed up; non-ankle geometry, animation and constraints compared and preserved."
+  ],
+  "validation_check_count": 1741,
+  "implementation_sha256": {
+    "robot_authoring/revise_powered_ankles.py": "e6d944b6232cfd7107bed44516efe0d12614b7bc876da366dce9f22d4d26cbbf",
+    "robot_authoring/validate_powered_ankles.py": "6d7dfdcaa9b3c164ea8ff36ce4ed35b7142a476fc9c55310baaac72af6c4ffa0",
+    "robot_authoring/render_powered_ankles.py": "5ebeb93fcda2d8b5eb094157b17d631e4d85fee5749861d31630b2fa46a56f1f",
+    "robot_authoring/export_description.py": "93b83e69dd117f859440e0bd7b1eaa93725324f18ed7441983c038e85f743495",
+    "robot_authoring/capsule_geometry.py": "abedf7a9cd2437650a90207671d19a535ff3d66610307b26221dd9aed5b5b850"
+  }
+}

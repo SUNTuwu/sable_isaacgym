@@ -1,0 +1,7 @@
+{
+  "pid": 83338,
+  "created_unix": 1792921942.2561824,
+  "deadline": "2026-10-25T19:00:00+08:00",
+  "tolerance_deg": 5,
+  "log": "/root/gpufree-data/projects/sable-isaacgym/deployment/legged_gym_hip_stand_exp5_20261025/verification/launch_1900.log"
+}

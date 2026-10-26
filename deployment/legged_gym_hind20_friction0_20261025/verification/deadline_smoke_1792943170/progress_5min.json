@@ -1,0 +1,26 @@
+{
+  "created_unix": 1792943173.311835,
+  "interval_s": 300,
+  "final": true,
+  "run": "deadline_smoke_1792943170",
+  "status": "deadline_test_complete",
+  "deadline": null,
+  "iteration": null,
+  "updates_this_run": 0,
+  "updates_in_last_5min": 0,
+  "reward_mean_last_5min": null,
+  "priorities": [
+    "跪姿/膝与躯干接触",
+    "肘关节活动幅度",
+    "四足离地高度与持续时间",
+    "严格步数与步幅"
+  ],
+  "evaluation_iteration": null,
+  "evaluation_created_unix": null,
+  "evaluation_age_s": null,
+  "summary": null,
+  "priority_diagnostics": null,
+  "strict_steps_total_per_foot": null,
+  "accepted_locomotion": false,
+  "note": "训练回报与独立评估分别记录；膝/躯干净接触力是诊断代理量，不能单独证明跪姿已消除。"
+}

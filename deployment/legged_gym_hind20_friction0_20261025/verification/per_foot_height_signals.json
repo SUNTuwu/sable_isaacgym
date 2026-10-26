@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "actual_target_peaks_m": [
+    0.013499999418854713,
+    0.013499999418854713,
+    0.023000000044703484,
+    0.023000000044703484
+  ],
+  "repeated_reward_preserves_height_tensor": true,
+  "unit_relative_height_error_cost": 1.0,
+  "per_foot_equal_pair_cost_zero": true,
+  "source_files": {
+    "check_per_foot_signals.py": "c6eeed2112ba33dbd1affc37f6316f309c6ffaee243818090c7f93e962062328",
+    "sable_env.py": "02e24d67a89e01e62af68ce5727bb77a4ad4a9c3a7880940759e6108268f474f",
+    "sable_config.py": "2609f6d0e5c99a213729aef02cde33c4c06ff585f5348181794a55afbbeb5121",
+    "guided_reference.py": "52e371978675c3eae7ff262107ca7e68089e73352f17e45d143054d264d2dcfa",
+    "gait_support.py": "ba5c2f38c34584d2e30f0856f3121b2e718254e255142ae943a7644fcffaa184",
+    "swing_peak_balance.py": "0357dd692a46af17e17a8e5fb831b75eed093fb78f99b4bfc12a9b0b6e391d14",
+    "evaluate.py": "d26b24fcc9071251088fb05c5d82a00adf50e226f6fc6c69724605c77e834785",
+    "train.py": "5f9dd6138f1949cc596b1920ca6191a7e1405f330d820f678fc7a77dc4ffcfdf",
+    "supervise.py": "b865f8d5a2f8e8b038d3c5dd24a7bc6c48a8a07092023eb8d26134a880fc3dc3"
+  },
+  "scope": "CPU tensor behavior only; dynamic preflight pending"
+}

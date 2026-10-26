@@ -1,0 +1,10 @@
+{
+  "finished_unix": 1792881863.5904565,
+  "training_exit_code": 0,
+  "deadline": "2026-10-24T22:44:23.556773+00:00",
+  "checkpoint": {},
+  "reason": "deadline",
+  "status": {
+    "status": "deadline_test_complete"
+  }
+}

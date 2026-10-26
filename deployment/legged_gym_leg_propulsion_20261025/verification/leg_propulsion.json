@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "checks": {
+    "forward_positive_backward_negative": true,
+    "signed_leg_reward": true,
+    "braking_pair_cannot_farm_bonus": true,
+    "common_world_rotation_invariant": true,
+    "actual_reverse_motion_reverses_sign": true,
+    "vertical_motion_no_reward": true,
+    "flight_no_reward": true,
+    "stationary_no_reward": true,
+    "parking_or_startup_no_reward": true,
+    "tracking_failure_removes_positive_only": true,
+    "positive_bounded_negative_uncapped": true,
+    "mirror_exchange": true,
+    "substep_positive_negative_separate": true
+  },
+  "sources_sha256": {
+    "leg_propulsion.py": "5f15438e019f0c426013ac73897f098ece5918372c7af5cb75da1ec806cbb46f",
+    "sable_env.py": "1bd272bea7b96a35cee96517da831c5019c1853a53860bcc614bdd6967d91093",
+    "sable_config.py": "e416a9c08938aca55054166d36a4a2d0ee6dd7d014277a94adbb760730bf5650",
+    "check_leg_propulsion.py": "ff5659ef64336eb7ae554a4da19bc7913965b6d66fb963be7660d678eb2fb36c"
+  }
+}

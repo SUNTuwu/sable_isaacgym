@@ -1,0 +1,5 @@
+{
+  "failure": "ideal cycle used110deg after one20ms swing step whose target already moved to103.6deg",
+  "observed_integrated_cost": 4.355565179139376e-05,
+  "correction": "supply the first-step angle103.6deg for the ideal trajectory; production reward unchanged"
+}

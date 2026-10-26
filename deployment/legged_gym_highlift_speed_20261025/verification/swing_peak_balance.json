@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "checks": {
+    "alternating_equal_peaks_zero_cost": true,
+    "mismatch_expected_per_second": true,
+    "dt_scaling": true,
+    "left_right_exchange": true,
+    "completed_swings_recorded": true,
+    "reset_clears_history": true,
+    "partial_startup_swing_excluded": true,
+    "no_bonus_for_both_not_lifting": true
+  },
+  "measured_per_second_cost": 0.12499999999999999,
+  "source_sha256": {
+    "swing_peak_balance.py": "29fb31888c6e05eda53d0270f3d668a262e37aa434ee0511180a19c79d467e85",
+    "check_swing_peak_balance.py": "91345e8a540b3e860eb0e73b0567b2e1c6030b0f21f1c0fc5001b1bf3a0d7bac"
+  }
+}

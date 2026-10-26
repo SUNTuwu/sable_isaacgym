@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "checks": {
+    "weights_preserved": true,
+    "std_reset_006": true,
+    "optimizer_initially_empty": true,
+    "trained_std_above_floor": true,
+    "one_update_completed": true,
+    "lift_config": true,
+    "replay_commands": true,
+    "tested_current_train": true
+  },
+  "parent_sha256": "8d5518105d8f652d7535b6df795e61bbce84fa748785edad33899a5b86cfe18e",
+  "train_sha256": "400e7382ccb28641bd0759e39fcd996b23735669611754585ba34b1991c64555",
+  "evaluator_sha256": "12185777ce6de23cebeeab9f448fd43837e0968710bc8c391dc0d7320f9f5907",
+  "created_unix": 1792882099.6650658,
+  "scope": "One remote PPO update and 2s structural replay, not gait validation"
+}

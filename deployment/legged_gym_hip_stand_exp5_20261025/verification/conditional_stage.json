@@ -1,0 +1,25 @@
+{
+  "created_unix": 1792920571.0322263,
+  "status": "condition met by completed half-hour review; awaiting prior archive and final launch validations",
+  "condition": "After v15 has trained 1800 seconds, independent replay still shows kneeling or near-ground crouch",
+  "parent": "to be selected from v15 after review; launcher parent placeholder must be updated before launch",
+  "tolerance_deg": 5,
+  "free_range_deg": [
+    -19,
+    -9
+  ],
+  "deadline": "2026-10-25T19:00:00+08:00",
+  "source_stage": "runs/stand5_20261025_v15_hip_stand_exp/runtime",
+  "decision": {
+    "created_unix": 1792921820.4695053,
+    "review_iteration": 3254,
+    "review_checkpoint_saved_elapsed_s": 1801.0243227481842,
+    "action": "tighten tolerance from 10deg to 5deg in new v16 run",
+    "reason": "No literal knee-ground contact, but persistent low crouch/dragging: hip deviation about21deg, near-zero time in requested zone, knees about17mm (fast group15mm), no hind steps",
+    "authorization": "user explicitly requested +/-5deg if kneeling persists after 30min",
+    "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261025_v15_hip_stand_exp/checkpoints/model_003200.pt",
+    "parent_sha256": "8687d019ff4bc6d5f6b1821b9ffdd219d59efcd30bc1a51c6f4dc6fcb4a36843",
+    "parent_selection": "3200 had 24/24 survival, hips about6.5deg and knees19mm, slightly better posture than review3254 (7.2deg,17mm); all weights retained",
+    "deadline": "2026-10-25T19:00:00+08:00"
+  }
+}

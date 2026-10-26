@@ -1,0 +1,308 @@
+{
+  "passed": true,
+  "mismatched_steps": 0,
+  "runtime": "/root/gpufree-data/projects/sable-isaacgym/deployment/legged_gym_guided_clearance32_20261025",
+  "env_sha256": "ab88e9b4e7072bb12054bf7920e33f5bc7bda1ded0cb5844db8a3eff4aa56e01",
+  "records": [
+    {
+      "step": 0,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 1,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 2,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 3,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 4,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 5,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 6,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 7,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 8,
+      "actual_timeout": [
+        true,
+        true
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": true
+    },
+    {
+      "step": 9,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 10,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 11,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 12,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 13,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 14,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 15,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 16,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 17,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 18,
+      "actual_timeout": [
+        true,
+        true
+      ],
+      "ppo_timeout": [
+        true,
+        true
+      ],
+      "match": true
+    },
+    {
+      "step": 19,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 20,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 21,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 22,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 23,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    {
+      "step": 24,
+      "actual_timeout": [
+        false,
+        false
+      ],
+      "ppo_timeout": [
+        false,
+        false
+      ],
+      "match": true
+    }
+  ]
+}

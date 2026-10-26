@@ -1,0 +1,162 @@
+{
+  "created_unix": 1792884394.4985101,
+  "source_sha256": "1b6a401bd0cb3bf557a0d9683223d6890a4c1b67f1f338e1ecf5b79975e948e9",
+  "horizon_s": 8.0,
+  "envs_per_group": 6,
+  "command_m_s": 0.04,
+  "groups": [
+    {
+      "strength": 0.0,
+      "parent_policy": false,
+      "survival_8s": 1.0,
+      "mean_duration_s": 8.0,
+      "median_dx_m": 0.0011015497148036957,
+      "mean_steps_per_foot": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_clearance_m": [
+        1.9278377294540405e-07,
+        1.7244990146991768e-07,
+        2.183951437473297e-07,
+        2.454034984111786e-07
+      ]
+    },
+    {
+      "strength": 0.125,
+      "parent_policy": false,
+      "survival_8s": 1.0,
+      "mean_duration_s": 8.0,
+      "median_dx_m": 0.0012726187705993652,
+      "mean_steps_per_foot": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_clearance_m": [
+        0.00016103018424473703,
+        0.0001217274329974316,
+        3.27670335309449e-07,
+        4.90962236199266e-07
+      ]
+    },
+    {
+      "strength": 0.25,
+      "parent_policy": false,
+      "survival_8s": 1.0,
+      "mean_duration_s": 8.0,
+      "median_dx_m": -0.020535171031951904,
+      "mean_steps_per_foot": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_clearance_m": [
+        0.0018194548320025206,
+        0.0017915861681103706,
+        0.001187081914395094,
+        0.0011187747586518526
+      ]
+    },
+    {
+      "strength": 0.5,
+      "parent_policy": false,
+      "survival_8s": 0.5,
+      "mean_duration_s": 5.276666641235352,
+      "median_dx_m": -0.011998414993286133,
+      "mean_steps_per_foot": [
+        0.6666666865348816,
+        0.8333333730697632,
+        1.8333333730697632,
+        2.1666667461395264
+      ],
+      "peak_clearance_m": [
+        0.020685726776719093,
+        0.005324787925928831,
+        0.02261008881032467,
+        0.0068482100032269955
+      ]
+    },
+    {
+      "strength": 0.0,
+      "parent_policy": true,
+      "survival_8s": 1.0,
+      "mean_duration_s": 8.0,
+      "median_dx_m": 0.2370384931564331,
+      "mean_steps_per_foot": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_clearance_m": [
+        0.007931578904390335,
+        0.008500723168253899,
+        0.0013369722291827202,
+        0.004535122774541378
+      ]
+    },
+    {
+      "strength": 0.125,
+      "parent_policy": true,
+      "survival_8s": 1.0,
+      "mean_duration_s": 8.0,
+      "median_dx_m": 0.2642219066619873,
+      "mean_steps_per_foot": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_clearance_m": [
+        0.007496358826756477,
+        0.008569538593292236,
+        0.001256885239854455,
+        0.004587781149893999
+      ]
+    },
+    {
+      "strength": 0.25,
+      "parent_policy": true,
+      "survival_8s": 1.0,
+      "mean_duration_s": 8.0,
+      "median_dx_m": 0.20846223831176758,
+      "mean_steps_per_foot": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_clearance_m": [
+        0.0075975451618433,
+        0.008295038715004921,
+        0.0014245359925553203,
+        0.004497206769883633
+      ]
+    },
+    {
+      "strength": 0.5,
+      "parent_policy": true,
+      "survival_8s": 0.3333333432674408,
+      "mean_duration_s": 5.216667175292969,
+      "median_dx_m": 0.08831548690795898,
+      "mean_steps_per_foot": [
+        2.0,
+        4.0,
+        0.8333333730697632,
+        4.5
+      ],
+      "peak_clearance_m": [
+        0.007697305642068386,
+        0.03533267229795456,
+        0.0027157594449818134,
+        0.03034980595111847
+      ]
+    }
+  ],
+  "scope": "Fixed-amplitude diagnostic; manually supplied reference motion is not learned gait"
+}

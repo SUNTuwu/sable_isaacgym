@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "distance_mm": [
+    -10.0,
+    0.0,
+    20.0,
+    39.0,
+    40.0,
+    41.0,
+    50.0,
+    70.0,
+    100.0,
+    120.0
+  ],
+  "signed_score": [
+    -1.0,
+    -1.0,
+    -0.11920292675495148,
+    -0.0019622081890702248,
+    0.0,
+    0.0012862245785072446,
+    0.01768222078680992,
+    0.11920295655727386,
+    1.0,
+    1.0
+  ],
+  "landing_angles_deg": [
+    0.0,
+    15.0,
+    25.0,
+    35.0,
+    44.0,
+    45.0,
+    46.0,
+    90.0
+  ],
+  "landing_cost": [
+    19.08553695678711,
+    19.08553695678711,
+    6.389056205749512,
+    1.718281865119934,
+    0.10517092049121857,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "short_step": [
+    0.009146143794059754,
+    0.047681174278259277
+  ],
+  "low_backward_velocity_step": [
+    0.0,
+    0.3261395263671875
+  ],
+  "backward_step": [
+    0.0,
+    0.4
+  ],
+  "long_step": [
+    0.1629437255859375,
+    0.0
+  ],
+  "zero_threshold": [
+    0.029501259326934814,
+    0.0
+  ],
+  "drag": [
+    0.0,
+    0.0
+  ],
+  "negative_cost_survives_clipping": true,
+  "source_sha256": {
+    "landing_stride_rewards.py": "dd42f090adeb8f86c8b9c11dd8cdb6cc4def63f4f830d54a24af9188d3bb2886",
+    "stride_progress.py": "e9a949dc5e04b2b1a176ac1b0e942bca065964e4f455dcd7b31e1a8e411dd975",
+    "ankle_phase.py": "de504ff7d39d87c6f83a456b8114b23d049ba5ac8fd01d9cd0ccf1ec851a1c63",
+    "sable_env.py": "f8c96279440be8eed557ed33c4639210f2d789078aeede4a455f4c2e5fc5ef42",
+    "sable_config.py": "0c028a3da5c1b8f8f6cc8f9622a80be8cf8dad2b19a71643a61c0cbde1abf79d",
+    "evaluate.py": "136c1a25d64fa6d482115bdfdd73d4479b82849d803d6dbec86197710c6fc0ec"
+  }
+}

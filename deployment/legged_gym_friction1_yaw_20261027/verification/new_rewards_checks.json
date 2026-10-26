@@ -1,0 +1,87 @@
+{
+  "yaw_cost_cases": [
+    0.0,
+    0.25,
+    0.25,
+    0.0,
+    0.25
+  ],
+  "yaw_negative_survives_clip": true,
+  "correct_commanded_turn_unpenalized": true,
+  "front_nominal_friction": 1.0,
+  "passed": true,
+  "tracking_lag_cycles": {
+    "correct": [
+      0.0,
+      0.0
+    ],
+    "lagging": [
+      0.2209796041401569,
+      0.0
+    ],
+    "body_only": [
+      2.2049006192479284,
+      0.0
+    ],
+    "wrong": [
+      2.2049006192479284,
+      0.91999992609024
+    ],
+    "stalled": [
+      0.2537734365835786,
+      0.0
+    ],
+    "backward": [
+      0.2537734365835786,
+      0.0
+    ],
+    "park": [
+      0.0,
+      0.0
+    ]
+  },
+  "negative_cost_survives_positive_clip": true,
+  "lag_0_5_5point001_35_200_deg_weighted_cost": [
+    -0.0,
+    -0.0,
+    -8.887600877471868e-09,
+    -8.0,
+    -128.0
+  ],
+  "old_positive_motion_reward_removed": true,
+  "hip_posture_removed": true,
+  "signed_stride80_scores": [
+    -1.0,
+    -0.06495911628007889,
+    -0.0009565780637785792,
+    0.0,
+    0.004130800254642963,
+    1.0,
+    1.0
+  ],
+  "active_reward_count": 30,
+  "removed_keys": [
+    "ankle_phase_motion",
+    "hip_stand_exp",
+    "ankle_stance_motion",
+    "ankle_stance_reversal",
+    "hind_foot_angle",
+    "foot_spacing",
+    "stand_still",
+    "dof_vel",
+    "feet_stumble"
+  ],
+  "source_sha256": {
+    "ankle_phase.py": "77c278497bf21addad1a1b730ea60a467a25fea617ad09a1b4a95e1a588429c4",
+    "ankle_stance.py": "594458550de7e238c6f1812f948da78957572fe579a288270fad21d923ffb434",
+    "hind_landing_width.py": "30884422f085ebb471f7d7020c9b1372bbc8adbdd05ba329c7d6857060c390e5",
+    "peak_acceleration.py": "3ef2afd12818bf769c3ef0bdb4f348c095ff4d62f70d941b9f7c7c88d0a6da1b",
+    "sable_env.py": "fbe4b3881b70ad70aceefde2bb6761e0a8764702f6583aae953b9ce7ab02e976",
+    "sable_config.py": "8ac766824a6f324edd7c4b19dd12f26aa127d5b8a873f2234362737e3e470c23",
+    "evaluate.py": "2d159e025907aabfa4323918fba9d157bd32368554ce7bbbf88ed2a3b5e50833",
+    "train.py": "3d59c53cb3b48839f226d28f153601c4f85830c342bf9ed62c9dc524fc8ab145",
+    "supervise.py": "8c36327eb7924840ddc8cf8ce81baaf395431306e1fc794cd0ad58aaa8d776dd",
+    "progress_report.py": "4c07700126b5f949305e595658e68d544a4532304a3de0e64b40181f91ed8c05",
+    "landing_stride_rewards.py": "dd42f090adeb8f86c8b9c11dd8cdb6cc4def63f4f830d54a24af9188d3bb2886"
+  }
+}

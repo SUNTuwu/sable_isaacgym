@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "existing_evaluated_checkpoint_bytes_preserved": true,
+  "new_iteration_saved": true,
+  "source_sha256": {
+    "train.py": "d0963f329e28c4434ee90b21a5145792c449a51a0e18851fa2acbd044d8eaaff",
+    "check_checkpoint_save.py": "da48031d572834ad9de515a5b33d48e23e1fdba0979bf5a26889f5b1b10293e6"
+  },
+  "scope": "File preservation regression only; one real PPO and migration tests still required by launcher."
+}

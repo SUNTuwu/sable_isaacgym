@@ -1,0 +1,919 @@
+{
+  "schema": "sable-isaacgym-physical/1",
+  "authored_sha256": "0dc9b111cee1c1759d98084c2b9c6253f038d8a48b153c85827cee713eafb740",
+  "frame": 5,
+  "default_angles": {
+    "spine_pitch": -0.6981316208839417,
+    "spine_roll": -0.0,
+    "hip_roll": -0.0,
+    "L_shoulder_roll": -0.0,
+    "L_shoulder_pitch": 0.471235454082489,
+    "L_elbow_pitch": -1.0646508932113647,
+    "L_hip_pitch": -0.24434615671634674,
+    "L_knee_pitch": 1.5882495641708374,
+    "R_hip_roll_mimic": -0.0,
+    "R_shoulder_roll": -0.0,
+    "R_shoulder_pitch": 0.471235454082489,
+    "R_elbow_pitch": -1.0646507740020752,
+    "R_hip_pitch": -0.24434615671634674,
+    "R_knee_pitch": 1.5882494449615479
+  },
+  "init_position": [
+    -0.004999999888241291,
+    0.0,
+    0.12589180668520086
+  ],
+  "init_quat_xyzw": [
+    0.0,
+    0.11320320863037962,
+    0.0,
+    0.9935718562619348
+  ],
+  "foot_min_z_at_authored_pose": [
+    -0.009466503519760739,
+    -0.011427432564749287,
+    -0.009466508576338533,
+    -0.011427436315289672
+  ],
+  "foot_height_spread_m": 0.001960932795528933,
+  "independent_fk_max_position_error_m": 1.9114628676552558e-08,
+  "masses": {
+    "ROOT": {
+      "mass_kg": 0.59366,
+      "com_local_m": [
+        0.052581737626831736,
+        0.0,
+        -0.01096516163285485
+      ],
+      "inertia": [
+        [
+          8.733368309006651e-05,
+          0.0,
+          7.706696732343749e-06
+        ],
+        [
+          0.0,
+          0.0007871237863238596,
+          0.0
+        ],
+        [
+          7.706696732343749e-06,
+          0.0,
+          0.0008059291873720852
+        ]
+      ]
+    },
+    "spine_pitch": {
+      "mass_kg": 0.27474,
+      "com_local_m": [
+        -0.030128478426051,
+        0.0,
+        -0.007097328459469898
+      ],
+      "inertia": [
+        [
+          3.9855441070343325e-05,
+          0.0,
+          2.5052260960735945e-07
+        ],
+        [
+          0.0,
+          8.750574273986366e-05,
+          0.0
+        ],
+        [
+          2.5052260960735945e-07,
+          0.0,
+          0.00010079655132470746
+        ]
+      ]
+    },
+    "spine_roll": {
+      "mass_kg": 0.061,
+      "com_local_m": [
+        -0.04989532725732834,
+        1.1450687442579917e-10,
+        -0.007963540169914237
+      ],
+      "inertia": [
+        [
+          1.1136483467563176e-05,
+          5.808580336706133e-15,
+          -1.0242875798438962e-06
+        ],
+        [
+          5.808580336706133e-15,
+          6.949601481739025e-06,
+          9.270779809582e-16
+        ],
+        [
+          -1.0242875798438962e-06,
+          9.270779809582e-16,
+          1.591976684154084e-05
+        ]
+      ]
+    },
+    "hip_roll": {
+      "mass_kg": 0.098,
+      "com_local_m": [
+        0.01564588912582139,
+        0.006369502045753488,
+        -0.0028840310025808153
+      ],
+      "inertia": [
+        [
+          1.927423018681047e-05,
+          -1.0068390962748511e-07,
+          4.558841723275745e-08
+        ],
+        [
+          -1.0068390962748511e-07,
+          3.0150561421128402e-05,
+          1.8559221178902976e-08
+        ],
+        [
+          4.558841723275745e-08,
+          1.8559221178902976e-08,
+          1.9513144297613952e-05
+        ]
+      ]
+    },
+    "L_shoulder_roll": {
+      "mass_kg": 0.098,
+      "com_local_m": [
+        0.015804162616033717,
+        0.013856231087072735,
+        0.00044229165745937095
+      ],
+      "inertia": [
+        [
+          2.0888276002369225e-05,
+          -2.2124371830776323e-07,
+          -7.0621116418957946e-09
+        ],
+        [
+          -2.2124371830776323e-07,
+          3.1454546448971034e-05,
+          -6.191675778730548e-09
+        ],
+        [
+          -7.0621116418957946e-09,
+          -6.191675778730548e-09,
+          2.24475866310263e-05
+        ]
+      ]
+    },
+    "L_shoulder_pitch": {
+      "mass_kg": 0.031,
+      "com_local_m": [
+        -0.007859945812258304,
+        0.0007108314143073172,
+        -0.03413425427153363
+      ],
+      "inertia": [
+        [
+          6.57783928630069e-06,
+          5.773332944709994e-09,
+          -2.7723650187997096e-07
+        ],
+        [
+          5.773332944709994e-09,
+          1.0182786982267446e-05,
+          2.5072490248165164e-08
+        ],
+        [
+          -2.7723650187997096e-07,
+          2.5072490248165164e-08,
+          5.1586239049644355e-06
+        ]
+      ]
+    },
+    "L_elbow_pitch": {
+      "mass_kg": 0.001,
+      "com_local_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia": [
+        [
+          2.6666666666666666e-09,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.6666666666666666e-09,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.6666666666666666e-09
+        ]
+      ]
+    },
+    "L_wrist_fixed": {
+      "mass_kg": 0.01265,
+      "com_local_m": [
+        0.0007028433602225405,
+        8.194932074583314e-05,
+        0.006674290527172537
+      ],
+      "inertia": [
+        [
+          1.592023669853465e-06,
+          1.9047456770554987e-09,
+          7.949935251017391e-08
+        ],
+        [
+          1.9047456770554987e-09,
+          1.6388610756822004e-06,
+          -1.2978013962209802e-08
+        ],
+        [
+          7.949935251017391e-08,
+          -1.2978013962209802e-08,
+          2.9096423159383865e-07
+        ]
+      ]
+    },
+    "L_hip_pitch": {
+      "mass_kg": 0.031,
+      "com_local_m": [
+        0.007904368946285838,
+        0.0002829981409871619,
+        -0.0341505002968597
+      ],
+      "inertia": [
+        [
+          6.485494767446816e-06,
+          -2.3114857747247293e-09,
+          2.789360925148439e-07
+        ],
+        [
+          -2.3114857747247293e-09,
+          1.012948842941143e-05,
+          9.98667903438591e-09
+        ],
+        [
+          2.789360925148439e-07,
+          9.98667903438591e-09,
+          5.019774107619186e-06
+        ]
+      ]
+    },
+    "L_knee_pitch": {
+      "mass_kg": 0.001,
+      "com_local_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia": [
+        [
+          2.6666666666666666e-09,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.6666666666666666e-09,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.6666666666666666e-09
+        ]
+      ]
+    },
+    "L_ankle_fixed": {
+      "mass_kg": 0.01265,
+      "com_local_m": [
+        0.0012170597930647351,
+        -0.0009502379862213401,
+        0.011373451807671148
+      ],
+      "inertia": [
+        [
+          1.5981732350740546e-06,
+          -1.4760852449405137e-08,
+          2.2976504009717591e-07
+        ],
+        [
+          -1.4760852449405137e-08,
+          1.7771158075979266e-06,
+          4.3012972092633555e-08
+        ],
+        [
+          2.2976504009717591e-07,
+          4.3012972092633555e-08,
+          4.843480746384995e-07
+        ]
+      ]
+    },
+    "R_hip_roll_mimic": {
+      "mass_kg": 0.098,
+      "com_local_m": [
+        0.01564588912582139,
+        -0.006369502045753488,
+        -0.0028840310025808153
+      ],
+      "inertia": [
+        [
+          1.927423018681047e-05,
+          1.0068390962748511e-07,
+          4.558841723275745e-08
+        ],
+        [
+          1.0068390962748511e-07,
+          3.0150561421128402e-05,
+          -1.8559221178902976e-08
+        ],
+        [
+          4.558841723275745e-08,
+          -1.8559221178902976e-08,
+          1.9513144297613952e-05
+        ]
+      ]
+    },
+    "R_shoulder_roll": {
+      "mass_kg": 0.098,
+      "com_local_m": [
+        0.015804162616033717,
+        -0.013856231087072735,
+        0.00044229165745937095
+      ],
+      "inertia": [
+        [
+          2.0888276002369225e-05,
+          2.2124371830776323e-07,
+          -7.0621116418957946e-09
+        ],
+        [
+          2.2124371830776323e-07,
+          3.1454546448971034e-05,
+          6.191675778730548e-09
+        ],
+        [
+          -7.0621116418957946e-09,
+          6.191675778730548e-09,
+          2.24475866310263e-05
+        ]
+      ]
+    },
+    "R_shoulder_pitch": {
+      "mass_kg": 0.031,
+      "com_local_m": [
+        -0.007859945812258304,
+        -0.0007108314143073172,
+        -0.03413425427153363
+      ],
+      "inertia": [
+        [
+          6.57783928630069e-06,
+          -5.773332944709994e-09,
+          -2.7723650187997096e-07
+        ],
+        [
+          -5.773332944709994e-09,
+          1.0182786982267446e-05,
+          -2.5072490248165164e-08
+        ],
+        [
+          -2.7723650187997096e-07,
+          -2.5072490248165164e-08,
+          5.1586239049644355e-06
+        ]
+      ]
+    },
+    "R_elbow_pitch": {
+      "mass_kg": 0.001,
+      "com_local_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia": [
+        [
+          2.6666666666666666e-09,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.6666666666666666e-09,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.6666666666666666e-09
+        ]
+      ]
+    },
+    "R_wrist_fixed": {
+      "mass_kg": 0.01265,
+      "com_local_m": [
+        0.0007028433602225405,
+        -8.194932074583314e-05,
+        0.006674290527172537
+      ],
+      "inertia": [
+        [
+          1.592023669853465e-06,
+          -1.9047456770554987e-09,
+          7.949935251017391e-08
+        ],
+        [
+          -1.9047456770554987e-09,
+          1.6388610756822004e-06,
+          1.2978013962209802e-08
+        ],
+        [
+          7.949935251017391e-08,
+          1.2978013962209802e-08,
+          2.9096423159383865e-07
+        ]
+      ]
+    },
+    "R_hip_pitch": {
+      "mass_kg": 0.031,
+      "com_local_m": [
+        0.007904368946285838,
+        -0.0002829981409871619,
+        -0.0341505002968597
+      ],
+      "inertia": [
+        [
+          6.485494767446816e-06,
+          2.3114857747247293e-09,
+          2.789360925148439e-07
+        ],
+        [
+          2.3114857747247293e-09,
+          1.012948842941143e-05,
+          -9.98667903438591e-09
+        ],
+        [
+          2.789360925148439e-07,
+          -9.98667903438591e-09,
+          5.019774107619186e-06
+        ]
+      ]
+    },
+    "R_knee_pitch": {
+      "mass_kg": 0.001,
+      "com_local_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia": [
+        [
+          2.6666666666666666e-09,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.6666666666666666e-09,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.6666666666666666e-09
+        ]
+      ]
+    },
+    "R_ankle_fixed": {
+      "mass_kg": 0.01265,
+      "com_local_m": [
+        0.0012170597930647351,
+        0.0009502379862213401,
+        0.011373451807671148
+      ],
+      "inertia": [
+        [
+          1.5981732350740546e-06,
+          1.4760852449405137e-08,
+          2.2976504009717591e-07
+        ],
+        [
+          1.4760852449405137e-08,
+          1.7771158075979266e-06,
+          -4.3012972092633555e-08
+        ],
+        [
+          2.2976504009717591e-07,
+          -4.3012972092633555e-08,
+          4.843480746384995e-07
+        ]
+      ]
+    }
+  },
+  "total_mass_kg": 1.5,
+  "motors": {
+    "spine_pitch": {
+      "model": "dc1628",
+      "stall_torque_nm": 1,
+      "no_load_rpm": 120.0,
+      "rated_rpm": null,
+      "rated_torque_nm": null,
+      "ratio": 1,
+      "parameter_status": "Prior named-hardware values reused; gearbox inertia and thermal limits unmeasured"
+    },
+    "spine_roll": {
+      "model": "dc1628",
+      "stall_torque_nm": 2.1533333333333333,
+      "no_load_rpm": 47.36842105263158,
+      "rated_rpm": null,
+      "rated_torque_nm": null,
+      "ratio": 2.533333333333333,
+      "parameter_status": "Prior named-hardware values reused; gearbox inertia and thermal limits unmeasured"
+    },
+    "hip_roll": {
+      "model": "dc1628",
+      "stall_torque_nm": 1,
+      "no_load_rpm": 120.0,
+      "rated_rpm": null,
+      "rated_torque_nm": null,
+      "ratio": 1,
+      "parameter_status": "Prior named-hardware values reused; gearbox inertia and thermal limits unmeasured"
+    },
+    "L_shoulder_roll": {
+      "model": "dc1628",
+      "stall_torque_nm": 1,
+      "no_load_rpm": 120.0,
+      "rated_rpm": null,
+      "rated_torque_nm": null,
+      "ratio": 1,
+      "parameter_status": "Prior named-hardware values reused; gearbox inertia and thermal limits unmeasured"
+    },
+    "L_shoulder_pitch": {
+      "model": "3505",
+      "stall_torque_nm": 1.95,
+      "no_load_rpm": 421.3,
+      "rated_rpm": 245.1,
+      "rated_torque_nm": 0.78,
+      "ratio": 1,
+      "parameter_status": "Prior named-hardware values reused; gearbox inertia and thermal limits unmeasured"
+    },
+    "L_elbow_pitch": {
+      "model": "dc1628",
+      "stall_torque_nm": 1,
+      "no_load_rpm": 120.0,
+      "rated_rpm": null,
+      "rated_torque_nm": null,
+      "ratio": 1,
+      "parameter_status": "Prior named-hardware values reused; gearbox inertia and thermal limits unmeasured"
+    },
+    "L_hip_pitch": {
+      "model": "3505",
+      "stall_torque_nm": 1.95,
+      "no_load_rpm": 421.3,
+      "rated_rpm": 245.1,
+      "rated_torque_nm": 0.78,
+      "ratio": 1,
+      "parameter_status": "Prior named-hardware values reused; gearbox inertia and thermal limits unmeasured"
+    },
+    "L_knee_pitch": {
+      "model": "dc1628",
+      "stall_torque_nm": 1,
+      "no_load_rpm": 120.0,
+      "rated_rpm": null,
+      "rated_torque_nm": null,
+      "ratio": 1,
+      "parameter_status": "Prior named-hardware values reused; gearbox inertia and thermal limits unmeasured"
+    },
+    "R_shoulder_roll": {
+      "model": "dc1628",
+      "stall_torque_nm": 1,
+      "no_load_rpm": 120.0,
+      "rated_rpm": null,
+      "rated_torque_nm": null,
+      "ratio": 1,
+      "parameter_status": "Prior named-hardware values reused; gearbox inertia and thermal limits unmeasured"
+    },
+    "R_shoulder_pitch": {
+      "model": "3505",
+      "stall_torque_nm": 1.95,
+      "no_load_rpm": 421.3,
+      "rated_rpm": 245.1,
+      "rated_torque_nm": 0.78,
+      "ratio": 1,
+      "parameter_status": "Prior named-hardware values reused; gearbox inertia and thermal limits unmeasured"
+    },
+    "R_elbow_pitch": {
+      "model": "dc1628",
+      "stall_torque_nm": 1,
+      "no_load_rpm": 120.0,
+      "rated_rpm": null,
+      "rated_torque_nm": null,
+      "ratio": 1,
+      "parameter_status": "Prior named-hardware values reused; gearbox inertia and thermal limits unmeasured"
+    },
+    "R_hip_pitch": {
+      "model": "3505",
+      "stall_torque_nm": 1.95,
+      "no_load_rpm": 421.3,
+      "rated_rpm": 245.1,
+      "rated_torque_nm": 0.78,
+      "ratio": 1,
+      "parameter_status": "Prior named-hardware values reused; gearbox inertia and thermal limits unmeasured"
+    },
+    "R_knee_pitch": {
+      "model": "dc1628",
+      "stall_torque_nm": 1,
+      "no_load_rpm": 120.0,
+      "rated_rpm": null,
+      "rated_torque_nm": null,
+      "ratio": 1,
+      "parameter_status": "Prior named-hardware values reused; gearbox inertia and thermal limits unmeasured"
+    }
+  },
+  "payloads": [
+    {
+      "name": "head",
+      "bone": "ROOT",
+      "mass_kg": 0.05,
+      "center_world_zero_m": [
+        0.1249999988079071,
+        0.0,
+        0.10391122102737427
+      ],
+      "reference": "shoulder_pitch",
+      "offset_forward_m": 0.03,
+      "collision": false,
+      "inertia_assumption": "10 mm cube about specified mass center"
+    },
+    {
+      "name": "tail",
+      "bone": "spine_roll",
+      "mass_kg": 0.03,
+      "center_world_zero_m": [
+        -0.09499999761581421,
+        0.0,
+        0.10391122102737427
+      ],
+      "reference": "hip_pitch",
+      "offset_forward_m": -0.03,
+      "collision": false,
+      "inertia_assumption": "10 mm cube about specified mass center"
+    }
+  ],
+  "shape_metadata": {
+    "spine_pitch_visual_collision_0": {
+      "bone": "ROOT",
+      "foot": false,
+      "floor": true
+    },
+    "spine_roll_visual_collision_0": {
+      "bone": "spine_pitch",
+      "foot": false,
+      "floor": true
+    },
+    "L_hip_roll_visual_collision_0": {
+      "bone": "spine_roll",
+      "foot": false,
+      "floor": true
+    },
+    "L_shoulder_roll_visual_collision_0": {
+      "bone": "ROOT",
+      "foot": false,
+      "floor": true
+    },
+    "L_shoulder_roll_visual_collision_1": {
+      "bone": "ROOT",
+      "foot": false,
+      "floor": true
+    },
+    "L_shoulder_pitch_visual_collision_0": {
+      "bone": "L_shoulder_roll",
+      "foot": false,
+      "floor": true
+    },
+    "L_elbow_pitch_visual_collision_0": {
+      "bone": "L_shoulder_pitch",
+      "foot": false,
+      "floor": true
+    },
+    "L_elbow_pitch_visual_collision_1": {
+      "bone": "L_shoulder_pitch",
+      "foot": false,
+      "floor": true
+    },
+    "L_elbow_pitch_visual_collision_2": {
+      "bone": "L_shoulder_pitch",
+      "foot": false,
+      "floor": true
+    },
+    "L_hip_pitch_visual_collision_0": {
+      "bone": "hip_roll",
+      "foot": false,
+      "floor": true
+    },
+    "L_knee_pitch_visual_collision_0": {
+      "bone": "L_hip_pitch",
+      "foot": false,
+      "floor": true
+    },
+    "L_knee_pitch_visual_collision_1": {
+      "bone": "L_hip_pitch",
+      "foot": false,
+      "floor": true
+    },
+    "L_knee_pitch_visual_collision_2": {
+      "bone": "L_hip_pitch",
+      "foot": false,
+      "floor": true
+    },
+    "R_hip_roll_visual_collision_0": {
+      "bone": "spine_roll",
+      "foot": false,
+      "floor": true
+    },
+    "R_shoulder_roll_visual_collision_0": {
+      "bone": "ROOT",
+      "foot": false,
+      "floor": true
+    },
+    "R_shoulder_roll_visual_collision_1": {
+      "bone": "ROOT",
+      "foot": false,
+      "floor": true
+    },
+    "R_shoulder_pitch_visual_collision_0": {
+      "bone": "R_shoulder_roll",
+      "foot": false,
+      "floor": true
+    },
+    "R_elbow_pitch_visual_collision_0": {
+      "bone": "R_shoulder_pitch",
+      "foot": false,
+      "floor": true
+    },
+    "R_elbow_pitch_visual_collision_1": {
+      "bone": "R_shoulder_pitch",
+      "foot": false,
+      "floor": true
+    },
+    "R_elbow_pitch_visual_collision_2": {
+      "bone": "R_shoulder_pitch",
+      "foot": false,
+      "floor": true
+    },
+    "R_hip_pitch_visual_collision_0": {
+      "bone": "R_hip_roll_mimic",
+      "foot": false,
+      "floor": true
+    },
+    "R_knee_pitch_visual_collision_0": {
+      "bone": "R_hip_pitch",
+      "foot": false,
+      "floor": true
+    },
+    "R_knee_pitch_visual_collision_1": {
+      "bone": "R_hip_pitch",
+      "foot": false,
+      "floor": true
+    },
+    "R_knee_pitch_visual_collision_2": {
+      "bone": "R_hip_pitch",
+      "foot": false,
+      "floor": true
+    },
+    "L_hand_contact": {
+      "bone": "L_wrist_fixed",
+      "foot": true,
+      "floor": true
+    },
+    "L_foot_contact": {
+      "bone": "L_ankle_fixed",
+      "foot": true,
+      "floor": true
+    },
+    "R_hand_contact": {
+      "bone": "R_wrist_fixed",
+      "foot": true,
+      "floor": true
+    },
+    "R_foot_contact": {
+      "bone": "R_ankle_fixed",
+      "foot": true,
+      "floor": true
+    },
+    "ROOT_torso_collision": {
+      "bone": "ROOT",
+      "foot": false,
+      "floor": true
+    },
+    "spine_pitch_torso_collision": {
+      "bone": "spine_pitch",
+      "foot": false,
+      "floor": true
+    }
+  },
+  "collision_shapes_by_body": {
+    "ROOT": [
+      "spine_pitch_visual_collision_0",
+      "L_shoulder_roll_visual_collision_0",
+      "L_shoulder_roll_visual_collision_1",
+      "R_shoulder_roll_visual_collision_0",
+      "R_shoulder_roll_visual_collision_1",
+      "ROOT_torso_collision"
+    ],
+    "spine_pitch": [
+      "spine_roll_visual_collision_0",
+      "spine_pitch_torso_collision"
+    ],
+    "spine_roll": [
+      "L_hip_roll_visual_collision_0",
+      "R_hip_roll_visual_collision_0"
+    ],
+    "hip_roll": [
+      "L_hip_pitch_visual_collision_0"
+    ],
+    "L_shoulder_roll": [
+      "L_shoulder_pitch_visual_collision_0"
+    ],
+    "L_shoulder_pitch": [
+      "L_elbow_pitch_visual_collision_0",
+      "L_elbow_pitch_visual_collision_1",
+      "L_elbow_pitch_visual_collision_2"
+    ],
+    "L_elbow_pitch": [],
+    "L_wrist_fixed": [
+      "L_hand_contact"
+    ],
+    "L_hip_pitch": [
+      "L_knee_pitch_visual_collision_0",
+      "L_knee_pitch_visual_collision_1",
+      "L_knee_pitch_visual_collision_2"
+    ],
+    "L_knee_pitch": [],
+    "L_ankle_fixed": [
+      "L_foot_contact"
+    ],
+    "R_hip_roll_mimic": [
+      "R_hip_pitch_visual_collision_0"
+    ],
+    "R_shoulder_roll": [
+      "R_shoulder_pitch_visual_collision_0"
+    ],
+    "R_shoulder_pitch": [
+      "R_elbow_pitch_visual_collision_0",
+      "R_elbow_pitch_visual_collision_1",
+      "R_elbow_pitch_visual_collision_2"
+    ],
+    "R_elbow_pitch": [],
+    "R_wrist_fixed": [
+      "R_hand_contact"
+    ],
+    "R_hip_pitch": [
+      "R_knee_pitch_visual_collision_0",
+      "R_knee_pitch_visual_collision_1",
+      "R_knee_pitch_visual_collision_2"
+    ],
+    "R_knee_pitch": [],
+    "R_ankle_fixed": [
+      "R_foot_contact"
+    ]
+  },
+  "foot_bodies": [
+    "L_wrist_fixed",
+    "R_wrist_fixed",
+    "L_ankle_fixed",
+    "R_ankle_fixed"
+  ],
+  "policy_joint_names": [
+    "spine_roll",
+    "hip_roll",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch"
+  ],
+  "held_joint": "spine_pitch",
+  "held_joint_angle_rad": -0.6981317007977318,
+  "physical_independent_actuators": 13,
+  "dependent_joint": "R_hip_roll_mimic",
+  "transmission": "q_right=-q_left; one hip actuator, passive fixed tendon; requires Isaac Gym validation",
+  "assumptions": [
+    "1.5 kg provisional total mass; fresh box-based inertia approximation",
+    "Named motor mass: 3505 97g, DC1628 30g; hip-roll motor counted once",
+    "User head 50g and tail 30g included within 1.5kg total, at shoulder +30mm and hip -30mm; no head/tail collider or actuator",
+    "Motor torque-speed interpolation retained from named hardware records; no measured thermal calibration",
+    "Rubber-pad dry-floor friction nominal 1.0; foot-only 0.8..1.2 randomization",
+    "Sim-only model; physical import validation pending",
+    "Initial flat-ground curriculum: wrist/ankle blocks retain visual geometry and inertia but no collision; four unchanged capsules provide terminal contact. Other named motor collisions retained."
+  ]
+}

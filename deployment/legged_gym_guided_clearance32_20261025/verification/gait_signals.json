@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "guided": true,
+  "reference_strength": 0.75,
+  "period_s": 0.8,
+  "obs_shape": [
+    4,
+    52
+  ],
+  "max_simultaneous_swing_targets": 1,
+  "per_foot_peak_target_m": [
+    0.0044999998062849045,
+    0.0044999998062849045,
+    0.0044999998062849045,
+    0.0044999998062849045
+  ],
+  "contact_phase_independent_of_strength": true,
+  "clearance_relative_to_target": true,
+  "per_foot_peak_swing_contact_weight": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "max_simultaneous_contact_swing": 1,
+  "clock_unit_circle_max_error": 1.1920928955078125e-07,
+  "contact_clearance_p95_m": 1.1055730283260347e-06,
+  "source_sha256": {
+    "sable_env.py": "ab88e9b4e7072bb12054bf7920e33f5bc7bda1ded0cb5844db8a3eff4aa56e01",
+    "sable_config.py": "d20115977458f70ae57d7706590272809dcf56c38bb0130eb8b39e0ecff3aa0e",
+    "gait_support.py": "950041fb88ce75a1d75d5144ff6b229b8fe6df0a91e6ddb4caa3c415f7d1d735",
+    "guided_reference.py": "cb8a8f00049abf3db4cbad4e77df8e52c2be2fe9fca0cdab7f01db5bab996ab0",
+    "assets/gait_reference.json": "de29b9d310b6219fe33a3ca73b5f95ab70e0753f1214b11f2af85f8be80ee1c6"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-25",
+  "recovered_from": "blender/sable_rig.blend1",
+  "validated_sha256": "9030512cda251604dacbb4fa3061c1399d083b52fd51a3bdbaae775c10494c5b",
+  "overwritten_sha256": "5936704cfb016ed1c2eb253961440a5cd7ee56368ed2e0977dc7b9d293f32482",
+  "restored_working_file": "blender/sable_rig.blend",
+  "final_file": "blender/sable_rig_final_2026-10-25.blend",
+  "preserved_overwrite": "待删除/2026-10-25_accidental_overwrite_recovery/sable_rig_overwritten.blend"
+}

@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "exact_network_transfer": true,
+  "fresh_optimizer": true,
+  "actual_ppo_actor_critic_update": true,
+  "hip_penalty_enabled": true,
+  "hip_preferred_max_deg": -9,
+  "hip_weight": -2.5,
+  "hip_exponential_scale_deg": 15,
+  "only_angles_le_minus9_exempt": true,
+  "negative_cost_survives_positive_clipping": true,
+  "angles_deg": [
+    -85.0,
+    -24.0,
+    -9.0,
+    -8.0,
+    0.0,
+    24.0
+  ],
+  "weighted_cost_per_s": [
+    -0.0,
+    -0.0,
+    -0.0,
+    -0.0056811049580574036,
+    -0.5552970170974731,
+    -14.562535285949707
+  ],
+  "physical_hip_limits_deg": [
+    -85,
+    24
+  ],
+  "parent_sha256": "6dbfe242986effd44293b87ad3849eb974e9d1828b34fb346a66c3f2db060f0a",
+  "env_sha256": "9a787280a3e570db257600ead90fdb7b56a6b67c2078dce37cd8ac247acf1d75",
+  "config_sha256": "a6626f34235ab5ad1cf66dd25afdf6e150828a187d87de051d88d276e5d6a262"
+}

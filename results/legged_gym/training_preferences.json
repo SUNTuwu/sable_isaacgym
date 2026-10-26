@@ -1,0 +1,11 @@
+{
+  "updated_unix": 1793037354.1099348,
+  "default_duration_s": 1200,
+  "progress_interval_s": 180,
+  "evaluation_interval_s": 180,
+  "video_interval_s": 180,
+  "web_port": 11111,
+  "automatic_resume": false,
+  "user_instruction": "以后网页训练时间改成20min, 每三分钟同步一下进度",
+  "scope": "Defaults for explicitly authorized new rounds; never restart sealed runs."
+}

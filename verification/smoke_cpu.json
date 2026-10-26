@@ -1,0 +1,14 @@
+{
+  "device_requested": "cpu",
+  "timestamp_utc": "2026-10-24T16:18:08Z",
+  "python": "3.8.20 | packaged by conda-forge | (default, Sep 30 2024, 17:52:49) \n[GCC 13.3.0]",
+  "prefix": "/root/gpufree-data/envs/sable-isaacgym-py38",
+  "no_training": true,
+  "passed": false,
+  "torch": "2.1.2+cu118",
+  "torch_cuda": "11.8",
+  "cuda_available": false,
+  "gym_imported": true,
+  "tensor_bridge_imported": true,
+  "error": "Failed to acquire interface: carb::gym::Gym (pluginName: nullptr)"
+}

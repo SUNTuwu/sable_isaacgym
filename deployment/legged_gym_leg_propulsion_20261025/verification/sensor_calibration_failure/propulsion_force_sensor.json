@@ -1,0 +1,100 @@
+{
+  "passed": false,
+  "checks": {
+    "no_falls": true,
+    "known_horizontal_load_balanced": false,
+    "world_xy_axes_and_sign": false,
+    "weight_supported": false,
+    "approximately_stationary": true,
+    "net_contact_tensor_lacks_horizontal_reaction": true
+  },
+  "wall_seconds": 47.88624954223633,
+  "applied_force_world_n": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.30000001192092896,
+      0.0,
+      0.0
+    ],
+    [
+      -0.30000001192092896,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.30000001192092896,
+      0.0
+    ],
+    [
+      0.0,
+      -0.30000001192092896,
+      0.0
+    ]
+  ],
+  "measured_feet_force_world_n": [
+    [
+      0.010138043202459812,
+      -0.0006328393938019872,
+      3.5425362586975098
+    ],
+    [
+      -0.1928316056728363,
+      -0.00019998439529445022,
+      3.542776107788086
+    ],
+    [
+      0.21300530433654785,
+      -0.0005422391113825142,
+      3.5426244735717773
+    ],
+    [
+      0.01028710138052702,
+      -0.11060956120491028,
+      3.5428898334503174
+    ],
+    [
+      0.01042123418301344,
+      0.10990099608898163,
+      3.542311906814575
+    ]
+  ],
+  "last_step_net_contact_force_world_n": [
+    [
+      1.977521151275141e-06,
+      0.0,
+      14.718207359313965
+    ],
+    [
+      1.976813564397162e-06,
+      0.0,
+      14.712939262390137
+    ],
+    [
+      1.976223302335711e-06,
+      0.0,
+      14.708545684814453
+    ],
+    [
+      1.9778065052378224e-06,
+      0.0,
+      14.720330238342285
+    ],
+    [
+      1.973241296582273e-06,
+      0.0,
+      14.68635082244873
+    ]
+  ],
+  "horizontal_balance_max_error_n": 0.19009901583194733,
+  "source_sha256": {
+    "sable_env.py": "b1d4f795bba00e0fc6ae19a07343c12be218f068b90b5dee6ed87935601fccd6",
+    "leg_propulsion.py": "aa31583813e8ab1de1cd6f890a138e26cf588ddf5c7e24573e7d14c42a0b66a5",
+    "check_propulsion_force_sensor.py": "84bec2620ddd92dced4009c836ed2a8a5bbd2054c9ce40c9b73c58cf08f2c939"
+  },
+  "scope": "Remote simulation known-load check; external forces only in this diagnostic, not the training environment."
+}

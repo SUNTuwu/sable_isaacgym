@@ -1,0 +1,264 @@
+{
+  "L": {
+    "before": {
+      "penetrating": true,
+      "pairs": [
+        {
+          "roll_component": 0,
+          "pitch_component": 0,
+          "roll_vertices": 144,
+          "pitch_vertices": 64,
+          "intersecting_triangle_pairs": 60,
+          "roll_closed": true,
+          "pitch_closed": true,
+          "containment": false,
+          "penetrating": true
+        },
+        {
+          "roll_component": 1,
+          "pitch_component": 0,
+          "roll_vertices": 36,
+          "pitch_vertices": 64,
+          "intersecting_triangle_pairs": 0,
+          "roll_closed": false,
+          "pitch_closed": true,
+          "containment": false,
+          "penetrating": false
+        }
+      ],
+      "method": "Actual triangle surfaces (BVH) plus closed-component ray-parity containment; authoring zero only",
+      "surface_tolerance_m": 1e-09,
+      "touching_surfaces_count_as_interference": true,
+      "scope": "Mesh intersection; containment only for closed components; not a full motion-envelope or hardware-clearance certificate"
+    },
+    "probes": [
+      {
+        "outward_offset_m": 0.0,
+        "penetrating": true,
+        "pairs": [
+          {
+            "roll_component": 0,
+            "pitch_component": 0,
+            "roll_vertices": 144,
+            "pitch_vertices": 64,
+            "intersecting_triangle_pairs": 44,
+            "roll_closed": true,
+            "pitch_closed": true,
+            "containment": false,
+            "penetrating": true
+          },
+          {
+            "roll_component": 1,
+            "pitch_component": 0,
+            "roll_vertices": 36,
+            "pitch_vertices": 64,
+            "intersecting_triangle_pairs": 0,
+            "roll_closed": false,
+            "pitch_closed": true,
+            "containment": false,
+            "penetrating": false
+          }
+        ],
+        "method": "Actual triangle surfaces (BVH) plus closed-component ray-parity containment; authoring zero only",
+        "surface_tolerance_m": 1e-09,
+        "touching_surfaces_count_as_interference": true,
+        "scope": "Mesh intersection; containment only for closed components; not a full motion-envelope or hardware-clearance certificate"
+      },
+      {
+        "outward_offset_m": 0.001,
+        "penetrating": true,
+        "pairs": [
+          {
+            "roll_component": 0,
+            "pitch_component": 0,
+            "roll_vertices": 144,
+            "pitch_vertices": 64,
+            "intersecting_triangle_pairs": 32,
+            "roll_closed": true,
+            "pitch_closed": true,
+            "containment": false,
+            "penetrating": true
+          },
+          {
+            "roll_component": 1,
+            "pitch_component": 0,
+            "roll_vertices": 36,
+            "pitch_vertices": 64,
+            "intersecting_triangle_pairs": 0,
+            "roll_closed": false,
+            "pitch_closed": true,
+            "containment": false,
+            "penetrating": false
+          }
+        ],
+        "method": "Actual triangle surfaces (BVH) plus closed-component ray-parity containment; authoring zero only",
+        "surface_tolerance_m": 1e-09,
+        "touching_surfaces_count_as_interference": true,
+        "scope": "Mesh intersection; containment only for closed components; not a full motion-envelope or hardware-clearance certificate"
+      },
+      {
+        "outward_offset_m": 0.002,
+        "penetrating": false,
+        "pairs": [
+          {
+            "roll_component": 0,
+            "pitch_component": 0,
+            "roll_vertices": 144,
+            "pitch_vertices": 64,
+            "intersecting_triangle_pairs": 0,
+            "roll_closed": true,
+            "pitch_closed": true,
+            "containment": false,
+            "penetrating": false
+          },
+          {
+            "roll_component": 1,
+            "pitch_component": 0,
+            "roll_vertices": 36,
+            "pitch_vertices": 64,
+            "intersecting_triangle_pairs": 0,
+            "roll_closed": false,
+            "pitch_closed": true,
+            "containment": false,
+            "penetrating": false
+          }
+        ],
+        "method": "Actual triangle surfaces (BVH) plus closed-component ray-parity containment; authoring zero only",
+        "surface_tolerance_m": 1e-09,
+        "touching_surfaces_count_as_interference": true,
+        "scope": "Mesh intersection; containment only for closed components; not a full motion-envelope or hardware-clearance certificate"
+      }
+    ]
+  },
+  "R": {
+    "before": {
+      "penetrating": true,
+      "pairs": [
+        {
+          "roll_component": 0,
+          "pitch_component": 0,
+          "roll_vertices": 144,
+          "pitch_vertices": 64,
+          "intersecting_triangle_pairs": 60,
+          "roll_closed": true,
+          "pitch_closed": true,
+          "containment": false,
+          "penetrating": true
+        },
+        {
+          "roll_component": 1,
+          "pitch_component": 0,
+          "roll_vertices": 36,
+          "pitch_vertices": 64,
+          "intersecting_triangle_pairs": 0,
+          "roll_closed": false,
+          "pitch_closed": true,
+          "containment": false,
+          "penetrating": false
+        }
+      ],
+      "method": "Actual triangle surfaces (BVH) plus closed-component ray-parity containment; authoring zero only",
+      "surface_tolerance_m": 1e-09,
+      "touching_surfaces_count_as_interference": true,
+      "scope": "Mesh intersection; containment only for closed components; not a full motion-envelope or hardware-clearance certificate"
+    },
+    "probes": [
+      {
+        "outward_offset_m": 0.0,
+        "penetrating": true,
+        "pairs": [
+          {
+            "roll_component": 0,
+            "pitch_component": 0,
+            "roll_vertices": 144,
+            "pitch_vertices": 64,
+            "intersecting_triangle_pairs": 44,
+            "roll_closed": true,
+            "pitch_closed": true,
+            "containment": false,
+            "penetrating": true
+          },
+          {
+            "roll_component": 1,
+            "pitch_component": 0,
+            "roll_vertices": 36,
+            "pitch_vertices": 64,
+            "intersecting_triangle_pairs": 0,
+            "roll_closed": false,
+            "pitch_closed": true,
+            "containment": false,
+            "penetrating": false
+          }
+        ],
+        "method": "Actual triangle surfaces (BVH) plus closed-component ray-parity containment; authoring zero only",
+        "surface_tolerance_m": 1e-09,
+        "touching_surfaces_count_as_interference": true,
+        "scope": "Mesh intersection; containment only for closed components; not a full motion-envelope or hardware-clearance certificate"
+      },
+      {
+        "outward_offset_m": 0.001,
+        "penetrating": true,
+        "pairs": [
+          {
+            "roll_component": 0,
+            "pitch_component": 0,
+            "roll_vertices": 144,
+            "pitch_vertices": 64,
+            "intersecting_triangle_pairs": 32,
+            "roll_closed": true,
+            "pitch_closed": true,
+            "containment": false,
+            "penetrating": true
+          },
+          {
+            "roll_component": 1,
+            "pitch_component": 0,
+            "roll_vertices": 36,
+            "pitch_vertices": 64,
+            "intersecting_triangle_pairs": 0,
+            "roll_closed": false,
+            "pitch_closed": true,
+            "containment": false,
+            "penetrating": false
+          }
+        ],
+        "method": "Actual triangle surfaces (BVH) plus closed-component ray-parity containment; authoring zero only",
+        "surface_tolerance_m": 1e-09,
+        "touching_surfaces_count_as_interference": true,
+        "scope": "Mesh intersection; containment only for closed components; not a full motion-envelope or hardware-clearance certificate"
+      },
+      {
+        "outward_offset_m": 0.002,
+        "penetrating": false,
+        "pairs": [
+          {
+            "roll_component": 0,
+            "pitch_component": 0,
+            "roll_vertices": 144,
+            "pitch_vertices": 64,
+            "intersecting_triangle_pairs": 0,
+            "roll_closed": true,
+            "pitch_closed": true,
+            "containment": false,
+            "penetrating": false
+          },
+          {
+            "roll_component": 1,
+            "pitch_component": 0,
+            "roll_vertices": 36,
+            "pitch_vertices": 64,
+            "intersecting_triangle_pairs": 0,
+            "roll_closed": false,
+            "pitch_closed": true,
+            "containment": false,
+            "penetrating": false
+          }
+        ],
+        "method": "Actual triangle surfaces (BVH) plus closed-component ray-parity containment; authoring zero only",
+        "surface_tolerance_m": 1e-09,
+        "touching_surfaces_count_as_interference": true,
+        "scope": "Mesh intersection; containment only for closed components; not a full motion-envelope or hardware-clearance certificate"
+      }
+    ]
+  }
+}

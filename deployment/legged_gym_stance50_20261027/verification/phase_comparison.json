@@ -1,0 +1,21 @@
+{
+  "created_unix": 1793040468.016967,
+  "reports": [
+    {
+      "run": "stance50_ppo_smoke_20261027",
+      "report": "/root/gpufree-data/projects/sable-isaacgym/runs/stance50_ppo_smoke_20261027/evaluations/initial_stance50_24env.json",
+      "survival_16s": 0.0,
+      "mean_duration_s": 1.0483333831264947,
+      "parent_iteration": 8564
+    },
+    {
+      "run": "stance50_diagonal_ppo_smoke_20261027",
+      "report": "/root/gpufree-data/projects/sable-isaacgym/runs/stance50_diagonal_ppo_smoke_20261027/evaluations/initial_stance50_24env.json",
+      "survival_16s": 0.0,
+      "mean_duration_s": 1.1200000531971455,
+      "parent_iteration": 8564
+    }
+  ],
+  "selected": "original_phase_order",
+  "reason": "Neither50% stance phase arrangement retained stability. Preserve the requested duty-only change and original phase order; run an explicitly labeled learning experiment, without claiming the initial performance gate passed."
+}

@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "created_unix": 1792942220.2152042,
+  "source_sha256": "2ecbefdc3131e1a225a3f910080962c803e61ebed5d500fb1e44758536d85276",
+  "reference_sha256": "63d7938f3818eb4d228c22cda970755ba2995ea47e178b1889d08e0bf9a4b84e",
+  "front_reference_preserved_exactly": true,
+  "applied_strength_per_foot": [
+    0.75,
+    0.75,
+    1.0,
+    1.0
+  ],
+  "rows": [
+    {
+      "command_m_s": 0.0,
+      "applied_capsule_peak_m": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "command_m_s": 0.03,
+      "applied_capsule_peak_m": [
+        0.013014678835113206,
+        0.013014678773821281,
+        0.023000000247638066,
+        0.023000000247638125
+      ]
+    },
+    {
+      "command_m_s": 0.04,
+      "applied_capsule_peak_m": [
+        0.0130146795733187,
+        0.0130146795120265,
+        0.023000000632193464,
+        0.02300000063219339
+      ]
+    },
+    {
+      "command_m_s": 0.05,
+      "applied_capsule_peak_m": [
+        0.013014681098625355,
+        0.013014681037333173,
+        0.023000001377110425,
+        0.023000001377110234
+      ]
+    },
+    {
+      "command_m_s": 0.06,
+      "applied_capsule_peak_m": [
+        0.013014678463548684,
+        0.013014678402256783,
+        0.023000002670444473,
+        0.02300000267044437
+      ]
+    },
+    {
+      "command_m_s": 0.075,
+      "applied_capsule_peak_m": [
+        0.01301467846355239,
+        0.0130146784022605,
+        0.023000006154367994,
+        0.02300000615436702
+      ]
+    },
+    {
+      "command_m_s": 0.09,
+      "applied_capsule_peak_m": [
+        0.01301467846356667,
+        0.013014678402274759,
+        0.0230000000000006,
+        0.02300000000000062
+      ]
+    }
+  ],
+  "minimum_applied_limit_margin_deg": 7.012730878274632,
+  "scope": "Fixed-root kinematic feasibility only, not free-root dynamic stability or learning."
+}

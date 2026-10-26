@@ -1,0 +1,5 @@
+{
+  "created_unix": 1792939163.264725,
+  "valid_for_reward": false,
+  "reason": "Foot solver sensor sums3.54N against14.715N weight and recovers only.11-.20N of applied.3N horizontal load. Short policy probe is not validated GRF evidence. No PPO used this signal."
+}

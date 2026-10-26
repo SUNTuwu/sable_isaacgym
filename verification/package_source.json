@@ -1,0 +1,9 @@
+{
+  "official_source": "https://developer.nvidia.com/isaac-gym-preview-4",
+  "archive_path": "/root/gpufree-data/cache/sable-legged-gym/IsaacGym_Preview_4_Package.tar.gz.partial",
+  "archive_sha256": "c51d77ac1144b91b356f439c7313d8d59468147e37187ebffe7cdbc3154fdb8f",
+  "archive_bytes": 201141673,
+  "uncompressed_bytes": 683581792,
+  "members": 1215,
+  "version": "1.0.preview4"
+}

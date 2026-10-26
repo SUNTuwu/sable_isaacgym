@@ -1,0 +1,24 @@
+{
+  "created_unix": 1792923032.6790016,
+  "status": "selected after3600 review, prior archive and launch gates pending",
+  "condition": "v16-3600 independent posture remains outside requested +/-5deg range with no continuing improvement",
+  "tolerance_deg": 5,
+  "previous_weight": -0.5,
+  "proposed_weight": -2.5,
+  "growth_scale_deg": 15,
+  "change": "same exponential formula and deadband, stronger cost coefficient; all physical/control/gait parameters unchanged",
+  "candidate_parent": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261025_v16_hip_stand_exp5/checkpoints/model_003600.pt",
+  "parent_sha256": "6bf550a70a238febded9c234964d282388380bbf06c6454e28bc50c825129651",
+  "deadline": "2026-10-25T19:00:00+08:00",
+  "review_after_training_seconds": 900,
+  "decision": {
+    "created_unix": 1792923692.1963258,
+    "evaluation_iteration": 3600,
+    "decision": "retain +/-5deg tolerance, increase exponential posture coefficient from0.5 to2.5 in new v17",
+    "reason": "Some progress continues: hip median+0.25deg and elbow ROM7.8deg; however hip still14deg from standard and tolerance occupancy0, hind steps0. Increase cost to prioritize the requested standard posture, not claim zero improvement.",
+    "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261025_v16_hip_stand_exp5/checkpoints/model_003600.pt",
+    "parent_sha256": "6bf550a70a238febded9c234964d282388380bbf06c6454e28bc50c825129651",
+    "parent_choice": "3600 improves hip alignment and elbow ROM versus3250, retains24/24 survival; knees22.5mm versus24mm is a recorded tradeoff",
+    "deadline": "2026-10-25T19:00:00+08:00"
+  }
+}

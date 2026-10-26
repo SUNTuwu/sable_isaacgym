@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "period_s": 1.0,
+  "frequency_hz_per_foot": 1.0,
+  "stance_fraction": 0.5,
+  "stance_duration_s": 0.5,
+  "swing_duration_s": 0.5,
+  "phase_offsets": [
+    0.75,
+    0.25,
+    0.0,
+    0.5
+  ],
+  "simultaneous_swing_feet": 2,
+  "height_target_m_per_foot": [
+    0.023000000044703484,
+    0.023000000044703484,
+    0.023000000044703484,
+    0.023000000044703484
+  ],
+  "reference_max_ik_error_m": 7.384376751933145e-09,
+  "reference_minimum_limit_margin_deg": 7.372993653820725,
+  "horizontal_span_m_at_max_reference_speed": 0.045,
+  "note": "Reference stance travel retains commanded ground speed, so horizontal span scales with the reduced stance duration.80mm reward threshold remains an independent learning objective.",
+  "source_sha256": {
+    "sable_config.py": "04a106122489b0f134b69fe3752f972ad0f7c093fb411347828a90b2ce5cf2be",
+    "train.py": "3d59c53cb3b48839f226d28f153601c4f85830c342bf9ed62c9dc524fc8ab145",
+    "guided_reference.py": "7b8bfe8d5d055e6a9d4d23e270f02549c07c72a50e6847deb76261bf5629904c",
+    "gait_support.py": "42782c78385a2540bbd3dd982104ef32c9917e3315a6539158b9ba7a2e607216",
+    "ankle_events.py": "bc349a9918299977cabbe19815f386bf4e7388e3a2f4a45a9eda40e7a3c4344e",
+    "assets/gait_reference.json": "771b32bc4de4858b25feab21d5770c995f970daf5423649a91351a9a2e9e9499"
+  }
+}

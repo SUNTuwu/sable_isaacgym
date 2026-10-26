@@ -1,0 +1,9 @@
+{
+  "created_unix": 1792938450.5048444,
+  "parent": "runs/stand5_20261025_v22_highlift_speed/checkpoints/model_005314.pt",
+  "scope": "Add per-leg signed horizontal ground-reaction/body-velocity contribution; no formal run or deadline selected yet",
+  "old_frozen_runs_unchanged": true,
+  "status": "measurement_validation_failed_not_trained",
+  "superseded_for_next_experiment": "User requested parallel low-front-friction ablation with previous validated reward",
+  "updated_unix": 1792939620.6649218
+}

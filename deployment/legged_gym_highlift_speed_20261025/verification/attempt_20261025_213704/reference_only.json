@@ -1,0 +1,3846 @@
+{
+  "schema": "sable-independent-evaluation/1",
+  "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261025_v22_highlift_speed_transfer_1792935539/checkpoints/model_005000.pt",
+  "checkpoint_sha256": "a5160b96669b09060a0561a32d4a3cc20dc7c2d0a94bb09870954e076ae946e5",
+  "iteration": 5000,
+  "runtime_sha256": "9b3d314043604e3316e3b15c8efa2651adeb587cef04138ea23e67ccb5720c97",
+  "evaluator_sha256": "940b5ea1060f17d080f535969d5c27713c40923a7e8b00f8aaeaa4d153ffe1f6",
+  "diagnostics_sha256": "c1bc8fa60e264dae643b1c85a2589ff6adfa893effec56f0d678238c575e25ed",
+  "created_unix": 1792935642.9952097,
+  "wall_seconds": 8.94447922706604,
+  "horizon_s": 16.0,
+  "num_envs": 24,
+  "seed": 947,
+  "zero_actions": true,
+  "command_set_m_s": [
+    0.03,
+    0.06,
+    0.09
+  ],
+  "summary": {
+    "knee_ground_failure_fraction": 0.0,
+    "survival_5s": 0.0,
+    "survival_16s": 0.0,
+    "median_displacement_m": 0.01155167818069458,
+    "mean_displacement_m": 0.0035985466092824936,
+    "mean_duration_s": 1.1241667200617182,
+    "mean_min_foot_steps": 0.08333333333333333,
+    "max_coupling_error_rad": 0.00030885636806488037,
+    "moving_all_four_fraction": 0.0,
+    "median_abs_heading_change_deg": 13.54354081704992,
+    "median_path_m": 0.1699694382805319,
+    "mean_peak_clearance_m": [
+      0.01778582043092077,
+      0.022830872641255457,
+      0.024958429799880832,
+      0.029084981865404796
+    ],
+    "score": 0.013218344847361247
+  },
+  "accepted_locomotion": false,
+  "kinematic_reference_enabled": true,
+  "zero_policy_residual": true,
+  "mirror_policy": true,
+  "reference_strength": 0.75,
+  "step_definition": "capsule clearance >=2mm and contact-off >=60ms then landing, foot travel >=5mm; first 0.5s excluded",
+  "step_definition_zh": "足底离地至少2mm并持续60ms，重新着地时足中心移动至少5mm；最初0.5秒不计。",
+  "domain": "flat floor, nominal friction 1, deterministic policy, 0.015rad initial joint perturbation; simulation only",
+  "swing_peak_diagnostics": {
+    "definition": "Actual capsule-bottom peak within each complete planned swing after startup; no 60ms duration condition in this peak metric; no-lift swings are counted.",
+    "completed_swings_per_foot": [
+      2,
+      0,
+      2,
+      1
+    ],
+    "swings_peak_above10mm_per_foot": [
+      0,
+      0,
+      2,
+      1
+    ],
+    "fraction_above10mm_per_foot": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "median_peak_m_per_foot": [
+      0.005529380869120359,
+      null,
+      0.01945626735687256,
+      0.03836871683597565
+    ],
+    "paired_peak_rmse_m_front_hind": [
+      null,
+      null
+    ],
+    "samples": [
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          1,
+          0,
+          0,
+          1
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "counts": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "above10mm": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "samples": [
+    {
+      "command_m_s": 0.03,
+      "duration_s": 1.1200000531971455,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.016843345016241074,
+      "steps_per_foot": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.06,
+      "duration_s": 1.2600000598467886,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.02593255415558815,
+      "steps_per_foot": [
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.09,
+      "duration_s": 1.540000073146075,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.05844813212752342,
+      "steps_per_foot": [
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "command_m_s": 0.03,
+      "duration_s": 1.1400000541470945,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": -0.0009506493806838989,
+      "steps_per_foot": [
+        1,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "command_m_s": 0.06,
+      "duration_s": 1.1000000522471964,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.019120514392852783,
+      "steps_per_foot": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.09,
+      "duration_s": 1.2800000607967377,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": -0.04628551006317139,
+      "steps_per_foot": [
+        0,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.03,
+      "duration_s": 1.0600000503472984,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.018226265907287598,
+      "steps_per_foot": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "command_m_s": 0.06,
+      "duration_s": 1.1600000550970435,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": -0.03506964445114136,
+      "steps_per_foot": [
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "command_m_s": 0.09,
+      "duration_s": 0.8400000398978591,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": -0.02840256690979004,
+      "steps_per_foot": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.03,
+      "duration_s": 1.1600000550970435,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.008258938789367676,
+      "steps_per_foot": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "command_m_s": 0.06,
+      "duration_s": 1.1600000550970435,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.01671779155731201,
+      "steps_per_foot": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.09,
+      "duration_s": 1.0000000474974513,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": -0.04857301712036133,
+      "steps_per_foot": [
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.03,
+      "duration_s": 1.1200000531971455,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.015224218368530273,
+      "steps_per_foot": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.06,
+      "duration_s": 1.3800000655464828,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.03294491767883301,
+      "steps_per_foot": [
+        1,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "command_m_s": 0.09,
+      "duration_s": 1.560000074096024,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.06070280075073242,
+      "steps_per_foot": [
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "command_m_s": 0.03,
+      "duration_s": 1.0600000503472984,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.014844417572021484,
+      "steps_per_foot": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.06,
+      "duration_s": 0.8600000408478081,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": -0.019079208374023438,
+      "steps_per_foot": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.09,
+      "duration_s": 1.2000000569969416,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.03025364875793457,
+      "steps_per_foot": [
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.03,
+      "duration_s": 1.1000000522471964,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.015616893768310547,
+      "steps_per_foot": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.06,
+      "duration_s": 1.1600000550970435,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": -0.0060312747955322266,
+      "steps_per_foot": [
+        1,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "command_m_s": 0.09,
+      "duration_s": 1.0800000512972474,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": -0.018752098083496094,
+      "steps_per_foot": [
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "command_m_s": 0.03,
+      "duration_s": 0.9600000455975533,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": 0.0009799003601074219,
+      "steps_per_foot": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "command_m_s": 0.06,
+      "duration_s": 0.8600000408478081,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": -0.019849777221679688,
+      "steps_per_foot": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "command_m_s": 0.09,
+      "duration_s": 0.8200000389479101,
+      "fell": true,
+      "knee_ground_failure": false,
+      "displacement_m": -0.024755477905273438,
+      "steps_per_foot": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "priority_diagnostics": {
+    "schema": "sable-priority-diagnostics/1",
+    "settling_excluded_s": 1.0,
+    "hip_reference_deg": [
+      -14.000003520088862,
+      -14.000003520088862
+    ],
+    "hip_tolerance_deg": 5.0,
+    "joint_pair_order": [
+      "L",
+      "R"
+    ],
+    "foot_order": [
+      "LF",
+      "RF",
+      "LH",
+      "RH"
+    ],
+    "body_contact_scope": "Knee motor meshes are on hip_pitch rigid bodies; elbow meshes are on shoulder_pitch bodies. Net force may include self-contact; not a direct kneeling classifier.",
+    "knee_contact_bodies": [
+      "L_hip_pitch",
+      "R_hip_pitch"
+    ],
+    "elbow_contact_bodies": [
+      "L_shoulder_pitch",
+      "R_shoulder_pitch"
+    ],
+    "range_scope": "Per-environment p95-p05 over actual joint samples, then median across environments.",
+    "median_across_environments": {
+      "hip_angle_median_deg": [
+        -13.495776176452637,
+        -18.89615249633789
+      ],
+      "hip_stand_abs_deviation_median_deg": [
+        4.925984088020991,
+        8.722693863945674
+      ],
+      "hip_within_stand_tolerance_fraction": [
+        0.5,
+        0.2413793103448276
+      ],
+      "knee_housing_contact_fraction": [
+        0.0,
+        0.0
+      ],
+      "elbow_housing_contact_fraction": [
+        0.0,
+        0.0
+      ],
+      "torso_contact_fraction": [
+        0.0,
+        0.0
+      ],
+      "knee_center_z_p05_m": [
+        0.03369955420494079,
+        0.06012829951941967
+      ],
+      "knee_surface_clearance_p05_m": [
+        0.026001721248030664,
+        0.051986031234264374
+      ],
+      "hip_near_upper_limit_fraction": [
+        0.0,
+        0.0
+      ],
+      "elbow_rom_p95_p05_deg": [
+        1.3827217102050824,
+        2.986781311035159
+      ],
+      "foot_clearance_p95_m": [
+        0.004747943859547375,
+        0.03241392485797405,
+        0.01423289887607097,
+        0.03906720131635666
+      ],
+      "foot_clearance_peak_m": [
+        0.006092672701925039,
+        0.03425530716776848,
+        0.015342963859438896,
+        0.04162224754691124
+      ],
+      "max_continuous_clear_air_s": [
+        0.020000000949949026,
+        0.12000000569969416,
+        0.0800000037997961,
+        0.12000000569969416
+      ]
+    },
+    "samples": [
+      {
+        "env": 0,
+        "samples_after_1s": 7,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.021695179305970667,
+          0.062102391943335535
+        ],
+        "knee_center_z_p05_m": [
+          0.02948637343943119,
+          0.07043554931879044
+        ],
+        "hip_angle_median_deg": [
+          -13.823091506958008,
+          -24.048255920410156
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          0.9483935271079051,
+          10.048252400321294
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          1.0,
+          0.14285714285714285
+        ],
+        "hip_max_deg": [
+          -13.051609992980957,
+          -14.04489517211914
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          2.0037200927734418,
+          0.3697319030761719
+        ],
+        "foot_clearance_p95_m": [
+          5.952082574367522e-07,
+          0.035047450661659235,
+          0.00020876666530966737,
+          0.04396973997354507
+        ],
+        "foot_clearance_peak_m": [
+          6.142072379589081e-07,
+          0.03620920702815056,
+          0.00029800040647387505,
+          0.04444732517004013
+        ],
+        "max_continuous_clear_air_s": [
+          0.0,
+          0.14000000664964318,
+          0.0,
+          0.14000000664964318
+        ],
+        "strict_step_travel_median_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "env": 1,
+        "samples_after_1s": 14,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.027125500608235598,
+          0.051986031234264374
+        ],
+        "knee_center_z_p05_m": [
+          0.03490645904093981,
+          0.06012829951941967
+        ],
+        "hip_angle_median_deg": [
+          -18.86858367919922,
+          -6.8292341232299805
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          4.86857920543604,
+          8.722693863945674
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          0.5,
+          0.14285714285714285
+        ],
+        "hip_max_deg": [
+          -13.05517578125,
+          -3.1761727333068848
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          23.78552932739258,
+          2.473789978027341
+        ],
+        "foot_clearance_p95_m": [
+          0.0024794550146907566,
+          0.03234984315931797,
+          5.556270480155945e-07,
+          0.04373323414474726
+        ],
+        "foot_clearance_peak_m": [
+          0.002555332612246275,
+          0.03425530716776848,
+          5.713663995265961e-07,
+          0.04458770900964737
+        ],
+        "max_continuous_clear_air_s": [
+          0.020000000949949026,
+          0.20000000949949026,
+          0.0,
+          0.28000001329928637
+        ],
+        "strict_step_travel_median_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "env": 2,
+        "samples_after_1s": 28,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.026001721248030664,
+          0.046653881296515466
+        ],
+        "knee_center_z_p05_m": [
+          0.03369955420494079,
+          0.05436062291264534
+        ],
+        "hip_angle_median_deg": [
+          -20.241443634033203,
+          -11.301148414611816
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          6.2414391602700245,
+          9.754964113235474
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          0.2857142857142857,
+          0.2857142857142857
+        ],
+        "hip_max_deg": [
+          -8.737798690795898,
+          3.355905294418335
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          26.170688247680673,
+          7.23621234893799
+        ],
+        "foot_clearance_p95_m": [
+          0.00540191032923758,
+          0.03319786712527274,
+          0.01686277529224753,
+          0.037499026954174036
+        ],
+        "foot_clearance_peak_m": [
+          0.006092672701925039,
+          0.038191039115190506,
+          0.017809243872761726,
+          0.04179344326257706
+        ],
+        "max_continuous_clear_air_s": [
+          0.12000000569969416,
+          0.28000001329928637,
+          0.12000000569969416,
+          0.3800000180490315
+        ],
+        "strict_step_travel_median_m": [
+          0.020296879842978,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "env": 3,
+        "samples_after_1s": 8,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.05804084986448288,
+          0.026367598678916693
+        ],
+        "knee_center_z_p05_m": [
+          0.06649626083672047,
+          0.03410698529332876
+        ],
+        "hip_angle_median_deg": [
+          -9.934074401855469,
+          -17.296062469482422
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          4.065928641396235,
+          3.296059903067876
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          0.875,
+          1.0
+        ],
+        "hip_max_deg": [
+          -8.921073913574219,
+          -16.364194869995117
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          0.15289707183838175,
+          22.566317939758306
+        ],
+        "foot_clearance_p95_m": [
+          0.03383123688399792,
+          0.0009140220470726483,
+          0.03724296875298023,
+          1.6470439732074735e-06
+        ],
+        "foot_clearance_peak_m": [
+          0.03563828393816948,
+          0.0013364334590733051,
+          0.03868745639920235,
+          1.783948391675949e-06
+        ],
+        "max_continuous_clear_air_s": [
+          0.1600000075995922,
+          0.0,
+          0.1600000075995922,
+          0.0
+        ],
+        "strict_step_travel_median_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "env": 4,
+        "samples_after_1s": 6,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.023772123735398054,
+          0.06614630855619907
+        ],
+        "knee_center_z_p05_m": [
+          0.03150957729667425,
+          0.07375314272940159
+        ],
+        "hip_angle_median_deg": [
+          -12.76992416381836,
+          -27.16911506652832
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          1.2300788794333446,
+          13.169111546439458
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          1.0,
+          0.0
+        ],
+        "hip_max_deg": [
+          -11.593710899353027,
+          -22.23866844177246
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          0.7453651428222656,
+          1.498250961303711
+        ],
+        "foot_clearance_p95_m": [
+          8.242204785346985e-07,
+          0.03432154841721058,
+          2.8312206268310547e-07,
+          0.03855994716286659
+        ],
+        "foot_clearance_peak_m": [
+          8.405186235904694e-07,
+          0.035288434475660324,
+          2.9942020773887634e-07,
+          0.039258044213056564
+        ],
+        "max_continuous_clear_air_s": [
+          0.0,
+          0.12000000569969416,
+          0.0,
+          0.12000000569969416
+        ],
+        "strict_step_travel_median_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "env": 5,
+        "samples_after_1s": 15,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.02448405623435974,
+          0.053804225847125055
+        ],
+        "knee_center_z_p05_m": [
+          0.03220960982143879,
+          0.062056223303079604
+        ],
+        "hip_angle_median_deg": [
+          -20.07978057861328,
+          -3.035508632659912
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          6.079777058524419,
+          12.071188512879084
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          0.3333333333333333,
+          0.13333333333333333
+        ],
+        "hip_max_deg": [
+          -15.940648078918457,
+          3.5690951347351074
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          22.127128219604494,
+          2.986781311035159
+        ],
+        "foot_clearance_p95_m": [
+          1.960899680852888e-06,
+          0.03241392485797405,
+          0.028417853638529778,
+          0.06114448979496956
+        ],
+        "foot_clearance_peak_m": [
+          3.2517127692699432e-06,
+          0.03299004212021828,
+          0.028996529057621956,
+          0.06137644499540329
+        ],
+        "max_continuous_clear_air_s": [
+          0.0,
+          0.20000000949949026,
+          0.1600000075995922,
+          0.3000000142492354
+        ],
+        "strict_step_travel_median_m": [
+          null,
+          null,
+          0.07706877979837157,
+          null
+        ]
+      },
+      {
+        "env": 6,
+        "samples_after_1s": 4,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.06496882513165474,
+          0.019715953432023526
+        ],
+        "knee_center_z_p05_m": [
+          0.07273331731557846,
+          0.02756029777228832
+        ],
+        "hip_angle_median_deg": [
+          -27.23904037475586,
+          -15.596179962158203
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          13.23903590099268,
+          1.7376775741577148
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          0.0,
+          1.0
+        ],
+        "hip_max_deg": [
+          -24.720041275024414,
+          -13.06413459777832
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          0.1942489624023409,
+          0.5399312973022461
+        ],
+        "foot_clearance_p95_m": [
+          0.03661613333970308,
+          0.0005553028080612421,
+          0.045095951110124585,
+          5.593057721853256e-07
+        ],
+        "foot_clearance_peak_m": [
+          0.03731367364525795,
+          0.0005598221905529499,
+          0.04536043480038643,
+          5.639158189296722e-07
+        ],
+        "max_continuous_clear_air_s": [
+          0.0800000037997961,
+          0.0,
+          0.0800000037997961,
+          0.0
+        ],
+        "strict_step_travel_median_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "env": 7,
+        "samples_after_1s": 9,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.057804272323846814,
+          0.023408260941505433
+        ],
+        "knee_center_z_p05_m": [
+          0.06584692001342773,
+          0.031219056621193886
+        ],
+        "hip_angle_median_deg": [
+          -5.796202659606934,
+          -17.947324752807617
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          8.203800860481929,
+          3.947321232718755
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          0.2222222222222222,
+          0.8888888888888888
+        ],
+        "hip_max_deg": [
+          -3.2565081119537354,
+          -15.589144706726074
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          0.967252349853517,
+          18.021866607666013
+        ],
+        "foot_clearance_p95_m": [
+          0.03388880118727684,
+          1.8089078366756432e-06,
+          0.04881435185670853,
+          0.015145436674356461
+        ],
+        "foot_clearance_peak_m": [
+          0.03468744829297066,
+          2.614688128232956e-06,
+          0.049093469977378845,
+          0.015218742191791534
+        ],
+        "max_continuous_clear_air_s": [
+          0.18000000854954123,
+          0.0,
+          0.18000000854954123,
+          0.12000000569969416
+        ],
+        "strict_step_travel_median_m": [
+          null,
+          null,
+          null,
+          0.05986705772807947
+        ]
+      },
+      {
+        "env": 8,
+        "samples_after_1s": 0
+      },
+      {
+        "env": 9,
+        "samples_after_1s": 9,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.05688256248831749,
+          0.02767607495188713
+        ],
+        "knee_center_z_p05_m": [
+          0.06528878062963486,
+          0.03541358932852745
+        ],
+        "hip_angle_median_deg": [
+          -10.873875617980957,
+          -17.9404296875
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          4.925984088020991,
+          3.940426167411138
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          0.5555555555555556,
+          0.6666666666666666
+        ],
+        "hip_max_deg": [
+          -8.993302345275879,
+          -15.314804077148438
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          0.39946136474608807,
+          11.20613174438477
+        ],
+        "foot_clearance_p95_m": [
+          0.03611957877874374,
+          0.0032965118996798985,
+          0.04441326782107353,
+          1.1521391570568084e-06
+        ],
+        "foot_clearance_peak_m": [
+          0.03826378285884857,
+          0.004007974173873663,
+          0.04587012156844139,
+          1.2046657502651215e-06
+        ],
+        "max_continuous_clear_air_s": [
+          0.18000000854954123,
+          0.04000000189989805,
+          0.18000000854954123,
+          0.0
+        ],
+        "strict_step_travel_median_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "env": 10,
+        "samples_after_1s": 9,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.02187906876206398,
+          0.06403282284736633
+        ],
+        "knee_center_z_p05_m": [
+          0.02965483032166958,
+          0.07197201400995254
+        ],
+        "hip_angle_median_deg": [
+          -7.481512069702148,
+          -19.51170539855957
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          6.518491450386714,
+          5.511701878470708
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "hip_max_deg": [
+          -3.807650327682495,
+          -17.450334548950195
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          1.3827217102050824,
+          22.10424880981445
+        ],
+        "foot_clearance_p95_m": [
+          6.315298378467559e-07,
+          0.03365466371178627,
+          2.1336600184440612e-07,
+          0.03906720131635666
+        ],
+        "foot_clearance_peak_m": [
+          6.915070116519928e-07,
+          0.034038905054330826,
+          2.2863969206809998e-07,
+          0.04072616249322891
+        ],
+        "max_continuous_clear_air_s": [
+          0.0,
+          0.18000000854954123,
+          0.0,
+          0.18000000854954123
+        ],
+        "strict_step_travel_median_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "env": 11,
+        "samples_after_1s": 1,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.023147795349359512,
+          0.07097279280424118
+        ],
+        "knee_center_z_p05_m": [
+          0.030961181968450546,
+          0.07872634381055832
+        ],
+        "hip_angle_median_deg": [
+          -11.93992805480957,
+          -32.56597137451172
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          2.060075465279292,
+          18.56596785442286
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          1.0,
+          0.0
+        ],
+        "hip_max_deg": [
+          -11.93992805480957,
+          -32.56597137451172
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          0.0,
+          0.0
+        ],
+        "foot_clearance_p95_m": [
+          0.0064742485992610455,
+          0.042733702808618546,
+          0.002431002911180258,
+          0.048157356679439545
+        ],
+        "foot_clearance_peak_m": [
+          0.0064742485992610455,
+          0.042733702808618546,
+          0.002431002911180258,
+          0.048157356679439545
+        ],
+        "max_continuous_clear_air_s": [
+          0.020000000949949026,
+          0.020000000949949026,
+          0.020000000949949026,
+          0.020000000949949026
+        ],
+        "strict_step_travel_median_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "env": 12,
+        "samples_after_1s": 7,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.019686860032379627,
+          0.06244582049548626
+        ],
+        "knee_center_z_p05_m": [
+          0.02750739511102438,
+          0.07070698514580727
+        ],
+        "hip_angle_median_deg": [
+          -13.495776176452637,
+          -25.708955764770508
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          1.0217568312460887,
+          11.708952244681646
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          1.0,
+          0.14285714285714285
+        ],
+        "hip_max_deg": [
+          -12.898905754089355,
+          -15.942569732666016
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          1.8926021575927692,
+          0.3843143463134808
+        ],
+        "foot_clearance_p95_m": [
+          2.688728272914886e-07,
+          0.03606939017772674,
+          0.00031460728496313073,
+          0.04431728981435299
+        ],
+        "foot_clearance_peak_m": [
+          2.9010698199272156e-07,
+          0.03716849908232689,
+          0.0003956449218094349,
+          0.04480191692709923
+        ],
+        "max_continuous_clear_air_s": [
+          0.0,
+          0.14000000664964318,
+          0.0,
+          0.14000000664964318
+        ],
+        "strict_step_travel_median_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "env": 13,
+        "samples_after_1s": 20,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.05093820188194513,
+          0.024140289891511204
+        ],
+        "knee_center_z_p05_m": [
+          0.059019948728382586,
+          0.03181922798976302
+        ],
+        "hip_angle_median_deg": [
+          -20.198013305664062,
+          -12.329238891601562
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          6.855428990287114,
+          4.135045528411865
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          0.2,
+          0.65
+        ],
+        "hip_max_deg": [
+          -3.0090370178222656,
+          -4.161691665649414
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          24.15815486907959,
+          1.8091890335083036
+        ],
+        "foot_clearance_p95_m": [
+          0.03446570970118046,
+          8.316710591316341e-05,
+          0.03719869442284107,
+          3.026798367500306e-07
+        ],
+        "foot_clearance_peak_m": [
+          0.0347568653523922,
+          0.0016551404260098934,
+          0.04116866737604141,
+          4.353933036327362e-07
+        ],
+        "max_continuous_clear_air_s": [
+          0.4000000189989805,
+          0.0,
+          0.4000000189989805,
+          0.0
+        ],
+        "strict_step_travel_median_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "env": 14,
+        "samples_after_1s": 29,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.027551507949829104,
+          0.04697167128324509
+        ],
+        "knee_center_z_p05_m": [
+          0.035283536463975904,
+          0.054569438099861145
+        ],
+        "hip_angle_median_deg": [
+          -20.811439514160156,
+          -10.61521053314209
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          8.252191838187505,
+          7.628723326760005
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          0.20689655172413793,
+          0.2413793103448276
+        ],
+        "hip_max_deg": [
+          3.494719982147217,
+          3.529362440109253
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          26.30306625366211,
+          5.809175872802733
+        ],
+        "foot_clearance_p95_m": [
+          0.004747943859547375,
+          0.0320704661309719,
+          0.01423289887607097,
+          0.041282819211483
+        ],
+        "foot_clearance_peak_m": [
+          0.007574749644845724,
+          0.03743165731430054,
+          0.015342963859438896,
+          0.04336908459663391
+        ],
+        "max_continuous_clear_air_s": [
+          0.14000000664964318,
+          0.2400000113993883,
+          0.1600000075995922,
+          0.3800000180490315
+        ],
+        "strict_step_travel_median_m": [
+          0.006767768689103116,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "env": 15,
+        "samples_after_1s": 4,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.01939809275791049,
+          0.06378359794616699
+        ],
+        "knee_center_z_p05_m": [
+          0.027241742610931395,
+          0.07153408266603947
+        ],
+        "hip_angle_median_deg": [
+          -13.059324264526367,
+          -26.523727416992188
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          1.3259760771567333,
+          12.523723896903325
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          1.0,
+          0.0
+        ],
+        "hip_max_deg": [
+          -12.553373336791992,
+          -21.478687286376953
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          0.9067792892456055,
+          0.2255348205566392
+        ],
+        "foot_clearance_p95_m": [
+          2.2822851315140716e-05,
+          0.035930815525352953,
+          7.290211506187912e-05,
+          0.04318757448345423
+        ],
+        "foot_clearance_peak_m": [
+          2.674991264939308e-05,
+          0.036483485251665115,
+          8.576037362217903e-05,
+          0.04350423440337181
+        ],
+        "max_continuous_clear_air_s": [
+          0.0,
+          0.0800000037997961,
+          0.0,
+          0.0800000037997961
+        ],
+        "strict_step_travel_median_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "env": 16,
+        "samples_after_1s": 0
+      },
+      {
+        "env": 17,
+        "samples_after_1s": 11,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.021441716700792313,
+          0.05199484899640083
+        ],
+        "knee_center_z_p05_m": [
+          0.02918842900544405,
+          0.06031068041920662
+        ],
+        "hip_angle_median_deg": [
+          -16.93587875366211,
+          -20.164508819580078
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          4.03670472248144,
+          15.38070135967188
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          0.5454545454545454,
+          0.09090909090909091
+        ],
+        "hip_max_deg": [
+          -9.963298797607422,
+          3.4855077266693115
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          3.6013050079345703,
+          5.20697021484375
+        ],
+        "foot_clearance_p95_m": [
+          0.001752182375639677,
+          0.03563012555241585,
+          6.115017458796501e-05,
+          0.04095962457358837
+        ],
+        "foot_clearance_peak_m": [
+          0.0031852046959102154,
+          0.0372418649494648,
+          0.00012203259393572807,
+          0.04162224754691124
+        ],
+        "max_continuous_clear_air_s": [
+          0.020000000949949026,
+          0.2200000104494393,
+          0.0,
+          0.2200000104494393
+        ],
+        "strict_step_travel_median_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "env": 18,
+        "samples_after_1s": 6,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.022013516165316105,
+          0.06431102193892002
+        ],
+        "knee_center_z_p05_m": [
+          0.029799536801874638,
+          0.07258960977196693
+        ],
+        "hip_angle_median_deg": [
+          -13.548904418945312,
+          -25.67414093017578
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          0.890060130196284,
+          11.674137410086919
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          1.0,
+          0.16666666666666666
+        ],
+        "hip_max_deg": [
+          -13.092991828918457,
+          -18.44048500061035
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          1.6038751602172852,
+          0.32382774353027344
+        ],
+        "foot_clearance_p95_m": [
+          9.406358003616333e-08,
+          0.03493012487888336,
+          0.00022925040684640408,
+          0.043993706814944744
+        ],
+        "foot_clearance_peak_m": [
+          1.317821443080902e-07,
+          0.03589992970228195,
+          0.00030567171052098274,
+          0.04439212754368782
+        ],
+        "max_continuous_clear_air_s": [
+          0.0,
+          0.12000000569969416,
+          0.0,
+          0.12000000569969416
+        ],
+        "strict_step_travel_median_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "env": 19,
+        "samples_after_1s": 9,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.05721701979637146,
+          0.027593109756708145
+        ],
+        "knee_center_z_p05_m": [
+          0.06565050631761551,
+          0.035334283113479616
+        ],
+        "hip_angle_median_deg": [
+          -5.734284400939941,
+          -18.94426727294922
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          8.26571911914892,
+          4.944263752860357
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          0.0,
+          0.5555555555555556
+        ],
+        "hip_max_deg": [
+          -3.17346453666687,
+          -16.741413116455078
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          0.4338172912597642,
+          22.587116241455078
+        ],
+        "foot_clearance_p95_m": [
+          0.03386495038866997,
+          1.929979771375656e-06,
+          0.044673075526952745,
+          0.0059943578206002705
+        ],
+        "foot_clearance_peak_m": [
+          0.035237427800893784,
+          2.134125679731369e-06,
+          0.044764358550310135,
+          0.006333739962428808
+        ],
+        "max_continuous_clear_air_s": [
+          0.18000000854954123,
+          0.0,
+          0.18000000854954123,
+          0.0800000037997961
+        ],
+        "strict_step_travel_median_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "env": 20,
+        "samples_after_1s": 5,
+        "knee_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_housing_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "torso_contact_fraction": [
+          0.0,
+          0.0
+        ],
+        "knee_surface_clearance_p05_m": [
+          0.0706913262605667,
+          0.03903842866420746
+        ],
+        "knee_center_z_p05_m": [
+          0.07906049191951751,
+          0.046827785670757294
+        ],
+        "hip_angle_median_deg": [
+          1.6103718280792236,
+          -18.89615249633789
+        ],
+        "hip_stand_abs_deviation_median_deg": [
+          15.610375348168086,
+          4.8961489762490285
+        ],
+        "hip_within_stand_tolerance_fraction": [
+          0.0,
+          0.6
+        ],
+        "hip_max_deg": [
+          3.3280093669891357,
+          -17.32899284362793
+        ],
+        "hip_near_upper_limit_fraction": [
+          0.0,
+          0.0
+        ],
+        "elbow_rom_p95_p05_deg": [
+          1.052210998535159,
+          9.518929290771482
+        ],
+        "foot_clearance_p95_m": [
+          0.03811092674732208,
+          0.0002940761856734752,
+          0.06602151989936829,
+          0.02153131552040577
+        ],
+        "foot_clearance_peak_m": [
+          0.03865299001336098,
+          0.0003677872009575367,
+          0.06652078032493591,
+          0.021699408069252968
+        ],
+        "max_continuous_clear_air_s": [
+          0.10000000474974513,
+          0.0,
+          0.10000000474974513,
+          0.10000000474974513
+        ],
+        "strict_step_travel_median_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "env": 21,
+        "samples_after_1s": 0
+      },
+      {
+        "env": 22,
+        "samples_after_1s": 0
+      },
+      {
+        "env": 23,
+        "samples_after_1s": 0
+      }
+    ]
+  },
+  "knee_contact_rule": {
+    "enabled": true,
+    "margin_m": 0.0005,
+    "method": "Existing knee motor collision primitives vs plane z=0, checked each 20ms control step; cylinder support bound conservative for tessellation"
+  },
+  "asset_sha256": "16dfa3fb0e3a2c563cb533a81288b841e3e4601407d5a11a67d4eea210c0e92c",
+  "manifest_sha256": "d532bb4c167d0ad74dd09d59e557fa2189a4152f57c334ce283535bc08e15937",
+  "body_names": [
+    "ROOT",
+    "spine_pitch",
+    "spine_roll",
+    "hip_roll",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "L_ankle_fixed",
+    "R_hip_roll_mimic",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "R_ankle_fixed",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "L_wrist_fixed",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch",
+    "R_wrist_fixed"
+  ],
+  "dof_names": [
+    "spine_pitch",
+    "spine_roll",
+    "hip_roll",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "R_hip_roll_mimic",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch"
+  ],
+  "foot_order": [
+    "L_wrist_fixed",
+    "R_wrist_fixed",
+    "L_ankle_fixed",
+    "R_ankle_fixed"
+  ],
+  "trace": [
+    {
+      "t": 0.020000000949949026,
+      "body_xyz": [
+        [
+          -0.0038699619472026825,
+          0.0003181927895639092,
+          0.12395941466093063
+        ],
+        [
+          -0.0038699693977832794,
+          0.00031819281866773963,
+          0.12395940721035004
+        ],
+        [
+          -0.03267180174589157,
+          0.000458151800557971,
+          0.10961471498012543
+        ],
+        [
+          -0.06870623677968979,
+          0.018130280077457428,
+          0.08427067846059799
+        ],
+        [
+          -0.0532352589070797,
+          0.024499021470546722,
+          0.08872669190168381
+        ],
+        [
+          -0.024411095306277275,
+          0.02448606863617897,
+          0.0554826520383358
+        ],
+        [
+          -0.06316385418176651,
+          0.024707220494747162,
+          0.023888755589723587
+        ],
+        [
+          -0.06882627308368683,
+          -0.01682073250412941,
+          0.08417067676782608
+        ],
+        [
+          -0.05339943617582321,
+          -0.023320922628045082,
+          0.08858975023031235
+        ],
+        [
+          -0.024314818903803825,
+          -0.023316403850913048,
+          0.05557333678007126
+        ],
+        [
+          -0.06297822296619415,
+          -0.023090297356247902,
+          0.023870214819908142
+        ],
+        [
+          0.07527793943881989,
+          0.008096612989902496,
+          0.0939488559961319
+        ],
+        [
+          0.09093602001667023,
+          0.02204521745443344,
+          0.09057509154081345
+        ],
+        [
+          0.061781711876392365,
+          0.024072537198662758,
+          0.05768261477351189
+        ],
+        [
+          0.07565656304359436,
+          0.022191425785422325,
+          0.020213289186358452
+        ],
+        [
+          0.07521890103816986,
+          -0.00790322944521904,
+          0.0939112976193428
+        ],
+        [
+          0.09076546132564545,
+          -0.02195202000439167,
+          0.09043891727924347
+        ],
+        [
+          0.06157747656106949,
+          -0.02351725660264492,
+          0.05755104869604111
+        ],
+        [
+          0.0756165087223053,
+          -0.021472174674272537,
+          0.0201515294611454
+        ]
+      ],
+      "force": [
+        3.126713752746582,
+        3.7856929302215576,
+        2.695127248764038,
+        4.28481912612915
+      ],
+      "q": [
+        -0.7063904404640198,
+        0.0005748633411712945,
+        -0.00021335112978704274,
+        -0.25222235918045044,
+        1.6011238098144531,
+        0.00023395483731292188,
+        -0.2600820064544678,
+        1.6061609983444214,
+        0.0016199517995119095,
+        0.48250651359558105,
+        -1.0834786891937256,
+        0.0008023715927265584,
+        0.4830976128578186,
+        -1.0880483388900757
+      ],
+      "clearance_m": [
+        2.7474015951156616e-08,
+        8.847564458847046e-09,
+        2.7474015951156616e-08,
+        1.4295801520347595e-07
+      ],
+      "knee_clearance_m": [
+        0.04799859970808029,
+        0.04808769375085831
+      ]
+    },
+    {
+      "t": 0.12000000569969416,
+      "body_xyz": [
+        [
+          -0.003959197551012039,
+          0.0011582063743844628,
+          0.12408152222633362
+        ],
+        [
+          -0.003959186375141144,
+          0.001158206257969141,
+          0.12408152222633362
+        ],
+        [
+          -0.03275318071246147,
+          0.0011746735544875264,
+          0.1097203940153122
+        ],
+        [
+          -0.06879392266273499,
+          0.0186455138027668,
+          0.08424612879753113
+        ],
+        [
+          -0.05333280563354492,
+          0.025060050189495087,
+          0.08867056667804718
+        ],
+        [
+          -0.024430707097053528,
+          0.024871760979294777,
+          0.0554947704076767
+        ],
+        [
+          -0.06317225098609924,
+          0.024849584326148033,
+          0.023886358365416527
+        ],
+        [
+          -0.06887342035770416,
+          -0.016305550932884216,
+          0.08436544239521027
+        ],
+        [
+          -0.05344156175851822,
+          -0.022759977728128433,
+          0.0888337716460228
+        ],
+        [
+          -0.024508101865649223,
+          -0.022929411381483078,
+          0.05568523705005646
+        ],
+        [
+          -0.06306099146604538,
+          -0.022947872057557106,
+          0.023846998810768127
+        ],
+        [
+          0.07521820813417435,
+          0.008845198899507523,
+          0.09412523359060287
+        ],
+        [
+          0.09085703641176224,
+          0.022792229428887367,
+          0.09065696597099304
+        ],
+        [
+          0.061795856803655624,
+          0.024493707343935966,
+          0.057663753628730774
+        ],
+        [
+          0.07566117495298386,
+          0.022333169355988503,
+          0.020205974578857422
+        ],
+        [
+          0.07517828792333603,
+          -0.007154630497097969,
+          0.094186931848526
+        ],
+        [
+          0.0907529816031456,
+          -0.021205026656389236,
+          0.09084972739219666
+        ],
+        [
+          0.06186684966087341,
+          -0.023064401000738144,
+          0.057711634784936905
+        ],
+        [
+          0.07571836560964584,
+          -0.02131991647183895,
+          0.02022707276046276
+        ]
+      ],
+      "force": [
+        4.073864459991455,
+        2.646775484085083,
+        3.997372627258301,
+        4.014613151550293
+      ],
+      "q": [
+        -0.7056525349617004,
+        0.0004949551657773554,
+        -0.0002186467609135434,
+        -0.2540118992328644,
+        1.6031084060668945,
+        0.00022422955953516066,
+        -0.2549564242362976,
+        1.5981065034866333,
+        -0.0004515627515502274,
+        0.4808600842952728,
+        -1.0801962614059448,
+        -0.001247924636118114,
+        0.47529247403144836,
+        -1.074019193649292
+      ],
+      "clearance_m": [
+        7.12461769580841e-08,
+        6.100162863731384e-08,
+        1.671724021434784e-07,
+        2.4354085326194763e-07
+      ],
+      "knee_clearance_m": [
+        0.04800700768828392,
+        0.04819903150200844
+      ]
+    },
+    {
+      "t": 0.2200000104494393,
+      "body_xyz": [
+        [
+          -0.0038530677556991577,
+          0.0001430085249012336,
+          0.12386468797922134
+        ],
+        [
+          -0.0038530658930540085,
+          0.0001430085249012336,
+          0.12386468052864075
+        ],
+        [
+          -0.032600462436676025,
+          0.00022194914345163852,
+          0.10941073298454285
+        ],
+        [
+          -0.0686018168926239,
+          0.01783953234553337,
+          0.08398187160491943
+        ],
+        [
+          -0.05317090451717377,
+          0.024250563234090805,
+          0.08851552754640579
+        ],
+        [
+          -0.0242274459451437,
+          0.024439098313450813,
+          0.05537581816315651
+        ],
+        [
+          -0.0630846619606018,
+          0.024612843990325928,
+          0.023910198360681534
+        ],
+        [
+          -0.068595290184021,
+          -0.017111239954829216,
+          0.083778016269207
+        ],
+        [
+          -0.05316208302974701,
+          -0.02356906607747078,
+          0.08823680877685547
+        ],
+        [
+          -0.023931166157126427,
+          -0.023363159969449043,
+          0.05535047873854637
+        ],
+        [
+          -0.06281290203332901,
+          -0.023184897378087044,
+          0.02391517162322998
+        ],
+        [
+          0.07541991025209427,
+          0.008189545944333076,
+          0.09425762295722961
+        ],
+        [
+          0.09104311466217041,
+          0.02218915894627571,
+          0.09093381464481354
+        ],
+        [
+          0.06211014837026596,
+          0.02403818815946579,
+          0.05783602595329285
+        ],
+        [
+          0.07577092945575714,
+          0.022166982293128967,
+          0.020287642255425453
+        ],
+        [
+          0.07540655881166458,
+          -0.007810329087078571,
+          0.09419677406549454
+        ],
+        [
+          0.09101821482181549,
+          -0.021808911114931107,
+          0.09081482887268066
+        ],
+        [
+          0.06202606111764908,
+          -0.02350262925028801,
+          0.057760532945394516
+        ],
+        [
+          0.07577450573444366,
+          -0.021480225026607513,
+          0.020251993089914322
+        ]
+      ],
+      "force": [
+        3.9721333980560303,
+        3.4380486011505127,
+        4.9425835609436035,
+        2.173643112182617
+      ],
+      "q": [
+        -0.705242931842804,
+        0.0022723826114088297,
+        -0.00023885250266175717,
+        -0.2520178556442261,
+        1.6080176830291748,
+        0.0002031336771324277,
+        -0.26072508096694946,
+        1.6175044775009155,
+        -0.0018861554563045502,
+        0.4805166721343994,
+        -1.070619821548462,
+        -0.0016677591484040022,
+        0.4822700321674347,
+        -1.074672818183899
+      ],
+      "clearance_m": [
+        1.41095370054245e-07,
+        2.9336661100387573e-08,
+        1.4295801520347595e-07,
+        9.452924132347107e-08
+      ],
+      "knee_clearance_m": [
+        0.047880079597234726,
+        0.04785317927598953
+      ]
+    },
+    {
+      "t": 0.3200000151991844,
+      "body_xyz": [
+        [
+          -0.004163593053817749,
+          -0.003570091910660267,
+          0.12355118244886398
+        ],
+        [
+          -0.004163576290011406,
+          -0.003570091910660267,
+          0.12355118244886398
+        ],
+        [
+          -0.03292681276798248,
+          -0.0030027362518012524,
+          0.10913972556591034
+        ],
+        [
+          -0.0689130574464798,
+          0.015431348234415054,
+          0.084274522960186
+        ],
+        [
+          -0.053461045026779175,
+          0.02167058177292347,
+          0.08897295594215393
+        ],
+        [
+          -0.0247516930103302,
+          0.02275015041232109,
+          0.05564718693494797
+        ],
+        [
+          -0.06330958008766174,
+          0.023941615596413612,
+          0.023837313055992126
+        ],
+        [
+          -0.06899278610944748,
+          -0.01949876733124256,
+          0.08305849879980087
+        ],
+        [
+          -0.05356982350349426,
+          -0.026119697839021683,
+          0.08730863779783249
+        ],
+        [
+          -0.023592138662934303,
+          -0.02504824288189411,
+          0.055118732154369354
+        ],
+        [
+          -0.06266547739505768,
+          -0.023869026452302933,
+          0.0239437036216259
+        ],
+        [
+          0.0752863734960556,
+          0.00501517578959465,
+          0.0945766344666481
+        ],
+        [
+          0.09096954017877579,
+          0.019048072397708893,
+          0.09170655906200409
+        ],
+        [
+          0.06282144039869308,
+          0.02182256244122982,
+          0.05800217390060425
+        ],
+        [
+          0.07710293680429459,
+          0.020869480445981026,
+          0.02065073326230049
+        ],
+        [
+          0.07522121071815491,
+          -0.010976883582770824,
+          0.09407711029052734
+        ],
+        [
+          0.09077982604503632,
+          -0.024930356070399284,
+          0.09028881788253784
+        ],
+        [
+          0.06155399978160858,
+          -0.02537667378783226,
+          0.05740034580230713
+        ],
+        [
+          0.0756085067987442,
+          -0.022118540480732918,
+          0.020092768594622612
+        ]
+      ],
+      "force": [
+        0.0,
+        6.897290229797363,
+        1.2160043716430664,
+        6.405998229980469
+      ],
+      "q": [
+        -0.6989758014678955,
+        0.00399760901927948,
+        -0.00035318543086759746,
+        -0.24608072638511658,
+        1.5915237665176392,
+        0.000455480971140787,
+        -0.2847716212272644,
+        1.6465706825256348,
+        -0.0026417342014610767,
+        0.4622621238231659,
+        -1.0640000104904175,
+        0.005874043330550194,
+        0.4943408966064453,
+        -1.0894834995269775
+      ],
+      "clearance_m": [
+        0.0005483417771756649,
+        1.1688098311424255e-07,
+        -4.656612873077393e-10,
+        1.4295801520347595e-07
+      ],
+      "knee_clearance_m": [
+        0.04804041236639023,
+        0.047509267926216125
+      ]
+    },
+    {
+      "t": 0.42000001994892955,
+      "body_xyz": [
+        [
+          -0.002263356000185013,
+          0.0007801499450579286,
+          0.12360775470733643
+        ],
+        [
+          -0.002263350412249565,
+          0.0007801498286426067,
+          0.12360775470733643
+        ],
+        [
+          -0.03114508092403412,
+          0.001101412228308618,
+          0.1094275414943695
+        ],
+        [
+          -0.06715168058872223,
+          0.018947144970297813,
+          0.08416574448347092
+        ],
+        [
+          -0.05158830061554909,
+          0.025189386680722237,
+          0.08847667276859283
+        ],
+        [
+          -0.023274486884474754,
+          0.024580281227827072,
+          0.054802410304546356
+        ],
+        [
+          -0.06267483532428741,
+          0.024947842583060265,
+          0.024021299555897713
+        ],
+        [
+          -0.0676131397485733,
+          -0.016000857576727867,
+          0.08431387692689896
+        ],
+        [
+          -0.05221981555223465,
+          -0.02261536940932274,
+          0.08867985010147095
+        ],
+        [
+          -0.023434195667505264,
+          -0.023048434406518936,
+          0.05540523678064346
+        ],
+        [
+          -0.06226040795445442,
+          -0.022646162658929825,
+          0.023903440684080124
+        ],
+        [
+          0.07706214487552643,
+          0.007844408042728901,
+          0.0938909575343132
+        ],
+        [
+          0.0928102433681488,
+          0.021663570776581764,
+          0.09040534496307373
+        ],
+        [
+          0.06377188861370087,
+          0.023441897705197334,
+          0.05739608407020569
+        ],
+        [
+          0.07796546071767807,
+          0.021000564098358154,
+          0.020078767091035843
+        ],
+        [
+          0.07687802612781525,
+          -0.008154526352882385,
+          0.09390351176261902
+        ],
+        [
+          0.09232069551944733,
+          -0.022336194291710854,
+          0.09050852060317993
+        ],
+        [
+          0.06111639738082886,
+          -0.02389540895819664,
+          0.059526920318603516
+        ],
+        [
+          0.07553257048130035,
+          -0.02199465222656727,
+          0.02226351574063301
+        ]
+      ],
+      "force": [
+        6.961505889892578,
+        0.0,
+        5.931716442108154,
+        0.8048402667045593
+      ],
+      "q": [
+        -0.6966590881347656,
+        -0.003846771316602826,
+        -0.002166085410863161,
+        -0.24284203350543976,
+        1.6068346500396729,
+        0.0020694409031420946,
+        -0.2568650543689728,
+        1.6024383306503296,
+        -0.008004745468497276,
+        0.48324429988861084,
+        -1.0891388654708862,
+        0.002957212971523404,
+        0.5501187443733215,
+        -1.1607236862182617
+      ],
+      "clearance_m": [
+        9.546056389808655e-08,
+        0.0022371825762093067,
+        3.1618401408195496e-07,
+        -8.610077202320099e-07
+      ],
+      "knee_clearance_m": [
+        0.047304440289735794,
+        0.047922343015670776
+      ]
+    },
+    {
+      "t": 0.5200000246986747,
+      "body_xyz": [
+        [
+          -0.0006282925605773926,
+          -0.007219252176582813,
+          0.12354397773742676
+        ],
+        [
+          -0.000628303736448288,
+          -0.007219251710921526,
+          0.12354397773742676
+        ],
+        [
+          -0.029628116637468338,
+          -0.005459440406411886,
+          0.10971464961767197
+        ],
+        [
+          -0.06543613225221634,
+          0.0145574901252985,
+          0.0858355239033699
+        ],
+        [
+          -0.049684323370456696,
+          0.020189683884382248,
+          0.09029947966337204
+        ],
+        [
+          -0.023057227954268456,
+          0.0207847710698843,
+          0.05527600646018982
+        ],
+        [
+          -0.06309214979410172,
+          0.023710822686553,
+          0.025465892627835274
+        ],
+        [
+          -0.06673380732536316,
+          -0.02032749354839325,
+          0.08411753177642822
+        ],
+        [
+          -0.05145888030529022,
+          -0.02752210572361946,
+          0.08794926106929779
+        ],
+        [
+          -0.02257394976913929,
+          -0.026821395382285118,
+          0.05476539209485054
+        ],
+        [
+          -0.06186510995030403,
+          -0.023808062076568604,
+          0.02399001084268093
+        ],
+        [
+          0.0785098746418953,
+          0.00013903435319662094,
+          0.09340205043554306
+        ],
+        [
+          0.09455259889364243,
+          0.01381730567663908,
+          0.09082192182540894
+        ],
+        [
+          0.06533919274806976,
+          0.01884554885327816,
+          0.05830588564276695
+        ],
+        [
+          0.07848943769931793,
+          0.019086921587586403,
+          0.02053007110953331
+        ],
+        [
+          0.07800567150115967,
+          -0.015823332592844963,
+          0.09242808818817139
+        ],
+        [
+          0.09310557693243027,
+          -0.03005988895893097,
+          0.0879075899720192
+        ],
+        [
+          0.06286877393722534,
+          -0.02869481034576893,
+          0.0559721514582634
+        ],
+        [
+          0.07863713055849075,
+          -0.024558046832680702,
+          0.019444815814495087
+        ]
+      ],
+      "force": [
+        0.0,
+        10.8824462890625,
+        0.0,
+        5.735154151916504
+      ],
+      "q": [
+        -0.6977673768997192,
+        -0.013002455234527588,
+        -0.0032255519181489944,
+        -0.20397421717643738,
+        1.5799864530563354,
+        0.0033180576283484697,
+        -0.2699144780635834,
+        1.621529459953308,
+        0.008836450055241585,
+        0.4802687168121338,
+        -1.069772481918335,
+        0.00861642137169838,
+        0.5082448124885559,
+        -1.1646182537078857
+      ],
+      "clearance_m": [
+        6.945338100194931e-06,
+        5.005858838558197e-07,
+        0.0013243290595710278,
+        1.2619420886039734e-07
+      ],
+      "knee_clearance_m": [
+        0.047625746577978134,
+        0.047093719244003296
+      ]
+    },
+    {
+      "t": 0.6200000294484198,
+      "body_xyz": [
+        [
+          -0.005237087607383728,
+          -0.004526558797806501,
+          0.12446124851703644
+        ],
+        [
+          -0.005237068980932236,
+          -0.004526559263467789,
+          0.12446124851703644
+        ],
+        [
+          -0.03403927758336067,
+          -0.003776996396481991,
+          0.11013621836900711
+        ],
+        [
+          -0.06990751624107361,
+          0.014823971316218376,
+          0.08522482216358185
+        ],
+        [
+          -0.054315321147441864,
+          0.020877715200185776,
+          0.08969736099243164
+        ],
+        [
+          -0.023876380175352097,
+          0.0204077810049057,
+          0.057928666472435
+        ],
+        [
+          -0.06573798507452011,
+          0.021541856229305267,
+          0.030609842389822006
+        ],
+        [
+          -0.07036362588405609,
+          -0.020112529397010803,
+          0.08431382477283478
+        ],
+        [
+          -0.05493728816509247,
+          -0.026795344427227974,
+          0.08845338970422745
+        ],
+        [
+          -0.0249980129301548,
+          -0.025434426963329315,
+          0.05623868852853775
+        ],
+        [
+          -0.06292305141687393,
+          -0.023825863376259804,
+          0.02369481697678566
+        ],
+        [
+          0.07394523918628693,
+          0.0030732518061995506,
+          0.0944957509636879
+        ],
+        [
+          0.08972751349210739,
+          0.01693144254386425,
+          0.0913347452878952
+        ],
+        [
+          0.06010981276631355,
+          0.019833125174045563,
+          0.0589253231883049
+        ],
+        [
+          0.07256340235471725,
+          0.01859525963664055,
+          0.020933544263243675
+        ],
+        [
+          0.07371910661458969,
+          -0.012920578010380268,
+          0.09411349892616272
+        ],
+        [
+          0.08908997476100922,
+          -0.02705233357846737,
+          0.09022101759910583
+        ],
+        [
+          0.061914414167404175,
+          -0.027104075998067856,
+          0.055616311728954315
+        ],
+        [
+          0.07830517739057541,
+          -0.024063438177108765,
+          0.019255654886364937
+        ]
+      ],
+      "force": [
+        0.0,
+        4.553224563598633,
+        0.0,
+        9.439302444458008
+      ],
+      "q": [
+        -0.7075656056404114,
+        0.002428988227620721,
+        -0.021443450823426247,
+        -0.30265143513679504,
+        1.7568094730377197,
+        0.021593835204839706,
+        -0.2863004207611084,
+        1.6093825101852417,
+        -0.003024825593456626,
+        0.4959169626235962,
+        -1.0610169172286987,
+        0.0076261707581579685,
+        0.4214402735233307,
+        -1.0908393859863281
+      ],
+      "clearance_m": [
+        0.00022342568263411522,
+        -7.12461769580841e-08,
+        0.006132339593023062,
+        9.825453162193298e-08
+      ],
+      "knee_clearance_m": [
+        0.05042799934744835,
+        0.04859156906604767
+      ]
+    },
+    {
+      "t": 0.7200000341981649,
+      "body_xyz": [
+        [
+          -0.0040421076118946075,
+          0.012597166001796722,
+          0.12295331060886383
+        ],
+        [
+          -0.004042116925120354,
+          0.012597166933119297,
+          0.12295330315828323
+        ],
+        [
+          -0.032371100038290024,
+          0.012579096481204033,
+          0.10769540816545486
+        ],
+        [
+          -0.06666982918977737,
+          0.029104281216859818,
+          0.07934721559286118
+        ],
+        [
+          -0.05100269615650177,
+          0.03513253480195999,
+          0.08358622342348099
+        ],
+        [
+          -0.016802022233605385,
+          0.030067937448620796,
+          0.056371092796325684
+        ],
+        [
+          -0.05445709079504013,
+          0.028641419485211372,
+          0.02350684255361557
+        ],
+        [
+          -0.06864716857671738,
+          -0.005593075882643461,
+          0.08305960148572922
+        ],
+        [
+          -0.05370689183473587,
+          -0.012312852777540684,
+          0.08866323530673981
+        ],
+        [
+          -0.024649115279316902,
+          -0.01725379377603531,
+          0.055994726717472076
+        ],
+        [
+          -0.06274748593568802,
+          -0.018493078649044037,
+          0.02363770641386509
+        ],
+        [
+          0.07610926032066345,
+          0.013875873759388924,
+          0.09467519819736481
+        ],
+        [
+          0.09247961640357971,
+          0.0267179012298584,
+          0.09040726721286774
+        ],
+        [
+          0.06192974001169205,
+          0.027299096807837486,
+          0.05874709039926529
+        ],
+        [
+          0.07314345985651016,
+          0.021419940516352654,
+          0.020803872495889664
+        ],
+        [
+          0.07530169188976288,
+          -0.00203144084662199,
+          0.09619341790676117
+        ],
+        [
+          0.09025520086288452,
+          -0.017026903107762337,
+          0.09456566721200943
+        ],
+        [
+          0.06334410607814789,
+          -0.020577486604452133,
+          0.05993641912937164
+        ],
+        [
+          0.07908689230680466,
+          -0.022807395085692406,
+          0.02323230542242527
+        ]
+      ],
+      "force": [
+        7.250156402587891,
+        0.0,
+        12.761622428894043,
+        0.0
+      ],
+      "q": [
+        -0.710810661315918,
+        -0.012950758449733257,
+        -0.004993860609829426,
+        -0.4016922414302826,
+        1.7472556829452515,
+        0.00487552722916007,
+        -0.23135818541049957,
+        1.590740442276001,
+        0.00046749343164265156,
+        0.555570662021637,
+        -1.0633323192596436,
+        0.0007462854846380651,
+        0.43961387872695923,
+        -1.0633299350738525
+      ],
+      "clearance_m": [
+        1.83936208486557e-07,
+        0.003656757529824972,
+        2.0256265997886658e-07,
+        1.1819880455732346e-05
+      ],
+      "knee_clearance_m": [
+        0.048501498997211456,
+        0.04815271496772766
+      ]
+    },
+    {
+      "t": 0.8200000389479101,
+      "body_xyz": [
+        [
+          0.0042853690683841705,
+          0.02071208879351616,
+          0.12379702925682068
+        ],
+        [
+          0.0042853932827711105,
+          0.02071208879351616,
+          0.12379702925682068
+        ],
+        [
+          -0.025241222232580185,
+          0.019906090572476387,
+          0.11103515326976776
+        ],
+        [
+          -0.06191720813512802,
+          0.034962594509124756,
+          0.08493386954069138
+        ],
+        [
+          -0.045946571975946426,
+          0.0411587618291378,
+          0.08744670450687408
+        ],
+        [
+          -0.016324764117598534,
+          0.03400307893753052,
+          0.05570802092552185
+        ],
+        [
+          -0.05426349490880966,
+          0.030117783695459366,
+          0.023372940719127655
+        ],
+        [
+          -0.06339231878519058,
+          0.0004926878027617931,
+          0.09052376449108124
+        ],
+        [
+          -0.04796070232987404,
+          -0.005901389289647341,
+          0.09507885575294495
+        ],
+        [
+          -0.022862819954752922,
+          -0.011987620033323765,
+          0.05945507064461708
+        ],
+        [
+          -0.06419195234775543,
+          -0.014595689252018929,
+          0.03143543004989624
+        ],
+        [
+          0.08165143430233002,
+          0.019687773659825325,
+          0.08859799802303314
+        ],
+        [
+          0.0975663810968399,
+          0.03211742267012596,
+          0.08201471716165543
+        ],
+        [
+          0.061070315539836884,
+          0.031887028366327286,
+          0.057438645511865616
+        ],
+        [
+          0.07366256415843964,
+          0.022975221276283264,
+          0.020533164963126183
+        ],
+        [
+          0.08096449077129364,
+          0.003913034684956074,
+          0.09118364006280899
+        ],
+        [
+          0.09567062556743622,
+          -0.011270279064774513,
+          0.08910561352968216
+        ],
+        [
+          0.06427653133869171,
+          -0.016381459310650826,
+          0.05870353430509567
+        ],
+        [
+          0.0762738436460495,
+          -0.020807594060897827,
+          0.0208026934415102
+        ]
+      ],
+      "force": [
+        0.0,
+        12.105844497680664,
+        7.9877753257751465,
+        0.0
+      ],
+      "q": [
+        -0.7132185697555542,
+        0.0018466762267053127,
+        -0.017581423744559288,
+        -0.33377182483673096,
+        1.6025011539459229,
+        0.017493488267064095,
+        -0.2001826912164688,
+        1.5813575983047485,
+        -0.006889476906508207,
+        0.6806038618087769,
+        -1.3125509023666382,
+        0.008426342159509659,
+        0.4890044629573822,
+        -1.1000555753707886
+      ],
+      "clearance_m": [
+        0.0004779151640832424,
+        -2.468004822731018e-08,
+        3.0873343348503113e-07,
+        0.0072739324532449245
+      ],
+      "knee_clearance_m": [
+        0.04764827340841293,
+        0.05148366466164589
+      ]
+    },
+    {
+      "t": 0.9200000436976552,
+      "body_xyz": [
+        [
+          0.009108204394578934,
+          0.03834575042128563,
+          0.123573437333107
+        ],
+        [
+          0.009108198806643486,
+          0.03834575042128563,
+          0.1235734298825264
+        ],
+        [
+          -0.020142555236816406,
+          0.03479595482349396,
+          0.11064565926790237
+        ],
+        [
+          -0.05683210864663124,
+          0.04492634907364845,
+          0.08228449523448944
+        ],
+        [
+          -0.041138581931591034,
+          0.05198959633708,
+          0.08417967706918716
+        ],
+        [
+          -0.012898454442620277,
+          0.04137702286243439,
+          0.05215051770210266
+        ],
+        [
+          -0.052789703011512756,
+          0.03296630084514618,
+          0.023203212767839432
+        ],
+        [
+          -0.05724899470806122,
+          0.01147715374827385,
+          0.09241246432065964
+        ],
+        [
+          -0.04170820116996765,
+          0.006294905673712492,
+          0.0980156809091568
+        ],
+        [
+          -0.01695099286735058,
+          -0.004003388807177544,
+          0.06312979012727737
+        ],
+        [
+          -0.05831869691610336,
+          -0.011567422188818455,
+          0.036083564162254333
+        ],
+        [
+          0.08734790235757828,
+          0.03550518676638603,
+          0.0904674381017685
+        ],
+        [
+          0.10295174270868301,
+          0.047488100826740265,
+          0.08246423304080963
+        ],
+        [
+          0.07029195874929428,
+          0.04063858091831207,
+          0.05378632992506027
+        ],
+        [
+          0.08437114208936691,
+          0.027022376656532288,
+          0.0189097598195076
+        ],
+        [
+          0.08713645488023758,
+          0.02020619809627533,
+          0.09514676779508591
+        ],
+        [
+          0.10242338478565216,
+          0.0054652392864227295,
+          0.09551405906677246
+        ],
+        [
+          0.07220775634050369,
+          -0.005078669637441635,
+          0.06531736254692078
+        ],
+        [
+          0.08418530225753784,
+          -0.014441315084695816,
+          0.028318990021944046
+        ]
+      ],
+      "force": [
+        9.451437950134277,
+        0.0,
+        3.0444939136505127,
+        0.0
+      ],
+      "q": [
+        -0.7051513195037842,
+        0.0030926926992833614,
+        -0.012689038179814816,
+        -0.2675650417804718,
+        1.620870590209961,
+        0.012646659277379513,
+        -0.16791494190692902,
+        1.5720330476760864,
+        -0.017333444207906723,
+        0.5642393231391907,
+        -1.2025110721588135,
+        0.0033697832841426134,
+        0.4830702841281891,
+        -1.0641483068466187
+      ],
+      "clearance_m": [
+        3.8510188460350037e-07,
+        0.007793080527335405,
+        -1.9604340195655823e-07,
+        0.01246991939842701
+      ],
+      "knee_clearance_m": [
+        0.04382085055112839,
+        0.05483831465244293
+      ]
+    },
+    {
+      "t": 1.0200000484474003,
+      "body_xyz": [
+        [
+          0.0047220103442668915,
+          0.06869661062955856,
+          0.11821211874485016
+        ],
+        [
+          0.004722036421298981,
+          0.06869660317897797,
+          0.11821211129426956
+        ],
+        [
+          -0.024373047053813934,
+          0.062344253063201904,
+          0.10602772235870361
+        ],
+        [
+          -0.06054562330245972,
+          0.06563402712345123,
+          0.07546913623809814
+        ],
+        [
+          -0.044770024716854095,
+          0.07275933027267456,
+          0.07582749426364899
+        ],
+        [
+          -0.015473037026822567,
+          0.054376840591430664,
+          0.0486287847161293
+        ],
+        [
+          -0.05392131209373474,
+          0.03862791508436203,
+          0.02081332728266716
+        ],
+        [
+          -0.061444249004125595,
+          0.03557763248682022,
+          0.09328491985797882
+        ],
+        [
+          -0.04599549621343613,
+          0.03178102523088455,
+          0.10011792182922363
+        ],
+        [
+          -0.015249806456267834,
+          0.016059204936027527,
+          0.07285024970769882
+        ],
+        [
+          -0.05908762663602829,
+          0.004856492392718792,
+          0.05157247558236122
+        ],
+        [
+          0.08332446217536926,
+          0.05806092172861099,
+          0.0876496434211731
+        ],
+        [
+          0.09915143996477127,
+          0.06793038547039032,
+          0.07748983055353165
+        ],
+        [
+          0.07227779179811478,
+          0.052115410566329956,
+          0.04644644260406494
+        ],
+        [
+          0.0887041985988617,
+          0.03147470951080322,
+          0.016377614811062813
+        ],
+        [
+          0.08296287059783936,
+          0.04424716532230377,
+          0.09571495652198792
+        ],
+        [
+          0.09815213084220886,
+          0.029933154582977295,
+          0.09965410083532333
+        ],
+        [
+          0.0673990547657013,
+          0.013173729181289673,
+          0.07302012294530869
+        ],
+        [
+          0.07857421040534973,
+          -0.004716410301625729,
+          0.03903396800160408
+        ]
+      ],
+      "force": [
+        3.659111738204956,
+        0.0,
+        8.12200927734375,
+        0.0
+      ],
+      "q": [
+        -0.7069031596183777,
+        -0.007295194547623396,
+        -0.028241708874702454,
+        -0.2895461320877075,
+        1.6073360443115234,
+        0.028130799531936646,
+        -0.3327397108078003,
+        1.8430099487304688,
+        -0.0020647512283176184,
+        0.3936610817909241,
+        -1.0871403217315674,
+        0.003395519685000181,
+        0.5091360807418823,
+        -1.059394359588623
+      ],
+      "clearance_m": [
+        3.180466592311859e-07,
+        0.01955210417509079,
+        5.136243999004364e-07,
+        0.029336778447031975
+      ],
+      "knee_clearance_m": [
+        0.04017365351319313,
+        0.06437636911869049
+      ]
+    },
+    {
+      "t": 1.1200000531971455,
+      "body_xyz": [
+        [
+          0.012016814202070236,
+          0.12313858419656754,
+          0.08019817620515823
+        ],
+        [
+          0.012016821652650833,
+          0.12313857674598694,
+          0.08019817620515823
+        ],
+        [
+          -0.0170196034014225,
+          0.11054284125566483,
+          0.0744042918086052
+        ],
+        [
+          -0.053961895406246185,
+          0.09628783911466599,
+          0.04822862893342972
+        ],
+        [
+          -0.03860042989253998,
+          0.10314217209815979,
+          0.04412843659520149
+        ],
+        [
+          -0.01119401678442955,
+          0.0729583129286766,
+          0.027580823749303818
+        ],
+        [
+          -0.050755057483911514,
+          0.04543405398726463,
+          0.014263954013586044
+        ],
+        [
+          -0.053109847009181976,
+          0.08008401095867157,
+          0.07918518036603928
+        ],
+        [
+          -0.03743463754653931,
+          0.0809718444943428,
+          0.0864836573600769
+        ],
+        [
+          -0.004187991842627525,
+          0.05582582950592041,
+          0.07240039110183716
+        ],
+        [
+          -0.04246103763580322,
+          0.026900531724095345,
+          0.05831141024827957
+        ],
+        [
+          0.09048301726579666,
+          0.09997879713773727,
+          0.05712859705090523
+        ],
+        [
+          0.1056848019361496,
+          0.10327247530221939,
+          0.04266558587551117
+        ],
+        [
+          0.07733611762523651,
+          0.0737578272819519,
+          0.02650274895131588
+        ],
+        [
+          0.09126816689968109,
+          0.039648596197366714,
+          0.01093166135251522
+        ],
+        [
+          0.09084896743297577,
+          0.0926055982708931,
+          0.07132373750209808
+        ],
+        [
+          0.1067093163728714,
+          0.0830564796924591,
+          0.0817345678806305
+        ],
+        [
+          0.07557140290737152,
+          0.05436474829912186,
+          0.06976734846830368
+        ],
+        [
+          0.08583415299654007,
+          0.02103317156434059,
+          0.05017955228686333
+        ]
+      ],
+      "force": [
+        0.42492178082466125,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q": [
+        -0.7038988471031189,
+        0.0035016334149986506,
+        -0.0001260285498574376,
+        -0.22779355943202972,
+        1.5858311653137207,
+        0.00012778499512933195,
+        -0.4120761454105377,
+        1.729035496711731,
+        -0.006406296975910664,
+        0.442381352186203,
+        -1.0580289363861084,
+        0.0013510705903172493,
+        0.5315158367156982,
+        -1.0529667139053345
+      ],
+      "clearance_m": [
+        7.683411240577698e-08,
+        0.03620920702815056,
+        0.00029800040647387505,
+        0.04444732517004013
+      ],
+      "knee_clearance_m": [
+        0.0197377260774374,
+        0.06467220187187195
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "created_unix": 1792918579.914903,
+  "status": "candidate only, no training launched",
+  "reason": "v12/v13 and v14 first independent replay have low knee clearance, zero ongoing hind steps; ground termination alone does not penalize hovering",
+  "target_m": 0.015,
+  "reward_weight": -4,
+  "formula": "mean(max((target-knee_shape_clearance)/target,0)^2)",
+  "preserved": "all physical geometry/limits, 52 observations, 12 residual actions, mirror policy, 50% reference, knee contact death, other reward weights"
+}

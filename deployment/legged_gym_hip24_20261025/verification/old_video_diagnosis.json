@@ -1,0 +1,84 @@
+{
+  "scope": "Two old v11-2674 video samples only; 40ms samples, exclude initial 1s. Not 24-environment assessment or a limit-change causal test. DOF order taken from same frozen runtime independent evaluation.",
+  "source": "manual_replays/video_2674_side_720p_final/recording_receipt.json",
+  "source_sha256": "b9b53dee97120abec0151744174557e46351e6b5f956ab2ca8086eb3889d4c44",
+  "dof_names": [
+    "spine_pitch",
+    "spine_roll",
+    "hip_roll",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "R_hip_roll_mimic",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch"
+  ],
+  "created_unix": 1792907779.6331894,
+  "samples": [
+    {
+      "speed_m_s": 0.03,
+      "samples": 376,
+      "hip_mean_deg": [
+        31.081175670314465,
+        31.56107339450436
+      ],
+      "hip_min_deg": [
+        28.399535540583035,
+        28.88191935826248
+      ],
+      "hip_max_deg": [
+        34.560323483252226,
+        34.34452365642567
+      ],
+      "elbow_p95_p05_deg": [
+        4.737181005473538,
+        5.404403402471871
+      ],
+      "knee_mean_deg": [
+        113.1192051741858,
+        112.47368917286595
+      ],
+      "foot_clearance_p95_mm": [
+        1.5786162111908197,
+        1.4804569073021412,
+        0.0003264285624027252,
+        0.00029336661100387573
+      ]
+    },
+    {
+      "speed_m_s": 0.06,
+      "samples": 376,
+      "hip_mean_deg": [
+        32.43383415374708,
+        32.53588336072331
+      ],
+      "hip_min_deg": [
+        28.006270323646625,
+        27.73362624745264
+      ],
+      "hip_max_deg": [
+        35.79130115660694,
+        35.831510480250806
+      ],
+      "elbow_p95_p05_deg": [
+        6.820584216492421,
+        6.638416241139005
+      ],
+      "knee_mean_deg": [
+        112.81156976639286,
+        112.54153598504722
+      ],
+      "foot_clearance_p95_mm": [
+        2.741745673120022,
+        2.715982496738434,
+        2.1886080503463745e-05,
+        2.2817403078079224e-05
+      ]
+    }
+  ]
+}

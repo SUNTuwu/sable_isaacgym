@@ -1,0 +1,94 @@
+{
+  "passed": true,
+  "isolated_cases": {
+    "cases": [
+      "airborne self-contact force",
+      "left knee touching",
+      "right knee touching",
+      "both knees touching",
+      "knee touch coincident with timeout"
+    ],
+    "actual_death": [
+      false,
+      true,
+      true,
+      true,
+      true
+    ],
+    "timeout": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "knee_clearance_m": [
+      [
+        0.04913150891661644,
+        0.049131907522678375
+      ],
+      [
+        0.0004000002518296242,
+        0.049131907522678375
+      ],
+      [
+        0.04913150891661644,
+        0.00039999885484576225
+      ],
+      [
+        0.0004000002518296242,
+        0.00039999885484576225
+      ],
+      [
+        0.0004000002518296242,
+        0.049131907522678375
+      ]
+    ],
+    "passed": true
+  },
+  "posture_reward_cases": {
+    "standing_zero": 0.0,
+    "left_low": 0.47368890047073364,
+    "right_low": 0.4736890196800232,
+    "both_low": 0.9473779201507568,
+    "passed": true
+  },
+  "forced_physical_contact": [
+    {
+      "step": 0,
+      "done": true,
+      "fall": true,
+      "knee_contact": [
+        true,
+        true
+      ],
+      "clearance_m": [
+        -0.0007185684517025948,
+        -0.0007065520621836185
+      ],
+      "knee_owner_force_n": [
+        26.91094207763672,
+        55.38655471801758
+      ],
+      "timeout": false
+    }
+  ],
+  "contact_margin_m": 0.0005,
+  "control_step_s": 0.020000000949949026,
+  "checked_shapes": [
+    "L_knee_pitch_visual_collision_0",
+    "L_knee_pitch_visual_collision_1",
+    "L_knee_pitch_visual_collision_2",
+    "R_knee_pitch_visual_collision_0",
+    "R_knee_pitch_visual_collision_1",
+    "R_knee_pitch_visual_collision_2"
+  ],
+  "source_sha256": {
+    "sable_env.py": "4bd4939d385e62c4540df71f7db6e70ef302ab4b9a819dacbb1b134775feb57f",
+    "sable_config.py": "e6b1738b0747f8aab1b1dac04b9475fcbca7d6d52afd0ff555384aedd49e6568",
+    "knee_contact.py": "478f8ab07f9aa8acb771da98220f01c031e22acaccd00a8d4d91c85e975656cd",
+    "check_knee_termination.py": "a07822da23b16e07b4b7c343d42b92ee1af6094d391bbde8dd0f44236f027a80",
+    "assets/sable.xml": "16dfa3fb0e3a2c563cb533a81288b841e3e4601407d5a11a67d4eea210c0e92c"
+  },
+  "scope": "Single-step left/right/both termination, self-contact rejection, no timeout bootstrap on death, and real forced-plane collision. Normal 16s standing is checked separately."
+}

@@ -1,0 +1,9 @@
+{
+  "first_48_columns_preserved": true,
+  "clock_columns_start_zero": true,
+  "other_weights_preserved": true,
+  "exploration_std_008": true,
+  "optimizer_empty": true,
+  "passed": true,
+  "source_train_sha256": "60d486a775c82f9556e8842962098ff3bebc00774afec30158a1af42301a9730"
+}

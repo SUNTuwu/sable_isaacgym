@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "normal_integrated_range_reward": [
+    0.8000000200137402,
+    0.0
+  ],
+  "oscillatory_reward_and_reversal_cost": [
+    0.7999998474121094,
+    30.39999420166017
+  ],
+  "park": [
+    0.0,
+    0.0
+  ],
+  "backward_foot": [
+    0.0,
+    0.0
+  ],
+  "contact_chatter": [
+    0.0,
+    0.0
+  ],
+  "dt01": [
+    0.799999991403511,
+    0.0
+  ],
+  "reset_has_no_reward": true,
+  "hip_free_max_deg": -19,
+  "hip_boundary_checked": true,
+  "directed_foot_angle_deg": [
+    0.0,
+    90.0,
+    120.0
+  ],
+  "foot_negative_cost_survives_clipping": true,
+  "scope": "Synthetic reward/geometry convention checks, not learned gait evidence",
+  "source_sha256": {
+    "ankle_stance.py": "1a7962683d25cce9b31c2ea23bca172a6c49390abc8f1e2d5e259b86a1ca27c3",
+    "sable_env.py": "1197f235367a7ff909c84c10aa1d88f84f012ca97c995fb07a65f97217d5a2ac",
+    "sable_config.py": "f3aed2a3fda62afb282ccd9c9fed8e35c86987ea771f24e7fdaa63a077232a92",
+    "gait_support.py": "e69a697398eedae274857dc4295ceba3694d8f2d256506e5fba5822400f7252f"
+  }
+}

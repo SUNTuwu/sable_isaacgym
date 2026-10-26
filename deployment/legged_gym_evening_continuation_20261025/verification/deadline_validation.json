@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "phase": "guided",
+  "reference_strength": 0.5,
+  "mirror_policy": true,
+  "tested_same_supervisor": true,
+  "supervisor_sha256": "3d6ebf2e59425feb2c42a0690663008addb0436f1fbdf2b578e6b7c723c3152d",
+  "test_archive": "deadline_stop_backup_verified.tar.gz",
+  "test_archive_sha256": "62e4c0d50956bb8f9ffb0ce56a00d98b54c77096a18b8a223eacd97186b73d80",
+  "created_unix": 1792926322.2183096
+}

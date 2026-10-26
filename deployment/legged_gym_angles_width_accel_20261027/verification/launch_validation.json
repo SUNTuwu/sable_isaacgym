@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "real_ppo_updates": 1,
+  "exact_network_transfer_except_std": true,
+  "actor_critic_updated": true,
+  "fresh_optimizer": true,
+  "finite_parameters": true,
+  "contact_phase_direction_and_angle_reward_checks": true,
+  "signed_hind_stride_threshold_and_negative_clipping_checks": true,
+  "physical_assets_unchanged": true,
+  "unchanged_control_parent_24_environment_baseline_reused": true,
+  "width60_and_acceleration_threshold_checked": true,
+  "new_evaluator_two_second_schema_check": true,
+  "positive_stride_height_gate_independent": true,
+  "baseline_new_reward_not_trained": true,
+  "deadline_proof_reused_train_schedule_unchanged_metadata_only": "/root/gpufree-data/projects/sable-isaacgym/runs/hip19_ankle_stance_deadline_smoke_20261026",
+  "parent_sha256": "95a732919c469e6d21cef62bf530b6424282c1b52bd3fe9f0a79b74ebfb6ff93"
+}

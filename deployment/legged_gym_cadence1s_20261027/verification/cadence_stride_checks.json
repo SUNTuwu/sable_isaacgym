@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "period_s": 1.0,
+  "frequency_hz": 1.0,
+  "swing_duration_s": 0.25,
+  "long_stride18_7mm_height_still_rewarded": 0.14476378440856935,
+  "reference_min_limit_margin_deg": 5.732972955276464,
+  "reference_max_ik_error_m": 9.74664560164761e-09,
+  "distance_mm": [
+    -10.0,
+    0.0,
+    25.0,
+    49.0,
+    50.0,
+    51.0,
+    60.0,
+    75.0,
+    100.0,
+    120.0
+  ],
+  "signed_score": [
+    -1.0,
+    -1.0,
+    -0.11920292675495148,
+    -0.0015539202140644193,
+    0.0,
+    0.0015539141604676843,
+    0.022865351289510727,
+    0.11920295655727386,
+    1.0,
+    1.0
+  ],
+  "landing_angles_deg": [
+    0.0,
+    15.0,
+    25.0,
+    35.0,
+    44.0,
+    45.0,
+    46.0,
+    90.0
+  ],
+  "landing_cost": [
+    19.08553695678711,
+    19.08553695678711,
+    6.389056205749512,
+    1.718281865119934,
+    0.10517092049121857,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "short_step": [
+    0.009146143794059754,
+    0.07480241298675537
+  ],
+  "low_backward_velocity_step": [
+    0.0,
+    0.3397540664672852
+  ],
+  "backward_step": [
+    0.0,
+    0.4
+  ],
+  "long_step": [
+    0.14476378440856935,
+    0.0
+  ],
+  "zero_threshold": [
+    0.047681174278259277,
+    0.0
+  ],
+  "drag": [
+    0.0,
+    0.0
+  ],
+  "negative_cost_survives_clipping": true,
+  "source_sha256": {
+    "landing_stride_rewards.py": "dd42f090adeb8f86c8b9c11dd8cdb6cc4def63f4f830d54a24af9188d3bb2886",
+    "stride_progress.py": "9958ab43b2ae09ba00d502cc6f9d3c2ecb3be118d26299193250d092b6fcc0ac",
+    "ankle_phase.py": "de504ff7d39d87c6f83a456b8114b23d049ba5ac8fd01d9cd0ccf1ec851a1c63",
+    "sable_env.py": "f8c96279440be8eed557ed33c4639210f2d789078aeede4a455f4c2e5fc5ef42",
+    "sable_config.py": "9ffb6ad8cf482e28f8f7f202bf9d7f6d06c59c2b13e5fd531fa727b5d8846414",
+    "evaluate.py": "f38a5d4bb7bac68f34106c1faf4eee729d061fff7edf0699d7709ea546866a3f",
+    "train.py": "c1cdf8aabe2faaa8d76c20e39bcc834aec43087fc2a87f1013bfa674ddc4662a",
+    "guided_reference.py": "e6a540ac52de2bbfec074b30833571727be68c9fdb348c160467c83a137fe54b",
+    "assets/gait_reference.json": "083b0549340e41475ecf6558329bc039fc52949bc3c1787f1493af79dbac4ffe"
+  }
+}

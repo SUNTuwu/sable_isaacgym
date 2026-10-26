@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "forward_20_50_80_mm_rewards": [
+    16.0,
+    40.0,
+    40.0
+  ],
+  "50mm_saturation": true,
+  "no_backward_lateral_park_contact_chatter_reward": true,
+  "no_repeat_reward": true,
+  "ankle_weight": 4,
+  "stride_weight": 2.0,
+  "source_sha256": {
+    "stride_progress.py": "2445c88a5014d6404b431ca57f40fcd2ec1783821f2e7376d356aac4c0f65f7f",
+    "sable_env.py": "514c98d2ecbf235a908d0153e9397dca773548306561122bf410e04f7d4a2d91",
+    "gait_support.py": "42782c78385a2540bbd3dd982104ef32c9917e3315a6539158b9ba7a2e607216",
+    "sable_config.py": "a984d2c4b07fe34cf5e528dda2fffc78c3d02e87e1ad57d8520ac9901d83e63a",
+    "train.py": "bb32b7e0384266dda7c31c338b2ccd89331a34e0453fa924bf2a5f811b446767",
+    "evaluate.py": "04470907d9f74a54ef476b0b66f4f84551ae65954a9ba23daadc57114a76338b"
+  }
+}

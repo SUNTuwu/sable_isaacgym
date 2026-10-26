@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "boundary_20mm": true,
+  "negative_cost_survives_clipping": true,
+  "weight": -4,
+  "scope": "Left/right foot-capsule centers, ground XY Euclidean distance, front and hind pairs",
+  "source_sha256": {
+    "sable_env.py": "7bdd4cc6dcdf4301662ad38795cb7db1c97294dba0f8c3448e416ed513313300",
+    "sable_config.py": "d40e3ee1f05cfe41f89ffb23826a4738464a26249ba5f6aa2eecb68db457b07c",
+    "stride_progress.py": "ab9a6f298b85448343663084bd80b37d9cef572e6ea6ab0e04ecda6e832d6103",
+    "evaluate.py": "160ce9c70e236833512a61b78154334b1a34fce8007fea60fb4614ec1b3dc11b"
+  }
+}

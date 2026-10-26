@@ -1,0 +1,627 @@
+{
+  "revision": "straight_waist_v1",
+  "reference_bone": "spine_roll",
+  "reference_height_m": 0.1134643703699112,
+  "input_rig_sha256": "2fa1464a440e131cb23f44287573b41e48719f096a53743c8dacf7d8fe34804e",
+  "output_rig_sha256": "178c95a5d871b58595171b0b4c495d3b107119a9d5c1ff0afa78e70440bce4e9",
+  "source_sha256": "74650ec404d4eb396c35019fcdf78c79b929cd3ee89fc302d82b816288b73341",
+  "source_unchanged": true,
+  "translation_z_mm": {
+    "ROOT": -25.461450219154358,
+    "spine_pitch": -25.461450219154358,
+    "L_shoulder_roll": -3.57789546251297,
+    "R_shoulder_roll": -3.57789546251297
+  },
+  "protected_mesh_vertex_sha256": {
+    "spine_roll_visual": "de36679db889bebe66c4841d47c3c9eaf819f5a2c5ff71bb022b6e8341ccbbff",
+    "L_hip_roll_visual": "8712045159bc2785dedc5dbffe8732bab7a831b86923b4ba5f60628c8e3e5855",
+    "L_shoulder_pitch_visual": "d6f3866ebcb9720f2bea3d18d7fc545cfe209d3f0842e6172c924668882cf904",
+    "L_elbow_pitch_visual": "73128c011938fd227335bbcaafccf7eb3cbcb7d8093808d5ec0798e279d38992",
+    "L_wrist_fixed_visual": "9563469711c2c217434a3fb53045f149748f78b73da1439d01255c09292451cf",
+    "L_hand_visual": "e7d0d52d73188253e074a3eca7ca0aa30776f94a59f37e0433e1092f35490e2a",
+    "L_hip_pitch_visual": "7afc349653b1c67c1e47291f123ef8848d4df34dc12c8c73556ffddc8b6daea9",
+    "L_knee_pitch_visual": "fa683fef2572a07d64d0378ea0266c4960dc4f012e79ade067d2b74e2049420d",
+    "L_ankle_fixed_visual": "f94351e9795774825f9375f331dbd1990f11b018f477d1731bcfa08848ad705b",
+    "L_foot_visual": "f6a1a0698dd3cc325b018415b2c0c0f48beb07cf0126f5531f5ec0850d12ffeb",
+    "R_hip_roll_visual": "a668bea20078af24e68ce4ab99c624bb4e8393ec20d1c43e24e7715a96aeccb2",
+    "R_shoulder_pitch_visual": "1815eef96d5f241573132c30aaf8c13b980460a7705ad51ca43c34815294e8d6",
+    "R_elbow_pitch_visual": "857ad7734b7382c6c32cffcb89c73ee30b0e1fe7caf11420ac9081953b0dbf02",
+    "R_wrist_fixed_visual": "759ceea014c3a42275abb9431aea65d03613f247caef74e4d2ea6ab869273c0c",
+    "R_hand_visual": "4b304efd63a656d1ae5797008afd70b3d7fd4734fe6aea4234c87c59e7756418",
+    "R_hip_pitch_visual": "df90d8ff187a623f5079fbcf6cbfacbb6727af9f8eebd5bf0d47b68fa73b8307",
+    "R_knee_pitch_visual": "df5c5b48680ccd2e5effa6f1be3dd0c410074e5e0ef61be47481c08730a79d30",
+    "R_ankle_fixed_visual": "f6fd21d45649a7f57f7a0407221b9ca494132e2068a2b801a29792aebe149fb0",
+    "R_foot_visual": "e3332b991c9462b78165437b055d75629103b2290e34447ab8f132343dc3dbf9"
+  },
+  "protected_bones": {
+    "spine_roll": {
+      "head": [
+        -0.03317663446068764,
+        -1.1641532182693481e-10,
+        0.1134643703699112
+      ],
+      "tail": [
+        -0.019176634028553963,
+        -1.1641532182693481e-10,
+        0.1134643703699112
+      ]
+    },
+    "hip_roll": {
+      "head": [
+        -0.07853864133358002,
+        0.017475686967372894,
+        0.11682498455047607
+      ],
+      "tail": [
+        -0.06453864276409149,
+        0.017475686967372894,
+        0.11682498455047607
+      ]
+    },
+    "L_hip_pitch": {
+      "head": [
+        -0.052731480449438095,
+        0.028910867869853973,
+        0.10391122102737427
+      ],
+      "tail": [
+        -0.052731480449438095,
+        0.0429108664393425,
+        0.10391122102737427
+      ]
+    },
+    "L_knee_pitch": {
+      "head": [
+        -0.052731480449438095,
+        0.028910867869853973,
+        0.06057366728782654
+      ],
+      "tail": [
+        -0.052731480449438095,
+        0.0429108664393425,
+        0.06057366728782654
+      ]
+    },
+    "L_ankle_fixed": {
+      "head": [
+        -0.052731480449438095,
+        0.028910867869853973,
+        0.021156389266252518
+      ],
+      "tail": [
+        -0.052731480449438095,
+        0.0429108664393425,
+        0.021156389266252518
+      ]
+    },
+    "R_hip_roll_mimic": {
+      "head": [
+        -0.07853864133358002,
+        -0.017475686967372894,
+        0.11682498455047607
+      ],
+      "tail": [
+        -0.06453864276409149,
+        -0.017475686967372894,
+        0.11682498455047607
+      ]
+    },
+    "R_hip_pitch": {
+      "head": [
+        -0.052731480449438095,
+        -0.028910867869853973,
+        0.10391122102737427
+      ],
+      "tail": [
+        -0.052731480449438095,
+        -0.014910867437720299,
+        0.10391122102737427
+      ]
+    },
+    "R_knee_pitch": {
+      "head": [
+        -0.052731480449438095,
+        -0.028910867869853973,
+        0.06057366728782654
+      ],
+      "tail": [
+        -0.052731480449438095,
+        -0.014910867437720299,
+        0.06057366728782654
+      ]
+    },
+    "R_ankle_fixed": {
+      "head": [
+        -0.052731480449438095,
+        -0.028910867869853973,
+        0.021156389266252518
+      ],
+      "tail": [
+        -0.052731480449438095,
+        -0.014910867437720299,
+        0.021156389266252518
+      ]
+    },
+    "L_shoulder_pitch": {
+      "head": [
+        0.08093786984682083,
+        0.023999083787202835,
+        0.10391122102737427
+      ],
+      "tail": [
+        0.08093786984682083,
+        0.03799908608198166,
+        0.10391122102737427
+      ]
+    },
+    "L_elbow_pitch": {
+      "head": [
+        0.08093786984682083,
+        0.023999083787202835,
+        0.05951943248510361
+      ],
+      "tail": [
+        0.08093786984682083,
+        0.03799908608198166,
+        0.05951943248510361
+      ]
+    },
+    "L_wrist_fixed": {
+      "head": [
+        0.08093786984682083,
+        0.023999083787202835,
+        0.02053750306367874
+      ],
+      "tail": [
+        0.08093786984682083,
+        0.03799908608198166,
+        0.02053750306367874
+      ]
+    },
+    "R_shoulder_pitch": {
+      "head": [
+        0.08093786984682083,
+        -0.023999083787202835,
+        0.10391122102737427
+      ],
+      "tail": [
+        0.08093786984682083,
+        -0.00999908335506916,
+        0.10391122102737427
+      ]
+    },
+    "R_elbow_pitch": {
+      "head": [
+        0.08093786984682083,
+        -0.023999083787202835,
+        0.05951943248510361
+      ],
+      "tail": [
+        0.08093786984682083,
+        -0.00999908335506916,
+        0.05951943248510361
+      ]
+    },
+    "R_wrist_fixed": {
+      "head": [
+        0.08093786984682083,
+        -0.023999083787202835,
+        0.02053750306367874
+      ],
+      "tail": [
+        0.08093786984682083,
+        -0.00999908335506916,
+        0.02053750306367874
+      ]
+    }
+  },
+  "keyframes_preserved": true,
+  "limits_preserved": true,
+  "before_actions": [
+    {
+      "name": "StandPose_EDIT_ME",
+      "curves": [
+        {
+          "path": "pose.bones[\"ROOT\"].location",
+          "index": 0,
+          "keys": [
+            [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ],
+              [
+                2.0,
+                0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"ROOT\"].location",
+          "index": 1,
+          "keys": [
+            [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ],
+              [
+                2.0,
+                0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"ROOT\"].location",
+          "index": 2,
+          "keys": [
+            [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ],
+              [
+                2.0,
+                0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"ROOT\"].rotation_euler",
+          "index": 0,
+          "keys": [
+            [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ],
+              [
+                2.0,
+                0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"ROOT\"].rotation_euler",
+          "index": 1,
+          "keys": [
+            [
+              [
+                1.0,
+                -0.0
+              ],
+              [
+                0.0,
+                -0.0
+              ],
+              [
+                2.0,
+                -0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"ROOT\"].rotation_euler",
+          "index": 2,
+          "keys": [
+            [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0
+              ],
+              [
+                2.0,
+                0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"spine_pitch\"].rotation_euler",
+          "index": 1,
+          "keys": [
+            [
+              [
+                1.0,
+                -0.0
+              ],
+              [
+                0.0,
+                -0.0
+              ],
+              [
+                2.0,
+                -0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"spine_roll\"].rotation_euler",
+          "index": 1,
+          "keys": [
+            [
+              [
+                1.0,
+                -0.0
+              ],
+              [
+                0.0,
+                -0.0
+              ],
+              [
+                2.0,
+                -0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"hip_roll\"].rotation_euler",
+          "index": 1,
+          "keys": [
+            [
+              [
+                1.0,
+                -0.0
+              ],
+              [
+                0.0,
+                -0.0
+              ],
+              [
+                2.0,
+                -0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"L_hip_pitch\"].rotation_euler",
+          "index": 1,
+          "keys": [
+            [
+              [
+                1.0,
+                -0.0
+              ],
+              [
+                0.0,
+                -0.0
+              ],
+              [
+                2.0,
+                -0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"L_knee_pitch\"].rotation_euler",
+          "index": 1,
+          "keys": [
+            [
+              [
+                1.0,
+                -0.0
+              ],
+              [
+                0.0,
+                -0.0
+              ],
+              [
+                2.0,
+                -0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"R_hip_pitch\"].rotation_euler",
+          "index": 1,
+          "keys": [
+            [
+              [
+                1.0,
+                -0.0
+              ],
+              [
+                0.0,
+                -0.0
+              ],
+              [
+                2.0,
+                -0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"R_knee_pitch\"].rotation_euler",
+          "index": 1,
+          "keys": [
+            [
+              [
+                1.0,
+                -0.0
+              ],
+              [
+                0.0,
+                -0.0
+              ],
+              [
+                2.0,
+                -0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"L_shoulder_roll\"].rotation_euler",
+          "index": 1,
+          "keys": [
+            [
+              [
+                1.0,
+                -0.0
+              ],
+              [
+                0.0,
+                -0.0
+              ],
+              [
+                2.0,
+                -0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"L_shoulder_pitch\"].rotation_euler",
+          "index": 1,
+          "keys": [
+            [
+              [
+                1.0,
+                -0.0
+              ],
+              [
+                0.0,
+                -0.0
+              ],
+              [
+                2.0,
+                -0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"L_elbow_pitch\"].rotation_euler",
+          "index": 1,
+          "keys": [
+            [
+              [
+                1.0,
+                -0.0
+              ],
+              [
+                0.0,
+                -0.0
+              ],
+              [
+                2.0,
+                -0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"R_shoulder_roll\"].rotation_euler",
+          "index": 1,
+          "keys": [
+            [
+              [
+                1.0,
+                -0.0
+              ],
+              [
+                0.0,
+                -0.0
+              ],
+              [
+                2.0,
+                -0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"R_shoulder_pitch\"].rotation_euler",
+          "index": 1,
+          "keys": [
+            [
+              [
+                1.0,
+                -0.0
+              ],
+              [
+                0.0,
+                -0.0
+              ],
+              [
+                2.0,
+                -0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        },
+        {
+          "path": "pose.bones[\"R_elbow_pitch\"].rotation_euler",
+          "index": 1,
+          "keys": [
+            [
+              [
+                1.0,
+                -0.0
+              ],
+              [
+                0.0,
+                -0.0
+              ],
+              [
+                2.0,
+                -0.0
+              ],
+              "BEZIER"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "instruction": "Use user annotated horizontal waist instead of raised waist in draft; rear motors unchanged"
+}

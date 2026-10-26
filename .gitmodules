@@ -1,0 +1,6 @@
+[submodule "vendor/legged_gym"]
+	path = vendor/legged_gym
+	url = https://github.com/leggedrobotics/legged_gym.git
+[submodule "vendor/rsl_rl"]
+	path = vendor/rsl_rl
+	url = https://github.com/leggedrobotics/rsl_rl.git
