@@ -7,12 +7,12 @@
     "verified": true,
     "manifest": "planning/cmd16_hist6_baseline/teacher_manifest.json"
   },
-  "current_run": "runs/cmd16_hist6_s3_ppo_20261027_061709",
-  "current_deadline": "2026-10-27T06:37:09.436660+08:00",
+  "current_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_064005",
+  "current_deadline": "2026-10-27T07:00:05.424139+08:00",
   "current_processes": {
-    "supervisor": 407480,
-    "training": 407484,
-    "evaluation_video_monitor": 407549
+    "training_pid": 418153,
+    "monitor_pid": 418221,
+    "supervisor_pid": 418059
   },
   "pre_migration_commit": "a95854cf4042b7994731e7a02d9761be8fd195d7",
   "latest_pushed_commit": "a868850",
@@ -120,5 +120,23 @@
     "evidence": "runs/cmd16_hist6_s2_acceptance_20261027_055701/reports/assessment.json",
     "survived": 144,
     "episodes": 144
-  }
+  },
+  "updated_at": "2026-10-27T06:40:50.341548",
+  "current_stage": "S3_PPO_moving_start",
+  "latest_findings": {
+    "prior_s3_final_checkpoint": 206,
+    "prior_s3_final_survival": "56/56",
+    "new_direction_acceptance": false,
+    "moving_start_curriculum": "75% of novel moving-command samples start at vx0.105 for2s then smoothly reach the target over2s;25% direct. Evaluation remains direct from rest. Student actions only.",
+    "parallel_environments": 2048,
+    "real_ppo_and_command_timing_validation": "results/cmd16_hist6/moving_start_validation.json",
+    "deployment_log_parity": "400 control samples,28 environments,CPU action maxerror9.54e-7/GPU0; target maxerror3.58e-7/1.19e-7rad; CPUhistory+clock+policy0.474ms",
+    "export_probe": "results/cmd16_hist6/export_trace_probe_v2_20261027_0638/contract.json",
+    "source_commit": "d8c139b"
+  },
+  "remaining_acceptance": [
+    "S3 translation/yaw including direct starts and switches, actual stepping, three seeds",
+    "S5 genuine foot-event frequency0.8/1.2 and two-way switching, three seeds",
+    "Export accepted final checkpoint and replay same recorded inputs onCPU/CUDA"
+  ]
 }
