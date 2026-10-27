@@ -24,11 +24,19 @@ def main():
     p.add_argument('--checkpoint',type=Path)
     p.add_argument('--select-best-regression',action='store_true')
     p.add_argument('--num-envs',type=int,default=1024)
+    p.add_argument('--frontier-alpha',type=float)
+    p.add_argument('--frontier-evidence',type=Path)
+    p.add_argument('--require-normal-completion',action='store_true')
     a=p.parse_args()
     parent=a.parent_run.resolve()
     until=time.time()+1800
     while time.time()<until:
         state=read_json(parent/'status.json',{})
+        if a.require_normal_completion:
+            if state.get('status') in ('stopped_requested','failed') or (parent/'STOP').exists():
+                raise RuntimeError('Queued progression cancelled: parent stopped or failed')
+            if read_json(ROOT/'results/cmd16_hist6/current_migration.json',{}).get('run')!=str(parent):
+                raise RuntimeError('Queued progression cancelled: active run changed')
         if state.get('status') in ('stopped_requested','stopped_at_deadline','iterations_complete') and (parent/'backup_receipt.json').exists():break
         time.sleep(3)
     else:raise RuntimeError('Parent did not finish its saved/archive cycle')
@@ -44,9 +52,33 @@ def main():
         assert a.checkpoint.resolve().parent==parent/'checkpoints'
         cp=dict(path=str(a.checkpoint.resolve()),sha256=sha256(a.checkpoint))
     assert sha256(cp['path'])==cp['sha256']
+    with tarfile.open(receipt['archive'],'r:gz')as tar:
+        member=parent.name+'/checkpoints/'+Path(cp['path']).name
+        assert hashlib.sha256(tar.extractfile(member).read()).hexdigest()==cp['sha256']
     parent_config=read_json(parent/'config.json',{})
     continuation=parent_config.get('stage')==a.stage and 'on-policy PPO' in parent_config.get('algorithm','')
     expected_config=student_config(read_json(parent/'teacher_manifest.json')['run'],a.stage,a.num_envs)
+    parent_alpha=parent_config.get('command_frontier',{}).get('training_alpha') if parent_config.get('stage')=='S3' else None
+    frontier_alpha=1.;frontier_gate=None
+    if a.stage=='S3':
+        frontier_alpha=a.frontier_alpha if a.frontier_alpha is not None else (
+            parent_alpha if parent_alpha is not None else expected_config.migration.training_frontier_alpha)
+        if not 0.<=frontier_alpha<=1.:raise ValueError('Frontier alpha must be in[0,1]')
+        if parent_alpha is not None and frontier_alpha!=parent_alpha:
+            if not a.frontier_evidence:raise ValueError('Changed command frontier requires measured progression evidence')
+            frontier_gate=read_json(a.frontier_evidence)
+            assert frontier_gate['schema']=='s3_frontier_progression_v1' and frontier_gate['passed']
+            assert not frontier_gate['full_S3_accepted'] and frontier_gate['training_alpha']==parent_alpha
+            assert frontier_gate['checkpoint_sha256']==cp['sha256']
+            assert parent_alpha<frontier_alpha<=min(1.,parent_alpha+.125)
+            sources=frontier_gate['sources']
+            for item in sources.values():assert sha256(item['path'])==item['sha256']
+            assert sources['baseline']['sha256']==sha256(parent/'baseline_metrics.json')
+            from evaluate_frontier import assess_frontier
+            verified=assess_frontier(read_json(sources['frontier']['path']),read_json(sources['endpoint']['path']),
+                read_json(parent/'baseline_metrics.json'),parent_alpha)
+            assert verified['passed'] and verified['checkpoint_sha256']==cp['sha256']
+    elif a.frontier_alpha not in (None,1.):raise ValueError('Only S3 permits intermediate velocity commands')
     same_rewards=(parent_config.get('reward_weights')==vars(expected_config.rewards.scales)
                   and parent_config.get('velocity_error_scale_m_s')==expected_config.migration.velocity_error_scale_m_s)
     same_rewards &= parent_config.get('unclipped_gait_costs',False)==expected_config.migration.unclipped_gait_costs
@@ -80,6 +112,7 @@ def main():
     for n in ('teacher_manifest.json','baseline_metrics.json'):shutil.copy2(parent/n,run/n)
     if gate_source:shutil.copy2(gate_source,run/'parent_acceptance.json')
     if selection:atomic_json(run/'parent_checkpoint_selection.json',selection)
+    if frontier_gate:atomic_json(run/'frontier_progression.json',frontier_gate)
     files={str(f.relative_to(runtime)):sha256(f) for f in runtime.rglob('*') if f.is_file()}
     atomic_json(run/'runtime_manifest.json',{'files':files,'created_unix':time.time()})
     prefs=read_json(ROOT/'results/legged_gym/training_preferences.json')
@@ -89,7 +122,12 @@ def main():
         '--resume',cp['path'],'--deadline',deadline,'--stage',a.stage,'--num-envs',str(a.num_envs),
         '--critic-warmup-updates','0' if continuation and same_rewards and same_curriculum and same_exploration and same_training_code else '10']
     if restore_optimizer:cmd.append('--restore-optimizer')
-    atomic_json(run/'launch.json',{'command':cmd,'deadline':deadline,'preferences':prefs,'parent':cp,'stage':a.stage+'_PPO','automatic_resume':False})
+    if a.stage=='S3':cmd+=['--frontier-alpha',str(frontier_alpha)]
+    if a.require_normal_completion:
+        assert read_json(ROOT/'results/cmd16_hist6/current_migration.json',{}).get('run')==str(parent)
+        assert not (parent/'STOP').exists()
+    atomic_json(run/'launch.json',{'command':cmd,'deadline':deadline,'preferences':prefs,'parent':cp,'stage':a.stage+'_PPO',
+        'frontier_alpha':frontier_alpha,'parent_frontier_alpha':parent_alpha,'automatic_resume':False})
     with (run/'train.log').open('w') as log:training=subprocess.Popen(cmd,stdout=log,stderr=subprocess.STDOUT)
     until=time.time()+150
     while time.time()<until and not (run/'status.json').exists():

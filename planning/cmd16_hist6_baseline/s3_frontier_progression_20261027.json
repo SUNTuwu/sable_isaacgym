@@ -1,0 +1,829 @@
+{
+  "created_at": "2026-10-27T11:01:30.851805+08:00",
+  "scope": "Intermediate curriculum advancement, not full S3 acceptance",
+  "measured_gates": {
+    "0.25": {
+      "schema": "s3_frontier_progression_v1",
+      "stage": "S3_frontier",
+      "training_alpha": 0.25,
+      "passed": true,
+      "failures": [],
+      "checkpoint_sha256": "80efbcae4f966bd6fc6e97abb2333d8575364a3f738a4fa98363f2cbc9376547",
+      "maximum_next_alpha": 0.375,
+      "full_S3_accepted": false,
+      "selected_rows": [
+        {
+          "family": "reverse",
+          "alpha": 0.25,
+          "actual_command": [
+            0.06875,
+            0.0,
+            0.0
+          ],
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.02968607097864151,
+          "yaw_rmse_rad_s": 0.2116302102804184,
+          "mean_actual": [
+            0.061361148953437805,
+            -0.0004927297704853117,
+            0.016534751281142235
+          ],
+          "steps_per_foot": [
+            58.0,
+            59.0,
+            59.0,
+            59.0
+          ],
+          "minimum_steps_per_foot": 7,
+          "four_foot_stepping_fraction": 1.0,
+          "actual_frequency_from_mean_interval_hz": [
+            1.0,
+            1.0,
+            1.0,
+            1.000363826751709
+          ],
+          "interval_count_per_foot": [
+            54.0,
+            55.0,
+            55.0,
+            55.0
+          ],
+          "clearance_p95_per_foot_m": [
+            0.012770536355674267,
+            0.012763053178787231,
+            0.00784884113818407,
+            0.007033475674688816
+          ]
+        },
+        {
+          "family": "left",
+          "alpha": 0.25,
+          "actual_command": [
+            0.07875,
+            0.01,
+            0.0
+          ],
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.026259645819664,
+          "yaw_rmse_rad_s": 0.17783819139003754,
+          "mean_actual": [
+            0.07218117266893387,
+            0.0036711934953927994,
+            0.021633002907037735
+          ],
+          "steps_per_foot": [
+            57.0,
+            59.0,
+            60.0,
+            60.0
+          ],
+          "minimum_steps_per_foot": 7,
+          "four_foot_stepping_fraction": 1.0,
+          "actual_frequency_from_mean_interval_hz": [
+            1.0,
+            1.0,
+            0.9996429681777954,
+            1.0
+          ],
+          "interval_count_per_foot": [
+            53.0,
+            55.0,
+            56.0,
+            56.0
+          ],
+          "clearance_p95_per_foot_m": [
+            0.013797663152217865,
+            0.014197221025824547,
+            0.013821065425872803,
+            0.014227291569113731
+          ]
+        },
+        {
+          "family": "right",
+          "alpha": 0.25,
+          "actual_command": [
+            0.07875,
+            -0.01,
+            0.0
+          ],
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.02578873746097088,
+          "yaw_rmse_rad_s": 0.18839669227600098,
+          "mean_actual": [
+            0.07305796444416046,
+            -0.00757870776578784,
+            0.025987349450588226
+          ],
+          "steps_per_foot": [
+            59.0,
+            58.0,
+            59.0,
+            60.0
+          ],
+          "minimum_steps_per_foot": 7,
+          "four_foot_stepping_fraction": 1.0,
+          "actual_frequency_from_mean_interval_hz": [
+            1.0,
+            0.9996297359466553,
+            1.0,
+            1.0
+          ],
+          "interval_count_per_foot": [
+            55.0,
+            54.0,
+            55.0,
+            56.0
+          ],
+          "clearance_p95_per_foot_m": [
+            0.014602313749492168,
+            0.013671978376805782,
+            0.014908457174897194,
+            0.012897804379463196
+          ]
+        },
+        {
+          "family": "turn_left",
+          "alpha": 0.25,
+          "actual_command": [
+            0.07875,
+            0.0,
+            0.0875
+          ],
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.02558431588113308,
+          "yaw_rmse_rad_s": 0.18060752749443054,
+          "mean_actual": [
+            0.07241222262382507,
+            -0.00040665207779966295,
+            0.0472516305744648
+          ],
+          "steps_per_foot": [
+            59.0,
+            57.0,
+            59.0,
+            60.0
+          ],
+          "minimum_steps_per_foot": 7,
+          "four_foot_stepping_fraction": 1.0,
+          "actual_frequency_from_mean_interval_hz": [
+            1.0,
+            1.0,
+            1.000363826751709,
+            1.0003571510314941
+          ],
+          "interval_count_per_foot": [
+            55.0,
+            53.0,
+            55.0,
+            56.0
+          ],
+          "clearance_p95_per_foot_m": [
+            0.014202729798853397,
+            0.014261992648243904,
+            0.01378990150988102,
+            0.014090918935835361
+          ]
+        },
+        {
+          "family": "turn_right",
+          "alpha": 0.25,
+          "actual_command": [
+            0.07875,
+            0.0,
+            -0.0875
+          ],
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.02525930106639862,
+          "yaw_rmse_rad_s": 0.19212639331817627,
+          "mean_actual": [
+            0.07338552176952362,
+            -0.0036578814033418894,
+            0.003820342943072319
+          ],
+          "steps_per_foot": [
+            57.0,
+            59.0,
+            59.0,
+            59.0
+          ],
+          "minimum_steps_per_foot": 7,
+          "four_foot_stepping_fraction": 1.0,
+          "actual_frequency_from_mean_interval_hz": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "interval_count_per_foot": [
+            53.0,
+            55.0,
+            55.0,
+            55.0
+          ],
+          "clearance_p95_per_foot_m": [
+            0.01433553732931614,
+            0.014013925567269325,
+            0.015452251769602299,
+            0.013254481367766857
+          ]
+        }
+      ],
+      "scope": "One-seed intermediate curriculum progression only. All five direction paths, actual four-foot events/cadence, motion response and unchanged old-domain gates. Full S3 endpoints still require the original three-seed acceptance.",
+      "sources": {
+        "frontier": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/frontier_independent_20261027_104229.json",
+          "sha256": "471de345ec55f776c9e437922cf5e263b841ecb0a7df30e54fb0d79fb8ab27ff"
+        },
+        "endpoint": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/evaluations/independent_000027_103959.json",
+          "sha256": "484884323f1316d96b19a9d6bc8428312f21350964b21b6dd640ac3bea9ea60c"
+        },
+        "baseline": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/baseline_metrics.json",
+          "sha256": "8d393336ba59c2e42cf8cca18fdd52f7cc6d5d45b19b2f8002a50873072dc393"
+        }
+      }
+    },
+    "0.375": {
+      "schema": "s3_frontier_progression_v1",
+      "stage": "S3_frontier",
+      "training_alpha": 0.375,
+      "passed": false,
+      "failures": [
+        "reverse:actual_four_foot_steps",
+        "reverse:actual_cadence",
+        "turn_right:axis2_insufficient_response"
+      ],
+      "checkpoint_sha256": "80efbcae4f966bd6fc6e97abb2333d8575364a3f738a4fa98363f2cbc9376547",
+      "maximum_next_alpha": 0.5,
+      "full_S3_accepted": false,
+      "selected_rows": [
+        {
+          "family": "reverse",
+          "alpha": 0.375,
+          "actual_command": [
+            0.050625,
+            0.0,
+            0.0
+          ],
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.03406030312180519,
+          "yaw_rmse_rad_s": 0.20486146211624146,
+          "mean_actual": [
+            0.04277275130152702,
+            -0.0004693008086178452,
+            0.012166453525424004
+          ],
+          "steps_per_foot": [
+            59.0,
+            60.0,
+            28.0,
+            19.0
+          ],
+          "minimum_steps_per_foot": 7,
+          "four_foot_stepping_fraction": 0.0,
+          "actual_frequency_from_mean_interval_hz": [
+            1.0155096054077148,
+            1.0200363397598267,
+            0.546199381351471,
+            0.35731300711631775
+          ],
+          "interval_count_per_foot": [
+            55.0,
+            56.0,
+            24.0,
+            15.0
+          ],
+          "clearance_p95_per_foot_m": [
+            0.011647500097751617,
+            0.011493024416267872,
+            0.0017189376521855593,
+            0.0014271927066147327
+          ]
+        },
+        {
+          "family": "left",
+          "alpha": 0.375,
+          "actual_command": [
+            0.065625,
+            0.015,
+            0.0
+          ],
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.030857989564538002,
+          "yaw_rmse_rad_s": 0.19245538115501404,
+          "mean_actual": [
+            0.060066163539886475,
+            0.006012504920363426,
+            0.03543415293097496
+          ],
+          "steps_per_foot": [
+            58.0,
+            58.0,
+            59.0,
+            60.0
+          ],
+          "minimum_steps_per_foot": 7,
+          "four_foot_stepping_fraction": 1.0,
+          "actual_frequency_from_mean_interval_hz": [
+            1.0003705024719238,
+            1.0,
+            0.9999999403953552,
+            1.0003571510314941
+          ],
+          "interval_count_per_foot": [
+            54.0,
+            54.0,
+            55.0,
+            56.0
+          ],
+          "clearance_p95_per_foot_m": [
+            0.012120606377720833,
+            0.013118170201778412,
+            0.007923244498670101,
+            0.007315932773053646
+          ]
+        },
+        {
+          "family": "right",
+          "alpha": 0.375,
+          "actual_command": [
+            0.065625,
+            -0.015,
+            0.0
+          ],
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.029716653749346733,
+          "yaw_rmse_rad_s": 0.2069397121667862,
+          "mean_actual": [
+            0.06065351516008377,
+            -0.008040385320782661,
+            0.0024582045152783394
+          ],
+          "steps_per_foot": [
+            58.0,
+            58.0,
+            59.0,
+            59.0
+          ],
+          "minimum_steps_per_foot": 7,
+          "four_foot_stepping_fraction": 1.0,
+          "actual_frequency_from_mean_interval_hz": [
+            1.0,
+            1.0003705024719238,
+            1.0010920763015747,
+            1.000363826751709
+          ],
+          "interval_count_per_foot": [
+            54.0,
+            54.0,
+            55.0,
+            55.0
+          ],
+          "clearance_p95_per_foot_m": [
+            0.013313179835677147,
+            0.01209917850792408,
+            0.006771311163902283,
+            0.006913003511726856
+          ]
+        },
+        {
+          "family": "turn_left",
+          "alpha": 0.375,
+          "actual_command": [
+            0.065625,
+            0.0,
+            0.13124999999999998
+          ],
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.02978559397161007,
+          "yaw_rmse_rad_s": 0.2273985594511032,
+          "mean_actual": [
+            0.0586697980761528,
+            -0.00012367421004455537,
+            0.07725381851196289
+          ],
+          "steps_per_foot": [
+            58.0,
+            58.0,
+            59.0,
+            60.0
+          ],
+          "minimum_steps_per_foot": 7,
+          "four_foot_stepping_fraction": 1.0,
+          "actual_frequency_from_mean_interval_hz": [
+            0.9996297359466553,
+            1.0003705024719238,
+            1.0,
+            1.0003571510314941
+          ],
+          "interval_count_per_foot": [
+            54.0,
+            54.0,
+            55.0,
+            56.0
+          ],
+          "clearance_p95_per_foot_m": [
+            0.012609820812940598,
+            0.012472829781472683,
+            0.004664869979023933,
+            0.0072592319920659065
+          ]
+        },
+        {
+          "family": "turn_right",
+          "alpha": 0.375,
+          "actual_command": [
+            0.065625,
+            0.0,
+            -0.13124999999999998
+          ],
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.02968396060168743,
+          "yaw_rmse_rad_s": 0.23026204109191895,
+          "mean_actual": [
+            0.05876612663269043,
+            -0.0012381121050566435,
+            -0.04323345050215721
+          ],
+          "steps_per_foot": [
+            59.0,
+            57.0,
+            59.0,
+            59.0
+          ],
+          "minimum_steps_per_foot": 7,
+          "four_foot_stepping_fraction": 1.0,
+          "actual_frequency_from_mean_interval_hz": [
+            1.0,
+            1.0,
+            1.000363826751709,
+            1.0007277727127075
+          ],
+          "interval_count_per_foot": [
+            55.0,
+            53.0,
+            55.0,
+            55.0
+          ],
+          "clearance_p95_per_foot_m": [
+            0.012603800743818283,
+            0.012545477598905563,
+            0.007904177531599998,
+            0.0041110278107225895
+          ]
+        }
+      ],
+      "scope": "One-seed intermediate curriculum progression only. All five direction paths, actual four-foot events/cadence, motion response and unchanged old-domain gates. Full S3 endpoints still require the original three-seed acceptance.",
+      "sources": {
+        "frontier": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/frontier_independent_20261027_104229.json",
+          "sha256": "471de345ec55f776c9e437922cf5e263b841ecb0a7df30e54fb0d79fb8ab27ff"
+        },
+        "endpoint": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/evaluations/independent_000027_103959.json",
+          "sha256": "484884323f1316d96b19a9d6bc8428312f21350964b21b6dd640ac3bea9ea60c"
+        },
+        "baseline": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/baseline_metrics.json",
+          "sha256": "8d393336ba59c2e42cf8cca18fdd52f7cc6d5d45b19b2f8002a50873072dc393"
+        }
+      }
+    },
+    "0.5": {
+      "schema": "s3_frontier_progression_v1",
+      "stage": "S3_frontier",
+      "training_alpha": 0.5,
+      "passed": false,
+      "failures": [
+        "reverse:xy_rmse_m_s",
+        "reverse:yaw_rmse_rad_s",
+        "reverse:actual_four_foot_steps",
+        "reverse:actual_cadence",
+        "reverse:axis0_insufficient_response",
+        "left:xy_rmse_m_s",
+        "left:actual_four_foot_steps",
+        "left:actual_cadence",
+        "left:axis1_insufficient_response",
+        "right:xy_rmse_m_s",
+        "right:actual_four_foot_steps",
+        "right:actual_cadence",
+        "right:axis1_insufficient_response",
+        "turn_left:xy_rmse_m_s",
+        "turn_left:actual_four_foot_steps",
+        "turn_left:actual_cadence",
+        "turn_right:xy_rmse_m_s",
+        "turn_right:actual_four_foot_steps",
+        "turn_right:actual_cadence"
+      ],
+      "checkpoint_sha256": "80efbcae4f966bd6fc6e97abb2333d8575364a3f738a4fa98363f2cbc9376547",
+      "maximum_next_alpha": 0.625,
+      "full_S3_accepted": false,
+      "selected_rows": [
+        {
+          "family": "reverse",
+          "alpha": 0.5,
+          "actual_command": [
+            0.0325,
+            0.0,
+            0.0
+          ],
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.04536278545856476,
+          "yaw_rmse_rad_s": 0.4897770285606384,
+          "mean_actual": [
+            0.004561429377645254,
+            -0.0007342928438447416,
+            0.017928551882505417
+          ],
+          "steps_per_foot": [
+            59.0,
+            59.0,
+            4.0,
+            3.0
+          ],
+          "minimum_steps_per_foot": 7,
+          "four_foot_stepping_fraction": 0.0,
+          "actual_frequency_from_mean_interval_hz": [
+            1.001456618309021,
+            1.0018212795257568,
+            1.0,
+            null
+          ],
+          "interval_count_per_foot": [
+            55.0,
+            55.0,
+            1.0,
+            0.0
+          ],
+          "clearance_p95_per_foot_m": [
+            0.00755511736497283,
+            0.007224690169095993,
+            0.0013190997997298837,
+            0.0010186857543885708
+          ]
+        },
+        {
+          "family": "left",
+          "alpha": 0.5,
+          "actual_command": [
+            0.0525,
+            0.02,
+            0.0
+          ],
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.05231223255395889,
+          "yaw_rmse_rad_s": 0.25891566276550293,
+          "mean_actual": [
+            0.028685791417956352,
+            0.0023458334617316723,
+            -0.07202285528182983
+          ],
+          "steps_per_foot": [
+            60.0,
+            58.0,
+            57.0,
+            1.0
+          ],
+          "minimum_steps_per_foot": 7,
+          "four_foot_stepping_fraction": 0.0,
+          "actual_frequency_from_mean_interval_hz": [
+            1.0028653144836426,
+            1.0,
+            0.9996227622032166,
+            null
+          ],
+          "interval_count_per_foot": [
+            56.0,
+            54.0,
+            53.0,
+            0.0
+          ],
+          "clearance_p95_per_foot_m": [
+            0.010870525613427162,
+            0.013647997751832008,
+            0.005145094823092222,
+            7.703897608735133e-07
+          ]
+        },
+        {
+          "family": "right",
+          "alpha": 0.5,
+          "actual_command": [
+            0.0525,
+            -0.02,
+            0.0
+          ],
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.05233609303832054,
+          "yaw_rmse_rad_s": 0.2582351863384247,
+          "mean_actual": [
+            0.028558043763041496,
+            -0.0027151561807841063,
+            0.07559453696012497
+          ],
+          "steps_per_foot": [
+            56.0,
+            60.0,
+            2.0,
+            57.0
+          ],
+          "minimum_steps_per_foot": 7,
+          "four_foot_stepping_fraction": 0.0,
+          "actual_frequency_from_mean_interval_hz": [
+            0.9984638094902039,
+            1.0035841464996338,
+            null,
+            0.963986873626709
+          ],
+          "interval_count_per_foot": [
+            52.0,
+            56.0,
+            0.0,
+            53.0
+          ],
+          "clearance_p95_per_foot_m": [
+            0.0137150464579463,
+            0.01077443640679121,
+            4.2868668970186263e-07,
+            0.004260007757693529
+          ]
+        },
+        {
+          "family": "turn_left",
+          "alpha": 0.5,
+          "actual_command": [
+            0.0525,
+            0.0,
+            0.175
+          ],
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.04633043333888054,
+          "yaw_rmse_rad_s": 0.20559149980545044,
+          "mean_actual": [
+            0.033918920904397964,
+            0.0036206229124218225,
+            0.1385907381772995
+          ],
+          "steps_per_foot": [
+            59.0,
+            58.0,
+            8.0,
+            60.0
+          ],
+          "minimum_steps_per_foot": 7,
+          "four_foot_stepping_fraction": 0.0,
+          "actual_frequency_from_mean_interval_hz": [
+            1.0003637075424194,
+            0.9970456957817078,
+            0.1428571492433548,
+            1.0003572702407837
+          ],
+          "interval_count_per_foot": [
+            55.0,
+            54.0,
+            4.0,
+            56.0
+          ],
+          "clearance_p95_per_foot_m": [
+            0.012989290058612823,
+            0.011612262576818466,
+            3.6507572076516226e-08,
+            0.005371751729398966
+          ]
+        },
+        {
+          "family": "turn_right",
+          "alpha": 0.5,
+          "actual_command": [
+            0.0525,
+            0.0,
+            -0.175
+          ],
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.04592079669237137,
+          "yaw_rmse_rad_s": 0.20754723250865936,
+          "mean_actual": [
+            0.03375248238444328,
+            -0.004771200940012932,
+            -0.12176557630300522
+          ],
+          "steps_per_foot": [
+            60.0,
+            56.0,
+            59.0,
+            4.0
+          ],
+          "minimum_steps_per_foot": 7,
+          "four_foot_stepping_fraction": 0.0,
+          "actual_frequency_from_mean_interval_hz": [
+            1.0093727111816406,
+            0.9999999403953552,
+            0.9989102482795715,
+            0.1249999850988388
+          ],
+          "interval_count_per_foot": [
+            56.0,
+            52.0,
+            55.0,
+            1.0
+          ],
+          "clearance_p95_per_foot_m": [
+            0.011609146371483803,
+            0.01310587115585804,
+            0.00616650702431798,
+            -6.151385605335236e-07
+          ]
+        }
+      ],
+      "scope": "One-seed intermediate curriculum progression only. All five direction paths, actual four-foot events/cadence, motion response and unchanged old-domain gates. Full S3 endpoints still require the original three-seed acceptance.",
+      "sources": {
+        "frontier": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/frontier_independent_20261027_104229.json",
+          "sha256": "471de345ec55f776c9e437922cf5e263b841ecb0a7df30e54fb0d79fb8ab27ff"
+        },
+        "endpoint": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/evaluations/independent_000027_103959.json",
+          "sha256": "484884323f1316d96b19a9d6bc8428312f21350964b21b6dd640ac3bea9ea60c"
+        },
+        "baseline": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/baseline_metrics.json",
+          "sha256": "8d393336ba59c2e42cf8cca18fdd52f7cc6d5d45b19b2f8002a50873072dc393"
+        }
+      }
+    }
+  },
+  "gate_validation": {
+    "valid_measured_report_passed": true,
+    "negative_cases": [
+      {
+        "case": "missing_cadence",
+        "failures": [
+          "reverse:actual_cadence"
+        ]
+      },
+      {
+        "case": "wrong_command",
+        "failures": [
+          "reverse:wrong_intermediate_command"
+        ]
+      },
+      {
+        "case": "wrong_direction",
+        "failures": [
+          "reverse:axis0_insufficient_response"
+        ]
+      },
+      {
+        "case": "short_horizon",
+        "failures": [
+          "frontier_requires16s_and4env_per_family"
+        ]
+      },
+      {
+        "case": "old_survival",
+        "failures": [
+          "old_domain:seed947:start_stop:survival"
+        ]
+      },
+      {
+        "case": "wrong_checkpoint",
+        "failures": [
+          "checkpoint_mismatch"
+        ]
+      }
+    ],
+    "full_S3_accepted": false
+  },
+  "PPO_smoke": {
+    "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_frontier_progress_smoke_20261027_105824",
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_frontier_progress_smoke_20261027_105824/checkpoints/model_000006.pt",
+      "sha256": "ec4d4425d04541b867e77adff06fb5bce3f9339f6c9ea58c83ac343aaf5090a7",
+      "iteration": 6,
+      "reason": "final",
+      "updated_unix": 1793069924.1435413
+    },
+    "updates": 6,
+    "environment_steps": 36864,
+    "optimizer_restored": true,
+    "critic_warmup_updates": 0,
+    "training_alpha": 0.375,
+    "checkpoint_alpha": 0.375,
+    "actual_sampled_command_assertion_passed": true,
+    "changed_tensors": {
+      "actor.": 8,
+      "critic.": 8,
+      "history_encoder.": 10
+    },
+    "reference_execution_calls": 0
+  },
+  "decision": "Advance from validatedalpha.25 to the adjacent unlearnedalpha.375. Five paths all survive16s at.375, but reverse-path hind cadence and right-yaw response still need learning. Preserve all full endpoint and three-seed final gates.",
+  "planned_parent": {
+    "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/checkpoints/model_000027.pt",
+    "sha256": "80efbcae4f966bd6fc6e97abb2333d8575364a3f738a4fa98363f2cbc9376547",
+    "iteration": 27
+  },
+  "startup_guard": "Queued progression cancels after a parent stop/failure or active-run change. Parent archive, chosen checkpoint bytes and progression sources are reverified before launching.",
+  "task_acceptance": false
+}

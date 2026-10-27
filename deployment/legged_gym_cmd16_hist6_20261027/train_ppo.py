@@ -13,7 +13,7 @@ from migration_env import create_migration_env
 from migration_config import student_config
 from history_policy import HistoryActorCritic
 from ppo_history import HistoryPPO, restore_optimizers
-from curriculum import next_frequency_range
+from curriculum import next_frequency_range,command_frontier
 from teacher_adapter import verify_teacher_manifest
 from run_io import atomic_json, append_json, sha256
 
@@ -39,6 +39,7 @@ def main():
     p.add_argument('--learning-rate', type=float, default=5e-5)
     p.add_argument('--seed', type=int, default=44)
     p.add_argument('--restore-optimizer',action='store_true')
+    p.add_argument('--frontier-alpha',type=float)
     a = p.parse_args()
     deadline = datetime.datetime.fromisoformat(a.deadline).timestamp()
     assert deadline > time.time()
@@ -58,6 +59,13 @@ def main():
     env = create_migration_env(cfg, noise=True)
     policy = HistoryActorCritic().to(env.device)
     parent = torch.load(str(a.resume), map_location=env.device)
+    if a.stage=='S3':
+        saved_alpha=parent.get('command_frontier_alpha',parent.get('metrics',{}).get(
+            'training_command_frontier_alpha',cfg.migration.training_frontier_alpha)) if parent.get('stage')=='S3' else cfg.migration.training_frontier_alpha
+        alpha=a.frontier_alpha if a.frontier_alpha is not None else saved_alpha
+        if not 0.<=alpha<=1.:raise ValueError('Frontier alpha must be in[0,1]')
+        cfg.migration.command_frontier_alpha=float(alpha)
+    elif a.frontier_alpha not in (None,1.):raise ValueError('Only S3 uses an intermediate velocity curriculum')
     policy.load_state_dict(parent['model_state_dict'], strict=True)
     policy.novel_command_std_floor=cfg.migration.novel_command_std_floor
     policy.reverse_hind_std_floor=cfg.migration.reverse_hind_std_floor
@@ -128,12 +136,16 @@ def main():
             torch.save(dict(model_state_dict=policy.state_dict(), optimizer_state_dict=algorithm.optimizer.state_dict(),
                 auxiliary_optimizer_state_dict=algorithm.auxiliary_optimizer.state_dict(),
                 iter=iteration, schema=parent['schema'], teacher_sha256=teacher['sha256'],
-                stage=a.stage, frequency_range=list(cfg.migration.command_ranges['frequency']), reason=reason, metrics=metrics), str(part))
+                stage=a.stage, frequency_range=list(cfg.migration.command_ranges['frequency']),
+                command_frontier_alpha=cfg.migration.command_frontier_alpha,reason=reason,metrics=metrics),str(part))
             part.replace(cp)
         atomic_json(a.run/'checkpoint.json', dict(path=str(cp.resolve()), sha256=sha256(cp),
             iteration=iteration, reason=reason, updated_unix=time.time()))
 
     obs, critic = env.reset()
+    if a.stage=='S3':
+        assert torch.allclose(env.moving_start.target,command_frontier(env.training_command_goals,
+            cfg.migration.command_frontier_alpha)),'Actual sampled curriculum differs from checkpoint/config alpha'
     env.last_episode_records = []
     save('initial')
     try:
