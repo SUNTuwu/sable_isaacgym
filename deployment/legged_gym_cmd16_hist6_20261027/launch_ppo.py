@@ -82,6 +82,7 @@ def main():
     same_rewards=(parent_config.get('reward_weights')==vars(expected_config.rewards.scales)
                   and parent_config.get('velocity_error_scale_m_s')==expected_config.migration.velocity_error_scale_m_s)
     same_rewards &= parent_config.get('unclipped_gait_costs',False)==expected_config.migration.unclipped_gait_costs
+    same_rewards &= parent_config.get('yaw_error_scale_rad_s',1.)==expected_config.migration.yaw_error_scale_rad_s
     same_curriculum=parent_config.get('moving_start_curriculum',{}).get('enabled',False)==(a.stage=='S3')
     same_exploration=parent_config.get('minimum_action_std',.02)==expected_config.migration.minimum_action_std
     same_exploration &= parent_config.get('novel_command_std_floor',0.)==expected_config.migration.novel_command_std_floor

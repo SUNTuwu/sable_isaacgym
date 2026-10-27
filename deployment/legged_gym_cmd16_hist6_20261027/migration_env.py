@@ -20,6 +20,7 @@ from curriculum import sample_velocity_commands, MovingStartCurriculum,command_f
 from command_foot_motion import command_velocity_at_feet,desired_foot_velocity,FootCenterVelocity,foot_velocity_cost
 from target_pose_clearance import target_pose_clearance_cost,executed_target_coordinates
 from motor_envelope import motor_torques
+from motion_rewards import yaw_error_cost,angular_tracking_reward
 
 
 class TaskGaitSignals(GaitSignals):
@@ -397,12 +398,15 @@ class MigrationRobot(SableRobot):
         velocity = self.heading_linear_velocity if self.omni else self.base_lin_vel[:, :2]
         return ((velocity-self.commands[:, :2])/self.cfg.migration.velocity_error_scale_m_s).square().sum(1)
 
-    def _reward_yaw_rate_error(self):
+    def _yaw_error_rad_s(self):
         actual = self.heading_yaw_rate if self.omni else self.base_ang_vel[:, 2]
-        return (actual-self.commands[:, 2]).square()
+        return actual-self.commands[:, 2]
+
+    def _reward_yaw_rate_error(self):
+        return yaw_error_cost(self._yaw_error_rad_s(),self.cfg.migration.yaw_error_scale_rad_s)
 
     def _reward_tracking_ang_vel(self):
-        return torch.exp(-self._reward_yaw_rate_error()/.25)
+        return angular_tracking_reward(self._yaw_error_rad_s())
 
     def _reward_feet_air_time(self):
         if not self.omni:

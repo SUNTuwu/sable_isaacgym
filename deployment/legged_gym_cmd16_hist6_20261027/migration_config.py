@@ -35,7 +35,7 @@ def student_config(teacher_run, stage='S2', num_envs=1024):
                         'frequency': [.9, 1.1] if stage=='S5' else [1., 1.]}, target_interpolation='hold_full_target',
         command_foot_velocity_scale_floor_m_s=.04,
         command_frontier_alpha=1., training_frontier_alpha=.25,
-        velocity_error_scale_m_s=.05, moving_start_training=False,
+        velocity_error_scale_m_s=.05, yaw_error_scale_rad_s=1., moving_start_training=False,
         moving_start_fraction=.75, moving_start_hold_s=2., moving_start_blend_s=2.)
     # The full-target student can otherwise trade increased lateral oscillation
     # for the old stride/clearance costs when positive reward is clipped to zero.
@@ -55,6 +55,8 @@ def student_config(teacher_run, stage='S2', num_envs=1024):
         cfg.rewards.scales.tracking_lin_vel = 8.
         cfg.rewards.scales.tracking_ang_vel = 3.
         cfg.rewards.scales.yaw_rate_error = -2.
+        # Global .35 normalization improved turning but regressed old walking
+        # in its independent PPO probe. Keep the verified physical-unit cost.
         # Keep per-step survival preferable to an early terminal transition
         # while restoring the clearance signal previously lost to clipping.
         cfg.rewards.scales.command_foot_velocity = -2.
