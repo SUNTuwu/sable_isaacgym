@@ -47,6 +47,8 @@ class EvaluationTelemetry:
         power=tau*v
         # Fixed shapes avoid a host synchronization for every alive mask.
         self.values.append({'pose':pose,'pose_error':pose_error,'contact':contact.float(),
+            'joint_position':q[:,e.active].clone(),'executed_target':s['executed_target'].clone(),
+            'clearance':s['clearance'].clone(),
             'stance_speed':stance_speed,'velocity':v,'acceleration':a,'torque':tau,
             'torque_demand_saturated':saturation,'speed_saturated':speed_saturation,
             'positive_power':power.clamp(min=0).sum(-1),'signed_power':power.sum(-1),
@@ -70,7 +72,29 @@ class EvaluationTelemetry:
             contact=selected['contact'].bool()
             energy=(data['positive_power'][:,sl]*original).sum(0)*self.env.dt
             signed_energy=(data['signed_power'][:,sl]*original).sum(0)*self.env.dt
+            joints=[]
+            if count:
+                position=selected['joint_position'];target=selected['executed_target']
+                quantiles=position.new_tensor([.05,.95])
+                qp=torch.quantile(position,quantiles,dim=0);tp=torch.quantile(target,quantiles,dim=0)
+                error=(target-position).square().mean(0).sqrt()
+                torque=torch.quantile(selected['torque'].abs(),.95,dim=0)
+                speed=torch.quantile(selected['velocity'].abs(),.95,dim=0)
+                limits=self.env.hard_limits[self.env.active]
+                close=((position-limits[:,0]).abs()<=math.pi/180)|((position-limits[:,1]).abs()<=math.pi/180)
+                clipped=(target<=limits[:,0]+1e-5)|(target>=limits[:,1]-1e-5)
+                for j,index in enumerate(self.env.active):
+                    joints.append({'name':self.env.dof_names[int(index)],
+                        'position_mean_deg':float(position[:,j].mean()*180/math.pi),
+                        'position_p05_p95_deg':(qp[:,j]*180/math.pi).cpu().tolist(),
+                        'executed_target_p05_p95_deg':(tp[:,j]*180/math.pi).cpu().tolist(),
+                        'target_tracking_rmse_rad':float(error[j]),'absolute_torque_p95_nm':float(torque[j]),
+                        'absolute_speed_p95_rad_s':float(speed[j]),
+                        'within1deg_of_authoring_limit_fraction':float(close[:,j].float().mean()),
+                        'executed_target_at_limit_fraction':float(clipped[:,j].float().mean())})
             reports[name]={'steady_samples':count,'pose':pose,
+                'per_joint':joints,
+                'foot_clearance_p95_per_foot_m':torch.quantile(selected['clearance'],.95,dim=0).cpu().tolist() if count else None,
                 'actual_contact_fraction_per_foot':selected['contact'].mean(0).cpu().tolist() if count else None,
                 'foot_link_origin_stance_speed_m_s':distribution(selected['stance_speed'][contact]),
                 'joint_abs_velocity_rad_s':distribution(selected['velocity'].abs()),

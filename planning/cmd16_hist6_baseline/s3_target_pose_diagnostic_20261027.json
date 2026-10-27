@@ -1,0 +1,243 @@
+{
+  "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_090015/checkpoints/model_000163.pt",
+  "checkpoint_sha256": "ca0bdd81522b6f27578e05e1354a39acbe9cf4fd37ea4babdd41768888e70408",
+  "groups": [
+    {
+      "name": "forward",
+      "command": [
+        0.105,
+        0.0,
+        0.0
+      ],
+      "survival_fraction": 1.0,
+      "swing_samples_per_foot": [
+        432.0,
+        431.0,
+        421.0,
+        422.0
+      ],
+      "actual_clearance_m": [
+        0.010893809609115124,
+        0.010602627880871296,
+        0.009006999433040619,
+        0.0078047956340014935
+      ],
+      "target_FK_clearance_m": [
+        0.010831326246261597,
+        0.010526501573622227,
+        0.005611431784927845,
+        0.004088842310011387
+      ],
+      "clock_target_clearance_m": [
+        0.013287985697388649,
+        0.013333095237612724,
+        0.013619264587759972,
+        0.013613314367830753
+      ],
+      "target_FK_below_ground_fraction": [
+        0.12037037312984467,
+        0.13921113312244415,
+        0.49643704295158386,
+        0.5094786882400513
+      ],
+      "target_FK_below2mm_fraction": [
+        0.16435185074806213,
+        0.16241298615932465,
+        0.5225653052330017,
+        0.5236966609954834
+      ],
+      "actual_below2mm_fraction": [
+        0.16435185074806213,
+        0.16705337166786194,
+        0.4750593900680542,
+        0.4763033092021942
+      ],
+      "target_FK_shortfall_m": [
+        0.0026514152996242046,
+        0.0029266311321407557,
+        0.008022028021514416,
+        0.009524472057819366
+      ]
+    },
+    {
+      "name": "reverse",
+      "command": [
+        -0.04,
+        0.0,
+        0.0
+      ],
+      "survival_fraction": 1.0,
+      "swing_samples_per_foot": [
+        423.0,
+        420.0,
+        420.0,
+        424.0
+      ],
+      "actual_clearance_m": [
+        0.005821271799504757,
+        0.0057653626427054405,
+        -1.1536425859048904e-07,
+        -1.0778301628988629e-07
+      ],
+      "target_FK_clearance_m": [
+        0.005817466881126165,
+        0.005761311389505863,
+        -0.0010098916245624423,
+        -0.001024520373903215
+      ],
+      "clock_target_clearance_m": [
+        0.013544279150664806,
+        0.013599521480500698,
+        0.013601018115878105,
+        0.013646310195326805
+      ],
+      "target_FK_below_ground_fraction": [
+        0.1560283750295639,
+        0.15714286267757416,
+        1.0,
+        1.0
+      ],
+      "target_FK_below2mm_fraction": [
+        0.24586288630962372,
+        0.24285714328289032,
+        1.0,
+        1.0
+      ],
+      "actual_below2mm_fraction": [
+        0.24586288630962372,
+        0.24761904776096344,
+        1.0,
+        1.0
+      ],
+      "target_FK_shortfall_m": [
+        0.007822597399353981,
+        0.00791830476373434,
+        0.014610910788178444,
+        0.01467083115130663
+      ]
+    },
+    {
+      "name": "left",
+      "command": [
+        0.0,
+        0.04,
+        0.0
+      ],
+      "survival_fraction": 1.0,
+      "swing_samples_per_foot": [
+        421.0,
+        422.0,
+        427.0,
+        427.0
+      ],
+      "actual_clearance_m": [
+        0.006629690062254667,
+        0.007997192442417145,
+        -2.589153211829398e-07,
+        3.58556258106546e-06
+      ],
+      "target_FK_clearance_m": [
+        0.006447779480367899,
+        0.008005785755813122,
+        -0.0026853305753320456,
+        -0.0011443364201113582
+      ],
+      "clock_target_clearance_m": [
+        0.013598372228443623,
+        0.013568301685154438,
+        0.013460574671626091,
+        0.013475563377141953
+      ],
+      "target_FK_below_ground_fraction": [
+        0.24703088402748108,
+        0.11611374467611313,
+        1.0,
+        0.8501170873641968
+      ],
+      "target_FK_below2mm_fraction": [
+        0.2969121038913727,
+        0.18483412265777588,
+        1.0,
+        1.0
+      ],
+      "actual_below2mm_fraction": [
+        0.30166271328926086,
+        0.18483412265777588,
+        1.0,
+        1.0
+      ],
+      "target_FK_shortfall_m": [
+        0.00742358947172761,
+        0.005798716563731432,
+        0.01614590547978878,
+        0.014619898982346058
+      ]
+    },
+    {
+      "name": "turn_left",
+      "command": [
+        0.0,
+        0.0,
+        0.35
+      ],
+      "survival_fraction": 1.0,
+      "swing_samples_per_foot": [
+        427.0,
+        426.0,
+        432.0,
+        432.0
+      ],
+      "actual_clearance_m": [
+        0.006471055094152689,
+        0.007955411449074745,
+        -3.8669290347570495e-07,
+        -3.9845085098022537e-07
+      ],
+      "target_FK_clearance_m": [
+        0.00638829218223691,
+        0.007921554148197174,
+        -0.002682493766769767,
+        -0.0024576480500400066
+      ],
+      "clock_target_clearance_m": [
+        0.013462385162711143,
+        0.013474032282829285,
+        0.01331892516463995,
+        0.013275512494146824
+      ],
+      "target_FK_below_ground_fraction": [
+        0.22482435405254364,
+        0.16431924700737,
+        1.0,
+        1.0
+      ],
+      "target_FK_below2mm_fraction": [
+        0.2950819730758667,
+        0.23004694283008575,
+        1.0,
+        1.0
+      ],
+      "actual_below2mm_fraction": [
+        0.2974238991737366,
+        0.23239436745643616,
+        1.0,
+        1.0
+      ],
+      "target_FK_shortfall_m": [
+        0.007177237421274185,
+        0.005719545762985945,
+        0.016001420095562935,
+        0.015733156353235245
+      ]
+    }
+  ],
+  "actual_FK_native_max_error_m": 1.210719347000122e-07,
+  "reference_execution_calls": 0,
+  "scope": "Diagnostic only. Target FK is hypothetical geometry at current measured root pose with executed joint targets and exact opposed coupling; not actual clearance or evidence of gait. Original nonterminal samples after1s with commanded swing weight>0.5.",
+  "task_acceptance": false,
+  "horizon_s": 6.0,
+  "seed": 419,
+  "joint_motion_diagnostic": "results/cmd16_hist6/joint_motion_diagnostic.json",
+  "finding": "Hind targets and actual joint angles vary and are not at limits, while actual hind clearance stays near zero. During commanded swing the executed-target FK remains below 2mm for every reverse/lateral/yaw sample in this 16env6s diagnostic. Target FK is hypothetical geometry, not actual gait.",
+  "next_experiment": "Test soft swing target-pose clearance cost without changing executed target, physics, reference independence or actual-event acceptance."
+}
