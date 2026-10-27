@@ -45,6 +45,8 @@ def main():
         alpha = read_json(a.run/'config.json', {}).get('command_frontier', {}).get('training_alpha', 1.)
         if a.stage == 'S3' and 0 < alpha < 1:
             command += ['--frontier-alphas', str(alpha), str(min(1., alpha+.125))]
+        scale=read_json(a.run/'config.json',{}).get('yaw_error_scale_rad_s',1.)
+        command+=['--yaw-error-scale',str(scale)]
         try:
             with (a.run/'independent_evaluation.log').open('a') as log:
                 result = subprocess.run(command, stdout=log, stderr=subprocess.STDOUT, timeout=360)

@@ -169,7 +169,7 @@
       }
     ]
   },
-  "finding": "Matched unit-scale control: cold optimizers44/56 and lost old-forward speed tracking; restored optimizers56/56 and all old-domain gates passed. This supports preserving compatible learning state when adapting the critic. Global.35 cold candidate remains rejected, but its reward change alone was not isolated as the only cause. A matched restored-state global.35 test is now running; production reward unchanged.",
+  "finding": "Matched restored-state .35 yaw cost preserved56/56 survival and all old-domain/current-range gait gates, with yaw responses improved over restored unit-scale control. Both turn response gates still fail. Cold-state regressions are not attributed solely to the yaw normalization.",
   "restored_scale1_control": {
     "launch": {
       "pid": 565993,
@@ -332,7 +332,7 @@
       "reference_execution_calls": 0
     }
   },
-  "production": "Existing4096env frozen PPO retains compatible optimizers and unit yaw cost. No experimental candidate adopted.",
+  "production": "Current frozen formal run uses unit-scale cost. Prepared normalized next round requires verified compatible learning-state restoration and actor-frozen critic warmup.",
   "task_acceptance": false,
   "next_restored_normalized_trial": {
     "pid": 569967,
@@ -389,5 +389,436 @@
       ]
     ],
     "scope": "Matched to successful56/56 restored-state control: same parent,seed44,256env,16updates,4PPO actor-frozen warmup,restored Adam+auxiliary state,alpha.375,96env16s seed947. Changes only yaw cost scale1to.35; Gaussian and physical controls unchanged. Production remains unchanged."
+  },
+  "restored_scale035_result": {
+    "created_at": "2026-10-27T12:28:38.194843+08:00",
+    "trial_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_yaw_restored_normalized_20261027_121003",
+    "report": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/yaw_restored_normalized_20261027_121003/independent_16s.json",
+    "report_sha256": "383fe0b1c38eee9d96d2e294a56d7b25cb4a6c3724a8ebdd3c197a33c9ff7a34",
+    "checkpoint_sha256": "71dadfe98435fa5cf4d63a9c51042fd31cdb0214dfce71544b930cf4432ff68e",
+    "full_survived": 56,
+    "old_domain_gates_passed": true,
+    "current_frontier_failures": [
+      "turn_left:axis2_insufficient_response",
+      "turn_right:axis2_insufficient_response"
+    ],
+    "selected_rows": [
+      {
+        "family": "reverse",
+        "alpha": 0.375,
+        "actual_command": [
+          0.050625,
+          0.0,
+          0.0
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.03384371473898185,
+        "yaw_rmse_rad_s": 0.19645041564757623,
+        "mean_actual": [
+          0.050204258412122726,
+          -0.0005607397179119289,
+          0.00820491649210453
+        ],
+        "steps_per_foot": [
+          57,
+          59,
+          57,
+          53
+        ],
+        "minimum_steps_per_foot": 7,
+        "four_foot_stepping_fraction": 1.0,
+        "actual_frequency_from_mean_interval_hz": [
+          0.9966152341365522,
+          0.9956552769367518,
+          0.9977408853980239,
+          0.9991842696547001
+        ],
+        "interval_count_per_foot": [
+          53,
+          55,
+          53,
+          49
+        ],
+        "weighted_rewards_per_second": {
+          "action_rate": -0.000919314430202324,
+          "alive": 6.999975253456516,
+          "ang_vel_xy": -0.01509160824461031,
+          "base_height": -0.0008404223470065063,
+          "collision": 0.0,
+          "command_foot_velocity": -3.6019417641383007,
+          "dof_acc": -0.0023255580552510972,
+          "dof_pos_limits": 0.0,
+          "feet_air_time": 0.01598000251845134,
+          "gait_clearance": -3.5908791425934345,
+          "gait_contact": 1.827375579504773,
+          "hind_landing_width": -0.016010444595913706,
+          "lin_vel_z": -0.002038966022443709,
+          "orientation": -0.006771782712364335,
+          "proximal_acceleration_peak": 0.0,
+          "swing_peak_balance": -0.0003574130576463423,
+          "swing_peak_shortfall": -0.762581852613941,
+          "target_limits": 0.0,
+          "torques": -1.6568949590421813e-05,
+          "tracking_ang_vel": 2.6504088096592118,
+          "tracking_lin_vel": 3.5523102662515296,
+          "velocity_error": -0.9163183412835293,
+          "waist_vertical_acceleration": -0.023464396474866613,
+          "yaw_rate_error": -0.6300862966716279,
+          "positive_clip_adjustment": 0.0,
+          "termination": 0.0,
+          "total": 5.476432031550103
+        },
+        "clearance_p95_per_foot_m": [
+          0.013101908378303051,
+          0.012904874049127102,
+          0.003359479596838355,
+          0.0027692427393049
+        ]
+      },
+      {
+        "family": "left",
+        "alpha": 0.375,
+        "actual_command": [
+          0.065625,
+          0.015,
+          0.0
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.027594512594823376,
+        "yaw_rmse_rad_s": 0.16656251832199712,
+        "mean_actual": [
+          0.06626879423856735,
+          0.0064920601435005665,
+          0.012743010185658932
+        ],
+        "steps_per_foot": [
+          59,
+          58,
+          60,
+          58
+        ],
+        "minimum_steps_per_foot": 7,
+        "four_foot_stepping_fraction": 1.0,
+        "actual_frequency_from_mean_interval_hz": [
+          0.9999999458139622,
+          0.9996297207811606,
+          0.9999999744551529,
+          1.0003704586391906
+        ],
+        "interval_count_per_foot": [
+          55,
+          54,
+          56,
+          54
+        ],
+        "weighted_rewards_per_second": {
+          "action_rate": -0.0013382178406084176,
+          "alive": 6.999975253456516,
+          "ang_vel_xy": -0.016691662075052568,
+          "base_height": -0.0007588494208629052,
+          "collision": 0.0,
+          "command_foot_velocity": -3.2051295983341745,
+          "dof_acc": -0.002309040118852277,
+          "dof_pos_limits": 0.0,
+          "feet_air_time": 0.01933333980602492,
+          "gait_clearance": -2.07789779966127,
+          "gait_contact": 1.8477796312700077,
+          "hind_landing_width": -0.018039404489091013,
+          "lin_vel_z": -0.0034405423556755667,
+          "orientation": -0.0090973213961068,
+          "proximal_acceleration_peak": 0.0,
+          "swing_peak_balance": -0.0007765750963191223,
+          "swing_peak_shortfall": -0.2681734593490327,
+          "target_limits": 0.0,
+          "torques": -1.3066350327447182e-05,
+          "tracking_ang_vel": 2.7332792891215125,
+          "tracking_lin_vel": 4.062684184067361,
+          "velocity_error": -0.6091656713428759,
+          "waist_vertical_acceleration": -0.07680079572196996,
+          "yaw_rate_error": -0.45294829442442425,
+          "positive_clip_adjustment": 0.0,
+          "termination": 0.0,
+          "total": 8.920493147262853
+        },
+        "clearance_p95_per_foot_m": [
+          0.014203028753399849,
+          0.015369273722171783,
+          0.01188003458082676,
+          0.011506890878081322
+        ]
+      },
+      {
+        "family": "right",
+        "alpha": 0.375,
+        "actual_command": [
+          0.065625,
+          -0.015,
+          0.0
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.027838201184713827,
+        "yaw_rmse_rad_s": 0.18032067591633294,
+        "mean_actual": [
+          0.06355583667755127,
+          -0.008332347497344017,
+          0.008139350451529026
+        ],
+        "steps_per_foot": [
+          60,
+          57,
+          58,
+          60
+        ],
+        "minimum_steps_per_foot": 7,
+        "four_foot_stepping_fraction": 1.0,
+        "actual_frequency_from_mean_interval_hz": [
+          0.9996429339354749,
+          0.99999997525845,
+          1.000370460848406,
+          0.9999999446528329
+        ],
+        "interval_count_per_foot": [
+          56,
+          53,
+          54,
+          56
+        ],
+        "weighted_rewards_per_second": {
+          "action_rate": -0.0012812395281997671,
+          "alive": 6.999975253456516,
+          "ang_vel_xy": -0.016370187418957963,
+          "base_height": -0.0008060242597877633,
+          "collision": 0.0,
+          "command_foot_velocity": -3.085279699648484,
+          "dof_acc": -0.002117067971604752,
+          "dof_pos_limits": 0.0,
+          "feet_air_time": 0.019126672631011372,
+          "gait_clearance": -2.340261221037567,
+          "gait_contact": 1.849243330541306,
+          "hind_landing_width": -0.008516506942912451,
+          "lin_vel_z": -0.003141468862492363,
+          "orientation": -0.008635456946608637,
+          "proximal_acceleration_peak": 0.0,
+          "swing_peak_balance": -0.00092242995241912,
+          "swing_peak_shortfall": -0.33840006174668374,
+          "target_limits": 0.0,
+          "torques": -1.4070566308126895e-05,
+          "tracking_ang_vel": 2.693903222876541,
+          "tracking_lin_vel": 4.167105667551617,
+          "velocity_error": -0.6199727081830848,
+          "waist_vertical_acceleration": -0.06066366543324639,
+          "yaw_rate_error": -0.5308663751859978,
+          "positive_clip_adjustment": 0.0,
+          "termination": 0.0,
+          "total": 8.712132358005814
+        },
+        "clearance_p95_per_foot_m": [
+          0.015095562674105167,
+          0.013828318566083908,
+          0.010079882107675076,
+          0.010316501371562481
+        ]
+      },
+      {
+        "family": "turn_left",
+        "alpha": 0.375,
+        "actual_command": [
+          0.065625,
+          0.0,
+          0.13124999999999998
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.02790123831075749,
+        "yaw_rmse_rad_s": 0.19631885916049133,
+        "mean_actual": [
+          0.06186363846063614,
+          0.0012697738129645586,
+          0.05783625319600105
+        ],
+        "steps_per_foot": [
+          59,
+          57,
+          59,
+          59
+        ],
+        "minimum_steps_per_foot": 7,
+        "four_foot_stepping_fraction": 1.0,
+        "actual_frequency_from_mean_interval_hz": [
+          0.9992732045635115,
+          0.9996227280263751,
+          0.9999999544837279,
+          1.0007277557607046
+        ],
+        "interval_count_per_foot": [
+          55,
+          53,
+          55,
+          55
+        ],
+        "weighted_rewards_per_second": {
+          "action_rate": -0.0012483233613913647,
+          "alive": 6.999975253456516,
+          "ang_vel_xy": -0.01520080295524161,
+          "base_height": -0.0008549195618670766,
+          "collision": 0.0,
+          "command_foot_velocity": -3.1529051236825425,
+          "dof_acc": -0.00244239209415826,
+          "dof_pos_limits": 0.0,
+          "feet_air_time": 0.019113341059429825,
+          "gait_clearance": -2.508961113333997,
+          "gait_contact": 1.8173613638752797,
+          "hind_landing_width": -0.008696655019314272,
+          "lin_vel_z": -0.003156252552163278,
+          "orientation": -0.008249003296687731,
+          "proximal_acceleration_peak": 0.0,
+          "swing_peak_balance": -0.004795012643673478,
+          "swing_peak_shortfall": -0.3964989155952092,
+          "target_limits": 0.0,
+          "torques": -1.4657296591883408e-05,
+          "tracking_ang_vel": 2.6375990568496737,
+          "tracking_lin_vel": 4.412358392312243,
+          "velocity_error": -0.6227836313080367,
+          "waist_vertical_acceleration": -0.054349964262438155,
+          "yaw_rate_error": -0.6292428035679742,
+          "positive_clip_adjustment": 0.0,
+          "termination": 0.0,
+          "total": 8.477033085318263
+        },
+        "clearance_p95_per_foot_m": [
+          0.014156116172671318,
+          0.014410602860152721,
+          0.0075212749652564526,
+          0.010868669487535954
+        ]
+      },
+      {
+        "family": "turn_right",
+        "alpha": 0.375,
+        "actual_command": [
+          0.065625,
+          0.0,
+          -0.13124999999999998
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.027472728442585338,
+        "yaw_rmse_rad_s": 0.2095122689210599,
+        "mean_actual": [
+          0.06203480064868927,
+          -0.002416683593764901,
+          -0.02662075124680996
+        ],
+        "steps_per_foot": [
+          59,
+          57,
+          59,
+          59
+        ],
+        "minimum_steps_per_foot": 7,
+        "four_foot_stepping_fraction": 1.0,
+        "actual_frequency_from_mean_interval_hz": [
+          0.9996364311902597,
+          1.000377453314068,
+          0.9999999371441968,
+          0.9999999631534937
+        ],
+        "interval_count_per_foot": [
+          55,
+          53,
+          55,
+          55
+        ],
+        "weighted_rewards_per_second": {
+          "action_rate": -0.0012537065297932987,
+          "alive": 6.999975253456516,
+          "ang_vel_xy": -0.014986198428742476,
+          "base_height": -0.0008459909106801546,
+          "collision": 0.0,
+          "command_foot_velocity": -3.146895195582582,
+          "dof_acc": -0.0020438634130137967,
+          "dof_pos_limits": 0.0,
+          "feet_air_time": 0.019333341792846317,
+          "gait_clearance": -2.4568467562715357,
+          "gait_contact": 1.8020354368688472,
+          "hind_landing_width": -0.00871644872749328,
+          "lin_vel_z": -0.003069906039257961,
+          "orientation": -0.008380430538764264,
+          "proximal_acceleration_peak": 0.0,
+          "swing_peak_balance": -0.006695217569554756,
+          "swing_peak_shortfall": -0.38361394967482293,
+          "target_limits": 0.0,
+          "torques": -1.4553330923536286e-05,
+          "tracking_ang_vel": 2.574638244410464,
+          "tracking_lin_vel": 4.3508598804220675,
+          "velocity_error": -0.6038008720981785,
+          "waist_vertical_acceleration": -0.05711362090632816,
+          "yaw_rate_error": -0.7166597661720762,
+          "positive_clip_adjustment": 0.0,
+          "termination": 0.0,
+          "total": 8.33593303505401
+        },
+        "clearance_p95_per_foot_m": [
+          0.014512411318719387,
+          0.013921611942350864,
+          0.01155821979045868,
+          0.007338750641793013
+        ]
+      }
+    ],
+    "tested_training_files": {
+      "gait_clock.py": "712a637d9eaeb40c38bb0760682d631acb62f6b502dbec4247131c4173800691",
+      "policy_symmetry.py": "f86dca02c346ac9ea81375651075b24821a39edf86c222661be31b845521f12a",
+      "observation_schema.py": "4569dd954f45d15b50ca29911a77db8c52396ae3ddeab401647f00d60d3d926e",
+      "run_io.py": "ec07264ee0200c563b04fdf34bad7c3c1fd71e85338753f895e3a3216bf2af12",
+      "migration_env.py": "30c072c38c48c46931291220cae5d8081976c55e0b8be8e3ae5ca43f41325d9c",
+      "command_schema.py": "6913e7761a236c1142b70735a255de53de08e010a72eb3eb600bb68a1dd7a236",
+      "launch_s1.py": "f3b720dea2242fda5a1658e1f099b9667304659b03fe83fbecd9f20e83169a91",
+      "landing_stride_rewards.py": "dd42f090adeb8f86c8b9c11dd8cdb6cc4def63f4f830d54a24af9188d3bb2886",
+      "motor_envelope.py": "74c0ff82ade203c55a296ba11bc9d838792a6f38d273b93cc205f6775e4f69cc",
+      "curriculum.py": "cf4d5489f9f6ca894dc2e0eb0ad0ca4dd928221a50221b3e967ec4f479fcad16",
+      "record_migration_video.py": "b8a1d6757fe35094cb96b04f9f11cade66d6e9e431ed70a2033a4480fd32f2cd",
+      "ankle_events.py": "bc349a9918299977cabbe19815f386bf4e7388e3a2f4a45a9eda40e7a3c4344e",
+      "diagnose_student.py": "0bc043cf9949e71d28a4e0bd1c671bdf60366b01253f79520cdd07de7dab51a5",
+      "train_bc.py": "a2b0209b336e65cb701f192a00f4d81665a9fda2f2a7a1c8b721a98a30f8a224",
+      "history_policy.py": "fd5e94659804b52490517c6cdfed3f44e215ee1706247928d6cfa029c4112c3c",
+      "train_dagger.py": "c54e7d26d89e0bdfbd893f2ac9ed2eae3fcdf98c42527444264624ff1cfd4847",
+      "hind_landing_width.py": "30884422f085ebb471f7d7020c9b1372bbc8adbdd05ba329c7d6857060c390e5",
+      "prepare_teacher.py": "eba0f591352cde2f023e1e81ae4b0b649c4158e7c9848c309c43a40e8b03633f",
+      "guided_reference.py": "7b8bfe8d5d055e6a9d4d23e270f02549c07c72a50e6847deb76261bf5629904c",
+      "sable_config.py": "a372062675531ed5ce3e1f0a3cc2820c6a7a6c57c5211fcb01c085254efb45aa",
+      "step_events.py": "81c4bf92299415eec6d681e8783e9c8215f367e4de16e530dd8f598d46f804dc",
+      "acceptance.py": "e9c554812c8bd5a49e019110752bf97ef2e65fbf4a724119d2c09c047193f0b4",
+      "knee_contact.py": "478f8ab07f9aa8acb771da98220f01c031e22acaccd00a8d4d91c85e975656cd",
+      "preflight.py": "05058cf141e2db92fe9effcabb31f62860277600d65c3c9ada053c04b80a0918",
+      "gait_support.py": "42782c78385a2540bbd3dd982104ef32c9917e3315a6539158b9ba7a2e607216",
+      "ankle_stance.py": "594458550de7e238c6f1812f948da78957572fe579a288270fad21d923ffb434",
+      "equivariant_policy.py": "f41f0e37cafea63703edc52fb57c4e5cb3b40fdb0ddde646c461855505c98e0b",
+      "waist_acceleration.py": "5f4ca2daeb825d5d0d9a7ee0ca03ec1fb24dea1e12ac6720689293cd7a69e5c4",
+      "stride_progress.py": "308fd96b9624c457ea7ef803000d589808273b7d69207efa3f244b94827a6b2b",
+      "action_schema.py": "418031a8b5faa3fbf2e3a48ab752094c23527ad1234532df8dfa34f923a6572e",
+      "collect_teacher.py": "676ed199a7ffcfa572cf1682d748a39540455841ac5cb77256fc0ec075fa9c96",
+      "ppo_history.py": "965ed26a3709818927cc65aeb8ef3023ae8f47ff966e8aea5dc023d81d224bdc",
+      "launch_dagger.py": "a269d0923a7a882f1286b6f652669b2193e3f7c645efe68f6d1c90179569dce2",
+      "peak_acceleration.py": "3ef2afd12818bf769c3ef0bdb4f348c095ff4d62f70d941b9f7c7c88d0a6da1b",
+      "history_encoder.py": "e7c9bee0bc21e7393d5205006c89859dd54db75b7113980dee5a60c8fa3e7b94",
+      "command_foot_motion.py": "6d9a31f4a7aee2b7ab2d2328d652c44ec7fbe44c64319a445ea7a61d1c951880",
+      "model_mapping.py": "3b8549283405c6772d06ad638fa5f3babb2ceb88aa5edda18038090731727916",
+      "migration_config.py": "c59294325140c8cda71ffc730c1b2f17837d6e753a8f8be533642c916c2b784e",
+      "motion_rewards.py": "b52d2f4f382abce825ff09e9a48583f5a16a520e5598b3989d31650fc5207632",
+      "sable_env.py": "bc2433c54b368c4ec76f0b66131499a2b02dcb5fb3b4ff0efc8f584e9359f7f4",
+      "teacher_adapter.py": "4403c123d583d46b4d5ab16af7886c4eceea106016b48a34cac53d81b0e658c4",
+      "swing_peak_balance.py": "0357dd692a46af17e17a8e5fb831b75eed093fb78f99b4bfc12a9b0b6e391d14",
+      "target_pose_clearance.py": "147fc3e54dede25f8b352f0eabf69eda6334fc72cb447fad5906ce3cadfdf641",
+      "train_ppo.py": "c5118848341ce4bc6b9ac137ff0efc5c0f4d7ebfd78531299961bb0b86a0be97"
+    },
+    "training_source_commit": "d816866",
+    "source_verification": "Post-run hashes verified unchanged against launch-time committed training files; not a claimed pre-launch frozen trial runtime.",
+    "structural_tests": [
+      "reviewed_yaw_only_change",
+      "reject_migration_env.py",
+      "reject_train_ppo.py",
+      "reject_ppo_history.py",
+      "reject_physical_asset_change"
+    ],
+    "task_acceptance": false
   }
 }

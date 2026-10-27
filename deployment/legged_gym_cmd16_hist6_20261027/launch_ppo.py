@@ -3,6 +3,7 @@ import argparse
 import datetime
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import shutil
@@ -27,6 +28,8 @@ def main():
     p.add_argument('--frontier-alpha',type=float)
     p.add_argument('--frontier-evidence',type=Path)
     p.add_argument('--require-normal-completion',action='store_true')
+    p.add_argument('--yaw-error-scale',type=float)
+    p.add_argument('--preserve-learning-state-evidence',type=Path)
     a=p.parse_args()
     parent=a.parent_run.resolve()
     until=time.time()+1800
@@ -58,6 +61,9 @@ def main():
     parent_config=read_json(parent/'config.json',{})
     continuation=parent_config.get('stage')==a.stage and 'on-policy PPO' in parent_config.get('algorithm','')
     expected_config=student_config(read_json(parent/'teacher_manifest.json')['run'],a.stage,a.num_envs)
+    if a.yaw_error_scale is not None:
+        if not math.isfinite(a.yaw_error_scale)or a.yaw_error_scale<=0:raise ValueError('Invalid yaw error scale')
+        expected_config.migration.yaw_error_scale_rad_s=a.yaw_error_scale
     parent_alpha=parent_config.get('command_frontier',{}).get('training_alpha') if parent_config.get('stage')=='S3' else None
     frontier_alpha=1.;frontier_gate=None
     if a.stage=='S3':
@@ -105,6 +111,16 @@ def main():
     same_training_code=all((parent/'runtime'/f.name).exists() and sha256(parent/'runtime'/f.name)==sha256(f) for f in training_files)
     restore_optimizer=(continuation and same_rewards and same_curriculum and same_exploration and same_training_code
         and parent_config.get('num_envs')==a.num_envs and parent_config.get('learning_rate')==5e-5)
+    preservation=None
+    if a.preserve_learning_state_evidence:
+        assert a.stage=='S3' and continuation and same_curriculum and same_exploration
+        assert parent_config.get('num_envs')==a.num_envs and parent_config.get('learning_rate')==5e-5
+        assert frontier_alpha==parent_alpha,'Do not combine this reward preflight with a new command range'
+        from check_reward_compatibility import verify_preservation_evidence
+        preservation=verify_preservation_evidence(a.preserve_learning_state_evidence,parent,source,
+            frontier_alpha,expected_config.migration.yaw_error_scale_rad_s)
+        restore_optimizer=True
+    critic_warmup=0 if continuation and same_rewards and same_curriculum and same_exploration and same_training_code else 10
     run=ROOT/'runs'/('cmd16_hist6_'+a.stage.lower()+'_ppo_'+time.strftime('%Y%m%d_%H%M%S'))
     runtime=run/'runtime';runtime.mkdir(parents=True)
     for f in source.glob('*.py'):shutil.copy2(f,runtime/f.name)
@@ -114,6 +130,7 @@ def main():
     if gate_source:shutil.copy2(gate_source,run/'parent_acceptance.json')
     if selection:atomic_json(run/'parent_checkpoint_selection.json',selection)
     if frontier_gate:atomic_json(run/'frontier_progression.json',frontier_gate)
+    if preservation:shutil.copy2(a.preserve_learning_state_evidence,run/'learning_state_compatibility.json')
     files={str(f.relative_to(runtime)):sha256(f) for f in runtime.rglob('*') if f.is_file()}
     atomic_json(run/'runtime_manifest.json',{'files':files,'created_unix':time.time()})
     prefs=read_json(ROOT/'results/legged_gym/training_preferences.json')
@@ -121,14 +138,16 @@ def main():
     deadline=(start+datetime.timedelta(seconds=prefs['default_duration_s'])).isoformat()
     cmd=[sys.executable,'-u',str(runtime/'train_ppo.py'),'--run',str(run),'--teacher',str(run/'teacher_manifest.json'),
         '--resume',cp['path'],'--deadline',deadline,'--stage',a.stage,'--num-envs',str(a.num_envs),
-        '--critic-warmup-updates','0' if continuation and same_rewards and same_curriculum and same_exploration and same_training_code else '10']
+        '--critic-warmup-updates',str(critic_warmup)]
     if restore_optimizer:cmd.append('--restore-optimizer')
     if a.stage=='S3':cmd+=['--frontier-alpha',str(frontier_alpha)]
+    if a.yaw_error_scale is not None:cmd+=['--yaw-error-scale',str(a.yaw_error_scale)]
     if a.require_normal_completion:
         assert read_json(ROOT/'results/cmd16_hist6/current_migration.json',{}).get('run')==str(parent)
         assert not (parent/'STOP').exists()
     atomic_json(run/'launch.json',{'command':cmd,'deadline':deadline,'preferences':prefs,'parent':cp,'stage':a.stage+'_PPO',
-        'frontier_alpha':frontier_alpha,'parent_frontier_alpha':parent_alpha,'automatic_resume':False})
+        'frontier_alpha':frontier_alpha,'parent_frontier_alpha':parent_alpha,'automatic_resume':False,
+        'learning_state_preservation':preservation})
     with (run/'train.log').open('w') as log:training=subprocess.Popen(cmd,stdout=log,stderr=subprocess.STDOUT)
     until=time.time()+150
     while time.time()<until and not (run/'status.json').exists():
