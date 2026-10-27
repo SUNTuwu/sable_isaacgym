@@ -1,5 +1,5 @@
 {
-  "updated_unix": 1793075475.8125503,
+  "updated_unix": 1793075953.066064,
   "goal_complete": false,
   "teacher": {
     "run": "stand5_20261027_v44_stride80_all",
@@ -7,12 +7,12 @@
     "verified": true,
     "manifest": "planning/cmd16_hist6_baseline/teacher_manifest.json"
   },
-  "current_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_121436",
-  "current_deadline": "2026-10-27T12:34:36.844004+08:00",
+  "current_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803",
+  "current_deadline": "2026-10-27T12:58:03.109762+08:00",
   "current_processes": {
-    "training_pid": 572197,
-    "monitor_pid": 572288,
-    "supervisor_pid": 572192
+    "training_pid": 583738,
+    "monitor_pid": 583819,
+    "supervisor_pid": 583728
   },
   "pre_migration_commit": "a95854cf4042b7994731e7a02d9761be8fd195d7",
   "latest_pushed_commit": "b572c8a",
@@ -153,9 +153,10 @@
     "planning/cmd16_hist6_baseline/s3_yaw_cost_experiment_20261027.json",
     "planning/cmd16_hist6_baseline/s3_optimizer_warmup_controls_20261027.json",
     "planning/cmd16_hist6_baseline/s3_frontier_continuous_selection_20261027.json",
-    "planning/cmd16_hist6_baseline/s3_yaw_restored_preflight_20261027.json"
+    "planning/cmd16_hist6_baseline/s3_yaw_restored_preflight_20261027.json",
+    "planning/cmd16_hist6_baseline/s3_yaw_formal_start_20261027.json"
   ],
-  "current_status": "Sixteenth formal S3 retainsalpha.375/unit yaw cost and compatible optimizers. Corrected continuous frontier ranking selected fifteenth101; training continues without teacher/reference execution. S2 accepted; S3/S5 NOT accepted.",
+  "current_status": "Seventeenth formal S3 started with yaw error scale.35, restored both Adam states and10main actor-frozen critic warmup. Sixteenth normal archive verified; selected its final172. No teacher/reference execution. S2 accepted, S3/S5 NOT accepted.",
   "dagger_final": {
     "iteration": 15040,
     "sha256": "e6dac5a717c43de43737bc16b57c7f1b015e8de5a014e2b2d039ba4817d16133",
@@ -177,32 +178,27 @@
     "survived": 144,
     "episodes": 144
   },
-  "updated_at": "2026-10-27T12:31:15.812552+08:00",
-  "current_stage": "S3_command_frontier_alpha0375",
+  "updated_at": "2026-10-27T12:39:13.066067+08:00",
+  "current_stage": "S3_command_frontier_alpha0375_yaw035",
   "latest_findings": {
-    "active_source_commit": "0687c75",
-    "active_deadline": "2026-10-27T12:34:36.844004+08:00",
+    "active_source_commit": "b572c8a",
+    "active_deadline": "2026-10-27T12:58:03.109762+08:00",
     "active_processes": {
-      "training_pid": 572197,
-      "monitor_pid": 572288,
-      "supervisor_pid": 572192
+      "training_pid": 583738,
+      "monitor_pid": 583819,
+      "supervisor_pid": 583728
     },
     "parent_checkpoint": {
-      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_115059/checkpoints/model_000101.pt",
-      "sha256": "09c802fd2612e9b5ca54ffd0ed46d6a3894ac2ff4daf76b89d1af8fb32cf5ab1"
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_121436/checkpoints/model_000172.pt",
+      "sha256": "a3e790409253b6f191164890cf6a4dae7316f4790e838cf41441124dcfcd8ea1"
     },
     "optimizer_restored": true,
-    "critic_warmup_updates": 0,
+    "critic_warmup_updates": 10,
     "training_alpha": 0.375,
     "evaluation_alpha": 1.0,
-    "yaw_cost_scale": 1.0,
-    "frozen_files": 103,
-    "next_bounded_round": {
-      "driver_pid": 579601,
-      "status": "waiting_for_normal_archive",
-      "directory": "results/cmd16_hist6/yaw_compatibility_preparation_20261027_1230",
-      "change": "If current frontier passes, advance unchanged source; otherwise use tested yaw error scale.35 with restored compatible optimizers and10critic warmup. If no current-run checkpoint retains old gates, select a measured archived prior parent without relaxing gates."
-    },
+    "yaw_cost_scale": 0.35,
+    "frozen_files": 107,
+    "next_bounded_round": null,
     "selection_fix_evidence": "planning/cmd16_hist6_baseline/s3_frontier_continuous_selection_20261027.json",
     "cold_optimizer_trials": {
       "global_yaw_scale035_survived": 32,
@@ -221,10 +217,10 @@
     },
     "acceptance_passed": false,
     "selected_parent_frontier_progress": {
-      "normalized_unmet_sum": 1.0230300880613779,
-      "normalized_unmet_max": 0.6019073895045688
+      "normalized_unmet_sum": 0.8922486418769471,
+      "normalized_unmet_max": 0.4932758808135985
     },
-    "next_round_queued": true,
+    "next_round_queued": false,
     "restored_global035_trial": {
       "report": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/yaw_restored_normalized_20261027_121003/independent_16s.json",
       "sha256": "383fe0b1c38eee9d96d2e294a56d7b25cb4a6c3724a8ebdd3c197a33c9ff7a34",
@@ -234,20 +230,21 @@
         "turn_left:axis2_insufficient_response",
         "turn_right:axis2_insufficient_response"
       ],
-      "production_adopted": false
-    }
+      "production_adopted": true
+    },
+    "formal_startup_verification": "planning/cmd16_hist6_baseline/s3_yaw_formal_start_20261027.json"
   },
   "remaining_acceptance": [
     "S3 translation/yaw including direct starts and switches, actual stepping, three seeds",
     "S5 genuine foot-event frequency0.8/1.2 and two-way switching, three seeds",
     "Export accepted final checkpoint and replay same recorded inputs onCPU/CUDA"
   ],
-  "active_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_121436",
+  "active_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803",
   "next_actions": [
-    "Verify bounded continuation driver579601 after sixteenth deadline12:34:36. It waits for final evaluation and verified normal archive, cancels explicit stop/failure/active-run change. Prepared107-file runtime and bound optimizer compatibility receipt are in results/cmd16_hist6/yaw_compatibility_preparation_20261027_1230.",
-    "Verify next actual PPO/monitor startup, restored optimizer state, yaw scale, ten main actor-frozen critic warmup updates if reward changes, current pointers, independent videos. No teacher actions or reference execution.",
-    "Current sixteenth had no eligible current-frontier/old-domain candidate at12:29; completed checkpoints can still improve. Driver can select archived fifteenth parent if required. Do not lower acceptance gates or claim backward motion foralpha.375 positive-vx training commands.",
-    "Continue to full S3 translation/yaw three-seed acceptance, then S5 actual.8/1.2/two-way frequency switching three-seed acceptance, then export accepted final checkpoint with recorded-input CPU/CUDA parity."
+    "Monitor seventeenth live training583738/monitor583819/supervisor583728 through12:58:03. Check postwarmup actual independent full and current-frontier metrics; training has no teacher/reference calls.",
+    "Development queue_continuation.py now forwards parent yaw_error_scale_rad_s unless explicitly overridden. Current107-file frozen runtime predates this orchestration fix. For the next continuation, copy current frozen runtime to a prepared source, overlay only the corrected queue, verify all training-core/assets bytes identical, and supply its manifest/preflight. Do not let the defaultscale1 silently replace current.35 or reset optimizers.",
+    "Select next parent by unchanged old-domain gates and measured current-frontier gains. Advancealpha by.125 only when its gate passes; otherwise diagnose. No eighteenth round is queued yet.",
+    "Full S3 translation/yaw including actual four-foot stepping and transitions requires three-seed acceptance. Then S5 actual.8/1.2/two-way frequency switching, then accepted-checkpoint CPU/CUDA export parity."
   ],
   "user_teacher_question_20261027": {
     "question": "Teacher only walks forward; should new directions avoid teacher supervision, or should specialist teachers be trained?",

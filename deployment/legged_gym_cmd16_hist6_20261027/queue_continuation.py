@@ -154,6 +154,8 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--parent-run',type=Path,required=True)
     p.add_argument('--source-runtime',type=Path)
     p.add_argument('--frontier-dir',type=Path)
+    p.add_argument('--yaw-error-scale',type=float,
+        help='Explicit reward override; otherwise preserve the parent run scale')
     p.add_argument('--check-only',action='store_true');a=p.parse_args();parent=a.parent_run.resolve()
     assert read_json(parent/'config.json')['stage']=='S3'
     source=parent/'runtime'
@@ -194,6 +196,10 @@ def main():
     cfg=read_json(parent/'config.json')
     command=[sys.executable,'-u',str(source/'launch_ppo.py'),'--parent-run',str(parent),
         '--checkpoint',selected['checkpoint'],'--stage','S3','--num-envs',str(cfg['num_envs'])]
+    yaw_scale=a.yaw_error_scale if a.yaw_error_scale is not None else cfg.get('yaw_error_scale_rad_s')
+    if yaw_scale is not None:
+        if not math.isfinite(yaw_scale)or yaw_scale<=0:raise ValueError('Invalid inherited yaw error scale')
+        command+=['--yaw-error-scale',str(yaw_scale)]
     if a.frontier_dir:
         command+=['--frontier-alpha',str(selected['next_alpha']),'--require-normal-completion']
         if selected['frontier_passed']:

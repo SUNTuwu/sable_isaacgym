@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803",
+  "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_121436/checkpoints/model_000172.pt",
+  "parent_sha256": "a3e790409253b6f191164890cf6a4dae7316f4790e838cf41441124dcfcd8ea1",
+  "initial_checkpoint_sha256": "9f503533267cfe4074df41a8a93c652c6ae6caf7096834fd1362a0fa759e54bf",
+  "first_checkpoint_sha256": "d8ddf3fc1092705672e8104b21e838deb94dc80f2798cfae2e033d3f42365715",
+  "checks": {
+    "model_state_dict": true,
+    "optimizer_state_dict": true,
+    "auxiliary_optimizer_state_dict": true,
+    "first_warmup_actor_std_unchanged": true,
+    "first_warmup_parameters_finite": true
+  },
+  "yaw_error_scale_rad_s": 0.35,
+  "critic_warmup_updates": 10,
+  "runtime_files_verified": 107,
+  "scope": "Main PPO actor/std frozen during critic warmup; separately restored history encoder still updates under the existing policy KL guard. This is startup evidence, not locomotion acceptance.",
+  "previous_normal_completion": {
+    "training_exit_code": 0,
+    "monitor_exit_code": 0,
+    "completed_unix": 1793075848.539225,
+    "deadline": "2026-10-27T12:34:36.844004+08:00",
+    "automatic_resume": false
+  },
+  "previous_archive_sha256": "0dae38ce6296265766828c86c23053acddd378b50ce4cce10c28449aa8a52263",
+  "selected_frontier_progress": {
+    "normalized_unmet_sum": 0.8922486418769471,
+    "normalized_unmet_max": 0.4932758808135985
+  },
+  "selected_frontier_failures": [
+    "turn_left:axis2_insufficient_response",
+    "turn_right:axis2_insufficient_response"
+  ],
+  "parent_final_survival_fraction": 0.9464285714285714
+}
