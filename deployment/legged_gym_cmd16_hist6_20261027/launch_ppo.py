@@ -98,7 +98,7 @@ def main():
     source=Path(__file__).resolve().parent
     # Exclude process/diagnostic entrypoints, never physics, policy, curriculum
     # or optimizer implementations. A code change deliberately resets Adam.
-    nontraining={'train_ppo.py','launch_ppo.py','watch_migration.py','export_policy.py','select_regression_checkpoint.py','queue_continuation.py'}
+    nontraining={'train_ppo.py','launch_ppo.py','watch_migration.py','watch_frontier.py','export_policy.py','select_regression_checkpoint.py','queue_continuation.py'}
     training_files=[f for f in source.glob('*.py') if f.name not in nontraining
         and not f.name.startswith(('evaluate_','evaluation_','probe_','check_'))]
     same_training_code=all((parent/'runtime'/f.name).exists() and sha256(parent/'runtime'/f.name)==sha256(f) for f in training_files)

@@ -1,5 +1,5 @@
 {
-  "updated_unix": 1793062013.2483222,
+  "updated_unix": 1793070578.073181,
   "goal_complete": false,
   "teacher": {
     "run": "stand5_20261027_v44_stride80_all",
@@ -7,15 +7,15 @@
     "verified": true,
     "manifest": "planning/cmd16_hist6_baseline/teacher_manifest.json"
   },
-  "current_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706",
-  "current_deadline": "2026-10-27T08:57:06.830665+08:00",
+  "current_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_110536",
+  "current_deadline": "2026-10-27T11:25:36.051613+08:00",
   "current_processes": {
-    "training_pid": 473147,
-    "monitor_pid": 473227,
-    "supervisor_pid": 473145
+    "training_pid": 540408,
+    "monitor_pid": 540512,
+    "supervisor_pid": 540403
   },
   "pre_migration_commit": "a95854cf4042b7994731e7a02d9761be8fd195d7",
-  "latest_pushed_commit": "075bbfa",
+  "latest_pushed_commit": "3741273",
   "completed": [
     "326/90/92/15 schema and six-frame cache",
     "full raw-input mirror projection and history encoder",
@@ -77,7 +77,7 @@
     "New PPO launched052700 for20minutes after fullparentarchive; runtime77files verified; no teacher/reference execution.",
     "1024env smoke showed encoder updates can shift the actor; rollback+auxiliary learning-rate reduction is active.",
     "New combined evaluation/video first16s report took187.5s while other acceptance evaluations sharedGPU; actualtimestamps retained.",
-    "First pure PPO completed223 at0547. Survival improved, but laterXY RMSE worsened to0.057\u20130.065m/s; final/archive all82filesverified.",
+    "First pure PPO completed223 at0547. Survival improved, but laterXY RMSE worsened to0.057–0.065m/s; final/archive all82filesverified.",
     "Second S2 selects first-PPO23 by independent regression, not reward; adds velocity_error=-2*sum((xy_actual-xy_command)/0.05)^2 afterpositiveclipping.",
     "Same-state torque comparison invoked the exact originalv44 method for120substeps across3speedcases; maximumdifference1.49e-7Nm.",
     "Second-PPO34 independent24env16s:24/24 survival, XYRMSE [.05026,.04505,.04225,.01005,.04195,.04771]; not yetthree-seed accepted.",
@@ -88,14 +88,12 @@
     "S3/S5 evaluator nowrecords eachvelocitycommandsegment and requiresobserved response >=50% ofcommandchange; smallRMSEwithconstantdefaultspeedcannotpass."
   ],
   "next_work": [
-    "Monitor seventhS3 until08:57:06+08. Keep runtime frozen and assess actualnewdirection hindsteps,body/yaw tracking,old-domain survival. Avoid unrelatedframework edits; let the new directional shaping learn.",
-    "Sixthfinal155 improved reverse mean to-.024m/s butstill0hindsteps; lost1/4forward105 and1/4left episodes. Newparent98 islatest56/56 checkpoint; selectedcheckpoint bytesverifiedinside archivedparent.",
-    "Newfootcost issofttaskspace rewardonly, notq_target/executionreference. It followscommanddirectionincludingyaw, usesactualcapsulecenter20msvelocity, suppressesfirstpost-reset sample, anddoesnotlockstancecenter. Tests19passed; real256env12PPOupdates finiteactorcriticchanged/ref0;8env64step timing/reset/aggregationerror0.",
-    "Alive7 offsets addednegativecost relativepreviousalive3; reward magnitudes acrossrounds notlearning evidence. Existingclearance,height,width,jointlimits,torques andacceptance gates unchanged.",
-    "Ifall14scenarios passoneindependenteval, runfull3seedS3acceptancewhiletrainingcontinues. OnlyacceptedcheckpointmayenterS5. Missingstep/cadence events remainmissing.",
-    "S5 directstarts, no novel/reverse explorationfloor, same newfootcost,frequency.9\u20131.1 then.8\u20131.2 oncompletedepisodecurriculum. Require28s physicalfoot-event switch/return tests across3seeds.",
-    "If moretraining isuseful withoutsourcechanges, launchfrom the frozen currentruntime to preservecompatibleactorcritic/auxiliaryoptimizers. Do not keepcoldstarting unnecessarily.",
-    "Finalacceptedmodel needsfreshrecorded-logCPU/CUDAexportparity andmatchingacceptanceproof. Currentexportproof isunaccepted; nofull16-command/hardwarevalidatedclaim."
+    "Inspect automatic16s direct-start frontier probes atalpha.375/.5 matched to each full endpoint checkpoint. They require all five paths, actual four-foot events/cadence and unchanged old-domain regression. These intermediate commands are not the complete desired skills.",
+    "Advance one adjacent alpha increment<=.125 only from a checkpoint passing its current frontier gate; preserve compatible optimizer state. If no candidate passes, use measured failures to choose continuation, do not silently bypass a gate.",
+    "Keep20minute frozen runs and180second full endpoint reports/videos; extra frontier monitoring never stops or restarts training. It cancels after a user stop or an active-run change.",
+    "No next formal run is queued yet. Choose and launch after normal parent save/archive verification, preserving chosen checkpoint bytes.",
+    "Reverse interpolation nearalpha.75 crosses a true commanded stop; that is not backward-walking evidence. Final reverse remains-.04m/s.",
+    "Only after full S3 endpoints pass all three seeds, execute S5 actual frequency.8/1.2/two-way switching, then export the accepted model withCPU/CUDA replay parity."
   ],
   "evidence": [
     "results/cmd16_hist6/preflight/teacher_adapter.json",
@@ -148,9 +146,10 @@
     "results/cmd16_hist6/target_pose_reward_encoder_validation.json",
     "planning/cmd16_hist6_baseline/s3_task_progress_selection_20261027.json",
     "planning/cmd16_hist6_baseline/s3_clearance_gradient_experiment_20261027.json",
-    "planning/cmd16_hist6_baseline/s3_command_frontier_20261027.json"
+    "planning/cmd16_hist6_baseline/s3_command_frontier_20261027.json",
+    "planning/cmd16_hist6_baseline/s3_frontier_progression_20261027.json"
   ],
-  "current_status": "S2 accepted144/144. Twelfth formal S3 uses actual intermediate velocity commands(alpha.25) from ninth122. Oldforward/stop preserved; full endpoint independent monitoring/acceptance remains unchanged. Hypothetical-pose scalar cost disabled. Offline geometric candidate rejected15/56. S3/S5 NOT accepted.",
+  "current_status": "S2 accepted144/144. Thirteenth formal S3 trains actual intermediate velocity commands(alpha.375) from twelfth27, after all five alpha.25 frontier gates and unchanged old-domain gates passed. Optimizers restored with no critic warmup. Full endpoint evaluations remainalpha1; S3/S5 NOT accepted.",
   "dagger_final": {
     "iteration": 15040,
     "sha256": "e6dac5a717c43de43737bc16b57c7f1b015e8de5a014e2b2d039ba4817d16133",
@@ -172,59 +171,32 @@
     "survived": 144,
     "episodes": 144
   },
-  "updated_at": "2026-10-27T10:42:29.323321+08:00",
-  "current_stage": "S3_command_frontier_alpha025",
+  "updated_at": "2026-10-27T11:09:38.073184+08:00",
+  "current_stage": "S3_command_frontier_alpha0375",
   "latest_findings": {
-    "active_source_commit": "2fd7653",
-    "active_deadline": "2026-10-27T10:56:39.837790+08:00",
+    "active_source_commit": "3741273",
+    "active_deadline": "2026-10-27T11:25:36.051613+08:00",
     "active_processes": {
-      "training_pid": 527753,
-      "monitor_pid": 527843,
-      "supervisor_pid": 527749
+      "training_pid": 540408,
+      "monitor_pid": 540512,
+      "supervisor_pid": 540403
     },
-    "frozen_files_verified": 98,
+    "frozen_files_verified": 99,
     "parent_checkpoint": {
-      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_092408/checkpoints/model_000122.pt",
-      "sha256": "756c109a5e82ce23cca70a7a427118dc782a071b7ac51e5c508e1f1fe8e74779",
-      "iteration": 122
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/checkpoints/model_000027.pt",
+      "sha256": "80efbcae4f966bd6fc6e97abb2333d8575364a3f738a4fa98363f2cbc9376547"
     },
-    "optimizer_restored": false,
-    "critic_warmup_updates": 10,
-    "training_alpha": 0.25,
+    "optimizer_restored": true,
+    "critic_warmup_updates": 0,
+    "training_alpha": 0.375,
     "evaluation_alpha": 1.0,
-    "source_proof": "planning/cmd16_hist6_baseline/s3_command_frontier_20261027.json",
-    "rejected_experiment": "planning/cmd16_hist6_baseline/s3_clearance_gradient_experiment_20261027.json",
-    "pending_frontier_evaluation": {
-      "pid": 530387,
-      "command": [
-        "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
-        "-u",
-        "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/runtime/probe_command_frontier.py",
-        "--checkpoint",
-        "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/checkpoints/model_000027.pt",
-        "--teacher",
-        "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/teacher_manifest.json",
-        "--output",
-        "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/frontier_independent_20261027_104229.json",
-        "--seconds",
-        "16",
-        "--alphas",
-        ".25",
-        ".375",
-        ".5",
-        "--full-families"
-      ],
-      "output": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/frontier_independent_20261027_104229.json",
-      "checkpoint": {
-        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/checkpoints/model_000027.pt",
-        "sha256": "80efbcae4f966bd6fc6e97abb2333d8575364a3f738a4fa98363f2cbc9376547",
-        "iteration": 27,
-        "reason": "periodic",
-        "updated_unix": 1793068791.1278942
-      },
-      "created_unix": 1793068949.2294827,
-      "scope": "Intermediate course progression evidence only; final S3 endpoints and three-seed acceptance unchanged"
-    },
+    "progression_proof": "planning/cmd16_hist6_baseline/s3_frontier_progression_20261027.json",
+    "accepted_frontier_alpha": 0.25,
+    "known_new_frontier_failures": [
+      "reverse_path_actual_hind_cadence",
+      "right_yaw_response_gain"
+    ],
+    "frontier_monitor": "results/cmd16_hist6/frontier_cmd16_hist6_s3_ppo_20261027_110536/launch.json",
     "acceptance_passed": false
   },
   "remaining_acceptance": [
@@ -232,12 +204,13 @@
     "S5 genuine foot-event frequency0.8/1.2 and two-way switching, three seeds",
     "Export accepted final checkpoint and replay same recorded inputs onCPU/CUDA"
   ],
-  "active_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639",
+  "active_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_110536",
   "next_actions": [
-    "Read pending16s intermediate probe foralpha.25/.375/.5, both lateral/yaw signs+reverse; inspect original survival, actual four-foot events/cadence and physical velocity response. These are curriculum gates, never full S3 acceptance.",
-    "Do not leave training permanently atalpha.25: advance the command curriculum towardalpha1 only with measured actual-gait evidence; full endpoint evaluations and original three-seed S3 gate stay unchanged.",
-    "Keep fresh20minute frozen runs and180second evaluations/videos. No successor currently queued for this frontier run; choose next curriculum action using live results before deadline.",
-    "Pure reverse interpolation nearalpha.75 passes through a commanded stop/deadzone; do not label that as backward walking or require moving cadence for a truly stationary intermediate command. The final reverse endpoint remains-.04m/s.",
-    "After full S3 endpoint acceptance, execute S5 actual frequency.8/1.2/two-way switching and export the accepted final checkpoint with matching CPU/CUDA replay proof."
+    "Inspect automatic16s direct-start frontier probes atalpha.375/.5 matched to each full endpoint checkpoint. They require all five paths, actual four-foot events/cadence and unchanged old-domain regression. These intermediate commands are not the complete desired skills.",
+    "Advance one adjacent alpha increment<=.125 only from a checkpoint passing its current frontier gate; preserve compatible optimizer state. If no candidate passes, use measured failures to choose continuation, do not silently bypass a gate.",
+    "Keep20minute frozen runs and180second full endpoint reports/videos; extra frontier monitoring never stops or restarts training. It cancels after a user stop or an active-run change.",
+    "No next formal run is queued yet. Choose and launch after normal parent save/archive verification, preserving chosen checkpoint bytes.",
+    "Reverse interpolation nearalpha.75 crosses a true commanded stop; that is not backward-walking evidence. Final reverse remains-.04m/s.",
+    "Only after full S3 endpoints pass all three seeds, execute S5 actual frequency.8/1.2/two-way switching, then export the accepted model withCPU/CUDA replay parity."
   ]
 }
