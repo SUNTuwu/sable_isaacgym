@@ -22,6 +22,8 @@ def request_stop(*_):
 
 
 def main():
+    from training_hold import require_training_enabled
+    require_training_enabled()
     p = argparse.ArgumentParser()
     p.add_argument('--dataset', type=Path, required=True)
     p.add_argument('--run', type=Path, required=True)

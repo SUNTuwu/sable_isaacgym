@@ -14,6 +14,7 @@ from model_mapping import heading_velocity, quat_apply
 from teacher_adapter import verify_teacher_manifest
 from run_io import atomic_json, sha256
 from evaluation_telemetry import EvaluationTelemetry
+from evaluation_contact_forces import ContactForceTelemetry
 
 
 from evaluation_scenarios import scenarios, scheduled_commands
@@ -91,6 +92,7 @@ def main():
     reward_sums = {}
     deployment_trace = []
     telemetry = EvaluationTelemetry(env)
+    force_telemetry = ContactForceTelemetry(env,groups,a.envs_per_scenario)
     started = time.time()
     with torch.no_grad():
         for step in range(round(a.seconds/env.dt)):
@@ -128,6 +130,7 @@ def main():
                 if key not in reward_sums:reward_sums[key]=torch.zeros(n,device=env.device)
                 reward_sums[key] += value*valid
             telemetry.update(s,commands,alive,valid)
+            force_telemetry.update(s,commands,alive,done,step)
             error_xy = (xy-desired[:, :2]).square()
             error_yaw = (yaw-desired[:, 2]).square()
             values = torch.cat((error_xy, error_yaw[:, None], xy, yaw[:, None], desired, torch.ones(n, 1, device=env.device)), 1)
@@ -237,6 +240,7 @@ def main():
             'yaw_rmse_rad_s':float(np.sqrt(total[2]/count)) if count else None})
     a.output.parent.mkdir(parents=True, exist_ok=True)
     result['diagnostics'] = telemetry.finish(groups,a.envs_per_scenario)
+    result['contact_force_analysis'] = force_telemetry.finish()
     result['weighted_rewards_per_second'] = []
     for g,(name,_) in enumerate(groups):
         sl=slice(g*a.envs_per_scenario,(g+1)*a.envs_per_scenario)

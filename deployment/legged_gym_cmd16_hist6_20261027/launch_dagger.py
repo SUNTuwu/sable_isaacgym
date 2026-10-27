@@ -6,6 +6,8 @@ ROOT=Path('/root/gpufree-data/projects/sable-isaacgym')
 
 
 def main():
+    from training_hold import require_training_enabled
+    require_training_enabled()
     p=argparse.ArgumentParser();p.add_argument('--parent-run',type=Path,required=True);p.add_argument('--dataset',type=Path,required=True);a=p.parse_args()
     parent=a.parent_run.resolve();end=time.time()+180
     while time.time()<end:

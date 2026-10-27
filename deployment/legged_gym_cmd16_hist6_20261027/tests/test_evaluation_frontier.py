@@ -43,6 +43,7 @@ class FrontierBatchTests(unittest.TestCase):
             diagnostics=dict(scenarios={'reverse': {'original': True}, extra:
                 {'foot_clearance_p95_per_foot_m': [.01, 0., 0., 0.]}}))
         original = copy.deepcopy(report['scenarios'][0])
+        report['contact_force_analysis']={'scenarios':{'reverse':{'value':None},extra:{'value':1}}}
         split_frontier(report, {extra: ('reverse', .375)})
         self.assertEqual(report['scenarios'], [original])
         self.assertEqual(report['survival_fraction'], 0.)
@@ -50,6 +51,8 @@ class FrontierBatchTests(unittest.TestCase):
         self.assertEqual(report['simulation_environments'], 8)
         self.assertEqual(len(report['events']), 1)
         self.assertEqual(set(report['diagnostics']['scenarios']), {'reverse'})
+        self.assertEqual(report['contact_force_analysis']['scenarios'],{'reverse':{'value':None}})
+        self.assertEqual(report['frontier_curriculum']['contact_force_scenarios'],{extra:{'value':1}})
         row = report['frontier_curriculum']['groups'][0]
         self.assertEqual(row['interval_count_per_foot'], [2, 0, 0, 0])
         self.assertEqual(row['actual_frequency_from_mean_interval_hz'], [2/3, None, None, None])

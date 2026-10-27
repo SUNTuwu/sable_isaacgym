@@ -18,6 +18,8 @@ ROOT=Path('/root/gpufree-data/projects/sable-isaacgym')
 
 
 def main():
+    from training_hold import require_training_enabled
+    require_training_enabled()
     p=argparse.ArgumentParser()
     p.add_argument('--parent-run',type=Path,required=True)
     p.add_argument('--stage',choices=['S2','S3','S5'],required=True)
@@ -34,6 +36,7 @@ def main():
     parent=a.parent_run.resolve()
     until=time.time()+1800
     while time.time()<until:
+        require_training_enabled()
         state=read_json(parent/'status.json',{})
         if a.require_normal_completion:
             if state.get('status') in ('stopped_requested','failed') or (parent/'STOP').exists():
@@ -152,6 +155,7 @@ def main():
     atomic_json(run/'launch.json',{'command':cmd,'deadline':deadline,'preferences':prefs,'parent':cp,'stage':a.stage+'_PPO',
         'frontier_alpha':frontier_alpha,'parent_frontier_alpha':parent_alpha,'automatic_resume':False,
         'learning_state_preservation':preservation})
+    require_training_enabled()
     with (run/'train.log').open('w') as log:training=subprocess.Popen(cmd,stdout=log,stderr=subprocess.STDOUT)
     until=time.time()+150
     while time.time()<until and not (run/'status.json').exists():

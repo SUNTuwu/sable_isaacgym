@@ -1,0 +1,148 @@
+{
+  "created_at": "2026-10-27T13:32:59.304887+08:00",
+  "status": "changes_validated_training_paused",
+  "user_instruction": "改完了先暂停这轮训练",
+  "last_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803",
+  "final_checkpoint": {
+    "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803/checkpoints/model_000166.pt",
+    "sha256": "c7bcd59d981c5643b079dbb2463c28ffb9d9f45281821c58902192d65ad8efd4",
+    "iteration": 166,
+    "reason": "final",
+    "updated_unix": 1793077086.3005304
+  },
+  "backup_verified": true,
+  "frozen_runtime_files_verified": 107,
+  "no_training_started_after_pause": true,
+  "new_reward_PPO_test_performed": false,
+  "implemented": [
+    "Four terminal measured normal forces",
+    "Whole-body horizontal resultant reconstructed by mass-weighted COM momentum balance across final0.5ms step",
+    "COM-origin-corrected rigid material-point velocity, including rotation",
+    "Bounded negative wrong-resultant correction cost and load-weighted sliding cost, weights-1 each, after positive clipping",
+    "Original-episode56env16s diagnostic plus interactive11111 force/slip timeline",
+    "Persistent operator pause in all development PPO/BC/DAgger entrypoints; no successor queue"
+  ],
+  "unavailable": {
+    "per_foot_tangential_force": true,
+    "yaw_moment": true,
+    "force_cancellation": true,
+    "cancellation_weight": 0,
+    "reason": "Installed GPU Gym normal-contact tensor omits effective XY; body force sensors include internal constraints; raw contact API rejects GPU pipeline after start. UI/JSON use missing values, never fabricated zero measurements."
+  },
+  "verification": {
+    "cpu_tests_passed": 15,
+    "pause_guard_cases": "active/empty/malformed block; absent/explicit false allow; actual launcher blocked before creation",
+    "physics_backend": {
+      "physics_dt_s": 0.0005000000237487257,
+      "mass_kg": 0.033510319888591766,
+      "sliding_samples": 101,
+      "rolling_samples": 998,
+      "coulomb_horizontal_relative_rms_error": 1.0492995897948276e-05,
+      "material_point_secant_vs_endpoint_velocity_rms_m_s": 0.02048513852059841,
+      "horizontal_material_point_velocity_rms_error_m_s": 0.00020782684441655874,
+      "rolling_center_speed_mean_m_s": 1.279503583908081,
+      "rolling_point_speed_mean_m_s": 0.00019768673519138247,
+      "normal_only_tensor_horizontal_rms_n": 4.416862608991323e-08,
+      "no_learning": true,
+      "scope": "Isolated sphere, same GPU PhysX dt/solver/mean-friction recipe. Checks horizontal momentum force against Coulomb sliding and finite-pose point velocity against rigid rolling. The reward uses horizontal sliding: vertical secant displacement includes rotational curvature and is not an endpoint vertical velocity. Not robot locomotion acceptance.",
+      "passed": true
+    },
+    "COM_convention": {
+      "origin_fd_vs_reported_rms_m_s": 0.19990620017051697,
+      "com_fd_vs_reported_rms_m_s": 9.754014172358438e-06,
+      "material_point_com_formula_vs_pose_secant_rms_m_s": 0.0005060811527073383,
+      "inferred_linear_velocity_reference": "body COM",
+      "no_learning": true,
+      "passed": true
+    },
+    "shadow": {
+      "finite": true,
+      "normal_balance_rms_error_n": 0.0015824376605451107,
+      "preaction_error": 0.0,
+      "reward_sum_error": 9.5367431640625e-07
+    },
+    "diagnostic": {
+      "checkpoint_sha256": "c7bcd59d981c5643b079dbb2463c28ffb9d9f45281821c58902192d65ad8efd4",
+      "environments": 56,
+      "horizon_s": 16.0,
+      "seed": 947,
+      "reference_execution_calls": 0,
+      "survival_fraction": 0.625,
+      "task_acceptance": false
+    },
+    "trajectory_comparison": {
+      "same_num_envs_seed_and_checkpoint": true,
+      "compared_fields": {
+        "survival_fraction": true,
+        "xy_rmse_m_s": true,
+        "yaw_rmse_rad_s": true,
+        "steps_per_foot": true
+      },
+      "scope": "Two56env force diagnostics differ only in point-velocity reconstruction, no policy update. Historical formal report used96simulation environments and is not trajectory-identical."
+    },
+    "browser": {
+      "state": "训练已暂停 · 等待明确恢复",
+      "remaining": "已暂停",
+      "meta": "检查点 166 · c7bcd59d981c5643 · 种子 947 · 16秒无学习诊断 · 2026/10/27 13:31:00。与上方历史训练结果分别记录。",
+      "rows": 4,
+      "error": "",
+      "playback_advances": true,
+      "failed_episode_ends_at_failure": true,
+      "browser_exceptions": [],
+      "passed": true
+    }
+  },
+  "limitations": [
+    "No new reward has been trained; no improvement claim.",
+    "Per-foot cancellation penalty is implemented algebraically but disabled pending a valid tangential-force source.",
+    "50Hz endpoint sampling of last0.5ms is not a20ms impulse average.",
+    "Estimated lowest capsule point is not resolved contact patch.",
+    "Current shared policy retains forward teacher initialization and forward-biased intermediate commands. Initialization/curriculum correction andS3/S5 acceptance remain unfinished; do not resume or train a specialist automatically."
+  ],
+  "evidence": {
+    "backend_validation.json": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/contact_force_probe_20261027/backend_validation.json",
+      "sha256": "f8d9c9ea6b11bf929ff96f09e99cae718b8d27d4eef9b1b5939072fc8787d7c2"
+    },
+    "backend_validation_initial_3d_secant_gate.json": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/contact_force_probe_20261027/backend_validation_initial_3d_secant_gate.json",
+      "sha256": "1d0375192412e192b28e0fe90fab62b3b5122b7e81641b7691980fdda51341e2"
+    },
+    "velocity_origin.json": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/contact_force_probe_20261027/velocity_origin.json",
+      "sha256": "fca64c4c0ed0b1f0f6a3c36852aaad786f49ddad9591fe2f339c67430cd7ff7b"
+    },
+    "com_velocity_shadow.json": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/contact_force_probe_20261027/com_velocity_shadow.json",
+      "sha256": "821bea2d98dd5eaf462cf7c9ee50a17472850f0f3edeb039df39660ac85e68d1"
+    },
+    "final166_force_com_diagnostic.json": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/contact_force_probe_20261027/final166_force_com_diagnostic.json",
+      "sha256": "99ecdcf340f5a90ccbeacf2b8258486a3b2f9d0cec91e321f398f71be8b96887"
+    },
+    "high_rate_semantics.json": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/contact_force_probe_20261027/high_rate_semantics.json",
+      "sha256": "b392fa390862f916820a3bb94319a596ec04570b2a691bf1f06d7bf2a20c65ef"
+    },
+    "raw_contacts.json": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/contact_force_probe_20261027/raw_contacts.json",
+      "sha256": "b2674f773b967f21040bf49df190cdf3cd9c0fd9151811b681105bc3f684a9f9"
+    },
+    "trajectory_comparison.json": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/contact_force_probe_20261027/trajectory_comparison.json",
+      "sha256": "45741890b934d01b036f3e49b94997b41ed45d5eef5b35c625e768bd8f5b381e"
+    },
+    "dashboard_validation.json": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/contact_force_probe_20261027/dashboard_validation.json",
+      "sha256": "39283b95d1890ca1279ab3d972c329cb947d6d14df4e780efe20831612c2cd9a"
+    },
+    "dashboard.png": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/contact_force_probe_20261027/dashboard.png",
+      "sha256": "bc98545d1e5607c474a288449ad2f30a5eba7f8e23397d1337f3537a76169bde"
+    },
+    "reviewed_source_manifest.json": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/contact_force_probe_20261027/reviewed_source_manifest.json",
+      "sha256": "d66738343a76d9090bfa59e888d11eafa4fe6f4d9bc927e985c0dbb07ab80fad"
+    }
+  }
+}

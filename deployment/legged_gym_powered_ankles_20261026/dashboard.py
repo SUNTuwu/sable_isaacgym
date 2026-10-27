@@ -77,7 +77,22 @@ class Handler(BaseHTTPRequestHandler):
             result={'run':state,'checkpoint':read_json(run/'checkpoint.json'),'evaluation':read_json(run/'latest_evaluation.json'),
                 'best':read_json(run/'best_evaluation.json'),'milestones':lines(run/'milestones.jsonl')[-30:],
                 'progress':read_json(run/'progress_5min.json'),'progress_history':lines(run/'progress_5min.jsonl')[-12:],
-                'backup':read_json(run/'backup_receipt.json'),'server_time_unix':time.time()}
+                'backup':read_json(run/'backup_receipt.json'),
+                'training_hold':read_json(ROOT/'results/cmd16_hist6/TRAINING_PAUSED.json',{}),'server_time_unix':time.time()}
+        elif path=='/api/contact-forces':
+            pointer=read_json(ROOT/'results/cmd16_hist6/contact_force_latest.json',{})
+            report=Path(pointer.get('path','/missing')).resolve()
+            base=(ROOT/'results/cmd16_hist6').resolve()
+            result={'status':'unavailable'}
+            if base in report.parents and report.is_file() and report.suffix=='.json':
+                raw=report.read_bytes()
+                if hashlib.sha256(raw).hexdigest()==pointer.get('sha256'):
+                    evidence=json.loads(raw)
+                    result={'status':'ready','analysis':evidence.get('contact_force_analysis'),
+                        'checkpoint':evidence.get('checkpoint'),'checkpoint_sha256':evidence.get('checkpoint_sha256'),
+                        'iteration':evidence.get('iteration'),'created_unix':evidence.get('created_unix'),
+                        'horizon_s':evidence.get('horizon_s'),'seed':evidence.get('seed'),
+                        'source_path':str(report),'report_sha256':pointer['sha256'],'training_modified':False}
         elif path=='/api/feedback':result={'messages':messages()[-500:],'storage_path':str(STORE),'monitor':read_json(ROOT/'results/legged_gym/operator_monitor_status.json',{}),'server_time_unix':time.time()}
         elif path=='/api/learning-curve':result=lines(run/'metrics.jsonl')[-5000:]
         elif path=='/api/video':result=read_json(ROOT/'results/legged_gym/side_video_preview.json',{'status':'preparing'})

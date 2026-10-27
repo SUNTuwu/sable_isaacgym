@@ -151,6 +151,7 @@ def frontier_candidates(parent, directory):
 
 
 def main():
+    from training_hold import require_training_enabled
     p=argparse.ArgumentParser();p.add_argument('--parent-run',type=Path,required=True)
     p.add_argument('--source-runtime',type=Path)
     p.add_argument('--frontier-dir',type=Path)
@@ -169,11 +170,13 @@ def main():
     if a.check_only:
         selected,rows=frontier_candidates(parent,a.frontier_dir)if a.frontier_dir else candidates(parent)
         print(json.dumps(dict(selected=selected,candidates=rows)));return
+    require_training_enabled()
     output=ROOT/'results/cmd16_hist6'/('continuation_'+parent.name+'.json')
     lock=(ROOT/'results/cmd16_hist6/continuation.lock').open('w')
     fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
     until=time.time()+1800
     while time.time()<until:
+        require_training_enabled()
         state=read_json(parent/'status.json',{})
         if state.get('status') in ('stopped_requested','failed'):
             atomic_json(output,dict(status='cancelled',reason='Parent explicitly stopped or failed'));return
@@ -204,6 +207,7 @@ def main():
         command+=['--frontier-alpha',str(selected['next_alpha']),'--require-normal-completion']
         if selected['frontier_passed']:
             command+=['--frontier-evidence',selected['frontier_gate']]
+    require_training_enabled()
     with output.with_suffix('.log').open('w') as log:
         process=subprocess.Popen(command,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
     choice=dict(selected=selected,candidates=rows,archive_selected_bytes_verified=True,
@@ -214,6 +218,7 @@ def main():
     atomic_json(output,dict(status='launching',pid=process.pid,command=command,choice=choice,created_unix=time.time()))
     until=time.time()+180
     while time.time()<until:
+        require_training_enabled()
         if process.poll() is not None:raise RuntimeError('Continuation launcher exited before startup')
         current=read_json(ROOT/'results/cmd16_hist6/current_migration.json',{})
         if current.get('run')!=str(parent) and current.get('launcher_pid')==process.pid:

@@ -56,4 +56,8 @@ def split_frontier(result, specs):
     result['velocity_segments'] = [row for row in result['velocity_segments'] if row['name'] not in specs]
     result['weighted_rewards_per_second'] = [row for row in result['weighted_rewards_per_second'] if row['name'] not in specs]
     result['diagnostics']['scenarios'] = {name: value for name, value in result['diagnostics']['scenarios'].items() if name not in specs}
+    if 'contact_force_analysis' in result:
+        forces=result['contact_force_analysis']
+        frontier['contact_force_scenarios']={k:v for k,v in forces['scenarios'].items()if k in specs}
+        forces['scenarios']={k:v for k,v in forces['scenarios'].items()if k not in specs}
     result['frontier_curriculum'] = frontier

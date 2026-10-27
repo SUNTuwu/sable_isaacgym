@@ -21,6 +21,7 @@ from command_foot_motion import command_velocity_at_feet,desired_foot_velocity,F
 from target_pose_clearance import target_pose_clearance_cost,executed_target_coordinates
 from motor_envelope import motor_torques
 from motion_rewards import yaw_error_cost,angular_tracking_reward
+from contact_force_analysis import analyze_contact_forces,material_point_velocity
 
 
 class TaskGaitSignals(GaitSignals):
@@ -91,6 +92,20 @@ class MigrationRobot(SableRobot):
         self.command_foot_velocity_per_foot = torch.zeros(self.num_envs,4,device=self.device)
         self.target_pose_clearance = torch.zeros(self.num_envs,4,device=self.device)
         self.target_pose_clearance_per_foot = torch.zeros(self.num_envs,4,device=self.device)
+        self.contact_error_xy_world = torch.zeros(self.num_envs,2,device=self.device)
+        self.contact_error_yaw = torch.zeros(self.num_envs,device=self.device)
+        self.contact_nominal_weight_n = float(self.mapping.manifest['total_mass_kg'])*9.81
+        self.contact_analysis = None
+        properties=self.gym.get_actor_rigid_body_properties(self.envs[0],self.actor_handles[0])
+        if self.cfg.domain_rand.randomize_base_mass or self.cfg.rewards.scales.contact_force_cancellation:
+            raise ValueError('Force backend requires shared body masses and disables unavailable per-foot cancellation')
+        self.contact_body_mass=torch.tensor([p.mass for p in properties],device=self.device)
+        self.contact_foot_com=torch.tensor([[properties[i].com.x,properties[i].com.y,properties[i].com.z]
+            for i in self.feet_indices.tolist()],device=self.device)
+        self.contact_nominal_weight_n=float(self.contact_body_mass.sum())*9.81
+        self.contact_other_bodies=[i for i in range(self.num_bodies)if i not in self.feet_indices.tolist()]
+        self.contact_before_momentum=torch.zeros(self.num_envs,3,device=self.device)
+        self.contact_sample_valid=torch.zeros(self.num_envs,dtype=torch.bool,device=self.device)
         self.moving_start = None
         if self.omni and self.cfg.migration.moving_start_training:
             self.moving_start = MovingStartCurriculum(self.num_envs,self.device,
@@ -234,6 +249,15 @@ class MigrationRobot(SableRobot):
         return self.obs_buf, self.privileged_obs_buf
 
     def step(self, actions):
+        # Attribute the resulting force sample to the error before this action,
+        # so a successful braking/correction step is not relabelled backwards.
+        x,y,z,w=self.base_quat.unbind(-1)
+        forward=torch.stack((1-2*(y*y+z*z),2*(x*y+w*z)),-1)
+        forward=forward/forward.norm(dim=-1,keepdim=True).clamp(min=1e-6)
+        left=torch.stack((-forward[:,1],forward[:,0]),-1)
+        self.contact_error_xy_world=(forward*self.commands16[:,0:1]+left*self.commands16[:,1:2]
+            -self.root_states[:,7:9])
+        self.contact_error_yaw=self.commands16[:,2]-self.heading_yaw_rate
         if self.teacher is not None:
             self.teacher_target_label = self.teacher.prepare()
         self.student_target = ActionSpec.target(actions, self.default_dof_pos[:, self.active],
@@ -252,6 +276,12 @@ class MigrationRobot(SableRobot):
 
     def _compute_torques(self, actions):
         self.substep_index += 1
+        if self.substep_index==self.cfg.control.decimation:
+            # Bracket only the final0.5ms physics step, not a reset or20ms command
+            # interval. No force sensors or altered actuations/physics settings.
+            self.gym.refresh_rigid_body_state_tensor(self.sim)
+            self.contact_before_momentum.copy_((self.contact_body_mass[None,:,None]*self.rigid_states[...,7:10]).sum(1))
+            self.contact_sample_valid[:]=(self.episode_length_buf>0)|(self.substep_index>1)
         target = self.full_student_target
         if self.teacher is not None and self.student_fraction < 1.:
             teacher_target = self.teacher.target(self.substep_index/self.cfg.control.decimation)
@@ -277,6 +307,24 @@ class MigrationRobot(SableRobot):
             self.commands16[:, :3] = self.commands[:, :3]
         self.waist_height_acc.update(self.rigid_states[:, self.waist_body_index, 2])
         self.gait_signals.update(self)
+        terminal_state=self.rigid_states[:,self.feet_indices]
+        point_velocity=material_point_velocity(terminal_state,self.foot_contact_point,self.contact_foot_com)
+        momentum=(self.contact_body_mass[None,:,None]*self.rigid_states[...,7:10]).sum(1)
+        resultant=(momentum-self.contact_before_momentum)/self.sim_params.dt
+        resultant[:,2]+=self.contact_nominal_weight_n
+        valid=self.contact_sample_valid&(self.contact_forces[:,self.contact_other_bodies].norm(dim=-1)<.1).all(1)
+        # Measured tensor contains only normals in this build. Its misleading
+        # near-zero XY channels must not enter the per-foot cancellation branch.
+        normals=torch.zeros_like(self.contact_forces[:,self.feet_indices])
+        normals[...,2]=self.contact_forces[:,self.feet_indices,2]
+        self.contact_analysis=analyze_contact_forces(normals,
+            self.foot_contact_point,self.rigid_states[:,self.feet_indices],self.root_states[:,:3],
+            self.contact_error_xy_world,self.contact_error_yaw,self.foot_clearance,
+            self.contact_nominal_weight_n,point_velocity=point_velocity,
+            resultant_force=resultant,resultant_valid=valid,tangential_available=False)
+        self.contact_analysis['loaded_slip_cost']*=self.contact_sample_valid
+        self.contact_analysis['point_velocity_valid']=self.contact_sample_valid.clone()
+        self.contact_analysis['normal_balance_error_n']=resultant[:,2]-normals[...,2].sum(1)
         if self.omni and self.cfg.rewards.scales.target_pose_clearance:
             # Exact capsule FK at the current measured root, with a clone of
             # q replaced by clipped targets. No simulation state is modified.
@@ -354,6 +402,10 @@ class MigrationRobot(SableRobot):
         self.extras['next_clean_proprio'] = self.terminal_proprio
         self.extras['next_velocity'] = self.terminal_velocity
         if getattr(self,'capture_eval',False):
+            self.eval_snapshot['contact_force_analysis']={key:value.clone()
+                for key,value in self.contact_analysis.items()}
+            self.eval_snapshot['contact_error_xy_world']=self.contact_error_xy_world.clone()
+            self.eval_snapshot['contact_error_yaw']=self.contact_error_yaw.clone()
             self.eval_snapshot.update(joint_velocity=self.dof_vel.clone(),
                 joint_acceleration=((self.dof_vel-self.last_dof_vel)/self.dt).clone(),
                 motor_torque=self.torques.clone(),executed_target=self.executed_target.clone(),
@@ -379,6 +431,15 @@ class MigrationRobot(SableRobot):
 
     def _reward_alive(self):
         return (~self.true_fall).float()
+
+    def _reward_contact_force_wrong(self):
+        return self.contact_analysis['wrong_cost']
+
+    def _reward_contact_force_cancellation(self):
+        return self.contact_analysis['cancellation_cost']
+
+    def _reward_loaded_contact_slip(self):
+        return self.contact_analysis['loaded_slip_cost']
 
     def _reward_command_foot_velocity(self):
         return self.command_foot_velocity_per_foot.mean(1)

@@ -27,6 +27,8 @@ def write(path, obj):
 
 
 def main():
+    from training_hold import require_training_enabled
+    require_training_enabled()
     OUT.mkdir(exist_ok=True, parents=True)
     lock = (OUT / 's1_launch.lock').open('a')
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)

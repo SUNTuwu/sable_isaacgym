@@ -43,6 +43,9 @@ def student_config(teacher_run, stage='S2', num_envs=1024):
     cfg.rewards.scales.velocity_error = -2.
     cfg.rewards.scales.command_foot_velocity = 0.
     cfg.rewards.scales.target_pose_clearance = 0.
+    cfg.rewards.scales.contact_force_wrong = 0.
+    cfg.rewards.scales.contact_force_cancellation = 0.
+    cfg.rewards.scales.loaded_contact_slip = 0.
     cfg.migration.unclipped_gait_costs = stage in ('S3','S5')
     if stage in ('S3', 'S5'):
         cfg.commands.heading_command = False
@@ -66,6 +69,12 @@ def student_config(teacher_run, stage='S2', num_envs=1024):
         # The added bounded swing cost is about4/s for stationary novel-command
         # feet. Preserve a survival incentive while adding its directional signal.
         cfg.rewards.scales.alive = 7.
+        # Whole-body momentum-balance horizontal resultant (bounded wrong-way
+        # correction) and actual-contact material-point sliding. Per-foot
+        # tangential forces are unavailable: cancellation MUST remain disabled.
+        cfg.rewards.scales.contact_force_wrong = -1.
+        cfg.rewards.scales.contact_force_cancellation = 0.
+        cfg.rewards.scales.loaded_contact_slip = -1.
     cfg.migration.minimum_action_std = .02
     cfg.migration.novel_command_std_floor = .04 if stage=='S3' else 0.
     cfg.migration.reverse_hind_std_floor = .08 if stage=='S3' else 0.

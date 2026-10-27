@@ -1,5 +1,5 @@
 {
-  "updated_unix": 1793076665.0632827,
+  "updated_unix": 1793079236.0826242,
   "goal_complete": false,
   "teacher": {
     "run": "stand5_20261027_v44_stride80_all",
@@ -9,13 +9,8 @@
   },
   "current_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803",
   "current_deadline": "2026-10-27T12:58:03.109762+08:00",
-  "current_processes": {
-    "training_pid": 583738,
-    "monitor_pid": 583819,
-    "supervisor_pid": 583728
-  },
+  "current_processes": {},
   "pre_migration_commit": "a95854cf4042b7994731e7a02d9761be8fd195d7",
-  "latest_pushed_commit": "480da61",
   "completed": [
     "326/90/92/15 schema and six-frame cache",
     "full raw-input mirror projection and history encoder",
@@ -88,12 +83,7 @@
     "S3/S5 evaluator nowrecords eachvelocitycommandsegment and requiresobserved response >=50% ofcommandchange; smallRMSEwithconstantdefaultspeedcannotpass."
   ],
   "next_work": [
-    "Verify sixteenth actual processes continue to12:34:36+08, immutable103-file runtime and final archive. It uses corrected parent selection, yaw costscale1, restored optimizers, no teacher/reference execution. No successor currently queued.",
-    "Use corrected ranking: binary current-frontier failures, then actual normalized remaining current-frontier deficits, then full endpoint scores. Older ranking repeatedly choseearly checkpoints because untrained full targets looked better; do not use it again. Fourteenth1 deficit1.136 vsfinal154 deficit.870, bothonly2yaw failures. Final acceptance thresholds remain untouched.",
-    "Restored global yawscale.35 trial completed56/56. Inspect full old-domain and current-frontier gates plus paired restoredscale1 data before deciding formal adoption. Stronger yaw cost is NOT in the active formal run. If adopting, validate compatibility and explicitly preserve learning state with critic adaptation; current launcher otherwise resets on reward/source changes.",
-    "Cold256env control with unchangedscale1 also regressed (44/56, old speeds~.04-.05). Restored same-state control preserved56/56 and old speeds~.086/.100/.112. Preserve actor/critic Adam and auxiliary Adam/LR when compatible. Critic warmup can coexist with restoration; startup identity and frozenactorwarmup were verified. Do not infer reward causality solely from the cold trials.",
-    "Development production default remains yaw scale1; train/eval CLI --yaw-error-scale permits explicit isolated trials only. Positive Gaussian remains in physical units, independent of cost scale. Formal launcher still does NOT restore automatically across changed rewards; if a changed-reward experiment succeeds, explicitly review compatibility and validate the intended new launch rather than assuming that flag is automatic.",
-    "No full S3 acceptance yet. Require all14 full endpoint scenarios including direct starts/transitions and actual four-foot cadence across three seeds. Then S5 actual.8/1.2/two-way frequency switching, then final accepted-checkpoint CPU/CUDA export parity."
+    "Remain paused. Resume training only after a new explicit user instruction."
   ],
   "evidence": [
     "results/cmd16_hist6/preflight/teacher_adapter.json",
@@ -158,7 +148,7 @@
     "planning/cmd16_hist6_baseline/s3_yaw_scale_entrypoints_20261027.json",
     "planning/cmd16_hist6_baseline/s3_current_yaw_update_diagnostic_20261027.json"
   ],
-  "current_status": "Seventeenth formal S3 started with yaw error scale.35, restored both Adam states and10main actor-frozen critic warmup. Sixteenth normal archive verified; selected its final172. No teacher/reference execution. S2 accepted, S3/S5 NOT accepted.",
+  "current_status": "User explicitly paused after edits. Last S3 ended normally at166 and its checkpoint/archive/107frozen runtime files are verified. Contact analysis/UI and two bounded negative costs validated without learning; no successor or teacher training. S3/S5 acceptance unfinished.",
   "dagger_final": {
     "iteration": 15040,
     "sha256": "e6dac5a717c43de43737bc16b57c7f1b015e8de5a014e2b2d039ba4817d16133",
@@ -180,7 +170,7 @@
     "survived": 144,
     "episodes": 144
   },
-  "updated_at": "2026-10-27T12:51:05.063263+08:00",
+  "updated_at": "2026-10-27T13:33:56.082626+08:00",
   "current_stage": "S3_command_frontier_alpha0375_yaw035",
   "latest_findings": {
     "active_source_commit": "b572c8a",
@@ -267,13 +257,9 @@
     "S5 genuine foot-event frequency0.8/1.2 and two-way switching, three seeds",
     "Export accepted final checkpoint and replay same recorded inputs onCPU/CUDA"
   ],
-  "active_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803",
+  "active_run": null,
   "next_actions": [
-    "Monitor seventeenth live training583738/monitor583819/supervisor583728 through12:58:03. Check postwarmup actual independent full and current-frontier metrics; training has no teacher/reference calls.",
-    "Use prepared107-file runtime results/cmd16_hist6/yaw_scale_entrypoints_source_20261027_1244/runtime for next continuation after reviewing current results. It overlays onlyqueue_continuation.py,launch_ppo.py,evaluate_acceptance.py to preserve yawscale.35 through rounds,three-seed diagnostics and S5. All training/control/physical/evaluator bytes are identical to active17. Prior1240 prepared source is superseded; neither is queued.",
-    "Current command exploration floor is inactive atalpha.375/alpha.5 because every moving intermediatevx>.03; eight real restored4096env diagnostic updates also measured old-forward PPOKL spikes. Evidence is in s3_current_yaw_update_diagnostic_20261027.json. Do not raise noise or change LR solely from this; preserve active formal run and use matched physical comparison if later results justify it. Diagnostic run is not a continuation candidate.",
-    "Select next parent by unchanged old-domain gates and measured current-frontier gains. Advancealpha by.125 only when its gate passes; otherwise diagnose. No eighteenth round is queued yet.",
-    "Full S3 translation/yaw including actual four-foot stepping and transitions requires three-seed acceptance. Then S5 actual.8/1.2/two-way frequency switching, then accepted-checkpoint CPU/CUDA export parity."
+    "Remain paused. See next_actions_after_explicit_resume for unfinished migration work."
   ],
   "user_teacher_question_20261027": {
     "question": "Teacher only walks forward; should new directions avoid teacher supervision, or should specialist teachers be trained?",
@@ -287,5 +273,214 @@
       "teacher_manifest_role": "Frozen asset/config identity and regression reference; no S3 action guidance"
     },
     "decision": "Continue existing independent PPO. Specialist backward/turn/lateral policies are an optional fallback, trained independently and distilled only after demonstrated capability. No new specialist teacher has been launched; do not use v44 to supervise directions it does not know."
-  }
+  },
+  "latest_user_steering": {
+    "created_at": "2026-10-27T12:59:19.844364+08:00",
+    "lineage": [
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803",
+        "stage": "S3",
+        "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_121436/checkpoints/model_000172.pt"
+      },
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_121436",
+        "stage": "S3",
+        "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_115059/checkpoints/model_000101.pt"
+      },
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_115059",
+        "stage": "S3",
+        "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_112816/checkpoints/model_000001.pt"
+      },
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_112816",
+        "stage": "S3",
+        "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_110536/checkpoints/model_000028.pt"
+      },
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_110536",
+        "stage": "S3",
+        "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/checkpoints/model_000027.pt"
+      },
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639",
+        "stage": "S3",
+        "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_092408/checkpoints/model_000122.pt"
+      },
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_092408",
+        "stage": "S3",
+        "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_090015/checkpoints/model_000163.pt"
+      },
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_090015",
+        "stage": "S3",
+        "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/checkpoints/model_000081.pt"
+      },
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706",
+        "stage": "S3",
+        "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_081205/checkpoints/model_000098.pt"
+      },
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_081205",
+        "stage": "S3",
+        "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_072548/checkpoints/model_000194.pt"
+      },
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_072548",
+        "stage": "S3",
+        "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_070259/checkpoints/model_000203.pt"
+      },
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_070259",
+        "stage": "S3",
+        "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_064005/checkpoints/model_000189.pt"
+      },
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_064005",
+        "stage": "S3",
+        "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_061709/checkpoints/model_000206.pt"
+      },
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_061709",
+        "stage": "S3",
+        "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s2_ppo_20261027_054920/checkpoints/model_000034.pt"
+      },
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s2_ppo_20261027_054920",
+        "stage": "S2",
+        "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s2_ppo_20261027_052700/checkpoints/model_000023.pt"
+      },
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s2_ppo_20261027_052700",
+        "stage": "S2",
+        "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s2_dagger_20261027_050031/checkpoints/model_015040.pt"
+      },
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s2_dagger_20261027_050031",
+        "stage": "S2_DAgger",
+        "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s1_bc_20261027_043949/checkpoints/model_090050.pt"
+      },
+      {
+        "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s1_bc_20261027_043949",
+        "stage": "S1",
+        "parent_checkpoint": null
+      }
+    ],
+    "conclusion": "All current direction tasks inherit the shared forward-distilled S1/S2 action network; current teacher detachment does not erase that learned action prior. S1/S2 sampled only forward.09-.12 andstop, not wrong-direction teacher labels. Currentalpha.375 training also gives the reversepath positivevx.050625 and lateral/turnpaths positivevx.065625. Moving-start curriculum adds further forward starts. User observed foot scuffing; actual full-endpoint evaluations show missing hind step events.",
+    "report_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803/checkpoints/model_000128.pt",
+    "report_iteration": 128,
+    "full_endpoint_evidence": [
+      {
+        "name": "reverse",
+        "mean_command": [
+          -0.04000035300850868,
+          0.0,
+          0.0
+        ],
+        "mean_actual_xyz_command_units": [
+          -0.013200640678405762,
+          0.0014952650526538491,
+          0.010750815272331238
+        ],
+        "survival_fraction": 0.5,
+        "steps_per_foot": [
+          7,
+          30,
+          31,
+          8
+        ],
+        "four_feet_stepping_fraction": 0.0
+      },
+      {
+        "name": "left",
+        "mean_command": [
+          0.0,
+          0.04000000283122063,
+          0.0
+        ],
+        "mean_actual_xyz_command_units": [
+          -0.04859818518161774,
+          0.22078421711921692,
+          -1.3231252431869507
+        ],
+        "survival_fraction": 0.0,
+        "steps_per_foot": [
+          2,
+          0,
+          0,
+          0
+        ],
+        "four_feet_stepping_fraction": 0.0
+      },
+      {
+        "name": "turn_left",
+        "mean_command": [
+          0.0,
+          0.0,
+          0.35000261664390564
+        ],
+        "mean_actual_xyz_command_units": [
+          0.010571797378361225,
+          0.004145264159888029,
+          0.06325437128543854
+        ],
+        "survival_fraction": 1.0,
+        "steps_per_foot": [
+          59,
+          58,
+          0,
+          2
+        ],
+        "four_feet_stepping_fraction": 0.0
+      }
+    ],
+    "user_latest_request": "Add four hand/foot contact force analysis to visualization and rewards; penalize wrong resultant direction and opposing/cancelling forces to suppress foot sliding.",
+    "next_implementation": [
+      "Superseded by contact_force_implementation_state; finish edits and remain paused as explicitly requested."
+    ],
+    "task_acceptance": false,
+    "current_state": "Implemented measured normals, reconstructed resultant and COM-corrected material-point slip; cancellation disabled for missing tangential forces. No new training."
+  },
+  "training_hold": {
+    "paused": true,
+    "user_instruction": "改完了先暂停这轮训练",
+    "created_at": "2026-10-27T13:19:50.505350+08:00",
+    "last_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803",
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803/checkpoints/model_000166.pt",
+      "sha256": "c7bcd59d981c5643b079dbb2463c28ffb9d9f45281821c58902192d65ad8efd4",
+      "iteration": 166,
+      "reason": "final",
+      "updated_unix": 1793077086.3005304
+    },
+    "scope": "No further PPO, BC, DAgger or teacher training. Finish contact analysis, visualization and non-learning verification; resume only on a new explicit user instruction."
+  },
+  "contact_force_implementation_state": {
+    "status": "changes_validated_training_paused",
+    "receipt": "/root/gpufree-data/projects/sable-isaacgym/planning/cmd16_hist6_baseline/contact_force_pause_20261027.json",
+    "new_reward_PPO_test_performed": false,
+    "measured_per_foot": "normal force only",
+    "resultant": "whole-body COM momentum balance",
+    "material_point_velocity": "verified COM convention plus angular cross product",
+    "weights": {
+      "contact_force_wrong": -1,
+      "loaded_contact_slip": -1,
+      "contact_force_cancellation": 0
+    },
+    "per_foot_tangential_yaw_cancellation_available": false,
+    "user_pause_precedence": true
+  },
+  "goal_status": "paused_by_user",
+  "training_paused": true,
+  "current_run_status": "stopped_at_deadline",
+  "current_deadline_historical_only": true,
+  "next_actions_after_explicit_resume": [
+    "Validate a concrete replacement for forward-biased command curriculum/initialization; do not blindly continuealpha.375.",
+    "Run necessary fresh-runtime PPO validation for changed force/slip rewards only after explicit user resume; no compatibility exception is granted by these non-learning probes.",
+    "Resolve per-foot tangential force before enabling cancellation; retain unavailable fields as null.",
+    "FullS3 andS5 three-seed acceptance and final accepted export remain outstanding."
+  ],
+  "previous_pushed_commit_before_contact_changes": "cb452f7"
 }

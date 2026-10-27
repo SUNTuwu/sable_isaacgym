@@ -1,0 +1,175 @@
+{
+  "created_at": "2026-10-27T12:59:19.844364+08:00",
+  "lineage": [
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803",
+      "stage": "S3",
+      "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_121436/checkpoints/model_000172.pt"
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_121436",
+      "stage": "S3",
+      "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_115059/checkpoints/model_000101.pt"
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_115059",
+      "stage": "S3",
+      "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_112816/checkpoints/model_000001.pt"
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_112816",
+      "stage": "S3",
+      "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_110536/checkpoints/model_000028.pt"
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_110536",
+      "stage": "S3",
+      "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/checkpoints/model_000027.pt"
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639",
+      "stage": "S3",
+      "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_092408/checkpoints/model_000122.pt"
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_092408",
+      "stage": "S3",
+      "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_090015/checkpoints/model_000163.pt"
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_090015",
+      "stage": "S3",
+      "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/checkpoints/model_000081.pt"
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706",
+      "stage": "S3",
+      "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_081205/checkpoints/model_000098.pt"
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_081205",
+      "stage": "S3",
+      "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_072548/checkpoints/model_000194.pt"
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_072548",
+      "stage": "S3",
+      "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_070259/checkpoints/model_000203.pt"
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_070259",
+      "stage": "S3",
+      "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_064005/checkpoints/model_000189.pt"
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_064005",
+      "stage": "S3",
+      "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_061709/checkpoints/model_000206.pt"
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_061709",
+      "stage": "S3",
+      "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s2_ppo_20261027_054920/checkpoints/model_000034.pt"
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s2_ppo_20261027_054920",
+      "stage": "S2",
+      "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s2_ppo_20261027_052700/checkpoints/model_000023.pt"
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s2_ppo_20261027_052700",
+      "stage": "S2",
+      "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s2_dagger_20261027_050031/checkpoints/model_015040.pt"
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s2_dagger_20261027_050031",
+      "stage": "S2_DAgger",
+      "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s1_bc_20261027_043949/checkpoints/model_090050.pt"
+    },
+    {
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s1_bc_20261027_043949",
+      "stage": "S1",
+      "parent_checkpoint": null
+    }
+  ],
+  "conclusion": "All current direction tasks inherit the shared forward-distilled S1/S2 action network; current teacher detachment does not erase that learned action prior. S1/S2 sampled only forward.09-.12 andstop, not wrong-direction teacher labels. Currentalpha.375 training also gives the reversepath positivevx.050625 and lateral/turnpaths positivevx.065625. Moving-start curriculum adds further forward starts. User observed foot scuffing; actual full-endpoint evaluations show missing hind step events.",
+  "report_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803/checkpoints/model_000128.pt",
+  "report_iteration": 128,
+  "full_endpoint_evidence": [
+    {
+      "name": "reverse",
+      "mean_command": [
+        -0.04000035300850868,
+        0.0,
+        0.0
+      ],
+      "mean_actual_xyz_command_units": [
+        -0.013200640678405762,
+        0.0014952650526538491,
+        0.010750815272331238
+      ],
+      "survival_fraction": 0.5,
+      "steps_per_foot": [
+        7,
+        30,
+        31,
+        8
+      ],
+      "four_feet_stepping_fraction": 0.0
+    },
+    {
+      "name": "left",
+      "mean_command": [
+        0.0,
+        0.04000000283122063,
+        0.0
+      ],
+      "mean_actual_xyz_command_units": [
+        -0.04859818518161774,
+        0.22078421711921692,
+        -1.3231252431869507
+      ],
+      "survival_fraction": 0.0,
+      "steps_per_foot": [
+        2,
+        0,
+        0,
+        0
+      ],
+      "four_feet_stepping_fraction": 0.0
+    },
+    {
+      "name": "turn_left",
+      "mean_command": [
+        0.0,
+        0.0,
+        0.35000261664390564
+      ],
+      "mean_actual_xyz_command_units": [
+        0.010571797378361225,
+        0.004145264159888029,
+        0.06325437128543854
+      ],
+      "survival_fraction": 1.0,
+      "steps_per_foot": [
+        59,
+        58,
+        0,
+        2
+      ],
+      "four_feet_stepping_fraction": 0.0
+    }
+  ],
+  "user_latest_request": "Add four hand/foot contact force analysis to visualization and rewards; penalize wrong resultant direction and opposing/cancelling forces to suppress foot sliding.",
+  "next_implementation": [
+    "Use existing terminal net-contact force vectors and estimated capsule-lowest contact point with rigid material-point velocity; expose per-foot horizontal/vertical forces, summed horizontal force and yaw moment. Clearly label50Hz endpoint rigid-body resultant and estimated point, not resolved solver point forces.",
+    "Three negative costs: task-error-directed wrong force, task-space opposing effort, loaded contact slip. Treat yaw via force moment/rigid point correction velocity; permit appropriate braking and vertical support. Use pre-action tracking errors for post-action force attribution, actual contact gates, bounded normalization and penalties after positive clipping.",
+    "Add independent force/slip metrics and interactive per-foot vector timeline to11111, with checkpoint/time and failed-episode labels. Test support,translation,yaw,braking,cancellation,rolling,reset/time alignment plus real physical shadow/PPO checks before a fresh frozen run.",
+    "Current round finishes12:58:03. No successor is queued. Preserve it and all earlier runs. Do not silently continue the forward-biased command path as the proposed solution. Address initialization/curriculum separately; no new from-scratch specialist or direction-specific model has been created yet."
+  ],
+  "task_acceptance": false,
+  "subsequent_correction": {
+    "receipt": "/root/gpufree-data/projects/sable-isaacgym/planning/cmd16_hist6_baseline/contact_force_pause_20261027.json",
+    "warning": "The initial proposal to use net-contact XY/body-force sensors was rejected by physical tests. Follow the later validated normal/momentum/COM-velocity implementation. User requested pause; do not execute the earlier proposed new round."
+  }
+}
