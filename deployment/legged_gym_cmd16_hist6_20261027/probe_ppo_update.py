@@ -30,11 +30,22 @@ def main():
             vx,vy,yaw=raw[:,306]*.2,raw[:,307]*.1,raw[:,308]
             novel=(vx<.03)&((torch.sqrt(vx.square()+vy.square())>.01)|(yaw.abs()>.08))
             out={}
-            for name,mask in [('all',torch.ones_like(novel)),('novel',novel),('known',~novel)]:
+            # Keep historical groups, but also expose actual direction commands:
+            # intermediate yaw/lateral commands can retain vx>.03 and therefore
+            # do not trigger the existing low-forward-speed exploration floor.
+            groups=[('all',torch.ones_like(novel)),('novel',novel),('known',~novel),
+                ('forward_domain',(vx>=.089)&(vx<=.121)&(vy.abs()<.005)&(yaw.abs()<.05)),
+                ('lateral_command',vy.abs()>=.005),('yaw_command',yaw.abs()>=.08),
+                ('reverse_command',vx<-.01),
+                ('stop_command',(torch.sqrt(vx.square()+vy.square())<=.01)&(yaw.abs()<=.08))]
+            for name,mask in groups:
                 if not mask.any():continue
                 out[name]=dict(count=int(mask.sum()),kl_mean=float(kl[mask].mean()),
                     kl_p95=float(torch.quantile(kl[mask],.95)),
-                    likelihood_ratio_outside_clip_fraction=float(((ratio[mask]-1).abs()>algorithm.clip_param).float().mean()))
+                    likelihood_ratio_outside_clip_fraction=float(((ratio[mask]-1).abs()>algorithm.clip_param).float().mean()),
+                    mean_executed_action_std=float(sigma[mask,:14].mean()),
+                    low_forward_exploration_fraction=float(novel[mask].float().mean()),
+                    mean_actual_command=torch.stack((vx,vy,yaw),-1)[mask].mean(0).cpu().tolist())
             return out
 
     def ppo_update(algorithm):

@@ -1,5 +1,5 @@
 {
-  "updated_unix": 1793075953.066064,
+  "updated_unix": 1793076665.0632827,
   "goal_complete": false,
   "teacher": {
     "run": "stand5_20261027_v44_stride80_all",
@@ -15,7 +15,7 @@
     "supervisor_pid": 583728
   },
   "pre_migration_commit": "a95854cf4042b7994731e7a02d9761be8fd195d7",
-  "latest_pushed_commit": "0423f29",
+  "latest_pushed_commit": "480da61",
   "completed": [
     "326/90/92/15 schema and six-frame cache",
     "full raw-input mirror projection and history encoder",
@@ -155,7 +155,8 @@
     "planning/cmd16_hist6_baseline/s3_frontier_continuous_selection_20261027.json",
     "planning/cmd16_hist6_baseline/s3_yaw_restored_preflight_20261027.json",
     "planning/cmd16_hist6_baseline/s3_yaw_formal_start_20261027.json",
-    "planning/cmd16_hist6_baseline/s3_yaw_scale_entrypoints_20261027.json"
+    "planning/cmd16_hist6_baseline/s3_yaw_scale_entrypoints_20261027.json",
+    "planning/cmd16_hist6_baseline/s3_current_yaw_update_diagnostic_20261027.json"
   ],
   "current_status": "Seventeenth formal S3 started with yaw error scale.35, restored both Adam states and10main actor-frozen critic warmup. Sixteenth normal archive verified; selected its final172. No teacher/reference execution. S2 accepted, S3/S5 NOT accepted.",
   "dagger_final": {
@@ -179,7 +180,7 @@
     "survived": 144,
     "episodes": 144
   },
-  "updated_at": "2026-10-27T12:44:47.007371+08:00",
+  "updated_at": "2026-10-27T12:51:05.063263+08:00",
   "current_stage": "S3_command_frontier_alpha0375_yaw035",
   "latest_findings": {
     "active_source_commit": "b572c8a",
@@ -239,7 +240,27 @@
       "evaluate_acceptance.py",
       "launch_ppo.py",
       "queue_continuation.py"
-    ]
+    ],
+    "current_yaw_update_diagnostic": {
+      "complete_updates": 8,
+      "evidence": "planning/cmd16_hist6_baseline/s3_current_yaw_update_diagnostic_20261027.json",
+      "production_changed": false
+    },
+    "latest_postwarmup_evaluation": {
+      "iteration": 54,
+      "survived": 39,
+      "environments": 56,
+      "current_frontier_turn_actual_rad_s": [
+        0.05005025118589401,
+        -0.04679135978221893
+      ],
+      "current_frontier_turn_command_rad_s": [
+        0.13125,
+        -0.13125
+      ],
+      "old_domain_failure": "speed_switch survival/first-segment XY tracking",
+      "frontier_accepted": false
+    }
   },
   "remaining_acceptance": [
     "S3 translation/yaw including direct starts and switches, actual stepping, three seeds",
@@ -250,6 +271,7 @@
   "next_actions": [
     "Monitor seventeenth live training583738/monitor583819/supervisor583728 through12:58:03. Check postwarmup actual independent full and current-frontier metrics; training has no teacher/reference calls.",
     "Use prepared107-file runtime results/cmd16_hist6/yaw_scale_entrypoints_source_20261027_1244/runtime for next continuation after reviewing current results. It overlays onlyqueue_continuation.py,launch_ppo.py,evaluate_acceptance.py to preserve yawscale.35 through rounds,three-seed diagnostics and S5. All training/control/physical/evaluator bytes are identical to active17. Prior1240 prepared source is superseded; neither is queued.",
+    "Current command exploration floor is inactive atalpha.375/alpha.5 because every moving intermediatevx>.03; eight real restored4096env diagnostic updates also measured old-forward PPOKL spikes. Evidence is in s3_current_yaw_update_diagnostic_20261027.json. Do not raise noise or change LR solely from this; preserve active formal run and use matched physical comparison if later results justify it. Diagnostic run is not a continuation candidate.",
     "Select next parent by unchanged old-domain gates and measured current-frontier gains. Advancealpha by.125 only when its gate passes; otherwise diagnose. No eighteenth round is queued yet.",
     "Full S3 translation/yaw including actual four-foot stepping and transitions requires three-seed acceptance. Then S5 actual.8/1.2/two-way frequency switching, then accepted-checkpoint CPU/CUDA export parity."
   ],

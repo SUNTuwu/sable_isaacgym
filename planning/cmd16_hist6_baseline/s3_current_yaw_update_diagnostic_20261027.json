@@ -1,0 +1,122 @@
+{
+  "created_at": "2026-10-27T12:51:05.061810+08:00",
+  "launch": {
+    "pid": 588886,
+    "directory": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/current_yaw_update_diagnostic_20261027_124749",
+    "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_current_yaw_update_diagnostic_20261027_124749",
+    "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803/checkpoints/model_000027.pt",
+    "checkpoint_sha256": "787029e3c9b8095ab72398a8d22f6a97c0150fdaec30337e429a537012f9c951",
+    "command": [
+      "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+      "-u",
+      "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/current_yaw_update_diagnostic_20261027_124749/runtime/probe_ppo_update.py",
+      "--diagnostic-output",
+      "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/current_yaw_update_diagnostic_20261027_124749/update_metrics.json",
+      "--run",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_current_yaw_update_diagnostic_20261027_124749",
+      "--teacher",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803/teacher_manifest.json",
+      "--resume",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803/checkpoints/model_000027.pt",
+      "--deadline",
+      "2026-10-27T12:52:49.047528+08:00",
+      "--stage",
+      "S3",
+      "--num-envs",
+      "4096",
+      "--max-updates",
+      "8",
+      "--critic-warmup-updates",
+      "0",
+      "--frontier-alpha",
+      ".375",
+      "--yaw-error-scale",
+      ".35",
+      "--restore-optimizer"
+    ],
+    "scope": "Eight real PPO diagnostic updates with exact active training/control/physics source, same4096env and restored Adam. Only diagnostic wrapper adds command-group KL and effective exploration statistics. No change to active formal run; no candidate adoption or acceptance claim."
+  },
+  "complete_updates": 8,
+  "reference_execution_calls": 0,
+  "runtime_files_verified": 107,
+  "raw_report": {
+    "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/current_yaw_update_diagnostic_20261027_124749/update_metrics.json",
+    "sha256": "2139e8c9b0d7b6ea01744a9bc7c595576df5b07fe8f29b24f4fcf0c52c6b345b"
+  },
+  "command_std_report": {
+    "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/frontier_exploration_coverage_20261027.json",
+    "sha256": "a52d2846e4e348c51cda3c9a2121f2f2f53c18f6f3d0f3c08cc0110d530db9f2"
+  },
+  "per_update": [
+    {
+      "update": 1,
+      "forward_KL_after_PPO": 0.013728911988437176,
+      "forward_KL_after_auxiliary": 0.01372688077390194,
+      "yaw_KL_after_auxiliary": 0.018286535516381264,
+      "auxiliary_update_accepted": false,
+      "all_command_exploration_coverage": 0.0
+    },
+    {
+      "update": 2,
+      "forward_KL_after_PPO": 0.07882606983184814,
+      "forward_KL_after_auxiliary": 0.09101096540689468,
+      "yaw_KL_after_auxiliary": 0.06003013998270035,
+      "auxiliary_update_accepted": true,
+      "all_command_exploration_coverage": 0.0
+    },
+    {
+      "update": 3,
+      "forward_KL_after_PPO": 0.06105094403028488,
+      "forward_KL_after_auxiliary": 0.06881595402956009,
+      "yaw_KL_after_auxiliary": 0.04436815530061722,
+      "auxiliary_update_accepted": true,
+      "all_command_exploration_coverage": 0.0
+    },
+    {
+      "update": 4,
+      "forward_KL_after_PPO": 0.012043699622154236,
+      "forward_KL_after_auxiliary": 0.012776206247508526,
+      "yaw_KL_after_auxiliary": 0.01216315571218729,
+      "auxiliary_update_accepted": true,
+      "all_command_exploration_coverage": 0.0
+    },
+    {
+      "update": 5,
+      "forward_KL_after_PPO": 0.007873743772506714,
+      "forward_KL_after_auxiliary": 0.008814198896288872,
+      "yaw_KL_after_auxiliary": 0.01030932180583477,
+      "auxiliary_update_accepted": true,
+      "all_command_exploration_coverage": 0.0
+    },
+    {
+      "update": 6,
+      "forward_KL_after_PPO": 0.005021497141569853,
+      "forward_KL_after_auxiliary": 0.008589887991547585,
+      "yaw_KL_after_auxiliary": 0.007717454805970192,
+      "auxiliary_update_accepted": true,
+      "all_command_exploration_coverage": 0.0
+    },
+    {
+      "update": 7,
+      "forward_KL_after_PPO": 0.006690357346087694,
+      "forward_KL_after_auxiliary": 0.009986656717956066,
+      "yaw_KL_after_auxiliary": 0.008851484395563602,
+      "auxiliary_update_accepted": true,
+      "all_command_exploration_coverage": 0.0
+    },
+    {
+      "update": 8,
+      "forward_KL_after_PPO": 0.0055901892483234406,
+      "forward_KL_after_auxiliary": 0.004975452553480864,
+      "yaw_KL_after_auxiliary": 0.005720881279557943,
+      "auxiliary_update_accepted": true,
+      "all_command_exploration_coverage": 0.0
+    }
+  ],
+  "findings": [
+    "Intermediatealpha.375 commands keep vx>.03 for all moving families, so the existing low-forward exploration floor is inactive. Actual executed-action std is about.02; this is measured distribution coverage, not proof that more noise helps.",
+    "Restored4096env update2 old-forward KL reached.07883 after main PPO and.09101 after auxiliary update; later updates were smaller. Existing auxiliary KL rejection worked on update1. This reset-start branch diagnostic does not reproduce every ongoing formal rollout or prove causality of the speed-switch failures.",
+    "No production exploration, optimizer schedule, teacher guidance or acceptance thresholds changed. Await full formal round; if needed use a matched physical trial before altering noise or PPO step control."
+  ],
+  "task_acceptance": false
+}
