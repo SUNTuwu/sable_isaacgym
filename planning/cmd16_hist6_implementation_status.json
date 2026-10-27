@@ -1,5 +1,5 @@
 {
-  "updated_unix": 1793074697.8511932,
+  "updated_unix": 1793075475.8125503,
   "goal_complete": false,
   "teacher": {
     "run": "stand5_20261027_v44_stride80_all",
@@ -15,7 +15,7 @@
     "supervisor_pid": 572192
   },
   "pre_migration_commit": "a95854cf4042b7994731e7a02d9761be8fd195d7",
-  "latest_pushed_commit": "bb34f1c",
+  "latest_pushed_commit": "b572c8a",
   "completed": [
     "326/90/92/15 schema and six-frame cache",
     "full raw-input mirror projection and history encoder",
@@ -152,7 +152,8 @@
     "planning/cmd16_hist6_baseline/s3_frontier_selection_20261027.json",
     "planning/cmd16_hist6_baseline/s3_yaw_cost_experiment_20261027.json",
     "planning/cmd16_hist6_baseline/s3_optimizer_warmup_controls_20261027.json",
-    "planning/cmd16_hist6_baseline/s3_frontier_continuous_selection_20261027.json"
+    "planning/cmd16_hist6_baseline/s3_frontier_continuous_selection_20261027.json",
+    "planning/cmd16_hist6_baseline/s3_yaw_restored_preflight_20261027.json"
   ],
   "current_status": "Sixteenth formal S3 retainsalpha.375/unit yaw cost and compatible optimizers. Corrected continuous frontier ranking selected fifteenth101; training continues without teacher/reference execution. S2 accepted; S3/S5 NOT accepted.",
   "dagger_final": {
@@ -176,7 +177,7 @@
     "survived": 144,
     "episodes": 144
   },
-  "updated_at": "2026-10-27T12:18:17.851195+08:00",
+  "updated_at": "2026-10-27T12:31:15.812552+08:00",
   "current_stage": "S3_command_frontier_alpha0375",
   "latest_findings": {
     "active_source_commit": "0687c75",
@@ -196,7 +197,12 @@
     "evaluation_alpha": 1.0,
     "yaw_cost_scale": 1.0,
     "frozen_files": 103,
-    "next_bounded_round": null,
+    "next_bounded_round": {
+      "driver_pid": 579601,
+      "status": "waiting_for_normal_archive",
+      "directory": "results/cmd16_hist6/yaw_compatibility_preparation_20261027_1230",
+      "change": "If current frontier passes, advance unchanged source; otherwise use tested yaw error scale.35 with restored compatible optimizers and10critic warmup. If no current-run checkpoint retains old gates, select a measured archived prior parent without relaxing gates."
+    },
     "selection_fix_evidence": "planning/cmd16_hist6_baseline/s3_frontier_continuous_selection_20261027.json",
     "cold_optimizer_trials": {
       "global_yaw_scale035_survived": 32,
@@ -218,7 +224,7 @@
       "normalized_unmet_sum": 1.0230300880613779,
       "normalized_unmet_max": 0.6019073895045688
     },
-    "next_round_queued": false,
+    "next_round_queued": true,
     "restored_global035_trial": {
       "report": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/yaw_restored_normalized_20261027_121003/independent_16s.json",
       "sha256": "383fe0b1c38eee9d96d2e294a56d7b25cb4a6c3724a8ebdd3c197a33c9ff7a34",
@@ -238,12 +244,10 @@
   ],
   "active_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_121436",
   "next_actions": [
-    "Verify sixteenth actual processes continue to12:34:36+08, immutable103-file runtime and final archive. It uses corrected parent selection, yaw costscale1, restored optimizers, no teacher/reference execution. No successor currently queued.",
-    "Use corrected ranking: binary current-frontier failures, then actual normalized remaining current-frontier deficits, then full endpoint scores. Older ranking repeatedly choseearly checkpoints because untrained full targets looked better; do not use it again. Fourteenth1 deficit1.136 vsfinal154 deficit.870, bothonly2yaw failures. Final acceptance thresholds remain untouched.",
-    "Restored global yawscale.35 trial completed56/56. Inspect full old-domain and current-frontier gates plus paired restoredscale1 data before deciding formal adoption. Stronger yaw cost is NOT in the active formal run. If adopting, validate compatibility and explicitly preserve learning state with critic adaptation; current launcher otherwise resets on reward/source changes.",
-    "Cold256env control with unchangedscale1 also regressed (44/56, old speeds~.04-.05). Restored same-state control preserved56/56 and old speeds~.086/.100/.112. Preserve actor/critic Adam and auxiliary Adam/LR when compatible. Critic warmup can coexist with restoration; startup identity and frozenactorwarmup were verified. Do not infer reward causality solely from the cold trials.",
-    "Development production default remains yaw scale1; train/eval CLI --yaw-error-scale permits explicit isolated trials only. Positive Gaussian remains in physical units, independent of cost scale. Formal launcher still does NOT restore automatically across changed rewards; if a changed-reward experiment succeeds, explicitly review compatibility and validate the intended new launch rather than assuming that flag is automatic.",
-    "No full S3 acceptance yet. Require all14 full endpoint scenarios including direct starts/transitions and actual four-foot cadence across three seeds. Then S5 actual.8/1.2/two-way frequency switching, then final accepted-checkpoint CPU/CUDA export parity."
+    "Verify bounded continuation driver579601 after sixteenth deadline12:34:36. It waits for final evaluation and verified normal archive, cancels explicit stop/failure/active-run change. Prepared107-file runtime and bound optimizer compatibility receipt are in results/cmd16_hist6/yaw_compatibility_preparation_20261027_1230.",
+    "Verify next actual PPO/monitor startup, restored optimizer state, yaw scale, ten main actor-frozen critic warmup updates if reward changes, current pointers, independent videos. No teacher actions or reference execution.",
+    "Current sixteenth had no eligible current-frontier/old-domain candidate at12:29; completed checkpoints can still improve. Driver can select archived fifteenth parent if required. Do not lower acceptance gates or claim backward motion foralpha.375 positive-vx training commands.",
+    "Continue to full S3 translation/yaw three-seed acceptance, then S5 actual.8/1.2/two-way frequency switching three-seed acceptance, then export accepted final checkpoint with recorded-input CPU/CUDA parity."
   ],
   "user_teacher_question_20261027": {
     "question": "Teacher only walks forward; should new directions avoid teacher supervision, or should specialist teachers be trained?",

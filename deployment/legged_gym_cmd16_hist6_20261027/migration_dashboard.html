@@ -5,7 +5,7 @@
 <section class="card"><h2>验收目标</h2><p>先保留原行走能力，再验证平移速度跟随、旋转速度跟随和步频切换。当前独立评估与实际着地事件决定是否通过；接口和离线拟合测试不代替运动验收。</p><div id="acceptance">尚无本轮闭环评估</div></section>
 <div class="grid"><section class="card wide"><h2 id="chartTitle">学生学习曲线</h2><canvas id="chart" width="900" height="260"></canvas><small id="chartNote">目标角度 RMSE（rad）；横轴为记录顺序。</small></section><section class="card wide"><h2>实际检查点回放</h2><video id="video" controls muted playsinline preload="metadata"></video><p id="videoDescription">等待新检查点回放</p><small id="videoSource" class="mono"></small></section></div>
 <section class="card"><h2>独立评估</h2><p id="evalMeta">尚未完成</p><div style="overflow:auto"><table><thead><tr><th>场景</th><th>存活</th><th>平移 RMSE m/s</th><th>旋转 RMSE rad/s</th><th>命令 vx / vy / yaw</th><th>实际 vx / vy / yaw</th><th>实际足步事件</th></tr></thead><tbody id="scenarios"></tbody></table></div><p id="frequency"></p></section>
-<section class="card"><h2>教师与记录</h2><p>固定教师为 v44 最终 9470 轮；最终检查点与归档已校验。训练使用冻结运行代码，开发代码可继续完善。每轮默认 20 分钟，每 180 秒安排独立评估和视频，展示各自产出的实际时间。</p><small id="updated"></small><p id="error" class="error"></p></section>
+<section class="card"><h2>前进基线与训练方式</h2><p>v44 最终 9470 轮固定保留为前进基线，检查点与归档已校验。它用于初期迁移；当前 S3 全向训练及后续 S5 步频训练采用学生独立 PPO，不使用教师动作监督或动作混入。训练使用冻结代码，每轮默认 20 分钟，每 180 秒安排独立评估和视频，展示各自产出的实际时间。</p><small id="updated"></small><p id="error" class="error"></p></section>
 <section class="card"><h2>反馈</h2><textarea id="feedback" rows="3" placeholder="记录观察或调整要求"></textarea><p><button id="send">保存反馈</button> <small id="feedbackState"></small></p></section></main>
 <script>
 const $=id=>document.getElementById(id),fmt=(x,d=3)=>Number.isFinite(x)?x.toFixed(d):'—',date=t=>t?new Date(t*1000).toLocaleString('zh-CN',{timeZone:'Asia/Shanghai'}):'—';let status={},lastVideo='';
