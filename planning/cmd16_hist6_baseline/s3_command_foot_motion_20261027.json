@@ -292,5 +292,33 @@
       "path": "results/cmd16_hist6/command_foot_motion_tests.log",
       "sha256": "d9868afe7821a66655743fc23f295574c4f14c681d3b2fd2e270b2d0d4ba2929"
     }
-  ]
+  ],
+  "formal_run": {
+    "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706",
+    "deadline": "2026-10-27T08:57:06.830665+08:00",
+    "source_commit": "6138372",
+    "selected_parent": {
+      "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_081205/checkpoints/model_000098.pt",
+      "sha256": "8eae339a34de90a63ac60485a0d16a1e33ea45ba0bd7f1d246d24fa70ec5c210",
+      "iteration": 98,
+      "evaluation": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_081205/evaluations/independent_000098_082529.json",
+      "evaluation_sha256": "d0034b96f6cfd33d56ef52781e3c4438180cb2dea985218316677613d3ec58d4",
+      "scope": "Development continuation choice; not multiseed acceptance",
+      "rule": "Latest independently evaluated checkpoint in this round with all14 scenario survival>=90%. Later121 lostleft survival;155 lostleft andforward105. Selected98 survived56/56 and retained improving reverse response.",
+      "selected_checkpoint_archive_bytes_verified": true,
+      "parent_final_iteration": 155,
+      "parent_archive": {
+        "archive": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/cmd16_hist6_s3_ppo_20261027_081205.tar.gz",
+        "sha256": "0b91e6888a5a194f84976eded9461ab265e8141ce2d8e4c5b3dca5e6862d17aa",
+        "verified_files": 90,
+        "final_checkpoint_and_frozen_runtime_verified": true,
+        "created_unix": 1793061249.1837661
+      }
+    },
+    "processes": {
+      "training_pid": 473147,
+      "monitor_pid": 473227,
+      "supervisor_pid": 473145
+    }
+  }
 }
