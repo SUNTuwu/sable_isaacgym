@@ -79,6 +79,34 @@ def candidates(parent):
     return min(usable,key=rank),sorted(rows,key=lambda r:r['iteration'])
 
 
+def frontier_progress(gate, baseline):
+    """Distance to the current measured gates, never an acceptance substitute."""
+    deficits=[];limits=baseline['new_capability_limits']
+    for row in gate['selected_rows']:
+        for field in ('xy_rmse_m_s','yaw_rmse_rad_s'):
+            value=row.get(field)
+            deficits.append(max(value/limits[field]-1.,0.)if number(value)else 100.)
+        desired=row['actual_command'];actual=row.get('mean_actual')or[]
+        if len(actual)!=3:
+            deficits.append(100.);continue
+        for axis in range(3):
+            if abs(desired[axis])>=(.02 if axis<2 else .1):
+                gain=actual[axis]/desired[axis]if number(actual[axis])else -100.
+                deficits.append(max(1.-gain/limits['mean_command_gain_min'],0.))
+        moving=math.hypot(*desired[:2])>.01 or abs(desired[2])>.08
+        if moving:
+            deficits.append(max(1.-row.get('four_foot_stepping_fraction',0.)/.9,0.))
+            frequency=row.get('actual_frequency_from_mean_interval_hz')or[]
+            counts=row.get('interval_count_per_foot')or[]
+            if len(frequency)!=4 or len(counts)!=4:deficits.append(100.)
+            else:
+                for value,count in zip(frequency,counts):
+                    deficits.append(max(abs(value-1.)/.15-1.,0.)if number(value)and count>=3 else 100.)
+        elif all(number(x)for x in actual):
+            deficits.extend([max(math.hypot(*actual[:2])/.02-1.,0.),max(abs(actual[2])/.1-1.,0.)])
+    return dict(normalized_unmet_sum=sum(deficits),normalized_unmet_max=max(deficits,default=0.))
+
+
 def frontier_candidates(parent, directory):
     """Select a measured curriculum state, advancing only after its gate passes."""
     from evaluate_frontier import assess_frontier
@@ -110,12 +138,14 @@ def frontier_candidates(parent, directory):
             evaluation=sources['endpoint']['path'],evaluation_sha256=sources['endpoint']['sha256'],
             frontier_gate=str(path.resolve()),frontier_gate_sha256=sha256(path),
             frontier_failures=verified['failures'],frontier_passed=verified['passed'],
+            frontier_progress=frontier_progress(verified,baseline),
             training_alpha=alpha,next_alpha=min(1.,alpha+.125)if verified['passed']else alpha,
             task_progress=score))
     if not rows:raise RuntimeError('No independently measured frontier candidate preserves old-domain gates and frontier survival')
     def rank(row):
         score=row['task_progress']
-        return (len(row['frontier_failures']),score['task_failure_count'],
+        progress=row['frontier_progress']
+        return (len(row['frontier_failures']),progress['normalized_unmet_sum'],progress['normalized_unmet_max'],score['task_failure_count'],
                 score['normalized_motion_distance'],-row['iteration'])
     return min(rows,key=rank),sorted(rows,key=lambda r:r['iteration'])
 
@@ -174,7 +204,7 @@ def main():
         rule='Require actor updates after critic warmup, all14 survival>=90% and six old-domain XY/yaw limits; rank by fewest unchanged S3 requirement failures, most novel feet at correct cadence, lowest normalized motion error/response shortfall, then latest iteration',
         scope='Continuation selection only; three-seed task acceptance remains required')
     if a.frontier_dir:
-        choice['rule']='Require unchanged old-domain gates, all five actual frontier paths surviving>=90%, and actor updates. Rank by fewest current-frontier failures then full endpoint failures/error. Advance at most.125 only when the selected measured frontier gate passed; otherwise continue the same actual command range.'
+        choice['rule']='Require unchanged old-domain gates, all five actual frontier paths surviving>=90%, and actor updates. Rank by fewest current-frontier failures, then smallest actual remaining normalized current-frontier deficit; full endpoint failures/error break ties. This preserves measured intermediate learning instead of repeatedly reverting to earlier checkpoints because of still-untrained endpoints. Advance at most.125 only when the selected measured frontier gate passed; otherwise continue the same actual command range.'
     atomic_json(output,dict(status='launching',pid=process.pid,command=command,choice=choice,created_unix=time.time()))
     until=time.time()+180
     while time.time()<until:
