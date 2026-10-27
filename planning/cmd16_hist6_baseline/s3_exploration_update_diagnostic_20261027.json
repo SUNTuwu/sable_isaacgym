@@ -1077,5 +1077,38 @@
     "scope": "Real PPO and distribution-contract validation; not locomotion acceptance",
     "created_unix": 1793059715.0452743
   },
-  "next_formal_change": "S3 pure reverse(vx<-.01,abs(vy)<.005,abs(yaw)<.05): six hind pitch/knee/ankle Gaussian exploration floor.08; preserve.04 othernovel/.02baseknown. No deterministic actor, reward or physics changes."
+  "next_formal_change": "S3 pure reverse(vx<-.01,abs(vy)<.005,abs(yaw)<.05): six hind pitch/knee/ankle Gaussian exploration floor.08; preserve.04 othernovel/.02baseknown. No deterministic actor, reward or physics changes.",
+  "parent115_noise": [
+    {
+      "std": 0.04,
+      "survival_fraction": 1.0,
+      "actual_completed_steps_per_foot": [
+        65.0,
+        68.0,
+        11.0,
+        17.0
+      ]
+    },
+    {
+      "std": 0.08,
+      "survival_fraction": 0.75,
+      "actual_completed_steps_per_foot": [
+        60.0,
+        59.0,
+        27.0,
+        41.0
+      ]
+    }
+  ],
+  "selected_next_parent": {
+    "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_072548/checkpoints/model_000194.pt",
+    "sha256": "6f18a0b3b54bc865f71781477788e2bf1ff4bd5ed40b0ef427e8aaf72f397179",
+    "iteration": 194,
+    "reason": "Branch from a preserved earlier checkpoint:115 had measured reverse response and genuine hind steps; later fourth/fifth checkpoints lost them. Require at least90% original10s survival at new reverse noise in the candidate probe, otherwise use194 whose reverse noise diagnostic survived8/8. Not multi-seed acceptance."
+  },
+  "next_run": {
+    "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_081205",
+    "deadline": "2026-10-27T08:32:05.418418+08:00",
+    "source_commit": "a3c5c18"
+  }
 }

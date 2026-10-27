@@ -1,5 +1,5 @@
 {
-  "updated_unix": 1793059016.1503558,
+  "updated_unix": 1793060030.1710534,
   "goal_complete": false,
   "teacher": {
     "run": "stand5_20261027_v44_stride80_all",
@@ -7,15 +7,15 @@
     "verified": true,
     "manifest": "planning/cmd16_hist6_baseline/teacher_manifest.json"
   },
-  "current_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_074834",
-  "current_deadline": "2026-10-27T08:08:34.787037+08:00",
+  "current_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_081205",
+  "current_deadline": "2026-10-27T08:32:05.418418+08:00",
   "current_processes": {
-    "training_pid": 451188,
-    "monitor_pid": 451270,
-    "supervisor_pid": 450623
+    "training_pid": 461937,
+    "monitor_pid": 462017,
+    "supervisor_pid": 461936
   },
   "pre_migration_commit": "a95854cf4042b7994731e7a02d9761be8fd195d7",
-  "latest_pushed_commit": "da3b4cf",
+  "latest_pushed_commit": "a3c5c18",
   "completed": [
     "326/90/92/15 schema and six-frame cache",
     "full raw-input mirror projection and history encoder",
@@ -55,7 +55,9 @@
     "Same-controller120substep torque comparison stillmax1.49e-7Nm; no physicalasset change",
     "Optimizer continuation helper verified withrealPPO: initialstatesexact andallAdamstepsadvanced16; activefourthruntime remainsolderfrozenec12c7a",
     "4096env real2PPOupdates finite,actor/criticchanged,auxiliaryrollback exercised,referencecalls0",
-    "4096env benchmark9204steps/s vs2048env5172steps/s,1.779x; fifthS3 launched afterparentarchiveverification"
+    "4096env benchmark9204steps/s vs2048env5172steps/s,1.779x; fifthS3 launched afterparentarchiveverification",
+    "Targeted hindnoise andphase-gated alternatives diagnosed; globalincrease rejected onobservedfalls",
+    "SixthS3 launchedwithpure-reverse-only exploration increase after16CPUtests andrealPPO; fifthfinalarchive verified, checkpoint115 rejected by6/8noise survival"
   ],
   "not_achieved": [
     "S3 direct-start translation/yaw tracking and actual four-foot stepping across3seeds",
@@ -83,13 +85,14 @@
     "S3/S5 evaluator nowrecords eachvelocitycommandsegment and requiresobserved response >=50% ofcommandchange; smallRMSEwithconstantdefaultspeedcannotpass."
   ],
   "next_work": [
-    "Monitor fifthS3 4096env until08:08:34+08; inspect actualnewdirection steps andtracking, not reward. Targetedhind-noise andPPO-update diagnostics inprogress; frozenruntime unchanged.",
-    "FourthS3 checkpoint115 briefly showedreversehindsteps butfinal194lostthem. Earlierprogress isnotstablelearning. Keepindependent checks.",
-    "If acheckpoint passes all14scenarios inone independentseed, runfull3-seedS3 acceptance whiletrainingcontinues. Only acceptedcheckpoint canenterS5. Do notrelaxfixedthresholds orreplace missingfoot events withzeros.",
-    "If no newhindgait emerges, use measuredreward/geometry evidence tochoose nextchanges. Considercommand-consistent softfootmotion guidance without addingexecutionreferences, forcingjointtrajectories or alteringphysicalassets. Avoidgeneralframeworkpolish in place oflearning work.",
-    "S5 usesdirectstarts, no conditionalnovel-noise floor, frequency.9–1.1 then.8–1.2 with completedepisodecurriculum,28s actual-foot-event switchandreturn tests.",
-    "Development1ee4f82 restoresoptimizer/auxiliary state only for same stage/config and identicaltraining code; realone-update proof passed. Activeec12c7a runtime predates this change; nextlauncher must respectsource/versionchecks.",
-    "Final acceptedmodel mustpass recorded-log CPU/CUDA exportparity again. Existingunacceptedprobe168 already passed; no full16-command orhardwarevalidation claim."
+    "Monitor sixthS3,deadline08:32:05+08. Evaluate direct-start reverse realhind steps/bodyvelocity and olddomain survival; no acceptance claim from stochastic exploration. Runtime frozen.",
+    "FifthS3 final146 archive verified; reverse motion regressed and pureturn/lateral hindgait remained incomplete. Preserveallruns. Sixth branches from fourth194 because115failednewnoise6/8;194newnoise8/8 inprior probe.",
+    "No uniform or swing-gated hindnoise increase: those impaired lateral/yaw survival. Only pure-reverse floor.08 isactive. Real256env2update smoke finite/actorcriticchanged/ref0 and16CPUtests passed.",
+    "If same-config continuation is useful, retain optimizerstate through existingcompatiblelauncher. No need for repeated coldstarts or unrelatedframeworkpolish.",
+    "If all14scenarios pass one independent evaluation, runexact3seedS3 acceptance whiletrainingcontinues. Fixedthresholds unchanged; only acceptedcheckpoint entersS5.",
+    "S5 directstarts, no novel/reverse noise floor, frequency.9–1.1 then.8–1.2 completedepisodecurriculum. Require28s actual-foot-event frequency-switch andreturn tests across3seeds.",
+    "If directional footmotion remainsstuck, consider a diagnostic of soft command-consistent horizontalfootmotion shaping in reward only; no executionreference, forcedjointtrajectory, physicalasset orwidthconstraint changes. No such reward implemented.",
+    "Final acceptedmodel requires matching real-log CPU/CUDA exportparity andacceptance proof; existingexportproof usesanunacceptedcandidate. No full16-command/hardwarevalidatedclaim."
   ],
   "evidence": [
     "results/cmd16_hist6/preflight/teacher_adapter.json",
@@ -126,9 +129,14 @@
     "results/cmd16_hist6/conditional_variance_validation.json",
     "results/cmd16_hist6/batch_benchmark_20261027_073020/results.json",
     "results/cmd16_hist6/landing_width_age_diagnostic.json",
-    "planning/cmd16_hist6_baseline/s3_exploration_update_diagnostic_20261027.json"
+    "planning/cmd16_hist6_baseline/s3_exploration_update_diagnostic_20261027.json",
+    "results/cmd16_hist6/reverse_noise_validation.json",
+    "results/cmd16_hist6/swing_exploration_comparison.json",
+    "results/cmd16_hist6/reverse_parent115_exploration.json",
+    "results/cmd16_hist6/reverse_noise_parent_selection.json",
+    "results/cmd16_hist6/s3_candidate_comparison.json"
   ],
-  "current_status": "S2 accepted144/144; fifth S3 4096env live. Parent final194 survived56/56 but new hind stepping incomplete; no S3/S5 acceptance.",
+  "current_status": "S2 accepted144/144. Sixth S3 4096env from fourth-final194; pure-reverse six hind exploration floor.08, other exploration/rewards/physics unchanged. S3/S5 not accepted.",
   "dagger_final": {
     "iteration": 15040,
     "sha256": "e6dac5a717c43de43737bc16b57c7f1b015e8de5a014e2b2d039ba4817d16133",
@@ -150,271 +158,44 @@
     "survived": 144,
     "episodes": 144
   },
-  "updated_at": "2026-10-27T07:50:19.795264",
-  "current_stage": "S3_PPO_4096",
+  "updated_at": "2026-10-27T08:13:50.171055",
+  "current_stage": "S3_PPO_reverse_exploration",
   "latest_findings": {
-    "active_source_commit": "da3b4cf",
-    "parent_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_072548",
-    "parent_checkpoint": 194,
-    "parent_archive": {
-      "archive": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/cmd16_hist6_s3_ppo_20261027_072548.tar.gz",
-      "sha256": "36906b281c305569f0792f7f95c4ebd5f89076e6cba74f2485a9c6a31e0c3003",
-      "verified_files": 88,
+    "active_source_commit": "a3c5c18",
+    "previous_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_074834",
+    "previous_final_checkpoint": 146,
+    "previous_final_survival": 1.0,
+    "previous_archive": {
+      "archive": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/cmd16_hist6_s3_ppo_20261027_074834.tar.gz",
+      "sha256": "ab2ee1b559b23db519c622baffdd58fdab6be2a34e787fe9b1d9e57a9f9f60f2",
+      "verified_files": 89,
       "final_checkpoint_and_frozen_runtime_verified": true,
-      "created_unix": 1793058513.036507
+      "created_unix": 1793059899.3806891
     },
-    "parent_scenarios": [
-      {
-        "name": "forward09",
-        "survival_fraction": 1.0,
-        "xy_rmse_m_s": 0.024023134803415665,
-        "yaw_rmse_rad_s": 0.19480249167434321,
-        "mean_actual_xyz_command_units": [
-          0.09021567553281784,
-          -0.0026034824550151825,
-          0.031267255544662476
-        ],
-        "steps_per_foot": [
-          58,
-          58,
-          60,
-          59
-        ]
-      },
-      {
-        "name": "forward105",
-        "survival_fraction": 1.0,
-        "xy_rmse_m_s": 0.02349121973353002,
-        "yaw_rmse_rad_s": 0.21477559288208603,
-        "mean_actual_xyz_command_units": [
-          0.10055503994226456,
-          -0.001214066636748612,
-          0.018826423212885857
-        ],
-        "steps_per_foot": [
-          56,
-          60,
-          59,
-          59
-        ]
-      },
-      {
-        "name": "forward12",
-        "survival_fraction": 1.0,
-        "xy_rmse_m_s": 0.02466415927575158,
-        "yaw_rmse_rad_s": 0.21915687142688406,
-        "mean_actual_xyz_command_units": [
-          0.11205704510211945,
-          -0.002368639223277569,
-          0.026850825175642967
-        ],
-        "steps_per_foot": [
-          60,
-          56,
-          60,
-          60
-        ]
-      },
-      {
-        "name": "stop",
-        "survival_fraction": 1.0,
-        "xy_rmse_m_s": 0.0012494540263953298,
-        "yaw_rmse_rad_s": 0.007209479959245017,
-        "mean_actual_xyz_command_units": [
-          0.00013309875794220716,
-          -5.692158083547838e-05,
-          0.002664445899426937
-        ],
-        "steps_per_foot": [
-          0,
-          0,
-          0,
-          0
-        ]
-      },
-      {
-        "name": "start_stop",
-        "survival_fraction": 1.0,
-        "xy_rmse_m_s": 0.020778197678894855,
-        "yaw_rmse_rad_s": 0.17143263250786317,
-        "mean_actual_xyz_command_units": [
-          0.07215757668018341,
-          -0.0017892159521579742,
-          0.01585506647825241
-        ],
-        "steps_per_foot": [
-          42,
-          46,
-          43,
-          42
-        ]
-      },
-      {
-        "name": "speed_switch",
-        "survival_fraction": 1.0,
-        "xy_rmse_m_s": 0.024516556665425078,
-        "yaw_rmse_rad_s": 0.21108000809162383,
-        "mean_actual_xyz_command_units": [
-          0.0963645726442337,
-          -0.0017737277084961534,
-          0.0185889583081007
-        ],
-        "steps_per_foot": [
-          59,
-          57,
-          59,
-          60
-        ]
-      },
-      {
-        "name": "reverse",
-        "survival_fraction": 1.0,
-        "xy_rmse_m_s": 0.07264947675082023,
-        "yaw_rmse_rad_s": 0.3232572181487777,
-        "mean_actual_xyz_command_units": [
-          -0.00822517927736044,
-          -5.361104922485538e-05,
-          -0.0004682131693698466
-        ],
-        "steps_per_foot": [
-          31,
-          37,
-          0,
-          0
-        ]
-      },
-      {
-        "name": "left",
-        "survival_fraction": 1.0,
-        "xy_rmse_m_s": 0.03121876745315792,
-        "yaw_rmse_rad_s": 0.40798483996182,
-        "mean_actual_xyz_command_units": [
-          -0.004781994037330151,
-          0.02277873456478119,
-          0.08267868310213089
-        ],
-        "steps_per_foot": [
-          59,
-          59,
-          0,
-          18
-        ]
-      },
-      {
-        "name": "right",
-        "survival_fraction": 1.0,
-        "xy_rmse_m_s": 0.03171333655152523,
-        "yaw_rmse_rad_s": 0.38717771848772414,
-        "mean_actual_xyz_command_units": [
-          -0.004305288195610046,
-          -0.021956145763397217,
-          -0.09956309199333191
-        ],
-        "steps_per_foot": [
-          60,
-          58,
-          17,
-          0
-        ]
-      },
-      {
-        "name": "turn_left",
-        "survival_fraction": 1.0,
-        "xy_rmse_m_s": 0.025170191185404096,
-        "yaw_rmse_rad_s": 0.5394653725528579,
-        "mean_actual_xyz_command_units": [
-          -0.007205894682556391,
-          0.004157576709985733,
-          0.03808021917939186
-        ],
-        "steps_per_foot": [
-          59,
-          57,
-          0,
-          0
-        ]
-      },
-      {
-        "name": "turn_right",
-        "survival_fraction": 1.0,
-        "xy_rmse_m_s": 0.02567263602740279,
-        "yaw_rmse_rad_s": 0.5423022175408649,
-        "mean_actual_xyz_command_units": [
-          -0.007626574020832777,
-          -0.004687329288572073,
-          -0.032010700553655624
-        ],
-        "steps_per_foot": [
-          59,
-          57,
-          0,
-          0
-        ]
-      },
-      {
-        "name": "combined",
-        "survival_fraction": 1.0,
-        "xy_rmse_m_s": 0.03493233019999812,
-        "yaw_rmse_rad_s": 0.2805355236930092,
-        "mean_actual_xyz_command_units": [
-          0.0742800310254097,
-          0.013673500157892704,
-          0.18441566824913025
-        ],
-        "steps_per_foot": [
-          58,
-          58,
-          1,
-          58
-        ]
-      },
-      {
-        "name": "lateral_switch",
-        "survival_fraction": 1.0,
-        "xy_rmse_m_s": 0.02477699444668769,
-        "yaw_rmse_rad_s": 0.30629621956378317,
-        "mean_actual_xyz_command_units": [
-          -0.0025111124850809574,
-          -0.0001675068779150024,
-          -0.00848689116537571
-        ],
-        "steps_per_foot": [
-          34,
-          36,
-          8,
-          4
-        ]
-      },
-      {
-        "name": "yaw_switch",
-        "survival_fraction": 1.0,
-        "xy_rmse_m_s": 0.01986121416685802,
-        "yaw_rmse_rad_s": 0.4225746170315774,
-        "mean_actual_xyz_command_units": [
-          -0.004453531000763178,
-          -0.0003372508508618921,
-          -0.002117389114573598
-        ],
-        "steps_per_foot": [
-          36,
-          34,
-          0,
-          0
-        ]
-      }
-    ],
-    "changes": {
+    "parent_selection": {
+      "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_072548/checkpoints/model_000194.pt",
+      "sha256": "6f18a0b3b54bc865f71781477788e2bf1ff4bd5ed40b0ef427e8aaf72f397179",
+      "iteration": 194,
+      "reason": "Branch from a preserved earlier checkpoint:115 had measured reverse response and genuine hind steps; later fourth/fifth checkpoints lost them. Require at least90% original10s survival at new reverse noise in the candidate probe, otherwise use194 whose reverse noise diagnostic survived8/8. Not multi-seed acceptance."
+    },
+    "rejected_parent115_noise_survival": 0.75,
+    "current_changes": {
+      "reverse_hind_std_floor": 0.08,
+      "mask_actions": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ],
+      "condition": "vx<-.01,abs(vy)<.005,abs(yaw)<.05",
       "num_envs": 4096,
-      "reward_physics_curriculum_unchanged": true,
-      "auxiliary_kl_uses_actual_conditional_variance": true,
-      "committed_encoder_mse_after_rollback": true
+      "physical_assets_rewards_controller_unchanged": true
     },
-    "throughput_benchmark": "results/cmd16_hist6/batch_benchmark_20261027_073020/results.json",
-    "PPO_smoke": "results/cmd16_hist6/conditional_variance_validation.json",
-    "landing_width_diagnostic": "results/cmd16_hist6/landing_width_age_diagnostic.json",
-    "landing_width_decision": "Preserve signed60mm last-actual-touchdown definition and penalty; no stale expiry or threshold relaxation.",
+    "PPO_validation": "results/cmd16_hist6/reverse_noise_validation.json",
     "diagnostics": "planning/cmd16_hist6_baseline/s3_exploration_update_diagnostic_20261027.json",
-    "diagnostic_decision": "Do not raise global/novel hind noise; reverse-only .08 remains candidate. Keep current run unchanged. PPO updates measured, no evidence for blind LR increase."
+    "runtime_files_verified": 85
   },
   "remaining_acceptance": [
     "S3 translation/yaw including direct starts and switches, actual stepping, three seeds",
