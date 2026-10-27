@@ -1,0 +1,26 @@
+{
+  "prepared_runtime": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/yaw_scale_entrypoints_source_20261027_1244/runtime",
+  "passed": true,
+  "stage": "S3",
+  "runtime_manifest_sha256": "1ac8673b533972c66fc65846e583da2ec6e5e23942d056bc28fc82613d1422d6",
+  "parent_runtime_manifest_sha256": "ece5d19935c6777e9b6db65a62642ec270cbfd6d2afd7ea52d4b5fe79b90cb42",
+  "changed_files": [
+    "evaluate_acceptance.py",
+    "launch_ppo.py",
+    "queue_continuation.py"
+  ],
+  "training_physics_evaluator_files_identical": true,
+  "acceptance_wrapper_cpu_validation": {
+    "passed": true,
+    "cases": [
+      "inherit035",
+      "explicit05",
+      "legacy1",
+      "reject_nan",
+      "reject_0",
+      "reject_-1"
+    ],
+    "scope": "CPU command-construction probe; subprocess intercepted before any simulation. No locomotion result or acceptance claim."
+  },
+  "scope": "Only launch/queue/acceptance orchestration inherits the chosen yaw scale. PPO, environment, direct evaluator, assets and acceptance thresholds unchanged. No task acceptance claim."
+}

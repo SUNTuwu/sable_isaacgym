@@ -61,6 +61,10 @@ def main():
     parent_config=read_json(parent/'config.json',{})
     continuation=parent_config.get('stage')==a.stage and 'on-policy PPO' in parent_config.get('algorithm','')
     expected_config=student_config(read_json(parent/'teacher_manifest.json')['run'],a.stage,a.num_envs)
+    if a.yaw_error_scale is None and a.stage in ('S3','S5') and parent_config.get('stage') in ('S3','S5'):
+        # Carry the chosen yaw objective through continuation and the frequency
+        # stage; changing it must be explicit, not a reset to the source default.
+        a.yaw_error_scale=parent_config.get('yaw_error_scale_rad_s',1.)
     if a.yaw_error_scale is not None:
         if not math.isfinite(a.yaw_error_scale)or a.yaw_error_scale<=0:raise ValueError('Invalid yaw error scale')
         expected_config.migration.yaw_error_scale_rad_s=a.yaw_error_scale
