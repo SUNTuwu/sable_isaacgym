@@ -143,9 +143,11 @@
     "results/cmd16_hist6/command_foot_motion_timing_validation.json",
     "results/cmd16_hist6/foot_motion_parent_selection.json",
     "planning/cmd16_hist6_baseline/s3_target_pose_diagnostic_20261027.json",
-    "results/cmd16_hist6/joint_motion_diagnostic.json"
+    "results/cmd16_hist6/joint_motion_diagnostic.json",
+    "planning/cmd16_hist6_baseline/s3_target_pose_reward_20261027.json",
+    "results/cmd16_hist6/target_pose_reward_encoder_validation.json"
   ],
-  "current_status": "S2 accepted144/144. Ninth S3 4096env compatible continuation from eighth final163, with optimizer state restored. No S3/S5 acceptance.",
+  "current_status": "S2 accepted144/144. Ninth S3 compatible run continues; prepared target-pose-clearance reward release queued after normal deadline/final archive. S3 and S5 acceptance incomplete.",
   "dagger_final": {
     "iteration": 15040,
     "sha256": "e6dac5a717c43de43737bc16b57c7f1b015e8de5a014e2b2d039ba4817d16133",
@@ -167,7 +169,7 @@
     "survived": 144,
     "episodes": 144
   },
-  "updated_at": "2026-10-27T09:28:12.747613+08:00",
+  "updated_at": "2026-10-27T09:38:13.119560+08:00",
   "current_stage": "S3_PPO_command_foot_motion",
   "latest_findings": {
     "active_source_commit": "6138372",
@@ -181,7 +183,289 @@
     "critic_warmup_updates": 0,
     "target_pose_diagnostic": "planning/cmd16_hist6_baseline/s3_target_pose_diagnostic_20261027.json",
     "joint_motion_diagnostic": "results/cmd16_hist6/joint_motion_diagnostic.json",
-    "acceptance_passed": false
+    "acceptance_passed": false,
+    "latest_independent_evaluation": {
+      "iteration": 70,
+      "survival_fraction": 1.0,
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_092408/latest_evaluation.json",
+      "scenarios": [
+        {
+          "name": "forward09",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.024193295463826002,
+          "yaw_rmse_rad_s": 0.15204899369734415,
+          "mean_actual_xyz_command_units": [
+            0.0857764482498169,
+            -0.002892599208280444,
+            0.03193207457661629
+          ],
+          "steps_per_foot": [
+            58,
+            58,
+            60,
+            59
+          ]
+        },
+        {
+          "name": "forward105",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.01960817979308568,
+          "yaw_rmse_rad_s": 0.16616672045758804,
+          "mean_actual_xyz_command_units": [
+            0.09978694468736649,
+            -0.001350628910586238,
+            0.020831221714615822
+          ],
+          "steps_per_foot": [
+            56,
+            60,
+            59,
+            59
+          ]
+        },
+        {
+          "name": "forward12",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.02061643191301331,
+          "yaw_rmse_rad_s": 0.1623887918873452,
+          "mean_actual_xyz_command_units": [
+            0.11324199289083481,
+            -0.00302674388512969,
+            0.032801710069179535
+          ],
+          "steps_per_foot": [
+            60,
+            56,
+            60,
+            60
+          ]
+        },
+        {
+          "name": "stop",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.0009351516242432072,
+          "yaw_rmse_rad_s": 0.004355371984481735,
+          "mean_actual_xyz_command_units": [
+            -7.114445907063782e-05,
+            -1.6412317563663237e-05,
+            0.0008510031620971859
+          ],
+          "steps_per_foot": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "start_stop",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.019036587705839568,
+          "yaw_rmse_rad_s": 0.13335901536359757,
+          "mean_actual_xyz_command_units": [
+            0.06951308250427246,
+            -0.0019764963071793318,
+            0.020028240978717804
+          ],
+          "steps_per_foot": [
+            42,
+            44,
+            43,
+            42
+          ]
+        },
+        {
+          "name": "speed_switch",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.023885947535824344,
+          "yaw_rmse_rad_s": 0.1575010390546339,
+          "mean_actual_xyz_command_units": [
+            0.09381958097219467,
+            -0.0020626243203878403,
+            0.023155145347118378
+          ],
+          "steps_per_foot": [
+            59,
+            57,
+            59,
+            60
+          ]
+        },
+        {
+          "name": "reverse",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.021046830730207595,
+          "yaw_rmse_rad_s": 0.3014724201600994,
+          "mean_actual_xyz_command_units": [
+            -0.03918156027793884,
+            -0.0003458544670138508,
+            0.003355182707309723
+          ],
+          "steps_per_foot": [
+            58,
+            58,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "left",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.0341889519624318,
+          "yaw_rmse_rad_s": 0.3629501038895174,
+          "mean_actual_xyz_command_units": [
+            -0.018900172784924507,
+            0.02347273752093315,
+            0.06251537799835205
+          ],
+          "steps_per_foot": [
+            59,
+            59,
+            2,
+            0
+          ]
+        },
+        {
+          "name": "right",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.03396139837057167,
+          "yaw_rmse_rad_s": 0.3620289515374455,
+          "mean_actual_xyz_command_units": [
+            -0.01876877248287201,
+            -0.024236470460891724,
+            -0.06106841191649437
+          ],
+          "steps_per_foot": [
+            60,
+            58,
+            0,
+            3
+          ]
+        },
+        {
+          "name": "turn_left",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.03093175969670284,
+          "yaw_rmse_rad_s": 0.427795431810421,
+          "mean_actual_xyz_command_units": [
+            -0.020622756332159042,
+            0.003397950902581215,
+            0.04133567959070206
+          ],
+          "steps_per_foot": [
+            59,
+            55,
+            0,
+            1
+          ]
+        },
+        {
+          "name": "turn_right",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.029997818655606363,
+          "yaw_rmse_rad_s": 0.43125976551443157,
+          "mean_actual_xyz_command_units": [
+            -0.0198927391320467,
+            -0.003932041581720114,
+            -0.039763953536748886
+          ],
+          "steps_per_foot": [
+            53,
+            58,
+            11,
+            0
+          ]
+        },
+        {
+          "name": "combined",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.034321340815132946,
+          "yaw_rmse_rad_s": 0.24478732057866218,
+          "mean_actual_xyz_command_units": [
+            0.06477438658475876,
+            0.015575830824673176,
+            0.1483679860830307
+          ],
+          "steps_per_foot": [
+            58,
+            58,
+            7,
+            57
+          ]
+        },
+        {
+          "name": "lateral_switch",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.026545709992303396,
+          "yaw_rmse_rad_s": 0.2833510546192564,
+          "mean_actual_xyz_command_units": [
+            -0.011389209888875484,
+            -0.000631301780231297,
+            -0.004556222818791866
+          ],
+          "steps_per_foot": [
+            36,
+            36,
+            4,
+            2
+          ]
+        },
+        {
+          "name": "yaw_switch",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.023811086211442813,
+          "yaw_rmse_rad_s": 0.33638171711830805,
+          "mean_actual_xyz_command_units": [
+            -0.012299382127821445,
+            -0.00021879693667870015,
+            -0.0034659754019230604
+          ],
+          "steps_per_foot": [
+            34,
+            34,
+            4,
+            4
+          ]
+        }
+      ],
+      "acceptance_passed": false
+    },
+    "prepared_next_release": {
+      "source_commit": "9bcd3cc",
+      "queue": {
+        "pid": 500202,
+        "command": [
+          "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+          "-u",
+          "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/target_pose_release_20261027_093532/runtime/queue_continuation.py",
+          "--parent-run",
+          "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_092408",
+          "--source-runtime",
+          "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/target_pose_release_20261027_093532/runtime"
+        ],
+        "release": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/target_pose_release_20261027_093532",
+        "parent": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_092408",
+        "deadline": "2026-10-27T09:44:08.777006+08:00",
+        "created_unix": 1793064932.7379103,
+        "dry_run_selected": {
+          "iteration": 52,
+          "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_092408/checkpoints/model_000052.pt",
+          "sha256": "6de1acc445c97d79263de8a38ff2648c7cb46646a43bc5eaa6975e89c47a8471",
+          "evaluation": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_092408/evaluations/independent_000052_093034.json",
+          "evaluation_sha256": "7669f259389f9b8b3a156cd2edea176872c67cae6f5e5f3774820fc3bc84f9a8",
+          "all_scenarios_survival": true,
+          "old_tracking": true
+        }
+      },
+      "proof": "planning/cmd16_hist6_baseline/s3_target_pose_reward_20261027.json",
+      "encoder_validation_correction": {
+        "corrected_prefix": "history_encoder.",
+        "matching_tensors": 10,
+        "changed_tensors": 10,
+        "scope": "The original validation queried nonexistent encoder. prefix and returned0; actor/critic finite-update and no-reference assertions remain valid."
+      },
+      "scope": "Soft hypothetical target geometry, never actual foot-height evidence or an actuator reference. Current formal runtime remains unchanged."
+    }
   },
   "remaining_acceptance": [
     "S3 translation/yaw including direct starts and switches, actual stepping, three seeds",
