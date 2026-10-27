@@ -31,11 +31,11 @@ def task_progress(report,baseline):
     limits=baseline['new_capability_limits'];cadence=0;distance=0.
     for row in report['scenarios']:
         if row['name'] in OLD:continue
-        cadence+=sum(number(f) and abs(f-1.)<=.15 for f in row.get('steady_frequency_per_foot_hz',[]))
+        cadence+=sum(number(f) and abs(f-1.)<=.15 for f in (row.get('steady_frequency_per_foot_hz') or []))
         for field,limit in [('xy_rmse_m_s',limits['xy_rmse_m_s']),('yaw_rmse_rad_s',limits['yaw_rmse_rad_s'])]:
             value=row.get(field);distance+=value/limit if number(value) else 100.
-        actual=row.get('mean_actual_xyz_command_units',[]);desired=row.get('mean_command',[])
-        if len(actual)!=3 or len(desired)!=3:distance+=100.;continue
+        actual=row.get('mean_actual_xyz_command_units') or [];desired=row.get('mean_command') or []
+        if len(actual)!=3 or len(desired)!=3 or not all(number(x)for x in actual+desired):distance+=100.;continue
         for axis in range(3):
             if abs(desired[axis])>=(.02 if axis<2 else .1):
                 gain=actual[axis]/desired[axis]
