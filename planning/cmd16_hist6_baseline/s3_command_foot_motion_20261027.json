@@ -1,0 +1,296 @@
+{
+  "created_unix": 1793061243.57691,
+  "task_acceptance": false,
+  "reason": "Novel-command hind foot movement remains mostly absent after six S3 rounds. Measure directional task-space mismatch before adding a soft swing-only signal.",
+  "definition": {
+    "weight": -2,
+    "alive_reward_per_second": 7,
+    "previous_alive_reward_per_second": 3,
+    "velocity_measurement": "20ms finite difference of capsule geometric center in world XY; first post-reset sample excluded",
+    "target": "heading-transformed translation plus commanded yaw cross current foot offset about ROOT, multiplied by pi/2*sin(pi*swing_progress)/(1-duty)",
+    "phase": "Continuous integrated command phase at control-interval midpoint",
+    "scope": "Smooth commanded swing window only. No stance center lock or actuator execution reference.",
+    "scale": "max(norm(command rigid velocity at each foot),0.04m/s)",
+    "error": "Squared 2D normalized error per foot, capped9, smooth swing weight, mean4feet; negative cost survives positive clipping",
+    "frequency": "Pulse integral over one cycle is command_speed/frequency for constant translation; no fixed80mm threshold or event-count reward",
+    "unchanged": "Physical assets, torque envelope, posture/width constraints, command curriculum, reverse noise and acceptance thresholds"
+  },
+  "compatibility_measurements": [
+    {
+      "name": "forward09",
+      "shadow_normalized_swing_cost_per_foot": [
+        0.6601184606552124,
+        0.709061324596405,
+        1.405765175819397,
+        1.4044039249420166
+      ],
+      "normalized_swing_cost_reduction_for_1cm_s_aligned_velocity": [
+        -0.01618090271949768,
+        -0.013336075469851494,
+        0.04297624155879021,
+        0.03724130243062973
+      ],
+      "aligned_actual_velocity_per_foot_m_s": [
+        0.0968862995505333,
+        0.09585867822170258,
+        0.06791401654481888,
+        0.06782681494951248
+      ],
+      "target_speed_per_foot_m_s": [
+        0.08999162912368774,
+        0.08998112380504608,
+        0.08986805379390717,
+        0.0900421217083931
+      ]
+    },
+    {
+      "name": "forward105",
+      "shadow_normalized_swing_cost_per_foot": [
+        0.45980384945869446,
+        0.4419432282447815,
+        1.3621629476547241,
+        1.3609423637390137
+      ],
+      "normalized_swing_cost_reduction_for_1cm_s_aligned_velocity": [
+        -0.005310373846441507,
+        -0.0038674743846058846,
+        0.03338003531098366,
+        0.037703681737184525
+      ],
+      "aligned_actual_velocity_per_foot_m_s": [
+        0.10758742690086365,
+        0.10630813241004944,
+        0.07616029679775238,
+        0.07471524178981781
+      ],
+      "target_speed_per_foot_m_s": [
+        0.10518857091665268,
+        0.10460186749696732,
+        0.10458333045244217,
+        0.10571109503507614
+      ]
+    },
+    {
+      "name": "forward12",
+      "shadow_normalized_swing_cost_per_foot": [
+        0.3215765953063965,
+        0.31261810660362244,
+        1.3052663803100586,
+        1.3174258470535278
+      ],
+      "normalized_swing_cost_reduction_for_1cm_s_aligned_velocity": [
+        0.0012965513160452247,
+        0.003074745647609234,
+        0.033850353211164474,
+        0.037015367299318314
+      ],
+      "aligned_actual_velocity_per_foot_m_s": [
+        0.11703073233366013,
+        0.11586034297943115,
+        0.08452809602022171,
+        0.08387311547994614
+      ],
+      "target_speed_per_foot_m_s": [
+        0.11982788145542145,
+        0.11987827718257904,
+        0.12018180638551712,
+        0.12024743109941483
+      ]
+    },
+    {
+      "name": "stop",
+      "shadow_normalized_swing_cost_per_foot": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "normalized_swing_cost_reduction_for_1cm_s_aligned_velocity": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "aligned_actual_velocity_per_foot_m_s": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_speed_per_foot_m_s": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "reverse",
+      "shadow_normalized_swing_cost_per_foot": [
+        2.440683603286743,
+        2.4316883087158203,
+        1.9749770164489746,
+        1.9801149368286133
+      ],
+      "normalized_swing_cost_reduction_for_1cm_s_aligned_velocity": [
+        0.095189169049263,
+        0.09444917738437653,
+        0.34112343192100525,
+        0.3366731107234955
+      ],
+      "aligned_actual_velocity_per_foot_m_s": [
+        0.005031241104006767,
+        0.005095262546092272,
+        0.005509049165993929,
+        0.005370020400732756
+      ],
+      "target_speed_per_foot_m_s": [
+        0.03997553884983063,
+        0.03999542444944382,
+        0.0400497242808342,
+        0.039955783635377884
+      ]
+    },
+    {
+      "name": "left",
+      "shadow_normalized_swing_cost_per_foot": [
+        2.199876308441162,
+        2.2231192588806152,
+        2.684938907623291,
+        2.559817314147949
+      ],
+      "normalized_swing_cost_reduction_for_1cm_s_aligned_velocity": [
+        0.08514585345983505,
+        0.32398465275764465,
+        0.31006762385368347,
+        0.31199249625205994
+      ],
+      "aligned_actual_velocity_per_foot_m_s": [
+        0.012652024626731873,
+        0.01363391149789095,
+        -0.003587928134948015,
+        0.003492666408419609
+      ],
+      "target_speed_per_foot_m_s": [
+        0.04015909507870674,
+        0.03992651775479317,
+        0.039851583540439606,
+        0.0401141420006752
+      ]
+    },
+    {
+      "name": "turn_left",
+      "shadow_normalized_swing_cost_per_foot": [
+        1.990654706954956,
+        1.7621859312057495,
+        0.8973372578620911,
+        1.7165977954864502
+      ],
+      "normalized_swing_cost_reduction_for_1cm_s_aligned_velocity": [
+        0.07015849649906158,
+        0.19610746204853058,
+        0.21734048426151276,
+        0.339248925447464
+      ],
+      "aligned_actual_velocity_per_foot_m_s": [
+        -0.00033220351906493306,
+        0.004449309315532446,
+        0.005674013402312994,
+        -0.004789843689650297
+      ],
+      "target_speed_per_foot_m_s": [
+        0.024081429466605186,
+        0.02346874587237835,
+        0.025952624157071114,
+        0.0255990382283926
+      ]
+    },
+    {
+      "name": "combined",
+      "shadow_normalized_swing_cost_per_foot": [
+        1.1370654106140137,
+        0.9820969104766846,
+        1.264325737953186,
+        1.9440090656280518
+      ],
+      "normalized_swing_cost_reduction_for_1cm_s_aligned_velocity": [
+        0.033452972769737244,
+        0.03306681290268898,
+        0.08351386338472366,
+        0.03785817697644234
+      ],
+      "aligned_actual_velocity_per_foot_m_s": [
+        0.07220321893692017,
+        0.07066906988620758,
+        0.04285460337996483,
+        0.06278474628925323
+      ],
+      "target_speed_per_foot_m_s": [
+        0.08456572890281677,
+        0.08858898282051086,
+        0.062177274376153946,
+        0.07779807597398758
+      ]
+    }
+  ],
+  "timing_check": {
+    "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_081205/checkpoints/model_000121.pt",
+    "checkpoint_sha256": "4bc92710f203b6b308089c400b18a4895f7ecb17e73972c5eafe7ad0deebee96",
+    "real_control_steps": 64,
+    "num_envs": 8,
+    "manual_reset_environments": [
+      0,
+      3
+    ],
+    "reset_samples_excluded": 10,
+    "maximum_velocity_error_m_s": 0.0,
+    "maximum_weighted_reward_error": 0.0,
+    "reference_execution_calls": 0,
+    "scope": "Physical snapshot timing and reset/aggregation check; not task acceptance"
+  },
+  "PPO_validation": {
+    "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_foot_velocity_smoke_20261027_082909",
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_foot_velocity_smoke_20261027_082909/checkpoints/model_000012.pt",
+      "sha256": "3aafd52f0730a317cb122502486a0824bbbdb28cb72642101288821ae2e34c31",
+      "iteration": 12,
+      "reason": "final",
+      "updated_unix": 1793061062.4083986
+    },
+    "updates": 12,
+    "control_steps": 288,
+    "num_envs": 256,
+    "environment_steps": 73728,
+    "finite": true,
+    "changes": {
+      "actor.": 0.003368467092514038,
+      "critic.": 0.006777053698897362
+    },
+    "reference_execution_calls": 0,
+    "cpu_tests_passed": 19,
+    "scope": "Structural/learning update validation, not task acceptance",
+    "created_unix": 1793061243.57621
+  },
+  "evidence": [
+    {
+      "path": "results/cmd16_hist6/command_foot_motion_diagnostic.json",
+      "sha256": "072bcba13f3c54a044c9be839b52279b48465851812925bb357564ee8c1151df"
+    },
+    {
+      "path": "results/cmd16_hist6/command_foot_swing_diagnostic.json",
+      "sha256": "d8d5a3a93f831abb9c4a32690d61df6ca318a08d571aba66818998cee37d896e"
+    },
+    {
+      "path": "results/cmd16_hist6/command_foot_motion_timing_validation.json",
+      "sha256": "4963e21ae54ac19aa38ff7ea623deed0690d003d3a72c100a6a3b382f4dbdacf"
+    },
+    {
+      "path": "results/cmd16_hist6/command_foot_motion_PPO_validation.json",
+      "sha256": "1d6599040fe0f234a426940bb6ee137926bb078cbac3fa3b748d7dbf9c73d9f9"
+    },
+    {
+      "path": "results/cmd16_hist6/command_foot_motion_tests.log",
+      "sha256": "d9868afe7821a66655743fc23f295574c4f14c681d3b2fd2e270b2d0d4ba2929"
+    }
+  ]
+}

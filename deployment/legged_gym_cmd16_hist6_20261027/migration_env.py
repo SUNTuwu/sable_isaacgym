@@ -17,6 +17,7 @@ from observation_schema import HistoryBuffer, proprioception, pack
 from gait_clock import GaitClock, local_phases
 from model_mapping import ModelMapping, heading_velocity, quat_apply, quat_inverse
 from curriculum import sample_velocity_commands, MovingStartCurriculum
+from command_foot_motion import command_velocity_at_feet,desired_foot_velocity,FootCenterVelocity,foot_velocity_cost
 from motor_envelope import motor_torques
 
 
@@ -82,6 +83,9 @@ class MigrationRobot(SableRobot):
             [('L_shoulder_pitch', 'R_shoulder_pitch'), ('L_hip_pitch', 'R_hip_pitch')]], device=self.device)
         from step_events import StepEvents
         self.actual_steps = StepEvents(self.num_envs, self.device, self.dt)
+        self.foot_motion = FootCenterVelocity(self.num_envs,self.device,self.dt)
+        self.command_foot_velocity_target = torch.zeros(self.num_envs,4,2,device=self.device)
+        self.command_foot_velocity_per_foot = torch.zeros(self.num_envs,4,device=self.device)
         self.moving_start = None
         if self.omni and self.cfg.migration.moving_start_training:
             self.moving_start = MovingStartCurriculum(self.num_envs,self.device,
@@ -203,6 +207,7 @@ class MigrationRobot(SableRobot):
         self.history.reset(ids)
         self._pending_reset_ids = ids.clone()
         self.actual_steps.reset(ids)
+        self.foot_motion.reset(ids)
         if self.teacher is not None:
             self.teacher.reset(ids)
 
@@ -280,6 +285,20 @@ class MigrationRobot(SableRobot):
         x, y, z, w = q.unbind(1)
         forward = torch.stack((1-2*(y*y+z*z), 2*(x*y+w*z)), 1)
         forward /= forward.norm(dim=1, keepdim=True).clamp(min=1e-6)
+        # A reward-space swing-velocity target. It never enters q_target or the
+        # actuator path. Stance is left to the existing contact shaping because
+        # a rolling capsule's center need not be stationary at actual contact.
+        measured=self.foot_motion.update(self.foot_center_world[:,:,:2])
+        mid_phase=torch.remainder(local-self.commands16[:,5:6]*self.dt*.5,1.)
+        duty=self.commands16[:,9:10]
+        progress=((mid_phase-duty)/(1-duty)).clamp(0,1)
+        swing_weight=(progress/.15).clamp(0,1)*((1-progress)/.15).clamp(0,1)*self.task_contact_activation[:,None]
+        self.command_foot_velocity_target=desired_foot_velocity(self.commands16[:,:3],forward,
+            self.root_states[:,:2],self.foot_center_world[:,:,:2],mid_phase,duty,self.task_contact_activation)
+        scale=command_velocity_at_feet(self.commands16[:,:3],forward,self.root_states[:,:2],
+            self.foot_center_world[:,:,:2]).norm(dim=-1).clamp(min=getattr(self.cfg.migration,'command_foot_velocity_scale_floor_m_s',.04))
+        self.command_foot_velocity_per_foot=foot_velocity_cost(measured,self.command_foot_velocity_target,scale)*swing_weight
+        self.command_foot_velocity_per_foot*=self.foot_motion.valid[:,None]
         age = self.episode_length_buf*self.dt
         moving_command = self.commands[:, 0]
         if self.omni:
@@ -322,6 +341,10 @@ class MigrationRobot(SableRobot):
                 joint_acceleration=((self.dof_vel-self.last_dof_vel)/self.dt).clone(),
                 motor_torque=self.torques.clone(),executed_target=self.executed_target.clone(),
                 foot_link_origin_velocity_xy=self.rigid_states[:,self.feet_indices,7:9].clone())
+            self.eval_snapshot.update(command_foot_velocity_actual_m_s=self.foot_motion.velocity.clone(),
+                command_foot_velocity_target_m_s=self.command_foot_velocity_target.clone(),
+                command_foot_velocity_valid=self.foot_motion.valid.clone(),
+                command_foot_velocity_cost_per_foot=self.command_foot_velocity_per_foot.clone())
 
     def _reward_target_limits(self):
         raw = self.default_dof_pos[:, self.active] + self.actions*.35
@@ -336,6 +359,9 @@ class MigrationRobot(SableRobot):
 
     def _reward_alive(self):
         return (~self.true_fall).float()
+
+    def _reward_command_foot_velocity(self):
+        return self.command_foot_velocity_per_foot.mean(1)
 
     def _reward_swing_peak_shortfall(self):
         value = super()._reward_swing_peak_shortfall()

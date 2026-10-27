@@ -370,7 +370,7 @@ class SableRobot(LeggedRobot):
         for name,function in zip(self.reward_names,self.reward_functions):
             value=function()*self.reward_scales[name]
             if diagnostic is not None:diagnostic[name]=value.clone()
-            if (name in ('velocity_error','waist_vertical_acceleration','ankle_event_angle','yaw_rate_error','stride_shortfall','stride_variance','hind_landing_width','proximal_acceleration_peak','swing_peak_balance','swing_peak_shortfall')
+            if (name in ('command_foot_velocity','velocity_error','waist_vertical_acceleration','ankle_event_angle','yaw_rate_error','stride_shortfall','stride_variance','hind_landing_width','proximal_acceleration_peak','swing_peak_balance','swing_peak_shortfall')
                     or (unclipped_gait and name in ('gait_clearance','target_limits'))):posture+=value
             else:self.rew_buf+=value
             self.episode_sums[name]+=value

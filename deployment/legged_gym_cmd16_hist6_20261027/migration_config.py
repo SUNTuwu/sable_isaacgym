@@ -33,12 +33,14 @@ def student_config(teacher_run, stage='S2', num_envs=1024):
     cfg.migration = SimpleNamespace(stage=stage, freeze_waist=True, history_noise_level=0.,
         command_ranges={'vx': [-.04, .12], 'vy': [-.04, .04], 'yaw_rate': [-.35, .35],
                         'frequency': [.9, 1.1]}, target_interpolation='hold_full_target',
+        command_foot_velocity_scale_floor_m_s=.04,
         velocity_error_scale_m_s=.05, moving_start_training=False,
         moving_start_fraction=.75, moving_start_hold_s=2., moving_start_blend_s=2.)
     # The full-target student can otherwise trade increased lateral oscillation
     # for the old stride/clearance costs when positive reward is clipped to zero.
     # This direct command error survives that clipping, as the yaw error does.
     cfg.rewards.scales.velocity_error = -2.
+    cfg.rewards.scales.command_foot_velocity = 0.
     cfg.migration.unclipped_gait_costs = stage in ('S3','S5')
     if stage in ('S3', 'S5'):
         cfg.commands.heading_command = False
@@ -53,7 +55,10 @@ def student_config(teacher_run, stage='S2', num_envs=1024):
         cfg.rewards.scales.yaw_rate_error = -2.
         # Keep per-step survival preferable to an early terminal transition
         # while restoring the clearance signal previously lost to clipping.
-        cfg.rewards.scales.alive = 3.
+        cfg.rewards.scales.command_foot_velocity = -2.
+        # The added bounded swing cost is about4/s for stationary novel-command
+        # feet. Preserve a survival incentive while adding its directional signal.
+        cfg.rewards.scales.alive = 7.
     cfg.migration.minimum_action_std = .02
     cfg.migration.novel_command_std_floor = .04 if stage=='S3' else 0.
     cfg.migration.reverse_hind_std_floor = .08 if stage=='S3' else 0.
