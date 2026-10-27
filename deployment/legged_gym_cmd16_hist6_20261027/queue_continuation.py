@@ -14,13 +14,40 @@ import sys
 import tarfile
 import time
 from run_io import atomic_json,read_json,sha256
+from acceptance import assess,number
 
 ROOT=Path('/root/gpufree-data/projects/sable-isaacgym')
 OLD={'forward09','forward105','forward12','stop','start_stop','speed_switch'}
 
 
+def task_progress(report,baseline):
+    """Development ranking against unchanged gates, never task acceptance.
+
+    Periodic reports have one seed. Only the missing-three-seed failure is
+    excluded from this ranking; the acceptance function itself is unchanged.
+    """
+    result=assess('S3',[report],baseline)
+    failures=[f for f in result['failures'] if f!='exactly_three_declared_independent_seeds_required']
+    limits=baseline['new_capability_limits'];cadence=0;distance=0.
+    for row in report['scenarios']:
+        if row['name'] in OLD:continue
+        cadence+=sum(number(f) and abs(f-1.)<=.15 for f in row.get('steady_frequency_per_foot_hz',[]))
+        for field,limit in [('xy_rmse_m_s',limits['xy_rmse_m_s']),('yaw_rmse_rad_s',limits['yaw_rmse_rad_s'])]:
+            value=row.get(field);distance+=value/limit if number(value) else 100.
+        actual=row.get('mean_actual_xyz_command_units',[]);desired=row.get('mean_command',[])
+        if len(actual)!=3 or len(desired)!=3:distance+=100.;continue
+        for axis in range(3):
+            if abs(desired[axis])>=(.02 if axis<2 else .1):
+                gain=actual[axis]/desired[axis]
+                distance+=max(limits['mean_command_gain_min']-gain,0.) if number(gain) else 100.
+    return dict(single_report_requirement_failures=failures,task_failure_count=len(failures),
+        novel_feet_with_correct_cadence=cadence,normalized_motion_distance=distance,
+        three_seed_acceptance=False)
+
+
 def candidates(parent):
     baseline=read_json(parent/'baseline_metrics.json');limits=baseline['new_capability_limits']
+    warmup=read_json(parent/'config.json').get('critic_warmup_updates',0)
     rows=[]
     for path in (parent/'evaluations').glob('independent_*.json'):
         report=read_json(path);scenes=report.get('scenarios',[])
@@ -38,10 +65,18 @@ def candidates(parent):
         if cp.parent.resolve()!=parent/'checkpoints':continue
         if sha256(cp)!=report['checkpoint_sha256']:raise ValueError('Evaluated checkpoint changed')
         rows.append(dict(iteration=report['iteration'],checkpoint=str(cp),sha256=report['checkpoint_sha256'],
-            evaluation=str(path),evaluation_sha256=sha256(path),all_scenarios_survival=stable,old_tracking=tracking))
-    usable=[r for r in rows if r['all_scenarios_survival'] and r['old_tracking']]
+            evaluation=str(path),evaluation_sha256=sha256(path),all_scenarios_survival=stable,old_tracking=tracking,
+            has_actor_updates=report['iteration']>warmup,
+            task_progress=task_progress(report,baseline)))
+    usable=[r for r in rows if r['all_scenarios_survival'] and r['old_tracking'] and r['has_actor_updates']]
     if not usable:raise RuntimeError('No stable independently evaluated continuation parent')
-    return max(usable,key=lambda r:r['iteration']),sorted(rows,key=lambda r:r['iteration'])
+    # Preserve a learned novel skill when a later stable checkpoint forgets it.
+    # The exact optimizer state still comes from the selected checkpoint.
+    def rank(row):
+        score=row['task_progress']
+        return (score['task_failure_count'],-score['novel_feet_with_correct_cadence'],
+            score['normalized_motion_distance'],-row['iteration'])
+    return min(usable,key=rank),sorted(rows,key=lambda r:r['iteration'])
 
 
 def main():
@@ -89,7 +124,7 @@ def main():
     with output.with_suffix('.log').open('w') as log:
         process=subprocess.Popen(command,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
     choice=dict(selected=selected,candidates=rows,archive_selected_bytes_verified=True,
-        rule='Latest checkpoint with all14 scenario survival>=90% and six old-domain XY/yaw errors within existing S3 limits',
+        rule='Require actor updates after critic warmup, all14 survival>=90% and six old-domain XY/yaw limits; rank by fewest unchanged S3 requirement failures, most novel feet at correct cadence, lowest normalized motion error/response shortfall, then latest iteration',
         scope='Continuation selection only; three-seed task acceptance remains required')
     atomic_json(output,dict(status='launching',pid=process.pid,command=command,choice=choice,created_unix=time.time()))
     until=time.time()+180
