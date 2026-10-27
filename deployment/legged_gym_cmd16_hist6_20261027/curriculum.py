@@ -4,6 +4,21 @@ import torch
 STAGES = ('S1', 'S2', 'S3', 'S5')
 
 
+def command_frontier(goals, alpha):
+    """Training command path from learned forward motion to the full goal.
+
+    Old forward and true stop remain unchanged. Alpha1 is exact identity.
+    This changes the actual command sent to actor/reward together, never action
+    targets. Independent evaluation always bypasses it at alpha1.
+    """
+    if not 0. <= alpha <= 1.:raise ValueError('Command frontier alpha must be in[0,1]')
+    if alpha == 1.:return goals.clone()
+    novel=(goals[:,0]<.08)|(goals[:,1:].abs().sum(1)>.01)
+    moving=(goals[:,:2].norm(dim=1)>.01)|(goals[:,2].abs()>.08)
+    start=torch.zeros_like(goals);start[:,0]=.105
+    return torch.where((novel&moving)[:,None],torch.lerp(start,goals,alpha),goals)
+
+
 class MovingStartCurriculum:
     """Training-only commands; all actions still come from the current student.
 

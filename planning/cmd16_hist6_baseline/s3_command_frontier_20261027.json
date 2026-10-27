@@ -1,0 +1,789 @@
+{
+  "created_at": "2026-10-27T10:34:49.745235+08:00",
+  "scope": "Training curriculum alpha.25 only; full S3/S5 acceptance endpoints unchanged.",
+  "training_start_alpha": 0.25,
+  "automatic_expansion": false,
+  "parent_checkpoint": "runs/cmd16_hist6_s3_ppo_20261027_092408/checkpoints/model_000122.pt",
+  "parent_sha256": "756c109a5e82ce23cca70a7a427118dc782a071b7ac51e5c508e1f1fe8e74779",
+  "parent_archive_selected_bytes_verified": true,
+  "tests": {
+    "passed": 25,
+    "log": "results/cmd16_hist6/command_frontier_tests.log"
+  },
+  "PPO_smoke": {
+    "run": "runs/cmd16_hist6_frontier_smoke_20261027_102913",
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_frontier_smoke_20261027_102913/checkpoints/model_000012.pt",
+      "sha256": "dcd1c611c46e656b3794e32e08cc56ae1f9a9af7e8685dabb46e3a943dede97a",
+      "iteration": 12,
+      "reason": "final",
+      "updated_unix": 1793068240.6256814
+    },
+    "updates": 12,
+    "environment_steps": 73728,
+    "changed_tensors": {
+      "actor.": 8,
+      "critic.": 8,
+      "history_encoder.": 10
+    },
+    "reference_execution_calls": 0,
+    "finite": true,
+    "task_acceptance": false
+  },
+  "command_contract": {
+    "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_092408/checkpoints/model_000122.pt",
+    "checkpoint_sha256": "756c109a5e82ce23cca70a7a427118dc782a071b7ac51e5c508e1f1fe8e74779",
+    "num_envs": 32,
+    "control_steps": 64,
+    "training_alpha": 0.25,
+    "production_evaluation_alpha": 1.0,
+    "maximum_command_contract_error": 0.0,
+    "mapped_sample_count": 1280,
+    "forced_reset_ids": [
+      1,
+      6
+    ],
+    "override_survives_reset": true,
+    "reference_execution_calls": 0,
+    "actual_S3_frequency_hz": 1.0,
+    "task_acceptance": false
+  },
+  "short_frontier_probe": {
+    "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_092408/checkpoints/model_000122.pt",
+    "checkpoint_sha256": "756c109a5e82ce23cca70a7a427118dc782a071b7ac51e5c508e1f1fe8e74779",
+    "seed": 439,
+    "horizon_s": 6.0,
+    "environments_per_group": 4,
+    "groups": [
+      {
+        "family": "forward_control",
+        "alpha": 0.0,
+        "actual_command": [
+          0.105,
+          0.0,
+          0.0
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.019509054720401764,
+        "yaw_rmse_rad_s": 0.176374152302742,
+        "mean_actual": [
+          0.1016133576631546,
+          -0.0033320996444672346,
+          0.033503249287605286
+        ],
+        "steps_per_foot": [
+          18.0,
+          19.0,
+          19.0,
+          19.0
+        ],
+        "four_foot_stepping_fraction": 1.0,
+        "actual_frequency_from_mean_interval_hz": [
+          1.0,
+          0.9973403811454773,
+          1.0,
+          1.0
+        ],
+        "interval_count_per_foot": [
+          14.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "clearance_p95_per_foot_m": [
+          0.016593990847468376,
+          0.016340188682079315,
+          0.022375671193003654,
+          0.02023560181260109
+        ]
+      },
+      {
+        "family": "combined_control",
+        "alpha": 1.0,
+        "actual_command": [
+          0.07,
+          0.03,
+          0.25
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.035413336008787155,
+        "yaw_rmse_rad_s": 0.2456807792186737,
+        "mean_actual": [
+          0.0657932236790657,
+          0.015183216892182827,
+          0.17993441224098206
+        ],
+        "steps_per_foot": [
+          20.0,
+          17.0,
+          10.0,
+          19.0
+        ],
+        "four_foot_stepping_fraction": 0.75,
+        "actual_frequency_from_mean_interval_hz": [
+          1.0,
+          1.0,
+          0.7518796324729919,
+          0.9973403811454773
+        ],
+        "interval_count_per_foot": [
+          16.0,
+          13.0,
+          6.0,
+          15.0
+        ],
+        "clearance_p95_per_foot_m": [
+          0.013531111180782318,
+          0.014436449855566025,
+          0.0027223729994148016,
+          0.013664251193404198
+        ]
+      },
+      {
+        "family": "reverse",
+        "alpha": 0.1,
+        "actual_command": [
+          0.0905,
+          0.0,
+          0.0
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.023644108325242996,
+        "yaw_rmse_rad_s": 0.1659373939037323,
+        "mean_actual": [
+          0.08662302047014236,
+          -0.0030715425964444876,
+          0.030599573627114296
+        ],
+        "steps_per_foot": [
+          18.0,
+          19.0,
+          19.0,
+          19.0
+        ],
+        "four_foot_stepping_fraction": 1.0,
+        "actual_frequency_from_mean_interval_hz": [
+          1.0014305114746094,
+          1.0,
+          1.0013350248336792,
+          1.0
+        ],
+        "interval_count_per_foot": [
+          14.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "clearance_p95_per_foot_m": [
+          0.015360615216195583,
+          0.015200749039649963,
+          0.018808431923389435,
+          0.017309924587607384
+        ]
+      },
+      {
+        "family": "reverse",
+        "alpha": 0.25,
+        "actual_command": [
+          0.06875,
+          0.0,
+          0.0
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.03226889297366142,
+        "yaw_rmse_rad_s": 0.24726830422878265,
+        "mean_actual": [
+          0.06309632211923599,
+          -0.0009698657086119056,
+          0.017163041979074478
+        ],
+        "steps_per_foot": [
+          18.0,
+          19.0,
+          19.0,
+          20.0
+        ],
+        "four_foot_stepping_fraction": 1.0,
+        "actual_frequency_from_mean_interval_hz": [
+          1.0,
+          1.0013350248336792,
+          1.0013350248336792,
+          1.0025062561035156
+        ],
+        "interval_count_per_foot": [
+          14.0,
+          15.0,
+          15.0,
+          16.0
+        ],
+        "clearance_p95_per_foot_m": [
+          0.013598191551864147,
+          0.01365339569747448,
+          0.006169648841023445,
+          0.00547447707504034
+        ]
+      },
+      {
+        "family": "reverse",
+        "alpha": 0.5,
+        "actual_command": [
+          0.0325,
+          0.0,
+          0.0
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.039446115493774414,
+        "yaw_rmse_rad_s": 0.48623010516166687,
+        "mean_actual": [
+          0.00939975120127201,
+          -0.000526442367117852,
+          0.01339828222990036
+        ],
+        "steps_per_foot": [
+          18.0,
+          19.0,
+          1.0,
+          0.0
+        ],
+        "four_foot_stepping_fraction": 0.0,
+        "actual_frequency_from_mean_interval_hz": [
+          1.0043041706085205,
+          1.0053619146347046,
+          null,
+          null
+        ],
+        "interval_count_per_foot": [
+          14.0,
+          15.0,
+          0.0,
+          0.0
+        ],
+        "clearance_p95_per_foot_m": [
+          0.008669285103678703,
+          0.008139291778206825,
+          0.0010827428195625544,
+          0.001165493973530829
+        ]
+      },
+      {
+        "family": "reverse",
+        "alpha": 0.75,
+        "actual_command": [
+          -0.00375,
+          0.0,
+          0.0
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.003749305382370949,
+        "yaw_rmse_rad_s": 0.00546908238902688,
+        "mean_actual": [
+          -0.00017431803280487657,
+          3.2234322588919895e-06,
+          -0.00026963368873111904
+        ],
+        "steps_per_foot": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "four_foot_stepping_fraction": 0.0,
+        "actual_frequency_from_mean_interval_hz": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "interval_count_per_foot": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "clearance_p95_per_foot_m": [
+          -1.4789407032367308e-07,
+          -1.7755667158780852e-07,
+          -2.2584572434425354e-07,
+          -2.3329630494117737e-07
+        ]
+      },
+      {
+        "family": "reverse",
+        "alpha": 1.0,
+        "actual_command": [
+          -0.04,
+          0.0,
+          0.0
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.02192620187997818,
+        "yaw_rmse_rad_s": 0.2678981125354767,
+        "mean_actual": [
+          -0.0265672504901886,
+          -0.00018150807591155171,
+          0.006941261701285839
+        ],
+        "steps_per_foot": [
+          18.0,
+          20.0,
+          0.0,
+          0.0
+        ],
+        "four_foot_stepping_fraction": 0.0,
+        "actual_frequency_from_mean_interval_hz": [
+          0.9985734224319458,
+          0.9962639212608337,
+          null,
+          null
+        ],
+        "interval_count_per_foot": [
+          14.0,
+          16.0,
+          0.0,
+          0.0
+        ],
+        "clearance_p95_per_foot_m": [
+          0.005599207244813442,
+          0.005530371330678463,
+          -2.5192275643348694e-07,
+          -2.5192275643348694e-07
+        ]
+      },
+      {
+        "family": "left",
+        "alpha": 0.1,
+        "actual_command": [
+          0.0945,
+          0.004,
+          0.0
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.02186346799135208,
+        "yaw_rmse_rad_s": 0.16940844058990479,
+        "mean_actual": [
+          0.09078386425971985,
+          -0.0005718728643842041,
+          0.024912044405937195
+        ],
+        "steps_per_foot": [
+          18.0,
+          18.0,
+          18.0,
+          18.0
+        ],
+        "four_foot_stepping_fraction": 1.0,
+        "actual_frequency_from_mean_interval_hz": [
+          0.9999999403953552,
+          0.9985734224319458,
+          1.001430630683899,
+          1.0
+        ],
+        "interval_count_per_foot": [
+          14.0,
+          14.0,
+          14.0,
+          14.0
+        ],
+        "clearance_p95_per_foot_m": [
+          0.015721697360277176,
+          0.015572636388242245,
+          0.019609784707427025,
+          0.01878921315073967
+        ]
+      },
+      {
+        "family": "left",
+        "alpha": 0.25,
+        "actual_command": [
+          0.07875,
+          0.01,
+          0.0
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.03071323037147522,
+        "yaw_rmse_rad_s": 0.18820767104625702,
+        "mean_actual": [
+          0.07290251553058624,
+          0.004198711831122637,
+          0.026276130229234695
+        ],
+        "steps_per_foot": [
+          19.0,
+          17.0,
+          19.0,
+          20.0
+        ],
+        "four_foot_stepping_fraction": 1.0,
+        "actual_frequency_from_mean_interval_hz": [
+          0.9986684322357178,
+          0.9984638690948486,
+          1.0013351440429688,
+          1.0
+        ],
+        "interval_count_per_foot": [
+          15.0,
+          13.0,
+          15.0,
+          16.0
+        ],
+        "clearance_p95_per_foot_m": [
+          0.01415812037885189,
+          0.014299331232905388,
+          0.011925077997148037,
+          0.013002780266106129
+        ]
+      },
+      {
+        "family": "left",
+        "alpha": 0.5,
+        "actual_command": [
+          0.0525,
+          0.02,
+          0.0
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.04362667351961136,
+        "yaw_rmse_rad_s": 0.27327826619148254,
+        "mean_actual": [
+          0.03560614585876465,
+          0.0037804716266691685,
+          -0.03598736599087715
+        ],
+        "steps_per_foot": [
+          18.0,
+          18.0,
+          13.0,
+          3.0
+        ],
+        "four_foot_stepping_fraction": 0.0,
+        "actual_frequency_from_mean_interval_hz": [
+          1.0101008415222168,
+          1.0,
+          0.8982035517692566,
+          null
+        ],
+        "interval_count_per_foot": [
+          14.0,
+          14.0,
+          9.0,
+          0.0
+        ],
+        "clearance_p95_per_foot_m": [
+          0.012539827264845371,
+          0.014515196904540062,
+          0.0020538445096462965,
+          1.3639205462823156e-06
+        ]
+      },
+      {
+        "family": "left",
+        "alpha": 0.75,
+        "actual_command": [
+          0.02625,
+          0.03,
+          0.0
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.04263980686664581,
+        "yaw_rmse_rad_s": 0.47482120990753174,
+        "mean_actual": [
+          0.001741442596539855,
+          0.012005413882434368,
+          0.061926376074552536
+        ],
+        "steps_per_foot": [
+          18.0,
+          18.0,
+          14.0,
+          3.0
+        ],
+        "four_foot_stepping_fraction": 0.25,
+        "actual_frequency_from_mean_interval_hz": [
+          1.004304051399231,
+          1.001430630683899,
+          0.9124086499214172,
+          0.49504950642585754
+        ],
+        "interval_count_per_foot": [
+          14.0,
+          14.0,
+          10.0,
+          1.0
+        ],
+        "clearance_p95_per_foot_m": [
+          0.007695590611547232,
+          0.00849413126707077,
+          0.0021376681979745626,
+          0.0014951997436583042
+        ]
+      },
+      {
+        "family": "left",
+        "alpha": 1.0,
+        "actual_command": [
+          0.0,
+          0.04,
+          0.0
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.03129354491829872,
+        "yaw_rmse_rad_s": 0.3483426570892334,
+        "mean_actual": [
+          -0.013806437142193317,
+          0.023431716486811638,
+          0.11554323136806488
+        ],
+        "steps_per_foot": [
+          20.0,
+          18.0,
+          0.0,
+          14.0
+        ],
+        "four_foot_stepping_fraction": 0.0,
+        "actual_frequency_from_mean_interval_hz": [
+          1.003764033317566,
+          0.9971509575843811,
+          null,
+          0.9140767455101013
+        ],
+        "interval_count_per_foot": [
+          16.0,
+          14.0,
+          0.0,
+          10.0
+        ],
+        "clearance_p95_per_foot_m": [
+          0.008246147073805332,
+          0.00933828204870224,
+          0.000837548344861716,
+          0.0014785067178308964
+        ]
+      },
+      {
+        "family": "turn_left",
+        "alpha": 0.1,
+        "actual_command": [
+          0.0945,
+          0.0,
+          0.034999999999999996
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.021164918318390846,
+        "yaw_rmse_rad_s": 0.16841401159763336,
+        "mean_actual": [
+          0.09118391573429108,
+          -0.003050548490136862,
+          0.04271656274795532
+        ],
+        "steps_per_foot": [
+          18.0,
+          18.0,
+          19.0,
+          19.0
+        ],
+        "four_foot_stepping_fraction": 1.0,
+        "actual_frequency_from_mean_interval_hz": [
+          1.0,
+          0.998573362827301,
+          1.0,
+          1.0
+        ],
+        "interval_count_per_foot": [
+          14.0,
+          14.0,
+          15.0,
+          15.0
+        ],
+        "clearance_p95_per_foot_m": [
+          0.015740197151899338,
+          0.015521585009992123,
+          0.020205983892083168,
+          0.018609140068292618
+        ]
+      },
+      {
+        "family": "turn_left",
+        "alpha": 0.25,
+        "actual_command": [
+          0.07875,
+          0.0,
+          0.0875
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.030427854508161545,
+        "yaw_rmse_rad_s": 0.18451032042503357,
+        "mean_actual": [
+          0.0735301524400711,
+          -0.0009318849188275635,
+          0.057948071509599686
+        ],
+        "steps_per_foot": [
+          16.0,
+          20.0,
+          20.0,
+          19.0
+        ],
+        "four_foot_stepping_fraction": 1.0,
+        "actual_frequency_from_mean_interval_hz": [
+          1.0,
+          1.0,
+          1.0,
+          1.0013351440429688
+        ],
+        "interval_count_per_foot": [
+          12.0,
+          16.0,
+          16.0,
+          15.0
+        ],
+        "clearance_p95_per_foot_m": [
+          0.014301813207566738,
+          0.014310023747384548,
+          0.0121039729565382,
+          0.012575614266097546
+        ]
+      },
+      {
+        "family": "turn_left",
+        "alpha": 0.5,
+        "actual_command": [
+          0.0525,
+          0.0,
+          0.175
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.04214911162853241,
+        "yaw_rmse_rad_s": 0.2299998551607132,
+        "mean_actual": [
+          0.03521508723497391,
+          0.003678413573652506,
+          0.14222486317157745
+        ],
+        "steps_per_foot": [
+          17.0,
+          20.0,
+          2.0,
+          18.0
+        ],
+        "four_foot_stepping_fraction": 0.25,
+        "actual_frequency_from_mean_interval_hz": [
+          0.9969324469566345,
+          0.9987515211105347,
+          0.2499999701976776,
+          0.9985734224319458
+        ],
+        "interval_count_per_foot": [
+          13.0,
+          16.0,
+          1.0,
+          14.0
+        ],
+        "clearance_p95_per_foot_m": [
+          0.01457664743065834,
+          0.012255852110683918,
+          -2.1224923330009915e-07,
+          0.004153628833591938
+        ]
+      },
+      {
+        "family": "turn_left",
+        "alpha": 0.75,
+        "actual_command": [
+          0.02625,
+          0.0,
+          0.26249999999999996
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.03653641790151596,
+        "yaw_rmse_rad_s": 0.49919530749320984,
+        "mean_actual": [
+          0.002835896098986268,
+          7.729434400971513e-06,
+          0.0333980917930603
+        ],
+        "steps_per_foot": [
+          20.0,
+          17.0,
+          6.0,
+          7.0
+        ],
+        "four_foot_stepping_fraction": 0.5,
+        "actual_frequency_from_mean_interval_hz": [
+          1.0025062561035156,
+          1.0030863285064697,
+          1.0,
+          0.9933775663375854
+        ],
+        "interval_count_per_foot": [
+          16.0,
+          13.0,
+          2.0,
+          3.0
+        ],
+        "clearance_p95_per_foot_m": [
+          0.00772098870947957,
+          0.008762090466916561,
+          0.001707869116216898,
+          0.0016915425658226013
+        ]
+      },
+      {
+        "family": "turn_left",
+        "alpha": 1.0,
+        "actual_command": [
+          0.0,
+          0.0,
+          0.35
+        ],
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.024729907512664795,
+        "yaw_rmse_rad_s": 0.4106573164463043,
+        "mean_actual": [
+          -0.015493948012590408,
+          0.002929898677393794,
+          0.06231407821178436
+        ],
+        "steps_per_foot": [
+          20.0,
+          0.0,
+          0.0,
+          12.0
+        ],
+        "four_foot_stepping_fraction": 0.0,
+        "actual_frequency_from_mean_interval_hz": [
+          0.9950247406959534,
+          null,
+          null,
+          0.8888888955116272
+        ],
+        "interval_count_per_foot": [
+          16.0,
+          0.0,
+          0.0,
+          8.0
+        ],
+        "clearance_p95_per_foot_m": [
+          0.007769296411424875,
+          0.010089174844324589,
+          0.00118456338532269,
+          0.001583657693117857
+        ]
+      }
+    ],
+    "reference_execution_calls": 0,
+    "task_acceptance": false,
+    "training_modified": false,
+    "scope": "6s direct-start diagnostic, original nonterminal samples after1s. Actual2mm/60ms/5mm flight-and-landing events. Alpha1 is full desired command; smaller alpha is an intermediate training possibility only, never a relaxed acceptance endpoint."
+  },
+  "limitations": [
+    "Frontier probe is6s, not16s stability acceptance. It motivates the starting command path only.",
+    "PPO smoke preceded the logging correction of S3 frequency range to1\u20131Hz; actual S3 sampling was alreadyfixed1Hz. The later GPU command contract checks the corrected config."
+  ],
+  "changes": [
+    "Map new training velocity goals from[.105,0,0] toward full endpoint byalpha.25, preserving oldforward/true stop. Existing moving-start curriculum then uses that actual intermediate command.",
+    "Actor, critic, reward receive identical actual commands. Evaluation overrides remain full endpoints and defaultalpha1.",
+    "Disable hypothetical target-pose scalar cost; retain actual clearance and other prior command-directed rewards. No offline geometric candidate is used."
+  ],
+  "advance_gate": "After a completed training round, evaluate both signs of lateral/yaw plus reverse atcurrentalpha with16s original episodes, actual four-foot steps/cadence and velocity response. Do not call full S3 passed until unchanged three-seed endpoint acceptance passes. Frequency training still waits for full S3 acceptance.",
+  "task_acceptance": false
+}

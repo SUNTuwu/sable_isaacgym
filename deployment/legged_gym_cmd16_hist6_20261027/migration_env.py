@@ -16,7 +16,7 @@ from action_schema import ActionSpec
 from observation_schema import HistoryBuffer, proprioception, pack
 from gait_clock import GaitClock, local_phases
 from model_mapping import ModelMapping, heading_velocity, quat_apply, quat_inverse
-from curriculum import sample_velocity_commands, MovingStartCurriculum
+from curriculum import sample_velocity_commands, MovingStartCurriculum,command_frontier
 from command_foot_motion import command_velocity_at_feet,desired_foot_velocity,FootCenterVelocity,foot_velocity_cost
 from target_pose_clearance import target_pose_clearance_cost,executed_target_coordinates
 from motor_envelope import motor_torques
@@ -60,6 +60,7 @@ class MigrationRobot(SableRobot):
         self.command_defaults = torch.tensor(CommandSpec.defaults(m['shoulder_height_m'], m['hip_height_m'],
             m['width0_m'], float(self.default_dof_pos[0, self.waist])), device=self.device)
         self.commands16 = self.command_defaults.repeat(self.num_envs, 1)
+        self.training_command_goals = self.commands16[:,:3].clone()
         self.command_override = None
         self.clock = GaitClock(self.num_envs, self.device, self.dt)
         self.gait_signals = TaskGaitSignals(self)
@@ -169,6 +170,8 @@ class MigrationRobot(SableRobot):
             self.commands16[ids, 0] = self.fixed_command
         else:
             sample_velocity_commands(self.commands16, ids, self.cfg.migration.stage, self.cfg.migration.command_ranges)
+            self.training_command_goals[ids]=self.commands16[ids,:3]
+            self.commands16[ids,:3]=command_frontier(self.training_command_goals[ids],self.cfg.migration.command_frontier_alpha)
             if self.moving_start is not None:
                 self.moving_start.resample(ids,self.commands16[ids,:3],self.episode_length_buf[ids]*self.dt)
                 self.commands16[ids,:3] = self.moving_start.start[ids]
@@ -358,8 +361,9 @@ class MigrationRobot(SableRobot):
                 command_foot_velocity_target_m_s=self.command_foot_velocity_target.clone(),
                 command_foot_velocity_valid=self.foot_motion.valid.clone(),
                 command_foot_velocity_cost_per_foot=self.command_foot_velocity_per_foot.clone())
-            self.eval_snapshot.update(target_pose_clearance_m=self.target_pose_clearance.clone(),
-                target_pose_clearance_cost_per_foot=self.target_pose_clearance_per_foot.clone())
+            if self.cfg.rewards.scales.target_pose_clearance:
+                self.eval_snapshot.update(target_pose_clearance_m=self.target_pose_clearance.clone(),
+                    target_pose_clearance_cost_per_foot=self.target_pose_clearance_per_foot.clone())
 
     def _reward_target_limits(self):
         raw = self.default_dof_pos[:, self.active] + self.actions*.35

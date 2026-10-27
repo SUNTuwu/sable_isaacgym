@@ -48,6 +48,7 @@ def main():
     torch.manual_seed(a.seed)
     np.random.seed(a.seed)
     cfg = student_config(teacher['run'], stage=a.stage, num_envs=a.num_envs)
+    cfg.migration.command_frontier_alpha=cfg.migration.training_frontier_alpha if a.stage=='S3' else 1.
     cfg.migration.moving_start_training = a.stage == 'S3'
     if cfg.migration.moving_start_training:
         # Sample transitions explicitly before policy inference, rather than
@@ -86,6 +87,10 @@ def main():
         algorithm='on-policy PPO; no teacher/reference execution; separate auxiliary encoder updates',
         critic_warmup_updates=a.critic_warmup_updates, optimizer_restore=a.restore_optimizer,
         command_ranges=cfg.migration.command_ranges, reward_weights=vars(cfg.rewards.scales),
+        command_frontier=dict(training_alpha=cfg.migration.command_frontier_alpha,full_goal_ranges=cfg.migration.command_ranges,
+            learned_start_velocity=[.105,0.,0.],old_forward_and_stop_unchanged=True,
+            independent_evaluation_alpha=1.,automatic_expansion=False,
+            scope='Measured intermediate command curriculum only. Full translation/yaw endpoints and all acceptance gates remain unchanged; advance only after independent actual gait/tracking evidence.'),
         velocity_error_scale_m_s=cfg.migration.velocity_error_scale_m_s,
         unclipped_gait_costs=cfg.migration.unclipped_gait_costs,
         minimum_action_std=cfg.migration.minimum_action_std,
@@ -179,6 +184,7 @@ def main():
                     reverse_hind_std_floor=policy.reverse_hind_std_floor,
                     mean_std_scope='Learned base parameters; low-forward moving-command distribution also applies the explicit novel-command floor',
                     frequency_range_hz=list(cfg.migration.command_ranges['frequency']),
+                    training_command_frontier_alpha=cfg.migration.command_frontier_alpha,
                     **algorithm.last_auxiliary_metrics)
                 status.update(iteration=iteration, metrics=metrics, updated_unix=time.time())
                 atomic_json(a.run/'status.json', status)

@@ -15,6 +15,7 @@ def main():
     p.add_argument('--teacher',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
     a=p.parse_args();torch.manual_seed(423)
     cfg=student_config(verify_teacher_manifest(a.teacher)['run'],'S3',8)
+    cfg.rewards.scales.target_pose_clearance=-8.  # Explicit experimental fixture, not current production config.
     cfg.reference.file='/intentionally_absent_target_pose_reward.json';cfg.commands.resampling_time=1000.
     env=create_migration_env(cfg,noise=False);env.capture_eval=True
     policy=HistoryActorCritic().to(env.device).eval()

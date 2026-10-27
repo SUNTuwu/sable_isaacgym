@@ -32,8 +32,9 @@ def student_config(teacher_run, stage='S2', num_envs=1024):
     cfg.noise.noise_level = 0.
     cfg.migration = SimpleNamespace(stage=stage, freeze_waist=True, history_noise_level=0.,
         command_ranges={'vx': [-.04, .12], 'vy': [-.04, .04], 'yaw_rate': [-.35, .35],
-                        'frequency': [.9, 1.1]}, target_interpolation='hold_full_target',
+                        'frequency': [.9, 1.1] if stage=='S5' else [1., 1.]}, target_interpolation='hold_full_target',
         command_foot_velocity_scale_floor_m_s=.04,
+        command_frontier_alpha=1., training_frontier_alpha=.25,
         velocity_error_scale_m_s=.05, moving_start_training=False,
         moving_start_fraction=.75, moving_start_hold_s=2., moving_start_blend_s=2.)
     # The full-target student can otherwise trade increased lateral oscillation
@@ -57,10 +58,9 @@ def student_config(teacher_run, stage='S2', num_envs=1024):
         # Keep per-step survival preferable to an early terminal transition
         # while restoring the clearance signal previously lost to clipping.
         cfg.rewards.scales.command_foot_velocity = -2.
-        # Ground contact clamps physical clearance near zero for small target
-        # changes. This soft hypothetical-pose cost supplies a local signal;
-        # the existing actual clearance cost and event acceptance remain.
-        cfg.rewards.scales.target_pose_clearance = -8.
+        # Scalar hypothetical-pose shaping did not resolve novel-command gait;
+        # use actual physical clearance while teaching a measured command path.
+        cfg.rewards.scales.target_pose_clearance = 0.
         # The added bounded swing cost is about4/s for stationary novel-command
         # feet. Preserve a survival incentive while adding its directional signal.
         cfg.rewards.scales.alive = 7.
