@@ -147,9 +147,10 @@
     "planning/cmd16_hist6_baseline/s3_target_pose_reward_20261027.json",
     "results/cmd16_hist6/target_pose_reward_encoder_validation.json",
     "planning/cmd16_hist6_baseline/s3_task_progress_selection_20261027.json",
-    "planning/cmd16_hist6_baseline/s3_clearance_gradient_experiment_20261027.json"
+    "planning/cmd16_hist6_baseline/s3_clearance_gradient_experiment_20261027.json",
+    "planning/cmd16_hist6_baseline/s3_command_frontier_20261027.json"
   ],
-  "current_status": "S2 accepted144/144. Eleventh formal S3 continues exact target-pose-clearance runtime from tenth128, selected using unchanged task gates after stability checks; optimizer restored, no warmup. Offline geometric actor candidate is diagnostic only, live evaluation pending. S3/S5 unaccepted.",
+  "current_status": "S2 accepted144/144. Twelfth formal S3 uses actual intermediate velocity commands(alpha.25) from ninth122. Oldforward/stop preserved; full endpoint independent monitoring/acceptance remains unchanged. Hypothetical-pose scalar cost disabled. Offline geometric candidate rejected15/56. S3/S5 NOT accepted.",
   "dagger_final": {
     "iteration": 15040,
     "sha256": "e6dac5a717c43de43737bc16b57c7f1b015e8de5a014e2b2d039ba4817d16133",
@@ -171,25 +172,59 @@
     "survived": 144,
     "episodes": 144
   },
-  "updated_at": "2026-10-27T10:13:25.215538+08:00",
-  "current_stage": "S3_PPO_target_pose_clearance",
+  "updated_at": "2026-10-27T10:42:29.323321+08:00",
+  "current_stage": "S3_command_frontier_alpha025",
   "latest_findings": {
-    "active_source_commit": "9bcd3cc",
+    "active_source_commit": "2fd7653",
+    "active_deadline": "2026-10-27T10:56:39.837790+08:00",
     "active_processes": {
-      "training_pid": 515976,
-      "monitor_pid": 516090,
-      "supervisor_pid": 515974
+      "training_pid": 527753,
+      "monitor_pid": 527843,
+      "supervisor_pid": 527749
     },
-    "active_deadline": "2026-10-27T10:29:52.588917+08:00",
+    "frozen_files_verified": 98,
     "parent_checkpoint": {
-      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_094728/checkpoints/model_000128.pt",
-      "sha256": "50cfa73077750a861fc40ac3f8d15a0f8691a7f6f7022327e902cfc7022f1023",
-      "iteration": 128
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_092408/checkpoints/model_000122.pt",
+      "sha256": "756c109a5e82ce23cca70a7a427118dc782a071b7ac51e5c508e1f1fe8e74779",
+      "iteration": 122
     },
-    "optimizer_restored": true,
-    "critic_warmup_updates": 0,
-    "parent_selection": "results/cmd16_hist6/continuation_cmd16_hist6_s3_ppo_20261027_094728.json",
-    "diagnostic": "planning/cmd16_hist6_baseline/s3_clearance_gradient_experiment_20261027.json",
+    "optimizer_restored": false,
+    "critic_warmup_updates": 10,
+    "training_alpha": 0.25,
+    "evaluation_alpha": 1.0,
+    "source_proof": "planning/cmd16_hist6_baseline/s3_command_frontier_20261027.json",
+    "rejected_experiment": "planning/cmd16_hist6_baseline/s3_clearance_gradient_experiment_20261027.json",
+    "pending_frontier_evaluation": {
+      "pid": 530387,
+      "command": [
+        "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+        "-u",
+        "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/runtime/probe_command_frontier.py",
+        "--checkpoint",
+        "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/checkpoints/model_000027.pt",
+        "--teacher",
+        "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/teacher_manifest.json",
+        "--output",
+        "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/frontier_independent_20261027_104229.json",
+        "--seconds",
+        "16",
+        "--alphas",
+        ".25",
+        ".375",
+        ".5",
+        "--full-families"
+      ],
+      "output": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/frontier_independent_20261027_104229.json",
+      "checkpoint": {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639/checkpoints/model_000027.pt",
+        "sha256": "80efbcae4f966bd6fc6e97abb2333d8575364a3f738a4fa98363f2cbc9376547",
+        "iteration": 27,
+        "reason": "periodic",
+        "updated_unix": 1793068791.1278942
+      },
+      "created_unix": 1793068949.2294827,
+      "scope": "Intermediate course progression evidence only; final S3 endpoints and three-seed acceptance unchanged"
+    },
     "acceptance_passed": false
   },
   "remaining_acceptance": [
@@ -197,5 +232,12 @@
     "S5 genuine foot-event frequency0.8/1.2 and two-way switching, three seeds",
     "Export accepted final checkpoint and replay same recorded inputs onCPU/CUDA"
   ],
-  "active_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_100952"
+  "active_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_103639",
+  "next_actions": [
+    "Read pending16s intermediate probe foralpha.25/.375/.5, both lateral/yaw signs+reverse; inspect original survival, actual four-foot events/cadence and physical velocity response. These are curriculum gates, never full S3 acceptance.",
+    "Do not leave training permanently atalpha.25: advance the command curriculum towardalpha1 only with measured actual-gait evidence; full endpoint evaluations and original three-seed S3 gate stay unchanged.",
+    "Keep fresh20minute frozen runs and180second evaluations/videos. No successor currently queued for this frontier run; choose next curriculum action using live results before deadline.",
+    "Pure reverse interpolation nearalpha.75 passes through a commanded stop/deadzone; do not label that as backward walking or require moving cadence for a truly stationary intermediate command. The final reverse endpoint remains-.04m/s.",
+    "After full S3 endpoint acceptance, execute S5 actual frequency.8/1.2/two-way switching and export the accepted final checkpoint with matching CPU/CUDA replay proof."
+  ]
 }
