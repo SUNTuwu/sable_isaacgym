@@ -135,6 +135,17 @@ class LearningTests(unittest.TestCase):
         before=torch.zeros(5,15);after=before.clone();after[:,0]=.02;after[:,-1]=10.
         kl=mean_shift_kl(before,after,policy.distribution_std(raw),policy.execution_mask)
         self.assertAlmostEqual(float(kl),(.5*2+.125*3)/5,places=6)
+        policy.reverse_hind_std_floor=.08
+        raised=policy.distribution_std(raw)
+        torch.testing.assert_close(raised[0],torch.full((15,),.02))
+        torch.testing.assert_close(raised[1],torch.full((15,),.02))
+        torch.testing.assert_close(raised[2,[5,6,10,11,12,13]],torch.full((6,),.08))
+        torch.testing.assert_close(raised[2,[0,1,2,3,4,7,8,9,14]],torch.full((9,),.04))
+        torch.testing.assert_close(raised[3:],torch.full((2,15),.04))
+        from observation_schema import mirror_raw
+        permutation=[0,1,7,8,9,10,11,2,3,4,5,6,13,12,14]
+        torch.testing.assert_close(policy.distribution_std(mirror_raw(raw)),raised[:,permutation])
+        torch.testing.assert_close(policy.act_inference(raw),original,atol=0,rtol=0)
 
     def test_clearance_and_target_costs_keep_signal_after_clipping(self):
         import ast

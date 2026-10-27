@@ -945,5 +945,137 @@
       "path": "results/cmd16_hist6/landing_width_age_diagnostic.json",
       "sha256": "18f14578a396aacbd162b55e51d59ec03cca6ffa76985cc5a8d9158f7c94e150"
     }
-  ]
+  ],
+  "swing_gated_noise": [
+    {
+      "name": "reverse",
+      "std": 0.04,
+      "survival_fraction": 1.0,
+      "actual_completed_steps_per_foot": [
+        66.0,
+        69.0,
+        3.0,
+        6.0
+      ]
+    },
+    {
+      "name": "lateral",
+      "std": 0.04,
+      "survival_fraction": 0.875,
+      "actual_completed_steps_per_foot": [
+        68.0,
+        69.0,
+        12.0,
+        47.0
+      ]
+    },
+    {
+      "name": "yaw",
+      "std": 0.04,
+      "survival_fraction": 1.0,
+      "actual_completed_steps_per_foot": [
+        66.0,
+        60.0,
+        17.0,
+        15.0
+      ]
+    },
+    {
+      "name": "reverse",
+      "std": 0.1,
+      "survival_fraction": 1.0,
+      "actual_completed_steps_per_foot": [
+        71.0,
+        67.0,
+        16.0,
+        8.0
+      ]
+    },
+    {
+      "name": "lateral",
+      "std": 0.1,
+      "survival_fraction": 0.5,
+      "actual_completed_steps_per_foot": [
+        54.0,
+        50.0,
+        13.0,
+        58.0
+      ]
+    },
+    {
+      "name": "yaw",
+      "std": 0.1,
+      "survival_fraction": 0.875,
+      "actual_completed_steps_per_foot": [
+        57.0,
+        54.0,
+        24.0,
+        17.0
+      ]
+    },
+    {
+      "name": "reverse",
+      "std": 0.16,
+      "survival_fraction": 0.875,
+      "actual_completed_steps_per_foot": [
+        62.0,
+        59.0,
+        26.0,
+        30.0
+      ]
+    },
+    {
+      "name": "lateral",
+      "std": 0.16,
+      "survival_fraction": 0.125,
+      "actual_completed_steps_per_foot": [
+        29.0,
+        26.0,
+        4.0,
+        36.0
+      ]
+    },
+    {
+      "name": "yaw",
+      "std": 0.16,
+      "survival_fraction": 0.375,
+      "actual_completed_steps_per_foot": [
+        37.0,
+        34.0,
+        28.0,
+        23.0
+      ]
+    }
+  ],
+  "swing_gated_decision": "Do not apply globally: .10 still reduced lateral survival to4/8 andyaw7/8; reverse8/8. Select simpler pure-reverse six-joint floor.08, with remaining commands unchanged.",
+  "reverse_noise_validation": {
+    "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_reverse_noise_smoke_20261027_080617",
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_reverse_noise_smoke_20261027_080617/checkpoints/model_000002.pt",
+      "sha256": "86a24bed485fe86ee7e852e0ae57d4a828cf8b5723ea960f3fb865c7f7ec3688",
+      "iteration": 2,
+      "reason": "final",
+      "updated_unix": 1793059598.3333826
+    },
+    "parent": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_074834/checkpoints/model_000109.pt",
+      "sha256": "526b43809cc364758c399c366c0a33f7c0ceceadcc8acad5464f754e3db8ee1d",
+      "iteration": 109,
+      "reason": "periodic",
+      "updated_unix": 1793059445.1351173
+    },
+    "changes": {
+      "actor.": 0.0010522156953811646,
+      "critic.": 0.0012701451778411865
+    },
+    "num_envs": 256,
+    "updates": 2,
+    "finite": true,
+    "reference_execution_calls": 0,
+    "reverse_hind_std_floor": 0.08,
+    "unit_tests": 16,
+    "scope": "Real PPO and distribution-contract validation; not locomotion acceptance",
+    "created_unix": 1793059715.0452743
+  },
+  "next_formal_change": "S3 pure reverse(vx<-.01,abs(vy)<.005,abs(yaw)<.05): six hind pitch/knee/ankle Gaussian exploration floor.08; preserve.04 othernovel/.02baseknown. No deterministic actor, reward or physics changes."
 }

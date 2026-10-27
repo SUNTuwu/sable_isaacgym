@@ -56,4 +56,5 @@ def student_config(teacher_run, stage='S2', num_envs=1024):
         cfg.rewards.scales.alive = 3.
     cfg.migration.minimum_action_std = .02
     cfg.migration.novel_command_std_floor = .04 if stage=='S3' else 0.
+    cfg.migration.reverse_hind_std_floor = .08 if stage=='S3' else 0.
     return cfg

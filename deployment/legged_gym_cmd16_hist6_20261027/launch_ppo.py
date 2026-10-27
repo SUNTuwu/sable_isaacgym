@@ -53,6 +53,7 @@ def main():
     same_curriculum=parent_config.get('moving_start_curriculum',{}).get('enabled',False)==(a.stage=='S3')
     same_exploration=parent_config.get('minimum_action_std',.02)==expected_config.migration.minimum_action_std
     same_exploration &= parent_config.get('novel_command_std_floor',0.)==expected_config.migration.novel_command_std_floor
+    same_exploration &= parent_config.get('reverse_hind_std_floor',0.)==expected_config.migration.reverse_hind_std_floor
     gate_source=a.acceptance
     if a.stage in ('S3','S5'):
         if continuation:

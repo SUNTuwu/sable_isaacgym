@@ -22,6 +22,7 @@ class HistoryActorCritic(ActorCritic):
         self.register_buffer('execution_mask', torch.tensor([1.] * 14 + [0. if freeze_waist else 1.]))
         self.freeze_waist = freeze_waist
         self.novel_command_std_floor = 0.
+        self.reverse_hind_std_floor = 0.
 
     def branch(self, raw):
         velocity, latent = self.history_encoder(raw[:, :306])
@@ -48,7 +49,13 @@ class HistoryActorCritic(ActorCritic):
             moving=(torch.sqrt(vx.square()+vy.square())>.01)|(yaw.abs()>.08)
             novel=(vx<.03)&moving
             std=torch.where(novel[:,None],std.clamp(min=self.novel_command_std_floor),std)
-        return std.expand(observations.shape[0],-1)
+        std=std.expand(observations.shape[0],-1)
+        if self.reverse_hind_std_floor:
+            vx,vy,yaw=observations[:,306]*.2,observations[:,307]*.1,observations[:,308]
+            pure_reverse=(vx<-.01)&(vy.abs()<.005)&(yaw.abs()<.05)
+            hind=observations.new_tensor([0,0,0,0,0,1,1,0,0,0,1,1,1,1,0],dtype=torch.bool)
+            std=torch.where(pure_reverse[:,None]&hind,std.clamp(min=self.reverse_hind_std_floor),std)
+        return std
 
     def update_distribution(self, observations):
         mean = self.act_inference(observations)

@@ -18,10 +18,13 @@ def main():
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--hind-only',action='store_true',help='Raise only six hind pitch/knee/ankle noise dimensions; others remain .04')
     p.add_argument('--stds',type=float,nargs='+',default=[.02,.04,.06])
+    p.add_argument('--swing-only',action='store_true',help='Smoothly raise hind noise only during its commanded swing')
+    p.add_argument('--scenarios',nargs='+',choices=['forward','reverse','lateral','yaw'],default=['forward','reverse','lateral','yaw'])
     a=p.parse_args()
+    if a.swing_only and not a.hind_only:p.error('--swing-only requires --hind-only')
     torch.manual_seed(419)
     groups=[(name,command,std) for std in a.stds for name,command in
-        [('forward',[.105,0.,0.]),('reverse',[-.04,0.,0.]),('lateral',[0.,.04,0.]),('yaw',[0.,0.,.35])]]
+        [('forward',[.105,0.,0.]),('reverse',[-.04,0.,0.]),('lateral',[0.,.04,0.]),('yaw',[0.,0.,.35])] if name in a.scenarios]
     per=8;n=len(groups)*per
     cfg=student_config(verify_teacher_manifest(a.teacher)['run'],'S3',n)
     cfg.reference.file='/intentionally_absent_exploration_probe.json'
@@ -41,7 +44,13 @@ def main():
     steps=StepEvents(n,env.device,env.dt);counts=torch.zeros(n,4,device=env.device)
     with torch.no_grad():
         for tick in range(500):
-            action=policy.act_inference(env.get_observations())+torch.randn(n,15,device=env.device)*stds*policy.execution_mask
+            raw=env.get_observations();actual_stds=stds
+            if a.swing_only:
+                gate=torch.zeros_like(stds)
+                gate[:,[5,6,12]]=(-raw[:,324:325]).clamp(0,1)
+                gate[:,[10,11,13]]=(-raw[:,325:326]).clamp(0,1)
+                actual_stds=.04+(stds-.04)*gate
+            action=policy.act_inference(raw)+torch.randn(n,15,device=env.device)*actual_stds*policy.execution_mask
             _,_,reward,done,_=env.step(action);snapshot=env.eval_snapshot
             duration+=alive*env.dt;reward_sum+=reward*alive
             peaks=torch.maximum(peaks,snapshot['clearance']*alive[:,None])
@@ -63,6 +72,7 @@ def main():
         'seed':419,'horizon_s':10.,'envs_per_group':per,'groups':rows,
         'reference_execution_calls':env.reference_execution_calls,'task_acceptance':False,
         'noise_scope':'six hind pitch/knee/ankle dimensions, other dimensions .04' if a.hind_only else 'all executed dimensions',
+        'swing_phase_gated':a.swing_only,
         'scope':'Stochastic exploration diagnostic; original episodes only, no learning, direct starts'})
     env.gym.destroy_sim(env.sim)
 
