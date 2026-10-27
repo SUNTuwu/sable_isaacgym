@@ -42,6 +42,9 @@ def main():
             '--teacher', str(teacher), '--output', str(output), '--suite', a.stage,
             '--envs-per-scenario', '4', '--seconds', '28' if a.stage=='S5' else '16',
             '--video-dir',str(directory)]
+        alpha = read_json(a.run/'config.json', {}).get('command_frontier', {}).get('training_alpha', 1.)
+        if a.stage == 'S3' and 0 < alpha < 1:
+            command += ['--frontier-alphas', str(alpha), str(min(1., alpha+.125))]
         try:
             with (a.run/'independent_evaluation.log').open('a') as log:
                 result = subprocess.run(command, stdout=log, stderr=subprocess.STDOUT, timeout=360)
@@ -50,6 +53,21 @@ def main():
             report = read_json(output)
             assert report['checkpoint_sha256']==cp['sha256'] and report['reference_execution_calls']==0
             atomic_json(a.run/'latest_evaluation.json', report)
+            if 'frontier_curriculum' in report:
+                from evaluate_frontier import assess_frontier
+                frontier_path = output.with_name('frontier_'+output.stem+'.json')
+                atomic_json(frontier_path, report['frontier_curriculum'])
+                baseline_path = a.run/'baseline_metrics.json'
+                gates = []
+                for value in (alpha, min(1., alpha+.125)):
+                    gate = assess_frontier(report['frontier_curriculum'], report, read_json(baseline_path), value)
+                    gate['sources'] = {name: dict(path=str(path.resolve()), sha256=sha256(path))
+                        for name,path in [('frontier',frontier_path),('endpoint',output),('baseline',baseline_path)]}
+                    gate_path = output.with_name('frontier_gate_'+output.stem+'_%g.json' % value)
+                    atomic_json(gate_path, gate)
+                    gates.append(dict(alpha=value, passed=gate['passed'], failures=gate['failures'], path=str(gate_path)))
+                atomic_json(a.run/'latest_frontier.json', dict(checkpoint=cp, gates=gates,
+                    measured_in_endpoint_batch=True, full_S3_accepted=False))
             if cp['sha256'] != seen:
                 low_survival_count = low_survival_count+1 if report['survival_fraction']<.5 else 0
             if low_survival_count >= 3 and not terminal:

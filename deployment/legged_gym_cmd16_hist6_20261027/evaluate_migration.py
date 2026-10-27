@@ -30,11 +30,16 @@ def main():
     p.add_argument('--seed', type=int, default=947)
     p.add_argument('--video-dir', type=Path)
     p.add_argument('--deployment-trace', type=Path)
+    p.add_argument('--frontier-alphas', type=float, nargs='+', default=[])
     a = p.parse_args()
     if not a.teacher_control and not a.checkpoint:
         p.error('--checkpoint is required for student evaluation')
     teacher = verify_teacher_manifest(a.teacher)
     groups = scenarios(a.suite)
+    from evaluation_frontier import extend_groups, split_frontier
+    if a.frontier_alphas and (a.suite != 'S3' or a.teacher_control):
+        p.error('Intermediate commands are only available for student S3 monitoring')
+    groups, frontier_specs = extend_groups(groups, a.frontier_alphas)
     n = len(groups)*a.envs_per_scenario
     cfg = student_config(teacher['run'], stage='S2' if a.suite in ('forward', 'S2') else a.suite, num_envs=n)
     cfg.env.episode_length_s = a.seconds+1.
@@ -243,6 +248,7 @@ def main():
     if video is not None:
         video.close()
         result['video_receipt'] = str(a.video_dir/'recording_receipt.json')
+    split_frontier(result, frontier_specs)
     result.update(created_unix=time.time(),wall_seconds=time.time()-started)
     atomic_json(a.output, result)
     print(json.dumps({k:v for k,v in result.items() if k not in ('events','trace','body_names','dof_names','diagnostics')}), flush=True)

@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-10-27T11:17:39.636562+08:00",
+  "scope": "Evaluation batching only; no training/controller/reward changes",
+  "CPU_tests_passed": 3,
+  "GPU_smoke": {
+    "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/frontier_batch_smoke_20261027/report.json",
+    "sha256": "84da1a2adf0b942fedccbb6ff68e1dd4a94cffb7400a0f44a408396d85c0b169",
+    "checkpoint_sha256": "f10f40dbeb647e78e34638c99b92f09f373eed2673d9f12d927ed086c2b17c0c",
+    "simulated_seconds": 2.0,
+    "endpoint_envs": 14,
+    "additional_frontier_envs": 10,
+    "endpoint_scenarios": 14,
+    "frontier_scenarios": 10,
+    "reference_execution_calls": 0,
+    "wall_seconds": 27.93272829055786
+  },
+  "endpoint_suite_partition_verified": true,
+  "short_smoke_cannot_pass_progression": true,
+  "unchanged_training_core_files": 42,
+  "task_acceptance": false,
+  "source_hashes": {
+    "evaluation_frontier.py": "e3fc713506405ca1a34fb64c30fb3dc9217aae07b991ae7ff1ab8027e0ef0548",
+    "evaluate_migration.py": "a017b6535bcfbf50fe46d6d3f463e022bb40c2dc213aedd9a8b24bc1d9758b74",
+    "watch_migration.py": "9479e075829c75d442f469758e6f869ccdb990727d8d19455a27bd42e7f3f1b3"
+  },
+  "expectation": "Future independent monitoring evaluates full endpoints and current/next intermediate commands in one physics loop; existing active runtime remains frozen. Performance benefit has not yet been benchmarked at16s.",
+  "post_GPU_smoke_change": "Added a CPU-only copy of already computed weighted reward values into each frontier row; three partition tests rerun after this addition."
+}
