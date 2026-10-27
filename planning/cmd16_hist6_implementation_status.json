@@ -15,7 +15,7 @@
     "supervisor_pid": 583728
   },
   "pre_migration_commit": "a95854cf4042b7994731e7a02d9761be8fd195d7",
-  "latest_pushed_commit": "b572c8a",
+  "latest_pushed_commit": "0423f29",
   "completed": [
     "326/90/92/15 schema and six-frame cache",
     "full raw-input mirror projection and history encoder",
@@ -232,7 +232,11 @@
       ],
       "production_adopted": true
     },
-    "formal_startup_verification": "planning/cmd16_hist6_baseline/s3_yaw_formal_start_20261027.json"
+    "formal_startup_verification": "planning/cmd16_hist6_baseline/s3_yaw_formal_start_20261027.json",
+    "prepared_next_source": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/yaw_scale_inheritance_source_20261027_1240/runtime",
+    "prepared_next_source_changed_files": [
+      "queue_continuation.py"
+    ]
   },
   "remaining_acceptance": [
     "S3 translation/yaw including direct starts and switches, actual stepping, three seeds",
@@ -242,7 +246,7 @@
   "active_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803",
   "next_actions": [
     "Monitor seventeenth live training583738/monitor583819/supervisor583728 through12:58:03. Check postwarmup actual independent full and current-frontier metrics; training has no teacher/reference calls.",
-    "Development queue_continuation.py now forwards parent yaw_error_scale_rad_s unless explicitly overridden. Current107-file frozen runtime predates this orchestration fix. For the next continuation, copy current frozen runtime to a prepared source, overlay only the corrected queue, verify all training-core/assets bytes identical, and supply its manifest/preflight. Do not let the defaultscale1 silently replace current.35 or reset optimizers.",
+    "Next prepared runtime results/cmd16_hist6/yaw_scale_inheritance_source_20261027_1240/runtime has107manifested files, onlyqueue_continuation.py changed from current frozen run. It forwards parent yawscale.35, preserving compatible learning state. Use this queue plus --source-runtime pointing to itself and --frontier-dir current/evaluations after reviewing current learning results. No next round queued yet.",
     "Select next parent by unchanged old-domain gates and measured current-frontier gains. Advancealpha by.125 only when its gate passes; otherwise diagnose. No eighteenth round is queued yet.",
     "Full S3 translation/yaw including actual four-foot stepping and transitions requires three-seed acceptance. Then S5 actual.8/1.2/two-way frequency switching, then accepted-checkpoint CPU/CUDA export parity."
   ],
