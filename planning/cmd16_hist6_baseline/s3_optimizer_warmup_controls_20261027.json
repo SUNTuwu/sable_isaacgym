@@ -1,0 +1,259 @@
+{
+  "created_at": "2026-10-27T12:04:08.813476+08:00",
+  "matching": {
+    "parent_checkpoint": "runs/cmd16_hist6_s3_ppo_20261027_112816/checkpoints/model_000001.pt",
+    "parent_sha256": "d348c14abb4602b4095a7b5feb1c96738f3000bdd0bf7ab6e43207084544ee06",
+    "num_envs": 256,
+    "seed": 44,
+    "updates": 16,
+    "critic_warmup_updates": 4,
+    "actor_updates": 12,
+    "alpha": 0.375,
+    "learning_rate": 5e-05,
+    "evaluation_seed": 947,
+    "evaluation_seconds": 16,
+    "endpoint_environments": 56,
+    "frontier_environments": 40
+  },
+  "cold_global_scale035": {
+    "report": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/yaw_normalization_validation_20261027_113655/candidate_independent_16s.json",
+    "sha256": "ef4b5a3f8bfd7c245344a15102dcb8fbc1de07a664c1f880f1a5d417206108d0",
+    "checkpoint_sha256": "a527688b36738de822a1d799e736f965c86b157bbd3590e40a55528121184910",
+    "survived_full_endpoint": 32,
+    "full_endpoint_environments": 56,
+    "old_domain_survived": 11,
+    "old_domain_environments": 24,
+    "old_rows": [
+      {
+        "name": "forward09",
+        "survival_fraction": 0.75,
+        "xy_rmse_m_s": 0.04711866780221175,
+        "yaw_rmse_rad_s": 0.3287924449290888,
+        "mean_actual_xyz_command_units": [
+          0.053510379046201706,
+          -0.0006589859258383512,
+          0.009728340432047844
+        ]
+      },
+      {
+        "name": "forward105",
+        "survival_fraction": 0.25,
+        "xy_rmse_m_s": 0.052333816420801746,
+        "yaw_rmse_rad_s": 0.3341990355481717,
+        "mean_actual_xyz_command_units": [
+          0.06309998780488968,
+          -0.0010205941507592797,
+          0.015350544825196266
+        ]
+      },
+      {
+        "name": "forward12",
+        "survival_fraction": 0.0,
+        "xy_rmse_m_s": 0.16195634222685185,
+        "yaw_rmse_rad_s": 1.0865544408567496,
+        "mean_actual_xyz_command_units": [
+          0.07308349013328552,
+          -0.11245878040790558,
+          0.5776659250259399
+        ]
+      },
+      {
+        "name": "stop",
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.0038228202902090497,
+        "yaw_rmse_rad_s": 0.0062246671509772,
+        "mean_actual_xyz_command_units": [
+          -0.0011519512627273798,
+          2.1529418518184684e-05,
+          3.183968874509446e-05
+        ]
+      },
+      {
+        "name": "start_stop",
+        "survival_fraction": 0.75,
+        "xy_rmse_m_s": 0.051884879338281016,
+        "yaw_rmse_rad_s": 0.31498740820312077,
+        "mean_actual_xyz_command_units": [
+          0.042945168912410736,
+          -0.0032342325430363417,
+          0.02650170587003231
+        ]
+      },
+      {
+        "name": "speed_switch",
+        "survival_fraction": 0.0,
+        "xy_rmse_m_s": 0.09347573590956405,
+        "yaw_rmse_rad_s": 0.4897534949182412,
+        "mean_actual_xyz_command_units": [
+          0.05731715261936188,
+          -0.017669741064310074,
+          0.0930495634675026
+        ]
+      }
+    ]
+  },
+  "cold_scale1_control": {
+    "report": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/yaw_scale1_control_20261027_115120/independent_16s.json",
+    "sha256": "b347aeba5666091a891042d431c9c9d3007fdd18a338c6699ff6bb7320eeb143",
+    "checkpoint_sha256": "30247382a11784ea08de5f0fcfb07a5b2d287a9efb8fd48d26de5ba981bfd726",
+    "survived_full_endpoint": 44,
+    "full_endpoint_environments": 56,
+    "old_domain_survived": 24,
+    "old_domain_environments": 24,
+    "old_rows": [
+      {
+        "name": "forward09",
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.06930147186595154,
+        "yaw_rmse_rad_s": 0.40501518817569643,
+        "mean_actual_xyz_command_units": [
+          0.043919887393713,
+          -0.0006516940193250775,
+          0.0006410031346604228
+        ]
+      },
+      {
+        "name": "forward105",
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.07949960934844894,
+        "yaw_rmse_rad_s": 0.39620873782930593,
+        "mean_actual_xyz_command_units": [
+          0.049126531928777695,
+          -5.3993742767488584e-05,
+          -0.012433118186891079
+        ]
+      },
+      {
+        "name": "forward12",
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.10203585604075045,
+        "yaw_rmse_rad_s": 0.48274992009482764,
+        "mean_actual_xyz_command_units": [
+          0.04233919829130173,
+          -0.00011061766417697072,
+          -0.01673494465649128
+        ]
+      },
+      {
+        "name": "stop",
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.0009605606678989437,
+        "yaw_rmse_rad_s": 0.005203525151702046,
+        "mean_actual_xyz_command_units": [
+          -1.7986494640354067e-05,
+          -1.778845580702182e-05,
+          0.0008326756069436669
+        ]
+      },
+      {
+        "name": "start_stop",
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.06533897712922505,
+        "yaw_rmse_rad_s": 0.3531917542684188,
+        "mean_actual_xyz_command_units": [
+          0.0353214293718338,
+          -0.0003387456526979804,
+          -0.0021642607171088457
+        ]
+      },
+      {
+        "name": "speed_switch",
+        "survival_fraction": 1.0,
+        "xy_rmse_m_s": 0.08175530836063119,
+        "yaw_rmse_rad_s": 0.4245550526203684,
+        "mean_actual_xyz_command_units": [
+          0.04249494522809982,
+          -3.543215279933065e-05,
+          -0.015446117147803307
+        ]
+      }
+    ]
+  },
+  "finding": "Both cold-optimizer short runs regress independent locomotion. Global.35 candidate is unsafe, but reward normalization alone is not established as the sole cause; unchanged-scale control also loses forward tracking. Test optimizer-state preservation before further reward changes.",
+  "restored_scale1_control": {
+    "launch": {
+      "pid": 565993,
+      "directory": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/yaw_restored_control_20261027_120100",
+      "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_yaw_restored_control_20261027_120100",
+      "commands": [
+        [
+          "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+          "-u",
+          "/root/gpufree-data/projects/sable-isaacgym/deployment/legged_gym_cmd16_hist6_20261027/train_ppo.py",
+          "--run",
+          "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_yaw_restored_control_20261027_120100",
+          "--teacher",
+          "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_112816/teacher_manifest.json",
+          "--resume",
+          "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_112816/checkpoints/model_000001.pt",
+          "--deadline",
+          "2026-10-27T12:16:00.551502+08:00",
+          "--stage",
+          "S3",
+          "--num-envs",
+          "256",
+          "--max-updates",
+          "16",
+          "--critic-warmup-updates",
+          "4",
+          "--frontier-alpha",
+          ".375",
+          "--yaw-error-scale",
+          "1.",
+          "--restore-optimizer"
+        ],
+        [
+          "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+          "-u",
+          "/root/gpufree-data/projects/sable-isaacgym/deployment/legged_gym_cmd16_hist6_20261027/evaluate_migration.py",
+          "--checkpoint",
+          "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_yaw_restored_control_20261027_120100/checkpoints/model_000016.pt",
+          "--teacher",
+          "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_112816/teacher_manifest.json",
+          "--output",
+          "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/yaw_restored_control_20261027_120100/independent_16s.json",
+          "--suite",
+          "S3",
+          "--envs-per-scenario",
+          "4",
+          "--seconds",
+          "16",
+          "--frontier-alphas",
+          ".375",
+          ".5"
+        ]
+      ],
+      "scope": "Matched to scale1 cold-optimizer control, preserving both Adam states and auxiliary learning rate while retaining4critic-only warmup. Same parent,seed44,256env,16updates,alpha.375,96env16s seed947 evaluation. No active-run mutation."
+    },
+    "warmup_check": {
+      "passed": true,
+      "initial_model_exact": true,
+      "initial_actor_critic_Adam_exact": true,
+      "initial_auxiliary_Adam_exact": true,
+      "first_warmup_actor_and_std_unchanged": true,
+      "first_warmup_optimizer_step_deltas": {
+        "std": 0.0,
+        "actor.0.weight": 0.0,
+        "actor.0.bias": 0.0,
+        "actor.2.weight": 0.0,
+        "actor.2.bias": 0.0,
+        "actor.4.weight": 0.0,
+        "actor.4.bias": 0.0,
+        "actor.6.weight": 0.0,
+        "actor.6.bias": 0.0,
+        "critic.0.weight": 16.0,
+        "critic.0.bias": 16.0,
+        "critic.2.weight": 16.0,
+        "critic.2.bias": 16.0,
+        "critic.4.weight": 16.0,
+        "critic.4.bias": 16.0,
+        "critic.6.weight": 16.0,
+        "critic.6.bias": 16.0
+      },
+      "scope": "Main PPO actor/std gradients disabled in warmup; critic updates16minibatches. Auxiliary encoder still uses its separate restored Adam and existing actual-policyKL guard."
+    },
+    "independent_result_pending": true
+  },
+  "production": "Existing4096env frozen PPO retains compatible optimizers and unit yaw cost. No experimental candidate adopted.",
+  "task_acceptance": false
+}

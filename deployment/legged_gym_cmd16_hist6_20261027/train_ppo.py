@@ -89,8 +89,11 @@ def main():
         minimum_action_std=cfg.migration.minimum_action_std)
     algorithm.init_storage(a.num_envs, a.rollout_steps, [326], [92], [15])
     if a.restore_optimizer:
-        if parent.get('stage')!=a.stage or a.critic_warmup_updates:
-            raise ValueError('Optimizer restoration requires same stage and no new critic warmup')
+        if parent.get('stage')!=a.stage:
+            raise ValueError('Optimizer restoration requires the same stage')
+        # Warmup disables actor/std gradients, so restored actor Adam moments
+        # remain intact while the critic adapts. The launcher still decides
+        # whether a formal continuation is compatible; probes opt in explicitly.
         restore_optimizers(algorithm,parent)
     a.run.mkdir(parents=True, exist_ok=True)
     (a.run/'checkpoints').mkdir(exist_ok=True)
