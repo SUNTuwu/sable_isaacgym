@@ -1,0 +1,126 @@
+{
+  "created_unix": 1793063097.4975202,
+  "scope": "Bounded one-round continuation; independent S3/S5 acceptance still missing",
+  "continuation": {
+    "status": "started",
+    "pid": 483908,
+    "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_090015",
+    "command": [
+      "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+      "-u",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/runtime/launch_ppo.py",
+      "--parent-run",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706",
+      "--checkpoint",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/checkpoints/model_000081.pt",
+      "--stage",
+      "S3",
+      "--num-envs",
+      "4096"
+    ],
+    "choice": {
+      "selected": {
+        "iteration": 81,
+        "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/checkpoints/model_000081.pt",
+        "sha256": "d9cd866b8726582e0631c449f4ca19539141f17b6331c3b021b15155cf260a2c",
+        "evaluation": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/evaluations/independent_000081_084647.json",
+        "evaluation_sha256": "b64326f611de71e3638bd1a5ff939bd2b6b99c41faa2f966c97c872ce0cc3c52",
+        "all_scenarios_survival": true,
+        "old_tracking": true
+      },
+      "candidates": [
+        {
+          "iteration": 1,
+          "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/checkpoints/model_000001.pt",
+          "sha256": "dfea293d57db0cadee90cf92a8c460bee2f933c99b4c7574e448ff09efd52947",
+          "evaluation": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/evaluations/independent_000001_083717.json",
+          "evaluation_sha256": "74178f3731200c2dfb535e12adbc4f38cec700bb3a12a4e038a30542d80af136",
+          "all_scenarios_survival": true,
+          "old_tracking": true
+        },
+        {
+          "iteration": 27,
+          "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/checkpoints/model_000027.pt",
+          "sha256": "f17a0bbbdb1d6ae02d12f87154c97bf07f65e8c1f2201454ef26218ad83bac2f",
+          "evaluation": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/evaluations/independent_000027_084026.json",
+          "evaluation_sha256": "09eb7dcc0d16d316ee94b136e2ab6bc316cd692e308dcbc159f05649e7f50161",
+          "all_scenarios_survival": true,
+          "old_tracking": true
+        },
+        {
+          "iteration": 54,
+          "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/checkpoints/model_000054.pt",
+          "sha256": "19a55c9411198f9f66d69b8e43669a7f8dedab4eb671a609f0f8a0a0987234a0",
+          "evaluation": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/evaluations/independent_000054_084335.json",
+          "evaluation_sha256": "99a008906572bf0a4866c0aa351ae0e56a0cd73b5631a4aa077b5d63537a2907",
+          "all_scenarios_survival": true,
+          "old_tracking": true
+        },
+        {
+          "iteration": 81,
+          "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/checkpoints/model_000081.pt",
+          "sha256": "d9cd866b8726582e0631c449f4ca19539141f17b6331c3b021b15155cf260a2c",
+          "evaluation": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/evaluations/independent_000081_084647.json",
+          "evaluation_sha256": "b64326f611de71e3638bd1a5ff939bd2b6b99c41faa2f966c97c872ce0cc3c52",
+          "all_scenarios_survival": true,
+          "old_tracking": true
+        },
+        {
+          "iteration": 108,
+          "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/checkpoints/model_000108.pt",
+          "sha256": "659ff40723cbbadcc7eea2ed1ddd746bd5e1de4e5a9d4793069a8362d8f022d1",
+          "evaluation": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/evaluations/independent_000108_084959.json",
+          "evaluation_sha256": "244cd862117b435eb8c1ba3282b8c9dc117b723b443e716aedc68dc5ffaf4fa9",
+          "all_scenarios_survival": false,
+          "old_tracking": true
+        },
+        {
+          "iteration": 134,
+          "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/checkpoints/model_000134.pt",
+          "sha256": "a6616fba2cd05eac8777777e12fb44665526c4858bd8781c0be4a477b4753e7b",
+          "evaluation": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/evaluations/independent_000134_085308.json",
+          "evaluation_sha256": "948adfcffb1e9e3aa2c6ac18ecc8e97e9948c21acb9ccddabb73ae87758c35bc",
+          "all_scenarios_survival": false,
+          "old_tracking": true
+        },
+        {
+          "iteration": 159,
+          "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/checkpoints/model_000159.pt",
+          "sha256": "806c680f7217b411acfd946f66300541a616c81d81129cc86ab6221323734def",
+          "evaluation": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/evaluations/independent_000159_085619.json",
+          "evaluation_sha256": "99fe8e581704e30873439890e826cfc7174e6bcf6a7d790f8fd0329e97886de8",
+          "all_scenarios_survival": false,
+          "old_tracking": true
+        },
+        {
+          "iteration": 172,
+          "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/checkpoints/model_000172.pt",
+          "sha256": "2b141dcf51a5db560c01f1b27e0ec579a5dd1c25eeadaa860a89769867ac5f61",
+          "evaluation": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/evaluations/independent_000172_085814.json",
+          "evaluation_sha256": "72dca5122a4d57ee101a8aa90c6aab1014c7d5d42c92703b896913a273f57415",
+          "all_scenarios_survival": false,
+          "old_tracking": true
+        }
+      ],
+      "archive_selected_bytes_verified": true,
+      "rule": "Latest checkpoint with all14 scenario survival>=90% and six old-domain XY/yaw errors within existing S3 limits",
+      "scope": "Continuation selection only; three-seed task acceptance remains required"
+    },
+    "optimizer_restored": true,
+    "created_unix": 1793062827.1303706
+  },
+  "validation": {
+    "optimizer_restored": true,
+    "critic_warmup_updates": 0,
+    "reference_execution_calls": 0,
+    "runtime_files_verified": 89,
+    "live_processes": {
+      "training_pid": 483909,
+      "monitor_pid": 483991,
+      "supervisor_pid": 483908
+    },
+    "selection_dry_run_matches_executed": true
+  },
+  "cancellation": "Queue exits without starting if parent explicitly stopped/failed or active run changed; only a normal deadline completion can continue",
+  "runtime_source": "Exact immutable parent runtime, so development changes cannot enter this continuation"
+}
