@@ -18,6 +18,7 @@ from gait_clock import GaitClock, local_phases
 from model_mapping import ModelMapping, heading_velocity, quat_apply, quat_inverse
 from curriculum import sample_velocity_commands, MovingStartCurriculum
 from command_foot_motion import command_velocity_at_feet,desired_foot_velocity,FootCenterVelocity,foot_velocity_cost
+from target_pose_clearance import target_pose_clearance_cost,executed_target_coordinates
 from motor_envelope import motor_torques
 
 
@@ -86,6 +87,8 @@ class MigrationRobot(SableRobot):
         self.foot_motion = FootCenterVelocity(self.num_envs,self.device,self.dt)
         self.command_foot_velocity_target = torch.zeros(self.num_envs,4,2,device=self.device)
         self.command_foot_velocity_per_foot = torch.zeros(self.num_envs,4,device=self.device)
+        self.target_pose_clearance = torch.zeros(self.num_envs,4,device=self.device)
+        self.target_pose_clearance_per_foot = torch.zeros(self.num_envs,4,device=self.device)
         self.moving_start = None
         if self.omni and self.cfg.migration.moving_start_training:
             self.moving_start = MovingStartCurriculum(self.num_envs,self.device,
@@ -270,6 +273,16 @@ class MigrationRobot(SableRobot):
             self.commands16[:, :3] = self.commands[:, :3]
         self.waist_height_acc.update(self.rigid_states[:, self.waist_body_index, 2])
         self.gait_signals.update(self)
+        if self.omni and self.cfg.rewards.scales.target_pose_clearance:
+            # Exact capsule FK at the current measured root, with a clone of
+            # q replaced by clipped targets. No simulation state is modified.
+            target_q = executed_target_coordinates(self.dof_pos,self.active,
+                self.executed_target,self.hip,self.dependent)
+            self.target_pose_clearance = self.mapping.task_measurements(
+                self.root_states[:,:3],self.base_quat,target_q,self.dof_names)[3]
+            self.target_pose_clearance_per_foot = target_pose_clearance_cost(
+                self.target_pose_clearance,self.gait_target_clearance,
+                self.gait_swing_weight,self.commands16[:,10:11])
         self.foot_pair_distance = torch.stack([(self.foot_center_world[:, 0, :2]-self.foot_center_world[:, 1, :2]).norm(dim=1),
             (self.foot_center_world[:, 2, :2]-self.foot_center_world[:, 3, :2]).norm(dim=1)], 1)
         local = self.clock.local_phases(self.commands16)
@@ -345,6 +358,8 @@ class MigrationRobot(SableRobot):
                 command_foot_velocity_target_m_s=self.command_foot_velocity_target.clone(),
                 command_foot_velocity_valid=self.foot_motion.valid.clone(),
                 command_foot_velocity_cost_per_foot=self.command_foot_velocity_per_foot.clone())
+            self.eval_snapshot.update(target_pose_clearance_m=self.target_pose_clearance.clone(),
+                target_pose_clearance_cost_per_foot=self.target_pose_clearance_per_foot.clone())
 
     def _reward_target_limits(self):
         raw = self.default_dof_pos[:, self.active] + self.actions*.35
@@ -362,6 +377,9 @@ class MigrationRobot(SableRobot):
 
     def _reward_command_foot_velocity(self):
         return self.command_foot_velocity_per_foot.mean(1)
+
+    def _reward_target_pose_clearance(self):
+        return self.target_pose_clearance_per_foot.mean(1)
 
     def _reward_swing_peak_shortfall(self):
         value = super()._reward_swing_peak_shortfall()

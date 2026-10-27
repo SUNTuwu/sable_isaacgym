@@ -155,9 +155,9 @@ class LearningTests(unittest.TestCase):
         method=next(m for c in tree.body if isinstance(c,ast.ClassDef) and c.name=='SableRobot'
             for m in c.body if isinstance(m,ast.FunctionDef) and m.name=='compute_reward')
         scope={'torch':torch};exec(compile(ast.Module(body=[method],type_ignores=[]),'<actual_reward_aggregator>','exec'),scope)
-        def run(gait,unclipped,foot_motion=0.):
-            names=['base','gait_clearance','target_limits','alive','command_foot_velocity']
-            values=[.2,gait,-.1,.06,foot_motion]
+        def run(gait,unclipped,foot_motion=0.,target_pose=0.):
+            names=['base','gait_clearance','target_limits','alive','command_foot_velocity','target_pose_clearance']
+            values=[.2,gait,-.1,.06,foot_motion,target_pose]
             env=SimpleNamespace(cfg=SimpleNamespace(rewards=SimpleNamespace(only_positive_rewards=True),
                 migration=SimpleNamespace(unclipped_gait_costs=unclipped)),
                 reward_names=names,reward_functions=[lambda v=v:torch.tensor([v]) for v in values],
@@ -173,6 +173,8 @@ class LearningTests(unittest.TestCase):
         self.assertAlmostEqual(run(-.39,True)-run(-.4,True),.01,places=6)
         self.assertAlmostEqual(run(-.4,False,-.08),-.08,places=6)
         self.assertAlmostEqual(run(-.4,True,-.08),-.32,places=6)
+        self.assertAlmostEqual(run(-.4,False,target_pose=-.04),-.04,places=6)
+        self.assertAlmostEqual(run(-.4,True,target_pose=-.04),-.28,places=6)
 
     def test_terminal_bootstrap_and_actual_ppo_update(self):
         torch.manual_seed(11)

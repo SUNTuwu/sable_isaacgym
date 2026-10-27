@@ -1,0 +1,111 @@
+{
+  "created_at": "2026-10-27T09:35:02.339432+08:00",
+  "reason": "New command hind feet remain planted and executed-target FK is below2mm during intended swing. Add a soft hypothetical geometry signal while preserving actual clearance and genuine event acceptance.",
+  "weight": -8,
+  "formula": "mean(swing_weight * min(9, (max(clock_clearance - target_FK_clearance,0)/command_height)^2))",
+  "stage": [
+    "S3",
+    "S5"
+  ],
+  "S2_weight": 0,
+  "clipping": "Negative cost applied after positive clipping",
+  "geometry": "Measured root pose plus clipped executed joint targets and exact opposed hip coupling; no physical q or actuator target mutation",
+  "actual_acceptance_unchanged": true,
+  "tests": {
+    "total": 23,
+    "passed": true,
+    "log": "results/cmd16_hist6/target_pose_reward_tests.log"
+  },
+  "evidence": {
+    "target_pose_reward_timing.json": {
+      "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_090015/checkpoints/model_000163.pt",
+      "checkpoint_sha256": "ca0bdd81522b6f27578e05e1354a39acbe9cf4fd37ea4babdd41768888e70408",
+      "seed": 423,
+      "num_envs": 8,
+      "control_steps": 96,
+      "forced_reset_at_step48": [
+        1,
+        6
+      ],
+      "FK_error_m": 0.0,
+      "cost_error": 0.0,
+      "reward_accounting_error": 1.1920928955078125e-07,
+      "reference_execution_calls": 0,
+      "executed_target_equal_to_student": true,
+      "S2_weight": 0.0,
+      "weighted_mean_per_environment_per_second": [
+        -0.24053461849689484,
+        -0.2991681396961212,
+        -0.8277304172515869,
+        -0.8455848693847656,
+        0.0,
+        -0.7287116646766663,
+        -0.398528128862381,
+        -0.8595848679542542
+      ],
+      "task_acceptance": false
+    },
+    "target_pose_reward_PPO_validation.json": {
+      "smoke_run": "runs/cmd16_hist6_target_pose_smoke_20261027_093025",
+      "checkpoint": {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_target_pose_smoke_20261027_093025/checkpoints/model_000016.pt",
+        "sha256": "39b2d8e2c50487fa8f67fe6a1007c966b0f416a55f3d9544b79e931cdc707261",
+        "iteration": 16,
+        "reason": "final",
+        "updated_unix": 1793064775.7911112
+      },
+      "updates": 16,
+      "environment_steps": 98304,
+      "critic_warmup_updates": 4,
+      "changed_tensors": {
+        "actor.": 8,
+        "critic.": 8,
+        "encoder.": 0
+      },
+      "parameters_finite": true,
+      "metrics": {
+        "value_loss": 0.8371411561965942,
+        "surrogate_loss": 0.00018408862524665892,
+        "mean_reward_per_control_step": 0.10128339845687151,
+        "control_steps": 384,
+        "environment_steps": 98304,
+        "completed_episode_survival": 0.0,
+        "recent_completed_episodes": 6,
+        "critic_warmup": false,
+        "reference_execution_calls": 0,
+        "learning_rate": 5e-05,
+        "mean_std": 0.020509902387857437,
+        "novel_command_std_floor": 0.04,
+        "reverse_hind_std_floor": 0.08,
+        "mean_std_scope": "Learned base parameters; low-forward moving-command distribution also applies the explicit novel-command floor",
+        "frequency_range_hz": [
+          0.9,
+          1.1
+        ],
+        "encoder_update_accepted": true,
+        "encoder_policy_kl": 0.0010535765904933214,
+        "encoder_velocity_mse": 0.0002989117056131363,
+        "encoder_prediction_mse": 0.0031661191023886204,
+        "auxiliary_examples": 4096,
+        "auxiliary_learning_rate": 2.5e-06,
+        "encoder_metric_state": "Committed encoder after acceptance/rollback, evaluated over the whole auxiliary batch",
+        "encoder_policy_kl_std": "Actual symmetrized command-conditioned exploration distribution",
+        "labels": "same-time ROOT velocity and pre-reset next proprioception; done pairs masked"
+      },
+      "reference_execution_calls": 0,
+      "task_acceptance": false
+    },
+    "target_pose_fk_benchmark.json": {
+      "num_envs": 4096,
+      "batch_bound": true,
+      "scalar_fk_error_m": 0.0,
+      "milliseconds_per_call": {
+        "eager": 7.910491293296218,
+        "traced": 2.080303244292736
+      },
+      "scope": "Wall time on shared GPU while formal PPO continues; not isolated training throughput"
+    }
+  },
+  "performance_decision": "Keep validated eager exact FK; measured7.9ms per4096env call is small relative to physics+PPO. Traced FK prototype2.1ms was not integrated; avoid changing the validated training path for a small projected total saving.",
+  "task_acceptance": false
+}

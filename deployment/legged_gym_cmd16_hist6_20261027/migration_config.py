@@ -41,6 +41,7 @@ def student_config(teacher_run, stage='S2', num_envs=1024):
     # This direct command error survives that clipping, as the yaw error does.
     cfg.rewards.scales.velocity_error = -2.
     cfg.rewards.scales.command_foot_velocity = 0.
+    cfg.rewards.scales.target_pose_clearance = 0.
     cfg.migration.unclipped_gait_costs = stage in ('S3','S5')
     if stage in ('S3', 'S5'):
         cfg.commands.heading_command = False
@@ -56,6 +57,10 @@ def student_config(teacher_run, stage='S2', num_envs=1024):
         # Keep per-step survival preferable to an early terminal transition
         # while restoring the clearance signal previously lost to clipping.
         cfg.rewards.scales.command_foot_velocity = -2.
+        # Ground contact clamps physical clearance near zero for small target
+        # changes. This soft hypothetical-pose cost supplies a local signal;
+        # the existing actual clearance cost and event acceptance remain.
+        cfg.rewards.scales.target_pose_clearance = -8.
         # The added bounded swing cost is about4/s for stationary novel-command
         # feet. Preserve a survival incentive while adding its directional signal.
         cfg.rewards.scales.alive = 7.

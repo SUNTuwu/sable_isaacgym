@@ -1,4 +1,8 @@
-"""One bounded, compatible S3 continuation after a normal completed round."""
+"""One bounded S3 continuation after a normal completed round.
+
+Default uses the parent's exact runtime. An explicitly supplied prepared runtime
+must have a sibling manifest and passed preflight; it may reset optimizer state.
+"""
 import argparse
 import fcntl
 import hashlib
@@ -42,8 +46,17 @@ def candidates(parent):
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--parent-run',type=Path,required=True)
+    p.add_argument('--source-runtime',type=Path)
     p.add_argument('--check-only',action='store_true');a=p.parse_args();parent=a.parent_run.resolve()
     assert read_json(parent/'config.json')['stage']=='S3'
+    source=parent/'runtime'
+    if a.source_runtime:
+        source=a.source_runtime.resolve()
+        manifest=read_json(source.parent/'runtime_manifest.json')
+        preflight=read_json(source.parent/'preflight.json')
+        assert preflight['passed'] and preflight['stage']=='S3'
+        for name,digest in manifest['files'].items():assert sha256(source/name)==digest
+        assert preflight['runtime_manifest_sha256']==sha256(source.parent/'runtime_manifest.json')
     if a.check_only:
         selected,rows=candidates(parent);print(json.dumps(dict(selected=selected,candidates=rows)));return
     output=ROOT/'results/cmd16_hist6'/('continuation_'+parent.name+'.json')
@@ -66,10 +79,12 @@ def main():
     with tarfile.open(receipt['archive'],'r:gz') as tar:
         name=parent.name+'/checkpoints/'+Path(selected['checkpoint']).name
         assert hashlib.sha256(tar.extractfile(name).read()).hexdigest()==selected['sha256']
-    # Launch from the parent's exact immutable runtime, preserving compatible
-    # Adam/auxiliary state. Development-only edits cannot leak into this round.
+    # Recheck a prepared source after waiting; mutable development files cannot
+    # leak into the new frozen round. The launcher checks optimizer compatibility.
+    if a.source_runtime:
+        for name,digest in manifest['files'].items():assert sha256(source/name)==digest
     cfg=read_json(parent/'config.json')
-    command=[sys.executable,'-u',str(parent/'runtime/launch_ppo.py'),'--parent-run',str(parent),
+    command=[sys.executable,'-u',str(source/'launch_ppo.py'),'--parent-run',str(parent),
         '--checkpoint',selected['checkpoint'],'--stage','S3','--num-envs',str(cfg['num_envs'])]
     with output.with_suffix('.log').open('w') as log:
         process=subprocess.Popen(command,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
@@ -82,10 +97,11 @@ def main():
         if process.poll() is not None:raise RuntimeError('Continuation launcher exited before startup')
         current=read_json(ROOT/'results/cmd16_hist6/current_migration.json',{})
         if current.get('run')!=str(parent) and current.get('launcher_pid')==process.pid:
-            run=Path(current['run']);config=read_json(run/'config.json');assert config['optimizer_restore']
+            run=Path(current['run']);config=read_json(run/'config.json')
+            if not a.source_runtime:assert config['optimizer_restore']
             atomic_json(run/'parent_checkpoint_selection.json',choice)
             atomic_json(output,dict(status='started',pid=process.pid,run=str(run),command=command,choice=choice,
-                optimizer_restored=True,created_unix=time.time()));return
+                optimizer_restored=config['optimizer_restore'],source_runtime=str(source),created_unix=time.time()));return
         time.sleep(1)
     raise RuntimeError('Continuation startup not confirmed')
 
