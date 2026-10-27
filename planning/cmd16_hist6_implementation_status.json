@@ -146,9 +146,10 @@
     "results/cmd16_hist6/joint_motion_diagnostic.json",
     "planning/cmd16_hist6_baseline/s3_target_pose_reward_20261027.json",
     "results/cmd16_hist6/target_pose_reward_encoder_validation.json",
-    "planning/cmd16_hist6_baseline/s3_task_progress_selection_20261027.json"
+    "planning/cmd16_hist6_baseline/s3_task_progress_selection_20261027.json",
+    "planning/cmd16_hist6_baseline/s3_clearance_gradient_experiment_20261027.json"
   ],
-  "current_status": "S2 accepted144/144. Tenth S3 4096env adds soft executed-target-pose swing clearance-8; actual action/physics/reference independence and acceptance unchanged. Current training from ninthfinal160. S3/S5 remain incomplete.",
+  "current_status": "S2 accepted144/144. Eleventh formal S3 continues exact target-pose-clearance runtime from tenth128, selected using unchanged task gates after stability checks; optimizer restored, no warmup. Offline geometric actor candidate is diagnostic only, live evaluation pending. S3/S5 unaccepted.",
   "dagger_final": {
     "iteration": 15040,
     "sha256": "e6dac5a717c43de43737bc16b57c7f1b015e8de5a014e2b2d039ba4817d16133",
@@ -170,27 +171,25 @@
     "survived": 144,
     "episodes": 144
   },
-  "updated_at": "2026-10-27T09:52:06.846773+08:00",
+  "updated_at": "2026-10-27T10:13:25.215538+08:00",
   "current_stage": "S3_PPO_target_pose_clearance",
   "latest_findings": {
     "active_source_commit": "9bcd3cc",
-    "parent_checkpoint": {
-      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_092408/checkpoints/model_000160.pt",
-      "sha256": "175f32de03a498a395f55bf727520ca5f6bca2e5445a26e668be4cf74bc0b71d",
-      "iteration": 160
-    },
-    "active_deadline": "2026-10-27T10:07:28.731712+08:00",
     "active_processes": {
-      "training_pid": 505914,
-      "monitor_pid": 505997,
-      "supervisor_pid": 505912
+      "training_pid": 515976,
+      "monitor_pid": 516090,
+      "supervisor_pid": 515974
     },
-    "proof": "planning/cmd16_hist6_baseline/s3_target_pose_reward_20261027.json",
-    "parent_archive": "runs/cmd16_hist6_s3_ppo_20261027_092408/backup_receipt.json",
-    "runtime_files_verified": 94,
-    "optimizer_restored": false,
-    "critic_warmup_updates": 10,
-    "next_parent_selection": "planning/cmd16_hist6_baseline/s3_task_progress_selection_20261027.json",
+    "active_deadline": "2026-10-27T10:29:52.588917+08:00",
+    "parent_checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_094728/checkpoints/model_000128.pt",
+      "sha256": "50cfa73077750a861fc40ac3f8d15a0f8691a7f6f7022327e902cfc7022f1023",
+      "iteration": 128
+    },
+    "optimizer_restored": true,
+    "critic_warmup_updates": 0,
+    "parent_selection": "results/cmd16_hist6/continuation_cmd16_hist6_s3_ppo_20261027_094728.json",
+    "diagnostic": "planning/cmd16_hist6_baseline/s3_clearance_gradient_experiment_20261027.json",
     "acceptance_passed": false
   },
   "remaining_acceptance": [
@@ -198,5 +197,5 @@
     "S5 genuine foot-event frequency0.8/1.2 and two-way switching, three seeds",
     "Export accepted final checkpoint and replay same recorded inputs onCPU/CUDA"
   ],
-  "active_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_094728"
+  "active_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_100952"
 }

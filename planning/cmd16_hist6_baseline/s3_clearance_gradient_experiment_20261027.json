@@ -1,0 +1,59 @@
+{
+  "created_at": "2026-10-27T10:13:25.214774+08:00",
+  "scope": "Isolated offline task-space actor-gradient experiment; no production PPO change or task acceptance. Same deployment inputs and complete-target actor, no new execution dependency.",
+  "first_unanchored": {
+    "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_092408/checkpoints/model_000122.pt",
+    "parent_sha256": "756c109a5e82ce23cca70a7a427118dc782a071b7ac51e5c508e1f1fe8e74779",
+    "candidate": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/clearance_gradient_experiment_20261027_100242/output/candidate.pt",
+    "candidate_sha256": "9f51108fabb701619aae68f31c398f44d661b0d416d0fb366519c7a42abb7a66",
+    "seed": 431,
+    "collected_examples": 3200,
+    "validation_examples": 512,
+    "original_collection_survival_fraction": 1.0,
+    "actual_FK_native_max_error_m": 1.0617077350616455e-07,
+    "attempted_updates": 128,
+    "accepted_updates": 10,
+    "old_domain_total_KL": 0.09897381067276001,
+    "novel_hypothetical_cost_before": 0.16418452560901642,
+    "novel_hypothetical_cost_after": 0.16191346943378448,
+    "hypothetical_swing_clearance_mean_before_m": 0.0012471304507926106,
+    "hypothetical_swing_clearance_mean_after_m": 0.0013481122441589832,
+    "reference_execution_calls": 0,
+    "task_acceptance": false,
+    "scope": "Offline geometric actor learning experiment, not PPO. True root/q are loss labels only. Same326D inference; no execution reference, model, or teacher at deployment. Hypothetical clearance must be validated in a separate live simulation."
+  },
+  "anchored": {
+    "parent_checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_092408/checkpoints/model_000122.pt",
+    "parent_sha256": "756c109a5e82ce23cca70a7a427118dc782a071b7ac51e5c508e1f1fe8e74779",
+    "candidate": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/clearance_gradient_anchor_20261027_100744/output/candidate.pt",
+    "candidate_sha256": "e6061f9387c84082a8402fc7c3cbc27a1b649c90d62ff3a94ec45d397f266085",
+    "seed": 431,
+    "collected_examples": 3200,
+    "validation_examples": 1024,
+    "original_collection_survival_fraction": 1.0,
+    "actual_FK_native_max_error_m": 1.0617077350616455e-07,
+    "collection_source": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/clearance_gradient_experiment_20261027_100242/output",
+      "dataset_sha256": "d6e0111caf7b1fcc50c5dd26d9bada2e37f17cb63586ad0a55134a003bbf447b",
+      "receipt_sha256": "146856c00745404bad3e5554bc042fe35ae30363e843a0f32c614acc5728b5e1"
+    },
+    "old_domain_anchor_KL_weight": 0.5,
+    "attempted_updates": 384,
+    "accepted_updates": 370,
+    "old_domain_total_KL": 0.006739601958543062,
+    "novel_hypothetical_cost_before": 0.16418452560901642,
+    "novel_hypothetical_cost_after": 0.10816488415002823,
+    "hypothetical_swing_clearance_mean_before_m": 0.0012471304507926106,
+    "hypothetical_swing_clearance_mean_after_m": 0.0037962354253977537,
+    "reference_execution_calls": 0,
+    "task_acceptance": false,
+    "scope": "Offline geometric actor learning experiment, not PPO. True root/q are loss labels only. Same326D inference; no execution reference, model, or teacher at deployment. Hypothetical clearance must be validated in a separate live simulation."
+  },
+  "metadata_corrections": [
+    "Initial unanchored result reports validation_examples512 because a loop variable was reused; actual optimization monitoring subset was1024. Fixed in source.",
+    "These1024 rows are from the optimization collection, not held-out states. Independent physical evaluation is separate."
+  ],
+  "independent_evaluation": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/clearance_gradient_anchor_20261027_100744/output/independent_16s.json",
+  "independent_evaluation_pending": false,
+  "deployment_changes": false
+}
