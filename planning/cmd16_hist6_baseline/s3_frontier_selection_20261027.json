@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-10-27T11:20:12.386687+08:00",
+  "valid_measured_gate_advances": {
+    "parent_alpha": 0.25,
+    "next_alpha": 0.375,
+    "checkpoint_sha256": "80efbcae4f966bd6fc6e97abb2333d8575364a3f738a4fa98363f2cbc9376547"
+  },
+  "unmet_yaw_gate_continues_same_range": {
+    "parent_alpha": 0.375,
+    "next_alpha": 0.375,
+    "failures": [
+      "turn_left:axis2_insufficient_response",
+      "turn_right:axis2_insufficient_response"
+    ],
+    "checkpoint_sha256": "a3d9716caa61301a5a4c52e9defb333f69654916490f801a2d431372eb768ff3"
+  },
+  "tampered_pass_flag_rejected": true,
+  "scope": "Bounded one-round continuation selection; complete S3/S5 acceptance unchanged",
+  "passed": true
+}
