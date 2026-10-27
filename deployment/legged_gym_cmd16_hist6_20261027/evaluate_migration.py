@@ -1,6 +1,7 @@
 """Fresh-process student/teacher evaluation with commanded and actual motion."""
 import argparse
 import json
+import math
 import time
 from pathlib import Path
 from isaacgym import gymapi
@@ -31,6 +32,7 @@ def main():
     p.add_argument('--video-dir', type=Path)
     p.add_argument('--deployment-trace', type=Path)
     p.add_argument('--frontier-alphas', type=float, nargs='+', default=[])
+    p.add_argument('--yaw-error-scale', type=float)
     a = p.parse_args()
     if not a.teacher_control and not a.checkpoint:
         p.error('--checkpoint is required for student evaluation')
@@ -42,6 +44,10 @@ def main():
     groups, frontier_specs = extend_groups(groups, a.frontier_alphas)
     n = len(groups)*a.envs_per_scenario
     cfg = student_config(teacher['run'], stage='S2' if a.suite in ('forward', 'S2') else a.suite, num_envs=n)
+    if a.yaw_error_scale is not None:
+        if not math.isfinite(a.yaw_error_scale) or a.yaw_error_scale <= 0:
+            p.error('Yaw error scale must be finite and positive')
+        cfg.migration.yaw_error_scale_rad_s=a.yaw_error_scale
     cfg.env.episode_length_s = a.seconds+1.
     cfg.commands.resampling_time = 1000.
     if not a.teacher_control:
@@ -220,6 +226,7 @@ def main():
         'evaluator_sha256': sha256(__file__), 'environment_sha256': sha256(Path(__file__).with_name('migration_env.py')),
         'created_unix': time.time(), 'wall_seconds': time.time()-started, 'accepted_locomotion': False,
         'measurement_scope': '20ms control-rate samples; original episodes only; genuine2mm/60ms/5mm unsigned landing events; missing events remain missing'}
+    result['evaluation_yaw_error_scale_rad_s']=cfg.migration.yaw_error_scale_rad_s
     result['velocity_segments']=[]
     for (g,name,changed),values in segment_sums.items():
         total=values.sum(0).cpu().numpy();count=float(total[9])

@@ -169,7 +169,7 @@
       }
     ]
   },
-  "finding": "Both cold-optimizer short runs regress independent locomotion. Global.35 candidate is unsafe, but reward normalization alone is not established as the sole cause; unchanged-scale control also loses forward tracking. Test optimizer-state preservation before further reward changes.",
+  "finding": "Matched unit-scale control: cold optimizers44/56 and lost old-forward speed tracking; restored optimizers56/56 and all old-domain gates passed. This supports preserving compatible learning state when adapting the critic. Global.35 cold candidate remains rejected, but its reward change alone was not isolated as the only cause. A matched restored-state global.35 test is now running; production reward unchanged.",
   "restored_scale1_control": {
     "launch": {
       "pid": 565993,
@@ -250,10 +250,144 @@
         "critic.6.weight": 16.0,
         "critic.6.bias": 16.0
       },
-      "scope": "Main PPO actor/std gradients disabled in warmup; critic updates16minibatches. Auxiliary encoder still uses its separate restored Adam and existing actual-policyKL guard."
+      "scope": "Main PPO actor/std gradients disabled in warmup; critic updates16minibatches. Auxiliary encoder still uses its separate restored Adam and existing actual-policyKL guard.",
+      "finished_updates": 16,
+      "final_checkpoint": {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_yaw_restored_control_20261027_120100/checkpoints/model_000016.pt",
+        "sha256": "cfa1cf59bf56fd3465bce7ff02bb0dba3a94ed6a50a2393451418b1f406a3924",
+        "iteration": 16,
+        "reason": "final",
+        "updated_unix": 1793073798.6170118
+      },
+      "all_final_model_values_finite": true,
+      "parameter_change_comparison": {
+        "cold_scale035": {
+          "actor.": {
+            "change_L2": 0.1835622638463974,
+            "relative_change_L2": 0.00579026946797967,
+            "maximum_change": 0.0029872916638851166
+          },
+          "critic.": {
+            "change_L2": 0.3149985074996948,
+            "relative_change_L2": 0.013265760615468025,
+            "maximum_change": 0.008262403309345245
+          },
+          "history_encoder.": {
+            "change_L2": 0.011227626353502274,
+            "relative_change_L2": 0.00044634935329668224,
+            "maximum_change": 9.579956531524658e-05
+          }
+        },
+        "cold_scale1": {
+          "actor.": {
+            "change_L2": 0.1547352820634842,
+            "relative_change_L2": 0.004880954045802355,
+            "maximum_change": 0.0026314929127693176
+          },
+          "critic.": {
+            "change_L2": 0.36522990465164185,
+            "relative_change_L2": 0.015381191857159138,
+            "maximum_change": 0.006293118000030518
+          },
+          "history_encoder.": {
+            "change_L2": 0.017724836245179176,
+            "relative_change_L2": 0.0007046430837363005,
+            "maximum_change": 0.00015357136726379395
+          }
+        },
+        "restored_scale1": {
+          "actor.": {
+            "change_L2": 0.10044533759355545,
+            "relative_change_L2": 0.003168437397107482,
+            "maximum_change": 0.004484069999307394
+          },
+          "critic.": {
+            "change_L2": 0.16688935458660126,
+            "relative_change_L2": 0.007028332445770502,
+            "maximum_change": 0.005622416734695435
+          },
+          "history_encoder.": {
+            "change_L2": 0.016905825585126877,
+            "relative_change_L2": 0.0006720836972817779,
+            "maximum_change": 0.00023406744003295898
+          }
+        }
+      },
+      "parameter_change_scope": "Descriptive parameter differences only, not a substitute for actual independent survival or tracking."
     },
-    "independent_result_pending": true
+    "independent_result_pending": false,
+    "independent_evaluation": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/yaw_restored_control_20261027_120100/independent_16s.json",
+      "sha256": "0c7bd01070fcc6f1eeed1f43f0c3dbf14fbd0c761724f398515631dfb5fe62bb",
+      "checkpoint_sha256": "cfa1cf59bf56fd3465bce7ff02bb0dba3a94ed6a50a2393451418b1f406a3924",
+      "survived_full_endpoint": 56,
+      "old_domain_survived": 24,
+      "old_domain_gates_passed": true,
+      "current_frontier_failures": [
+        "turn_left:axis2_insufficient_response",
+        "turn_right:axis2_insufficient_response"
+      ],
+      "wall_seconds": 245.10300612449646,
+      "horizon_s": 16,
+      "reference_execution_calls": 0
+    }
   },
   "production": "Existing4096env frozen PPO retains compatible optimizers and unit yaw cost. No experimental candidate adopted.",
-  "task_acceptance": false
+  "task_acceptance": false,
+  "next_restored_normalized_trial": {
+    "pid": 569967,
+    "directory": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/yaw_restored_normalized_20261027_121003",
+    "run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_yaw_restored_normalized_20261027_121003",
+    "commands": [
+      [
+        "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+        "-u",
+        "/root/gpufree-data/projects/sable-isaacgym/deployment/legged_gym_cmd16_hist6_20261027/train_ppo.py",
+        "--run",
+        "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_yaw_restored_normalized_20261027_121003",
+        "--teacher",
+        "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_112816/teacher_manifest.json",
+        "--resume",
+        "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_112816/checkpoints/model_000001.pt",
+        "--deadline",
+        "2026-10-27T12:25:03.829838+08:00",
+        "--stage",
+        "S3",
+        "--num-envs",
+        "256",
+        "--max-updates",
+        "16",
+        "--critic-warmup-updates",
+        "4",
+        "--frontier-alpha",
+        ".375",
+        "--yaw-error-scale",
+        ".35",
+        "--restore-optimizer"
+      ],
+      [
+        "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+        "-u",
+        "/root/gpufree-data/projects/sable-isaacgym/deployment/legged_gym_cmd16_hist6_20261027/evaluate_migration.py",
+        "--checkpoint",
+        "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_yaw_restored_normalized_20261027_121003/checkpoints/model_000016.pt",
+        "--teacher",
+        "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_112816/teacher_manifest.json",
+        "--output",
+        "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/yaw_restored_normalized_20261027_121003/independent_16s.json",
+        "--suite",
+        "S3",
+        "--envs-per-scenario",
+        "4",
+        "--seconds",
+        "16",
+        "--frontier-alphas",
+        ".375",
+        ".5",
+        "--yaw-error-scale",
+        ".35"
+      ]
+    ],
+    "scope": "Matched to successful56/56 restored-state control: same parent,seed44,256env,16updates,4PPO actor-frozen warmup,restored Adam+auxiliary state,alpha.375,96env16s seed947. Changes only yaw cost scale1to.35; Gaussian and physical controls unchanged. Production remains unchanged."
+  }
 }
