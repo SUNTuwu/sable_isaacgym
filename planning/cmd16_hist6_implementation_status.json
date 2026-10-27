@@ -1,5 +1,5 @@
 {
-  "updated_unix": 1793071792.3257248,
+  "updated_unix": 1793071993.5885391,
   "goal_complete": false,
   "teacher": {
     "run": "stand5_20261027_v44_stride80_all",
@@ -88,7 +88,7 @@
     "S3/S5 evaluator nowrecords eachvelocitycommandsegment and requiresobserved response >=50% ofcommandchange; smallRMSEwithconstantdefaultspeedcannotpass."
   ],
   "next_work": [
-    "Read new combined independent reports and latest_frontier.json. Verify56 full-endpoint envs plus40 intermediate envs, same checkpoint, no reference calls, original14 scenario suite unchanged. Full16s timing has not yet been benchmarked; short24env2s smoke passed.",
+    "Combined monitor verified at16s:56 full-endpoint plus40 intermediate envs, one181.97s simulation, no reference calls, unchanged14-scenario endpoint suite and published/hash-verified video. Use latest_frontier.json and independent reports from the same checkpoint; no separate frontier GPU worker.",
     "Current alpha.375 was retained becauseboth yaw gains fail. Do not advance on survival/gait alone. The reverse path command is still positivevx.050625m/s, not full learned backward walking.",
     "Select progression using verified frontier gates and unchanged old-domain checks. Fresh20minute runs retain compatible optimizer state. If the current gate passes, nextalpha<=.5; otherwise diagnose remaining actual yaw response rather than bypassing it.",
     "Inspect weighted reward contributions in new frontier rows to distinguish insufficient directional tracking incentive from missing gait or instability. No new reward change has been made; current training core is unchanged from precedingalpha.375 round.",
@@ -173,7 +173,7 @@
     "survived": 144,
     "episodes": 144
   },
-  "updated_at": "2026-10-27T11:29:52.325726+08:00",
+  "updated_at": "2026-10-27T11:33:13.588543+08:00",
   "current_stage": "S3_command_frontier_alpha0375",
   "latest_findings": {
     "active_source_commit": "0687c75",
@@ -217,7 +217,28 @@
     "frontier_monitor": "Integrated in frozen watch_migration.py; no separate GPU watcher needed",
     "previous_standalone_watcher_stopped": 541597,
     "next_round_queued": false,
-    "acceptance_passed": false
+    "acceptance_passed": false,
+    "first_combined_evaluation": {
+      "report": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_112816/evaluations/independent_000001_112827.json",
+      "sha256": "63a16dce643e7a562bbccd550d218af134f3b6492a870d4cadf5ef244722bd03",
+      "checkpoint_sha256": "d348c14abb4602b4095a7b5feb1c96738f3000bdd0bf7ab6e43207084544ee06",
+      "iteration": 1,
+      "endpoint_environments": 56,
+      "intermediate_environments": 40,
+      "simulated_seconds": 16,
+      "wall_seconds": 181.96905303001404,
+      "full_endpoint_survived": 56,
+      "reference_execution_calls": 0,
+      "published_video_receipt": "/root/gpufree-data/projects/sable-isaacgym/results/legged_gym/videos/cmd16_hist6_s3_ppo_20261027_112816_000001_112827/published_receipt.json",
+      "video_hash_verified": true,
+      "source_runtime": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_112816/runtime",
+      "actual_alpha0375_failures": [
+        "turn_left:axis2_insufficient_response",
+        "turn_right:axis2_insufficient_response"
+      ],
+      "full_S3_accepted": false,
+      "performance_scope": "Observed joint evaluation walltime; not a controlled same-checkpoint speed benchmark."
+    }
   },
   "remaining_acceptance": [
     "S3 translation/yaw including direct starts and switches, actual stepping, three seeds",
@@ -226,7 +247,7 @@
   ],
   "active_run": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_112816",
   "next_actions": [
-    "Read new combined independent reports and latest_frontier.json. Verify56 full-endpoint envs plus40 intermediate envs, same checkpoint, no reference calls, original14 scenario suite unchanged. Full16s timing has not yet been benchmarked; short24env2s smoke passed.",
+    "Combined monitor verified at16s:56 full-endpoint plus40 intermediate envs, one181.97s simulation, no reference calls, unchanged14-scenario endpoint suite and published/hash-verified video. Use latest_frontier.json and independent reports from the same checkpoint; no separate frontier GPU worker.",
     "Current alpha.375 was retained becauseboth yaw gains fail. Do not advance on survival/gait alone. The reverse path command is still positivevx.050625m/s, not full learned backward walking.",
     "Select progression using verified frontier gates and unchanged old-domain checks. Fresh20minute runs retain compatible optimizer state. If the current gate passes, nextalpha<=.5; otherwise diagnose remaining actual yaw response rather than bypassing it.",
     "Inspect weighted reward contributions in new frontier rows to distinguish insufficient directional tracking incentive from missing gait or instability. No new reward change has been made; current training core is unchanged from precedingalpha.375 round.",
