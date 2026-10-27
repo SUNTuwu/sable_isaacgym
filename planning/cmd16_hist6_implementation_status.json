@@ -1,5 +1,5 @@
 {
-  "updated_unix": 1793070578.073181,
+  "updated_unix": 1793071401.2043884,
   "goal_complete": false,
   "teacher": {
     "run": "stand5_20261027_v44_stride80_all",
@@ -15,7 +15,7 @@
     "supervisor_pid": 540403
   },
   "pre_migration_commit": "a95854cf4042b7994731e7a02d9761be8fd195d7",
-  "latest_pushed_commit": "3741273",
+  "latest_pushed_commit": "0687c75",
   "completed": [
     "326/90/92/15 schema and six-frame cache",
     "full raw-input mirror projection and history encoder",
@@ -91,7 +91,8 @@
     "Inspect automatic16s direct-start frontier probes atalpha.375/.5 matched to each full endpoint checkpoint. They require all five paths, actual four-foot events/cadence and unchanged old-domain regression. These intermediate commands are not the complete desired skills.",
     "Advance one adjacent alpha increment<=.125 only from a checkpoint passing its current frontier gate; preserve compatible optimizer state. If no candidate passes, use measured failures to choose continuation, do not silently bypass a gate.",
     "Keep20minute frozen runs and180second full endpoint reports/videos; extra frontier monitoring never stops or restarts training. It cancels after a user stop or an active-run change.",
-    "No next formal run is queued yet. Choose and launch after normal parent save/archive verification, preserving chosen checkpoint bytes.",
+    "One successor is queued using frozen prepared source0687c75. It waits for normal parent archive/final evaluation, selects among verified current-alpha measurements, advances<=.125 only on a passing current gate, otherwise keepsalpha.375. It never relaxes task acceptance or auto-loops. Confirm actual new training/monitor startup and optimizer restore.",
+    "Successor monitor combines full endpoint and current/next frontier evaluations into one physics batch; no separate frontier watcher is needed for that successor. Current standalone watcher remains for the older frozen runtime.",
     "Reverse interpolation nearalpha.75 crosses a true commanded stop; that is not backward-walking evidence. Final reverse remains-.04m/s.",
     "Only after full S3 endpoints pass all three seeds, execute S5 actual frequency.8/1.2/two-way switching, then export the accepted model withCPU/CUDA replay parity."
   ],
@@ -147,7 +148,9 @@
     "planning/cmd16_hist6_baseline/s3_task_progress_selection_20261027.json",
     "planning/cmd16_hist6_baseline/s3_clearance_gradient_experiment_20261027.json",
     "planning/cmd16_hist6_baseline/s3_command_frontier_20261027.json",
-    "planning/cmd16_hist6_baseline/s3_frontier_progression_20261027.json"
+    "planning/cmd16_hist6_baseline/s3_frontier_progression_20261027.json",
+    "planning/cmd16_hist6_baseline/s3_frontier_batch_evaluation_20261027.json",
+    "planning/cmd16_hist6_baseline/s3_frontier_selection_20261027.json"
   ],
   "current_status": "S2 accepted144/144. Thirteenth formal S3 trains actual intermediate velocity commands(alpha.375) from twelfth27, after all five alpha.25 frontier gates and unchanged old-domain gates passed. Optimizers restored with no critic warmup. Full endpoint evaluations remainalpha1; S3/S5 NOT accepted.",
   "dagger_final": {
@@ -171,7 +174,7 @@
     "survived": 144,
     "episodes": 144
   },
-  "updated_at": "2026-10-27T11:09:38.073184+08:00",
+  "updated_at": "2026-10-27T11:23:21.204360+08:00",
   "current_stage": "S3_command_frontier_alpha0375",
   "latest_findings": {
     "active_source_commit": "3741273",
@@ -197,7 +200,40 @@
       "right_yaw_response_gain"
     ],
     "frontier_monitor": "results/cmd16_hist6/frontier_cmd16_hist6_s3_ppo_20261027_110536/launch.json",
-    "acceptance_passed": false
+    "acceptance_passed": false,
+    "queued_bounded_successor": {
+      "pid": 547598,
+      "command": [
+        "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+        "-u",
+        "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/frontier_continuation_source_20261027_112059/runtime/queue_continuation.py",
+        "--parent-run",
+        "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_110536",
+        "--source-runtime",
+        "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/frontier_continuation_source_20261027_112059/runtime",
+        "--frontier-dir",
+        "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/frontier_cmd16_hist6_s3_ppo_20261027_110536"
+      ],
+      "source": "/root/gpufree-data/projects/sable-isaacgym/results/cmd16_hist6/frontier_continuation_source_20261027_112059",
+      "manifest_sha256": "7b29a3531b83332fa5c76c5827b22de7dea458c3a4c53077d87a28dc28fb3a8e",
+      "source_files": 102,
+      "created_unix": 1793071259.7946565,
+      "bounded_rounds": 1,
+      "normal_completion_required": true,
+      "advance_only_after_measured_current_frontier_pass": true
+    },
+    "first_frontier_learning_result": {
+      "iteration": 28,
+      "alpha": 0.375,
+      "five_paths_survival": 1.0,
+      "all_four_foot_cadences_passed": true,
+      "remaining_failures": [
+        "turn_left:axis2_insufficient_response",
+        "turn_right:axis2_insufficient_response"
+      ],
+      "proof": "results/cmd16_hist6/frontier_cmd16_hist6_s3_ppo_20261027_110536/checkpoint_000028/gate_alpha_0.375.json",
+      "scope": "Reverse path is still commanded positivevx.050625m/s; not full backward skill."
+    }
   },
   "remaining_acceptance": [
     "S3 translation/yaw including direct starts and switches, actual stepping, three seeds",
@@ -209,7 +245,8 @@
     "Inspect automatic16s direct-start frontier probes atalpha.375/.5 matched to each full endpoint checkpoint. They require all five paths, actual four-foot events/cadence and unchanged old-domain regression. These intermediate commands are not the complete desired skills.",
     "Advance one adjacent alpha increment<=.125 only from a checkpoint passing its current frontier gate; preserve compatible optimizer state. If no candidate passes, use measured failures to choose continuation, do not silently bypass a gate.",
     "Keep20minute frozen runs and180second full endpoint reports/videos; extra frontier monitoring never stops or restarts training. It cancels after a user stop or an active-run change.",
-    "No next formal run is queued yet. Choose and launch after normal parent save/archive verification, preserving chosen checkpoint bytes.",
+    "One successor is queued using frozen prepared source0687c75. It waits for normal parent archive/final evaluation, selects among verified current-alpha measurements, advances<=.125 only on a passing current gate, otherwise keepsalpha.375. It never relaxes task acceptance or auto-loops. Confirm actual new training/monitor startup and optimizer restore.",
+    "Successor monitor combines full endpoint and current/next frontier evaluations into one physics batch; no separate frontier watcher is needed for that successor. Current standalone watcher remains for the older frozen runtime.",
     "Reverse interpolation nearalpha.75 crosses a true commanded stop; that is not backward-walking evidence. Final reverse remains-.04m/s.",
     "Only after full S3 endpoints pass all three seeds, execute S5 actual frequency.8/1.2/two-way switching, then export the accepted model withCPU/CUDA replay parity."
   ]
