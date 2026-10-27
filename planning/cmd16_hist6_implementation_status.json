@@ -1,5 +1,5 @@
 {
-  "updated_unix": 1793061756.7138753,
+  "updated_unix": 1793062013.2483222,
   "goal_complete": false,
   "teacher": {
     "run": "stand5_20261027_v44_stride80_all",
@@ -15,7 +15,7 @@
     "supervisor_pid": 473145
   },
   "pre_migration_commit": "a95854cf4042b7994731e7a02d9761be8fd195d7",
-  "latest_pushed_commit": "6138372",
+  "latest_pushed_commit": "075bbfa",
   "completed": [
     "326/90/92/15 schema and six-frame cache",
     "full raw-input mirror projection and history encoder",
@@ -449,7 +449,253 @@
     "diagnostic": "planning/cmd16_hist6_baseline/s3_command_foot_motion_20261027.json",
     "PPO_validation": "results/cmd16_hist6/command_foot_motion_PPO_validation.json",
     "timing_validation": "results/cmd16_hist6/command_foot_motion_timing_validation.json",
-    "runtime_files_verified": 89
+    "runtime_files_verified": 89,
+    "latest_independent_evaluation": {
+      "iteration": 54,
+      "survival_fraction": 1.0,
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_083706/latest_evaluation.json",
+      "scenarios": [
+        {
+          "name": "forward09",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.026427634945531738,
+          "yaw_rmse_rad_s": 0.16798693276100532,
+          "mean_actual_xyz_command_units": [
+            0.09503863751888275,
+            -0.004023333080112934,
+            0.051596786826848984
+          ],
+          "steps_per_foot": [
+            58,
+            58,
+            60,
+            59
+          ]
+        },
+        {
+          "name": "forward105",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.023875025884005113,
+          "yaw_rmse_rad_s": 0.16824603142859373,
+          "mean_actual_xyz_command_units": [
+            0.10891953855752945,
+            -0.0010406398214399815,
+            0.017277497798204422
+          ],
+          "steps_per_foot": [
+            56,
+            60,
+            59,
+            59
+          ]
+        },
+        {
+          "name": "forward12",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.026643397987707578,
+          "yaw_rmse_rad_s": 0.1724604287577434,
+          "mean_actual_xyz_command_units": [
+            0.11728125065565109,
+            -0.001462930697016418,
+            0.028177309781312943
+          ],
+          "steps_per_foot": [
+            60,
+            56,
+            60,
+            60
+          ]
+        },
+        {
+          "name": "stop",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.0011173862350536807,
+          "yaw_rmse_rad_s": 0.006161865455245247,
+          "mean_actual_xyz_command_units": [
+            2.544892367950524e-06,
+            -5.427945507108234e-05,
+            0.0030854148790240288
+          ],
+          "steps_per_foot": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "start_stop",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.022140681536476393,
+          "yaw_rmse_rad_s": 0.14962220028221307,
+          "mean_actual_xyz_command_units": [
+            0.07600896805524826,
+            -0.002494238317012787,
+            0.02988411858677864
+          ],
+          "steps_per_foot": [
+            42,
+            44,
+            43,
+            43
+          ]
+        },
+        {
+          "name": "speed_switch",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.026896947045904136,
+          "yaw_rmse_rad_s": 0.17753992419039305,
+          "mean_actual_xyz_command_units": [
+            0.10168813914060593,
+            -0.003286808729171753,
+            0.04211357235908508
+          ],
+          "steps_per_foot": [
+            59,
+            57,
+            59,
+            60
+          ]
+        },
+        {
+          "name": "reverse",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.052512669321314015,
+          "yaw_rmse_rad_s": 0.4219202329145977,
+          "mean_actual_xyz_command_units": [
+            -0.01879940927028656,
+            -0.00014893937623128295,
+            0.0014783134683966637
+          ],
+          "steps_per_foot": [
+            58,
+            58,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "left",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.033901835211306484,
+          "yaw_rmse_rad_s": 0.4310179686020207,
+          "mean_actual_xyz_command_units": [
+            -0.008728839457035065,
+            0.02453286200761795,
+            0.10720738768577576
+          ],
+          "steps_per_foot": [
+            59,
+            59,
+            0,
+            1
+          ]
+        },
+        {
+          "name": "right",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.033938933059475755,
+          "yaw_rmse_rad_s": 0.4383041577123913,
+          "mean_actual_xyz_command_units": [
+            -0.008788596838712692,
+            -0.02501688338816166,
+            -0.09825126081705093
+          ],
+          "steps_per_foot": [
+            60,
+            58,
+            1,
+            0
+          ]
+        },
+        {
+          "name": "turn_left",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.022735661735694798,
+          "yaw_rmse_rad_s": 0.5407420807410078,
+          "mean_actual_xyz_command_units": [
+            -0.009332953952252865,
+            0.0013831884134560823,
+            0.0247889943420887
+          ],
+          "steps_per_foot": [
+            56,
+            24,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "turn_right",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.022774976762298442,
+          "yaw_rmse_rad_s": 0.5435404289624339,
+          "mean_actual_xyz_command_units": [
+            -0.009221144020557404,
+            -0.0021971515379846096,
+            -0.023023787885904312
+          ],
+          "steps_per_foot": [
+            37,
+            57,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "combined",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.03725133679271987,
+          "yaw_rmse_rad_s": 0.25190170260130734,
+          "mean_actual_xyz_command_units": [
+            0.07548729330301285,
+            0.01592065766453743,
+            0.17955216765403748
+          ],
+          "steps_per_foot": [
+            58,
+            58,
+            5,
+            58
+          ]
+        },
+        {
+          "name": "lateral_switch",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.026037830368295427,
+          "yaw_rmse_rad_s": 0.3370035677901542,
+          "mean_actual_xyz_command_units": [
+            -0.0053731519728899,
+            -0.00047274588723666966,
+            -0.0014817625051364303
+          ],
+          "steps_per_foot": [
+            36,
+            36,
+            1,
+            0
+          ]
+        },
+        {
+          "name": "yaw_switch",
+          "survival_fraction": 1.0,
+          "xy_rmse_m_s": 0.01776681453771119,
+          "yaw_rmse_rad_s": 0.42304061750021793,
+          "mean_actual_xyz_command_units": [
+            -0.005593305919319391,
+            -0.0003819281992036849,
+            0.00012735408381558955
+          ],
+          "steps_per_foot": [
+            23,
+            26,
+            0,
+            0
+          ]
+        }
+      ],
+      "acceptance_passed": false
+    }
   },
   "remaining_acceptance": [
     "S3 translation/yaw including direct starts and switches, actual stepping, three seeds",
