@@ -1,0 +1,72 @@
+{
+  "revision": 7,
+  "teachers": {
+    "01_FORWARD_POLICY": {
+      "yaw_sigma": 0.4,
+      "multipliers": {},
+      "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+      "straight_frame": true
+    },
+    "06_BACKWARD": {
+      "yaw_sigma": 0.4,
+      "multipliers": {},
+      "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+      "straight_frame": true
+    },
+    "09_BACKWARD_WALK": {
+      "yaw_sigma": 0.4,
+      "multipliers": {},
+      "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+      "straight_frame": true
+    },
+    "10_FORWARD_TROT": {
+      "yaw_sigma": 0.4,
+      "multipliers": {},
+      "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+      "straight_frame": true
+    },
+    "02_STRAFE_LEFT": {
+      "yaw_sigma": 0.3892807960510254,
+      "multipliers": {
+        "v2_velocity": 1.2
+      },
+      "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+      "straight_frame": true
+    },
+    "03_STRAFE_RIGHT": {
+      "yaw_sigma": 0.3725464344024658,
+      "multipliers": {
+        "v2_velocity": 1.2
+      },
+      "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+      "straight_frame": true
+    },
+    "04_TURN_LEFT": {
+      "reload": {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323/06_BACKWARD/checkpoints/model_000121.pt",
+        "sha256": "0d05f71f888ba7dd2262dc0d1d4e40fcbc246d4368eb8347d83d6fce02b54bf8",
+        "token": "turn_observation_compatible_baseline_0433"
+      },
+      "multipliers": {}
+    },
+    "05_TURN_RIGHT": {
+      "reload": {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323/10_FORWARD_TROT/checkpoints/model_000121.pt",
+        "sha256": "937bb6d2ef82c0406157b49e46f1e1155a24bbc40d5af447fbb880e7f8af1f1d",
+        "token": "turn_observation_compatible_baseline_0433"
+      },
+      "multipliers": {
+        "v2_yaw": 1.2
+      }
+    }
+  },
+  "last_review_unix": 1793220587.1668727,
+  "yaw": {
+    "multipliers": {},
+    "reload": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_20261029_042158/model_000029.pt",
+      "sha256": "e534348d631fce24d5954b2cf48fc9228ac9d1b18be2a393121e7d004908f0ba",
+      "token": "1793220737_YAW_SINE_STANCE"
+    }
+  }
+}

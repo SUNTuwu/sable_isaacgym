@@ -1,0 +1,22 @@
+{
+  "pid": 60257,
+  "port": 11111,
+  "root": "/root/gpufree-data/projects/sable-isaacgym/deployment/teacher_bank_dashboard_20261027_1720",
+  "health": {
+    "ok": true,
+    "service": "sable-teacher-bank-dashboard",
+    "time_unix": 1793093151.1821356
+  },
+  "teacher_count": 0,
+  "bank_directory": null,
+  "version": 11,
+  "kinematic_trace_support": true,
+  "initialization_baseline_labeled": true,
+  "teacher_control_mode_display": true,
+  "resume_environment_accounting": true,
+  "normalized_exploration_sigma_display": true,
+  "adaptive_telemetry_support": true,
+  "projection_handedness_fixed": true,
+  "adaptive_ui_contract": "teacher_bank_core adaptive report + weighted_rewards_per_second",
+  "status_history_sampling": true
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "straight-cross-frame-candidate/v1",
+  "source": "night_tuning.py",
+  "source_runtime_sha256": "2c95e8044d985df019d924e028f944736f20cac5998fdbb1e09727ea9607fe2a",
+  "candidate": "night_tuning_straight_cross_candidate.py",
+  "candidate_sha256": "959dfd8406bb139bac9a6443265bc1975419a89bb7b4c8b0736c17ca608d1c84",
+  "scope": [
+    "01_FORWARD_POLICY",
+    "06_BACKWARD",
+    "09_BACKWARD_WALK",
+    "10_FORWARD_TROT"
+  ],
+  "gate": "existing straight_frame=true",
+  "formula": "-.2*u^2/(1+u^2/4), u=command-perpendicular episode-start-heading velocity/.06; original cross multiplier clamped .25..4 applied exactly once",
+  "unchanged": [
+    "pace",
+    "turns",
+    "yaw weights",
+    "network and optimizer",
+    "termination",
+    "references",
+    "deadline"
+  ],
+  "deployed": false
+}

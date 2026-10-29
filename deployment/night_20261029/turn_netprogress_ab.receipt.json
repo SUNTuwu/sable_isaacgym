@@ -1,0 +1,24 @@
+{
+  "status": "completed",
+  "complete": true,
+  "partial": false,
+  "pid": 152929,
+  "output": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/turn_netprogress_ab.json",
+  "checkpoint_receipts": [
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323/10_FORWARD_TROT/checkpoints/model_000121.pt",
+      "sha256": "937bb6d2ef82c0406157b49e46f1e1155a24bbc40d5af447fbb880e7f8af1f1d"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/05_TURN_RIGHT/checkpoints/model_001038.pt",
+      "sha256": "dd726aff4f0352f374152570a668821798d830c68e453dca978d63d57663681a"
+    }
+  ],
+  "executed_steps": 1200,
+  "requested_steps": 1202,
+  "wall_s": 369.02992606163025,
+  "updated_unix": 1793224106.0109332,
+  "error": null,
+  "optimizer_created": false,
+  "training_files_mutated": false
+}

@@ -1,0 +1,1124 @@
+{
+  "plan": {
+    "bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227",
+    "teacher": "05_TURN_RIGHT",
+    "envs": 8,
+    "envs_per_policy": 4,
+    "policies_concurrent": true,
+    "seed": 947,
+    "reset_noise_rows": [
+      8,
+      9,
+      10,
+      11,
+      8,
+      9,
+      10,
+      11
+    ],
+    "checkpoints": [
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323/10_FORWARD_TROT/checkpoints/model_000121.pt",
+        "sha256": "937bb6d2ef82c0406157b49e46f1e1155a24bbc40d5af447fbb880e7f8af1f1d"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/05_TURN_RIGHT/checkpoints/model_001038.pt",
+        "sha256": "dd726aff4f0352f374152570a668821798d830c68e453dca978d63d57663681a"
+      }
+    ],
+    "runtime": {
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/acceptance.py": "e9c554812c8bd5a49e019110752bf97ef2e65fbf4a724119d2c09c047193f0b4",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/action_schema.py": "418031a8b5faa3fbf2e3a48ab752094c23527ad1234532df8dfa34f923a6572e",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/ankle_events.py": "bc349a9918299977cabbe19815f386bf4e7388e3a2f4a45a9eda40e7a3c4344e",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/ankle_stance.py": "594458550de7e238c6f1812f948da78957572fe579a288270fad21d923ffb434",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/check_command_curriculum.py": "6fa9b86b6257aa9026c899665fc8ecd9e11adfdffba583fe65d28dcd58ea4b08",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/check_command_foot_motion.py": "4a124ada242ea27de4ac650f2aaf9d87020cf66704b8f7a60aeff666faaa5729",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/check_control_and_rewards.py": "269febeab7e419187d50d4cb9ec750b184da9e8b20475b6fb6ba10714123ec4f",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/check_migration_env.py": "292b9a7e674d51c43fd89f71646241377bfa19f4fc11a4375bdd881fb2fb9162",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/check_reference_v2.py": "95d3424ae2d826c1395a771e20f2e6ee84c8a22bb4a5bd7c8a579751d347c3dd",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/check_reward_compatibility.py": "cb08e09c06e6794b3b7fea96d88b6d5c7457cc5046966c2f6bf18b51132613c8",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/check_teacher_gait_balance.py": "aca86edf6967498d6af69467909e4566496326926e725417f409369501fdbee3",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/check_teacher_lift_symmetry.py": "41cc2a01c546339668ef6121e815de5f2d964b6e25e257cfa24ae045df0cd9fb",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/check_teacher_overnight_symmetry.py": "35bca76673120df90fe8b43eeeb0014593ee3bb2f2e3eced8de23bfeb3410407",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/check_teacher_pace_stability.py": "aa4a854137274e9124a810fe78948cef1e8d6047e3ced22d3b71a0fba2942c58",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/check_teacher_step_quality.py": "bd368701f9cdfdb6a5683b50f333b61821f9415d5fc18fe6f2cb39a661cb5196",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/check_teacher_task_tracking.py": "f5bdeebb21e3f9e36c544c0b6bd45caaed693f7ed60c7de2d7d519d25b260fe3",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/check_teacher_translation_guard.py": "3e3e6b14b1a2321035f423ca46ac66a8c7414cf98f3e9c4974606fa7c83d30e5",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/check_teacher_yaw_integral.py": "d36558556ff2e7ef00f3428845eb1435bd8829317714b9a5d7d8ac999262e547",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/check_turn_task.py": "8bc29f6e95e4e82ecde0b2554dcdbfa652dbbf3962630886df25c58895c2650b",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/collect_teacher.py": "676ed199a7ffcfa572cf1682d748a39540455841ac5cb77256fc0ec075fa9c96",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/command_foot_motion.py": "6d9a31f4a7aee2b7ab2d2328d652c44ec7fbe44c64319a445ea7a61d1c951880",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/command_schema.py": "6913e7761a236c1142b70735a255de53de08e010a72eb3eb600bb68a1dd7a236",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/curriculum.py": "cf4d5489f9f6ca894dc2e0eb0ad0ca4dd928221a50221b3e967ec4f479fcad16",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/diagnose_student.py": "0bc043cf9949e71d28a4e0bd1c671bdf60366b01253f79520cdd07de7dab51a5",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/equivariant_policy.py": "f41f0e37cafea63703edc52fb57c4e5cb3b40fdb0ddde646c461855505c98e0b",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/evaluate_acceptance.py": "4a6b4d3f6bfacfb41df430731e7e1c5814ec6faea283d59a73b9ec4c7b69c7cc",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/evaluate_frontier.py": "0529271045c546d73ad89d63790c67377abbbc53867918dfc26797dc1db9ae43",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/evaluate_migration.py": "e56a2e79584ea2f67a03491137e6634f352e8e1fc768fef96f0e295c81c1b7df",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/evaluate_teacher_bank_small.py": "7a4678d29fc530ce29d9b2a92ebd1d755a9db70b9b0f9814f30a719319235d0b",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/evaluation_frontier.py": "e3fc713506405ca1a34fb64c30fb3dc9217aae07b991ae7ff1ab8027e0ef0548",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/evaluation_scenarios.py": "6f05b6d332f5bdc5a69a26571d2b7ed24eade1d522b6da73f2bd9f40c72fcf39",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/evaluation_telemetry.py": "4a5b733872250cfc62760b84076d2940d68f517e0133427e276d37620724e88c",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/evaluation_video.py": "df990defb5335576047202c6a7a1fc0a2ec6f4d9d823c3ca87844e6ec073c110",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/export_policy.py": "1fb33b1009ac0e35d48aacbc56ad4967e94b67237189ff685a27555a2432db5a",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/gait_clock.py": "712a637d9eaeb40c38bb0760682d631acb62f6b502dbec4247131c4173800691",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/gait_support.py": "42782c78385a2540bbd3dd982104ef32c9917e3315a6539158b9ba7a2e607216",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/gpu_preflight.py": "1d109346ca050428c4be1d4dca38f2ff6c4c60110d0d2d56e73df53873e3d1c5",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/guided_reference.py": "7b8bfe8d5d055e6a9d4d23e270f02549c07c72a50e6847deb76261bf5629904c",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/hind_landing_width.py": "30884422f085ebb471f7d7020c9b1372bbc8adbdd05ba329c7d6857060c390e5",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/history_encoder.py": "e7c9bee0bc21e7393d5205006c89859dd54db75b7113980dee5a60c8fa3e7b94",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/history_policy.py": "fd5e94659804b52490517c6cdfed3f44e215ee1706247928d6cfa029c4112c3c",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/knee_contact.py": "478f8ab07f9aa8acb771da98220f01c031e22acaccd00a8d4d91c85e975656cd",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/landing_stride_rewards.py": "dd42f090adeb8f86c8b9c11dd8cdb6cc4def63f4f830d54a24af9188d3bb2886",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/launch_dagger.py": "a269d0923a7a882f1286b6f652669b2193e3f7c645efe68f6d1c90179569dce2",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/launch_ppo.py": "2b1e2be52f3a35979966a95bccde27b02e7ad7dee6be968d8f3f401f71465066",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/launch_s1.py": "f3b720dea2242fda5a1658e1f099b9667304659b03fe83fbecd9f20e83169a91",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/launch_teacher_directlift.py": "99f84fb94a9563c09ca28875a63f89be868bc3af3fa1b0ef76e1d591f243d88a",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/launch_teacher_directlift_xy.py": "cfbcd45336dca94b1fc308d0dc0270235fa246274d863186162f5b51a97157c2",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/launch_teacher_duration200.py": "4710c6eab670f5e169d9dc151b856fb1c83feb3813fe18b2d7f18442e1ecbe02",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/launch_teacher_gaitbalance.py": "9858374035d1e287459a28cdc945ed9c43cb8329d677b6871b5d0a817f473b21",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/launch_teacher_guard_aggressive.py": "36e06312869d91b3f2bb848c11a5630f8fc1f55d080bc52b12d741e33497461a",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/launch_teacher_integral.py": "6dca181eab8bca932b040077746f3c8e87bcdaaa2414cb2dfc9552af7b0ff3f2",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/launch_teacher_overnight_symmetry.py": "bdb206a68c1533fd08112c319454219673bc7934366752a70c1736e9797161d1",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/launch_teacher_pace30.py": "907ba52e8d54d10adba943108bfb480b637ded1d96dd10c036b50ab1ac0e057f",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/launch_teacher_pace_stability.py": "ab229fad0fd9f0f7d9e780bd78b4ed1b495856808d8049c6eb5b591f009162b9",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/launch_teacher_step_quality.py": "082395d9b98f3f3b2a4cc968380eccd5bd34055bc7708f9ce44b07195a2630ec",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/launch_teacher_task_tracking.py": "77abdb62c88bb51c51df0e502bada74924ec76bd24db51836c9fe3fc6d9be6f7",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/launch_teacher_turnfront100.py": "e897d92fb800d99044bd39baca84147714a367bb393075b2e7956f8f3014e8c6",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/migration_config.py": "c59294325140c8cda71ffc730c1b2f17837d6e753a8f8be533642c916c2b784e",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/migration_env.py": "30c072c38c48c46931291220cae5d8081976c55e0b8be8e3ae5ca43f41325d9c",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/model_mapping.py": "3b8549283405c6772d06ad638fa5f3babb2ceb88aa5edda18038090731727916",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/motion_rewards.py": "b52d2f4f382abce825ff09e9a48583f5a16a520e5598b3989d31650fc5207632",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/motor_envelope.py": "74c0ff82ade203c55a296ba11bc9d838792a6f38d273b93cc205f6775e4f69cc",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/night_tuning.py": "fea70dad7e66acc9a763dda0402f18ec8424070129b7ab3f4e4ef640bc284c87",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/observation_schema.py": "4569dd954f45d15b50ca29911a77db8c52396ae3ddeab401647f00d60d3d926e",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/peak_acceleration.py": "3ef2afd12818bf769c3ef0bdb4f348c095ff4d62f70d941b9f7c7c88d0a6da1b",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/policy_symmetry.py": "f86dca02c346ac9ea81375651075b24821a39edf86c222661be31b845521f12a",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/ppo_history.py": "965ed26a3709818927cc65aeb8ef3023ae8f47ff966e8aea5dc023d81d224bdc",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/preflight.py": "05058cf141e2db92fe9effcabb31f62860277600d65c3c9ada053c04b80a0918",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/prepare_teacher.py": "eba0f591352cde2f023e1e81ae4b0b649c4158e7c9848c309c43a40e8b03633f",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/probe_clearance_gradient.py": "e033db459ffff78bd27752cfe007098b89d591780662f1190245292a24137cc2",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/probe_clearance_reward.py": "9994c1159f0655f82c1e1da159f22c043e74a0772931fe46f1720420c2a285ac",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/probe_command_foot_motion.py": "dee9b5032242b8b82b727715b58cdd350088e3163b8bd52678d4f412d7ba0246",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/probe_command_frontier.py": "36b1fa31126d3856f4010569e86fdc86efe42a931d903b9fc2617c03367b3a71",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/probe_command_frontier_contract.py": "9f194ba165cfa58acf6e005a8bc0b2d9cc9bfb34535461bb738ed570116fbfb2",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/probe_landing_width_age.py": "81b52ca8046700f5d8ffb8d7dbf9ab32f54a7145ab6c879b59d9b618a59d2da8",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/probe_policy_exploration.py": "8707b6cb5e1b36181e516d75126296ef0b6fd19567d097c0525c631e58191adf",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/probe_ppo_update.py": "521e097800a477c982a40e23c82655e802f181e82a709172810206b5ceae4e6f",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/probe_target_clearance.py": "dd040c10aa749cb9150d02ef01711bac60b792231987dd0af6490b9db0947eb0",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/probe_target_pose_reward.py": "7e2741f56b62757744a6f72237b54b7e37228e09ac96d99f3df8474c82997aec",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/probe_yaw_error_cost.py": "8fefa2ea4d2d4a143a6177aa5d982387334105f78279a2bdf367f35e0f247b56",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/queue_continuation.py": "6f2e5dea6c142182765fe5cc77f7b8462a1a2f2b1c6149ac41c783799c068aa5",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/record_migration_video.py": "b8a1d6757fe35094cb96b04f9f11cade66d6e9e431ed70a2033a4480fd32f2cd",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/run_io.py": "ec07264ee0200c563b04fdf34bad7c3c1fd71e85338753f895e3a3216bf2af12",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/sable_config.py": "a372062675531ed5ce3e1f0a3cc2820c6a7a6c57c5211fcb01c085254efb45aa",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/sable_env.py": "bc2433c54b368c4ec76f0b66131499a2b02dcb5fb3b4ff0efc8f584e9359f7f4",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/seal_teacher_bank.py": "d9cbb150dce2f5c0de3af3f0a86d0b91e26b62039e9af355bbdba53d4a47d225",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/seal_teacher_bank_finaleval.py": "48f5e0023fc77381c0b1cf00a323032972646722768682bcfedaf601415f4634",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/select_regression_checkpoint.py": "8747f8db9570905221a5a3d693c606ef5d1798914fb5e48987b1ec825e8d8447",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/step_events.py": "81c4bf92299415eec6d681e8783e9c8215f367e4de16e530dd8f598d46f804dc",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/stride_progress.py": "308fd96b9624c457ea7ef803000d589808273b7d69207efa3f244b94827a6b2b",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/swing_peak_balance.py": "0357dd692a46af17e17a8e5fb831b75eed093fb78f99b4bfc12a9b0b6e391d14",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/target_pose_clearance.py": "147fc3e54dede25f8b352f0eabf69eda6334fc72cb447fad5906ce3cadfdf641",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_adapter.py": "4403c123d583d46b4d5ab16af7886c4eceea106016b48a34cac53d81b0e658c4",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_bank_core.py": "9d7da845954a8f4a09d8bdf518baeb28b052368a988d720dbef0581f1a6e79fb",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_bank_core_adaptive.py": "7c55b5e9e8c7cc2e581843bb5be2feaebe165cc238fa473ebdf74d7a3351b1cb",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_bank_core_adaptive_final.py": "e17cce8efe7e41dce75642f5d8a6bde77cfcc011f7a233698626485a38eedc77",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_bank_core_balance.py": "86f2a9ac876f47fa84ebfb4bb3092d6872d5254012f961e8304c4f9fa3dc53fa",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_bank_core_fullref_offset.py": "0374814801a969b8da32f66ea7fa32590e811d6e843206b3780cb169058fcc1b",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_bank_core_fullref_resume.py": "c829d34df5dbaa5f2ec3dc761a4bd80d239171990edbe32c61ae0b3db6e09b57",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_bank_core_fullref_resume16k.py": "92813481475316a30ca944c4ee94fc188aa2dcf19001bce916078446f02026bf",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_bank_core_v2.py": "a8276ea8ace84401dcaad2ef777af61714bb087cf6a2d149652c6e0c1f2b17c3",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_bank_core_v3.py": "e3d880474787a406ad3013e2e84acb0caa0c50fe1c61bb9c406adda38c035c48",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_bank_core_v4.py": "9220dd6a53fcd781f1dc7bfd7384540da5f5ade645d5d9f8beb92390da77f6e0",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_bank_core_v4_final.py": "d1565efeb01c37adb9692b97dc853496d9ef79a99a85ef6050ab917137299f60",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_bank_core_v4_ready.py": "4a7cb5f6f860b09ee7bb0ebed2e5952ac5adb328805435d665572e79da3858f9",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_event_symmetry.py": "3d4296b8d90108d4356cdbec3a0256b505e31105b5c9bac5c2ea6b2317e1e487",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_gait_balance.py": "78f14414d27b9049c0ee94dd2996858d5cd33fb505c98176e2ab73fa6fa34ac2",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_lift_limits.py": "6ef9e9378266f12af3bb06ecd05759fe2321f455169b0e0c35fe5e0819447b8f",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_motion_rewards.py": "a9b1ecf881684d527321dc0c7751517c9cb041cf9a661ede4b1957ec164b6710",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_motion_rewards_adaptive_v4.py": "d761d3f395206dc2d28760487e4c9bceaf4584bfc66398bb4f45241305808180",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_pace_stability.py": "1634b5aa4e4a87c266f871153eb44e70429776a2eb35d6cf8c34ccab83024366",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_reference_evaluation_v2.py": "e7bd12795f5c6af6d890870683ffa8eff997ea6548801f06318a3b51cd91e39f",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_reference_rewards_before.py": "4da5b500a3a97e740c96ace00ed9f69d20dee9134834f3eacf442955c27a5662",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_reference_rewards_v2.py": "3a2e6509b8ad39c8994e695d903be959651426b70f939928b7025b90b6e6cce2",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_step_quality.py": "651546530979b77f7828d3971f9b1228197e5ece0c168cf9faffa8c007e7eeea",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_task_tracking.py": "d9d4f9133e22cf98031ca6cf7668938a607ff1c9076dcf7e7e3d31e4578344fc",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_translation_guard.py": "000331e043a462e825394cc898add35b1bf3063048e068756500058920bc817a",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_turn_boundary.py": "504e6b3858a52a50fd4ec0bb6ff7692598cbccf8cb2d4e0df5b248c1ae7a04d2",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_turn_curriculum.py": "e8c54d09b731a3603752ad37844e5750835b6c8a0c9865b474c1b76f1fbba3b7",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_turn_cycles.py": "6745a3b2e33deb9cccbe6340207bad49b413481f79996b22d6b9258fb67bb08c",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/teacher_yaw_integral.py": "7a5822e81d6f5d0de9741b4e7c3c3ccc5fdeea4b4f6e8639d619dd025655f26e",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/train_bc.py": "a2b0209b336e65cb701f192a00f4d81665a9fda2f2a7a1c8b721a98a30f8a224",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/train_dagger.py": "c54e7d26d89e0bdfbd893f2ac9ed2eae3fcdf98c42527444264624ff1cfd4847",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/train_ppo.py": "c5118848341ce4bc6b9ac137ff0efc5c0f4d7ebfd78531299961bb0b86a0be97",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/waist_acceleration.py": "5f4ca2daeb825d5d0d9a7ee0ca03ec1fb24dea1e12ac6720689293cd7a69e5c4",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/watch_frontier.py": "a9e948ff69468440ff328deb4d52434b411586d3e050908133f5209d4cae0174",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/watch_migration.py": "b78332a478f4a4997b78c7a00120646ec610b2d212da2be8076266b1e8f7e85c",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/runtime/watch_teacher_bank.py": "46f80ca34d1536214cc0b64c8f15aaed54fc2e7693f7f7b18423c7bfc64b91a4"
+    },
+    "control_path": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/control.json",
+    "control_sha256": "60fbbcfa2a0d199f53ba369a349e7b6caca0693a98821d9439fdfbd3584407a8",
+    "control_snapshot": {
+      "revision": 18,
+      "teachers": {
+        "01_FORWARD_POLICY": {
+          "yaw_sigma": 0.4,
+          "multipliers": {
+            "v2_velocity": 1.15,
+            "v2_phase_symmetry": 1.3225,
+            "v2_contact_timing": 1.21
+          },
+          "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+          "straight_frame": true
+        },
+        "06_BACKWARD": {
+          "yaw_sigma": 0.4,
+          "multipliers": {},
+          "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+          "straight_frame": true
+        },
+        "09_BACKWARD_WALK": {
+          "yaw_sigma": 0.4,
+          "multipliers": {
+            "v2_velocity": 1.15,
+            "v2_phase_symmetry": 1.15
+          },
+          "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+          "straight_frame": true
+        },
+        "10_FORWARD_TROT": {
+          "yaw_sigma": 0.4,
+          "multipliers": {},
+          "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+          "straight_frame": true
+        },
+        "02_STRAFE_LEFT": {
+          "yaw_sigma": 0.3892807960510254,
+          "multipliers": {
+            "v2_velocity": 1.44,
+            "v2_cross_motion": 1.2
+          },
+          "reason": "Replace weak body-frame cross-speed cost with signed integrated cross-path error in initial heading frame; normal reversible sway remains cheap.",
+          "straight_frame": true,
+          "cross_track_sigma_m": 0.1
+        },
+        "03_STRAFE_RIGHT": {
+          "yaw_sigma": 0.3725464344024658,
+          "multipliers": {
+            "v2_velocity": 1.44,
+            "v2_cross_motion": 1.2
+          },
+          "reason": "Replace weak body-frame cross-speed cost with signed integrated cross-path error in initial heading frame; normal reversible sway remains cheap.",
+          "straight_frame": true,
+          "cross_track_sigma_m": 0.1
+        },
+        "04_TURN_LEFT": {
+          "multipliers": {
+            "v2_velocity": 0.4,
+            "v2_yaw": 0.4,
+            "v2_foot_local": 0.4,
+            "v2_cross_motion": 0.4,
+            "v2_translation_yaw_rate": 0.4,
+            "v2_heading_integral": 0.4,
+            "v2_contact_timing": 0.4,
+            "v2_contact_slip": 0.4,
+            "v2_gravity_alignment": 0.4,
+            "v2_body_height": 0.4,
+            "v2_target_acceleration": 0.4,
+            "v2_joint_acceleration": 0.4,
+            "v2_torque": 0.4,
+            "v2_joint_limits": 0.4,
+            "v2_phase_symmetry": 0.4,
+            "v2_liftoff_events": 0.4,
+            "v2_task_boundary_event": 0.4,
+            "v2_turn_cycle_task": 0.4
+          },
+          "turn_velocity_sigma": 0.06,
+          "reason": "Replace instantaneous yaw tracking with discounted per-cycle signed net-angle potential; retain30deg/s and physical acceptance.",
+          "reward_profile": "cycle_net_progress_gamma099_v1"
+        },
+        "05_TURN_RIGHT": {
+          "multipliers": {
+            "v2_velocity": 0.4,
+            "v2_yaw": 0.4,
+            "v2_foot_local": 0.4,
+            "v2_cross_motion": 0.4,
+            "v2_translation_yaw_rate": 0.4,
+            "v2_heading_integral": 0.4,
+            "v2_contact_timing": 0.4,
+            "v2_contact_slip": 0.4,
+            "v2_gravity_alignment": 0.4,
+            "v2_body_height": 0.4,
+            "v2_target_acceleration": 0.4,
+            "v2_joint_acceleration": 0.4,
+            "v2_torque": 0.4,
+            "v2_joint_limits": 0.4,
+            "v2_phase_symmetry": 0.4,
+            "v2_liftoff_events": 0.4,
+            "v2_task_boundary_event": 0.4,
+            "v2_turn_cycle_task": 0.4
+          },
+          "turn_velocity_sigma": 0.06,
+          "reason": "Replace instantaneous yaw tracking with discounted per-cycle signed net-angle potential; retain30deg/s and physical acceptance.",
+          "reward_profile": "cycle_net_progress_gamma099_v1"
+        }
+      },
+      "last_review_unix": 1793223330.22003,
+      "yaw": {
+        "multipliers": {},
+        "reason": "Verified independent checkpoint28 survival15/16; model29 had no matching evaluation. Correct baseline provenance."
+      }
+    },
+    "reference": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_baseline_trotturns_20261029_041300/reference",
+    "reference_sha256": "8e892bb07426a8ca90f1e2a4e0c73d26633102d6b6cc6de0cbad994521aca837",
+    "horizon": "One simultaneous 24s first episode per env, natural terminal settlement; partial checkpoint every 200 steps",
+    "optimizer_created": false,
+    "training_files_mutated": false,
+    "output": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/turn_netprogress_ab.json",
+    "max_wall_s": 600.0,
+    "module_overrides": {
+      "teacher_turn_cycles": {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/teacher_turn_cycles_reviewed.py",
+        "sha256": "a74b620e17f71fc9f9849a3bd4fbcacccc87c8acee9734e09984c4d985cb80eb"
+      },
+      "teacher_reference_rewards_v2": {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/audited_rewards_turnprogress.py",
+        "sha256": "7446e12ffba86a9baf497f290c3c334b6a4f3721282b68198b0d23755a0705f0"
+      }
+    }
+  },
+  "reports": [
+    {
+      "checkpoint": {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323/10_FORWARD_TROT/checkpoints/model_000121.pt",
+        "sha256": "937bb6d2ef82c0406157b49e46f1e1155a24bbc40d5af447fbb880e7f8af1f1d"
+      },
+      "iteration": 121,
+      "candidate_index": 0,
+      "env_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "source_teacher_id": "10_FORWARD_TROT",
+      "target_command": [
+        0.0,
+        0.0,
+        -0.5235987901687622
+      ],
+      "complete": true,
+      "partial": false,
+      "survived_complete_episode_fraction": 1.0,
+      "survival_fraction": 1.0,
+      "survival_so_far": 1.0,
+      "completed_episodes": 4,
+      "optimizer_lr_saved": [
+        0.0003
+      ],
+      "normalized_action_std": [
+        0.14456410706043243,
+        0.1478211134672165,
+        0.14519113302230835,
+        0.14566166698932648,
+        0.16536742448806763,
+        0.14878346025943756,
+        0.1549200713634491,
+        0.1443856954574585,
+        0.1467524766921997,
+        0.16107594966888428,
+        0.14354121685028076,
+        0.15810327231884003,
+        0.1558872014284134,
+        0.15432196855545044
+      ],
+      "snapshot_16s": {
+        "survival_so_far": 1.0,
+        "mean_actual": [
+          0.04057160198688507,
+          0.002323509398847818,
+          -0.7204389572143554
+        ],
+        "max_turn_radius_m": 0.37985023856163025,
+        "return_per_env": [
+          -14.701102256774902,
+          -18.0389404296875,
+          -29.356691360473633,
+          -13.076354026794434
+        ],
+        "discounted_return_per_env": [
+          -2.12296724319458,
+          -1.9512245655059814,
+          -3.8942108154296875,
+          -3.2999038696289062
+        ],
+        "reward_terms_per_second": {
+          "v2_velocity": 0.31023317592042315,
+          "v2_yaw": 1.0794874960054994,
+          "v2_foot_local": 0.7359798797080537,
+          "v2_cross_motion": -2.141438859316165,
+          "v2_translation_yaw_rate": 0.0,
+          "v2_heading_integral": 0.0,
+          "v2_contact_timing": -0.13743686395764346,
+          "v2_contact_slip": -0.4395956784306284,
+          "v2_gravity_alignment": -0.13119010562943725,
+          "v2_body_height": -0.012739379285175033,
+          "v2_target_acceleration": -0.0670808531147209,
+          "v2_joint_acceleration": -0.004022995692051221,
+          "v2_torque": -0.0007077438013209646,
+          "v2_joint_limits": -5.603287203426979e-07,
+          "v2_phase_symmetry": 0.0,
+          "v2_liftoff_events": -0.14917583055052222,
+          "v2_task_boundary_event": 0.0,
+          "v2_fall_event": 0.0,
+          "v2_turn_cycle_task": -0.21689011802766842
+        }
+      },
+      "first_episode_end": [
+        {
+          "time_s": 24.00000113993883,
+          "fall": false,
+          "timeout": true,
+          "radius_m": 0.3414442241191864,
+          "net_yaw_deg": -1012.0121904516477
+        },
+        {
+          "time_s": 24.00000113993883,
+          "fall": false,
+          "timeout": true,
+          "radius_m": 0.3140637278556824,
+          "net_yaw_deg": -1098.0926820707248
+        },
+        {
+          "time_s": 24.00000113993883,
+          "fall": false,
+          "timeout": true,
+          "radius_m": 0.37985023856163025,
+          "net_yaw_deg": -972.4779627053467
+        },
+        {
+          "time_s": 24.00000113993883,
+          "fall": false,
+          "timeout": true,
+          "radius_m": 0.23902395367622375,
+          "net_yaw_deg": -1073.387177503115
+        }
+      ],
+      "simulated_samples_per_env": [
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0
+      ],
+      "mean_actual": [
+        0.03968899885813395,
+        0.0022309571007887523,
+        -0.755576680501302
+      ],
+      "max_turn_radius_m": 0.37985023856163025,
+      "return_per_env": [
+        -29.767940521240234,
+        -30.647659301757812,
+        -41.4119873046875,
+        -22.848724365234375
+      ],
+      "discounted_return_per_env": [
+        -2.123840093612671,
+        -1.9522285461425781,
+        -3.8950605392456055,
+        -3.3004255294799805
+      ],
+      "initial_critic_value": [
+        -12.502552032470703,
+        -12.507341384887695,
+        -12.503986358642578,
+        -12.498246192932129
+      ],
+      "reward_terms_per_second": {
+        "v2_velocity": 0.309887578272323,
+        "v2_yaw": 1.0065069316589705,
+        "v2_foot_local": 0.7341781903277886,
+        "v2_cross_motion": -2.1441606059494824,
+        "v2_translation_yaw_rate": 0.0,
+        "v2_heading_integral": 0.0,
+        "v2_contact_timing": -0.14279059139174705,
+        "v2_contact_slip": -0.4398338784480519,
+        "v2_gravity_alignment": -0.13454854346006886,
+        "v2_body_height": -0.012742944387821328,
+        "v2_target_acceleration": -0.06908464600333608,
+        "v2_joint_acceleration": -0.004124368500266106,
+        "v2_torque": -0.00069067020491618,
+        "v2_joint_limits": -5.101469937317992e-07,
+        "v2_phase_symmetry": 0.0,
+        "v2_liftoff_events": -0.1574621051265231,
+        "v2_task_boundary_event": 0.0,
+        "v2_fall_event": 0.0,
+        "v2_turn_cycle_task": -0.2438439660680397
+      },
+      "reward_term_returns": {
+        "v2_velocity": [
+          7.270634174346924,
+          7.820375919342041,
+          6.829859256744385,
+          7.828339576721191
+        ],
+        "v2_yaw": [
+          25.135051727294922,
+          23.663400650024414,
+          18.34714126586914,
+          29.479076385498047
+        ],
+        "v2_foot_local": [
+          17.6313419342041,
+          17.59785270690918,
+          17.663549423217773,
+          17.58836555480957
+        ],
+        "v2_cross_motion": [
+          -51.75813674926758,
+          -50.793357849121094,
+          -52.781986236572266,
+          -50.50594711303711
+        ],
+        "v2_translation_yaw_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_heading_integral": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_contact_timing": [
+          -3.5599722862243652,
+          -3.443974733352661,
+          -3.3879754543304443,
+          -3.3159749507904053
+        ],
+        "v2_contact_slip": [
+          -10.496865272521973,
+          -10.568424224853516,
+          -10.646814346313477,
+          -10.511950492858887
+        ],
+        "v2_gravity_alignment": [
+          -3.191683292388916,
+          -3.260035753250122,
+          -3.4311890602111816,
+          -3.033752679824829
+        ],
+        "v2_body_height": [
+          -0.31211331486701965,
+          -0.30377355217933655,
+          -0.2996145784854889,
+          -0.30782127380371094
+        ],
+        "v2_target_acceleration": [
+          -1.6118457317352295,
+          -1.7241910696029663,
+          -1.654848337173462,
+          -1.641241192817688
+        ],
+        "v2_joint_acceleration": [
+          -0.0949583426117897,
+          -0.10313437134027481,
+          -0.09659018367528915,
+          -0.10125649720430374
+        ],
+        "v2_torque": [
+          -0.017032047733664513,
+          -0.016135243698954582,
+          -0.017215168103575706,
+          -0.015921883285045624
+        ],
+        "v2_joint_limits": [
+          -1.1134408850921318e-05,
+          -2.8803347049688455e-06,
+          -2.3076172510627657e-05,
+          -1.1883197657880373e-05
+        ],
+        "v2_phase_symmetry": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_liftoff_events": [
+          -3.6066534519195557,
+          -3.859780788421631,
+          -3.9391367435455322,
+          -3.710791826248169
+        ],
+        "v2_task_boundary_event": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_fall_event": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_turn_cycle_task": [
+          -5.155618667602539,
+          -5.656447887420654,
+          -7.9971184730529785,
+          -4.599836826324463
+        ]
+      },
+      "reward_term_discounted_returns": {
+        "v2_velocity": [
+          0.6136718988418579,
+          0.7376221418380737,
+          0.6349889039993286,
+          0.6796146631240845
+        ],
+        "v2_yaw": [
+          1.6875814199447632,
+          1.8219245672225952,
+          0.3481360971927643,
+          1.0207798480987549
+        ],
+        "v2_foot_local": [
+          1.5136446952819824,
+          1.5038807392120361,
+          1.5228815078735352,
+          1.4987212419509888
+        ],
+        "v2_cross_motion": [
+          -4.296034812927246,
+          -4.042619228363037,
+          -4.310996055603027,
+          -4.163104057312012
+        ],
+        "v2_translation_yaw_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_heading_integral": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_contact_timing": [
+          -0.2231960892677307,
+          -0.23315538465976715,
+          -0.2128431648015976,
+          -0.23261654376983643
+        ],
+        "v2_contact_slip": [
+          -0.8619258403778076,
+          -0.8900889158248901,
+          -0.8858492970466614,
+          -0.9410756826400757
+        ],
+        "v2_gravity_alignment": [
+          -0.24258354306221008,
+          -0.2117799073457718,
+          -0.2659348249435425,
+          -0.2559138834476471
+        ],
+        "v2_body_height": [
+          -0.02660602331161499,
+          -0.02513880655169487,
+          -0.024929434061050415,
+          -0.024334603920578957
+        ],
+        "v2_target_acceleration": [
+          -0.07772231101989746,
+          -0.12187056243419647,
+          -0.09456517547369003,
+          -0.10929114371538162
+        ],
+        "v2_joint_acceleration": [
+          -0.004198391456156969,
+          -0.007138960994780064,
+          -0.005294352304190397,
+          -0.006306832656264305
+        ],
+        "v2_torque": [
+          -0.0019173937616869807,
+          -0.0014859234215691686,
+          -0.0018832593923434615,
+          -0.0015423627337440848
+        ],
+        "v2_joint_limits": [
+          -1.230791735196135e-08,
+          -1.1774952923815363e-07,
+          -4.200253442832036e-07,
+          -2.5431165795453126e-06
+        ],
+        "v2_phase_symmetry": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_liftoff_events": [
+          -0.13711027801036835,
+          -0.2404388189315796,
+          -0.19624750316143036,
+          -0.23613858222961426
+        ],
+        "v2_task_boundary_event": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_fall_event": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_turn_cycle_task": [
+          -0.06743884086608887,
+          -0.24193774163722992,
+          -0.40251636505126953,
+          -0.5292195081710815
+        ]
+      },
+      "baseline_to_candidate_gaussian_kl_on_this_rollout": [
+        0.0,
+        1.7523360188802084
+      ],
+      "mean_residual_difference_from_baseline_rad": [
+        0.0,
+        0.025671488046646117
+      ],
+      "kl_scope": "Cumulative checkpoint divergence on this candidate rollout states, not KL of one PPO update",
+      "omitted_timeout_value_bootstrap": "Measured returns include terminal settlement, without critic bootstrap",
+      "control_unchanged": true
+    },
+    {
+      "checkpoint": {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_045227/05_TURN_RIGHT/checkpoints/model_001038.pt",
+        "sha256": "dd726aff4f0352f374152570a668821798d830c68e453dca978d63d57663681a"
+      },
+      "iteration": 1038,
+      "candidate_index": 1,
+      "env_indices": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "source_teacher_id": "05_TURN_RIGHT",
+      "target_command": [
+        0.0,
+        0.0,
+        -0.5235987901687622
+      ],
+      "complete": true,
+      "partial": false,
+      "survived_complete_episode_fraction": 1.0,
+      "survival_fraction": 1.0,
+      "survival_so_far": 1.0,
+      "completed_episodes": 4,
+      "optimizer_lr_saved": [
+        0.0003
+      ],
+      "normalized_action_std": [
+        0.1421772688627243,
+        0.14280490577220917,
+        0.14214126765727997,
+        0.14366774260997772,
+        0.1623842865228653,
+        0.14852814376354218,
+        0.1520453542470932,
+        0.14129620790481567,
+        0.14236736297607422,
+        0.15914994478225708,
+        0.1425330489873886,
+        0.1553671807050705,
+        0.15554557740688324,
+        0.15364022552967072
+      ],
+      "snapshot_16s": {
+        "survival_so_far": 1.0,
+        "mean_actual": [
+          0.06614750742912293,
+          -0.006174609363079071,
+          -0.10471960544586181
+        ],
+        "max_turn_radius_m": 0.9398732781410217,
+        "return_per_env": [
+          -27.60198974609375,
+          -28.413002014160156,
+          -28.173816680908203,
+          -28.047819137573242
+        ],
+        "discounted_return_per_env": [
+          -2.267502546310425,
+          -2.2427048683166504,
+          -2.2021288871765137,
+          -2.254929780960083
+        ],
+        "reward_terms_per_second": {
+          "v2_velocity": 0.4286789317963407,
+          "v2_yaw": -0.008171453334629424,
+          "v2_foot_local": 0.7283976626132794,
+          "v2_cross_motion": -1.9284744538811993,
+          "v2_translation_yaw_rate": 0.0,
+          "v2_heading_integral": 0.0,
+          "v2_contact_timing": -0.15756152939457632,
+          "v2_contact_slip": -0.6120412357020164,
+          "v2_gravity_alignment": -0.12797912719944912,
+          "v2_body_height": -0.01921247506529444,
+          "v2_target_acceleration": -0.007055916022647436,
+          "v2_joint_acceleration": -0.0008774999170540872,
+          "v2_torque": -0.0007416852834159979,
+          "v2_joint_limits": -1.0568156038142315e-05,
+          "v2_phase_symmetry": 0.0,
+          "v2_liftoff_events": -0.045097620878388485,
+          "v2_task_boundary_event": 0.0,
+          "v2_fall_event": 0.0,
+          "v2_turn_cycle_task": -0.003549585736096955
+        }
+      },
+      "first_episode_end": [
+        {
+          "time_s": 24.00000113993883,
+          "fall": false,
+          "timeout": true,
+          "radius_m": 1.1893199682235718,
+          "net_yaw_deg": -138.4298891163713
+        },
+        {
+          "time_s": 24.00000113993883,
+          "fall": false,
+          "timeout": true,
+          "radius_m": 1.1594233512878418,
+          "net_yaw_deg": -143.1773623631504
+        },
+        {
+          "time_s": 24.00000113993883,
+          "fall": false,
+          "timeout": true,
+          "radius_m": 1.1652404069900513,
+          "net_yaw_deg": -142.06065375460997
+        },
+        {
+          "time_s": 24.00000113993883,
+          "fall": false,
+          "timeout": true,
+          "radius_m": 1.193711519241333,
+          "net_yaw_deg": -136.70829895493455
+        }
+      ],
+      "simulated_samples_per_env": [
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0
+      ],
+      "mean_actual": [
+        0.06686107476552328,
+        -0.005939441124598185,
+        -0.10187934239705404
+      ],
+      "max_turn_radius_m": 1.193711519241333,
+      "return_per_env": [
+        -47.59943771362305,
+        -48.45311737060547,
+        -47.984649658203125,
+        -47.93501663208008
+      ],
+      "discounted_return_per_env": [
+        -2.2685115337371826,
+        -2.243706226348877,
+        -2.2031655311584473,
+        -2.2559292316436768
+      ],
+      "initial_critic_value": [
+        -13.621675491333008,
+        -13.627872467041016,
+        -13.619501113891602,
+        -13.620643615722656
+      ],
+      "reward_terms_per_second": {
+        "v2_velocity": 0.41814947129013974,
+        "v2_yaw": -0.03038398715085349,
+        "v2_foot_local": 0.7247984661117924,
+        "v2_cross_motion": -1.9486432342037512,
+        "v2_translation_yaw_rate": 0.0,
+        "v2_heading_integral": 0.0,
+        "v2_contact_timing": -0.15779033795560346,
+        "v2_contact_slip": -0.6095300822027951,
+        "v2_gravity_alignment": -0.13596779952351212,
+        "v2_body_height": -0.01927402834441316,
+        "v2_target_acceleration": -0.006732952771664357,
+        "v2_joint_acceleration": -0.0008543868880653152,
+        "v2_torque": -0.0007356118721115662,
+        "v2_joint_limits": -1.1316683329821472e-05,
+        "v2_phase_symmetry": 0.0,
+        "v2_liftoff_events": -0.05144991357132893,
+        "v2_task_boundary_event": -0.16666665875042516,
+        "v2_fall_event": 0.0,
+        "v2_turn_cycle_task": -0.014617820817813716
+      },
+      "reward_term_returns": {
+        "v2_velocity": [
+          10.111363410949707,
+          9.975327491760254,
+          9.985231399536133,
+          10.070428848266602
+        ],
+        "v2_yaw": [
+          -0.7734231948852539,
+          -0.7018612027168274,
+          -0.6017507314682007,
+          -0.8398277759552002
+        ],
+        "v2_foot_local": [
+          17.396347045898438,
+          17.391334533691406,
+          17.390270233154297,
+          17.4027042388916
+        ],
+        "v2_cross_motion": [
+          -46.64147186279297,
+          -46.87916564941406,
+          -46.83845138549805,
+          -46.710670471191406
+        ],
+        "v2_translation_yaw_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_heading_integral": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_contact_timing": [
+          -3.7999680042266846,
+          -3.79196834564209,
+          -3.7679684162139893,
+          -3.787968397140503
+        ],
+        "v2_contact_slip": [
+          -14.571266174316406,
+          -14.751537322998047,
+          -14.603010177612305,
+          -14.58907699584961
+        ],
+        "v2_gravity_alignment": [
+          -3.2435028553009033,
+          -3.2966578006744385,
+          -3.278297185897827,
+          -3.2344515323638916
+        ],
+        "v2_body_height": [
+          -0.46260517835617065,
+          -0.4631604254245758,
+          -0.4628588855266571,
+          -0.4616823196411133
+        ],
+        "v2_target_acceleration": [
+          -0.16106769442558289,
+          -0.16279931366443634,
+          -0.1602010726928711,
+          -0.1622954159975052
+        ],
+        "v2_joint_acceleration": [
+          -0.02038702555000782,
+          -0.020829709246754646,
+          -0.02017601951956749,
+          -0.020628390833735466
+        ],
+        "v2_torque": [
+          -0.01758207194507122,
+          -0.017781324684619904,
+          -0.017662275582551956,
+          -0.01759307086467743
+        ],
+        "v2_joint_limits": [
+          -0.00027161077014170587,
+          -0.0002943412691820413,
+          -0.0002810231235343963,
+          -0.00023942648840602487
+        ],
+        "v2_phase_symmetry": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_liftoff_events": [
+          -1.1597557067871094,
+          -1.2896360158920288,
+          -1.2531964778900146,
+          -1.2366037368774414
+        ],
+        "v2_task_boundary_event": [
+          -4.0,
+          -4.0,
+          -4.0,
+          -4.0
+        ],
+        "v2_fall_event": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_turn_cycle_task": [
+          -0.25583574175834656,
+          -0.44413939118385315,
+          -0.35627055168151855,
+          -0.34706518054008484
+        ]
+      },
+      "reward_term_discounted_returns": {
+        "v2_velocity": [
+          1.0125316381454468,
+          1.011575698852539,
+          1.0140902996063232,
+          1.0171927213668823
+        ],
+        "v2_yaw": [
+          0.59856116771698,
+          0.6207470893859863,
+          0.6135921478271484,
+          0.5913775563240051
+        ],
+        "v2_foot_local": [
+          1.507914662361145,
+          1.5070905685424805,
+          1.5068082809448242,
+          1.5089415311813354
+        ],
+        "v2_cross_motion": [
+          -3.567574977874756,
+          -3.5733773708343506,
+          -3.5647809505462646,
+          -3.560231924057007
+        ],
+        "v2_translation_yaw_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_heading_integral": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_contact_timing": [
+          -0.3145177364349365,
+          -0.3163980543613434,
+          -0.3113205134868622,
+          -0.29744550585746765
+        ],
+        "v2_contact_slip": [
+          -1.2935538291931152,
+          -1.275078296661377,
+          -1.2494916915893555,
+          -1.2910330295562744
+        ],
+        "v2_gravity_alignment": [
+          -0.15032926201820374,
+          -0.15395143628120422,
+          -0.15185986459255219,
+          -0.15181642770767212
+        ],
+        "v2_body_height": [
+          -0.03623967245221138,
+          -0.03630250692367554,
+          -0.036314841359853745,
+          -0.03588680922985077
+        ],
+        "v2_target_acceleration": [
+          -0.021776866167783737,
+          -0.0213711429387331,
+          -0.02103087678551674,
+          -0.022194745019078255
+        ],
+        "v2_joint_acceleration": [
+          -0.0022291201166808605,
+          -0.002298281993716955,
+          -0.0022081879433244467,
+          -0.002389509929344058
+        ],
+        "v2_torque": [
+          -0.001612829859368503,
+          -0.0016086363466456532,
+          -0.0015881391009315848,
+          -0.0016175167402252555
+        ],
+        "v2_joint_limits": [
+          -3.443376954237465e-06,
+          -2.9019126941420836e-06,
+          -2.6492768938624067e-06,
+          -1.5686524648117484e-06
+        ],
+        "v2_phase_symmetry": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_liftoff_events": [
+          -0.03636550158262253,
+          -0.03856649249792099,
+          -0.036346208304166794,
+          -0.04614538326859474
+        ],
+        "v2_task_boundary_event": [
+          -2.336997931706719e-05,
+          -2.336997931706719e-05,
+          -2.336997931706719e-05,
+          -2.336997931706719e-05
+        ],
+        "v2_fall_event": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "v2_turn_cycle_task": [
+          0.0367116816341877,
+          0.03586118668317795,
+          0.03731290623545647,
+          0.035343755036592484
+        ]
+      },
+      "baseline_to_candidate_gaussian_kl_on_this_rollout": [
+        0.0,
+        1.52227788289388
+      ],
+      "mean_residual_difference_from_baseline_rad": [
+        0.0,
+        0.024030754168828328
+      ],
+      "kl_scope": "Cumulative checkpoint divergence on this candidate rollout states, not KL of one PPO update",
+      "omitted_timeout_value_bootstrap": "Measured returns include terminal settlement, without critic bootstrap",
+      "control_unchanged": true
+    }
+  ],
+  "status": "completed",
+  "complete": true,
+  "partial": false,
+  "executed_steps": 1200,
+  "requested_steps": 1202,
+  "wall_s": 369.02992606163025,
+  "updated_unix": 1793224106.0109332,
+  "comparison": "Two frozen policies concurrently in one 8-env scene; four paired resets each; same immutable runtime/reference/rewards; no optimizer.",
+  "scope": "Complete first natural episodes"
+}

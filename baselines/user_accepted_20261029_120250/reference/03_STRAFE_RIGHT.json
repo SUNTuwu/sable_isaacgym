@@ -1,0 +1,38 @@
+{
+  "id": "03_STRAFE_RIGHT",
+  "source_clip_id": "06_STRAFE_RIGHT",
+  "title": "右横移 pace｜左移镜像",
+  "command": [
+    0.0,
+    -0.038244880703173854,
+    0.0
+  ],
+  "period_s": 1.0,
+  "symmetry_enabled": false,
+  "source": {
+    "dataset": "APEX/STMR Go1 sidesteps",
+    "file": "sidesteps_go1.csv",
+    "frames": [
+      25,
+      90
+    ],
+    "url": "https://github.com/marmotlab/APEX",
+    "source_sha256": "e33658aca259e4fae805ba3c4d1250c32b2c920633e5ebcb290368e74176538d",
+    "symmetry": "Opposite skills are mirrored; no forced same-clip sagittal mirror",
+    "derived": "Sagittal reflection of left strafe"
+  },
+  "ground_lift_mm": 0.0964795492619506,
+  "reference_coordinate": "FL/FR relative chest midpoint; HL/HR relative pelvis midpoint, expressed in respective torso frames",
+  "world_xy_yaw_used_for_tracking": false,
+  "samples": 101,
+  "source_seam_max_deg": 0.0,
+  "swing_time_s": [
+    0.28,
+    0.33,
+    0.25,
+    0.31
+  ],
+  "minimum_capsule_height_mm": 0.5000000000000013,
+  "max_reference_joint_speed_rad_s": 8.473533421718015,
+  "physical_validation_passed": false
+}

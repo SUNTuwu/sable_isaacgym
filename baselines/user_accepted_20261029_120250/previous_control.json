@@ -1,0 +1,130 @@
+{
+  "revision": 43,
+  "teachers": {
+    "01_FORWARD_POLICY": {
+      "yaw_sigma": 0.19004026055335999,
+      "multipliers": {
+        "v2_velocity": 1.587,
+        "v2_phase_symmetry": 1.749,
+        "v2_contact_timing": 1.331,
+        "v2_heading_integral": 1.38,
+        "v2_cross_motion": 1.5209
+      },
+      "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+      "straight_frame": true
+    },
+    "06_BACKWARD": {
+      "yaw_sigma": 0.4,
+      "multipliers": {
+        "v2_contact_timing": 1.1,
+        "v2_cross_motion": 1.2,
+        "v2_heading_integral": 1.2
+      },
+      "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+      "straight_frame": true
+    },
+    "09_BACKWARD_WALK": {
+      "yaw_sigma": 0.4,
+      "multipliers": {
+        "v2_velocity": 1.15,
+        "v2_phase_symmetry": 1.3225,
+        "v2_contact_timing": 1.21,
+        "v2_cross_motion": 1.587,
+        "v2_heading_integral": 1.15
+      },
+      "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+      "straight_frame": true
+    },
+    "10_FORWARD_TROT": {
+      "yaw_sigma": 0.4,
+      "multipliers": {
+        "v2_cross_motion": 1.9044,
+        "v2_heading_integral": 1.656
+      },
+      "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+      "straight_frame": true
+    },
+    "02_STRAFE_LEFT": {
+      "yaw_sigma": 0.3892807960510254,
+      "multipliers": {
+        "v2_velocity": 1.656,
+        "v2_cross_motion": 1.2,
+        "v2_contact_timing": 1.21
+      },
+      "reason": "Replace weak body-frame cross-speed cost with signed integrated cross-path error in initial heading frame; normal reversible sway remains cheap.",
+      "straight_frame": true,
+      "cross_track_sigma_m": 0.1
+    },
+    "03_STRAFE_RIGHT": {
+      "yaw_sigma": 0.3725464344024658,
+      "multipliers": {
+        "v2_velocity": 1.728,
+        "v2_cross_motion": 1.728
+      },
+      "reason": "Replace weak body-frame cross-speed cost with signed integrated cross-path error in initial heading frame; normal reversible sway remains cheap.",
+      "straight_frame": true,
+      "cross_track_sigma_m": 0.1
+    },
+    "04_TURN_LEFT": {
+      "multipliers": {
+        "v2_velocity": 0.4,
+        "v2_yaw": 1.2,
+        "v2_foot_local": 0.4,
+        "v2_cross_motion": 0.4,
+        "v2_translation_yaw_rate": 0.4,
+        "v2_heading_integral": 0.4,
+        "v2_contact_timing": 0.4,
+        "v2_contact_slip": 0.4,
+        "v2_gravity_alignment": 0.4,
+        "v2_body_height": 0.4,
+        "v2_target_acceleration": 0.4,
+        "v2_joint_acceleration": 0.4,
+        "v2_torque": 0.4,
+        "v2_joint_limits": 0.4,
+        "v2_phase_symmetry": 0.4,
+        "v2_liftoff_events": 0.4,
+        "v2_task_boundary_event": 0.4,
+        "v2_turn_cycle_task": 0.4
+      },
+      "turn_velocity_sigma": 0.06,
+      "reason": "Completed paired 24s frozen A/B: weight1.2 ranks rotating baseline above degenerated walking policy under PPO discount; restart from selected trot baseline.",
+      "reward_profile": "cycle_net_progress_gamma099_v1"
+    },
+    "05_TURN_RIGHT": {
+      "multipliers": {
+        "v2_velocity": 0.25,
+        "v2_yaw": 1.5,
+        "v2_foot_local": 0.4,
+        "v2_cross_motion": 0.25,
+        "v2_translation_yaw_rate": 0.4,
+        "v2_heading_integral": 0.4,
+        "v2_contact_timing": 0.44,
+        "v2_contact_slip": 0.4,
+        "v2_gravity_alignment": 0.4,
+        "v2_body_height": 0.4,
+        "v2_target_acceleration": 0.4,
+        "v2_joint_acceleration": 0.4,
+        "v2_torque": 0.4,
+        "v2_joint_limits": 0.4,
+        "v2_phase_symmetry": 0.4,
+        "v2_liftoff_events": 0.4,
+        "v2_task_boundary_event": 0.4,
+        "v2_turn_cycle_task": 0.4
+      },
+      "turn_velocity_sigma": 0.06,
+      "reason": "Completed paired 24s frozen A/B: weight1.2 ranks rotating baseline above degenerated walking policy under PPO discount; restart from selected trot baseline.",
+      "reward_profile": "cycle_net_progress_gamma099_v1"
+    }
+  },
+  "last_review_unix": 1793233376.6788578,
+  "yaw": {
+    "multipliers": {
+      "angle_error": 2.4
+    },
+    "reason": "Verified independent checkpoint28 survival15/16; model29 had no matching evaluation. Correct baseline provenance.",
+    "exploration": {
+      "max_std_deg": 1.0,
+      "anneal_iterations": 40
+    }
+  }
+}

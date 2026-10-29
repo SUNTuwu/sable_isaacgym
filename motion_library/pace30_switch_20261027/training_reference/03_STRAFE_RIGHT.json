@@ -1,0 +1,87 @@
+{
+  "id": "03_STRAFE_RIGHT",
+  "file": "03_STRAFE_RIGHT.npz",
+  "title": "Right lateral pace - paired legs",
+  "fps": 50,
+  "samples": 51,
+  "period_s": 1.0,
+  "joint_names": [
+    "spine_pitch",
+    "spine_roll",
+    "hip_roll",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "L_ankle_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "R_ankle_pitch",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch"
+  ],
+  "policy_joint_names": [
+    "spine_roll",
+    "hip_roll",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "L_ankle_pitch",
+    "R_ankle_pitch",
+    "spine_pitch"
+  ],
+  "foot_order": [
+    "FL",
+    "FR",
+    "HL",
+    "HR"
+  ],
+  "source_metadata": "source_motions/03_STRAFE_RIGHT.json",
+  "processing": {
+    "periodic_filter": "Endpoint-drift removal, five Fourier harmonics; analytic periodic q derivatives",
+    "harmonics": 5,
+    "source_npz_sha256": "ba397c765ec5ac475ce5edc012df07fc81b62a3023d3304f44079977675287ae",
+    "root_cycle_translation_m": [
+      -0.005243229679763317,
+      -0.06096676364541054,
+      0.0
+    ],
+    "root_cycle_yaw_rad": -0.0029779281057212073,
+    "ground_correction": {
+      "method": "Smooth periodic vertical-root upper envelope; joint FK preserved",
+      "margin_m": 0.00025,
+      "extra_margin_m": 5e-05,
+      "maximum_root_raise_m": 0.00011624445828820234,
+      "estimated_contact_height_threshold_m": 0.003
+    }
+  },
+  "quality": {
+    "minimum_capsule_z_mm": 0.29999999999999816,
+    "max_joint_pose_seam_deg": 0.0,
+    "max_joint_velocity_seam_rad_s": 0.0,
+    "max_joint_limit_violation_deg": 0.0,
+    "max_joint_change_from_authored_deg": 7.006588691801994,
+    "max_joint_velocity_rad_s": 6.2008574139464825,
+    "turn_target_reprojection_error_mm": null,
+    "max_root_raise_mm": 0.11624445828820235,
+    "mean_geometric_contact_count": 1.9607843137254901,
+    "physical_validation_passed": false
+  },
+  "native_command_world_mean": [
+    -0.005243229679763317,
+    -0.06096676364541054,
+    0.0
+  ],
+  "native_yaw_rate_rad_s": -0.002977928105721206,
+  "gait_type": "pace",
+  "supersedes_teacher_id": "08_LATERAL_TROT_RIGHT"
+}

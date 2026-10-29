@@ -1,0 +1,145 @@
+{
+  "teacher_id": "04_TURN_LEFT",
+  "iteration": 2084,
+  "checkpoint_iteration": 2084,
+  "checkpoint": {
+    "path": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s/04_TURN_LEFT/checkpoints/model_002084.pt",
+    "sha256": "5e49cd73ef6baa48eab09d3829e080e39adbff8b3837240a3d426afe6397d4b2",
+    "iteration": 2084,
+    "updated_unix": 1793233972.613813,
+    "reason": "final"
+  },
+  "independent": true,
+  "evaluation_seed": 947,
+  "reset": "reference_phase0 plus seeded uniform joint perturbation +/-0.005rad; reserved environments never used by optimizer",
+  "horizon_s": 24.0,
+  "num_envs": 4,
+  "survival_fraction": 1.0,
+  "q_tracking_rmse_rad": 0.13051815330982208,
+  "xy_rmse_m_s": 0.06603854149580002,
+  "yaw_rmse_rad_s": 1.3129838705062866,
+  "mean_command": [
+    0.0,
+    0.0,
+    0.5235987901687622
+  ],
+  "mean_actual": [
+    -0.03658565878868103,
+    0.011176779866218567,
+    0.6241859197616577
+  ],
+  "steps_per_foot": [
+    251.0,
+    170.0,
+    232.0,
+    180.0
+  ],
+  "step_scope": "Observed normal-force contact onset; not yet genuine-air-step acceptance",
+  "samples": 4800,
+  "accepted": false,
+  "first_fall_diagnostics": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "reward_cleanup_profile": "reference_local_v2",
+  "removed_cadence_terms": [],
+  "teacher_control_mode": "reference_plus_residual",
+  "reference_strength": 1.0,
+  "reference_time_scale": 1.0,
+  "created_unix": 1793234101.1221285,
+  "maximum_cross_track_m": 0.0,
+  "max_abs_final_heading_deg": 896.3538105186404,
+  "max_turn_radius_m": 0.20051209628582,
+  "velocity_frame": "episode-start heading for translations; heading frame for turns",
+  "contact_phase_agreement": 0.7032291889190674,
+  "pose_symmetry_rmse_m": 0.014765366911888123,
+  "pair_liftoff_count_asymmetry": 0.3922518193721771,
+  "mean_liftoff_period_s_per_foot": [
+    0.38866400718688965,
+    0.5783132910728455,
+    0.4210526645183563,
+    0.5333333611488342
+  ],
+  "cycle_symmetry_scope": "count-based cadence diagnostic over all four evaluation environments; not a direct per-cycle phase certificate",
+  "gravity_rmse_deg": 5.447734122566429,
+  "acceptance_scope": "preliminary: four held-out envs, 16 seconds; not hardware validation",
+  "foot_rmse_m_per_foot": [
+    0.008920887872431804,
+    0.019185762317391112,
+    0.018247300846561634,
+    0.023211721546785406
+  ],
+  "contact_slip_rmse_m_s": 0.14888084192181775,
+  "actual_liftoffs_per_foot": [
+    247.0,
+    166.0,
+    228.0,
+    180.0
+  ],
+  "foot_reward_saturated_fraction": 0.21838541666666667,
+  "physical_score": 0.2896465346904965,
+  "evaluation_limits": {
+    "velocity_rmse_m_s": 0.015,
+    "yaw_rmse_rad_s": 0.13089969754219055,
+    "worst_foot_rmse_m": 0.04,
+    "contact_slip_rmse_m_s": 0.03,
+    "gravity_rmse_deg": 5.0
+  },
+  "plateau_status": "not_established",
+  "plateau_definition": "five fixed-seed evaluations, physical score range <0.01; no automatic stopping or curriculum change",
+  "turn_cycles": {
+    "completed_cycles": 92,
+    "passed_cycles": 0,
+    "pass_fraction": 0.0,
+    "mean_net_angle_error_deg": 8.395260354746943,
+    "mean_net_displacement_m": 0.04882225782974907,
+    "mean_cycle_max_drift_m": 0.049145107683928116,
+    "mean_contact_phase_agreement": 0.707065250562585,
+    "mean_liftoff_count_error": 4.489130434782608,
+    "acceptance": "net angle 70-130% of commanded cycle angle; net XY<=5cm, max XY<=7.5cm; angular monotonicity>=0.8; contact phase>=85%; per-foot lift count matches reference",
+    "mean_signed_angle_deg": 37.78286079738451
+  },
+  "turn_boundary": {
+    "mode": "signed_velocity_integral_fixed",
+    "limit_m": 0.2,
+    "limit_deg": 30.0,
+    "recent_complete_episodes": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "pending": false,
+    "definition": "integral(yaw_dot dt); norm(integral(world_xy_velocity dt)); reset per episode"
+  },
+  "turn_curriculum": {
+    "stage": 0,
+    "streak": 0,
+    "pending": false,
+    "mode": "fixed_rate",
+    "target_deg_s": 30.0,
+    "degree_per_cycle": 30.0,
+    "period_s": 1.0,
+    "stages": [
+      30.0
+    ]
+  }
+}

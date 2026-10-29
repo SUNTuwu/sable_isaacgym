@@ -1,0 +1,45 @@
+{
+  "run": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251",
+  "pid": 168660,
+  "watchdog_pid": 168986,
+  "status": "training",
+  "source_run": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_20261029_045227",
+  "source_checkpoint": {
+    "path": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_20261029_045227/model_000574.pt",
+    "iteration": 574,
+    "reason": "final",
+    "sha256": "83d074d1502aab1906dff661c4c3c945ac78e0a2014007e743ced1d4d8d10611"
+  },
+  "source_iteration": 574,
+  "resume_verification": {
+    "source": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_20261029_045227",
+    "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_20261029_045227/model_000574.pt",
+    "source_iteration": 574,
+    "source_checkpoint_sha256": "83d074d1502aab1906dff661c4c3c945ac78e0a2014007e743ced1d4d8d10611",
+    "model_state_equal_before_exploration_control": true,
+    "optimizer_state_equal_before_exploration_control": true,
+    "verification": "recursive torch.equal for model parameters and Adam state, before any exploration ceiling is applied"
+  },
+  "deadline_unix": 1793233800.0,
+  "command": [
+    "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+    "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251/runtime/yaw_sine_teacher.py",
+    "--run",
+    "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251",
+    "--envs",
+    "512",
+    "--resume",
+    "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_20261029_045227",
+    "--deadline",
+    "1793233800.0"
+  ],
+  "exploration": {
+    "max_std_deg": 1.5,
+    "anneal_iterations": 40
+  },
+  "frozen_evaluator_sha256": "11b7f809ddbcbbe468d167dd18eabf058462c37e12ad6608a9bad339d0ce3845",
+  "frozen_watchdog_sha256": "1a4d324edd5f7a9907eb08644ae4358d7b6e8dd95a7f0a954d398e4e80b51df2",
+  "final_evaluation_timeout_s": 900,
+  "bank_teachers_unchanged": true,
+  "transition_id": "20261029_061927_168251"
+}

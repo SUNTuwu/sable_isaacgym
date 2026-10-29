@@ -1,0 +1,189 @@
+{
+  "bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_pace_stability_20261028_034543",
+  "active_processes_verified_by_argv": {
+    "pid": 263215,
+    "watchdog_pid": 263217,
+    "sealer_pid": 263380
+  },
+  "deadline": "2026-10-28T06:00:00+08:00",
+  "initial_iteration": 1479,
+  "current_iteration": 1526,
+  "verified_at_unix": 1793131003.1795332,
+  "runtime_files_sha256_verified": 154,
+  "all_eight_models_and_Adam_restored": true,
+  "curriculum_origin_iteration": 1401,
+  "curriculum_strength": 1.0,
+  "rotation_lift_config_unchanged": true,
+  "teacher_observation_dimensions": 94,
+  "action_dimensions": 15,
+  "reference_amplitude": 1.0,
+  "offset_limit_deg": 20.0,
+  "training_envs": 16384,
+  "physical_model_and_motor_envelope_unchanged": true,
+  "configuration": {
+    "version": "pace_tip_stability_v3",
+    "teacher_ids": [
+      "02_STRAFE_LEFT",
+      "03_STRAFE_RIGHT"
+    ],
+    "feet_order": [
+      "FL",
+      "FR",
+      "HL",
+      "HR"
+    ],
+    "reference": "Unchanged smoothed hand-K reference amplitude1 plus bounded20deg residual; no joint-angle imitation",
+    "frame": "Distal capsule tips in respective reference/actual root frames, matched by phase",
+    "curriculum_updates": 60,
+    "initial_residual_rate_deg_s": 2000.0,
+    "final_hind_residual_rate_deg_s": 60.0,
+    "final_shared_hip_roll_rate_deg_s": 120.0,
+    "final_waist_roll_rate_deg_s": 120.0,
+    "controller": "Geometric rate curriculum on hind independent motors and waist roll; first reset command warm-starts balance correction. Forelegs and waist pitch unchanged. Waist120deg/s separately tested without a fall in4 three-second episodes.",
+    "endpoint_reward": "Two scales: coarse50mm and fine20->15mm. At each scale3*weighted_mean(quality)+3*worst_foot_quality; weights[1,1,2,2], total max12/s. Coarse scale preserves guidance at current40-50mm errors.",
+    "position_cost": "-3*weighted_mean(E/(1+E))-3*max(E/(1+E)), E=(tip_error/sigma)^2; sigma20->15mm",
+    "error_velocity_cost": "Reference-relative 3D tip error derivative, scale0.15m/s, bounded3/s; excludes reset warmup",
+    "residual_acceleration_cost": "Hind actually executed residual acceleration, scale30rad/s2, bounded1/s; excludes reset warmup",
+    "acceptance": {
+      "horizon_s": 16.0,
+      "survival_fraction": 1.0,
+      "hind_tip_rmse_mm": 10.0,
+      "hind_reference_relative_jump_p95_mm": 3.0,
+      "xy_rmse_m_s": 0.03,
+      "yaw_rmse_rad_s": 0.15,
+      "requires_full_curriculum": true,
+      "sampling_s": 0.02
+    },
+    "pace_static_width_removed": "Only pace: remove old40+/-10mm landing-width and60mm stance-width costs; actual phase reference3D tips are authoritative. Four forward/backward30mm and all rotation constraints remain.",
+    "pace_cost_rebalance": "Direct upstroke counting retained; frequency max3/s, old raw world-Z velocity cost replaced by reference-relative 3D error velocity. Rotation constraints unchanged."
+  },
+  "periodic_evaluation": "32 reserved envs,4 per teacher, frozen actor and controller strength, full16 simulated seconds,20ms dense pace metrics; never used by optimizer",
+  "separate_periodic_gpu_evaluators_disabled": true,
+  "final_evaluation": "Existing bounded32env finalizer after stop; no additional training after06:00",
+  "distillation": "Use complete actually executed targets after residual filtering, never raw residual labels",
+  "current_acceptance": "Not passed; full16s all8 pace environments survived, foot placement/relative-jitter/velocity/yaw criteria still fail",
+  "prior_short_probe": "/root/gpufree-data/projects/sable-isaacgym/results/pace_jitter_20261028/full_strength_probe/summary.json",
+  "full16s_reports": {
+    "02_STRAFE_LEFT": {
+      "iteration": 1479,
+      "survival_fraction": 1.0,
+      "xy_rmse_m_s": 0.08486292511224747,
+      "yaw_rmse_rad_s": 0.46562400460243225,
+      "pace_dense_diagnostics": {
+        "sampling_s": 0.020000000949949026,
+        "curriculum_strength": 1.0,
+        "tip_rmse_mm_per_foot": [
+          6.142761092633009,
+          7.739367429167032,
+          46.49824649095535,
+          41.40492156147957
+        ],
+        "hind_reference_relative_jump_p95_mm": 6.617277069017289,
+        "hind_residual_delta_p95_deg": [
+          2.4000003337860107,
+          1.2000011205673218,
+          1.2000044584274292,
+          1.2000011205673218,
+          1.2000027894973755,
+          1.2000027894973755,
+          1.2000019550323486
+        ],
+        "scope": "All four first episodes, every20ms, pre-reset states; no post-failure samples, reset warmup excluded from jumps",
+        "hind_motor_order": [
+          1,
+          5,
+          6,
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      "pace_acceptance": {
+        "passed": false,
+        "checks": {
+          "full_curriculum": true,
+          "full_horizon": true,
+          "all_survive": true,
+          "hind_tips": false,
+          "reference_relative_jitter": false,
+          "xy_tracking": false,
+          "yaw_tracking": false
+        },
+        "criteria": {
+          "horizon_s": 16.0,
+          "survival_fraction": 1.0,
+          "hind_tip_rmse_mm": 10.0,
+          "hind_reference_relative_jump_p95_mm": 3.0,
+          "xy_rmse_m_s": 0.03,
+          "yaw_rmse_rad_s": 0.15,
+          "requires_full_curriculum": true,
+          "sampling_s": 0.02
+        }
+      }
+    },
+    "03_STRAFE_RIGHT": {
+      "iteration": 1479,
+      "survival_fraction": 1.0,
+      "xy_rmse_m_s": 0.08092986792325974,
+      "yaw_rmse_rad_s": 0.6501468420028687,
+      "pace_dense_diagnostics": {
+        "sampling_s": 0.020000000949949026,
+        "curriculum_strength": 1.0,
+        "tip_rmse_mm_per_foot": [
+          9.50483325868845,
+          7.564655039459467,
+          36.80087625980377,
+          40.104009211063385
+        ],
+        "hind_reference_relative_jump_p95_mm": 6.787103204987943,
+        "hind_residual_delta_p95_deg": [
+          2.400001287460327,
+          1.2000011205673218,
+          1.2000027894973755,
+          1.2000011205673218,
+          1.2000044584274292,
+          1.2000027894973755,
+          1.2000027894973755
+        ],
+        "scope": "All four first episodes, every20ms, pre-reset states; no post-failure samples, reset warmup excluded from jumps",
+        "hind_motor_order": [
+          1,
+          5,
+          6,
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      "pace_acceptance": {
+        "passed": false,
+        "checks": {
+          "full_curriculum": true,
+          "full_horizon": true,
+          "all_survive": true,
+          "hind_tips": false,
+          "reference_relative_jitter": false,
+          "xy_tracking": false,
+          "yaw_tracking": false
+        },
+        "criteria": {
+          "horizon_s": 16.0,
+          "survival_fraction": 1.0,
+          "hind_tip_rmse_mm": 10.0,
+          "hind_reference_relative_jump_p95_mm": 3.0,
+          "xy_rmse_m_s": 0.03,
+          "yaw_rmse_rad_s": 0.15,
+          "requires_full_curriculum": true,
+          "sampling_s": 0.02
+        }
+      }
+    }
+  },
+  "fore240_slew_experiment": {
+    "deployed": false,
+    "reason": "No hind-jitter improvement in matched3second comparison",
+    "summary": "/root/gpufree-data/projects/sable-isaacgym/results/pace_jitter_20261028/fore_slew_probe/summary.json"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "schema": "sable-final-evaluation-pointer/v1",
+  "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+  "manifest_path": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s/final_evaluation_manifest.json",
+  "manifest_sha256": "9bdd89a583483507dcf0368852d21ea1aaf87a56c9ffaa0852ce5909e2b0e542"
+}

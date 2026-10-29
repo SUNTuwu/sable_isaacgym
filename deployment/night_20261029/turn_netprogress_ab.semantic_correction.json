@@ -1,0 +1,27 @@
+{
+  "schema": "frozen-turn-diagnostic/legacy-radius-correction-v1",
+  "created_utc": "2026-10-28T22:00:32.717182+00:00",
+  "original_report_path": "E:\\1_project_E\\code\\remote_sable_robot\\deployment\\night_20261029\\turn_netprogress_ab.json",
+  "original_report_sha256": "01b3b1d1b5c1386583989f3684c37d41ae38dbadd9fcdee06c3b8de2495d9360",
+  "original_remote_output": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/turn_netprogress_ab.json",
+  "original_preserved_without_edits": true,
+  "correction": {
+    "field": "reports[*].first_episode_end[*].radius_m",
+    "actual_definition": "Maximum root XY distance from the reset position over the entire first episode, NOT the terminal root displacement.",
+    "interpret_as": "max_radius_m",
+    "cause": "The legacy evaluator serialized its running torch.maximum radius accumulator into this ambiguously named field."
+  },
+  "unavailable_from_original_report": [
+    "Actual terminal root displacement XY vector and its norm",
+    "Actual terminal signed-world-velocity integral norm before reset"
+  ],
+  "interpretation_limit": "A maximum excursion greater than 0.20 m does not establish a terminal boundary violation. The terminal-only boundary can correctly charge zero when its final integrated displacement is within 0.20 m. This sidecar does not infer the missing terminal values.",
+  "replacement_schema": "frozen-turn-diagnostic/v2",
+  "new_fields": [
+    "first_episode_end.max_radius_m",
+    "first_episode_end.terminal_root_displacement_xy_m",
+    "first_episode_end.terminal_root_displacement_m",
+    "first_episode_end.terminal_integrated_displacement_m (only when a pre-reset diagnostic is available)",
+    "first_episode_end.terminal_integrated_displacement_available"
+  ]
+}

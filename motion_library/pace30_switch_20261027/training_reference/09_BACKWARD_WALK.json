@@ -1,0 +1,85 @@
+{
+  "id": "09_BACKWARD_WALK",
+  "file": "09_BACKWARD_WALK.npz",
+  "title": "后退 walk｜前进倒放",
+  "fps": 50,
+  "samples": 51,
+  "period_s": 1.0,
+  "joint_names": [
+    "spine_pitch",
+    "spine_roll",
+    "hip_roll",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "L_ankle_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "R_ankle_pitch",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch"
+  ],
+  "policy_joint_names": [
+    "spine_roll",
+    "hip_roll",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "L_ankle_pitch",
+    "R_ankle_pitch",
+    "spine_pitch"
+  ],
+  "foot_order": [
+    "FL",
+    "FR",
+    "HL",
+    "HR"
+  ],
+  "source_metadata": "../motions/09_BACKWARD_WALK.json",
+  "processing": {
+    "periodic_filter": "Endpoint-drift removal, five Fourier harmonics; analytic periodic q derivatives",
+    "harmonics": 5,
+    "source_npz_sha256": "0d992e65cb55284d320b446436649e2aa7ebeabde8dfc1370faa48dfe6ba29a6",
+    "root_cycle_translation_m": [
+      -0.15864689648151398,
+      0.003941798582673073,
+      0.0
+    ],
+    "root_cycle_yaw_rad": -0.005234956441650562,
+    "ground_correction": {
+      "method": "Smooth periodic vertical-root upper envelope; joint FK preserved",
+      "margin_m": 0.00025,
+      "extra_margin_m": 5e-05,
+      "maximum_root_raise_m": 0.0026509647513758734,
+      "estimated_contact_height_threshold_m": 0.003
+    }
+  },
+  "quality": {
+    "minimum_capsule_z_mm": 0.29999999999999816,
+    "max_joint_pose_seam_deg": 0.0,
+    "max_joint_velocity_seam_rad_s": 0.0,
+    "max_joint_limit_violation_deg": 0.0,
+    "max_joint_change_from_authored_deg": 7.7888564894633125,
+    "max_joint_velocity_rad_s": 5.487267967670659,
+    "turn_target_reprojection_error_mm": null,
+    "max_root_raise_mm": 2.6509647513758736,
+    "mean_geometric_contact_count": 2.176470588235294,
+    "physical_validation_passed": false
+  },
+  "native_command_world_mean": [
+    -0.15864689648151398,
+    0.003941798582673074,
+    0.0
+  ],
+  "native_yaw_rate_rad_s": -0.005234956441650556
+}

@@ -1,0 +1,18 @@
+{
+  "time": 1793228589.9961104,
+  "teacher": "YAW_SINE_STANCE",
+  "evaluation_iteration": 738,
+  "source_evaluation_sha256": "96d0f9fb543ffe9a878386412c2706416e349481403d1d28757ee74afa504896",
+  "reason": "Post-1degree exploration ceiling held-out evaluation remains stationary plateau: survival1, RMSE21.47deg. Add dense angle-error gradient while keeping angle wave, anchor, liftoff and fall constraints unchanged.",
+  "actual_reward_change": true,
+  "reward_changes": {
+    "angle_error": {
+      "before": 1.0,
+      "after": 2.0
+    }
+  },
+  "control_revision": 31,
+  "baseline_unchanged": true,
+  "trainers_restarted": false,
+  "physical_improvement_not_yet_verified": true
+}

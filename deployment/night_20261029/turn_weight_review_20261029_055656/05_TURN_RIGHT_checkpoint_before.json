@@ -1,0 +1,7 @@
+{
+  "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/05_TURN_RIGHT/checkpoints/model_001290.pt",
+  "sha256": "fe7452da0aec9ed938374e7f1398614c893b12b7325405bb6bd98f6e2ff200f3",
+  "iteration": 1290,
+  "updated_unix": 1793224597.3862813,
+  "reason": "periodic"
+}

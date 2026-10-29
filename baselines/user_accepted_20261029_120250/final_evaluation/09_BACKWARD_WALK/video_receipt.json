@@ -1,0 +1,20 @@
+{
+  "type": "kinematic_trace",
+  "path": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s/09_BACKWARD_WALK/videos/trace_002084.json",
+  "iteration": 2084,
+  "checkpoint_path": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s/09_BACKWARD_WALK/checkpoints/model_002084.pt",
+  "checkpoint_sha256": "a3cb7829d2cb8b9b6e99267496841d1cdf1f005864029dd493cd929185aed552",
+  "source": "Fresh 4-env-per-teacher deterministic 24-second evaluation",
+  "created_unix": 1793234101.3701704,
+  "mode": "final_evaluation_only",
+  "horizon_s": 24.0,
+  "source_checkpoint": {
+    "teacher_id": "09_BACKWARD_WALK",
+    "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/09_BACKWARD_WALK/checkpoints/model_002084.pt",
+    "sha256": "2d04bfb846d33045abb074278f2339d91fac10fa95f68d79e4a9c0db2e790151",
+    "iteration": 2084,
+    "source_receipt_sha256": "4f62aab510724148a67a5dab383577b2f97d0588aa49d44717fc24cd873c43df",
+    "reference_sha256": "9a15eb79aba6845cc4ad7c24a21a7dc8ae02d3677eaf41b8343c8b757bbd09f2"
+  },
+  "optimization_steps": 0
+}

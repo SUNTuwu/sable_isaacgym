@@ -1,0 +1,137 @@
+{
+  "status": "completed",
+  "launcher_pid": 189501,
+  "bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048",
+  "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548",
+  "source_pid": 150324,
+  "created_unix": 1793229048.6678364,
+  "updated_unix": 1793229092.7527692,
+  "smoke_source_checkpoints": [
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/01_FORWARD_POLICY/checkpoints/model_001662.pt",
+      "sha256": "92fa7be7d62742dd736bdd6e42379c299e61bf390efba8e3c73ccadcb6771f76",
+      "iteration": 1662,
+      "updated_unix": 1793228969.5231144,
+      "reason": "periodic"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/04_TURN_LEFT/checkpoints/model_001662.pt",
+      "sha256": "6e483d1b036ac45325e7f326842913b5ebe3259a5466b5fb2fc90dfb57716ab8",
+      "iteration": 1662,
+      "updated_unix": 1793228969.5316944,
+      "reason": "periodic"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/05_TURN_RIGHT/checkpoints/model_001662.pt",
+      "sha256": "815b397e54a428eaf261110a70a7e8d399c04190b72defc9343931b950ba7c24",
+      "iteration": 1662,
+      "updated_unix": 1793228969.5386634,
+      "reason": "periodic"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/06_BACKWARD/checkpoints/model_001662.pt",
+      "sha256": "06361f67da5f25815a0293d2069d56a82c82423e40a17ee3f3aaa85053b9a396",
+      "iteration": 1662,
+      "updated_unix": 1793228969.546352,
+      "reason": "periodic"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/02_STRAFE_LEFT/checkpoints/model_001662.pt",
+      "sha256": "fc606bc2bab4af1278c3b1e02fbe30362878d138147de15efbc2004718ffb8f7",
+      "iteration": 1662,
+      "updated_unix": 1793228969.55325,
+      "reason": "periodic"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/03_STRAFE_RIGHT/checkpoints/model_001662.pt",
+      "sha256": "58dbf7076ca4ef14d8c3c1f34ea33147b41bbbff4bffba3e1e524d89d2d814d0",
+      "iteration": 1662,
+      "updated_unix": 1793228969.560152,
+      "reason": "periodic"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/09_BACKWARD_WALK/checkpoints/model_001662.pt",
+      "sha256": "aca8bc4b2ba82ca221d68de6f3e0a8efd0f383fb48dceb370261886a9ed8d666",
+      "iteration": 1662,
+      "updated_unix": 1793228969.5678768,
+      "reason": "periodic"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/10_FORWARD_TROT/checkpoints/model_001662.pt",
+      "sha256": "daf34d8053f04e485e4c5da8e95e62b6781429615e98e343c6767d1f7fb0d45b",
+      "iteration": 1662,
+      "updated_unix": 1793228969.5748117,
+      "reason": "periodic"
+    }
+  ],
+  "frozen_module_sha256": {
+    "teacher_bank_core.py": "66a2b26dbcfe6712c16d0bfb4b74949c6486ba2f7571c3c74dabd9508ff94142",
+    "teacher_turn_cycles.py": "b37a665c12e8847d8997cb5e4cdd334dd91a60aeb9cc2f43d91433b3fedf6fff",
+    "teacher_reference_rewards_v2.py": "22c65f6117d3c614becc46f59d038ec23c8b84923278f89dca4e112819984a62",
+    "turn_phase_clock_candidate.py": "bda0cfb748ad32c88a624254a0907a1382b4dabd97ba916df7dbfdbf82ecfa48"
+  },
+  "source_final_checkpoints": [
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/01_FORWARD_POLICY/checkpoints/model_001670.pt",
+      "sha256": "1565bfeece867606deb4cc4259eca1f8129a7f6ac6b4ae7d49b51fd9b6baa46a",
+      "iteration": 1670,
+      "updated_unix": 1793229066.123463,
+      "reason": "final"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/04_TURN_LEFT/checkpoints/model_001670.pt",
+      "sha256": "2f71cde01695ec5bbb0bc5f55007dc53dbed2898481eeed140376353bc5700a3",
+      "iteration": 1670,
+      "updated_unix": 1793229066.1306221,
+      "reason": "final"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/05_TURN_RIGHT/checkpoints/model_001670.pt",
+      "sha256": "fe823849f3fb58ced0903165005a845042fc208ba2347e6e09c98126136a6704",
+      "iteration": 1670,
+      "updated_unix": 1793229066.1390007,
+      "reason": "final"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/06_BACKWARD/checkpoints/model_001670.pt",
+      "sha256": "3749add082fbca37d6951535acfb9e3b20da36810006c1d9f06c0afa70d8e4fe",
+      "iteration": 1670,
+      "updated_unix": 1793229066.1459887,
+      "reason": "final"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/02_STRAFE_LEFT/checkpoints/model_001670.pt",
+      "sha256": "ab7d81c6822174d1625935a741e15734ca56d72297e9f8cf8a5f64145c56c743",
+      "iteration": 1670,
+      "updated_unix": 1793229066.1528559,
+      "reason": "final"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/03_STRAFE_RIGHT/checkpoints/model_001670.pt",
+      "sha256": "462fd362f05bf6fb4d582f172fce883b9d7e0cf0de1c44f4e6cdb16cd2c2ec56",
+      "iteration": 1670,
+      "updated_unix": 1793229066.1605783,
+      "reason": "final"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/09_BACKWARD_WALK/checkpoints/model_001670.pt",
+      "sha256": "fd27c777b6a276ebdd8b8e7d7635613b93fa05c762b7e40f8df33fe1fd2ef1a1",
+      "iteration": 1670,
+      "updated_unix": 1793229066.167586,
+      "reason": "final"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/10_FORWARD_TROT/checkpoints/model_001670.pt",
+      "sha256": "17c7b19390fa73dc57e34a88f785e640db71681698d6f8676097371eb5edc042",
+      "iteration": 1670,
+      "updated_unix": 1793229066.190686,
+      "reason": "final"
+    }
+  ],
+  "pid": 189847,
+  "watchdog_pid": 189848,
+  "resume_verified": true,
+  "control_unchanged": true,
+  "yaw_process_unchanged": true,
+  "new_iteration": 1671
+}

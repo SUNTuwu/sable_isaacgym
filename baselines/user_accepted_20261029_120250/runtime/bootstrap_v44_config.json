@@ -1,0 +1,442 @@
+{
+  "env": {
+    "ankle_phase": {
+      "event_air_time_s": 0.06,
+      "event_clearance_m": 0.002,
+      "event_error_scale_deg": 30.0,
+      "event_max_exponent": 6.0,
+      "event_travel_m": 0.005,
+      "landing_angle_deg": 30.0,
+      "takeoff_angle_deg": 110.0
+    },
+    "asset": {
+      "angular_damping": 0.0,
+      "armature": 1.5e-05,
+      "collapse_fixed_joints": false,
+      "default_dof_drive_mode": 3,
+      "density": 1000.0,
+      "disable_gravity": false,
+      "file": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/sable.xml",
+      "fix_base_link": false,
+      "flip_visual_attachments": false,
+      "foot_name": "_fixed",
+      "linear_damping": 0.0,
+      "max_angular_velocity": 1000.0,
+      "max_linear_velocity": 1000.0,
+      "name": "sable",
+      "penalize_contacts_on": [
+        "elbow_pitch",
+        "knee_pitch"
+      ],
+      "replace_cylinder_with_capsule": false,
+      "self_collisions": 0,
+      "terminate_after_contacts_on": [
+        "ROOT",
+        "spine_pitch"
+      ],
+      "thickness": 0.0002
+    },
+    "commands": {
+      "curriculum": false,
+      "heading_command": true,
+      "max_curriculum": 1.0,
+      "num_commands": 4,
+      "ranges": {
+        "ang_vel_yaw": [
+          0.0,
+          0.0
+        ],
+        "heading": [
+          0.0,
+          0.0
+        ],
+        "lin_vel_x": [
+          0.09,
+          0.12
+        ],
+        "lin_vel_y": [
+          0.0,
+          0.0
+        ]
+      },
+      "resampling_time": 5.0
+    },
+    "control": {
+      "action_scale": 0.35,
+      "control_type": "P",
+      "damping": {
+        "spine_pitch": 0.12,
+        "spine_roll": 0.1,
+        "hip_roll": 0.06,
+        "shoulder_roll": 0.06,
+        "shoulder_pitch": 0.05,
+        "hip_pitch": 0.05,
+        "elbow_pitch": 0.025,
+        "knee_pitch": 0.025,
+        "ankle_pitch": 0.025
+      },
+      "decimation": 40,
+      "stiffness": {
+        "spine_pitch": 10.0,
+        "spine_roll": 7.0,
+        "hip_roll": 7.0,
+        "shoulder_roll": 7.0,
+        "shoulder_pitch": 8.0,
+        "hip_pitch": 8.0,
+        "elbow_pitch": 5.0,
+        "knee_pitch": 5.0,
+        "ankle_pitch": 5.0
+      }
+    },
+    "domain_rand": {
+      "added_mass_range": [
+        -1.0,
+        1.0
+      ],
+      "friction_range": [
+        0.8,
+        1.2
+      ],
+      "max_push_vel_xy": 1.0,
+      "push_interval": 750.0,
+      "push_interval_s": 15,
+      "push_robots": false,
+      "randomize_base_mass": false,
+      "randomize_friction": true
+    },
+    "env": {
+      "env_spacing": 1.0,
+      "episode_length_s": 20.0,
+      "num_actions": 14,
+      "num_envs": 1024,
+      "num_observations": 58,
+      "num_privileged_obs": null,
+      "send_timeouts": true
+    },
+    "gait": {
+      "clearance_relative_to_target": true,
+      "contact_phase_independent_of_strength": true,
+      "enabled": true,
+      "force_sigma_n": 0.5,
+      "height_profile": "sine_squared",
+      "minimum_completed_swing_peak_m": 0.022,
+      "period_s": 1.0,
+      "stance_fraction": 0.5,
+      "stance_speed_sigma_m_s": 0.04,
+      "swing_height_m": 0.018,
+      "swing_heights_m": [
+        0.023,
+        0.023,
+        0.023,
+        0.023
+      ]
+    },
+    "hind_landing_width": {
+      "minimum_m": 0.06
+    },
+    "init_member_classes": {},
+    "init_state": {
+      "ang_vel": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "default_joint_angles": {
+        "spine_pitch": -0.6981316208839417,
+        "spine_roll": -0.0,
+        "hip_roll": -0.0,
+        "L_shoulder_roll": -0.0,
+        "L_shoulder_pitch": 0.471235454082489,
+        "L_elbow_pitch": -1.0646508932113647,
+        "L_hip_pitch": -0.24434620141983032,
+        "L_knee_pitch": 1.5882495641708374,
+        "L_ankle_pitch": 1.2217304706573486,
+        "R_hip_roll_mimic": -0.0,
+        "R_shoulder_roll": -0.0,
+        "R_shoulder_pitch": 0.47123536467552185,
+        "R_elbow_pitch": -1.0646508932113647,
+        "R_hip_pitch": -0.24434620141983032,
+        "R_knee_pitch": 1.5882495641708374,
+        "R_ankle_pitch": 1.2217304706573486
+      },
+      "lin_vel": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pos": [
+        -0.004999999888241291,
+        0.0,
+        0.13850266239505576
+      ],
+      "rot": [
+        0.0,
+        0.11320320863037962,
+        0.0,
+        0.9935718562619348
+      ]
+    },
+    "material_friction": {
+      "front_scale": 1.0,
+      "plane": 0.0
+    },
+    "noise": {
+      "add_noise": true,
+      "noise_level": 0.0,
+      "noise_scales": {
+        "ang_vel": 0.2,
+        "dof_pos": 0.01,
+        "dof_vel": 1.5,
+        "gravity": 0.05,
+        "height_measurements": 0.1,
+        "lin_vel": 0.1
+      }
+    },
+    "normalization": {
+      "clip_actions": 3.0,
+      "clip_observations": 100.0,
+      "obs_scales": {
+        "ang_vel": 0.25,
+        "dof_pos": 1.0,
+        "dof_vel": 0.05,
+        "height_measurements": 5.0,
+        "lin_vel": 2.0
+      }
+    },
+    "posture": {
+      "hip_preferred_max_deg": -19.0,
+      "hip_stand_max_exponent": 10.0,
+      "hip_stand_scale_deg": 15.0,
+      "hip_stand_tolerance_deg": 5.0,
+      "knee_stand_max_exponent": 10.0,
+      "knee_stand_reference_offset_deg": -10.0,
+      "knee_stand_scale_deg": 15.0,
+      "knee_stand_tolerance_deg": 10.0,
+      "review_after_seconds": 900.0
+    },
+    "proximal_acceleration": {
+      "joint_names": [
+        "L_shoulder_roll",
+        "R_shoulder_roll",
+        "L_shoulder_pitch",
+        "R_shoulder_pitch",
+        "hip_roll",
+        "L_hip_pitch",
+        "R_hip_pitch"
+      ],
+      "maximum_normalized_excess": 10.0,
+      "threshold_rad_s2": 150.0
+    },
+    "reference": {
+      "amplitude_multipliers": [
+        1.3333333333333333,
+        1.3333333333333333,
+        1.3333333333333333,
+        1.3333333333333333
+      ],
+      "enabled": true,
+      "file": "/root/gpufree-data/projects/sable-isaacgym/runs/stand5_20261027_v44_stride80_all/runtime/assets/gait_reference.json",
+      "ramp_s": 1.0,
+      "speed_filter_tau_s": 0.15,
+      "strength": 0.75
+    },
+    "rewards": {
+      "base_height_target": 0.13850266239505576,
+      "foot_air_time_target": 0.08,
+      "max_contact_force": 100.0,
+      "only_positive_rewards": true,
+      "scales": {
+        "action_rate": -0.01,
+        "ang_vel_xy": -0.05,
+        "ankle_event_angle": -2.0,
+        "base_height": -10.0,
+        "collision": -1.0,
+        "dof_acc": -2.5e-07,
+        "dof_pos_limits": -2.0,
+        "feet_air_time": 1.0,
+        "forward_speed": 2.0,
+        "gait_clearance": -32.0,
+        "gait_contact": 3.0,
+        "hind_landing_width": -4.0,
+        "lin_vel_z": -2.0,
+        "orientation": -0.5,
+        "proximal_acceleration_peak": -4.0,
+        "stride_progress": 2.0,
+        "stride_shortfall": -2.0,
+        "stride_variance": -2.0,
+        "swing_peak_balance": -0.5,
+        "swing_peak_shortfall": -2.0,
+        "target_limits": -2.0,
+        "termination": -250.0,
+        "torques": -1e-05,
+        "tracking_ang_vel": 1.0,
+        "tracking_lin_vel": 8.0,
+        "waist_vertical_acceleration": -1.0,
+        "yaw_rate_error": -2.0
+      },
+      "soft_dof_pos_limit": 0.9,
+      "soft_dof_vel_limit": 1.0,
+      "soft_torque_limit": 1.0,
+      "tracking_sigma": 0.000625
+    },
+    "sim": {
+      "dt": 0.0005,
+      "gravity": [
+        0.0,
+        0.0,
+        -9.81
+      ],
+      "physx": {
+        "bounce_threshold_velocity": 0.1,
+        "contact_collection": 2,
+        "contact_offset": 0.0005,
+        "default_buffer_size_multiplier": 5,
+        "max_depenetration_velocity": 0.5,
+        "max_gpu_contact_pairs": 8388608,
+        "num_position_iterations": 8,
+        "num_threads": 4,
+        "num_velocity_iterations": 2,
+        "rest_offset": 0.0,
+        "solver_type": 1
+      },
+      "substeps": 1,
+      "up_axis": 1
+    },
+    "stride": {
+      "front_zero_m": 0.08,
+      "hind_zero_m": 0.08,
+      "reward_cap_m": 0.1,
+      "reward_exponent": 4.0,
+      "variance_max_age_periods": 2.0,
+      "variance_normalization_m": 0.08
+    },
+    "termination": {
+      "knee_contact_enabled": true,
+      "knee_contact_margin_m": 0.0005
+    },
+    "terrain": {
+      "border_size": 25,
+      "curriculum": false,
+      "dynamic_friction": 1.0,
+      "horizontal_scale": 0.1,
+      "max_init_terrain_level": 5,
+      "measure_heights": false,
+      "measured_points_x": [
+        -0.8,
+        -0.7,
+        -0.6,
+        -0.5,
+        -0.4,
+        -0.3,
+        -0.2,
+        -0.1,
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8
+      ],
+      "measured_points_y": [
+        -0.5,
+        -0.4,
+        -0.3,
+        -0.2,
+        -0.1,
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5
+      ],
+      "mesh_type": "plane",
+      "num_cols": 20,
+      "num_rows": 10,
+      "restitution": 0.0,
+      "selected": false,
+      "slope_treshold": 0.75,
+      "static_friction": 1.0,
+      "terrain_kwargs": null,
+      "terrain_length": 8.0,
+      "terrain_proportions": [
+        0.1,
+        0.1,
+        0.35,
+        0.25,
+        0.2
+      ],
+      "terrain_width": 8.0,
+      "vertical_scale": 0.005
+    },
+    "viewer": {
+      "lookat": [
+        11.0,
+        5,
+        3.0
+      ],
+      "pos": [
+        10,
+        0,
+        6
+      ],
+      "ref_env": 0
+    },
+    "waist_vertical_acceleration": {
+      "normalization_m_s2": 5.0
+    }
+  },
+  "train": {
+    "algorithm": {
+      "clip_param": 0.2,
+      "desired_kl": 0.005,
+      "entropy_coef": 0.003,
+      "gamma": 0.99,
+      "lam": 0.95,
+      "learning_rate": 5e-05,
+      "max_grad_norm": 1.0,
+      "num_learning_epochs": 5,
+      "num_mini_batches": 4,
+      "schedule": "adaptive",
+      "use_clipped_value_loss": true,
+      "value_loss_coef": 1.0
+    },
+    "init_member_classes": {},
+    "policy": {
+      "activation": "elu",
+      "actor_hidden_dims": [
+        256,
+        128,
+        64
+      ],
+      "critic_hidden_dims": [
+        256,
+        128,
+        64
+      ],
+      "init_noise_std": 0.04
+    },
+    "runner": {
+      "algorithm_class_name": "PPO",
+      "checkpoint": -1,
+      "experiment_name": "sable_stand5_v1",
+      "load_run": -1,
+      "max_iterations": 1000000,
+      "min_policy_std": 0.04,
+      "num_steps_per_env": 24,
+      "policy_class_name": "SymmetricActorCritic",
+      "resume": false,
+      "resume_path": null,
+      "run_name": "velocity",
+      "save_interval": 50
+    },
+    "runner_class_name": "OnPolicyRunner",
+    "seed": 1
+  },
+  "deadline": "2026-10-27T04:36:55.050718+08:00",
+  "phase": "guided",
+  "mirror_policy": true
+}

@@ -1,0 +1,427 @@
+{
+  "schema": "sable-deadline-finalizer/v1",
+  "status": "completed",
+  "stage": "completed",
+  "pid": 191618,
+  "deadline_unix": 1793233800.0,
+  "created_unix": 1793229301.056064,
+  "signals": [
+    {
+      "target": "bank",
+      "process": {
+        "pid": 213292,
+        "start_ticks": "785238322",
+        "args": [
+          "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+          "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/runtime/teacher_bank_core.py",
+          "--reference",
+          "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/reference",
+          "--reward-cleanup-profile",
+          "reference_local_v2",
+          "--control-mode",
+          "reference_plus_residual",
+          "--reference-strength",
+          "1",
+          "--time-scale",
+          "1",
+          "--offset-limit-deg",
+          "20",
+          "--imitation-scale",
+          "0",
+          "--exploration-std",
+          ".15",
+          "--minimum-action-std",
+          ".02",
+          "--bank",
+          "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+          "--envs-per-teacher",
+          "1024",
+          "--deadline",
+          "2026-10-29T08:30:00+08:00",
+          "--resume-bank",
+          "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048"
+        ]
+      },
+      "requested_unix": 1793233800.0185015,
+      "checkpoint_before_stop": {
+        "01_FORWARD_POLICY": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/01_FORWARD_POLICY/checkpoints/model_002074.pt",
+          "iteration": 2074,
+          "sha256": "cc4a4b1c34db1d21790d0ee8141dea962828020128753635359bb7b842237f1f",
+          "model_identity": {
+            "device": 64807,
+            "inode": 271440,
+            "size": 1607090,
+            "mtime_ns": 1793233691028661912
+          },
+          "captured_unix": 1793233800.0047467,
+          "receipt_sha256": "73b55bf91dbd97d2865f4caf57b494a6b7715b6760f319a230c8575f75126df4"
+        },
+        "04_TURN_LEFT": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/04_TURN_LEFT/checkpoints/model_002074.pt",
+          "iteration": 2074,
+          "sha256": "8a4d6d8984eb84846e1a4cd5ee0662c1625eadeb71cda6a8e5a40ee9ec8835ae",
+          "model_identity": {
+            "device": 64807,
+            "inode": 271584,
+            "size": 1607282,
+            "mtime_ns": 1793233691040661303
+          },
+          "captured_unix": 1793233800.007245,
+          "receipt_sha256": "484ac18faded77139d04bdc2d0671628756fa962e1226712ef3397208e73907a"
+        },
+        "05_TURN_RIGHT": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/05_TURN_RIGHT/checkpoints/model_002074.pt",
+          "iteration": 2074,
+          "sha256": "54e15a58b6424aa9219e991991cc8244c6de7201abc43588eb4739fb4fb7a2bd",
+          "model_identity": {
+            "device": 64807,
+            "inode": 271585,
+            "size": 1607282,
+            "mtime_ns": 1793233691048660897
+          },
+          "captured_unix": 1793233800.0091374,
+          "receipt_sha256": "a9f4bec498d81b365bc85ac439acc6c891daa5c1d6d100d23d4e43b36f48e67b"
+        },
+        "06_BACKWARD": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/06_BACKWARD/checkpoints/model_002074.pt",
+          "iteration": 2074,
+          "sha256": "cc010ee309893c8dd7b12d865f5cf611460b0b73e1d7ef7943eb7c75158d53fa",
+          "model_identity": {
+            "device": 64807,
+            "inode": 271586,
+            "size": 1607090,
+            "mtime_ns": 1793233691056660491
+          },
+          "captured_unix": 1793233800.0110168,
+          "receipt_sha256": "eab9a1cb8fa0b9a10bc7e6ab047fc0d8d27420bb8a61d4355d6645b2d380d383"
+        },
+        "02_STRAFE_LEFT": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/02_STRAFE_LEFT/checkpoints/model_002074.pt",
+          "iteration": 2074,
+          "sha256": "e28e34ea5f97007a2b01ad59e56818134171b8a81f4c8876466e602eab07f2a9",
+          "model_identity": {
+            "device": 64807,
+            "inode": 271587,
+            "size": 1607090,
+            "mtime_ns": 1793233691060660288
+          },
+          "captured_unix": 1793233800.0128877,
+          "receipt_sha256": "1bcf3f67df235bb1e50c6a2790a69237632db21712ae9bc11858d49864e1f664"
+        },
+        "03_STRAFE_RIGHT": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/03_STRAFE_RIGHT/checkpoints/model_002074.pt",
+          "iteration": 2074,
+          "sha256": "b1fe88ffecd5bcfa633a73b3b882b11dee40c3eb7d79cadea7f24ea8ba67bbfa",
+          "model_identity": {
+            "device": 64807,
+            "inode": 271588,
+            "size": 1607090,
+            "mtime_ns": 1793233691068659882
+          },
+          "captured_unix": 1793233800.014769,
+          "receipt_sha256": "dfe2d52a6ecff54341b703ef0b361da6f50cff06fe15702fce8ed799971610ff"
+        },
+        "09_BACKWARD_WALK": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/09_BACKWARD_WALK/checkpoints/model_002074.pt",
+          "iteration": 2074,
+          "sha256": "506b3c7b379fc596362d800af1913c188ccf765e6417b2bb6718f60066e824ee",
+          "model_identity": {
+            "device": 64807,
+            "inode": 271589,
+            "size": 1607090,
+            "mtime_ns": 1793233691076659476
+          },
+          "captured_unix": 1793233800.0166273,
+          "receipt_sha256": "d9911eb37198143d52d04a800e92be00efc0c0e92244a7624c190044a3b47d5c"
+        },
+        "10_FORWARD_TROT": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/10_FORWARD_TROT/checkpoints/model_002074.pt",
+          "iteration": 2074,
+          "sha256": "1dca41bbae4ca4a799df43aab82e64fd19302bd928a8f1e0a30fc5aa4c4a38ff",
+          "model_identity": {
+            "device": 64807,
+            "inode": 271590,
+            "size": 1607090,
+            "mtime_ns": 1793233691084659070
+          },
+          "captured_unix": 1793233800.018495,
+          "receipt_sha256": "dace5f00a0ad64198c99d085229075d3b25d355440ec5383dd49fd9cc6750552"
+        }
+      },
+      "status": "sigterm_sent"
+    },
+    {
+      "target": "yaw",
+      "process": {
+        "pid": 168660,
+        "start_ticks": "784586995",
+        "args": [
+          "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+          "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251/runtime/yaw_sine_teacher.py",
+          "--run",
+          "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251",
+          "--envs",
+          "512",
+          "--resume",
+          "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_20261029_045227",
+          "--deadline",
+          "1793233800.0"
+        ]
+      },
+      "requested_unix": 1793233800.0220103,
+      "checkpoint_before_stop": {
+        "yaw": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251/model_001271.pt",
+          "iteration": 1271,
+          "sha256": "0008bd4601e560d7daea1779d02a2428c072c90a96011273e0862fc752d2d58e",
+          "model_identity": {
+            "device": 64807,
+            "inode": 271535,
+            "size": 1612466,
+            "mtime_ns": 1793233772728646191
+          },
+          "captured_unix": 1793233800.0220032,
+          "receipt_sha256": "ea15b0da8d23a6f849522b16ecfc7bc2068de58191c6c632a4245dc1847b6c16"
+        }
+      },
+      "status": "sigterm_sent"
+    }
+  ],
+  "children": [
+    {
+      "label": "bank_plan",
+      "pid": 223665,
+      "command": [
+        "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+        "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/final_bank_evaluation.py",
+        "--source-bank",
+        "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+        "--output",
+        "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s",
+        "--project",
+        "/root/gpufree-data/projects/sable-isaacgym",
+        "--control",
+        "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/control.json",
+        "--plan"
+      ],
+      "started_unix": 1793233967.0881968,
+      "process": {
+        "pid": 223665,
+        "start_ticks": "785384002",
+        "args": [
+          "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+          "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/final_bank_evaluation.py",
+          "--source-bank",
+          "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+          "--output",
+          "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s",
+          "--project",
+          "/root/gpufree-data/projects/sable-isaacgym",
+          "--control",
+          "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/control.json",
+          "--plan"
+        ]
+      },
+      "stdout": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_plan.stdout.log",
+      "stderr": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_plan.stderr.log",
+      "status": "completed",
+      "exit_code": 0,
+      "finished_unix": 1793233967.5531566
+    },
+    {
+      "label": "bank_evaluation",
+      "pid": 223668,
+      "command": [
+        "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+        "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/final_bank_evaluation.py",
+        "--source-bank",
+        "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+        "--output",
+        "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s",
+        "--project",
+        "/root/gpufree-data/projects/sable-isaacgym",
+        "--control",
+        "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/control.json"
+      ],
+      "started_unix": 1793233967.5711122,
+      "process": {
+        "pid": 223668,
+        "start_ticks": "785384051",
+        "args": [
+          "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+          "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/final_bank_evaluation.py",
+          "--source-bank",
+          "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+          "--output",
+          "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s",
+          "--project",
+          "/root/gpufree-data/projects/sable-isaacgym",
+          "--control",
+          "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/control.json"
+        ]
+      },
+      "stdout": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_evaluation.stdout.log",
+      "stderr": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_evaluation.stderr.log",
+      "status": "completed",
+      "exit_code": 0,
+      "finished_unix": 1793234102.2994576
+    }
+  ],
+  "output": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s",
+  "training_restarts": 0,
+  "global_current_pointer_write_allowed": false,
+  "updated_unix": 1793234102.3308659,
+  "bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+  "yaw": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251",
+  "bank_process": {
+    "pid": 213292,
+    "start_ticks": "785238322",
+    "args": [
+      "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/runtime/teacher_bank_core.py",
+      "--reference",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/reference",
+      "--reward-cleanup-profile",
+      "reference_local_v2",
+      "--control-mode",
+      "reference_plus_residual",
+      "--reference-strength",
+      "1",
+      "--time-scale",
+      "1",
+      "--offset-limit-deg",
+      "20",
+      "--imitation-scale",
+      "0",
+      "--exploration-std",
+      ".15",
+      "--minimum-action-std",
+      ".02",
+      "--bank",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+      "--envs-per-teacher",
+      "1024",
+      "--deadline",
+      "2026-10-29T08:30:00+08:00",
+      "--resume-bank",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048"
+    ]
+  },
+  "yaw_process": {
+    "pid": 168660,
+    "start_ticks": "784586995",
+    "args": [
+      "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251/runtime/yaw_sine_teacher.py",
+      "--run",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251",
+      "--envs",
+      "512",
+      "--resume",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_20261029_045227",
+      "--deadline",
+      "1793233800.0"
+    ]
+  },
+  "yaw_watchdog": {
+    "pid": 168986,
+    "start_ticks": "784588696",
+    "args": [
+      "/usr/bin/python3",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251/runtime/watch.py",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251",
+      "168660"
+    ]
+  },
+  "pointer_at_deadline": {
+    "bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+    "deployment": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/runtime",
+    "status": "training"
+  },
+  "bank_final_checkpoints": [
+    {
+      "teacher_id": "01_FORWARD_POLICY",
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/01_FORWARD_POLICY/checkpoints/model_002084.pt",
+      "iteration": 2084,
+      "sha256": "d7950745b9c0151eb985c92e591b82013e761e40e6d102c5f993877659ad4a23"
+    },
+    {
+      "teacher_id": "04_TURN_LEFT",
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/04_TURN_LEFT/checkpoints/model_002084.pt",
+      "iteration": 2084,
+      "sha256": "0217649ce634bb872e516ce531caa46a26dafe176602041cfe9cbadbd951ff6e"
+    },
+    {
+      "teacher_id": "05_TURN_RIGHT",
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/05_TURN_RIGHT/checkpoints/model_002084.pt",
+      "iteration": 2084,
+      "sha256": "2955285677fb1f5e306f2de7804026fe4e624714009a4b56d5347a5ac38c8c0b"
+    },
+    {
+      "teacher_id": "06_BACKWARD",
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/06_BACKWARD/checkpoints/model_002084.pt",
+      "iteration": 2084,
+      "sha256": "1e4f7e79c8c4ba09b9eafff92dc9bc35f6f0c6cf04ca482f431866fbeeff3fd2"
+    },
+    {
+      "teacher_id": "02_STRAFE_LEFT",
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/02_STRAFE_LEFT/checkpoints/model_002084.pt",
+      "iteration": 2084,
+      "sha256": "b5d209e7bfbc12aafeb433eb575fa6ea9e4de4f97563277e2c53726681cb0105"
+    },
+    {
+      "teacher_id": "03_STRAFE_RIGHT",
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/03_STRAFE_RIGHT/checkpoints/model_002084.pt",
+      "iteration": 2084,
+      "sha256": "762b1340873141df51d89f26aecc9b2b82b4ae9ae97b0dcfa8aa702a6b43cfb9"
+    },
+    {
+      "teacher_id": "09_BACKWARD_WALK",
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/09_BACKWARD_WALK/checkpoints/model_002084.pt",
+      "iteration": 2084,
+      "sha256": "2d04bfb846d33045abb074278f2339d91fac10fa95f68d79e4a9c0db2e790151"
+    },
+    {
+      "teacher_id": "10_FORWARD_TROT",
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/10_FORWARD_TROT/checkpoints/model_002084.pt",
+      "iteration": 2084,
+      "sha256": "be6f8b8fc804b2312675a50513b3050eadea78569521269148276f21c9faa6d4"
+    }
+  ],
+  "yaw_final_checkpoint": {
+    "teacher_id": "yaw",
+    "path": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251/model_001274.pt",
+    "iteration": 1274,
+    "sha256": "3ad554aab5afa833a14a3c27d81473b57a5b9b02d7ce7b69bd00adac86e2ade2"
+  },
+  "yaw_final_evaluation": {
+    "status": "completed",
+    "completion": {
+      "final_evaluation_exit_code": 0,
+      "archive": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251.tar.gz",
+      "finished_unix": 1793233966.6247816
+    },
+    "report_path": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251/evaluation.json",
+    "report_sha256": "ce9376635b8017d18629226cc0b8b4e11d7975d57bcdce6d8a5b4bc58703dcce",
+    "checkpoint": {
+      "teacher_id": "yaw",
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251/model_001274.pt",
+      "iteration": 1274,
+      "sha256": "3ad554aab5afa833a14a3c27d81473b57a5b9b02d7ce7b69bd00adac86e2ade2"
+    },
+    "evaluation_owner": "existing_yaw_watchdog",
+    "envs": 16,
+    "accepted": false,
+    "acceptance_not_required_for_completed_evaluation": true
+  },
+  "bank_final_evaluation_status": "completed",
+  "final_evaluation_pointer": {
+    "schema": "sable-final-evaluation-pointer/v1",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+    "manifest_path": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s/final_evaluation_manifest.json",
+    "manifest_sha256": "9bdd89a583483507dcf0368852d21ea1aaf87a56c9ffaa0852ce5909e2b0e542"
+  },
+  "finished_unix": 1793234102.330862,
+  "execution_path": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/execution.json"
+}

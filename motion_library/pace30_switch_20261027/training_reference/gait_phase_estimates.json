@@ -1,0 +1,304 @@
+{
+  "schema": "sable-geometric-gait-estimates/1",
+  "foot_order": [
+    "FL",
+    "FR",
+    "HL",
+    "HR"
+  ],
+  "phase_convention": "local_phase_i=(global_phase+delta_i)%1; positive offset reaches same height pattern earlier",
+  "method": "Circular cross-correlation of capsule-lowest-height wave against FL; low-height threshold=min+0.25*(max-min)",
+  "scope": "Estimated phase and low-height fractions, not measured contact or validated control commands. Command seeds use known gait families where available.",
+  "clips": [
+    {
+      "id": "01_FORWARD_POLICY",
+      "frequency_hz": 1.0,
+      "estimated_relative_phase_fl_fr_hl_hr": [
+        0.0,
+        0.54,
+        0.22,
+        0.72
+      ],
+      "phase_correlation": [
+        1.0,
+        0.9644608209813424,
+        0.96412323010886,
+        0.957489454138619
+      ],
+      "geometric_low_height_fraction_per_foot": [
+        0.64,
+        0.52,
+        0.6,
+        0.68
+      ],
+      "phase_command_seed_fr_hl_hr": [
+        0.5,
+        0.25,
+        0.75
+      ],
+      "stance_fraction_command_seed": 0.6,
+      "contact_measurement": "none; geometry proxy and command seeds only"
+    },
+    {
+      "id": "02_STRAFE_LEFT",
+      "frequency_hz": 1.0,
+      "estimated_relative_phase_fl_fr_hl_hr": [
+        0.0,
+        0.54,
+        0.98,
+        0.58
+      ],
+      "phase_correlation": [
+        1.0,
+        0.9864043735953777,
+        0.9929786021146841,
+        0.9677794735795598
+      ],
+      "geometric_low_height_fraction_per_foot": [
+        0.56,
+        0.64,
+        0.56,
+        0.62
+      ],
+      "phase_command_seed_fr_hl_hr": [
+        0.54,
+        0.98,
+        0.58
+      ],
+      "stance_fraction_command_seed": 0.5950000000000001,
+      "contact_measurement": "none; geometry proxy and command seeds only"
+    },
+    {
+      "id": "03_STRAFE_RIGHT",
+      "frequency_hz": 1.0,
+      "estimated_relative_phase_fl_fr_hl_hr": [
+        0.0,
+        0.46,
+        0.0,
+        0.44
+      ],
+      "phase_correlation": [
+        1.0000000000000002,
+        0.9724165522725163,
+        0.980216970286852,
+        0.9666753502197079
+      ],
+      "geometric_low_height_fraction_per_foot": [
+        0.66,
+        0.54,
+        0.64,
+        0.56
+      ],
+      "phase_command_seed_fr_hl_hr": [
+        0.46,
+        0.0,
+        0.44
+      ],
+      "stance_fraction_command_seed": 0.6000000000000001,
+      "contact_measurement": "none; geometry proxy and command seeds only"
+    },
+    {
+      "id": "04_TURN_LEFT",
+      "frequency_hz": 1.0,
+      "estimated_relative_phase_fl_fr_hl_hr": [
+        0.0,
+        0.72,
+        0.16,
+        0.34
+      ],
+      "phase_correlation": [
+        1.0,
+        0.8776948302541894,
+        0.6596307420337593,
+        0.9357511233609979
+      ],
+      "geometric_low_height_fraction_per_foot": [
+        0.46,
+        0.28,
+        0.36,
+        0.38
+      ],
+      "phase_command_seed_fr_hl_hr": [
+        0.72,
+        0.16,
+        0.34
+      ],
+      "stance_fraction_command_seed": 0.37,
+      "contact_measurement": "none; geometry proxy and command seeds only"
+    },
+    {
+      "id": "05_TURN_RIGHT",
+      "frequency_hz": 1.0,
+      "estimated_relative_phase_fl_fr_hl_hr": [
+        0.0,
+        0.28,
+        0.6,
+        0.46
+      ],
+      "phase_correlation": [
+        1.0,
+        0.8776947467741293,
+        0.9436160699418145,
+        0.520994120817653
+      ],
+      "geometric_low_height_fraction_per_foot": [
+        0.28,
+        0.46,
+        0.38,
+        0.36
+      ],
+      "phase_command_seed_fr_hl_hr": [
+        0.28,
+        0.6,
+        0.46
+      ],
+      "stance_fraction_command_seed": 0.37,
+      "contact_measurement": "none; geometry proxy and command seeds only"
+    },
+    {
+      "id": "06_BACKWARD",
+      "frequency_hz": 1.0,
+      "estimated_relative_phase_fl_fr_hl_hr": [
+        0.0,
+        0.44,
+        0.48,
+        0.9
+      ],
+      "phase_correlation": [
+        1.0000000000000002,
+        0.957147994668707,
+        0.9313926512307175,
+        0.890469099936953
+      ],
+      "geometric_low_height_fraction_per_foot": [
+        0.52,
+        0.64,
+        0.64,
+        0.56
+      ],
+      "phase_command_seed_fr_hl_hr": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "stance_fraction_command_seed": 0.6,
+      "contact_measurement": "none; geometry proxy and command seeds only"
+    },
+    {
+      "id": "07_LATERAL_TROT_LEFT",
+      "frequency_hz": 1.0,
+      "estimated_relative_phase_fl_fr_hl_hr": [
+        0.0,
+        0.52,
+        0.5,
+        0.0
+      ],
+      "phase_correlation": [
+        1.0000000000000002,
+        0.9923728472452068,
+        0.9934579390964263,
+        0.9997658171917084
+      ],
+      "geometric_low_height_fraction_per_foot": [
+        0.7,
+        0.68,
+        0.68,
+        0.7
+      ],
+      "phase_command_seed_fr_hl_hr": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "stance_fraction_command_seed": 0.6,
+      "contact_measurement": "none; geometry proxy and command seeds only"
+    },
+    {
+      "id": "08_LATERAL_TROT_RIGHT",
+      "frequency_hz": 1.0,
+      "estimated_relative_phase_fl_fr_hl_hr": [
+        0.0,
+        0.5,
+        0.5,
+        0.0
+      ],
+      "phase_correlation": [
+        0.9999999999999999,
+        0.9964237157594663,
+        0.9961056227920568,
+        0.9995548080228456
+      ],
+      "geometric_low_height_fraction_per_foot": [
+        0.7,
+        0.68,
+        0.68,
+        0.7
+      ],
+      "phase_command_seed_fr_hl_hr": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "stance_fraction_command_seed": 0.6,
+      "contact_measurement": "none; geometry proxy and command seeds only"
+    },
+    {
+      "id": "09_BACKWARD_WALK",
+      "frequency_hz": 1.0,
+      "estimated_relative_phase_fl_fr_hl_hr": [
+        0.0,
+        0.44,
+        0.78,
+        0.28
+      ],
+      "phase_correlation": [
+        1.0,
+        0.9568602100141109,
+        0.9642184379272034,
+        0.9644900676132074
+      ],
+      "geometric_low_height_fraction_per_foot": [
+        0.66,
+        0.54,
+        0.62,
+        0.64
+      ],
+      "phase_command_seed_fr_hl_hr": [
+        0.5,
+        0.75,
+        0.25
+      ],
+      "stance_fraction_command_seed": 0.6,
+      "contact_measurement": "none; geometry proxy and command seeds only"
+    },
+    {
+      "id": "10_FORWARD_TROT",
+      "frequency_hz": 1.0,
+      "estimated_relative_phase_fl_fr_hl_hr": [
+        0.0,
+        0.56,
+        0.52,
+        0.1
+      ],
+      "phase_correlation": [
+        1.0000000000000002,
+        0.9571479806381135,
+        0.9313925750719649,
+        0.8904690862404043
+      ],
+      "geometric_low_height_fraction_per_foot": [
+        0.52,
+        0.64,
+        0.64,
+        0.56
+      ],
+      "phase_command_seed_fr_hl_hr": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "stance_fraction_command_seed": 0.6,
+      "contact_measurement": "none; geometry proxy and command seeds only"
+    }
+  ]
+}

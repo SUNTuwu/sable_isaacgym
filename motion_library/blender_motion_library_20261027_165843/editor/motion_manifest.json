@@ -1,0 +1,1273 @@
+{
+  "schema": "sable-editable-ik/2",
+  "fps": 50,
+  "cycle_frames": 51,
+  "gap_frames": 24,
+  "joint_names": [
+    "spine_pitch",
+    "spine_roll",
+    "hip_roll",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "L_ankle_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "R_ankle_pitch",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch"
+  ],
+  "foot_order": [
+    "FL",
+    "FR",
+    "HL",
+    "HR"
+  ],
+  "scope": "User-authored kinematic reference with pose seams closed modulo each cycle transform. Gaps remain holds/cuts. Joint velocity/acceleration periodicity and dynamics are not validated.",
+  "control_point": "physical distal capsule tip: centre + axis * (cylinder_length / 2 + radius); rotates with the terminal/ankle, not a ground-projected centre",
+  "neutral_q": [
+    -0.6682957048509636,
+    0.0029921439320355443,
+    -0.04815257543785053,
+    -0.3767583012162408,
+    1.5143498479728554,
+    1.1628939144574344,
+    -0.371960385294319,
+    1.5160366439404402,
+    1.166490317996499,
+    -0.05764548703601707,
+    0.30013041285415176,
+    -1.251543812358536,
+    0.05859112959332245,
+    0.32181819384185073,
+    -1.2573568841356568
+  ],
+  "neutral_root": [
+    [
+      0.9298129457533564,
+      0.0,
+      0.36803245225043096,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      -0.36803245225043096,
+      0.0,
+      0.9298129457533564,
+      0.13182434439659116
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "neutral_residual_mm": [
+    0.00020959513557125068,
+    0.00026043613918523225,
+    3.175346337466986e-05,
+    5.983227294817433e-05
+  ],
+  "sources": {
+    "AMP": "https://github.com/escontra/AMP_for_hardware/tree/bfb0dbdcf32bdf83a916790bddf193fffc7e79b8",
+    "APEX": "https://github.com/marmotlab/APEX/tree/f35c54a4fec00c03751e0d28187278313cde51d9",
+    "Google": "https://github.com/google-research/motion_imitation/tree/d0e7b963c5a301984352d25a3ee0820266fa4218",
+    "A1_Go1_URDF": "https://github.com/unitreerobotics/unitree_ros/tree/master/robots",
+    "Laikago_URDF": "https://github.com/bulletphysics/bullet3/tree/master/examples/pybullet/gym/pybullet_data/laikago"
+  },
+  "files_sha256": {
+    "data/a1.urdf": "b5feb8464ed82f6f6ac1905e915d5177b887e6f338e0f8f810da35fd4395a607",
+    "data/apex_go2_loader.py": "56e28b8e3b841847922c4d141a4b34c38207964dcb17ad8beebedfe8559b1a2a",
+    "data/dog_backwards_trot.json": "b8cdc28bf7ed18825611ef316a2d2c8bd862b6367b7906293abcbe5ad2892b42",
+    "data/forward_50hz.json": "fb9fe787f24c0443c574da64bd40011120e028beef3c2428b5dbb9f434bff7e7",
+    "data/go1.urdf": "8c4c22e581b549027c1918259627bb5172afdf56ab970814b0c6f62ecf5604ff",
+    "data/laikago_toes.urdf": "326a4bacfcfd78d56eb692fef74d4e48969538a67e3361e12d11a3661e3a8c3c",
+    "data/leftturn0.json": "83db728d7008b7157829e2a84e426a570048a2dd0ed23551137874e56ab9d7d1",
+    "data/retarget_config_laikago.py": "a7c6b7720f86ae42a7e20ec34d66426bc0b063e5c1f120ce66d199d0d7e8b146",
+    "data/rightturn0.json": "933612536ab461a90825fe85f49fb2ec379b08bfd44939082bf365481ac12f5c",
+    "data/sidesteps_go1.csv": "e33658aca259e4fae805ba3c4d1250c32b2c920633e5ebcb290368e74176538d",
+    "source/authored_model.json": "7fcba68acf10c1f1f9b7ac05ca1ca2a24fe19fbbae80217ee4fc7b7c1affe507",
+    "source/physical_manifest.json": "21ad9dfb35d41fe62b77bef90fefff4b9a2909845e21c9f86eeee0874c87eea7",
+    "source/rig_snapshot.json": "1c71a08cabd4f9438c5eb3b088fe7cecf750bed4476e3148ad23fbb46a53bb13",
+    "source/sable_rig_remote.blend": "2ccb37b5400e9abaa7acb56e9d9a2520f5c9c836cf303def12f4f423e92f799d"
+  },
+  "clips": [
+    {
+      "id": "01_FORWARD_POLICY",
+      "title": "前进｜当前策略",
+      "start": 1,
+      "end": 51,
+      "hold_end": 75,
+      "source": {
+        "type": "measured_policy_replay",
+        "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/cmd16_hist6_s3_ppo_20261027_123803/checkpoints/model_000166.pt",
+        "checkpoint_sha256": "c7bcd59d981c5643b079dbb2463c28ffb9d9f45281821c58902192d65ad8efd4",
+        "iteration": 166,
+        "time_s": [
+          4.020000190939754,
+          5.0200002384372056
+        ],
+        "source_hz": 50,
+        "command": [
+          0.09000000357627869,
+          0.0,
+          0.012883886694908142
+        ],
+        "max_link_fk_error_m": 1.578686057343235e-05
+      },
+      "rms_target_residual_mm": 0.0,
+      "max_target_residual_mm": 0.0,
+      "per_foot_max_mm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_support_point_ik_max_error_mm": 0.0,
+      "toe_tip_correction": "Original solved joint/root animation preserved; handles moved to FK distal tip of terminal capsule. Prior infeasible handles retained in backups/support_point_data.",
+      "seam_max_joint_difference_deg": 0.05705257013711651,
+      "authored_sync": {
+        "clip": "01_FORWARD_POLICY",
+        "toe_pose_seam_mm": [
+          2.8887813101103374e-06,
+          2.492687053618666e-06,
+          3.016508942970894e-06,
+          1.0632516173251503e-06
+        ],
+        "max_joint_pose_seam_deg": 0.0,
+        "max_ik_residual_mm": 0.004200407596911031,
+        "minimum_capsule_z_mm": -2.785517069849897,
+        "cycle_transform": [
+          [
+            0.9999862976460615,
+            -0.00523493267602241,
+            0.0,
+            0.12874896020910978
+          ],
+          [
+            0.00523493267602241,
+            0.9999862976460615,
+            0.0,
+            -0.0030121008169272825
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "delivery_quality": {
+        "max_ik_error_mm": 0.00220436698773204,
+        "minimum_capsule_z_mm": -2.4916942788276564,
+        "ground_penetration_sample_fraction": 0.12254901960784313,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_pose_seam_deg": 1.9407470262403481,
+        "toe_pose_seam_mm": [
+          1.6503756718399378,
+          1.3866293957141067,
+          1.921183329354996,
+          1.156116672071771
+        ],
+        "max_joint_velocity_seam_rad_s": 10.179910063743591,
+        "max_authored_joint_velocity_rad_s": 9.259989857673645,
+        "root_displacement_world_m": [
+          0.15866535902023315,
+          -0.0031112388242036104,
+          0.0
+        ],
+        "root_yaw_change_deg": 0.29994088411331177,
+        "warnings": [
+          "foot_capsule_ground_penetration",
+          "joint_pose_seam_not_closed",
+          "joint_velocity_seam_not_closed"
+        ]
+      }
+    },
+    {
+      "id": "02_STRAFE_LEFT",
+      "title": "左移｜数据集",
+      "start": 76,
+      "end": 126,
+      "hold_end": 150,
+      "source": {
+        "type": "dataset_retarget",
+        "dataset": "APEX / sidesteps_go1_STMR_resampled_50Hz",
+        "file": "sidesteps_go1",
+        "source_frames": [
+          25,
+          90
+        ],
+        "source_dt": 0.02,
+        "mirrored": false,
+        "playback_duration_s": 1.0,
+        "translation_scale": 0.32,
+        "limb_scales": [
+          0.21,
+          0.21,
+          0.3,
+          0.3
+        ],
+        "lift_cap_m": 0.025,
+        "root_roll_pitch": "Sable neutral retained",
+        "root_yaw_delta_deg": 0.1706227202726437,
+        "root_delta_m": [
+          -0.005243229535741656,
+          0.06096676182999656,
+          0.011366399999999999
+        ],
+        "anchoring": "source shoulder/hip pitch-relative vectors; mean-centred on Sable neutral vectors; per-limb scaling"
+      },
+      "rms_target_residual_mm": 0.0,
+      "max_target_residual_mm": 0.0,
+      "per_foot_max_mm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_support_point_ik_max_error_mm": 2.450055024042419,
+      "toe_tip_correction": "Original solved joint/root animation preserved; handles moved to FK distal tip of terminal capsule. Prior infeasible handles retained in backups/support_point_data.",
+      "seam_max_joint_difference_deg": 23.701481409402238,
+      "authored_sync": {
+        "clip": "02_STRAFE_LEFT",
+        "toe_pose_seam_mm": [
+          3.534874415614892e-06,
+          4.584514442000683e-06,
+          2.409729262418066e-06,
+          2.46850054106216e-06
+        ],
+        "max_joint_pose_seam_deg": 0.0,
+        "max_ik_residual_mm": 0.002329760925375136,
+        "minimum_capsule_z_mm": 1.1491104095310507,
+        "cycle_transform": [
+          [
+            0.9999955659753356,
+            -0.0029779237176626415,
+            0.0,
+            -0.005243229679763317
+          ],
+          [
+            0.0029779237176626415,
+            0.9999955659753356,
+            0.0,
+            0.06096676364541054
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "delivery_quality": {
+        "max_ik_error_mm": 0.002329760925375136,
+        "minimum_capsule_z_mm": 1.1491104095310507,
+        "ground_penetration_sample_fraction": 0.0,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_pose_seam_deg": 0.0,
+        "toe_pose_seam_mm": [
+          4.723601777281961e-06,
+          4.704064475305302e-06,
+          6.585736823211575e-06,
+          6.5357122894717e-06
+        ],
+        "max_joint_velocity_seam_rad_s": 3.7275314331054688,
+        "max_authored_joint_velocity_rad_s": 7.864634692668915,
+        "root_displacement_world_m": [
+          -0.005243229679763317,
+          0.06096676364541054,
+          0.0
+        ],
+        "root_yaw_change_deg": 0.17062270641326904,
+        "warnings": [
+          "joint_velocity_seam_not_closed"
+        ]
+      }
+    },
+    {
+      "id": "03_STRAFE_RIGHT",
+      "title": "右移｜镜像数据集",
+      "start": 151,
+      "end": 201,
+      "hold_end": 225,
+      "source": {
+        "type": "dataset_retarget",
+        "dataset": "APEX / sidesteps_go1_STMR_resampled_50Hz",
+        "file": "sidesteps_go1",
+        "source_frames": [
+          25,
+          90
+        ],
+        "source_dt": 0.02,
+        "mirrored": true,
+        "playback_duration_s": 1.0,
+        "translation_scale": 0.32,
+        "limb_scales": [
+          0.21,
+          0.21,
+          0.3,
+          0.3
+        ],
+        "lift_cap_m": 0.025,
+        "root_roll_pitch": "Sable neutral retained",
+        "root_yaw_delta_deg": -0.1706227202726437,
+        "root_delta_m": [
+          -0.005243229535741656,
+          -0.06096676182999656,
+          0.011366399999999999
+        ],
+        "anchoring": "source shoulder/hip pitch-relative vectors; mean-centred on Sable neutral vectors; per-limb scaling"
+      },
+      "rms_target_residual_mm": 0.0,
+      "max_target_residual_mm": 0.0,
+      "per_foot_max_mm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_support_point_ik_max_error_mm": 2.733701895636101,
+      "toe_tip_correction": "Original solved joint/root animation preserved; handles moved to FK distal tip of terminal capsule. Prior infeasible handles retained in backups/support_point_data.",
+      "seam_max_joint_difference_deg": 23.7342337503131,
+      "authored_sync": {
+        "clip": "03_STRAFE_RIGHT",
+        "toe_pose_seam_mm": [
+          5.9024035313736e-06,
+          3.0402090542919394e-06,
+          2.961193122196859e-06,
+          4.2396558063418734e-07
+        ],
+        "max_joint_pose_seam_deg": 0.0,
+        "max_ik_residual_mm": 0.739562270500744,
+        "minimum_capsule_z_mm": 0.7984534850779311,
+        "cycle_transform": [
+          [
+            0.9999955659753356,
+            0.0029779237176626415,
+            0.0,
+            -0.005243229679763317
+          ],
+          [
+            -0.0029779237176626415,
+            0.9999955659753356,
+            0.0,
+            -0.06096676364541054
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "delivery_quality": {
+        "max_ik_error_mm": 0.739562270500744,
+        "minimum_capsule_z_mm": 0.7984534850779311,
+        "ground_penetration_sample_fraction": 0.0,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_pose_seam_deg": 0.0,
+        "toe_pose_seam_mm": [
+          4.721334821416668e-06,
+          4.706630657657478e-06,
+          6.522500325079896e-06,
+          6.599021176630286e-06
+        ],
+        "max_joint_velocity_seam_rad_s": 3.6695778369903564,
+        "max_authored_joint_velocity_rad_s": 8.04082453250885,
+        "root_displacement_world_m": [
+          -0.005243229679763317,
+          -0.06096676364541054,
+          0.0
+        ],
+        "root_yaw_change_deg": -0.17062270641326904,
+        "warnings": [
+          "joint_velocity_seam_not_closed",
+          "toe_target_projection_error"
+        ]
+      }
+    },
+    {
+      "id": "04_TURN_LEFT",
+      "title": "左转｜数据集",
+      "start": 226,
+      "end": 276,
+      "hold_end": 300,
+      "source": {
+        "type": "dataset_retarget",
+        "dataset": "AMP_for_hardware / A1",
+        "file": "leftturn0",
+        "source_frames": [
+          0,
+          45
+        ],
+        "source_dt": 0.021,
+        "mirrored": false,
+        "playback_duration_s": 1.0,
+        "translation_scale": 0.32,
+        "limb_scales": [
+          0.21,
+          0.21,
+          0.3,
+          0.3
+        ],
+        "lift_cap_m": 0.025,
+        "root_roll_pitch": "Sable neutral retained",
+        "root_yaw_delta_deg": 99.57451952674347,
+        "root_delta_m": [
+          -0.015269726006720418,
+          -0.011003065936350925,
+          -0.0010368000000000044
+        ],
+        "anchoring": "source shoulder/hip pitch-relative vectors; mean-centred on Sable neutral vectors; per-limb scaling"
+      },
+      "rms_target_residual_mm": 0.0,
+      "max_target_residual_mm": 0.0,
+      "per_foot_max_mm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_support_point_ik_max_error_mm": 0.002284707071452552,
+      "toe_tip_correction": "Original solved joint/root animation preserved; handles moved to FK distal tip of terminal capsule. Prior infeasible handles retained in backups/support_point_data.",
+      "seam_max_joint_difference_deg": 14.307584834696067,
+      "authored_sync": {
+        "clip": "04_TURN_LEFT",
+        "toe_pose_seam_mm": [
+          2.1013900693501835e-06,
+          6.351006602434294e-06,
+          7.092103743874105e-07,
+          5.619008853397171e-06
+        ],
+        "max_joint_pose_seam_deg": 0.0,
+        "max_ik_residual_mm": 0.00391792434798917,
+        "minimum_capsule_z_mm": -2.3452132953282154,
+        "cycle_transform": [
+          [
+            -0.16633014199194218,
+            -0.9860701211703661,
+            0.0,
+            -0.01526972558349371
+          ],
+          [
+            0.9860701211703661,
+            -0.16633014199194218,
+            0.0,
+            -0.01100306585431099
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "delivery_quality": {
+        "max_ik_error_mm": 0.00391792434798917,
+        "minimum_capsule_z_mm": -2.3452132953282154,
+        "ground_penetration_sample_fraction": 0.2647058823529412,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_pose_seam_deg": 0.0,
+        "toe_pose_seam_mm": [
+          5.025194879569214e-06,
+          3.2057824783449097e-06,
+          5.22789535541506e-06,
+          5.363801740320077e-06
+        ],
+        "max_joint_velocity_seam_rad_s": 7.427304983139038,
+        "max_authored_joint_velocity_rad_s": 10.148179531097412,
+        "root_displacement_world_m": [
+          -0.01526972558349371,
+          -0.01100306585431099,
+          0.0
+        ],
+        "root_yaw_change_deg": 99.57450866699219,
+        "warnings": [
+          "foot_capsule_ground_penetration",
+          "joint_velocity_seam_not_closed"
+        ]
+      }
+    },
+    {
+      "id": "05_TURN_RIGHT",
+      "title": "右转｜手调左转镜像",
+      "start": 301,
+      "end": 351,
+      "hold_end": 375,
+      "source": {
+        "type": "user_authored_mirror",
+        "source_clip": "04_TURN_LEFT",
+        "source_frames": [
+          226,
+          276
+        ],
+        "world_reflection_axis": "Y",
+        "leg_swap": [
+          "FR",
+          "FL",
+          "HR",
+          "HL"
+        ],
+        "body_and_seed_mirrored": true,
+        "original_dataset_provenance": "AMP_for_hardware leftturn0 retarget, then user-authored edits"
+      },
+      "rms_target_residual_mm": 0.0,
+      "max_target_residual_mm": 0.0,
+      "per_foot_max_mm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_support_point_ik_max_error_mm": 0.002059368958700674,
+      "toe_tip_correction": "Original solved joint/root animation preserved; handles moved to FK distal tip of terminal capsule. Prior infeasible handles retained in backups/support_point_data.",
+      "seam_max_joint_difference_deg": 36.7840088056307,
+      "original_source_before_authored_mirror": {
+        "type": "dataset_retarget",
+        "dataset": "AMP_for_hardware / A1",
+        "file": "rightturn0",
+        "source_frames": [
+          30,
+          72
+        ],
+        "source_dt": 0.021,
+        "mirrored": false,
+        "playback_duration_s": 1.0,
+        "translation_scale": 0.32,
+        "limb_scales": [
+          0.21,
+          0.21,
+          0.3,
+          0.3
+        ],
+        "lift_cap_m": 0.025,
+        "root_roll_pitch": "Sable neutral retained",
+        "root_yaw_delta_deg": -54.08540870888949,
+        "root_delta_m": [
+          0.004136566184087215,
+          -0.07186541186888631,
+          -0.0010720000000000174
+        ],
+        "anchoring": "source shoulder/hip pitch-relative vectors; mean-centred on Sable neutral vectors; per-limb scaling"
+      },
+      "authored_sync": {
+        "clip": "05_TURN_RIGHT",
+        "toe_pose_seam_mm": [
+          6.351006602434294e-06,
+          2.1013900693501835e-06,
+          5.619008853397171e-06,
+          7.092103743874105e-07
+        ],
+        "max_joint_pose_seam_deg": 3.4150945850063755e-06,
+        "max_ik_residual_mm": 0.003916793521092532,
+        "minimum_capsule_z_mm": -2.3452164472865307,
+        "cycle_transform": [
+          [
+            -0.16633014199194218,
+            0.9860701211703661,
+            0.0,
+            -0.01526972558349371
+          ],
+          [
+            -0.9860701211703661,
+            -0.16633014199194218,
+            0.0,
+            0.01100306585431099
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "delivery_quality": {
+        "max_ik_error_mm": 0.003916793521092532,
+        "minimum_capsule_z_mm": -2.3452164472865307,
+        "ground_penetration_sample_fraction": 0.2647058823529412,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_pose_seam_deg": 3.4150945850063755e-06,
+        "toe_pose_seam_mm": [
+          8.798199867803522e-06,
+          5.025194881877537e-06,
+          6.4295846844765485e-06,
+          6.558845629517043e-06
+        ],
+        "max_joint_velocity_seam_rad_s": 7.427304983139038,
+        "max_authored_joint_velocity_rad_s": 10.148179531097412,
+        "root_displacement_world_m": [
+          -0.01526972558349371,
+          0.01100306585431099,
+          0.0
+        ],
+        "root_yaw_change_deg": -99.57450866699219,
+        "warnings": [
+          "foot_capsule_ground_penetration",
+          "joint_velocity_seam_not_closed"
+        ]
+      }
+    },
+    {
+      "id": "06_BACKWARD",
+      "title": "后退｜数据集",
+      "start": 376,
+      "end": 426,
+      "hold_end": 450,
+      "source": {
+        "type": "dataset_retarget",
+        "dataset": "Google motion_imitation / Laikago",
+        "file": "dog_backwards_trot",
+        "source_frames": [
+          0,
+          32
+        ],
+        "source_dt": 0.01667,
+        "mirrored": false,
+        "playback_duration_s": 1.0,
+        "translation_scale": 0.16,
+        "limb_scales": [
+          0.15,
+          0.15,
+          0.22,
+          0.22
+        ],
+        "lift_cap_m": 0.025,
+        "root_roll_pitch": "Sable neutral retained",
+        "root_yaw_delta_deg": 2.4489256267460386,
+        "root_delta_m": [
+          -0.14959575844317818,
+          0.005691807429128883,
+          0.0
+        ],
+        "anchoring": "source shoulder/hip pitch-relative vectors; mean-centred on Sable neutral vectors; per-limb scaling"
+      },
+      "rms_target_residual_mm": 0.0,
+      "max_target_residual_mm": 0.0,
+      "per_foot_max_mm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_support_point_ik_max_error_mm": 0.002844551641111754,
+      "toe_tip_correction": "Original solved joint/root animation preserved; handles moved to FK distal tip of terminal capsule. Prior infeasible handles retained in backups/support_point_data.",
+      "seam_max_joint_difference_deg": 5.581801075264458,
+      "authored_sync": {
+        "clip": "06_BACKWARD",
+        "toe_pose_seam_mm": [
+          3.8062984834722433e-06,
+          1.498119231588582e-06,
+          2.299480914609357e-06,
+          3.2867468980593947e-07
+        ],
+        "max_joint_pose_seam_deg": 0.0,
+        "max_ik_residual_mm": 0.0038993462811377755,
+        "minimum_capsule_z_mm": -0.48262957555033315,
+        "cycle_transform": [
+          [
+            0.9990867077677827,
+            -0.04272880014384917,
+            0.0,
+            -0.14959575235843658
+          ],
+          [
+            0.04272880014384917,
+            0.9990867077677827,
+            0.0,
+            0.005691807251423597
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "delivery_quality": {
+        "max_ik_error_mm": 0.0038993462811377755,
+        "minimum_capsule_z_mm": -0.48262957555033315,
+        "ground_penetration_sample_fraction": 0.049019607843137254,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_pose_seam_deg": 0.0,
+        "toe_pose_seam_mm": [
+          7.206622880043354e-06,
+          6.1593860429379965e-06,
+          1.1967338959419167e-06,
+          9.783176824298286e-07
+        ],
+        "max_joint_velocity_seam_rad_s": 1.6064077615737915,
+        "max_authored_joint_velocity_rad_s": 7.656879723072052,
+        "root_displacement_world_m": [
+          -0.14959575235843658,
+          0.005691807251423597,
+          0.0
+        ],
+        "root_yaw_change_deg": 2.448925256729126,
+        "warnings": [
+          "foot_capsule_ground_penetration",
+          "joint_velocity_seam_not_closed"
+        ]
+      }
+    },
+    {
+      "id": "07_LATERAL_TROT_LEFT",
+      "title": "左横移 trot｜对角交替",
+      "start": 451,
+      "end": 501,
+      "hold_end": 525,
+      "source": {
+        "type": "authored_kinematic_gait",
+        "not_dataset": true,
+        "not_policy_rollout": true,
+        "period_s": 1.0,
+        "velocity_m_s": [
+          0.0,
+          0.025,
+          0.0
+        ],
+        "duty_factor": 0.6,
+        "lift_m": 0.01,
+        "leg_order": [
+          "FL",
+          "FR",
+          "HL",
+          "HR"
+        ],
+        "phase_offsets": [
+          0.65,
+          0.15,
+          0.15,
+          0.65
+        ],
+        "swing_pairs": [
+          [
+            "FL",
+            "HR"
+          ],
+          [
+            "FR",
+            "HL"
+          ]
+        ],
+        "stance_xy": "world stationary",
+        "reference": "https://github.com/Improbable-AI/walk-these-ways/blob/master/scripts/play.py",
+        "reference_scope": "Diagonal trot phase concept only; trajectory authored locally for Sable, not a Walk These Ways rollout."
+      },
+      "max_target_residual_mm": 0.0,
+      "rms_target_residual_mm": 0.0,
+      "per_foot_max_mm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_request_projection_mm": 0.000439713999773383,
+      "minimum_capsule_surface_z_mm": 0.732205259812423,
+      "seam_max_joint_difference_deg": 1.5902773407317584e-14,
+      "scope": "Editable geometric reference; contact dynamics, lateral stability and motor capability not validated.",
+      "authored_sync": {
+        "clip": "07_LATERAL_TROT_LEFT",
+        "toe_pose_seam_mm": [
+          1.3969838619232178e-06,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max_joint_pose_seam_deg": 0.0,
+        "max_ik_residual_mm": 0.010257396974289684,
+        "minimum_capsule_z_mm": 0.7322558991574796,
+        "cycle_transform": [
+          [
+            1.0,
+            -0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.02500000037252903
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "delivery_quality": {
+        "max_ik_error_mm": 0.010257396974289684,
+        "minimum_capsule_z_mm": 0.7322558991574796,
+        "ground_penetration_sample_fraction": 0.0,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_pose_seam_deg": 0.0,
+        "toe_pose_seam_mm": [
+          6.938893903907228e-15,
+          3.469446951953614e-15,
+          6.938893903907228e-15,
+          2.3852447794681098e-15
+        ],
+        "max_joint_velocity_seam_rad_s": 0.7063806056976318,
+        "max_authored_joint_velocity_rad_s": 1.6333818435668945,
+        "root_displacement_world_m": [
+          0.0,
+          0.02500000037252903,
+          0.0
+        ],
+        "root_yaw_change_deg": 0.0,
+        "warnings": [
+          "joint_velocity_seam_not_closed"
+        ]
+      }
+    },
+    {
+      "id": "08_LATERAL_TROT_RIGHT",
+      "title": "右横移 trot｜对角交替",
+      "start": 526,
+      "end": 576,
+      "hold_end": 600,
+      "source": {
+        "type": "authored_kinematic_gait",
+        "not_dataset": true,
+        "not_policy_rollout": true,
+        "period_s": 1.0,
+        "velocity_m_s": [
+          0.0,
+          -0.025,
+          0.0
+        ],
+        "duty_factor": 0.6,
+        "lift_m": 0.01,
+        "leg_order": [
+          "FL",
+          "FR",
+          "HL",
+          "HR"
+        ],
+        "phase_offsets": [
+          0.65,
+          0.15,
+          0.15,
+          0.65
+        ],
+        "swing_pairs": [
+          [
+            "FL",
+            "HR"
+          ],
+          [
+            "FR",
+            "HL"
+          ]
+        ],
+        "stance_xy": "world stationary",
+        "reference": "https://github.com/Improbable-AI/walk-these-ways/blob/master/scripts/play.py",
+        "reference_scope": "Diagonal trot phase concept only; trajectory authored locally for Sable, not a Walk These Ways rollout."
+      },
+      "max_target_residual_mm": 0.0,
+      "rms_target_residual_mm": 0.0,
+      "per_foot_max_mm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_request_projection_mm": 0.00043971399976334627,
+      "minimum_capsule_surface_z_mm": 0.7322052598124221,
+      "seam_max_joint_difference_deg": 2.5444437451708134e-14,
+      "scope": "Editable geometric reference; contact dynamics, lateral stability and motor capability not validated.",
+      "authored_sync": {
+        "clip": "08_LATERAL_TROT_RIGHT",
+        "toe_pose_seam_mm": [
+          4.6566128730773926e-07,
+          0.0,
+          9.313225746154785e-07,
+          9.313225746154785e-07
+        ],
+        "max_joint_pose_seam_deg": 0.0,
+        "max_ik_residual_mm": 0.01026944343490634,
+        "minimum_capsule_z_mm": 0.7322021218326372,
+        "cycle_transform": [
+          [
+            1.0,
+            -0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.02500000037252903
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "delivery_quality": {
+        "max_ik_error_mm": 0.01026944343490634,
+        "minimum_capsule_z_mm": 0.7322021218326372,
+        "ground_penetration_sample_fraction": 0.0,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_pose_seam_deg": 0.0,
+        "toe_pose_seam_mm": [
+          8.673617379884035e-16,
+          6.938893903907228e-15,
+          3.469446951953614e-15,
+          6.938893903907228e-15
+        ],
+        "max_joint_velocity_seam_rad_s": 0.7148685865104198,
+        "max_authored_joint_velocity_rad_s": 1.702338457107544,
+        "root_displacement_world_m": [
+          0.0,
+          -0.02500000037252903,
+          0.0
+        ],
+        "root_yaw_change_deg": 0.0,
+        "warnings": [
+          "joint_velocity_seam_not_closed"
+        ]
+      }
+    },
+    {
+      "id": "09_BACKWARD_WALK",
+      "title": "后退 walk｜前进倒放",
+      "start": 601,
+      "end": 651,
+      "hold_end": 675,
+      "source": {
+        "type": "time_reversed_user_authored",
+        "source_clip": "01_FORWARD_POLICY",
+        "source_frames": [
+          1,
+          51
+        ],
+        "source_snapshot_backup": "E:\\1_project_E\\code\\remote_sable_robot\\blender\\motion_edit_20261027\\backups\\before_reversed_gaits_20261027_162359.blend",
+        "time_mapping": "source_frame = source_end - (frame - target_start)",
+        "world_rebase_transform": [
+          [
+            0.9999862909317017,
+            0.005234932526946068,
+            0.0,
+            -0.1586471544967512
+          ],
+          [
+            -0.005234932526946068,
+            0.9999862909317017,
+            0.0,
+            0.003842660839479234
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "gait_label": "walk",
+        "gait_label_basis": "User description and source provenance; contact timing must be checked in simulation.",
+        "kinematic_reference_only": true
+      },
+      "scope": "Exact pose time reversal with fixed planar rebase; contact forces and motor torques are not reversed or dynamically validated.",
+      "reversal_validation": {
+        "clip": "09_BACKWARD_WALK",
+        "source_clip": "01_FORWARD_POLICY",
+        "visible_key_count_per_foot": [
+          5,
+          4,
+          4,
+          4
+        ],
+        "reverse_toe_curve_error_mm": 2.5394769015723162e-05,
+        "reverse_joint_error_deg": 0.0,
+        "reverse_root_matrix_error": 1.4362571254533663e-07,
+        "joint_pose_seam_deg": 1.9407470262403481,
+        "root_translation_per_cycle_m": [
+          -0.15864689834415913,
+          0.00394179858994903,
+          0.0
+        ],
+        "root_yaw_change_deg": -0.2999408927952091,
+        "max_ik_error_mm": 0.002205229970315061,
+        "minimum_capsule_z_mm": -2.4917022490736023,
+        "cycle_transform": [
+          [
+            0.9999863294610188,
+            0.005234932939499821,
+            -2.8422082687384886e-08,
+            -0.158647153512412
+          ],
+          [
+            -0.00523493239676188,
+            0.9999863164090914,
+            2.8296472456834643e-10,
+            0.0038426607910245834
+          ],
+          [
+            2.79586667706333e-08,
+            6.938893903907228e-18,
+            0.9999999896805342,
+            1.8804013346418458e-09
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "delivery_quality": {
+        "max_ik_error_mm": 0.002205229970315061,
+        "minimum_capsule_z_mm": -2.4917022490736023,
+        "ground_penetration_sample_fraction": 0.12254901960784313,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_pose_seam_deg": 1.9407470262403481,
+        "toe_pose_seam_mm": [
+          1.650371804329031,
+          1.3866279381696875,
+          1.9211846318693127,
+          1.1561208837337396
+        ],
+        "max_joint_velocity_seam_rad_s": 10.179910063743591,
+        "max_authored_joint_velocity_rad_s": 9.259989857673645,
+        "root_displacement_world_m": [
+          -0.15864689648151398,
+          0.003941798582673073,
+          0.0
+        ],
+        "root_yaw_change_deg": -0.29994088411331177,
+        "warnings": [
+          "foot_capsule_ground_penetration",
+          "joint_pose_seam_not_closed",
+          "joint_velocity_seam_not_closed"
+        ]
+      }
+    },
+    {
+      "id": "10_FORWARD_TROT",
+      "title": "前进 trot｜后退倒放",
+      "start": 676,
+      "end": 726,
+      "hold_end": 750,
+      "source": {
+        "type": "time_reversed_user_authored",
+        "source_clip": "06_BACKWARD",
+        "source_frames": [
+          376,
+          426
+        ],
+        "source_snapshot_backup": "E:\\1_project_E\\code\\remote_sable_robot\\blender\\motion_edit_20261027\\backups\\before_reversed_gaits_20261027_162359.blend",
+        "time_mapping": "source_frame = source_end - (frame - target_start)",
+        "world_rebase_transform": [
+          [
+            0.9990866780281067,
+            0.04272880032658577,
+            0.0,
+            0.14921591917536223
+          ],
+          [
+            -0.04272880032658577,
+            0.9990866780281067,
+            0.0,
+            -0.0120786558310301
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "gait_label": "trot",
+        "gait_label_basis": "User description and source provenance; contact timing must be checked in simulation.",
+        "kinematic_reference_only": true
+      },
+      "scope": "Exact pose time reversal with fixed planar rebase; contact forces and motor torques are not reversed or dynamically validated.",
+      "reversal_validation": {
+        "clip": "10_FORWARD_TROT",
+        "source_clip": "06_BACKWARD",
+        "visible_key_count_per_foot": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "reverse_toe_curve_error_mm": 2.878694196782569e-05,
+        "reverse_joint_error_deg": 0.0,
+        "reverse_root_matrix_error": 1.1920928955078125e-07,
+        "joint_pose_seam_deg": 0.0,
+        "root_translation_per_cycle_m": [
+          0.1492159217596054,
+          -0.012078655883669853,
+          0.0
+        ],
+        "root_yaw_change_deg": -2.448925450999216,
+        "max_ik_error_mm": 0.003900517172224453,
+        "minimum_capsule_z_mm": -0.4826295658739259,
+        "cycle_transform": [
+          [
+            0.9990867150208254,
+            0.04272879961929267,
+            8.503902804157804e-09,
+            0.149215920638584
+          ],
+          [
+            -0.04272879985116033,
+            0.9990866780583562,
+            -5.902610310248857e-10,
+            -0.01207865580585908
+          ],
+          [
+            0.0,
+            -1.3111182278757738e-10,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "delivery_quality": {
+        "max_ik_error_mm": 0.003900517172224453,
+        "minimum_capsule_z_mm": -0.4826295658739259,
+        "ground_penetration_sample_fraction": 0.049019607843137254,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_pose_seam_deg": 0.0,
+        "toe_pose_seam_mm": [
+          3.7031449439202562e-06,
+          2.2073323375765117e-06,
+          2.9643641347424736e-06,
+          2.8226848541442662e-06
+        ],
+        "max_joint_velocity_seam_rad_s": 1.6064077615737915,
+        "max_authored_joint_velocity_rad_s": 7.656879723072052,
+        "root_displacement_world_m": [
+          0.1492159217596054,
+          -0.012078655883669853,
+          0.0
+        ],
+        "root_yaw_change_deg": -2.448925256729126,
+        "warnings": [
+          "foot_capsule_ground_penetration",
+          "joint_velocity_seam_not_closed"
+        ]
+      }
+    }
+  ],
+  "control_keying": "Direct world-space location curves on IK_FL/FR/HL/HR; stable scene object references; no animated parents or decorative rings.",
+  "ik_key_reduction": {
+    "includes_cycle_boundaries": true,
+    "hold_keys_per_clip": 1,
+    "interpolation": "shape-preserving cubic Bezier, FREE handles",
+    "right_hind_source": "PATH_HR original toe reference",
+    "other_feet_source": "current edited curves before reduction",
+    "previous_1mm_bound_superseded": true,
+    "historical_report": "validation_five_keys.json",
+    "keys_per_cycle_before_user_edits": 5,
+    "current_keys_per_cycle_range": [
+      4,
+      6
+    ],
+    "current_report": "validation_authored_sync.json"
+  },
+  "authored_sync": {
+    "date": "2026-10-27",
+    "report": "validation_authored_sync.json",
+    "backup": "E:\\1_project_E\\code\\remote_sable_robot\\blender\\motion_edit_20261027\\backups\\before_authored_sync_20261027_160659.blend",
+    "exports": "exports/*_edited.json",
+    "pose_periodic": true,
+    "joint_velocity_acceleration_periodicity_enforced": false,
+    "interior_authored_toe_key_values_preserved_except_replaced_right_turn": true
+  },
+  "reversed_gaits": {
+    "report": "validation_reversed_gaits.json",
+    "backup": "E:\\1_project_E\\code\\remote_sable_robot\\blender\\motion_edit_20261027\\backups\\before_reversed_gaits_20261027_162359.blend"
+  }
+}

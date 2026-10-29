@@ -1,0 +1,122 @@
+{
+  "01_FORWARD_POLICY": {
+    "minimum_capsule_z_mm": 0.3000000000000095,
+    "max_joint_pose_seam_deg": 0.0,
+    "max_joint_velocity_seam_rad_s": 0.0,
+    "max_joint_limit_violation_deg": 0.0,
+    "max_joint_change_from_authored_deg": 8.817899620006616,
+    "max_joint_velocity_rad_s": 5.487267967670663,
+    "turn_target_reprojection_error_mm": null,
+    "max_root_raise_mm": 3.346474181196528,
+    "mean_geometric_contact_count": 1.7647058823529411,
+    "physical_validation_passed": false
+  },
+  "02_STRAFE_LEFT": {
+    "minimum_capsule_z_mm": 0.6090824157720032,
+    "max_joint_pose_seam_deg": 0.0,
+    "max_joint_velocity_seam_rad_s": 0.0,
+    "max_joint_limit_violation_deg": 0.0,
+    "max_joint_change_from_authored_deg": 6.820047773380467,
+    "max_joint_velocity_rad_s": 6.288957910056618,
+    "turn_target_reprojection_error_mm": null,
+    "max_root_raise_mm": 0.05,
+    "mean_geometric_contact_count": 1.8823529411764706,
+    "physical_validation_passed": false
+  },
+  "03_STRAFE_RIGHT": {
+    "minimum_capsule_z_mm": 0.29999999999999816,
+    "max_joint_pose_seam_deg": 0.0,
+    "max_joint_velocity_seam_rad_s": 0.0,
+    "max_joint_limit_violation_deg": 0.0,
+    "max_joint_change_from_authored_deg": 7.006588691801994,
+    "max_joint_velocity_rad_s": 6.2008574139464825,
+    "turn_target_reprojection_error_mm": null,
+    "max_root_raise_mm": 0.11624445828820235,
+    "mean_geometric_contact_count": 1.9607843137254901,
+    "physical_validation_passed": false
+  },
+  "06_BACKWARD": {
+    "minimum_capsule_z_mm": 0.2999999999999904,
+    "max_joint_pose_seam_deg": 0.0,
+    "max_joint_velocity_seam_rad_s": 0.0,
+    "max_joint_limit_violation_deg": 0.0,
+    "max_joint_change_from_authored_deg": 5.323121757820701,
+    "max_joint_velocity_rad_s": 7.55666313577686,
+    "turn_target_reprojection_error_mm": null,
+    "max_root_raise_mm": 1.1059402025466432,
+    "mean_geometric_contact_count": 1.5686274509803924,
+    "physical_validation_passed": false
+  },
+  "07_LATERAL_TROT_LEFT": {
+    "minimum_capsule_z_mm": 0.7048253153215892,
+    "max_joint_pose_seam_deg": 0.0,
+    "max_joint_velocity_seam_rad_s": 0.0,
+    "max_joint_limit_violation_deg": 0.0,
+    "max_joint_change_from_authored_deg": 1.3928906422514347,
+    "max_joint_velocity_rad_s": 1.8604937800160812,
+    "turn_target_reprojection_error_mm": null,
+    "max_root_raise_mm": 0.05,
+    "mean_geometric_contact_count": 2.803921568627451,
+    "physical_validation_passed": false
+  },
+  "08_LATERAL_TROT_RIGHT": {
+    "minimum_capsule_z_mm": 0.6743289467285637,
+    "max_joint_pose_seam_deg": 0.0,
+    "max_joint_velocity_seam_rad_s": 0.0,
+    "max_joint_limit_violation_deg": 0.0,
+    "max_joint_change_from_authored_deg": 1.4123702624293313,
+    "max_joint_velocity_rad_s": 1.9013087968596523,
+    "turn_target_reprojection_error_mm": null,
+    "max_root_raise_mm": 0.05,
+    "mean_geometric_contact_count": 2.784313725490196,
+    "physical_validation_passed": false
+  },
+  "09_BACKWARD_WALK": {
+    "minimum_capsule_z_mm": 0.29999999999999816,
+    "max_joint_pose_seam_deg": 0.0,
+    "max_joint_velocity_seam_rad_s": 0.0,
+    "max_joint_limit_violation_deg": 0.0,
+    "max_joint_change_from_authored_deg": 7.7888564894633125,
+    "max_joint_velocity_rad_s": 5.487267967670659,
+    "turn_target_reprojection_error_mm": null,
+    "max_root_raise_mm": 2.6509647513758736,
+    "mean_geometric_contact_count": 2.176470588235294,
+    "physical_validation_passed": false
+  },
+  "10_FORWARD_TROT": {
+    "minimum_capsule_z_mm": 0.2999999999999878,
+    "max_joint_pose_seam_deg": 0.0,
+    "max_joint_velocity_seam_rad_s": 0.0,
+    "max_joint_limit_violation_deg": 0.0,
+    "max_joint_change_from_authored_deg": 5.323121757820701,
+    "max_joint_velocity_rad_s": 7.55666313577684,
+    "turn_target_reprojection_error_mm": null,
+    "max_root_raise_mm": 1.1059361588178926,
+    "mean_geometric_contact_count": 1.5686274509803924,
+    "physical_validation_passed": false
+  },
+  "04_TURN_LEFT": {
+    "minimum_capsule_z_mm": 0.299999999999993,
+    "max_joint_pose_seam_deg": 0.0,
+    "max_joint_velocity_seam_rad_s": 0.0,
+    "max_joint_limit_violation_deg": 0.0,
+    "max_joint_change_from_authored_deg": 35.67368395037955,
+    "max_joint_velocity_rad_s": 5.263495769710308,
+    "turn_target_reprojection_error_mm": 0.5969060139342104,
+    "max_root_raise_mm": 7.55613504608581,
+    "mean_geometric_contact_count": 1.0588235294117647,
+    "physical_validation_passed": false
+  },
+  "05_TURN_RIGHT": {
+    "minimum_capsule_z_mm": 0.30000000000000165,
+    "max_joint_pose_seam_deg": 0.0,
+    "max_joint_velocity_seam_rad_s": 0.0,
+    "max_joint_limit_violation_deg": 0.0,
+    "max_joint_change_from_authored_deg": 35.673683122245656,
+    "max_joint_velocity_rad_s": 5.26349578747323,
+    "turn_target_reprojection_error_mm": 0.596906010771556,
+    "max_root_raise_mm": 7.556135121423629,
+    "mean_geometric_contact_count": 1.0588235294117647,
+    "physical_validation_passed": false
+  }
+}

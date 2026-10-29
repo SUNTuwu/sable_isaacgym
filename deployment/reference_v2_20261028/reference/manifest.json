@@ -1,0 +1,126 @@
+{
+  "schema": "sable-reference-v2/1",
+  "clips": [
+    {
+      "id": "01_FORWARD_POLICY",
+      "title": "前进 walk｜腾讯动捕·左主控",
+      "source_clip_id": "01_FORWARD_WALK",
+      "command": [
+        0.075,
+        0.0,
+        0.0
+      ],
+      "period_s": 1.0,
+      "symmetry_enabled": true
+    },
+    {
+      "id": "09_BACKWARD_WALK",
+      "title": "后退 walk｜腾讯动捕倒放·左主控",
+      "source_clip_id": "02_BACKWARD_WALK",
+      "command": [
+        -0.075,
+        0.0,
+        0.0
+      ],
+      "period_s": 1.0,
+      "symmetry_enabled": true
+    },
+    {
+      "id": "10_FORWARD_TROT",
+      "title": "前进 trot｜Google动捕倒放·左主控",
+      "source_clip_id": "03_FORWARD_TROT",
+      "command": [
+        0.075,
+        0.0,
+        0.0
+      ],
+      "period_s": 1.0,
+      "symmetry_enabled": true
+    },
+    {
+      "id": "06_BACKWARD",
+      "title": "后退 trot｜Google动捕·左主控",
+      "source_clip_id": "04_BACKWARD_TROT",
+      "command": [
+        -0.075,
+        0.0,
+        0.0
+      ],
+      "period_s": 1.0,
+      "symmetry_enabled": true
+    },
+    {
+      "id": "02_STRAFE_LEFT",
+      "title": "左横移 pace｜APEX",
+      "source_clip_id": "05_STRAFE_LEFT",
+      "command": [
+        0.0,
+        0.038244880703173854,
+        0.0
+      ],
+      "period_s": 1.0,
+      "symmetry_enabled": false
+    },
+    {
+      "id": "03_STRAFE_RIGHT",
+      "title": "右横移 pace｜左移镜像",
+      "source_clip_id": "06_STRAFE_RIGHT",
+      "command": [
+        0.0,
+        -0.038244880703173854,
+        0.0
+      ],
+      "period_s": 1.0,
+      "symmetry_enabled": false
+    },
+    {
+      "id": "04_TURN_LEFT",
+      "title": "左转｜AMP开源动捕",
+      "source_clip_id": "07_TURN_LEFT",
+      "command": [
+        0.0,
+        0.0,
+        0.86895160841653
+      ],
+      "period_s": 2.0,
+      "symmetry_enabled": false
+    },
+    {
+      "id": "05_TURN_RIGHT",
+      "title": "右转｜左转镜像",
+      "source_clip_id": "08_TURN_RIGHT",
+      "command": [
+        0.0,
+        0.0,
+        -0.86895160841653
+      ],
+      "period_s": 2.0,
+      "symmetry_enabled": false
+    }
+  ],
+  "joint_names": [
+    "spine_roll",
+    "hip_roll",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "L_ankle_pitch",
+    "R_ankle_pitch",
+    "spine_pitch"
+  ],
+  "foot_order": [
+    "FL",
+    "FR",
+    "HL",
+    "HR"
+  ],
+  "source_blend_sha256": "c8f0ee495c87b63cbf8c99a77803a761cbfaae8f7d4c19fcb160e920ee813114",
+  "physical_manifest_sha256": "21ad9dfb35d41fe62b77bef90fefff4b9a2909845e21c9f86eeee0874c87eea7"
+}

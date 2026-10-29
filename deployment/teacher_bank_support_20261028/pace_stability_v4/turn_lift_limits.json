@@ -1,0 +1,61 @@
+{
+  "schema": "direct-tip-upstrokes/v1",
+  "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_guard_aggressive_20261028_004033",
+  "source_iteration": 1155,
+  "rise_hysteresis_m": 0.0005,
+  "teachers": {
+    "04_TURN_LEFT": {
+      "baseline_mean_counts_per_foot": [
+        99.0,
+        100.0,
+        80.0,
+        99.0
+      ],
+      "baseline_total_count": 378.0,
+      "baseline_horizon_s": 4.0,
+      "per_foot_max_hz": 0.5,
+      "total_max_hz": 2.0,
+      "per_foot_min_interval_s": 2.0,
+      "window_s": 4.0
+    },
+    "05_TURN_RIGHT": {
+      "baseline_mean_counts_per_foot": [
+        100.0,
+        99.0,
+        99.0,
+        99.0
+      ],
+      "baseline_total_count": 397.0,
+      "baseline_horizon_s": 4.0,
+      "per_foot_max_hz": 0.5,
+      "total_max_hz": 2.0,
+      "per_foot_min_interval_s": 2.0,
+      "window_s": 4.0
+    },
+    "02_STRAFE_LEFT": {
+      "per_foot_max_hz": 1.0,
+      "total_max_hz": 4.0,
+      "per_foot_min_interval_s": 1.0,
+      "window_s": 4.0,
+      "hard_limit": false,
+      "frequency_weight": 0.75,
+      "jitter_weight": 0.0,
+      "direct_lift_cost_per_event": 0.04,
+      "scope": "Direct lift count retained; frequency cost max3/s. Raw world-Z jitter replaced by 3D reference-relative tip error velocity in pace_stability_v1."
+    },
+    "03_STRAFE_RIGHT": {
+      "per_foot_max_hz": 1.0,
+      "total_max_hz": 4.0,
+      "per_foot_min_interval_s": 1.0,
+      "window_s": 4.0,
+      "hard_limit": false,
+      "frequency_weight": 0.75,
+      "jitter_weight": 0.0,
+      "direct_lift_cost_per_event": 0.04,
+      "scope": "Direct lift count retained; frequency cost max3/s. Raw world-Z jitter replaced by 3D reference-relative tip error velocity in pace_stability_v1."
+    }
+  },
+  "counter": "Each>=0.5mm tip rise after a>=0.5mm descent counts once. No contact, flight-duration or stride-distance prerequisite. Also counts shaking while held in air; first sample initializes height only.",
+  "cap_rule": "At most baseline/3, further bounded by previous0.5Hz/foot low-cadence goal and2Hz total. Total-foot budget prevents redistributing excessive steps across legs.",
+  "acceptance": "Full16s first episodes must all survive, yaw RMSE<=0.20rad/s, correct commanded signed yaw, and total upstroke count<=the same-duration baseline/3. Early failure or standing still never passes."
+}

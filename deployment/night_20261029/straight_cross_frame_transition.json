@@ -1,0 +1,134 @@
+{
+  "status": "completed",
+  "launcher_pid": 212956,
+  "bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+  "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048",
+  "source_pid": 189847,
+  "created_unix": 1793232490.4320066,
+  "updated_unix": 1793232534.7993455,
+  "smoke_source_checkpoints": [
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/01_FORWARD_POLICY/checkpoints/model_001968.pt",
+      "sha256": "411fdedcdfce35934ac10e789524cda51ebdd2719940e5de9be43f99d65b0b8d",
+      "iteration": 1968,
+      "updated_unix": 1793232483.0674014,
+      "reason": "periodic"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/04_TURN_LEFT/checkpoints/model_001968.pt",
+      "sha256": "1669d7cc7da44c3cc051842cbd464d8dcac0f52693f8f7ce9987463e10c67729",
+      "iteration": 1968,
+      "updated_unix": 1793232483.0760949,
+      "reason": "periodic"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/05_TURN_RIGHT/checkpoints/model_001968.pt",
+      "sha256": "b7aca88b4f250a5e000650c42b28158a8a8e2d024a1e5d5fa6d3db28058a78e0",
+      "iteration": 1968,
+      "updated_unix": 1793232483.0829854,
+      "reason": "periodic"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/06_BACKWARD/checkpoints/model_001968.pt",
+      "sha256": "0750ab5b315126d25c21a2f7d4dbdd66c1e7f5938a416e29a09d8102e1c68fdc",
+      "iteration": 1968,
+      "updated_unix": 1793232483.0906146,
+      "reason": "periodic"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/02_STRAFE_LEFT/checkpoints/model_001968.pt",
+      "sha256": "a84bb839dac3e7358bbc6c73130628fd33fed4e6a12dfaff8bc1d2fb5b8c6355",
+      "iteration": 1968,
+      "updated_unix": 1793232483.0975754,
+      "reason": "periodic"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/03_STRAFE_RIGHT/checkpoints/model_001968.pt",
+      "sha256": "d79c21dae125ef3b54b44c69d345122d2f28fa2118f4a13d79a9c8f42bb97a4b",
+      "iteration": 1968,
+      "updated_unix": 1793232483.1044812,
+      "reason": "periodic"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/09_BACKWARD_WALK/checkpoints/model_001968.pt",
+      "sha256": "428e99773413b4870ba36361cce2867484e4f71668eef03a532cce3a01d4511a",
+      "iteration": 1968,
+      "updated_unix": 1793232483.1123757,
+      "reason": "periodic"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/10_FORWARD_TROT/checkpoints/model_001968.pt",
+      "sha256": "7c85bc635bbb12012ff42f2131fca4f50a9498ea27b03530da5b7fe4b743d0bc",
+      "iteration": 1968,
+      "updated_unix": 1793232483.119314,
+      "reason": "periodic"
+    }
+  ],
+  "frozen_module_sha256": {
+    "night_tuning.py": "959dfd8406bb139bac9a6443265bc1975419a89bb7b4c8b0736c17ca608d1c84"
+  },
+  "source_final_checkpoints": [
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/01_FORWARD_POLICY/checkpoints/model_001970.pt",
+      "sha256": "4b971c62dd761fc910c867e2f42df3207399a116582691a81c090056a6437770",
+      "iteration": 1970,
+      "updated_unix": 1793232508.3807878,
+      "reason": "final"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/04_TURN_LEFT/checkpoints/model_001970.pt",
+      "sha256": "080238df000e5a83f149b3171b5eb92fd6dd1c11f2051f678c1bf3cc91254370",
+      "iteration": 1970,
+      "updated_unix": 1793232508.3877168,
+      "reason": "final"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/05_TURN_RIGHT/checkpoints/model_001970.pt",
+      "sha256": "566a17d8a9832d2e1041229bcab6936795b49e8ef93f368acb1affe02ea5f1b2",
+      "iteration": 1970,
+      "updated_unix": 1793232508.3956978,
+      "reason": "final"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/06_BACKWARD/checkpoints/model_001970.pt",
+      "sha256": "c1fb8968bd3291f1bc8cd8ce78dc0b992c0834301580f2f538b28982dafac2ea",
+      "iteration": 1970,
+      "updated_unix": 1793232508.4027052,
+      "reason": "final"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/02_STRAFE_LEFT/checkpoints/model_001970.pt",
+      "sha256": "065504824e9d3826dd58b70a8d20d1a2e95c38485436388421c6a434a70f7375",
+      "iteration": 1970,
+      "updated_unix": 1793232508.409573,
+      "reason": "final"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/03_STRAFE_RIGHT/checkpoints/model_001970.pt",
+      "sha256": "3bf4b1f4c4e019093dfcca998f7e8cf73ec2d38cedfd9dfa76402f473c5130e7",
+      "iteration": 1970,
+      "updated_unix": 1793232508.4172885,
+      "reason": "final"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/09_BACKWARD_WALK/checkpoints/model_001970.pt",
+      "sha256": "d2e819aedf4c3d994c0fbfcf1e8e01ef015c0dadb005d5513f179ac7b9bfcccb",
+      "iteration": 1970,
+      "updated_unix": 1793232508.4241161,
+      "reason": "final"
+    },
+    {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/10_FORWARD_TROT/checkpoints/model_001970.pt",
+      "sha256": "59c27c13ae3f45d196c45fa618b0a8b245fae2cbed7d9756f64972b1fff8bd6f",
+      "iteration": 1970,
+      "updated_unix": 1793232508.4317122,
+      "reason": "final"
+    }
+  ],
+  "pid": 213292,
+  "watchdog_pid": 213293,
+  "resume_verified": true,
+  "control_unchanged": true,
+  "yaw_process_unchanged": true,
+  "new_iteration": 1971
+}

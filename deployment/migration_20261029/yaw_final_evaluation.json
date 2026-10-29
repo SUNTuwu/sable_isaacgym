@@ -1,0 +1,268 @@
+{
+  "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251/model_001274.pt",
+  "checkpoint_iteration": 1274,
+  "final": true,
+  "angle_rmse_deg": 21.048851013183594,
+  "peak_error_deg": 38.48237228393555,
+  "survival_fraction": 1.0,
+  "max_liftoffs_per_foot": [
+    1.0,
+    1.0,
+    0.0,
+    0.0
+  ],
+  "rate_rmse_deg_s": 6.904522895812988,
+  "max_root_drift_m": 0.02703632414340973,
+  "mean_foot_anchor_error_m": 0.011389284394681454,
+  "accepted": false,
+  "criteria": "16 environments, 2 full sine cycles, all survive, RMSE<=5deg, peak<=10deg, each foot<=1 liftoff in entire episode",
+  "evaluation_metric_scope": "Initial episode only, including first terminal sample; post-reset episodes excluded",
+  "valid_tracking_samples": 30176,
+  "completed_fraction": 1.0,
+  "liftoffs_per_environment": [
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      1.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "angle_rmse_per_environment_deg": [
+    20.66260528564453,
+    22.600860595703125,
+    20.723546981811523,
+    21.161008834838867,
+    20.666824340820312,
+    20.82949447631836,
+    20.867151260375977,
+    20.724245071411133,
+    20.654762268066406,
+    20.883317947387695,
+    21.55730438232422,
+    20.791217803955078,
+    21.122392654418945,
+    20.996553421020508,
+    21.486923217773438,
+    20.964969635009766
+  ],
+  "first_failure_s": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "initial_episode_duration_s": [
+    38.70000457763672,
+    38.70000457763672,
+    38.70000457763672,
+    38.70000457763672,
+    38.70000457763672,
+    38.70000457763672,
+    38.70000457763672,
+    38.70000457763672,
+    38.70000457763672,
+    38.70000457763672,
+    38.70000457763672,
+    38.70000457763672,
+    38.70000457763672,
+    38.70000457763672,
+    38.70000457763672,
+    38.70000457763672
+  ],
+  "excluded_post_reset_samples": 0,
+  "finite_tracking_data": true,
+  "recomputed_first_episode_accepted": false,
+  "postprocessor_schema": "yaw_first_episode_v1",
+  "source_run": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251",
+  "source_checkpoint_iteration": 1274,
+  "source_files": {
+    "evaluation.json": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251/evaluation.json",
+      "sha256": "ce9376635b8017d18629226cc0b8b4e11d7975d57bcdce6d8a5b4bc58703dcce",
+      "size": 661,
+      "mtime_ns": 1793233960660253821,
+      "stat_signature": [
+        661,
+        1793233960660253821,
+        270797,
+        64807
+      ]
+    },
+    "latest_replay.npz": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251/latest_replay.npz",
+      "sha256": "cd97da6cc6124a4fd90b9201dff36d348bed3388ff01e1914c5136ffe946f30c",
+      "size": 5300672,
+      "mtime_ns": 1793233961016238856,
+      "stat_signature": [
+        5300672,
+        1793233961016238856,
+        270026,
+        64807
+      ]
+    },
+    "config.json": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251/config.json",
+      "sha256": "489036cac7afa31c6d5b5e48d53e1309b738cf3af218be7b1d72c830b4892a25",
+      "size": 1484,
+      "mtime_ns": 1793233795203584764,
+      "stat_signature": [
+        1484,
+        1793233795203584764,
+        271447,
+        64807
+      ]
+    }
+  },
+  "source_receipt": {
+    "path": "/root/gpufree-data/projects/sable-isaacgym/deployment/yaw_sine_20261029/launch_receipt.json",
+    "sha256": "9d28a7f08acfa9862ee6e91da88ac989a88b15836911ffab923745d24a2366af",
+    "stat_signature": [
+      2093,
+      1793226014015093134,
+      266015,
+      64807
+    ]
+  },
+  "provenance": {
+    "source_report_sha256": "ce9376635b8017d18629226cc0b8b4e11d7975d57bcdce6d8a5b4bc58703dcce",
+    "source_replay_sha256": "cd97da6cc6124a4fd90b9201dff36d348bed3388ff01e1914c5136ffe946f30c",
+    "source_report_mtime_ns": 1793233960660253821,
+    "source_replay_mtime_ns": 1793233961016238856
+  },
+  "original_report": {
+    "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251/model_001274.pt",
+    "checkpoint_iteration": 1274,
+    "final": true,
+    "angle_rmse_deg": 21.048851013183594,
+    "peak_error_deg": 38.48237228393555,
+    "survival_fraction": 1.0,
+    "max_liftoffs_per_foot": [
+      1.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "rate_rmse_deg_s": 6.904522895812988,
+    "max_root_drift_m": 0.02703632414340973,
+    "mean_foot_anchor_error_m": 0.011389284394681454,
+    "accepted": false,
+    "criteria": "16 fresh deterministic envs, two full sine cycles, all survive; RMSE<=5deg, peak<=10deg, each foot <=1 liftoff over entire episode"
+  },
+  "original_report_text": "{\n  \"checkpoint\": \"/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251/model_001274.pt\",\n  \"checkpoint_iteration\": 1274,\n  \"final\": true,\n  \"angle_rmse_deg\": 21.048851013183594,\n  \"peak_error_deg\": 38.48237228393555,\n  \"survival_fraction\": 1.0,\n  \"max_liftoffs_per_foot\": [\n    1.0,\n    1.0,\n    0.0,\n    0.0\n  ],\n  \"rate_rmse_deg_s\": 6.904522895812988,\n  \"max_root_drift_m\": 0.02703632414340973,\n  \"mean_foot_anchor_error_m\": 0.011389284394681454,\n  \"accepted\": false,\n  \"criteria\": \"16 fresh deterministic envs, two full sine cycles, all survive; RMSE<=5deg, peak<=10deg, each foot <=1 liftoff over entire episode\"\n}",
+  "source_pair_validation": {
+    "report_precedes_replay": true,
+    "publish_gap_s": 0.355985035,
+    "max_publish_gap_s": 60.0,
+    "stable_seconds": 2.0,
+    "unchanged_during_read": true,
+    "embedded_checkpoint_verified": false,
+    "matching_method": "stable_ordered_publication_timestamps; replay_has_no_embedded_checkpoint"
+  },
+  "amplitude_deg": 29.999999999999996,
+  "liftoff_budget": 1,
+  "episode_s": 38.69911184307752,
+  "control_dt_s": 0.02,
+  "created_unix": 1793233964.6965787
+}

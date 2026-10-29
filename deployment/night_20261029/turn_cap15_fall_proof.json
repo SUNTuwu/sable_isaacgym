@@ -1,0 +1,33 @@
+{
+  "schema": "turn-yaw-cap-fall-proof/v1",
+  "T_s": 1.0,
+  "dt_s": 0.02,
+  "phi_floor": -2.0,
+  "fall_base_cost": 20.0,
+  "formula": "net_fall = positive_events + dt*positive_rates - 20 - 2*other_negative_costs",
+  "positive_event_bound": "12*T*yaw_multiplier; turn_cycle_task=0 on failed even at wrap",
+  "positive_rate_bound": "4*velocity_multiplier + 2*foot_local_multiplier; all other nonfall terms <=0",
+  "worst_net_fall_current_right": {
+    "1.44": -2.6784,
+    "1.5": -1.958400000000001
+  },
+  "worst_net_fall_with_all_positive_multipliers4": -1.5199999999999996,
+  "proof_limit": "Only current1s turn references and20ms control. Changing period or adding any positive reward requires revisiting the bound.",
+  "cpu_tests_passed": 5,
+  "test_path": "deployment\\night_20261029\\check_turn_cap15_candidate.py",
+  "source_sha256": "95f6fa5d7301f479699b71846d9aa2376ade8bfef763dcd1ca111813c6f75c64",
+  "candidate_sha256": "f870b1d3708325d0cd2ace50500f457fd4d75f1e341d63d46178e2ae87075a94",
+  "source_file": "deployment\\night_20261029\\monitor.py",
+  "candidate_file": "deployment\\night_20261029\\monitor_turncap15_candidate.py",
+  "deployed": false,
+  "live_weights_changed": false,
+  "other_monitor_logic": "Unchanged including existing negative-at-cap fallback; this candidate only changes cap constant and cap-saturation comparison.",
+  "whole_module_ast_normalization_equal": true,
+  "runtime_hashes": {
+    "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/monitor.py": "95f6fa5d7301f479699b71846d9aa2376ade8bfef763dcd1ca111813c6f75c64",
+    "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/night_tuning.py": "2c95e8044d985df019d924e028f944736f20cac5998fdbb1e09727ea9607fe2a",
+    "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/runtime/night_tuning.py": "2c95e8044d985df019d924e028f944736f20cac5998fdbb1e09727ea9607fe2a",
+    "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/runtime/teacher_turn_cycles.py": "b37a665c12e8847d8997cb5e4cdd334dd91a60aeb9cc2f43d91433b3fedf6fff",
+    "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/runtime/teacher_reference_rewards_v2.py": "22c65f6117d3c614becc46f59d038ec23c8b84923278f89dca4e112819984a62"
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "schema": "sable-specialist-teacher-handoff/1",
+  "implementation_status": "plan_and_data_only_not_training_code",
+  "training_started": false,
+  "latest_S3_weights_prohibited": true,
+  "teacher_jobs": [
+    {
+      "teacher_id": "teacher_01_forward_policy",
+      "motion_file": "motions/01_FORWARD_POLICY.npz",
+      "metadata_file": "motions/01_FORWARD_POLICY.json",
+      "priority": "primary",
+      "initial_weights": "random",
+      "parent_checkpoint": null,
+      "optimizer_state": "fresh",
+      "parameters_shared_with_other_teachers": false,
+      "status": "reference_preflight_required",
+      "native_duration_s": 1.0,
+      "native_root_displacement_world_m": [
+        0.15866535902023315,
+        -0.0031112388242036104,
+        0.0
+      ],
+      "native_yaw_change_deg": 0.29994088411331177,
+      "required_preflight": [
+        "Resolve foot capsule penetration relative to chosen ground plane",
+        "Check and correct periodic pose and velocity seams without changing the authored mid-cycle intent",
+        "Fit contact labels from simulated foot-capsule contacts; toe-tip height alone is insufficient",
+        "Validate closed-loop replay, collisions, actuator torque-speed envelope and support feasibility"
+      ]
+    },
+    {
+      "teacher_id": "teacher_02_strafe_left",
+      "motion_file": "motions/02_STRAFE_LEFT.npz",
+      "metadata_file": "motions/02_STRAFE_LEFT.json",
+      "priority": "pace_style_comparison",
+      "initial_weights": "random",
+      "parent_checkpoint": null,
+      "optimizer_state": "fresh",
+      "parameters_shared_with_other_teachers": false,
+      "status": "reference_preflight_required",
+      "native_duration_s": 1.0,
+      "native_root_displacement_world_m": [
+        -0.005243229679763317,
+        0.06096676364541054,
+        0.0
+      ],
+      "native_yaw_change_deg": 0.17062270641326904,
+      "required_preflight": [
+        "Check and correct periodic pose and velocity seams without changing the authored mid-cycle intent",
+        "Fit contact labels from simulated foot-capsule contacts; toe-tip height alone is insufficient",
+        "Validate closed-loop replay, collisions, actuator torque-speed envelope and support feasibility"
+      ]
+    },
+    {
+      "teacher_id": "teacher_03_strafe_right",
+      "motion_file": "motions/03_STRAFE_RIGHT.npz",
+      "metadata_file": "motions/03_STRAFE_RIGHT.json",
+      "priority": "pace_style_comparison",
+      "initial_weights": "random",
+      "parent_checkpoint": null,
+      "optimizer_state": "fresh",
+      "parameters_shared_with_other_teachers": false,
+      "status": "reference_preflight_required",
+      "native_duration_s": 1.0,
+      "native_root_displacement_world_m": [
+        -0.005243229679763317,
+        -0.06096676364541054,
+        0.0
+      ],
+      "native_yaw_change_deg": -0.17062270641326904,
+      "required_preflight": [
+        "Check and correct periodic pose and velocity seams without changing the authored mid-cycle intent",
+        "Fit contact labels from simulated foot-capsule contacts; toe-tip height alone is insufficient",
+        "Validate closed-loop replay, collisions, actuator torque-speed envelope and support feasibility"
+      ]
+    },
+    {
+      "teacher_id": "teacher_04_turn_left",
+      "motion_file": "motions/04_TURN_LEFT.npz",
+      "metadata_file": "motions/04_TURN_LEFT.json",
+      "priority": "primary",
+      "initial_weights": "random",
+      "parent_checkpoint": null,
+      "optimizer_state": "fresh",
+      "parameters_shared_with_other_teachers": false,
+      "status": "reference_preflight_required",
+      "native_duration_s": 1.0,
+      "native_root_displacement_world_m": [
+        -0.01526972558349371,
+        -0.01100306585431099,
+        0.0
+      ],
+      "native_yaw_change_deg": 99.57450866699219,
+      "required_preflight": [
+        "Create a smaller-angle turn variant: native reference turns about100deg per1s, far above the former0.35rad/s task. Reproject feet/body consistently; do not only relabel the command.",
+        "Resolve foot capsule penetration relative to chosen ground plane",
+        "Check and correct periodic pose and velocity seams without changing the authored mid-cycle intent",
+        "Fit contact labels from simulated foot-capsule contacts; toe-tip height alone is insufficient",
+        "Validate closed-loop replay, collisions, actuator torque-speed envelope and support feasibility"
+      ]
+    },
+    {
+      "teacher_id": "teacher_05_turn_right",
+      "motion_file": "motions/05_TURN_RIGHT.npz",
+      "metadata_file": "motions/05_TURN_RIGHT.json",
+      "priority": "primary",
+      "initial_weights": "random",
+      "parent_checkpoint": null,
+      "optimizer_state": "fresh",
+      "parameters_shared_with_other_teachers": false,
+      "status": "reference_preflight_required",
+      "native_duration_s": 1.0,
+      "native_root_displacement_world_m": [
+        -0.01526972558349371,
+        0.01100306585431099,
+        0.0
+      ],
+      "native_yaw_change_deg": -99.57450866699219,
+      "required_preflight": [
+        "Create a smaller-angle turn variant: native reference turns about100deg per1s, far above the former0.35rad/s task. Reproject feet/body consistently; do not only relabel the command.",
+        "Resolve foot capsule penetration relative to chosen ground plane",
+        "Check and correct periodic pose and velocity seams without changing the authored mid-cycle intent",
+        "Fit contact labels from simulated foot-capsule contacts; toe-tip height alone is insufficient",
+        "Validate closed-loop replay, collisions, actuator torque-speed envelope and support feasibility"
+      ]
+    },
+    {
+      "teacher_id": "teacher_06_backward",
+      "motion_file": "motions/06_BACKWARD.npz",
+      "metadata_file": "motions/06_BACKWARD.json",
+      "priority": "primary",
+      "initial_weights": "random",
+      "parent_checkpoint": null,
+      "optimizer_state": "fresh",
+      "parameters_shared_with_other_teachers": false,
+      "status": "reference_preflight_required",
+      "native_duration_s": 1.0,
+      "native_root_displacement_world_m": [
+        -0.14959575235843658,
+        0.005691807251423597,
+        0.0
+      ],
+      "native_yaw_change_deg": 2.448925256729126,
+      "required_preflight": [
+        "Resolve foot capsule penetration relative to chosen ground plane",
+        "Check and correct periodic pose and velocity seams without changing the authored mid-cycle intent",
+        "Fit contact labels from simulated foot-capsule contacts; toe-tip height alone is insufficient",
+        "Validate closed-loop replay, collisions, actuator torque-speed envelope and support feasibility"
+      ]
+    },
+    {
+      "teacher_id": "teacher_07_lateral_trot_left",
+      "motion_file": "motions/07_LATERAL_TROT_LEFT.npz",
+      "metadata_file": "motions/07_LATERAL_TROT_LEFT.json",
+      "priority": "primary",
+      "initial_weights": "random",
+      "parent_checkpoint": null,
+      "optimizer_state": "fresh",
+      "parameters_shared_with_other_teachers": false,
+      "status": "reference_preflight_required",
+      "native_duration_s": 1.0,
+      "native_root_displacement_world_m": [
+        0.0,
+        0.02500000037252903,
+        0.0
+      ],
+      "native_yaw_change_deg": 0.0,
+      "required_preflight": [
+        "Check and correct periodic pose and velocity seams without changing the authored mid-cycle intent",
+        "Fit contact labels from simulated foot-capsule contacts; toe-tip height alone is insufficient",
+        "Validate closed-loop replay, collisions, actuator torque-speed envelope and support feasibility"
+      ]
+    },
+    {
+      "teacher_id": "teacher_08_lateral_trot_right",
+      "motion_file": "motions/08_LATERAL_TROT_RIGHT.npz",
+      "metadata_file": "motions/08_LATERAL_TROT_RIGHT.json",
+      "priority": "primary",
+      "initial_weights": "random",
+      "parent_checkpoint": null,
+      "optimizer_state": "fresh",
+      "parameters_shared_with_other_teachers": false,
+      "status": "reference_preflight_required",
+      "native_duration_s": 1.0,
+      "native_root_displacement_world_m": [
+        0.0,
+        -0.02500000037252903,
+        0.0
+      ],
+      "native_yaw_change_deg": 0.0,
+      "required_preflight": [
+        "Check and correct periodic pose and velocity seams without changing the authored mid-cycle intent",
+        "Fit contact labels from simulated foot-capsule contacts; toe-tip height alone is insufficient",
+        "Validate closed-loop replay, collisions, actuator torque-speed envelope and support feasibility"
+      ]
+    },
+    {
+      "teacher_id": "teacher_09_backward_walk",
+      "motion_file": "motions/09_BACKWARD_WALK.npz",
+      "metadata_file": "motions/09_BACKWARD_WALK.json",
+      "priority": "primary",
+      "initial_weights": "random",
+      "parent_checkpoint": null,
+      "optimizer_state": "fresh",
+      "parameters_shared_with_other_teachers": false,
+      "status": "reference_preflight_required",
+      "native_duration_s": 1.0,
+      "native_root_displacement_world_m": [
+        -0.15864689648151398,
+        0.003941798582673073,
+        0.0
+      ],
+      "native_yaw_change_deg": -0.29994088411331177,
+      "required_preflight": [
+        "Resolve foot capsule penetration relative to chosen ground plane",
+        "Check and correct periodic pose and velocity seams without changing the authored mid-cycle intent",
+        "Fit contact labels from simulated foot-capsule contacts; toe-tip height alone is insufficient",
+        "Validate closed-loop replay, collisions, actuator torque-speed envelope and support feasibility"
+      ]
+    },
+    {
+      "teacher_id": "teacher_10_forward_trot",
+      "motion_file": "motions/10_FORWARD_TROT.npz",
+      "metadata_file": "motions/10_FORWARD_TROT.json",
+      "priority": "primary",
+      "initial_weights": "random",
+      "parent_checkpoint": null,
+      "optimizer_state": "fresh",
+      "parameters_shared_with_other_teachers": false,
+      "status": "reference_preflight_required",
+      "native_duration_s": 1.0,
+      "native_root_displacement_world_m": [
+        0.1492159217596054,
+        -0.012078655883669853,
+        0.0
+      ],
+      "native_yaw_change_deg": -2.448925256729126,
+      "required_preflight": [
+        "Resolve foot capsule penetration relative to chosen ground plane",
+        "Check and correct periodic pose and velocity seams without changing the authored mid-cycle intent",
+        "Fit contact labels from simulated foot-capsule contacts; toe-tip height alone is insufficient",
+        "Validate closed-loop replay, collisions, actuator torque-speed envelope and support feasibility"
+      ]
+    }
+  ],
+  "parallel_execution": {
+    "gpu": "single RTX4090 24GiB",
+    "strategy": "Pilot resource use, then schedule small batches of independent teachers; do not launch ten full-size4096-env processes",
+    "concurrency_unbenchmarked": true,
+    "candidate_initial_workers": 2,
+    "candidate_envs_per_worker": 512,
+    "values_are_engineering_starting_points_not_validated_settings": true
+  },
+  "teacher_learning": {
+    "method": "PPO with phase-conditioned reference imitation rewards and task/physical costs",
+    "reset": "Random reference phase, with physically valid initial support and velocities",
+    "observations": "Can include privileged simulator state/reference for the specialist; log deployable student observations alongside",
+    "actions": "15 complete independent motor targets with existing PD/torque-speed limits; q_ref is not a teacher action label",
+    "curriculum": "Own action family from the beginning. Scale difficulty within that family, not toward a common forward command.",
+    "acceptance": "Per-teacher independent seeds, sustained cycles, direction/yaw response, all-foot contact events, slip and actuator metrics; survival alone is insufficient"
+  },
+  "student_distillation": {
+    "initial_weights": "random",
+    "raw_observation_size": 326,
+    "history_frames": 6,
+    "command_dimensions": 16,
+    "actions": 15,
+    "sample_teacher_families": "balanced, with explicit gait phase/duty/frequency and task command conditions",
+    "supervision": "Complete executed target/teacher distribution from physically validated teacher rollouts, not animation joint positions",
+    "stages": [
+      "BC from all accepted teachers",
+      "DAgger with the matching specialist on student-visited states inside its valid domain",
+      "Independent student evaluation for each family",
+      "On-policy PPO for skill transitions and robustness"
+    ],
+    "gait_disambiguation": "Existing relative-leg phases distinguish walk/trot/pace; if skills remain indistinguishable at identical commands, version schema and add a skill condition rather than mixing contradictory labels",
+    "transitions": "Train transitions after individual skills pass; use support-aware phase transitions, braking and zero-velocity crossings"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "time": 1793224617.0976157,
+  "type": "turn_netprogress_weight_review",
+  "bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548",
+  "changed_teachers": [
+    "04_TURN_LEFT",
+    "05_TURN_RIGHT"
+  ],
+  "yaw_multiplier": 1.2,
+  "monitor_automatic_yaw_cap": 1.2,
+  "ab_complete": true,
+  "ab_sha256": "01b3b1d1b5c1386583989f3684c37d41ae38dbadd9fcdee06c3b8de2495d9360",
+  "evidence_scope": "Frozen paired policy returns, not post-update training acceptance",
+  "before_discounted_returns": [
+    -2.8178886771202087,
+    -2.242828130722046
+  ],
+  "reweighted_discounted_returns": [
+    -0.37867771089076996,
+    -1.030689150094986
+  ],
+  "baseline_reload_requested": true,
+  "gpu_trainers_interrupted": false
+}

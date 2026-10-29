@@ -1,0 +1,38 @@
+{
+  "id": "05_TURN_RIGHT",
+  "source_clip_id": "08_TURN_RIGHT",
+  "title": "右转｜左转镜像",
+  "command": [
+    0.0,
+    0.0,
+    -0.86895160841653
+  ],
+  "period_s": 2.0,
+  "symmetry_enabled": false,
+  "source": {
+    "dataset": "AMP_for_hardware / A1",
+    "file": "leftturn0.json",
+    "frames": [
+      0,
+      45
+    ],
+    "url": "https://github.com/escontra/AMP_for_hardware",
+    "source_sha256": "83db728d7008b7157829e2a84e426a570048a2dd0ed23551137874e56ab9d7d1",
+    "symmetry": "Whole right-turn clip mirrored from left-turn; retain native net turn angle",
+    "derived": "Sagittal reflection of left turn"
+  },
+  "ground_lift_mm": 0.04334011611177363,
+  "reference_coordinate": "FL/FR relative chest midpoint; HL/HR relative pelvis midpoint, expressed in respective torso frames",
+  "world_xy_yaw_used_for_tracking": false,
+  "samples": 101,
+  "source_seam_max_deg": 0.0,
+  "swing_time_s": [
+    0.64,
+    0.68,
+    1.06,
+    0.4
+  ],
+  "minimum_capsule_height_mm": 0.5000000000000022,
+  "max_reference_joint_speed_rad_s": 1.4519994771864386,
+  "physical_validation_passed": false
+}

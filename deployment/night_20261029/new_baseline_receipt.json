@@ -1,0 +1,10 @@
+{
+  "directory": "/root/gpufree-data/projects/sable-isaacgym/baselines/user_accepted_20261029_120250",
+  "archive": "/root/gpufree-data/projects/sable-isaacgym/baselines/user_accepted_20261029_120250.zip",
+  "sha256": "d5c97e889107139671cc3004b3e108396a05bc1ea153d92cd35d4d365c35d567",
+  "bytes": 27283238,
+  "status": "active_baseline",
+  "local_backup_sha256_verified": true,
+  "activated_at": "2026-10-29T12:04:42.263949",
+  "yaw_unchanged_sha256": "a97679eab866331814dfd9eb651efd9ab7ee4048252b5036f101b083b945b187"
+}

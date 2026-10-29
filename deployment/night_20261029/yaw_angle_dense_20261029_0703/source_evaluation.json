@@ -1,0 +1,18 @@
+{
+  "amplitude_deg": 29.999999999999996,
+  "liftoff_budget": 1,
+  "iteration": 778,
+  "checkpoint_iteration": 738,
+  "angle_rmse_deg": 21.473453521728516,
+  "peak_error_deg": 36.670467376708984,
+  "valid_tracking_samples": 30176,
+  "survival_fraction": 1.0,
+  "max_liftoffs_per_foot": [
+    1.0,
+    2.0,
+    2.0,
+    1.0
+  ],
+  "accepted": false,
+  "criteria": "16 environments, 2 full sine cycles, all survive, RMSE<=5deg, peak<=10deg, each foot<=1 liftoff in entire episode"
+}

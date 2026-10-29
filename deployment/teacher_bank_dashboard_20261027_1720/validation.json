@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "service_pid": 20283,
+  "bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_20261027_171622",
+  "teachers": 8,
+  "actual_training_iteration": 79,
+  "evaluated_checkpoint_iteration": 38,
+  "source_title": "前进｜当前策略",
+  "display_title": "前进 walk",
+  "trace_mode": "trace",
+  "source_checkpoint_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_20261027_171622/01_FORWARD_POLICY/checkpoints/model_000038.pt",
+  "resource_source": "bank_resource_monitor",
+  "trace_joint_model_max_toe_error_mm": 0.020068,
+  "route_traversal_denied": true
+}

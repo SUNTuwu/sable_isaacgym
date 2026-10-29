@@ -1,0 +1,15 @@
+{
+  "schema": "sable-deadline-finalizer/v1",
+  "status": "running",
+  "stage": "waiting_for_0830",
+  "pid": 180686,
+  "deadline_unix": 1793233800.0,
+  "created_unix": 1793227768.1828258,
+  "signals": [],
+  "children": [],
+  "output": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T224928_180686/bank_32env_24s",
+  "training_restarts": 0,
+  "global_current_pointer_write_allowed": false,
+  "updated_unix": 1793227768.182932,
+  "execution_path": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T224928_180686/execution.json"
+}

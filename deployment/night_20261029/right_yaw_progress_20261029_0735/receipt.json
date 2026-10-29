@@ -1,0 +1,23 @@
+{
+  "time": 1793230519.4941292,
+  "teacher": "05_TURN_RIGHT",
+  "action": "plateau_net_turn_progress_weight_increase",
+  "evaluation_iteration": 1720,
+  "reason": "Post-fix-trained independent policy survives and drift nears20cm but mean turning remains0.175rad/s vs target0.524. Increase useful signed net progress; preserve XY/cadence/feet weights.",
+  "actual_reward_change": true,
+  "reward_changes": {
+    "v2_yaw": {
+      "before": 1.2,
+      "after": 1.44
+    }
+  },
+  "control_revision": 35,
+  "automatic_cap": 1.5,
+  "fall_proof": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/turn_cap15_fall_proof.json",
+  "max_fall_total_reward_current_right": -2.6784,
+  "max_fall_total_reward_at_cap_any_positive_weights": -1.52,
+  "turn_period_s": 1.0,
+  "other_teachers_unchanged": true,
+  "trainers_restarted": false,
+  "physical_improvement_not_yet_verified": true
+}

@@ -1,0 +1,73 @@
+{
+  "source": "E:\\1_project_E\\code\\remote_sable_robot\\blender\\open_source_collection_20261028\\sable_motion_edit.blend",
+  "source_sha256": "c8f0ee495c87b63cbf8c99a77803a761cbfaae8f7d4c19fcb160e920ee813114",
+  "clips": [
+    {
+      "id": "01_FORWARD_WALK",
+      "samples": 51,
+      "max_ik_error_mm": 2.176501308702379e-05,
+      "minimum_capsule_z_mm": 0.3807089228972278
+    },
+    {
+      "id": "02_BACKWARD_WALK",
+      "samples": 51,
+      "max_ik_error_mm": 2.214124010481163e-05,
+      "minimum_capsule_z_mm": 0.3807100814347828
+    },
+    {
+      "id": "03_FORWARD_TROT",
+      "samples": 51,
+      "max_ik_error_mm": 0.003834959622794806,
+      "minimum_capsule_z_mm": -0.7874612535140793
+    },
+    {
+      "id": "04_BACKWARD_TROT",
+      "samples": 51,
+      "max_ik_error_mm": 0.0038364800046233583,
+      "minimum_capsule_z_mm": -0.7874616847477391
+    },
+    {
+      "id": "05_STRAFE_LEFT",
+      "samples": 51,
+      "max_ik_error_mm": 0.04367020231297895,
+      "minimum_capsule_z_mm": 0.3921965622483009
+    },
+    {
+      "id": "06_STRAFE_RIGHT",
+      "samples": 51,
+      "max_ik_error_mm": 0.0436715202443213,
+      "minimum_capsule_z_mm": 0.39219719795737135
+    },
+    {
+      "id": "07_TURN_LEFT",
+      "samples": 101,
+      "max_ik_error_mm": 4.717580769810303e-05,
+      "minimum_capsule_z_mm": 0.4530893060289368
+    },
+    {
+      "id": "08_TURN_RIGHT",
+      "samples": 101,
+      "max_ik_error_mm": 4.7692879355494633e-05,
+      "minimum_capsule_z_mm": 0.4530898315136967
+    }
+  ],
+  "world_motion": "Archived for provenance only; training preprocessing removes root XY/yaw path",
+  "source_joint_names": [
+    "spine_pitch",
+    "spine_roll",
+    "hip_roll",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "L_ankle_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "R_ankle_pitch",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch"
+  ],
+  "gpu_training_used": false
+}

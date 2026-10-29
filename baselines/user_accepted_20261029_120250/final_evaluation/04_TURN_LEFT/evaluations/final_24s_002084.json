@@ -1,0 +1,344 @@
+{
+  "teacher_id": "04_TURN_LEFT",
+  "iteration": 2084,
+  "checkpoint_iteration": 2084,
+  "checkpoint": {
+    "path": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s/04_TURN_LEFT/checkpoints/model_002084.pt",
+    "sha256": "5e49cd73ef6baa48eab09d3829e080e39adbff8b3837240a3d426afe6397d4b2",
+    "iteration": 2084,
+    "updated_unix": 1793233972.613813,
+    "reason": "final"
+  },
+  "independent": true,
+  "evaluation_seed": 947,
+  "reset": "reference_phase0 plus seeded uniform joint perturbation +/-0.005rad; reserved environments never used by optimizer",
+  "horizon_s": 24.0,
+  "num_envs": 4,
+  "survival_fraction": 1.0,
+  "q_tracking_rmse_rad": 0.13051815330982208,
+  "xy_rmse_m_s": 0.06603854149580002,
+  "yaw_rmse_rad_s": 1.3129838705062866,
+  "mean_command": [
+    0.0,
+    0.0,
+    0.5235987901687622
+  ],
+  "mean_actual": [
+    -0.03658565878868103,
+    0.011176779866218567,
+    0.6241859197616577
+  ],
+  "steps_per_foot": [
+    251.0,
+    170.0,
+    232.0,
+    180.0
+  ],
+  "step_scope": "Observed normal-force contact onset; not yet genuine-air-step acceptance",
+  "samples": 4800,
+  "accepted": false,
+  "first_fall_diagnostics": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "reward_cleanup_profile": "reference_local_v2",
+  "removed_cadence_terms": [],
+  "teacher_control_mode": "reference_plus_residual",
+  "reference_strength": 1.0,
+  "reference_time_scale": 1.0,
+  "created_unix": 1793234101.1221285,
+  "maximum_cross_track_m": 0.0,
+  "max_abs_final_heading_deg": 896.3538105186404,
+  "max_turn_radius_m": 0.20051209628582,
+  "velocity_frame": "episode-start heading for translations; heading frame for turns",
+  "contact_phase_agreement": 0.7032291889190674,
+  "pose_symmetry_rmse_m": 0.014765366911888123,
+  "pair_liftoff_count_asymmetry": 0.3922518193721771,
+  "mean_liftoff_period_s_per_foot": [
+    0.38866400718688965,
+    0.5783132910728455,
+    0.4210526645183563,
+    0.5333333611488342
+  ],
+  "cycle_symmetry_scope": "count-based cadence diagnostic over all four evaluation environments; not a direct per-cycle phase certificate",
+  "gravity_rmse_deg": 5.447734122566429,
+  "acceptance_scope": "Final simulation evaluation: four held-out environments, 24 seconds, first episode only; not hardware validation",
+  "foot_rmse_m_per_foot": [
+    0.008920887872431804,
+    0.019185762317391112,
+    0.018247300846561634,
+    0.023211721546785406
+  ],
+  "contact_slip_rmse_m_s": 0.14888084192181775,
+  "actual_liftoffs_per_foot": [
+    247.0,
+    166.0,
+    228.0,
+    180.0
+  ],
+  "foot_reward_saturated_fraction": 0.21838541666666667,
+  "physical_score": 0.2896465346904965,
+  "evaluation_limits": {
+    "velocity_rmse_m_s": 0.015,
+    "yaw_rmse_rad_s": 0.13089969754219055,
+    "worst_foot_rmse_m": 0.04,
+    "contact_slip_rmse_m_s": 0.03,
+    "gravity_rmse_deg": 5.0
+  },
+  "plateau_status": "not_established",
+  "plateau_definition": "five fixed-seed evaluations, physical score range <0.01; no automatic stopping or curriculum change",
+  "turn_cycles": {
+    "completed_cycles": 92,
+    "passed_cycles": 0,
+    "pass_fraction": 0.0,
+    "mean_net_angle_error_deg": 8.395260354746943,
+    "mean_net_displacement_m": 0.04882225782974907,
+    "mean_cycle_max_drift_m": 0.049145107683928116,
+    "mean_contact_phase_agreement": 0.707065250562585,
+    "mean_liftoff_count_error": 4.489130434782608,
+    "acceptance": "net angle 70-130% of commanded cycle angle; net XY<=5cm, max XY<=7.5cm; angular monotonicity>=0.8; contact phase>=85%; per-foot lift count matches reference",
+    "mean_signed_angle_deg": 37.78286079738451
+  },
+  "turn_boundary": {
+    "mode": "signed_velocity_integral_fixed",
+    "limit_m": 0.2,
+    "limit_deg": 30.0,
+    "recent_complete_episodes": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "pending": false,
+    "definition": "integral(yaw_dot dt); norm(integral(world_xy_velocity dt)); reset per episode"
+  },
+  "turn_curriculum": {
+    "stage": 0,
+    "streak": 0,
+    "pending": false,
+    "mode": "fixed_rate",
+    "target_deg_s": 30.0,
+    "degree_per_cycle": 30.0,
+    "period_s": 1.0,
+    "stages": [
+      30.0
+    ]
+  },
+  "mode": "final_evaluation_only",
+  "optimization_steps": 0,
+  "reward_return_scope": "Undiscounted first-episode environment rewards; excludes PPO timeout value bootstrap; compare physical metrics across reward revisions",
+  "executed_simulation_s": 24.00000113993883,
+  "source_checkpoint": {
+    "teacher_id": "04_TURN_LEFT",
+    "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/04_TURN_LEFT/checkpoints/model_002084.pt",
+    "sha256": "0217649ce634bb872e516ce531caa46a26dafe176602041cfe9cbadbd951ff6e",
+    "iteration": 2084,
+    "source_receipt_sha256": "654577f387ee3ec858d15a81ab17fa3eed223daeac814fa103be9034e95f8dea",
+    "reference_sha256": "b654897723a43c1c1109e1d28b868cc536469ff447749df48164b7c31d3f112f"
+  },
+  "policy_and_optimizer_unchanged": true,
+  "terminal_episodes": [
+    {
+      "time_s": 24.00000113993883,
+      "physical_fall": false,
+      "natural_timeout": true,
+      "diagnostics": {
+        "tilt_failure": false,
+        "height_failure": false,
+        "termination_contact_failure": false,
+        "coupling_failure": false,
+        "knee_ground_failure": false,
+        "task_boundary_failure": false,
+        "integrated_yaw_deg": 896.3538208007812,
+        "integrated_xy_m": 0.046618036925792694
+      }
+    },
+    {
+      "time_s": 24.00000113993883,
+      "physical_fall": false,
+      "natural_timeout": true,
+      "diagnostics": {
+        "tilt_failure": false,
+        "height_failure": false,
+        "termination_contact_failure": false,
+        "coupling_failure": false,
+        "knee_ground_failure": false,
+        "task_boundary_failure": false,
+        "integrated_yaw_deg": 845.3499755859375,
+        "integrated_xy_m": 0.11921024322509766
+      }
+    },
+    {
+      "time_s": 24.00000113993883,
+      "physical_fall": false,
+      "natural_timeout": true,
+      "diagnostics": {
+        "tilt_failure": false,
+        "height_failure": false,
+        "termination_contact_failure": false,
+        "coupling_failure": false,
+        "knee_ground_failure": false,
+        "task_boundary_failure": false,
+        "integrated_yaw_deg": 853.7745361328125,
+        "integrated_xy_m": 0.07379740476608276
+      }
+    },
+    {
+      "time_s": 24.00000113993883,
+      "physical_fall": false,
+      "natural_timeout": true,
+      "diagnostics": {
+        "tilt_failure": false,
+        "height_failure": false,
+        "termination_contact_failure": false,
+        "coupling_failure": false,
+        "knee_ground_failure": false,
+        "task_boundary_failure": false,
+        "integrated_yaw_deg": 837.7925415039062,
+        "integrated_xy_m": 0.15472236275672913
+      }
+    }
+  ],
+  "task_boundary_pass_fraction": 1.0,
+  "natural_timeout_fraction": 1.0,
+  "first_episode_samples": [
+    1200.0,
+    1200.0,
+    1200.0,
+    1200.0
+  ],
+  "reward_returns_per_environment": {
+    "v2_velocity": [
+      14.660523414611816,
+      14.813063621520996,
+      14.753128051757812,
+      14.34709644317627
+    ],
+    "v2_yaw": [
+      84.7177963256836,
+      86.80503845214844,
+      85.9365234375,
+      85.4349136352539
+    ],
+    "v2_foot_local": [
+      16.956932067871094,
+      16.907970428466797,
+      16.90175437927246,
+      16.91923713684082
+    ],
+    "v2_cross_motion": [
+      -37.717220306396484,
+      -37.52533721923828,
+      -37.595420837402344,
+      -38.225948333740234
+    ],
+    "v2_translation_yaw_rate": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "v2_heading_integral": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "v2_contact_timing": [
+      -5.6760149002075195,
+      -5.724020481109619,
+      -5.752017498016357,
+      -5.640018463134766
+    ],
+    "v2_contact_slip": [
+      -9.729143142700195,
+      -9.843671798706055,
+      -9.88405990600586,
+      -10.010817527770996
+    ],
+    "v2_gravity_alignment": [
+      -5.668417453765869,
+      -5.720785140991211,
+      -5.674577236175537,
+      -5.728786945343018
+    ],
+    "v2_body_height": [
+      -0.5126659274101257,
+      -0.5123180747032166,
+      -0.5132443904876709,
+      -0.5159085988998413
+    ],
+    "v2_target_acceleration": [
+      -1.6574914455413818,
+      -1.6232662200927734,
+      -1.6212607622146606,
+      -1.6751176118850708
+    ],
+    "v2_joint_acceleration": [
+      -0.0790616050362587,
+      -0.07242090255022049,
+      -0.0754038393497467,
+      -0.07557601481676102
+    ],
+    "v2_torque": [
+      -0.029425276443362236,
+      -0.0284408126026392,
+      -0.02829173393547535,
+      -0.029331959784030914
+    ],
+    "v2_joint_limits": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "v2_phase_symmetry": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "v2_liftoff_events": [
+      -4.608804225921631,
+      -4.268139362335205,
+      -4.15517520904541,
+      -4.464510917663574
+    ],
+    "v2_task_boundary_event": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "v2_fall_event": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "v2_turn_cycle_task": [
+      -0.9061561226844788,
+      0.3055962324142456,
+      0.19124194979667664,
+      0.030341900885105133
+    ]
+  }
+}

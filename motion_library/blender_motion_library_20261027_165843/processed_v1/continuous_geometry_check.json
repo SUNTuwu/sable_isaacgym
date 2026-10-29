@@ -1,0 +1,65 @@
+{
+  "interpolation": "Periodic cubic samples at250Hz; discrete simulation uses the recorded50Hz reference",
+  "checks": [
+    {
+      "id": "01_FORWARD_POLICY",
+      "fk_max_abs_error_m": 0.0,
+      "250Hz_min_capsule_z_mm": 0.25008006806016403,
+      "250Hz_max_limit_violation_deg": 0.0
+    },
+    {
+      "id": "02_STRAFE_LEFT",
+      "fk_max_abs_error_m": 0.0,
+      "250Hz_min_capsule_z_mm": 0.584870796747689,
+      "250Hz_max_limit_violation_deg": 0.0
+    },
+    {
+      "id": "03_STRAFE_RIGHT",
+      "fk_max_abs_error_m": 0.0,
+      "250Hz_min_capsule_z_mm": 0.30000000000003463,
+      "250Hz_max_limit_violation_deg": 0.031205860076746895
+    },
+    {
+      "id": "04_TURN_LEFT",
+      "fk_max_abs_error_m": 0.0,
+      "250Hz_min_capsule_z_mm": 0.29343269830530394,
+      "250Hz_max_limit_violation_deg": 0.0
+    },
+    {
+      "id": "05_TURN_RIGHT",
+      "fk_max_abs_error_m": 0.0,
+      "250Hz_min_capsule_z_mm": 0.293432710022452,
+      "250Hz_max_limit_violation_deg": 0.0
+    },
+    {
+      "id": "06_BACKWARD",
+      "fk_max_abs_error_m": 0.0,
+      "250Hz_min_capsule_z_mm": 0.2852141372675643,
+      "250Hz_max_limit_violation_deg": 0.0
+    },
+    {
+      "id": "07_LATERAL_TROT_LEFT",
+      "fk_max_abs_error_m": 0.0,
+      "250Hz_min_capsule_z_mm": 0.7028138238212005,
+      "250Hz_max_limit_violation_deg": 0.0
+    },
+    {
+      "id": "08_LATERAL_TROT_RIGHT",
+      "fk_max_abs_error_m": 0.0,
+      "250Hz_min_capsule_z_mm": 0.6730671557382386,
+      "250Hz_max_limit_violation_deg": 0.0
+    },
+    {
+      "id": "09_BACKWARD_WALK",
+      "fk_max_abs_error_m": 0.0,
+      "250Hz_min_capsule_z_mm": 0.27341623215481564,
+      "250Hz_max_limit_violation_deg": 0.0
+    },
+    {
+      "id": "10_FORWARD_TROT",
+      "fk_max_abs_error_m": 0.0,
+      "250Hz_min_capsule_z_mm": 0.2852140546467175,
+      "250Hz_max_limit_violation_deg": 0.0
+    }
+  ]
+}

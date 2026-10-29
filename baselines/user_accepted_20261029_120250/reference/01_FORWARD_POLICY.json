@@ -1,0 +1,80 @@
+{
+  "id": "01_FORWARD_POLICY",
+  "source_clip_id": "01_FORWARD_WALK",
+  "title": "前进 walk｜腾讯动捕·左主控",
+  "command": [
+    0.075,
+    0.0,
+    0.0
+  ],
+  "period_s": 1.0,
+  "symmetry_enabled": true,
+  "source": {
+    "dataset": "Tencent Lifelike Agility",
+    "file": "dog_quad_walk_001.bvh",
+    "selected_cycle": {
+      "file": "dog_quad_walk_001.bvh",
+      "start_index": 11502,
+      "end_index": 11601,
+      "time_s": [
+        95.84996166,
+        96.67496133
+      ],
+      "period_s": 0.82499967,
+      "event_order": [
+        "FL",
+        "HR",
+        "FR",
+        "HL"
+      ],
+      "contact_onset_phases": {
+        "0": 0.0,
+        "1": 0.5252525252525253,
+        "2": 0.6868686868686869,
+        "3": 0.21212121212121213
+      },
+      "duty": [
+        0.6666666666666666,
+        0.6464646464646465,
+        0.5656565656565656,
+        0.5252525252525253
+      ],
+      "minimum_supports": 2,
+      "yaw_range_deg": 4.601681971026512,
+      "velocity_cv": 0.11485181163483654,
+      "speed_m_s": 0.989590120462853,
+      "side_travel_m": -0.034374602184154016,
+      "source_mirror_halfphase_rmse_m": 0.05915766589521896,
+      "score": 0.6053266182678688
+    },
+    "url": "https://github.com/Tencent-RoboticsX/lifelike-agility-and-play",
+    "source_sha256": "ddefe1465b2bfc5d6c6fabd2d10c8e43dd36766727ff73bff03ccc411a6ec602",
+    "phase_correction": "FL0, HR.25, FR.5, HL.75; source left templates retained, right mirrored half-period",
+    "raw_scaled_cycle_translation_m": 0.1469540741070805,
+    "reachable_stride_projection": "Cycle translation capped75mm to respect measured shoulder height and fore-elbow extension limit; no joint geometry changed",
+    "contact_projection": {
+      "stance_fraction": 0.65,
+      "touchdown_phases": [
+        0.0,
+        0.5,
+        0.75,
+        0.25
+      ],
+      "method": "Ground-lock stance XY; retain captured swing progress/height shape; solve capsule clearance rather than treating marker height as sole clearance"
+    }
+  },
+  "ground_lift_mm": 0.12220412191614503,
+  "reference_coordinate": "FL/FR relative chest midpoint; HL/HR relative pelvis midpoint, expressed in respective torso frames",
+  "world_xy_yaw_used_for_tracking": false,
+  "samples": 101,
+  "source_seam_max_deg": 3.4150945850063755e-06,
+  "swing_time_s": [
+    0.25,
+    0.25,
+    0.25,
+    0.25
+  ],
+  "minimum_capsule_height_mm": 0.49999999999999956,
+  "max_reference_joint_speed_rad_s": 5.964091631790052,
+  "physical_validation_passed": false
+}

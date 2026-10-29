@@ -1,0 +1,192 @@
+{
+  "as_of": "2026-10-29",
+  "previous_github_main": "391503574df29cdc363b81c589f3688865eb0853",
+  "active_baseline": "baselines/user_accepted_20261029_120250",
+  "source_bank": "runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+  "source_iteration": 2084,
+  "user_basic_accepted": true,
+  "yaw_excluded_from_user_acceptance": true,
+  "teacher_interface": {
+    "observations": 94,
+    "outputs": 15,
+    "active_exploration_joints": 14,
+    "waist_pitch": "locked at reference stand"
+  },
+  "controller": "reference_plus_residual; reference_strength=1; teacher bank, not completed cmd16/history6 full-target student",
+  "teachers": [
+    {
+      "teacher": "01_FORWARD_POLICY",
+      "iteration": 2084,
+      "num_envs": 4,
+      "horizon_s": 24.0,
+      "survival_fraction": 1.0,
+      "strict_accepted": false,
+      "xy_rmse_m_s": 0.025542104616761208,
+      "yaw_rmse_rad_s": 0.12935815751552582,
+      "mean_command": [
+        0.07500000298023224,
+        0.0,
+        0.0
+      ],
+      "mean_actual": [
+        0.07349741458892822,
+        -0.011401691474020481,
+        -0.007561565842479467
+      ]
+    },
+    {
+      "teacher": "02_STRAFE_LEFT",
+      "iteration": 2084,
+      "num_envs": 4,
+      "horizon_s": 24.0,
+      "survival_fraction": 1.0,
+      "strict_accepted": false,
+      "xy_rmse_m_s": 0.0774426981806755,
+      "yaw_rmse_rad_s": 0.35605213046073914,
+      "mean_command": [
+        0.0,
+        0.038244880735874176,
+        0.0
+      ],
+      "mean_actual": [
+        -0.007139788009226322,
+        0.07064159959554672,
+        -0.00503874197602272
+      ]
+    },
+    {
+      "teacher": "03_STRAFE_RIGHT",
+      "iteration": 2084,
+      "num_envs": 4,
+      "horizon_s": 24.0,
+      "survival_fraction": 1.0,
+      "strict_accepted": false,
+      "xy_rmse_m_s": 0.053812284022569656,
+      "yaw_rmse_rad_s": 0.42742881178855896,
+      "mean_command": [
+        0.0,
+        -0.038244880735874176,
+        0.0
+      ],
+      "mean_actual": [
+        -0.02014780417084694,
+        -0.04331854358315468,
+        0.0038208914920687675
+      ]
+    },
+    {
+      "teacher": "04_TURN_LEFT",
+      "iteration": 2084,
+      "num_envs": 4,
+      "horizon_s": 24.0,
+      "survival_fraction": 1.0,
+      "strict_accepted": false,
+      "xy_rmse_m_s": 0.06603854149580002,
+      "yaw_rmse_rad_s": 1.3129838705062866,
+      "mean_command": [
+        0.0,
+        0.0,
+        0.5235987901687622
+      ],
+      "mean_actual": [
+        -0.03658565878868103,
+        0.011176779866218567,
+        0.6241859197616577
+      ]
+    },
+    {
+      "teacher": "05_TURN_RIGHT",
+      "iteration": 2084,
+      "num_envs": 4,
+      "horizon_s": 24.0,
+      "survival_fraction": 1.0,
+      "strict_accepted": false,
+      "xy_rmse_m_s": 0.09528342634439468,
+      "yaw_rmse_rad_s": 1.5848593711853027,
+      "mean_command": [
+        0.0,
+        0.0,
+        -0.5235987901687622
+      ],
+      "mean_actual": [
+        0.00560307502746582,
+        -0.018449816852808,
+        -0.4080754220485687
+      ]
+    },
+    {
+      "teacher": "06_BACKWARD",
+      "iteration": 2084,
+      "num_envs": 4,
+      "horizon_s": 24.0,
+      "survival_fraction": 1.0,
+      "strict_accepted": false,
+      "xy_rmse_m_s": 0.035176269710063934,
+      "yaw_rmse_rad_s": 0.22568324208259583,
+      "mean_command": [
+        -0.07500000298023224,
+        0.0,
+        0.0
+      ],
+      "mean_actual": [
+        -0.07165054976940155,
+        -0.003609549719840288,
+        -0.0016817955765873194
+      ]
+    },
+    {
+      "teacher": "09_BACKWARD_WALK",
+      "iteration": 2084,
+      "num_envs": 4,
+      "horizon_s": 24.0,
+      "survival_fraction": 1.0,
+      "strict_accepted": false,
+      "xy_rmse_m_s": 0.024041833356022835,
+      "yaw_rmse_rad_s": 0.09737201035022736,
+      "mean_command": [
+        -0.07500000298023224,
+        0.0,
+        0.0
+      ],
+      "mean_actual": [
+        -0.08135218918323517,
+        -0.004282008390873671,
+        0.0008481916156597435
+      ]
+    },
+    {
+      "teacher": "10_FORWARD_TROT",
+      "iteration": 2084,
+      "num_envs": 4,
+      "horizon_s": 24.0,
+      "survival_fraction": 1.0,
+      "strict_accepted": false,
+      "xy_rmse_m_s": 0.03988194838166237,
+      "yaw_rmse_rad_s": 0.2698998749256134,
+      "mean_command": [
+        0.07500000298023224,
+        0.0,
+        0.0
+      ],
+      "mean_actual": [
+        0.07126076519489288,
+        0.010788141749799252,
+        0.0007002103375270963
+      ]
+    }
+  ],
+  "yaw_latest": {
+    "run": "runs/yaw_sine_night_annealed_20261029_061927_168251",
+    "iteration": 1274,
+    "survival_fraction": 1.0,
+    "angle_rmse_deg": 21.048851013183594,
+    "strict_accepted": false
+  },
+  "transfer": {
+    "path": "transfer/sable_training_20261029.tar.gz",
+    "bytes": 31112413,
+    "sha256": "30096e40527ec7a8545dba2679ee8aef0659ffe53556fcaf0ba8a3b823d76b3a",
+    "git_tracked": false
+  },
+  "deletions_performed": []
+}

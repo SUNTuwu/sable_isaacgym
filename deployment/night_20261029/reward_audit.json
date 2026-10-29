@@ -1,0 +1,44 @@
+{
+  "time": "2026-10-29T04:30:00+08:00",
+  "findings": [
+    {
+      "issue": "body-frame translation velocity rewarded circular travel",
+      "fix": "fixed episode-start heading velocity plus signed progress; continuous soft heading cost; no new early termination",
+      "test": "check_straight_frame.py passed"
+    },
+    {
+      "issue": "translation yaw cost flat above0.2rad/s",
+      "fix": "smooth rational cost, teacher-specific sigma; monotonic at0.5 and1rad/s",
+      "test": "check_straight_frame.py passed"
+    },
+    {
+      "issue": "task boundaries previously killed transient sway",
+      "fix": "signed integral settled only at physical fall/full timeout",
+      "test": "15 tests plus8 real-reference adapter terminal checks passed"
+    },
+    {
+      "issue": "turn-trot transplant used differently interpreted observation fields",
+      "fix": "preserve source zero path slots and measured yaw-integral observation for transferred actors",
+      "status": "code prepared, new independent physical evaluation pending"
+    },
+    {
+      "issue": "straight-gait pose mirror penalty copied into turning trot",
+      "fix": "disable position-mirror cost for turning; keep contact cadence and cycle evaluation"
+    },
+    {
+      "issue": "yaw evaluation numpy boolean serialization terminated first run",
+      "fix": "native bool conversion, save checkpoints independently of evaluation, failure-recovery checkpoint"
+    },
+    {
+      "issue": "transfer checkpoint metadata may differ by teacher",
+      "fix": "explicit source hash manifest, verify model+Adam equality, keep independent source iterations"
+    }
+  ],
+  "baseline": "six translations from02:25 progressivebounds; leftturn from backwardtrot121; rightturn from forwardtrot121",
+  "limitations": [
+    "Baseline survivors are preliminary4env16sec tests, not hardware validation",
+    "Count-based cadence symmetry does not fully certify individual cycle timing",
+    "Retargeted turns still require reduction of translation and excessive yaw speed",
+    "Yaw30deg tracking has not yet passed acceptance"
+  ]
+}

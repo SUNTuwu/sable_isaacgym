@@ -1,0 +1,633 @@
+{
+  "as_of": "2026-10-29T08:09:48.234757",
+  "status": "training_and_monitoring_goal_active",
+  "deadline": "2026-10-29T08:30:00+08:00",
+  "bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+  "bank_pid": 213292,
+  "yaw": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_annealed_20261029_061927_168251",
+  "yaw_pid": 168660,
+  "yaw_watchdog_pid": 168986,
+  "monitor_pid": 213671,
+  "monitor_profile": "yaw_dense_error_turncap15_v9",
+  "last_review_local": "2026-10-29T08:07:27.977451",
+  "next_review_unix": 1793233347.9774506,
+  "rollback_policy": "Two distinct consecutive severe physical evaluations; sustained negative rewards always adjust affected reward; no reward-only reset. Translations exact022531 baseline; right forwardtrot121, left backwardtrot121; yaw verified041931 checkpoint28.",
+  "baseline_sources": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/baseline_sources.json",
+  "yaw_baseline": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/yaw_baseline.json",
+  "protected_baseline_backup": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/protected_baselines_20261029.zip",
+  "protected_baseline_backup_sha256": "2f82a68914c968edc70bd306f7222ecc6026fd36016de99f8ef1b6f274637bec",
+  "finalizer_pid": 191618,
+  "finalizer_stage": "waiting_for_0830",
+  "finalizer_receipt": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/deadline_finalize_receipt.json",
+  "final_bank_evaluator": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/final_bank_evaluation.py",
+  "final_protocol": "Stop at0830, preserve final checkpoints, existing yaw watcher evaluation then32env24s bank withoutoptimization; publish separate final_evaluation_pointer. Do not shut down cloud.",
+  "dashboard_pid": 180694,
+  "dashboard_final_overlay": true,
+  "latest_review_decisions": [
+    {
+      "teacher": "01_FORWARD_POLICY",
+      "evaluation_iteration": 1888,
+      "basic_pass": true,
+      "action": "tune_symmetry",
+      "reason": "basic pass; prioritize pose and periodic symmetry",
+      "actual_reward_change": true,
+      "reward_changes": {
+        "v2_phase_symmetry": {
+          "before": 1.5209,
+          "after": 1.749,
+          "requested_factor": 1.15
+        },
+        "v2_contact_timing": {
+          "before": 1.21,
+          "after": 1.331,
+          "requested_factor": 1.1
+        }
+      }
+    },
+    {
+      "teacher": "06_BACKWARD",
+      "evaluation_iteration": 1888,
+      "basic_pass": true,
+      "action": "observe",
+      "reason": "collecting comparable samples"
+    },
+    {
+      "teacher": "09_BACKWARD_WALK",
+      "evaluation_iteration": 1888,
+      "basic_pass": false,
+      "action": "tune_basic",
+      "reason": "plateau without survival/direction acceptance",
+      "actual_reward_change": true,
+      "reward_changes": {
+        "v2_cross_motion": {
+          "before": 1.38,
+          "after": 1.587,
+          "requested_factor": 1.15
+        },
+        "v2_heading_integral": {
+          "before": 1.0,
+          "after": 1.15,
+          "requested_factor": 1.15
+        }
+      }
+    },
+    {
+      "teacher": "10_FORWARD_TROT",
+      "evaluation_iteration": 1888,
+      "basic_pass": false,
+      "action": "observe+reward_adjustment",
+      "reason": "measured translation failure; no yaw_sigma change",
+      "actual_reward_change": true,
+      "reward_changes": {
+        "v2_cross_motion": {
+          "before": 1.587,
+          "after": 1.9044,
+          "requested_factor": 1.2
+        },
+        "v2_heading_integral": {
+          "before": 1.38,
+          "after": 1.656,
+          "requested_factor": 1.2
+        }
+      }
+    },
+    {
+      "teacher": "02_STRAFE_LEFT",
+      "evaluation_iteration": 1888,
+      "basic_pass": false,
+      "action": "observe",
+      "reason": "collecting comparable samples"
+    },
+    {
+      "teacher": "03_STRAFE_RIGHT",
+      "evaluation_iteration": 1888,
+      "basic_pass": false,
+      "action": "observe",
+      "reason": "collecting comparable samples"
+    },
+    {
+      "teacher": "04_TURN_LEFT",
+      "evaluation_iteration": 1888,
+      "basic_pass": true,
+      "action": "observe",
+      "reason": "collecting comparable samples"
+    },
+    {
+      "teacher": "05_TURN_RIGHT",
+      "evaluation_iteration": 1888,
+      "basic_pass": false,
+      "action": "tune_basic",
+      "reason": "plateau without survival/direction acceptance",
+      "actual_reward_change": true,
+      "reward_changes": {
+        "v2_yaw": {
+          "before": 1.44,
+          "after": 1.5,
+          "requested_factor": 1.15
+        }
+      }
+    },
+    {
+      "teacher": "YAW_SINE_STANCE",
+      "evaluation_iteration": 1107,
+      "basic_pass": false,
+      "action": "observe",
+      "reason": "collecting comparable samples"
+    }
+  ],
+  "user_preferences": [
+    "No questions",
+    "Use designated baselines when trained badly",
+    "All9 teachers including yaw",
+    "No early boundarydeath; end-of-episode integral constraints",
+    "Do not promote45degrees without2 accepted30degree evaluations"
+  ],
+  "pending": [
+    "Continue15-minute reward/physical reviews until0830",
+    "Right yaw1.44 applies since0735; do not attribute earlier1768 evaluation to that weight",
+    "Backwardtrot restored baseline after1670/1768 physical regression; reload ack1803 at0736",
+    "Yaw still30degree and budget1, denseangle_error2.4; accepted false",
+    "Verify deadline finalization, updated9 replay, archive and local offline verification"
+  ],
+  "local_candidates_not_deployed": [
+    "turn critic cycle-state candidate",
+    "IK continuation warm-start feasibility"
+  ],
+  "updated_control": {
+    "revision": 37,
+    "teachers": {
+      "01_FORWARD_POLICY": {
+        "yaw_sigma": 0.19004026055335999,
+        "multipliers": {
+          "v2_velocity": 1.587,
+          "v2_phase_symmetry": 1.5209,
+          "v2_contact_timing": 1.21,
+          "v2_heading_integral": 1.2,
+          "v2_cross_motion": 1.15
+        },
+        "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+        "straight_frame": true
+      },
+      "06_BACKWARD": {
+        "yaw_sigma": 0.4,
+        "multipliers": {
+          "v2_contact_timing": 1.1,
+          "v2_cross_motion": 1.2,
+          "v2_heading_integral": 1.2
+        },
+        "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+        "straight_frame": true
+      },
+      "09_BACKWARD_WALK": {
+        "yaw_sigma": 0.4,
+        "multipliers": {
+          "v2_velocity": 1.15,
+          "v2_phase_symmetry": 1.3225,
+          "v2_contact_timing": 1.21,
+          "v2_cross_motion": 1.2
+        },
+        "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+        "straight_frame": true
+      },
+      "10_FORWARD_TROT": {
+        "yaw_sigma": 0.4,
+        "multipliers": {
+          "v2_cross_motion": 1.3225,
+          "v2_heading_integral": 1.15
+        },
+        "reason": "Remove saturated yaw-cost flat region; observed uncommanded circling. Fixed-frame velocity correction follows.",
+        "straight_frame": true
+      },
+      "02_STRAFE_LEFT": {
+        "yaw_sigma": 0.3892807960510254,
+        "multipliers": {
+          "v2_velocity": 1.656,
+          "v2_cross_motion": 1.2,
+          "v2_contact_timing": 1.1
+        },
+        "reason": "Replace weak body-frame cross-speed cost with signed integrated cross-path error in initial heading frame; normal reversible sway remains cheap.",
+        "straight_frame": true,
+        "cross_track_sigma_m": 0.1
+      },
+      "03_STRAFE_RIGHT": {
+        "yaw_sigma": 0.3725464344024658,
+        "multipliers": {
+          "v2_velocity": 1.44,
+          "v2_cross_motion": 1.44
+        },
+        "reason": "Replace weak body-frame cross-speed cost with signed integrated cross-path error in initial heading frame; normal reversible sway remains cheap.",
+        "straight_frame": true,
+        "cross_track_sigma_m": 0.1
+      },
+      "04_TURN_LEFT": {
+        "multipliers": {
+          "v2_velocity": 0.4,
+          "v2_yaw": 1.2,
+          "v2_foot_local": 0.4,
+          "v2_cross_motion": 0.4,
+          "v2_translation_yaw_rate": 0.4,
+          "v2_heading_integral": 0.4,
+          "v2_contact_timing": 0.4,
+          "v2_contact_slip": 0.4,
+          "v2_gravity_alignment": 0.4,
+          "v2_body_height": 0.4,
+          "v2_target_acceleration": 0.4,
+          "v2_joint_acceleration": 0.4,
+          "v2_torque": 0.4,
+          "v2_joint_limits": 0.4,
+          "v2_phase_symmetry": 0.4,
+          "v2_liftoff_events": 0.4,
+          "v2_task_boundary_event": 0.4,
+          "v2_turn_cycle_task": 0.4
+        },
+        "turn_velocity_sigma": 0.06,
+        "reason": "Completed paired 24s frozen A/B: weight1.2 ranks rotating baseline above degenerated walking policy under PPO discount; restart from selected trot baseline.",
+        "reward_profile": "cycle_net_progress_gamma099_v1"
+      },
+      "05_TURN_RIGHT": {
+        "multipliers": {
+          "v2_velocity": 0.32,
+          "v2_yaw": 1.44,
+          "v2_foot_local": 0.4,
+          "v2_cross_motion": 0.32,
+          "v2_translation_yaw_rate": 0.4,
+          "v2_heading_integral": 0.4,
+          "v2_contact_timing": 0.44,
+          "v2_contact_slip": 0.4,
+          "v2_gravity_alignment": 0.4,
+          "v2_body_height": 0.4,
+          "v2_target_acceleration": 0.4,
+          "v2_joint_acceleration": 0.4,
+          "v2_torque": 0.4,
+          "v2_joint_limits": 0.4,
+          "v2_phase_symmetry": 0.4,
+          "v2_liftoff_events": 0.4,
+          "v2_task_boundary_event": 0.4,
+          "v2_turn_cycle_task": 0.4
+        },
+        "turn_velocity_sigma": 0.06,
+        "reason": "Completed paired 24s frozen A/B: weight1.2 ranks rotating baseline above degenerated walking policy under PPO discount; restart from selected trot baseline.",
+        "reward_profile": "cycle_net_progress_gamma099_v1"
+      }
+    },
+    "last_review_unix": 1793230640.0593023,
+    "yaw": {
+      "multipliers": {
+        "angle_error": 2.4
+      },
+      "reason": "Verified independent checkpoint28 survival15/16; model29 had no matching evaluation. Correct baseline provenance.",
+      "exploration": {
+        "max_std_deg": 1.0,
+        "anneal_iterations": 40
+      }
+    }
+  },
+  "updated_unix": 1793228182.8389328,
+  "right_plateau_contact_adjustment": {
+    "v2_contact_timing": 0.44,
+    "revision": 30,
+    "receipt": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/right_plateau_contact_20261029_0654/receipt.json",
+    "still_requires_independent_evaluation": true
+  },
+  "bank_watchdog_pid": 189848,
+  "current_runtime_revision": "turn_anchored_clock_and_timeout_continuation_v1",
+  "turn_timing_transition": {
+    "status": "completed",
+    "launcher_pid": 189501,
+    "bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548",
+    "source_pid": 150324,
+    "created_unix": 1793229048.6678364,
+    "updated_unix": 1793229092.7527692,
+    "smoke_source_checkpoints": [
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/01_FORWARD_POLICY/checkpoints/model_001662.pt",
+        "sha256": "92fa7be7d62742dd736bdd6e42379c299e61bf390efba8e3c73ccadcb6771f76",
+        "iteration": 1662,
+        "updated_unix": 1793228969.5231144,
+        "reason": "periodic"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/04_TURN_LEFT/checkpoints/model_001662.pt",
+        "sha256": "6e483d1b036ac45325e7f326842913b5ebe3259a5466b5fb2fc90dfb57716ab8",
+        "iteration": 1662,
+        "updated_unix": 1793228969.5316944,
+        "reason": "periodic"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/05_TURN_RIGHT/checkpoints/model_001662.pt",
+        "sha256": "815b397e54a428eaf261110a70a7e8d399c04190b72defc9343931b950ba7c24",
+        "iteration": 1662,
+        "updated_unix": 1793228969.5386634,
+        "reason": "periodic"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/06_BACKWARD/checkpoints/model_001662.pt",
+        "sha256": "06361f67da5f25815a0293d2069d56a82c82423e40a17ee3f3aaa85053b9a396",
+        "iteration": 1662,
+        "updated_unix": 1793228969.546352,
+        "reason": "periodic"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/02_STRAFE_LEFT/checkpoints/model_001662.pt",
+        "sha256": "fc606bc2bab4af1278c3b1e02fbe30362878d138147de15efbc2004718ffb8f7",
+        "iteration": 1662,
+        "updated_unix": 1793228969.55325,
+        "reason": "periodic"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/03_STRAFE_RIGHT/checkpoints/model_001662.pt",
+        "sha256": "58dbf7076ca4ef14d8c3c1f34ea33147b41bbbff4bffba3e1e524d89d2d814d0",
+        "iteration": 1662,
+        "updated_unix": 1793228969.560152,
+        "reason": "periodic"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/09_BACKWARD_WALK/checkpoints/model_001662.pt",
+        "sha256": "aca8bc4b2ba82ca221d68de6f3e0a8efd0f383fb48dceb370261886a9ed8d666",
+        "iteration": 1662,
+        "updated_unix": 1793228969.5678768,
+        "reason": "periodic"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/10_FORWARD_TROT/checkpoints/model_001662.pt",
+        "sha256": "daf34d8053f04e485e4c5da8e95e62b6781429615e98e343c6767d1f7fb0d45b",
+        "iteration": 1662,
+        "updated_unix": 1793228969.5748117,
+        "reason": "periodic"
+      }
+    ],
+    "frozen_module_sha256": {
+      "teacher_bank_core.py": "66a2b26dbcfe6712c16d0bfb4b74949c6486ba2f7571c3c74dabd9508ff94142",
+      "teacher_turn_cycles.py": "b37a665c12e8847d8997cb5e4cdd334dd91a60aeb9cc2f43d91433b3fedf6fff",
+      "teacher_reference_rewards_v2.py": "22c65f6117d3c614becc46f59d038ec23c8b84923278f89dca4e112819984a62",
+      "turn_phase_clock_candidate.py": "bda0cfb748ad32c88a624254a0907a1382b4dabd97ba916df7dbfdbf82ecfa48"
+    },
+    "source_final_checkpoints": [
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/01_FORWARD_POLICY/checkpoints/model_001670.pt",
+        "sha256": "1565bfeece867606deb4cc4259eca1f8129a7f6ac6b4ae7d49b51fd9b6baa46a",
+        "iteration": 1670,
+        "updated_unix": 1793229066.123463,
+        "reason": "final"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/04_TURN_LEFT/checkpoints/model_001670.pt",
+        "sha256": "2f71cde01695ec5bbb0bc5f55007dc53dbed2898481eeed140376353bc5700a3",
+        "iteration": 1670,
+        "updated_unix": 1793229066.1306221,
+        "reason": "final"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/05_TURN_RIGHT/checkpoints/model_001670.pt",
+        "sha256": "fe823849f3fb58ced0903165005a845042fc208ba2347e6e09c98126136a6704",
+        "iteration": 1670,
+        "updated_unix": 1793229066.1390007,
+        "reason": "final"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/06_BACKWARD/checkpoints/model_001670.pt",
+        "sha256": "3749add082fbca37d6951535acfb9e3b20da36810006c1d9f06c0afa70d8e4fe",
+        "iteration": 1670,
+        "updated_unix": 1793229066.1459887,
+        "reason": "final"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/02_STRAFE_LEFT/checkpoints/model_001670.pt",
+        "sha256": "ab7d81c6822174d1625935a741e15734ca56d72297e9f8cf8a5f64145c56c743",
+        "iteration": 1670,
+        "updated_unix": 1793229066.1528559,
+        "reason": "final"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/03_STRAFE_RIGHT/checkpoints/model_001670.pt",
+        "sha256": "462fd362f05bf6fb4d582f172fce883b9d7e0cf0de1c44f4e6cdb16cd2c2ec56",
+        "iteration": 1670,
+        "updated_unix": 1793229066.1605783,
+        "reason": "final"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/09_BACKWARD_WALK/checkpoints/model_001670.pt",
+        "sha256": "fd27c777b6a276ebdd8b8e7d7635613b93fa05c762b7e40f8df33fe1fd2ef1a1",
+        "iteration": 1670,
+        "updated_unix": 1793229066.167586,
+        "reason": "final"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_netprogress_20261029_053548/10_FORWARD_TROT/checkpoints/model_001670.pt",
+        "sha256": "17c7b19390fa73dc57e34a88f785e640db71681698d6f8676097371eb5edc042",
+        "iteration": 1670,
+        "updated_unix": 1793229066.190686,
+        "reason": "final"
+      }
+    ],
+    "pid": 189847,
+    "watchdog_pid": 189848,
+    "resume_verified": true,
+    "control_unchanged": true,
+    "yaw_process_unchanged": true,
+    "new_iteration": 1671
+  },
+  "yaw_angle_dense_adjustment": {
+    "time": 1793228589.9961104,
+    "teacher": "YAW_SINE_STANCE",
+    "evaluation_iteration": 738,
+    "source_evaluation_sha256": "96d0f9fb543ffe9a878386412c2706416e349481403d1d28757ee74afa504896",
+    "reason": "Post-1degree exploration ceiling held-out evaluation remains stationary plateau: survival1, RMSE21.47deg. Add dense angle-error gradient while keeping angle wave, anchor, liftoff and fall constraints unchanged.",
+    "actual_reward_change": true,
+    "reward_changes": {
+      "angle_error": {
+        "before": 1.0,
+        "after": 2.0
+      }
+    },
+    "control_revision": 31,
+    "baseline_unchanged": true,
+    "trainers_restarted": false,
+    "physical_improvement_not_yet_verified": true
+  },
+  "latest_yaw_evaluation": {
+    "amplitude_deg": 29.999999999999996,
+    "liftoff_budget": 1,
+    "iteration": 860,
+    "checkpoint_iteration": 820,
+    "angle_rmse_deg": 21.658124923706055,
+    "peak_error_deg": 47.27827835083008,
+    "valid_tracking_samples": 30176,
+    "survival_fraction": 1.0,
+    "max_liftoffs_per_foot": [
+      1.0,
+      9.0,
+      7.0,
+      2.0
+    ],
+    "accepted": false,
+    "criteria": "16 environments, 2 full sine cycles, all survive, RMSE<=5deg, peak<=10deg, each foot<=1 liftoff in entire episode"
+  },
+  "turn_yaw_automatic_cap": 1.5,
+  "right_yaw_weight_review": {
+    "time": 1793230519.4941292,
+    "teacher": "05_TURN_RIGHT",
+    "action": "plateau_net_turn_progress_weight_increase",
+    "evaluation_iteration": 1720,
+    "reason": "Post-fix-trained independent policy survives and drift nears20cm but mean turning remains0.175rad/s vs target0.524. Increase useful signed net progress; preserve XY/cadence/feet weights.",
+    "actual_reward_change": true,
+    "reward_changes": {
+      "v2_yaw": {
+        "before": 1.2,
+        "after": 1.44
+      }
+    },
+    "control_revision": 35,
+    "automatic_cap": 1.5,
+    "fall_proof": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/turn_cap15_fall_proof.json",
+    "max_fall_total_reward_current_right": -2.6784,
+    "max_fall_total_reward_at_cap_any_positive_weights": -1.52,
+    "turn_period_s": 1.0,
+    "other_teachers_unchanged": true,
+    "trainers_restarted": false,
+    "physical_improvement_not_yet_verified": true
+  },
+  "final_archive_script": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/archive_final_readonly.py",
+  "final_archive_script_sha256": "886a506b3fdd14a3cce118fa3aa80286e28f7ce2fe74bdf602e5098cbaa5ba5b",
+  "archive_preflight": "CPU10tests passed; remote before-deadline plan correctly not_ready; no final package yet",
+  "straight_cross_repair": {
+    "status": "completed",
+    "launcher_pid": 212956,
+    "bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048",
+    "source_pid": 189847,
+    "created_unix": 1793232490.4320066,
+    "updated_unix": 1793232534.7993455,
+    "smoke_source_checkpoints": [
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/01_FORWARD_POLICY/checkpoints/model_001968.pt",
+        "sha256": "411fdedcdfce35934ac10e789524cda51ebdd2719940e5de9be43f99d65b0b8d",
+        "iteration": 1968,
+        "updated_unix": 1793232483.0674014,
+        "reason": "periodic"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/04_TURN_LEFT/checkpoints/model_001968.pt",
+        "sha256": "1669d7cc7da44c3cc051842cbd464d8dcac0f52693f8f7ce9987463e10c67729",
+        "iteration": 1968,
+        "updated_unix": 1793232483.0760949,
+        "reason": "periodic"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/05_TURN_RIGHT/checkpoints/model_001968.pt",
+        "sha256": "b7aca88b4f250a5e000650c42b28158a8a8e2d024a1e5d5fa6d3db28058a78e0",
+        "iteration": 1968,
+        "updated_unix": 1793232483.0829854,
+        "reason": "periodic"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/06_BACKWARD/checkpoints/model_001968.pt",
+        "sha256": "0750ab5b315126d25c21a2f7d4dbdd66c1e7f5938a416e29a09d8102e1c68fdc",
+        "iteration": 1968,
+        "updated_unix": 1793232483.0906146,
+        "reason": "periodic"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/02_STRAFE_LEFT/checkpoints/model_001968.pt",
+        "sha256": "a84bb839dac3e7358bbc6c73130628fd33fed4e6a12dfaff8bc1d2fb5b8c6355",
+        "iteration": 1968,
+        "updated_unix": 1793232483.0975754,
+        "reason": "periodic"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/03_STRAFE_RIGHT/checkpoints/model_001968.pt",
+        "sha256": "d79c21dae125ef3b54b44c69d345122d2f28fa2118f4a13d79a9c8f42bb97a4b",
+        "iteration": 1968,
+        "updated_unix": 1793232483.1044812,
+        "reason": "periodic"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/09_BACKWARD_WALK/checkpoints/model_001968.pt",
+        "sha256": "428e99773413b4870ba36361cce2867484e4f71668eef03a532cce3a01d4511a",
+        "iteration": 1968,
+        "updated_unix": 1793232483.1123757,
+        "reason": "periodic"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/10_FORWARD_TROT/checkpoints/model_001968.pt",
+        "sha256": "7c85bc635bbb12012ff42f2131fca4f50a9498ea27b03530da5b7fe4b743d0bc",
+        "iteration": 1968,
+        "updated_unix": 1793232483.119314,
+        "reason": "periodic"
+      }
+    ],
+    "frozen_module_sha256": {
+      "night_tuning.py": "959dfd8406bb139bac9a6443265bc1975419a89bb7b4c8b0736c17ca608d1c84"
+    },
+    "source_final_checkpoints": [
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/01_FORWARD_POLICY/checkpoints/model_001970.pt",
+        "sha256": "4b971c62dd761fc910c867e2f42df3207399a116582691a81c090056a6437770",
+        "iteration": 1970,
+        "updated_unix": 1793232508.3807878,
+        "reason": "final"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/04_TURN_LEFT/checkpoints/model_001970.pt",
+        "sha256": "080238df000e5a83f149b3171b5eb92fd6dd1c11f2051f678c1bf3cc91254370",
+        "iteration": 1970,
+        "updated_unix": 1793232508.3877168,
+        "reason": "final"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/05_TURN_RIGHT/checkpoints/model_001970.pt",
+        "sha256": "566a17d8a9832d2e1041229bcab6936795b49e8ef93f368acb1affe02ea5f1b2",
+        "iteration": 1970,
+        "updated_unix": 1793232508.3956978,
+        "reason": "final"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/06_BACKWARD/checkpoints/model_001970.pt",
+        "sha256": "c1fb8968bd3291f1bc8cd8ce78dc0b992c0834301580f2f538b28982dafac2ea",
+        "iteration": 1970,
+        "updated_unix": 1793232508.4027052,
+        "reason": "final"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/02_STRAFE_LEFT/checkpoints/model_001970.pt",
+        "sha256": "065504824e9d3826dd58b70a8d20d1a2e95c38485436388421c6a434a70f7375",
+        "iteration": 1970,
+        "updated_unix": 1793232508.409573,
+        "reason": "final"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/03_STRAFE_RIGHT/checkpoints/model_001970.pt",
+        "sha256": "3bf4b1f4c4e019093dfcca998f7e8cf73ec2d38cedfd9dfa76402f473c5130e7",
+        "iteration": 1970,
+        "updated_unix": 1793232508.4172885,
+        "reason": "final"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/09_BACKWARD_WALK/checkpoints/model_001970.pt",
+        "sha256": "d2e819aedf4c3d994c0fbfcf1e8e01ef015c0dadb005d5513f179ac7b9bfcccb",
+        "iteration": 1970,
+        "updated_unix": 1793232508.4241161,
+        "reason": "final"
+      },
+      {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_turntiming_20261029_071048/10_FORWARD_TROT/checkpoints/model_001970.pt",
+        "sha256": "59c27c13ae3f45d196c45fa618b0a8b245fae2cbed7d9756f64972b1fff8bd6f",
+        "iteration": 1970,
+        "updated_unix": 1793232508.4317122,
+        "reason": "final"
+      }
+    ],
+    "pid": 213292,
+    "watchdog_pid": 213293,
+    "resume_verified": true,
+    "control_unchanged": true,
+    "yaw_process_unchanged": true,
+    "new_iteration": 1971
+  },
+  "historical_candidates_backup": {
+    "path": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/historical_candidates_20261029_0744.zip",
+    "sha256": "ff1048d492d099fbe9534b58dfb2c1e2d3bf03c617439422153f9127d4409f7d",
+    "scope": "four historical coarse-task translation candidates; not formal accepted; no baseline override"
+  }
+}

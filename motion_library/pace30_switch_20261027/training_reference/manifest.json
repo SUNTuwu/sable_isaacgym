@@ -1,0 +1,932 @@
+{
+  "schema": "sable-processed-reference/1",
+  "created_local": "2026-10-27T17:18:56",
+  "fps": 50,
+  "sample_count": 51,
+  "period_s": 1.0,
+  "joint_names": [
+    "spine_pitch",
+    "spine_roll",
+    "hip_roll",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "L_ankle_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "R_ankle_pitch",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch"
+  ],
+  "policy_joint_names": [
+    "spine_roll",
+    "hip_roll",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "L_ankle_pitch",
+    "R_ankle_pitch",
+    "spine_pitch"
+  ],
+  "foot_order": [
+    "FL",
+    "FR",
+    "HL",
+    "HR"
+  ],
+  "clips": [
+    {
+      "id": "01_FORWARD_POLICY",
+      "file": "01_FORWARD_POLICY.npz",
+      "title": "前进｜当前策略",
+      "fps": 50,
+      "samples": 51,
+      "period_s": 1.0,
+      "joint_names": [
+        "spine_pitch",
+        "spine_roll",
+        "hip_roll",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "L_ankle_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "R_ankle_pitch",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch"
+      ],
+      "policy_joint_names": [
+        "spine_roll",
+        "hip_roll",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "L_ankle_pitch",
+        "R_ankle_pitch",
+        "spine_pitch"
+      ],
+      "foot_order": [
+        "FL",
+        "FR",
+        "HL",
+        "HR"
+      ],
+      "source_metadata": "../motions/01_FORWARD_POLICY.json",
+      "processing": {
+        "periodic_filter": "Endpoint-drift removal, five Fourier harmonics; analytic periodic q derivatives",
+        "harmonics": 5,
+        "source_npz_sha256": "58ade0d4f5c81e01cca8ff6e06c6b4a89574d12058f5fcf0116b88f75e7fb878",
+        "root_cycle_translation_m": [
+          0.15866535902023315,
+          -0.0031112388242036104,
+          0.0
+        ],
+        "root_cycle_yaw_rad": 0.005234956053657294,
+        "ground_correction": {
+          "method": "Smooth periodic vertical-root upper envelope; joint FK preserved",
+          "margin_m": 0.00025,
+          "extra_margin_m": 5e-05,
+          "maximum_root_raise_m": 0.003346474181196528,
+          "estimated_contact_height_threshold_m": 0.003
+        }
+      },
+      "quality": {
+        "minimum_capsule_z_mm": 0.3000000000000095,
+        "max_joint_pose_seam_deg": 0.0,
+        "max_joint_velocity_seam_rad_s": 0.0,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_change_from_authored_deg": 8.817899620006616,
+        "max_joint_velocity_rad_s": 5.487267967670663,
+        "turn_target_reprojection_error_mm": null,
+        "max_root_raise_mm": 3.346474181196528,
+        "mean_geometric_contact_count": 1.7647058823529411,
+        "physical_validation_passed": false
+      },
+      "native_command_world_mean": [
+        0.15866535902023315,
+        -0.0031112388242036113,
+        0.0
+      ],
+      "native_yaw_rate_rad_s": 0.00523495605365729
+    },
+    {
+      "id": "02_STRAFE_LEFT",
+      "file": "02_STRAFE_LEFT.npz",
+      "title": "Left lateral pace - paired legs",
+      "fps": 50,
+      "samples": 51,
+      "period_s": 1.0,
+      "joint_names": [
+        "spine_pitch",
+        "spine_roll",
+        "hip_roll",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "L_ankle_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "R_ankle_pitch",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch"
+      ],
+      "policy_joint_names": [
+        "spine_roll",
+        "hip_roll",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "L_ankle_pitch",
+        "R_ankle_pitch",
+        "spine_pitch"
+      ],
+      "foot_order": [
+        "FL",
+        "FR",
+        "HL",
+        "HR"
+      ],
+      "source_metadata": "source_motions/02_STRAFE_LEFT.json",
+      "processing": {
+        "periodic_filter": "Endpoint-drift removal, five Fourier harmonics; analytic periodic q derivatives",
+        "harmonics": 5,
+        "source_npz_sha256": "c3e78155a80ae5828a7200c66471e4a84772bdd32446f453cee76da18e5e422c",
+        "root_cycle_translation_m": [
+          -0.005243229679763317,
+          0.06096676364541054,
+          0.0
+        ],
+        "root_cycle_yaw_rad": 0.0029779281057212073,
+        "ground_correction": {
+          "method": "Smooth periodic vertical-root upper envelope; joint FK preserved",
+          "margin_m": 0.00025,
+          "extra_margin_m": 5e-05,
+          "maximum_root_raise_m": 5e-05,
+          "estimated_contact_height_threshold_m": 0.003
+        }
+      },
+      "quality": {
+        "minimum_capsule_z_mm": 0.6090824157720032,
+        "max_joint_pose_seam_deg": 0.0,
+        "max_joint_velocity_seam_rad_s": 0.0,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_change_from_authored_deg": 6.820047773380467,
+        "max_joint_velocity_rad_s": 6.288957910056618,
+        "turn_target_reprojection_error_mm": null,
+        "max_root_raise_mm": 0.05,
+        "mean_geometric_contact_count": 1.8823529411764706,
+        "physical_validation_passed": false
+      },
+      "native_command_world_mean": [
+        -0.005243229679763317,
+        0.06096676364541054,
+        0.0
+      ],
+      "native_yaw_rate_rad_s": 0.002977928105721206,
+      "gait_type": "pace",
+      "supersedes_teacher_id": "07_LATERAL_TROT_LEFT"
+    },
+    {
+      "id": "03_STRAFE_RIGHT",
+      "file": "03_STRAFE_RIGHT.npz",
+      "title": "Right lateral pace - paired legs",
+      "fps": 50,
+      "samples": 51,
+      "period_s": 1.0,
+      "joint_names": [
+        "spine_pitch",
+        "spine_roll",
+        "hip_roll",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "L_ankle_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "R_ankle_pitch",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch"
+      ],
+      "policy_joint_names": [
+        "spine_roll",
+        "hip_roll",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "L_ankle_pitch",
+        "R_ankle_pitch",
+        "spine_pitch"
+      ],
+      "foot_order": [
+        "FL",
+        "FR",
+        "HL",
+        "HR"
+      ],
+      "source_metadata": "source_motions/03_STRAFE_RIGHT.json",
+      "processing": {
+        "periodic_filter": "Endpoint-drift removal, five Fourier harmonics; analytic periodic q derivatives",
+        "harmonics": 5,
+        "source_npz_sha256": "ba397c765ec5ac475ce5edc012df07fc81b62a3023d3304f44079977675287ae",
+        "root_cycle_translation_m": [
+          -0.005243229679763317,
+          -0.06096676364541054,
+          0.0
+        ],
+        "root_cycle_yaw_rad": -0.0029779281057212073,
+        "ground_correction": {
+          "method": "Smooth periodic vertical-root upper envelope; joint FK preserved",
+          "margin_m": 0.00025,
+          "extra_margin_m": 5e-05,
+          "maximum_root_raise_m": 0.00011624445828820234,
+          "estimated_contact_height_threshold_m": 0.003
+        }
+      },
+      "quality": {
+        "minimum_capsule_z_mm": 0.29999999999999816,
+        "max_joint_pose_seam_deg": 0.0,
+        "max_joint_velocity_seam_rad_s": 0.0,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_change_from_authored_deg": 7.006588691801994,
+        "max_joint_velocity_rad_s": 6.2008574139464825,
+        "turn_target_reprojection_error_mm": null,
+        "max_root_raise_mm": 0.11624445828820235,
+        "mean_geometric_contact_count": 1.9607843137254901,
+        "physical_validation_passed": false
+      },
+      "native_command_world_mean": [
+        -0.005243229679763317,
+        -0.06096676364541054,
+        0.0
+      ],
+      "native_yaw_rate_rad_s": -0.002977928105721206,
+      "gait_type": "pace",
+      "supersedes_teacher_id": "08_LATERAL_TROT_RIGHT"
+    },
+    {
+      "id": "06_BACKWARD",
+      "file": "06_BACKWARD.npz",
+      "title": "后退｜数据集",
+      "fps": 50,
+      "samples": 51,
+      "period_s": 1.0,
+      "joint_names": [
+        "spine_pitch",
+        "spine_roll",
+        "hip_roll",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "L_ankle_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "R_ankle_pitch",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch"
+      ],
+      "policy_joint_names": [
+        "spine_roll",
+        "hip_roll",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "L_ankle_pitch",
+        "R_ankle_pitch",
+        "spine_pitch"
+      ],
+      "foot_order": [
+        "FL",
+        "FR",
+        "HL",
+        "HR"
+      ],
+      "source_metadata": "../motions/06_BACKWARD.json",
+      "processing": {
+        "periodic_filter": "Endpoint-drift removal, five Fourier harmonics; analytic periodic q derivatives",
+        "harmonics": 5,
+        "source_npz_sha256": "7e54ca3f60a66c4b18fb3c62a0e1bf798d5287abdb7833e3c9096c1959f33db0",
+        "root_cycle_translation_m": [
+          -0.14959575235843658,
+          0.005691807251423597,
+          0.0
+        ],
+        "root_cycle_yaw_rad": 0.04274181329617745,
+        "ground_correction": {
+          "method": "Smooth periodic vertical-root upper envelope; joint FK preserved",
+          "margin_m": 0.00025,
+          "extra_margin_m": 5e-05,
+          "maximum_root_raise_m": 0.0011059402025466432,
+          "estimated_contact_height_threshold_m": 0.003
+        }
+      },
+      "quality": {
+        "minimum_capsule_z_mm": 0.2999999999999904,
+        "max_joint_pose_seam_deg": 0.0,
+        "max_joint_velocity_seam_rad_s": 0.0,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_change_from_authored_deg": 5.323121757820701,
+        "max_joint_velocity_rad_s": 7.55666313577686,
+        "turn_target_reprojection_error_mm": null,
+        "max_root_raise_mm": 1.1059402025466432,
+        "mean_geometric_contact_count": 1.5686274509803924,
+        "physical_validation_passed": false
+      },
+      "native_command_world_mean": [
+        -0.14959575235843658,
+        0.005691807251423597,
+        0.0
+      ],
+      "native_yaw_rate_rad_s": 0.042741813296177454
+    },
+    {
+      "id": "07_LATERAL_TROT_LEFT",
+      "file": "07_LATERAL_TROT_LEFT.npz",
+      "title": "左横移 trot｜对角交替",
+      "fps": 50,
+      "samples": 51,
+      "period_s": 1.0,
+      "joint_names": [
+        "spine_pitch",
+        "spine_roll",
+        "hip_roll",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "L_ankle_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "R_ankle_pitch",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch"
+      ],
+      "policy_joint_names": [
+        "spine_roll",
+        "hip_roll",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "L_ankle_pitch",
+        "R_ankle_pitch",
+        "spine_pitch"
+      ],
+      "foot_order": [
+        "FL",
+        "FR",
+        "HL",
+        "HR"
+      ],
+      "source_metadata": "../motions/07_LATERAL_TROT_LEFT.json",
+      "processing": {
+        "periodic_filter": "Endpoint-drift removal, five Fourier harmonics; analytic periodic q derivatives",
+        "harmonics": 5,
+        "source_npz_sha256": "ed6484cfbd43ccc64cbe9641f939424751e290bfa5a203616835eddfc3319f2e",
+        "root_cycle_translation_m": [
+          0.0,
+          0.02500000037252903,
+          0.0
+        ],
+        "root_cycle_yaw_rad": 0.0,
+        "ground_correction": {
+          "method": "Smooth periodic vertical-root upper envelope; joint FK preserved",
+          "margin_m": 0.00025,
+          "extra_margin_m": 5e-05,
+          "maximum_root_raise_m": 5e-05,
+          "estimated_contact_height_threshold_m": 0.003
+        }
+      },
+      "quality": {
+        "minimum_capsule_z_mm": 0.7048253153215892,
+        "max_joint_pose_seam_deg": 0.0,
+        "max_joint_velocity_seam_rad_s": 0.0,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_change_from_authored_deg": 1.3928906422514347,
+        "max_joint_velocity_rad_s": 1.8604937800160812,
+        "turn_target_reprojection_error_mm": null,
+        "max_root_raise_mm": 0.05,
+        "mean_geometric_contact_count": 2.803921568627451,
+        "physical_validation_passed": false
+      },
+      "native_command_world_mean": [
+        0.0,
+        0.02500000037252903,
+        0.0
+      ],
+      "native_yaw_rate_rad_s": 0.0
+    },
+    {
+      "id": "08_LATERAL_TROT_RIGHT",
+      "file": "08_LATERAL_TROT_RIGHT.npz",
+      "title": "右横移 trot｜对角交替",
+      "fps": 50,
+      "samples": 51,
+      "period_s": 1.0,
+      "joint_names": [
+        "spine_pitch",
+        "spine_roll",
+        "hip_roll",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "L_ankle_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "R_ankle_pitch",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch"
+      ],
+      "policy_joint_names": [
+        "spine_roll",
+        "hip_roll",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "L_ankle_pitch",
+        "R_ankle_pitch",
+        "spine_pitch"
+      ],
+      "foot_order": [
+        "FL",
+        "FR",
+        "HL",
+        "HR"
+      ],
+      "source_metadata": "../motions/08_LATERAL_TROT_RIGHT.json",
+      "processing": {
+        "periodic_filter": "Endpoint-drift removal, five Fourier harmonics; analytic periodic q derivatives",
+        "harmonics": 5,
+        "source_npz_sha256": "34886fc77d05d6b1581cd02e277bfc94bc05ce31cb322ce43396bfbd69b62ba7",
+        "root_cycle_translation_m": [
+          0.0,
+          -0.02500000037252903,
+          0.0
+        ],
+        "root_cycle_yaw_rad": 0.0,
+        "ground_correction": {
+          "method": "Smooth periodic vertical-root upper envelope; joint FK preserved",
+          "margin_m": 0.00025,
+          "extra_margin_m": 5e-05,
+          "maximum_root_raise_m": 5e-05,
+          "estimated_contact_height_threshold_m": 0.003
+        }
+      },
+      "quality": {
+        "minimum_capsule_z_mm": 0.6743289467285637,
+        "max_joint_pose_seam_deg": 0.0,
+        "max_joint_velocity_seam_rad_s": 0.0,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_change_from_authored_deg": 1.4123702624293313,
+        "max_joint_velocity_rad_s": 1.9013087968596523,
+        "turn_target_reprojection_error_mm": null,
+        "max_root_raise_mm": 0.05,
+        "mean_geometric_contact_count": 2.784313725490196,
+        "physical_validation_passed": false
+      },
+      "native_command_world_mean": [
+        0.0,
+        -0.02500000037252903,
+        0.0
+      ],
+      "native_yaw_rate_rad_s": 0.0
+    },
+    {
+      "id": "09_BACKWARD_WALK",
+      "file": "09_BACKWARD_WALK.npz",
+      "title": "后退 walk｜前进倒放",
+      "fps": 50,
+      "samples": 51,
+      "period_s": 1.0,
+      "joint_names": [
+        "spine_pitch",
+        "spine_roll",
+        "hip_roll",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "L_ankle_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "R_ankle_pitch",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch"
+      ],
+      "policy_joint_names": [
+        "spine_roll",
+        "hip_roll",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "L_ankle_pitch",
+        "R_ankle_pitch",
+        "spine_pitch"
+      ],
+      "foot_order": [
+        "FL",
+        "FR",
+        "HL",
+        "HR"
+      ],
+      "source_metadata": "../motions/09_BACKWARD_WALK.json",
+      "processing": {
+        "periodic_filter": "Endpoint-drift removal, five Fourier harmonics; analytic periodic q derivatives",
+        "harmonics": 5,
+        "source_npz_sha256": "0d992e65cb55284d320b446436649e2aa7ebeabde8dfc1370faa48dfe6ba29a6",
+        "root_cycle_translation_m": [
+          -0.15864689648151398,
+          0.003941798582673073,
+          0.0
+        ],
+        "root_cycle_yaw_rad": -0.005234956441650562,
+        "ground_correction": {
+          "method": "Smooth periodic vertical-root upper envelope; joint FK preserved",
+          "margin_m": 0.00025,
+          "extra_margin_m": 5e-05,
+          "maximum_root_raise_m": 0.0026509647513758734,
+          "estimated_contact_height_threshold_m": 0.003
+        }
+      },
+      "quality": {
+        "minimum_capsule_z_mm": 0.29999999999999816,
+        "max_joint_pose_seam_deg": 0.0,
+        "max_joint_velocity_seam_rad_s": 0.0,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_change_from_authored_deg": 7.7888564894633125,
+        "max_joint_velocity_rad_s": 5.487267967670659,
+        "turn_target_reprojection_error_mm": null,
+        "max_root_raise_mm": 2.6509647513758736,
+        "mean_geometric_contact_count": 2.176470588235294,
+        "physical_validation_passed": false
+      },
+      "native_command_world_mean": [
+        -0.15864689648151398,
+        0.003941798582673074,
+        0.0
+      ],
+      "native_yaw_rate_rad_s": -0.005234956441650556
+    },
+    {
+      "id": "10_FORWARD_TROT",
+      "file": "10_FORWARD_TROT.npz",
+      "title": "前进 trot｜后退倒放",
+      "fps": 50,
+      "samples": 51,
+      "period_s": 1.0,
+      "joint_names": [
+        "spine_pitch",
+        "spine_roll",
+        "hip_roll",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "L_ankle_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "R_ankle_pitch",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch"
+      ],
+      "policy_joint_names": [
+        "spine_roll",
+        "hip_roll",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "L_ankle_pitch",
+        "R_ankle_pitch",
+        "spine_pitch"
+      ],
+      "foot_order": [
+        "FL",
+        "FR",
+        "HL",
+        "HR"
+      ],
+      "source_metadata": "../motions/10_FORWARD_TROT.json",
+      "processing": {
+        "periodic_filter": "Endpoint-drift removal, five Fourier harmonics; analytic periodic q derivatives",
+        "harmonics": 5,
+        "source_npz_sha256": "1359e99cd0769869d6ec91d17678393f74f88d9478ad7c94e9fb79ff453abec2",
+        "root_cycle_translation_m": [
+          0.1492159217596054,
+          -0.012078655883669853,
+          0.0
+        ],
+        "root_cycle_yaw_rad": -0.042741812604245595,
+        "ground_correction": {
+          "method": "Smooth periodic vertical-root upper envelope; joint FK preserved",
+          "margin_m": 0.00025,
+          "extra_margin_m": 5e-05,
+          "maximum_root_raise_m": 0.0011059361588178927,
+          "estimated_contact_height_threshold_m": 0.003
+        }
+      },
+      "quality": {
+        "minimum_capsule_z_mm": 0.2999999999999878,
+        "max_joint_pose_seam_deg": 0.0,
+        "max_joint_velocity_seam_rad_s": 0.0,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_change_from_authored_deg": 5.323121757820701,
+        "max_joint_velocity_rad_s": 7.55666313577684,
+        "turn_target_reprojection_error_mm": null,
+        "max_root_raise_mm": 1.1059361588178926,
+        "mean_geometric_contact_count": 1.5686274509803924,
+        "physical_validation_passed": false
+      },
+      "native_command_world_mean": [
+        0.1492159217596054,
+        -0.012078655883669853,
+        0.0
+      ],
+      "native_yaw_rate_rad_s": -0.0427418126042456
+    },
+    {
+      "id": "04_TURN_LEFT",
+      "file": "04_TURN_LEFT.npz",
+      "title": "左转｜数据集",
+      "fps": 50,
+      "samples": 51,
+      "period_s": 1.0,
+      "joint_names": [
+        "spine_pitch",
+        "spine_roll",
+        "hip_roll",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "L_ankle_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "R_ankle_pitch",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch"
+      ],
+      "policy_joint_names": [
+        "spine_roll",
+        "hip_roll",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "L_ankle_pitch",
+        "R_ankle_pitch",
+        "spine_pitch"
+      ],
+      "foot_order": [
+        "FL",
+        "FR",
+        "HL",
+        "HR"
+      ],
+      "source_metadata": "../motions/04_TURN_LEFT.json",
+      "processing": {
+        "periodic_filter": "Endpoint-drift removal, five Fourier harmonics; analytic periodic q derivatives",
+        "harmonics": 5,
+        "source_npz_sha256": "d3a756a60301ab34608d08b357f618f9e9436c8ba2c553ec2d3d8a04bd3b4a73",
+        "root_cycle_translation_m": [
+          -0.01526972558349371,
+          -0.01100306585431099,
+          0.0
+        ],
+        "root_cycle_yaw_rad": 1.7379031165024914,
+        "turn_variant": {
+          "original_yaw_rad": 1.7379031165024914,
+          "desired_yaw_rad": 0.17453292519943295,
+          "horizontal_body_relative_foot_scale": 0.10042730434287862,
+          "root_translation": "in_place",
+          "max_reprojection_error_mm": 0.5969060139342104
+        },
+        "ground_correction": {
+          "method": "Smooth periodic vertical-root upper envelope; joint FK preserved",
+          "margin_m": 0.00025,
+          "extra_margin_m": 5e-05,
+          "maximum_root_raise_m": 0.00755613504608581,
+          "estimated_contact_height_threshold_m": 0.003
+        }
+      },
+      "quality": {
+        "minimum_capsule_z_mm": 0.299999999999993,
+        "max_joint_pose_seam_deg": 0.0,
+        "max_joint_velocity_seam_rad_s": 0.0,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_change_from_authored_deg": 35.67368395037955,
+        "max_joint_velocity_rad_s": 5.263495769710308,
+        "turn_target_reprojection_error_mm": 0.5969060139342104,
+        "max_root_raise_mm": 7.55613504608581,
+        "mean_geometric_contact_count": 1.0588235294117647,
+        "physical_validation_passed": false
+      },
+      "native_command_world_mean": [
+        0.0,
+        0.0,
+        2.7755575615628914e-17
+      ],
+      "native_yaw_rate_rad_s": 0.1745329251994329
+    },
+    {
+      "id": "05_TURN_RIGHT",
+      "file": "05_TURN_RIGHT.npz",
+      "title": "右转｜手调左转镜像",
+      "fps": 50,
+      "samples": 51,
+      "period_s": 1.0,
+      "joint_names": [
+        "spine_pitch",
+        "spine_roll",
+        "hip_roll",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "L_ankle_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "R_ankle_pitch",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch"
+      ],
+      "policy_joint_names": [
+        "spine_roll",
+        "hip_roll",
+        "L_shoulder_roll",
+        "L_shoulder_pitch",
+        "L_elbow_pitch",
+        "L_hip_pitch",
+        "L_knee_pitch",
+        "R_shoulder_roll",
+        "R_shoulder_pitch",
+        "R_elbow_pitch",
+        "R_hip_pitch",
+        "R_knee_pitch",
+        "L_ankle_pitch",
+        "R_ankle_pitch",
+        "spine_pitch"
+      ],
+      "foot_order": [
+        "FL",
+        "FR",
+        "HL",
+        "HR"
+      ],
+      "source_metadata": "../motions/05_TURN_RIGHT.json",
+      "processing": {
+        "periodic_filter": "Endpoint-drift removal, five Fourier harmonics; analytic periodic q derivatives",
+        "harmonics": 5,
+        "source_npz_sha256": "e1b23fb67075acf223c4d37f4b15e9c4f1ac648cb792e43d26aaea3b60903464",
+        "root_cycle_translation_m": [
+          -0.01526972558349371,
+          0.01100306585431099,
+          0.0
+        ],
+        "root_cycle_yaw_rad": -1.7379031165024905,
+        "turn_variant": {
+          "original_yaw_rad": -1.7379031165024905,
+          "desired_yaw_rad": -0.17453292519943295,
+          "horizontal_body_relative_foot_scale": 0.10042730434287868,
+          "root_translation": "in_place",
+          "max_reprojection_error_mm": 0.596906010771556
+        },
+        "ground_correction": {
+          "method": "Smooth periodic vertical-root upper envelope; joint FK preserved",
+          "margin_m": 0.00025,
+          "extra_margin_m": 5e-05,
+          "maximum_root_raise_m": 0.007556135121423628,
+          "estimated_contact_height_threshold_m": 0.003
+        }
+      },
+      "quality": {
+        "minimum_capsule_z_mm": 0.30000000000000165,
+        "max_joint_pose_seam_deg": 0.0,
+        "max_joint_velocity_seam_rad_s": 0.0,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_change_from_authored_deg": 35.673683122245656,
+        "max_joint_velocity_rad_s": 5.26349578747323,
+        "turn_target_reprojection_error_mm": 0.596906010771556,
+        "max_root_raise_mm": 7.556135121423629,
+        "mean_geometric_contact_count": 1.0588235294117647,
+        "physical_validation_passed": false
+      },
+      "native_command_world_mean": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "native_yaw_rate_rad_s": -0.17453292519943298
+    }
+  ],
+  "ready_ids": [
+    "01_FORWARD_POLICY",
+    "02_STRAFE_LEFT",
+    "03_STRAFE_RIGHT",
+    "06_BACKWARD",
+    "07_LATERAL_TROT_LEFT",
+    "08_LATERAL_TROT_RIGHT",
+    "09_BACKWARD_WALK",
+    "10_FORWARD_TROT",
+    "04_TURN_LEFT",
+    "05_TURN_RIGHT"
+  ],
+  "physical_validation_passed": false,
+  "contact_labels": "Geometric estimates only; no simulated contact forces have been fabricated.",
+  "switch_note": "Backup pace references from saved Blender timeline; six continuing teachers retain byte-identical old reference files; 02/03 are new teachers."
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "teacher": "01_FORWARD_POLICY",
+    "iteration": 2084,
+    "observations": 94,
+    "actions": 15,
+    "optimizer_present": true,
+    "evaluated_policy_equal": true,
+    "evaluated_optimizer_equal": true
+  },
+  {
+    "teacher": "02_STRAFE_LEFT",
+    "iteration": 2084,
+    "observations": 94,
+    "actions": 15,
+    "optimizer_present": true,
+    "evaluated_policy_equal": true,
+    "evaluated_optimizer_equal": true
+  },
+  {
+    "teacher": "03_STRAFE_RIGHT",
+    "iteration": 2084,
+    "observations": 94,
+    "actions": 15,
+    "optimizer_present": true,
+    "evaluated_policy_equal": true,
+    "evaluated_optimizer_equal": true
+  },
+  {
+    "teacher": "04_TURN_LEFT",
+    "iteration": 2084,
+    "observations": 94,
+    "actions": 15,
+    "optimizer_present": true,
+    "evaluated_policy_equal": true,
+    "evaluated_optimizer_equal": true
+  },
+  {
+    "teacher": "05_TURN_RIGHT",
+    "iteration": 2084,
+    "observations": 94,
+    "actions": 15,
+    "optimizer_present": true,
+    "evaluated_policy_equal": true,
+    "evaluated_optimizer_equal": true
+  },
+  {
+    "teacher": "06_BACKWARD",
+    "iteration": 2084,
+    "observations": 94,
+    "actions": 15,
+    "optimizer_present": true,
+    "evaluated_policy_equal": true,
+    "evaluated_optimizer_equal": true
+  },
+  {
+    "teacher": "09_BACKWARD_WALK",
+    "iteration": 2084,
+    "observations": 94,
+    "actions": 15,
+    "optimizer_present": true,
+    "evaluated_policy_equal": true,
+    "evaluated_optimizer_equal": true
+  },
+  {
+    "teacher": "10_FORWARD_TROT",
+    "iteration": 2084,
+    "observations": 94,
+    "actions": 15,
+    "optimizer_present": true,
+    "evaluated_policy_equal": true,
+    "evaluated_optimizer_equal": true
+  }
+]

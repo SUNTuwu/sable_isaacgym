@@ -1,0 +1,17 @@
+{
+  "uploaded_utc": "2026-10-27T09:08:17Z",
+  "remote_directory": "/root/gpufree-data/projects/sable-isaacgym/motion_library/blender_motion_library_20261027_165843",
+  "archive": "/root/gpufree-data/projects/sable-isaacgym/motion_library/blender_motion_library_20261027_165843.zip",
+  "archive_sha256": "ea355436bbfe445321d4fca061858bd6abe4e90ea91ed712240ec9fad67826aa",
+  "archive_bytes": 15247969,
+  "verification": {
+    "passed": true,
+    "files_verified": 46,
+    "clips": 10,
+    "training_ready": false,
+    "scope": "Hash, shape, finite-value, quaternion and joint-order checks only"
+  },
+  "training_started": false,
+  "training_pause_marker_preserved": true,
+  "new_training_direction": "random specialist teachers on curated references, then fresh distilled student; no latest S3 weight reuse"
+}

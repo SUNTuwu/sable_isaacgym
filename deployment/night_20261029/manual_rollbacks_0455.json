@@ -1,0 +1,19 @@
+{
+  "time": 1793220747.8908112,
+  "old_acknowledged": [
+    {
+      "teacher": "04_TURN_LEFT",
+      "token": "turn_observation_compatible_baseline_0433",
+      "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_043231/04_TURN_LEFT/checkpoints/model_000986.pt"
+    },
+    {
+      "teacher": "05_TURN_RIGHT",
+      "token": "turn_observation_compatible_baseline_0433",
+      "checkpoint": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_audited_20261029_043231/05_TURN_RIGHT/checkpoints/model_000986.pt"
+    }
+  ],
+  "right_reason": "latest independent survival 0 versus baseline1",
+  "yaw_reason": "latest independent survival .125 versus baseline .9375",
+  "six_translation_networks": "unchanged continuation",
+  "control_revision": 8
+}

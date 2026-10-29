@@ -1,0 +1,7 @@
+{
+  "path": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s/03_STRAFE_RIGHT/checkpoints/model_002084.pt",
+  "sha256": "f35451fc4e308370b07d3e33c8a971564b37799a68926c13b2d05038c8b67bb4",
+  "iteration": 2084,
+  "updated_unix": 1793234101.4271362,
+  "reason": "final"
+}

@@ -1,0 +1,279 @@
+{
+  "bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_directlift_xy_20261028_021729",
+  "iteration_at_record": 1208,
+  "runtime_hashes_verified": true,
+  "resume": {
+    "passed": true,
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_directlift_20261028_020724",
+    "sources": [
+      {
+        "teacher_id": "01_FORWARD_POLICY",
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_directlift_20261028_020724/01_FORWARD_POLICY/checkpoints/model_001200.pt",
+        "sha256": "d95c93ed31eab387046a02e23316662e4dc5b15168f121aafc22322a0ced40be",
+        "iteration": 1200,
+        "policy_equal_before_intentional_change": true,
+        "policy_equal_except_log_std_after_change": true,
+        "optimizer_equal": true,
+        "intentional_change": null,
+        "observation_migration": null,
+        "curriculum_command_change": null,
+        "curriculum_state_restored": true
+      },
+      {
+        "teacher_id": "04_TURN_LEFT",
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_directlift_20261028_020724/04_TURN_LEFT/checkpoints/model_001200.pt",
+        "sha256": "5a3bb62f6d47c30301e02cfdbb12e49cf0c9d1a1146ebcc15f2c0c8fc4736af6",
+        "iteration": 1200,
+        "policy_equal_before_intentional_change": true,
+        "policy_equal_except_log_std_after_change": true,
+        "optimizer_equal": true,
+        "intentional_change": null,
+        "observation_migration": null,
+        "curriculum_command_change": null,
+        "curriculum_state_restored": true
+      },
+      {
+        "teacher_id": "05_TURN_RIGHT",
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_directlift_20261028_020724/05_TURN_RIGHT/checkpoints/model_001200.pt",
+        "sha256": "9afbef7bf9f0fd3eb21d51015f4d28deb59beb9200a34c931ce9bc080efe9c45",
+        "iteration": 1200,
+        "policy_equal_before_intentional_change": true,
+        "policy_equal_except_log_std_after_change": true,
+        "optimizer_equal": true,
+        "intentional_change": null,
+        "observation_migration": null,
+        "curriculum_command_change": null,
+        "curriculum_state_restored": true
+      },
+      {
+        "teacher_id": "06_BACKWARD",
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_directlift_20261028_020724/06_BACKWARD/checkpoints/model_001200.pt",
+        "sha256": "7a887ac4bd23d22cfab419c8d534eeccfa0633b2228faca62e3a94ba20811154",
+        "iteration": 1200,
+        "policy_equal_before_intentional_change": true,
+        "policy_equal_except_log_std_after_change": true,
+        "optimizer_equal": true,
+        "intentional_change": null,
+        "observation_migration": null,
+        "curriculum_command_change": null,
+        "curriculum_state_restored": true
+      },
+      {
+        "teacher_id": "02_STRAFE_LEFT",
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_directlift_20261028_020724/02_STRAFE_LEFT/checkpoints/model_001200.pt",
+        "sha256": "9c7648606fd2949f2072676a875a6d5b612223be5815f838779d4ada94b026a1",
+        "iteration": 1200,
+        "policy_equal_before_intentional_change": true,
+        "policy_equal_except_log_std_after_change": true,
+        "optimizer_equal": true,
+        "intentional_change": null,
+        "observation_migration": null,
+        "curriculum_command_change": null,
+        "curriculum_state_restored": true
+      },
+      {
+        "teacher_id": "03_STRAFE_RIGHT",
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_directlift_20261028_020724/03_STRAFE_RIGHT/checkpoints/model_001200.pt",
+        "sha256": "3237e8785091e7a1cd8b629024f468475a0724037bb7ca061ebb9741fd7ee7f6",
+        "iteration": 1200,
+        "policy_equal_before_intentional_change": true,
+        "policy_equal_except_log_std_after_change": true,
+        "optimizer_equal": true,
+        "intentional_change": null,
+        "observation_migration": null,
+        "curriculum_command_change": null,
+        "curriculum_state_restored": true
+      },
+      {
+        "teacher_id": "09_BACKWARD_WALK",
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_directlift_20261028_020724/09_BACKWARD_WALK/checkpoints/model_001200.pt",
+        "sha256": "3e07651dfd6b85428483fdd221235e1135773c1a90fd16e4e5f49830d3d4822d",
+        "iteration": 1200,
+        "policy_equal_before_intentional_change": true,
+        "policy_equal_except_log_std_after_change": true,
+        "optimizer_equal": true,
+        "intentional_change": null,
+        "observation_migration": null,
+        "curriculum_command_change": null,
+        "curriculum_state_restored": true
+      },
+      {
+        "teacher_id": "10_FORWARD_TROT",
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_directlift_20261028_020724/10_FORWARD_TROT/checkpoints/model_001200.pt",
+        "sha256": "a590f76d7378732ebce2c17db0af4417c941be054492133e319ff6c520d07352",
+        "iteration": 1200,
+        "policy_equal_before_intentional_change": true,
+        "policy_equal_except_log_std_after_change": true,
+        "optimizer_equal": true,
+        "intentional_change": null,
+        "observation_migration": null,
+        "curriculum_command_change": null,
+        "curriculum_state_restored": true
+      }
+    ],
+    "initial_iteration": 1200,
+    "new_environments_reset": true,
+    "old_rollout_storage_reused": false
+  },
+  "transition": {
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_directlift_20261028_020724",
+    "source_iteration": 1200,
+    "checkpoint_hashes_verified": true,
+    "old_learning_pid": 223313,
+    "deadline_unchanged": "2026-10-28T02:27:38.594426+08:00"
+  },
+  "launch": {
+    "bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_directlift_xy_20261028_021729",
+    "pid": 227416,
+    "deadline": "2026-10-28T02:27:38.594426+08:00",
+    "status": "training",
+    "watchdog_pid": 227417,
+    "sealer_pid": 227575,
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_directlift_20261028_020724",
+    "source_iteration": 1200,
+    "task_tracking_profile": "turn90_lateral_tracking_v1",
+    "step_quality_profile": "strict_steps_v1",
+    "ppo_smoke_updates": 1,
+    "formal_resumed_smoke_weights": false,
+    "command": [
+      "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_directlift_xy_20261028_021729/runtime/teacher_bank_core.py",
+      "--reference",
+      "/root/gpufree-data/projects/sable-isaacgym/motion_library/pace30_switch_20261027/training_reference",
+      "--resume-bank",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_directlift_20261028_020724",
+      "--control-mode",
+      "reference_plus_residual",
+      "--reference-strength",
+      "1",
+      "--time-scale",
+      "1",
+      "--offset-limit-deg",
+      "20",
+      "--imitation-scale",
+      ".2",
+      "--balance-first",
+      "--minimum-action-std",
+      ".15",
+      "--exploration-std",
+      ".15",
+      "--adaptive-curriculum",
+      "--motion-reward-module",
+      "--task-tracking-profile",
+      "turn90_lateral_tracking_v1",
+      "--step-quality-profile",
+      "strict_steps_v1",
+      "--translation-guard",
+      "--turn-speed-scale",
+      ".5",
+      "--turn-reference-time-scale",
+      "3",
+      "--turn-offset-rate-deg-s",
+      "50",
+      "--turn-lift-config",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_directlift_xy_20261028_021729/runtime/turn_lift_limits.json",
+      "--bank",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_directlift_xy_20261028_021729",
+      "--envs-per-teacher",
+      "2048",
+      "--minibatches",
+      "2",
+      "--deadline",
+      "2026-10-28T02:27:38.594426+08:00"
+    ]
+  },
+  "literal_lift_limits": {
+    "schema": "direct-tip-upstrokes/v1",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_guard_aggressive_20261028_004033",
+    "source_iteration": 1155,
+    "rise_hysteresis_m": 0.0005,
+    "teachers": {
+      "04_TURN_LEFT": {
+        "baseline_mean_counts_per_foot": [
+          99.0,
+          100.0,
+          80.0,
+          99.0
+        ],
+        "baseline_total_count": 378.0,
+        "baseline_horizon_s": 4.0,
+        "per_foot_max_hz": 0.5,
+        "total_max_hz": 2.0,
+        "per_foot_min_interval_s": 2.0,
+        "window_s": 4.0
+      },
+      "05_TURN_RIGHT": {
+        "baseline_mean_counts_per_foot": [
+          100.0,
+          99.0,
+          99.0,
+          99.0
+        ],
+        "baseline_total_count": 397.0,
+        "baseline_horizon_s": 4.0,
+        "per_foot_max_hz": 0.5,
+        "total_max_hz": 2.0,
+        "per_foot_min_interval_s": 2.0,
+        "window_s": 4.0
+      }
+    },
+    "counter": "Each>=0.5mm tip rise after a>=0.5mm descent counts once. No contact, flight-duration or stride-distance prerequisite. Also counts shaking while held in air; first sample initializes height only.",
+    "cap_rule": "At most baseline/3, further bounded by previous0.5Hz/foot low-cadence goal and2Hz total. Total-foot budget prevents redistributing excessive steps across legs.",
+    "acceptance": "Full16s first episodes must all survive, yaw RMSE<=0.20rad/s, correct commanded signed yaw, and total upstroke count<=the same-duration baseline/3. Early failure or standing still never passes."
+  },
+  "training_commands": [
+    [
+      0.15866637229919434,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.7853981852531433
+    ],
+    [
+      0.0,
+      0.0,
+      -0.7853981852531433
+    ],
+    [
+      -0.1496027261018753,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0609702430665493,
+      0.0
+    ],
+    [
+      0.0,
+      -0.0609702430665493,
+      0.0
+    ],
+    [
+      -0.15864817798137665,
+      0.0,
+      0.0
+    ],
+    [
+      0.14923083782196045,
+      0.0,
+      0.0
+    ]
+  ],
+  "reference_periods": [
+    1.0,
+    3.0,
+    3.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "cpu_contract_passed": true,
+  "ppo_smoke_complete": true,
+  "scope": "Implementation and continuing training; not a claim of learned rotation acceptance."
+}

@@ -1,0 +1,82 @@
+{
+  "01_FORWARD_POLICY": {
+    "source_teacher_id": "01_FORWARD_POLICY",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531",
+    "source_iteration": 826,
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/01_FORWARD_POLICY/checkpoints/model_000826.pt",
+      "sha256": "8a1fc68790df7ccd23a3ae619f360d653e8739d7dc2ccd8d9c463609555d2cf5"
+    },
+    "reason": "02:25 straight baseline"
+  },
+  "06_BACKWARD": {
+    "source_teacher_id": "06_BACKWARD",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531",
+    "source_iteration": 826,
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/06_BACKWARD/checkpoints/model_000826.pt",
+      "sha256": "5e0ecdad2be563b77bdde10d116efb616eb03404901188feb1ed79daa7117117"
+    },
+    "reason": "02:25 straight baseline"
+  },
+  "09_BACKWARD_WALK": {
+    "source_teacher_id": "09_BACKWARD_WALK",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531",
+    "source_iteration": 826,
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/09_BACKWARD_WALK/checkpoints/model_000826.pt",
+      "sha256": "e618babf4d1e22f309cf0c237905ab0db1779856836cad70a21ef5c7e5fa0cd0"
+    },
+    "reason": "02:25 straight baseline"
+  },
+  "10_FORWARD_TROT": {
+    "source_teacher_id": "10_FORWARD_TROT",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531",
+    "source_iteration": 718,
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/10_FORWARD_TROT/checkpoints/model_000718.pt",
+      "sha256": "7a889f4ca70724441985319ea8dff5dc589c37cfd5efda571aee971a5d45a231"
+    },
+    "reason": "02:25 straight baseline"
+  },
+  "02_STRAFE_LEFT": {
+    "source_teacher_id": "02_STRAFE_LEFT",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531",
+    "source_iteration": 663,
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/02_STRAFE_LEFT/checkpoints/model_000663.pt",
+      "sha256": "e866a34ab5359d9c637dedd1453f874aaa57139e412807fb869976f04cffa2db"
+    },
+    "reason": "02:25 straight baseline"
+  },
+  "03_STRAFE_RIGHT": {
+    "source_teacher_id": "03_STRAFE_RIGHT",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531",
+    "source_iteration": 663,
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/03_STRAFE_RIGHT/checkpoints/model_000663.pt",
+      "sha256": "6153592ef74cddce8f40af0267393f6a65f083ce2282c86b913525fdf5c3de9f"
+    },
+    "reason": "02:25 straight baseline"
+  },
+  "04_TURN_LEFT": {
+    "source_teacher_id": "06_BACKWARD",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323",
+    "source_iteration": 121,
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323/06_BACKWARD/checkpoints/model_000121.pt",
+      "sha256": "0d05f71f888ba7dd2262dc0d1d4e40fcbc246d4368eb8347d83d6fce02b54bf8"
+    },
+    "reason": "validated signed turning from trot candidate"
+  },
+  "05_TURN_RIGHT": {
+    "source_teacher_id": "10_FORWARD_TROT",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323",
+    "source_iteration": 121,
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323/10_FORWARD_TROT/checkpoints/model_000121.pt",
+      "sha256": "937bb6d2ef82c0406157b49e46f1e1155a24bbc40d5af447fbb880e7f8af1f1d"
+    },
+    "reason": "validated signed turning from trot candidate"
+  }
+}

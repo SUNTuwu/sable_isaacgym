@@ -1,0 +1,55 @@
+{
+  "bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_pace_stability_20261028_032616",
+  "pid": 254413,
+  "deadline": "2026-10-28T06:00:00+08:00",
+  "initial_iteration": 1401,
+  "verified_at_unix": 1793129497.6927974,
+  "runtime_files_verified": 154,
+  "all_eight_networks_and_Adam_restored": true,
+  "rotation_lift_constraints_unchanged": true,
+  "reference_files_unchanged": true,
+  "reference_amplitude": 1.0,
+  "offset_limit_deg": 20.0,
+  "training_envs": 16384,
+  "pace_controller_and_rewards": {
+    "version": "pace_tip_stability_v1",
+    "teacher_ids": [
+      "02_STRAFE_LEFT",
+      "03_STRAFE_RIGHT"
+    ],
+    "feet_order": [
+      "FL",
+      "FR",
+      "HL",
+      "HR"
+    ],
+    "reference": "Unchanged smoothed hand-K reference amplitude1 plus bounded20deg residual; no joint-angle imitation",
+    "frame": "Distal capsule tips in respective reference/actual root frames, matched by phase",
+    "curriculum_updates": 60,
+    "initial_residual_rate_deg_s": 2000.0,
+    "final_hind_residual_rate_deg_s": 60.0,
+    "final_shared_hip_roll_rate_deg_s": 120.0,
+    "controller": "Geometric rate curriculum, hind independent motors only; first reset command warm-starts balance correction. Forelegs and spine unchanged.",
+    "endpoint_reward": "6*weighted_mean(exp(-error_squared/sigma_squared))+6*worst_foot_quality; weights[1,1,2,2]",
+    "position_cost": "-3*weighted_mean(E/(1+E))-3*max(E/(1+E)), E=(tip_error/sigma)^2; sigma20->15mm",
+    "error_velocity_cost": "Reference-relative 3D tip error derivative, scale0.15m/s, bounded3/s; excludes reset warmup",
+    "residual_acceleration_cost": "Hind actually executed residual acceleration, scale30rad/s2, bounded1/s; excludes reset warmup",
+    "acceptance": {
+      "horizon_s": 16.0,
+      "survival_fraction": 1.0,
+      "hind_tip_rmse_mm": 10.0,
+      "hind_reference_relative_jump_p95_mm": 3.0,
+      "xy_rmse_m_s": 0.03,
+      "yaw_rmse_rad_s": 0.15,
+      "requires_full_curriculum": true,
+      "sampling_s": 0.02
+    },
+    "pace_cost_rebalance": "Direct upstroke counting retained; frequency max3/s, old raw world-Z velocity cost replaced by reference-relative 3D error velocity. Rotation constraints unchanged."
+  },
+  "periodic_evaluator_pid": 256468,
+  "bounded_periodic_evaluation_wall_s": 240,
+  "deadline_gpu_post_budget_s": 180,
+  "acceptance_status": "pending_independent_full_curriculum_evaluation",
+  "initial_150s_eval": "Timed out under concurrent training; repeated with bounded240s while training continues",
+  "diagnostic_source": "/root/gpufree-data/projects/sable-isaacgym/results/pace_jitter_20261028/diagnostic.json"
+}

@@ -42,3 +42,21 @@ events.out.tfevents.*
 *.key
 id_rsa*
 id_ed25519*
+
+# Migration: keep checkpoints and generated replay/cache data on the data disk.
+/transfer/
+*.blend
+*.blend[0-9]
+*.npy
+*.h5
+*.hdf5
+*.safetensors
+*.ckpt
+*.lock
+*.before_*
+**/telemetry_cache/
+**/monitor_memory.json
+**/previous_monitor_memory.json
+**/videos/trace_*.json
+**/latest_replay.npz
+/skill_candidates/

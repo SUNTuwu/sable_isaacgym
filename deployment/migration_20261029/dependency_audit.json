@@ -1,0 +1,20 @@
+[
+  {
+    "dependency": "legged_gym",
+    "pinned_commit": "8fa29acc6fd1910c3d9659eef6310bdd301cde0a",
+    "changed_files": [],
+    "missing_files": [],
+    "extra_files": [],
+    "passed": true,
+    "scope": "All upstream files compared byte-for-byte at pinned commit; ignores .git metadata, pycache and editable-install metadata"
+  },
+  {
+    "dependency": "rsl_rl",
+    "pinned_commit": "2ad79cf0caa85b91721abfe358105f869a784121",
+    "changed_files": [],
+    "missing_files": [],
+    "extra_files": [],
+    "passed": true,
+    "scope": "All upstream files compared byte-for-byte at pinned commit; ignores .git metadata, pycache and editable-install metadata"
+  }
+]

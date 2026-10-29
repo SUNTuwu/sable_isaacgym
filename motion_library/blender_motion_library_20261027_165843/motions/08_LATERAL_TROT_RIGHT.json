@@ -1,0 +1,228 @@
+{
+  "schema": "sable-authored-motion/1",
+  "id": "08_LATERAL_TROT_RIGHT",
+  "title": "右横移 trot｜对角交替",
+  "fps": 50.0,
+  "samples": 51,
+  "duration_s": 1.0,
+  "joint_names": [
+    "spine_pitch",
+    "spine_roll",
+    "hip_roll",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "L_ankle_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "R_ankle_pitch",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch"
+  ],
+  "policy_joint_names": [
+    "spine_roll",
+    "hip_roll",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "L_ankle_pitch",
+    "R_ankle_pitch",
+    "spine_pitch"
+  ],
+  "policy_from_motion_indices": [
+    1,
+    2,
+    9,
+    10,
+    11,
+    3,
+    4,
+    12,
+    13,
+    14,
+    6,
+    7,
+    5,
+    8,
+    0
+  ],
+  "foot_order": [
+    "FL",
+    "FR",
+    "HL",
+    "HR"
+  ],
+  "units": {
+    "length": "m",
+    "angle": "rad",
+    "time": "s"
+  },
+  "quaternion_order": "wxyz",
+  "axes": "+X forward, +Y left, +Z up",
+  "source_clip": {
+    "id": "08_LATERAL_TROT_RIGHT",
+    "title": "右横移 trot｜对角交替",
+    "start": 526,
+    "end": 576,
+    "hold_end": 600,
+    "source": {
+      "type": "authored_kinematic_gait",
+      "not_dataset": true,
+      "not_policy_rollout": true,
+      "period_s": 1.0,
+      "velocity_m_s": [
+        0.0,
+        -0.025,
+        0.0
+      ],
+      "duty_factor": 0.6,
+      "lift_m": 0.01,
+      "leg_order": [
+        "FL",
+        "FR",
+        "HL",
+        "HR"
+      ],
+      "phase_offsets": [
+        0.65,
+        0.15,
+        0.15,
+        0.65
+      ],
+      "swing_pairs": [
+        [
+          "FL",
+          "HR"
+        ],
+        [
+          "FR",
+          "HL"
+        ]
+      ],
+      "stance_xy": "world stationary",
+      "reference": "https://github.com/Improbable-AI/walk-these-ways/blob/master/scripts/play.py",
+      "reference_scope": "Diagonal trot phase concept only; trajectory authored locally for Sable, not a Walk These Ways rollout."
+    },
+    "max_target_residual_mm": 0.0,
+    "rms_target_residual_mm": 0.0,
+    "per_foot_max_mm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_request_projection_mm": 0.00043971399976334627,
+    "minimum_capsule_surface_z_mm": 0.7322052598124221,
+    "seam_max_joint_difference_deg": 2.5444437451708134e-14,
+    "scope": "Editable geometric reference; contact dynamics, lateral stability and motor capability not validated.",
+    "authored_sync": {
+      "clip": "08_LATERAL_TROT_RIGHT",
+      "toe_pose_seam_mm": [
+        4.6566128730773926e-07,
+        0.0,
+        9.313225746154785e-07,
+        9.313225746154785e-07
+      ],
+      "max_joint_pose_seam_deg": 0.0,
+      "max_ik_residual_mm": 0.01026944343490634,
+      "minimum_capsule_z_mm": 0.7322021218326372,
+      "cycle_transform": [
+        [
+          1.0,
+          -0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.02500000037252903
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  },
+  "toe_definition": "Physical distal capsule tip, not capsule center or ground contact point",
+  "frame_interval": [
+    526,
+    576
+  ],
+  "cycle_transform_world": [
+    [
+      1.0,
+      -0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      -0.02500000037252903
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "quality": {
+    "max_ik_error_mm": 0.01026944343490634,
+    "minimum_capsule_z_mm": 0.7322021218326372,
+    "ground_penetration_sample_fraction": 0.0,
+    "max_joint_limit_violation_deg": 0.0,
+    "max_joint_pose_seam_deg": 0.0,
+    "toe_pose_seam_mm": [
+      8.673617379884035e-16,
+      6.938893903907228e-15,
+      3.469446951953614e-15,
+      6.938893903907228e-15
+    ],
+    "max_joint_velocity_seam_rad_s": 0.7148685865104198,
+    "max_authored_joint_velocity_rad_s": 1.702338457107544,
+    "root_displacement_world_m": [
+      0.0,
+      -0.02500000037252903,
+      0.0
+    ],
+    "root_yaw_change_deg": 0.0,
+    "warnings": [
+      "joint_velocity_seam_not_closed"
+    ]
+  },
+  "training_status": "reference_only_requires_preflight",
+  "contact_labels_available": false,
+  "teacher_actions_available": false,
+  "torques_available": false,
+  "use": "Fit physically executable specialist teacher from scratch; do not use these q values as verified PD actions.",
+  "endpoint_note": "Includes both time endpoints. Do not concatenate until pose/velocity seams and cycle transform are handled."
+}

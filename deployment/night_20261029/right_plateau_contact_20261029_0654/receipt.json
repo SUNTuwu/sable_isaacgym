@@ -1,0 +1,21 @@
+{
+  "time": 1793228022.6361866,
+  "teacher": "05_TURN_RIGHT",
+  "reason": "06:51 plateau unaccepted at v2_yaw safety cap; contact phase0.686 and excessive genuine air events. Frozen no-fall AB rescore favors intended rotating baseline by +0.00845 discounted advantage for this narrow adjustment.",
+  "evaluation_iteration": 1495,
+  "actual_reward_change": true,
+  "reward_changes": {
+    "v2_contact_timing": {
+      "before": 0.4,
+      "after": 0.44
+    }
+  },
+  "yaw_multiplier_unchanged": 1.2,
+  "xy_weights_unchanged": 0.32,
+  "other_teachers_unchanged": true,
+  "baseline_unchanged": true,
+  "trainers_restarted": false,
+  "control_revision": 30,
+  "control_sha256": "cdac82189a0617d487ce0f80474d3b83beab2eb1df6629888e4b6e0a20a419d4",
+  "physical_improvement_not_yet_verified": true
+}

@@ -1,0 +1,38 @@
+{
+  "time": 1793226804.8631978,
+  "local_time": "2026-10-29T06:33:24.863199",
+  "teacher": "05_TURN_RIGHT",
+  "evaluation_checkpoint": 1425,
+  "reason": "Repair ineffective 06:21 negative-review adjustment; apply latest physical evidence",
+  "proof": {
+    "action": "reward_adjustment",
+    "actual_reward_change": true,
+    "requires_manual_reward_revision": false,
+    "reward_changes": {
+      "v2_velocity": {
+        "before": 0.4,
+        "after": 0.32,
+        "requested_factor": 0.8
+      },
+      "v2_cross_motion": {
+        "before": 0.4,
+        "after": 0.32,
+        "requested_factor": 0.8
+      }
+    },
+    "blocked_reward_terms": {
+      "v2_yaw": "effective multiplier is unchanged at cap/floor or rounding precision"
+    },
+    "proposed_reward_factors": {
+      "v2_yaw": 1.2
+    },
+    "competing_term_fallback": {
+      "v2_velocity": 0.8,
+      "v2_cross_motion": 0.8
+    },
+    "reason": "yaw multiplier saturated; reduce competing instantaneous translation terms while retaining their .25 floor"
+  },
+  "gpu_trainers_interrupted": false,
+  "module_sha256": "314b4be246efc5445037fcc975c7405fc86c6d6406cbcfb89431252aad13d500",
+  "control_revision": 26
+}

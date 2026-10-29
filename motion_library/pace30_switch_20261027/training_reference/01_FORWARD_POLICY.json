@@ -1,0 +1,85 @@
+{
+  "id": "01_FORWARD_POLICY",
+  "file": "01_FORWARD_POLICY.npz",
+  "title": "前进｜当前策略",
+  "fps": 50,
+  "samples": 51,
+  "period_s": 1.0,
+  "joint_names": [
+    "spine_pitch",
+    "spine_roll",
+    "hip_roll",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "L_ankle_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "R_ankle_pitch",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch"
+  ],
+  "policy_joint_names": [
+    "spine_roll",
+    "hip_roll",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "L_ankle_pitch",
+    "R_ankle_pitch",
+    "spine_pitch"
+  ],
+  "foot_order": [
+    "FL",
+    "FR",
+    "HL",
+    "HR"
+  ],
+  "source_metadata": "../motions/01_FORWARD_POLICY.json",
+  "processing": {
+    "periodic_filter": "Endpoint-drift removal, five Fourier harmonics; analytic periodic q derivatives",
+    "harmonics": 5,
+    "source_npz_sha256": "58ade0d4f5c81e01cca8ff6e06c6b4a89574d12058f5fcf0116b88f75e7fb878",
+    "root_cycle_translation_m": [
+      0.15866535902023315,
+      -0.0031112388242036104,
+      0.0
+    ],
+    "root_cycle_yaw_rad": 0.005234956053657294,
+    "ground_correction": {
+      "method": "Smooth periodic vertical-root upper envelope; joint FK preserved",
+      "margin_m": 0.00025,
+      "extra_margin_m": 5e-05,
+      "maximum_root_raise_m": 0.003346474181196528,
+      "estimated_contact_height_threshold_m": 0.003
+    }
+  },
+  "quality": {
+    "minimum_capsule_z_mm": 0.3000000000000095,
+    "max_joint_pose_seam_deg": 0.0,
+    "max_joint_velocity_seam_rad_s": 0.0,
+    "max_joint_limit_violation_deg": 0.0,
+    "max_joint_change_from_authored_deg": 8.817899620006616,
+    "max_joint_velocity_rad_s": 5.487267967670663,
+    "turn_target_reprojection_error_mm": null,
+    "max_root_raise_mm": 3.346474181196528,
+    "mean_geometric_contact_count": 1.7647058823529411,
+    "physical_validation_passed": false
+  },
+  "native_command_world_mean": [
+    0.15866535902023315,
+    -0.0031112388242036113,
+    0.0
+  ],
+  "native_yaw_rate_rad_s": 0.00523495605365729
+}

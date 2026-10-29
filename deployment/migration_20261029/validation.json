@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "archive_verified_files": 628,
+  "baseline_verified_files": 267,
+  "full_restore_verified": true,
+  "idempotent_restore_verified": true,
+  "prepare_only_verified": true,
+  "overwrite_refusal_verified": true,
+  "generated_start_shell_syntax_verified": true,
+  "python38_syntax_verified": true,
+  "default_duration_s": 1200,
+  "frozen_runtime_verified_files": 167,
+  "training_started": false,
+  "gpu_resume_test": "pending on destination GPU server",
+  "test_workspace": "/tmp/sable-migration-check-r2nitxy2",
+  "cpu_subprocess_orchestration_fixture_passed": true,
+  "real_training_used_by_fixture": false,
+  "fixture_scope": "Fake trainer + fake watchdog only; validates process startup, single-launch refusal, final checkpoint/evaluation identity and archive checks; no GPU/PPO claim",
+  "upstream_dependency_pins_verified": true
+}

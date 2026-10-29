@@ -1,0 +1,1601 @@
+{
+  "version": 1,
+  "frozen": true,
+  "generated_utc": "2026-10-28T20:58:48.676226+00:00",
+  "source_selection_sha256": "a1359a84a84673f9b8f3d7918346c936bb512a62fbadf84abba0c7fe58fcd294",
+  "policy": "Never replace these checkpoint-bound baseline measurements with the first evaluation from a new training run. proxy_metric_keys are explicitly approximate, single-environment values and must not be treated as four-env maxima.",
+  "teachers": {
+    "01_FORWARD_POLICY": {
+      "source_teacher_id": "01_FORWARD_POLICY",
+      "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531",
+      "checkpoint": {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/01_FORWARD_POLICY/checkpoints/model_000826.pt",
+        "sha256": "8a1fc68790df7ccd23a3ae619f360d653e8739d7dc2ccd8d9c463609555d2cf5",
+        "iteration": 826
+      },
+      "reference": {
+        "survival_fraction": 1.0,
+        "mean_actual": [
+          0.07133065909147263,
+          -0.0017047522123903036,
+          -0.01410683337599039
+        ],
+        "mean_command": [
+          0.07500000298023224,
+          0.0,
+          0.0
+        ],
+        "xy_rmse_m_s": 0.022843236103653908,
+        "yaw_rmse_rad_s": 0.16512860357761383,
+        "gravity_rmse_deg": 2.3862266915039774,
+        "contact_phase_agreement": 0.8435156345367432,
+        "foot_rmse_m_per_foot": [
+          0.008765851737811121,
+          0.007493474326738237,
+          0.013584317766125608,
+          0.013492608538156255
+        ],
+        "contact_slip_rmse_m_s": 0.06810508515687809,
+        "absolute_mean_yaw_rate": 0.01410683337599039,
+        "velocity_frame": "source heading frame; not fixed episode-start frame",
+        "maximum_cross_track_m": 0.24537432193756104,
+        "max_abs_final_heading_deg": 13.279415363556955,
+        "max_turn_radius_m": 1.136917289863727
+      },
+      "provenance": {
+        "checkpoint_sha256_verified": true,
+        "source_selection_path": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/baseline_sources.json",
+        "source_selection_sha256": "a1359a84a84673f9b8f3d7918346c936bb512a62fbadf84abba0c7fe58fcd294",
+        "evaluation_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/01_FORWARD_POLICY/evaluations/independent_000826.json",
+        "evaluation_sha256": "72ad56a0a598df282cc273f393c1c14e8748a096ffb02be756a6dcc27a2146f4",
+        "evaluation_matches_checkpoint": true,
+        "evaluation_seed": 947,
+        "evaluation_num_envs": 4,
+        "evaluation_horizon_s": 16.0,
+        "trace_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/01_FORWARD_POLICY/videos/trace_000826.json",
+        "trace_sha256": "e2d758b21c2066175dd36f3cf6f982f9d98bcf090be3de09aa932e4e3ba409a8",
+        "trace_iteration_and_teacher_match": true,
+        "trace_binding": "Source trace filename and internal teacher/iteration match the exact evaluation; trace has no embedded checkpoint SHA",
+        "reference_archive_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_20261029_004642/reference/01_FORWARD_POLICY.npz",
+        "reference_archive_sha256": "a3235b3e752bf9c4eddfcffb2ed0c522ba83b6e5a8da8f1b3a3d37918ba8f45b"
+      },
+      "missing_metrics": [
+        "Four-environment full-rate maximum_cross_track_m absent; reference contains clearly marked single-environment trace proxy",
+        "Four-environment full-rate max_abs_final_heading_deg absent; reference contains clearly marked single-environment trace proxy",
+        "Four-environment full-rate max_turn_radius_m absent; reference contains clearly marked single-environment trace proxy"
+      ],
+      "proxy_metric_keys": [
+        "maximum_cross_track_m",
+        "max_abs_final_heading_deg",
+        "max_turn_radius_m"
+      ],
+      "source_evaluation": {
+        "teacher_id": "01_FORWARD_POLICY",
+        "iteration": 826,
+        "checkpoint_iteration": 826,
+        "checkpoint": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/01_FORWARD_POLICY/checkpoints/model_000826.pt",
+          "sha256": "8a1fc68790df7ccd23a3ae619f360d653e8739d7dc2ccd8d9c463609555d2cf5",
+          "iteration": 826,
+          "updated_unix": 1793213066.9188473,
+          "reason": "periodic"
+        },
+        "independent": true,
+        "evaluation_seed": 947,
+        "reset": "reference_phase0 plus seeded uniform joint perturbation +/-0.005rad; reserved environments never used by optimizer",
+        "horizon_s": 16.0,
+        "num_envs": 4,
+        "survival_fraction": 1.0,
+        "q_tracking_rmse_rad": 0.07297762483358383,
+        "xy_rmse_m_s": 0.022843236103653908,
+        "yaw_rmse_rad_s": 0.16512860357761383,
+        "mean_command": [
+          0.07500000298023224,
+          0.0,
+          0.0
+        ],
+        "mean_actual": [
+          0.07133065909147263,
+          -0.0017047522123903036,
+          -0.01410683337599039
+        ],
+        "steps_per_foot": [
+          64.0,
+          68.0,
+          72.0,
+          64.0
+        ],
+        "step_scope": "Observed normal-force contact onset; not yet genuine-air-step acceptance",
+        "samples": 3200,
+        "accepted": false,
+        "first_fall_diagnostics": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "reward_cleanup_profile": "reference_local_v2",
+        "removed_cadence_terms": [],
+        "teacher_control_mode": "reference_plus_residual",
+        "reference_strength": 1.0,
+        "reference_time_scale": 1.0,
+        "created_unix": 1793213295.287171,
+        "contact_phase_agreement": 0.8435156345367432,
+        "gravity_rmse_deg": 2.3862266915039774,
+        "acceptance_scope": "preliminary: four held-out envs, 16 seconds; not hardware validation",
+        "foot_rmse_m_per_foot": [
+          0.008765851737811121,
+          0.007493474326738237,
+          0.013584317766125608,
+          0.013492608538156255
+        ],
+        "contact_slip_rmse_m_s": 0.06810508515687809,
+        "actual_liftoffs_per_foot": [
+          64.0,
+          64.0,
+          68.0,
+          64.0
+        ],
+        "foot_reward_saturated_fraction": 0.26921875,
+        "physical_score": 0.4733062977360216,
+        "evaluation_limits": {
+          "velocity_rmse_m_s": 0.01875000074505806,
+          "yaw_rmse_rad_s": 0.08,
+          "worst_foot_rmse_m": 0.02,
+          "contact_slip_rmse_m_s": 0.03,
+          "gravity_rmse_deg": 5.0
+        },
+        "plateau_status": "not_established",
+        "plateau_definition": "five fixed-seed evaluations, physical score range <0.01; no automatic stopping or curriculum change",
+        "turn_boundary": {
+          "limit_deg": 30.0,
+          "recent_complete_episodes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pending": false,
+          "threshold": 0.95,
+          "window_size": 20,
+          "final_limit_deg": 10.0
+        },
+        "turn_curriculum": null
+      },
+      "target_task_command": [
+        0.07500000298023224,
+        0.0,
+        0.0
+      ],
+      "trace_metrics": {
+        "available": true,
+        "scope": "one saved evaluation environment, 10 Hz; not the four-environment maximum",
+        "initial_root_basis": "source reference phase-zero root transform, as used by source reset",
+        "recorded_frames": 160,
+        "active_frames": 160,
+        "first_time_s": 0.020000000949949026,
+        "last_time_s": 15.920000756159425,
+        "recorded_environment_survived": true,
+        "max_turn_radius_m": 1.136917289863727,
+        "final_xy_displacement_m": 1.136917289863727,
+        "signed_final_heading_deg": -13.279415363556955,
+        "max_abs_final_heading_deg": 13.279415363556955,
+        "maximum_abs_heading_excursion_deg": 16.43315495232728,
+        "sparse_yaw_rate_integral_deg": -16.525588527319396,
+        "mean_actual_fixed_start_frame": [
+          0.06554914691090158,
+          -0.014610782254110324,
+          -0.0193819206705939
+        ],
+        "mean_horizontal_speed_m_s": 0.06876194242310012,
+        "heading_definition": "unwrapped quaternion heading from phase-zero root; sparse yaw-rate integral reported separately",
+        "limitations": [
+          "Trace records only the first of four evaluation environments.",
+          "Samples run from 0.02 to 15.92 seconds, so maxima and the last 80 ms may be missed.",
+          "Quaternion net heading differs from an Euler/world angular-z integral when the torso rolls or pitches."
+        ],
+        "maximum_cross_track_m": 0.24537432193756104
+      }
+    },
+    "06_BACKWARD": {
+      "source_teacher_id": "06_BACKWARD",
+      "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531",
+      "checkpoint": {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/06_BACKWARD/checkpoints/model_000826.pt",
+        "sha256": "5e0ecdad2be563b77bdde10d116efb616eb03404901188feb1ed79daa7117117",
+        "iteration": 826
+      },
+      "reference": {
+        "survival_fraction": 1.0,
+        "mean_actual": [
+          -0.06976035237312317,
+          0.0001375508727505803,
+          0.0012268570717424154
+        ],
+        "mean_command": [
+          -0.07500000298023224,
+          0.0,
+          0.0
+        ],
+        "xy_rmse_m_s": 0.04462285712361336,
+        "yaw_rmse_rad_s": 0.21844720840454102,
+        "gravity_rmse_deg": 2.7704235516567253,
+        "contact_phase_agreement": 0.8558593988418579,
+        "foot_rmse_m_per_foot": [
+          0.01035317417410017,
+          0.010737802737673354,
+          0.012215440523887412,
+          0.011940588111041745
+        ],
+        "contact_slip_rmse_m_s": 0.07907391100171907,
+        "absolute_mean_yaw_rate": 0.0012268570717424154,
+        "velocity_frame": "source heading frame; not fixed episode-start frame",
+        "maximum_cross_track_m": 0.0299835205078125,
+        "max_abs_final_heading_deg": 0.7501182338140426,
+        "max_turn_radius_m": 1.1082707457852716
+      },
+      "provenance": {
+        "checkpoint_sha256_verified": true,
+        "source_selection_path": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/baseline_sources.json",
+        "source_selection_sha256": "a1359a84a84673f9b8f3d7918346c936bb512a62fbadf84abba0c7fe58fcd294",
+        "evaluation_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/06_BACKWARD/evaluations/independent_000826.json",
+        "evaluation_sha256": "c51cb81c20a8bee8bc18c7863f0c9df08eeb9063b3437ed8b9c1aa3de290fbba",
+        "evaluation_matches_checkpoint": true,
+        "evaluation_seed": 947,
+        "evaluation_num_envs": 4,
+        "evaluation_horizon_s": 16.0,
+        "trace_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/06_BACKWARD/videos/trace_000826.json",
+        "trace_sha256": "6e4400d7b20c9810044d170ea56e43a3a306c085195894aa05495f8f847d9d14",
+        "trace_iteration_and_teacher_match": true,
+        "trace_binding": "Source trace filename and internal teacher/iteration match the exact evaluation; trace has no embedded checkpoint SHA",
+        "reference_archive_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_20261029_004642/reference/06_BACKWARD.npz",
+        "reference_archive_sha256": "b654897723a43c1c1109e1d28b868cc536469ff447749df48164b7c31d3f112f"
+      },
+      "missing_metrics": [
+        "Four-environment full-rate maximum_cross_track_m absent; reference contains clearly marked single-environment trace proxy",
+        "Four-environment full-rate max_abs_final_heading_deg absent; reference contains clearly marked single-environment trace proxy",
+        "Four-environment full-rate max_turn_radius_m absent; reference contains clearly marked single-environment trace proxy"
+      ],
+      "proxy_metric_keys": [
+        "maximum_cross_track_m",
+        "max_abs_final_heading_deg",
+        "max_turn_radius_m"
+      ],
+      "source_evaluation": {
+        "teacher_id": "06_BACKWARD",
+        "iteration": 826,
+        "checkpoint_iteration": 826,
+        "checkpoint": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/06_BACKWARD/checkpoints/model_000826.pt",
+          "sha256": "5e0ecdad2be563b77bdde10d116efb616eb03404901188feb1ed79daa7117117",
+          "iteration": 826,
+          "updated_unix": 1793213066.942173,
+          "reason": "periodic"
+        },
+        "independent": true,
+        "evaluation_seed": 947,
+        "reset": "reference_phase0 plus seeded uniform joint perturbation +/-0.005rad; reserved environments never used by optimizer",
+        "horizon_s": 16.0,
+        "num_envs": 4,
+        "survival_fraction": 1.0,
+        "q_tracking_rmse_rad": 0.0791897103190422,
+        "xy_rmse_m_s": 0.04462285712361336,
+        "yaw_rmse_rad_s": 0.21844720840454102,
+        "mean_command": [
+          -0.07500000298023224,
+          0.0,
+          0.0
+        ],
+        "mean_actual": [
+          -0.06976035237312317,
+          0.0001375508727505803,
+          0.0012268570717424154
+        ],
+        "steps_per_foot": [
+          83.0,
+          78.0,
+          68.0,
+          64.0
+        ],
+        "step_scope": "Observed normal-force contact onset; not yet genuine-air-step acceptance",
+        "samples": 3200,
+        "accepted": false,
+        "first_fall_diagnostics": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "reward_cleanup_profile": "reference_local_v2",
+        "removed_cadence_terms": [],
+        "teacher_control_mode": "reference_plus_residual",
+        "reference_strength": 1.0,
+        "reference_time_scale": 1.0,
+        "created_unix": 1793213295.371891,
+        "contact_phase_agreement": 0.8558593988418579,
+        "gravity_rmse_deg": 2.7704235516567253,
+        "acceptance_scope": "preliminary: four held-out envs, 16 seconds; not hardware validation",
+        "foot_rmse_m_per_foot": [
+          0.01035317417410017,
+          0.010737802737673354,
+          0.012215440523887412,
+          0.011940588111041745
+        ],
+        "contact_slip_rmse_m_s": 0.07907391100171907,
+        "actual_liftoffs_per_foot": [
+          83.0,
+          74.0,
+          64.0,
+          64.0
+        ],
+        "foot_reward_saturated_fraction": 0.199921875,
+        "physical_score": 0.431541455151466,
+        "evaluation_limits": {
+          "velocity_rmse_m_s": 0.01875000074505806,
+          "yaw_rmse_rad_s": 0.08,
+          "worst_foot_rmse_m": 0.02,
+          "contact_slip_rmse_m_s": 0.03,
+          "gravity_rmse_deg": 5.0
+        },
+        "plateau_status": "not_established",
+        "plateau_definition": "five fixed-seed evaluations, physical score range <0.01; no automatic stopping or curriculum change",
+        "turn_boundary": {
+          "limit_deg": 30.0,
+          "recent_complete_episodes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pending": false,
+          "threshold": 0.95,
+          "window_size": 20,
+          "final_limit_deg": 10.0
+        },
+        "turn_curriculum": null
+      },
+      "target_task_command": [
+        -0.07500000298023224,
+        0.0,
+        0.0
+      ],
+      "trace_metrics": {
+        "available": true,
+        "scope": "one saved evaluation environment, 10 Hz; not the four-environment maximum",
+        "initial_root_basis": "source reference phase-zero root transform, as used by source reset",
+        "recorded_frames": 160,
+        "active_frames": 160,
+        "first_time_s": 0.020000000949949026,
+        "last_time_s": 15.920000756159425,
+        "recorded_environment_survived": true,
+        "max_turn_radius_m": 1.1082707457852716,
+        "final_xy_displacement_m": 1.1082707457852716,
+        "signed_final_heading_deg": -0.7501182338140426,
+        "max_abs_final_heading_deg": 0.7501182338140426,
+        "maximum_abs_heading_excursion_deg": 4.971594390175887,
+        "sparse_yaw_rate_integral_deg": -41.146335478718754,
+        "mean_actual_fixed_start_frame": [
+          -0.06571893119254346,
+          0.0004352448510913309,
+          -0.04434896066959482
+        ],
+        "mean_horizontal_speed_m_s": 0.07073990488541523,
+        "heading_definition": "unwrapped quaternion heading from phase-zero root; sparse yaw-rate integral reported separately",
+        "limitations": [
+          "Trace records only the first of four evaluation environments.",
+          "Samples run from 0.02 to 15.92 seconds, so maxima and the last 80 ms may be missed.",
+          "Quaternion net heading differs from an Euler/world angular-z integral when the torso rolls or pitches."
+        ],
+        "maximum_cross_track_m": 0.0299835205078125
+      }
+    },
+    "09_BACKWARD_WALK": {
+      "source_teacher_id": "09_BACKWARD_WALK",
+      "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531",
+      "checkpoint": {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/09_BACKWARD_WALK/checkpoints/model_000826.pt",
+        "sha256": "e618babf4d1e22f309cf0c237905ab0db1779856836cad70a21ef5c7e5fa0cd0",
+        "iteration": 826
+      },
+      "reference": {
+        "survival_fraction": 1.0,
+        "mean_actual": [
+          -0.0745404064655304,
+          -0.00507424958050251,
+          -0.003328438848257065
+        ],
+        "mean_command": [
+          -0.07500000298023224,
+          0.0,
+          0.0
+        ],
+        "xy_rmse_m_s": 0.028800975531339645,
+        "yaw_rmse_rad_s": 0.20781628787517548,
+        "gravity_rmse_deg": 2.5321750274624564,
+        "contact_phase_agreement": 0.7969531416893005,
+        "foot_rmse_m_per_foot": [
+          0.006263751681598224,
+          0.0077952071371621395,
+          0.008274538124997599,
+          0.009315575576633204
+        ],
+        "contact_slip_rmse_m_s": 0.0688327811113548,
+        "absolute_mean_yaw_rate": 0.003328438848257065,
+        "velocity_frame": "source heading frame; not fixed episode-start frame",
+        "maximum_cross_track_m": 0.04225730895996094,
+        "max_abs_final_heading_deg": 1.876403171539294,
+        "max_turn_radius_m": 1.1905044646057947
+      },
+      "provenance": {
+        "checkpoint_sha256_verified": true,
+        "source_selection_path": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/baseline_sources.json",
+        "source_selection_sha256": "a1359a84a84673f9b8f3d7918346c936bb512a62fbadf84abba0c7fe58fcd294",
+        "evaluation_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/09_BACKWARD_WALK/evaluations/independent_000826.json",
+        "evaluation_sha256": "defa847e1f30171c1d9f8ee5083cefca3674b01d49e9f98cf825a5b6d91e2165",
+        "evaluation_matches_checkpoint": true,
+        "evaluation_seed": 947,
+        "evaluation_num_envs": 4,
+        "evaluation_horizon_s": 16.0,
+        "trace_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/09_BACKWARD_WALK/videos/trace_000826.json",
+        "trace_sha256": "bff232b44515702777020833ddbd18ff7e15da2868ce96398fdc351a4088e88a",
+        "trace_iteration_and_teacher_match": true,
+        "trace_binding": "Source trace filename and internal teacher/iteration match the exact evaluation; trace has no embedded checkpoint SHA",
+        "reference_archive_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_20261029_004642/reference/09_BACKWARD_WALK.npz",
+        "reference_archive_sha256": "9a15eb79aba6845cc4ad7c24a21a7dc8ae02d3677eaf41b8343c8b757bbd09f2"
+      },
+      "missing_metrics": [
+        "Four-environment full-rate maximum_cross_track_m absent; reference contains clearly marked single-environment trace proxy",
+        "Four-environment full-rate max_abs_final_heading_deg absent; reference contains clearly marked single-environment trace proxy",
+        "Four-environment full-rate max_turn_radius_m absent; reference contains clearly marked single-environment trace proxy"
+      ],
+      "proxy_metric_keys": [
+        "maximum_cross_track_m",
+        "max_abs_final_heading_deg",
+        "max_turn_radius_m"
+      ],
+      "source_evaluation": {
+        "teacher_id": "09_BACKWARD_WALK",
+        "iteration": 826,
+        "checkpoint_iteration": 826,
+        "checkpoint": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/09_BACKWARD_WALK/checkpoints/model_000826.pt",
+          "sha256": "e618babf4d1e22f309cf0c237905ab0db1779856836cad70a21ef5c7e5fa0cd0",
+          "iteration": 826,
+          "updated_unix": 1793213066.9645443,
+          "reason": "periodic"
+        },
+        "independent": true,
+        "evaluation_seed": 947,
+        "reset": "reference_phase0 plus seeded uniform joint perturbation +/-0.005rad; reserved environments never used by optimizer",
+        "horizon_s": 16.0,
+        "num_envs": 4,
+        "survival_fraction": 1.0,
+        "q_tracking_rmse_rad": 0.061019107699394226,
+        "xy_rmse_m_s": 0.028800975531339645,
+        "yaw_rmse_rad_s": 0.20781628787517548,
+        "mean_command": [
+          -0.07500000298023224,
+          0.0,
+          0.0
+        ],
+        "mean_actual": [
+          -0.0745404064655304,
+          -0.00507424958050251,
+          -0.003328438848257065
+        ],
+        "steps_per_foot": [
+          87.0,
+          102.0,
+          68.0,
+          64.0
+        ],
+        "step_scope": "Observed normal-force contact onset; not yet genuine-air-step acceptance",
+        "samples": 3200,
+        "accepted": false,
+        "first_fall_diagnostics": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "reward_cleanup_profile": "reference_local_v2",
+        "removed_cadence_terms": [],
+        "teacher_control_mode": "reference_plus_residual",
+        "reference_strength": 1.0,
+        "reference_time_scale": 1.0,
+        "created_unix": 1793213295.4569848,
+        "contact_phase_agreement": 0.7969531416893005,
+        "gravity_rmse_deg": 2.5321750274624564,
+        "acceptance_scope": "preliminary: four held-out envs, 16 seconds; not hardware validation",
+        "foot_rmse_m_per_foot": [
+          0.006263751681598224,
+          0.0077952071371621395,
+          0.008274538124997599,
+          0.009315575576633204
+        ],
+        "contact_slip_rmse_m_s": 0.0688327811113548,
+        "actual_liftoffs_per_foot": [
+          84.0,
+          98.0,
+          64.0,
+          64.0
+        ],
+        "foot_reward_saturated_fraction": 0.604140625,
+        "physical_score": 0.4643267538883844,
+        "evaluation_limits": {
+          "velocity_rmse_m_s": 0.01875000074505806,
+          "yaw_rmse_rad_s": 0.08,
+          "worst_foot_rmse_m": 0.02,
+          "contact_slip_rmse_m_s": 0.03,
+          "gravity_rmse_deg": 5.0
+        },
+        "plateau_status": "not_established",
+        "plateau_definition": "five fixed-seed evaluations, physical score range <0.01; no automatic stopping or curriculum change",
+        "turn_boundary": {
+          "limit_deg": 30.0,
+          "recent_complete_episodes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pending": false,
+          "threshold": 0.95,
+          "window_size": 20,
+          "final_limit_deg": 10.0
+        },
+        "turn_curriculum": null
+      },
+      "target_task_command": [
+        -0.07500000298023224,
+        0.0,
+        0.0
+      ],
+      "trace_metrics": {
+        "available": true,
+        "scope": "one saved evaluation environment, 10 Hz; not the four-environment maximum",
+        "initial_root_basis": "source reference phase-zero root transform, as used by source reset",
+        "recorded_frames": 160,
+        "active_frames": 160,
+        "first_time_s": 0.020000000949949026,
+        "last_time_s": 15.920000756159425,
+        "recorded_environment_survived": true,
+        "max_turn_radius_m": 1.1905044646057947,
+        "final_xy_displacement_m": 1.1905044646057947,
+        "signed_final_heading_deg": -1.876403171539294,
+        "max_abs_final_heading_deg": 1.876403171539294,
+        "maximum_abs_heading_excursion_deg": 5.078685184729673,
+        "sparse_yaw_rate_integral_deg": -54.37740538271536,
+        "mean_actual_fixed_start_frame": [
+          -0.07460618884102346,
+          -0.0029074009055649165,
+          -0.0596141763839114
+        ],
+        "mean_horizontal_speed_m_s": 0.07555045862938063,
+        "heading_definition": "unwrapped quaternion heading from phase-zero root; sparse yaw-rate integral reported separately",
+        "limitations": [
+          "Trace records only the first of four evaluation environments.",
+          "Samples run from 0.02 to 15.92 seconds, so maxima and the last 80 ms may be missed.",
+          "Quaternion net heading differs from an Euler/world angular-z integral when the torso rolls or pitches."
+        ],
+        "maximum_cross_track_m": 0.04225730895996094
+      }
+    },
+    "10_FORWARD_TROT": {
+      "source_teacher_id": "10_FORWARD_TROT",
+      "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531",
+      "checkpoint": {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/10_FORWARD_TROT/checkpoints/model_000718.pt",
+        "sha256": "7a889f4ca70724441985319ea8dff5dc589c37cfd5efda571aee971a5d45a231",
+        "iteration": 718
+      },
+      "reference": {
+        "survival_fraction": 1.0,
+        "mean_actual": [
+          0.06567393243312836,
+          0.0015386154409497976,
+          -0.0009357600356452167
+        ],
+        "mean_command": [
+          0.07500000298023224,
+          0.0,
+          0.0
+        ],
+        "xy_rmse_m_s": 0.03922490030527115,
+        "yaw_rmse_rad_s": 0.24618025124073029,
+        "gravity_rmse_deg": 3.9309988366981257,
+        "contact_phase_agreement": 0.8079687356948853,
+        "foot_rmse_m_per_foot": [
+          0.009096633288541068,
+          0.01009563551260399,
+          0.021810871880549632,
+          0.0192923082515515
+        ],
+        "contact_slip_rmse_m_s": 0.087429259860176,
+        "absolute_mean_yaw_rate": 0.0009357600356452167,
+        "velocity_frame": "source heading frame; not fixed episode-start frame",
+        "maximum_cross_track_m": 0.042144775390625,
+        "max_abs_final_heading_deg": 1.0547562855069257,
+        "max_turn_radius_m": 1.0545068408200562
+      },
+      "provenance": {
+        "checkpoint_sha256_verified": true,
+        "source_selection_path": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/baseline_sources.json",
+        "source_selection_sha256": "a1359a84a84673f9b8f3d7918346c936bb512a62fbadf84abba0c7fe58fcd294",
+        "evaluation_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/10_FORWARD_TROT/evaluations/independent_000718.json",
+        "evaluation_sha256": "3d302bfa2d087061f689419d75ff79198028f367ed3513bb1baf58a226945769",
+        "evaluation_matches_checkpoint": true,
+        "evaluation_seed": 947,
+        "evaluation_num_envs": 4,
+        "evaluation_horizon_s": 16.0,
+        "trace_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/10_FORWARD_TROT/videos/trace_000718.json",
+        "trace_sha256": "1e0c9bb60eadf1a0a57f8d7e712bcfbea6deeb0d6c1cfc2fc0d348e63c29f078",
+        "trace_iteration_and_teacher_match": true,
+        "trace_binding": "Source trace filename and internal teacher/iteration match the exact evaluation; trace has no embedded checkpoint SHA",
+        "reference_archive_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_20261029_004642/reference/10_FORWARD_TROT.npz",
+        "reference_archive_sha256": "8e892bb07426a8ca90f1e2a4e0c73d26633102d6b6cc6de0cbad994521aca837"
+      },
+      "missing_metrics": [
+        "Four-environment full-rate maximum_cross_track_m absent; reference contains clearly marked single-environment trace proxy",
+        "Four-environment full-rate max_abs_final_heading_deg absent; reference contains clearly marked single-environment trace proxy",
+        "Four-environment full-rate max_turn_radius_m absent; reference contains clearly marked single-environment trace proxy"
+      ],
+      "proxy_metric_keys": [
+        "maximum_cross_track_m",
+        "max_abs_final_heading_deg",
+        "max_turn_radius_m"
+      ],
+      "source_evaluation": {
+        "teacher_id": "10_FORWARD_TROT",
+        "iteration": 718,
+        "checkpoint_iteration": 718,
+        "checkpoint": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/10_FORWARD_TROT/checkpoints/model_000718.pt",
+          "sha256": "7a889f4ca70724441985319ea8dff5dc589c37cfd5efda571aee971a5d45a231",
+          "iteration": 718,
+          "updated_unix": 1793212326.1323793,
+          "reason": "periodic"
+        },
+        "independent": true,
+        "evaluation_seed": 947,
+        "reset": "reference_phase0 plus seeded uniform joint perturbation +/-0.005rad; reserved environments never used by optimizer",
+        "horizon_s": 16.0,
+        "num_envs": 4,
+        "survival_fraction": 1.0,
+        "q_tracking_rmse_rad": 0.09747720509767532,
+        "xy_rmse_m_s": 0.03922490030527115,
+        "yaw_rmse_rad_s": 0.24618025124073029,
+        "mean_command": [
+          0.07500000298023224,
+          0.0,
+          0.0
+        ],
+        "mean_actual": [
+          0.06567393243312836,
+          0.0015386154409497976,
+          -0.0009357600356452167
+        ],
+        "steps_per_foot": [
+          65.0,
+          68.0,
+          88.0,
+          43.0
+        ],
+        "step_scope": "Observed normal-force contact onset; not yet genuine-air-step acceptance",
+        "samples": 3200,
+        "accepted": false,
+        "first_fall_diagnostics": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "reward_cleanup_profile": "reference_local_v2",
+        "removed_cadence_terms": [],
+        "teacher_control_mode": "reference_plus_residual",
+        "reference_strength": 1.0,
+        "reference_time_scale": 1.0,
+        "created_unix": 1793212555.378127,
+        "contact_phase_agreement": 0.8079687356948853,
+        "gravity_rmse_deg": 3.9309988366981257,
+        "acceptance_scope": "preliminary: four held-out envs, 16 seconds; not hardware validation",
+        "foot_rmse_m_per_foot": [
+          0.009096633288541068,
+          0.01009563551260399,
+          0.021810871880549632,
+          0.0192923082515515
+        ],
+        "contact_slip_rmse_m_s": 0.087429259860176,
+        "actual_liftoffs_per_foot": [
+          65.0,
+          64.0,
+          84.0,
+          43.0
+        ],
+        "foot_reward_saturated_fraction": 0.109921875,
+        "physical_score": 0.31474052607783715,
+        "evaluation_limits": {
+          "velocity_rmse_m_s": 0.01875000074505806,
+          "yaw_rmse_rad_s": 0.08,
+          "worst_foot_rmse_m": 0.02,
+          "contact_slip_rmse_m_s": 0.03,
+          "gravity_rmse_deg": 5.0
+        },
+        "plateau_status": "not_established",
+        "plateau_definition": "five fixed-seed evaluations, physical score range <0.01; no automatic stopping or curriculum change",
+        "turn_boundary": {
+          "limit_deg": 30.0,
+          "recent_complete_episodes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pending": false,
+          "threshold": 0.95,
+          "window_size": 20,
+          "final_limit_deg": 10.0
+        },
+        "turn_curriculum": null
+      },
+      "target_task_command": [
+        0.07500000298023224,
+        0.0,
+        0.0
+      ],
+      "trace_metrics": {
+        "available": true,
+        "scope": "one saved evaluation environment, 10 Hz; not the four-environment maximum",
+        "initial_root_basis": "source reference phase-zero root transform, as used by source reset",
+        "recorded_frames": 160,
+        "active_frames": 160,
+        "first_time_s": 0.020000000949949026,
+        "last_time_s": 15.920000756159425,
+        "recorded_environment_survived": true,
+        "max_turn_radius_m": 1.0545068408200562,
+        "final_xy_displacement_m": 1.0545068408200562,
+        "signed_final_heading_deg": 1.0547562855069257,
+        "max_abs_final_heading_deg": 1.0547562855069257,
+        "maximum_abs_heading_excursion_deg": 3.8866643781022643,
+        "sparse_yaw_rate_integral_deg": 13.160413972303555,
+        "mean_actual_fixed_start_frame": [
+          0.06698267314234876,
+          0.006019140361757083,
+          0.012734764447304769
+        ],
+        "mean_horizontal_speed_m_s": 0.07188809237827912,
+        "heading_definition": "unwrapped quaternion heading from phase-zero root; sparse yaw-rate integral reported separately",
+        "limitations": [
+          "Trace records only the first of four evaluation environments.",
+          "Samples run from 0.02 to 15.92 seconds, so maxima and the last 80 ms may be missed.",
+          "Quaternion net heading differs from an Euler/world angular-z integral when the torso rolls or pitches."
+        ],
+        "maximum_cross_track_m": 0.042144775390625
+      }
+    },
+    "02_STRAFE_LEFT": {
+      "source_teacher_id": "02_STRAFE_LEFT",
+      "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531",
+      "checkpoint": {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/02_STRAFE_LEFT/checkpoints/model_000663.pt",
+        "sha256": "e866a34ab5359d9c637dedd1453f874aaa57139e412807fb869976f04cffa2db",
+        "iteration": 663
+      },
+      "reference": {
+        "survival_fraction": 1.0,
+        "mean_actual": [
+          0.004166882950812578,
+          0.025205234065651894,
+          0.0025584548711776733
+        ],
+        "mean_command": [
+          0.0,
+          0.038244880735874176,
+          0.0
+        ],
+        "xy_rmse_m_s": 0.09121370315551758,
+        "yaw_rmse_rad_s": 0.3372513949871063,
+        "gravity_rmse_deg": 2.903775311238408,
+        "contact_phase_agreement": 0.7285937666893005,
+        "foot_rmse_m_per_foot": [
+          0.010700469070362597,
+          0.008407405290399851,
+          0.013772466360249466,
+          0.01183690429113051
+        ],
+        "contact_slip_rmse_m_s": 0.08781314062244601,
+        "absolute_mean_yaw_rate": 0.0025584548711776733,
+        "velocity_frame": "source heading frame; not fixed episode-start frame",
+        "maximum_cross_track_m": 0.024749755859375,
+        "max_abs_final_heading_deg": 21.390294683522857,
+        "max_turn_radius_m": 0.41373531667363833
+      },
+      "provenance": {
+        "checkpoint_sha256_verified": true,
+        "source_selection_path": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/baseline_sources.json",
+        "source_selection_sha256": "a1359a84a84673f9b8f3d7918346c936bb512a62fbadf84abba0c7fe58fcd294",
+        "evaluation_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/02_STRAFE_LEFT/evaluations/independent_000663.json",
+        "evaluation_sha256": "036b00bc59406f139d37675c688ba5963b575ea1317762ef5f5dedd9c1b6546f",
+        "evaluation_matches_checkpoint": true,
+        "evaluation_seed": 947,
+        "evaluation_num_envs": 4,
+        "evaluation_horizon_s": 16.0,
+        "trace_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/02_STRAFE_LEFT/videos/trace_000663.json",
+        "trace_sha256": "9c5ea7dacb3e59040cfb2f1c9f78577da2d6386a4b2bc56243b9d249282aa1ed",
+        "trace_iteration_and_teacher_match": true,
+        "trace_binding": "Source trace filename and internal teacher/iteration match the exact evaluation; trace has no embedded checkpoint SHA",
+        "reference_archive_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_20261029_004642/reference/02_STRAFE_LEFT.npz",
+        "reference_archive_sha256": "67a04f0600a9a6e1dc132baa3bc138a8f32596e141e9f8a8a2f7146157619def"
+      },
+      "missing_metrics": [
+        "Four-environment full-rate maximum_cross_track_m absent; reference contains clearly marked single-environment trace proxy",
+        "Four-environment full-rate max_abs_final_heading_deg absent; reference contains clearly marked single-environment trace proxy",
+        "Four-environment full-rate max_turn_radius_m absent; reference contains clearly marked single-environment trace proxy"
+      ],
+      "proxy_metric_keys": [
+        "maximum_cross_track_m",
+        "max_abs_final_heading_deg",
+        "max_turn_radius_m"
+      ],
+      "source_evaluation": {
+        "teacher_id": "02_STRAFE_LEFT",
+        "iteration": 663,
+        "checkpoint_iteration": 663,
+        "checkpoint": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/02_STRAFE_LEFT/checkpoints/model_000663.pt",
+          "sha256": "e866a34ab5359d9c637dedd1453f874aaa57139e412807fb869976f04cffa2db",
+          "iteration": 663,
+          "updated_unix": 1793211951.4379487,
+          "reason": "initial"
+        },
+        "independent": true,
+        "evaluation_seed": 947,
+        "reset": "reference_phase0 plus seeded uniform joint perturbation +/-0.005rad; reserved environments never used by optimizer",
+        "horizon_s": 16.0,
+        "num_envs": 4,
+        "survival_fraction": 1.0,
+        "q_tracking_rmse_rad": 0.08946874737739563,
+        "xy_rmse_m_s": 0.09121370315551758,
+        "yaw_rmse_rad_s": 0.3372513949871063,
+        "mean_command": [
+          0.0,
+          0.038244880735874176,
+          0.0
+        ],
+        "mean_actual": [
+          0.004166882950812578,
+          0.025205234065651894,
+          0.0025584548711776733
+        ],
+        "steps_per_foot": [
+          179.0,
+          95.0,
+          168.0,
+          178.0
+        ],
+        "step_scope": "Observed normal-force contact onset; not yet genuine-air-step acceptance",
+        "samples": 3200,
+        "accepted": false,
+        "first_fall_diagnostics": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "reward_cleanup_profile": "reference_local_v2",
+        "removed_cadence_terms": [],
+        "teacher_control_mode": "reference_plus_residual",
+        "reference_strength": 1.0,
+        "reference_time_scale": 1.0,
+        "created_unix": 1793212177.6781056,
+        "contact_phase_agreement": 0.7285937666893005,
+        "gravity_rmse_deg": 2.903775311238408,
+        "acceptance_scope": "preliminary: four held-out envs, 16 seconds; not hardware validation",
+        "foot_rmse_m_per_foot": [
+          0.010700469070362597,
+          0.008407405290399851,
+          0.013772466360249466,
+          0.01183690429113051
+        ],
+        "contact_slip_rmse_m_s": 0.08781314062244601,
+        "actual_liftoffs_per_foot": [
+          176.0,
+          91.0,
+          164.0,
+          178.0
+        ],
+        "foot_reward_saturated_fraction": 0.255859375,
+        "physical_score": 0.3969411981612894,
+        "evaluation_limits": {
+          "velocity_rmse_m_s": 0.015,
+          "yaw_rmse_rad_s": 0.08,
+          "worst_foot_rmse_m": 0.02,
+          "contact_slip_rmse_m_s": 0.03,
+          "gravity_rmse_deg": 5.0
+        },
+        "plateau_status": "not_established",
+        "plateau_definition": "five fixed-seed evaluations, physical score range <0.01; no automatic stopping or curriculum change",
+        "turn_boundary": {
+          "limit_deg": 30.0,
+          "recent_complete_episodes": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "pending": false,
+          "threshold": 0.95,
+          "window_size": 20,
+          "final_limit_deg": 10.0
+        },
+        "turn_curriculum": null
+      },
+      "target_task_command": [
+        0.0,
+        0.038244880735874176,
+        0.0
+      ],
+      "trace_metrics": {
+        "available": true,
+        "scope": "one saved evaluation environment, 10 Hz; not the four-environment maximum",
+        "initial_root_basis": "source reference phase-zero root transform, as used by source reset",
+        "recorded_frames": 160,
+        "active_frames": 160,
+        "first_time_s": 0.020000000949949026,
+        "last_time_s": 15.920000756159425,
+        "recorded_environment_survived": true,
+        "max_turn_radius_m": 0.41373531667363833,
+        "final_xy_displacement_m": 0.41345606480223374,
+        "signed_final_heading_deg": 21.390294683522857,
+        "max_abs_final_heading_deg": 21.390294683522857,
+        "maximum_abs_heading_excursion_deg": 23.473081300343313,
+        "sparse_yaw_rate_integral_deg": 15.254607316621188,
+        "mean_actual_fixed_start_frame": [
+          0.010072495946569523,
+          0.03219955632424431,
+          0.016841110520181245
+        ],
+        "mean_horizontal_speed_m_s": 0.0811596317892108,
+        "heading_definition": "unwrapped quaternion heading from phase-zero root; sparse yaw-rate integral reported separately",
+        "limitations": [
+          "Trace records only the first of four evaluation environments.",
+          "Samples run from 0.02 to 15.92 seconds, so maxima and the last 80 ms may be missed.",
+          "Quaternion net heading differs from an Euler/world angular-z integral when the torso rolls or pitches."
+        ],
+        "maximum_cross_track_m": 0.024749755859375
+      }
+    },
+    "03_STRAFE_RIGHT": {
+      "source_teacher_id": "03_STRAFE_RIGHT",
+      "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531",
+      "checkpoint": {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/03_STRAFE_RIGHT/checkpoints/model_000663.pt",
+        "sha256": "6153592ef74cddce8f40af0267393f6a65f083ce2282c86b913525fdf5c3de9f",
+        "iteration": 663
+      },
+      "reference": {
+        "survival_fraction": 1.0,
+        "mean_actual": [
+          -0.013538007624447346,
+          -0.020915694534778595,
+          -1.4225639461074024e-05
+        ],
+        "mean_command": [
+          0.0,
+          -0.038244880735874176,
+          0.0
+        ],
+        "xy_rmse_m_s": 0.07643021643161774,
+        "yaw_rmse_rad_s": 0.2997361421585083,
+        "gravity_rmse_deg": 3.6455545591127145,
+        "contact_phase_agreement": 0.736328125,
+        "foot_rmse_m_per_foot": [
+          0.009232296749337976,
+          0.008244171084682332,
+          0.015097751913224084,
+          0.013116708560445103
+        ],
+        "contact_slip_rmse_m_s": 0.09302379997851097,
+        "absolute_mean_yaw_rate": 1.4225639461074024e-05,
+        "velocity_frame": "source heading frame; not fixed episode-start frame",
+        "maximum_cross_track_m": 0.25324249267578125,
+        "max_abs_final_heading_deg": 23.152397287216086,
+        "max_turn_radius_m": 0.36661696849419245
+      },
+      "provenance": {
+        "checkpoint_sha256_verified": true,
+        "source_selection_path": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/baseline_sources.json",
+        "source_selection_sha256": "a1359a84a84673f9b8f3d7918346c936bb512a62fbadf84abba0c7fe58fcd294",
+        "evaluation_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/03_STRAFE_RIGHT/evaluations/independent_000663.json",
+        "evaluation_sha256": "b15fdb681c3f7a6ad29932546d7006c29a1f4fa8e19fa545e54e50fa1e1fd984",
+        "evaluation_matches_checkpoint": true,
+        "evaluation_seed": 947,
+        "evaluation_num_envs": 4,
+        "evaluation_horizon_s": 16.0,
+        "trace_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/03_STRAFE_RIGHT/videos/trace_000663.json",
+        "trace_sha256": "fdf262ff21ce6aac0ea7a7bcf3b195b830481bf3b9781f9475f8cd151f04e675",
+        "trace_iteration_and_teacher_match": true,
+        "trace_binding": "Source trace filename and internal teacher/iteration match the exact evaluation; trace has no embedded checkpoint SHA",
+        "reference_archive_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_20261029_004642/reference/03_STRAFE_RIGHT.npz",
+        "reference_archive_sha256": "8277a67ba9e3b4db65edce829c573a7f2e3e34db26ff2757be2c815f9ae2adec"
+      },
+      "missing_metrics": [
+        "Four-environment full-rate maximum_cross_track_m absent; reference contains clearly marked single-environment trace proxy",
+        "Four-environment full-rate max_abs_final_heading_deg absent; reference contains clearly marked single-environment trace proxy",
+        "Four-environment full-rate max_turn_radius_m absent; reference contains clearly marked single-environment trace proxy"
+      ],
+      "proxy_metric_keys": [
+        "maximum_cross_track_m",
+        "max_abs_final_heading_deg",
+        "max_turn_radius_m"
+      ],
+      "source_evaluation": {
+        "teacher_id": "03_STRAFE_RIGHT",
+        "iteration": 663,
+        "checkpoint_iteration": 663,
+        "checkpoint": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_progressivebounds_20261029_022531/03_STRAFE_RIGHT/checkpoints/model_000663.pt",
+          "sha256": "6153592ef74cddce8f40af0267393f6a65f083ce2282c86b913525fdf5c3de9f",
+          "iteration": 663,
+          "updated_unix": 1793211951.446211,
+          "reason": "initial"
+        },
+        "independent": true,
+        "evaluation_seed": 947,
+        "reset": "reference_phase0 plus seeded uniform joint perturbation +/-0.005rad; reserved environments never used by optimizer",
+        "horizon_s": 16.0,
+        "num_envs": 4,
+        "survival_fraction": 1.0,
+        "q_tracking_rmse_rad": 0.0891464352607727,
+        "xy_rmse_m_s": 0.07643021643161774,
+        "yaw_rmse_rad_s": 0.2997361421585083,
+        "mean_command": [
+          0.0,
+          -0.038244880735874176,
+          0.0
+        ],
+        "mean_actual": [
+          -0.013538007624447346,
+          -0.020915694534778595,
+          -1.4225639461074024e-05
+        ],
+        "steps_per_foot": [
+          78.0,
+          127.0,
+          200.0,
+          174.0
+        ],
+        "step_scope": "Observed normal-force contact onset; not yet genuine-air-step acceptance",
+        "samples": 3200,
+        "accepted": false,
+        "first_fall_diagnostics": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "reward_cleanup_profile": "reference_local_v2",
+        "removed_cadence_terms": [],
+        "teacher_control_mode": "reference_plus_residual",
+        "reference_strength": 1.0,
+        "reference_time_scale": 1.0,
+        "created_unix": 1793212177.705249,
+        "contact_phase_agreement": 0.736328125,
+        "gravity_rmse_deg": 3.6455545591127145,
+        "acceptance_scope": "preliminary: four held-out envs, 16 seconds; not hardware validation",
+        "foot_rmse_m_per_foot": [
+          0.009232296749337976,
+          0.008244171084682332,
+          0.015097751913224084,
+          0.013116708560445103
+        ],
+        "contact_slip_rmse_m_s": 0.09302379997851097,
+        "actual_liftoffs_per_foot": [
+          74.0,
+          127.0,
+          197.0,
+          170.0
+        ],
+        "foot_reward_saturated_fraction": 0.25484375,
+        "physical_score": 0.3539039497592674,
+        "evaluation_limits": {
+          "velocity_rmse_m_s": 0.015,
+          "yaw_rmse_rad_s": 0.08,
+          "worst_foot_rmse_m": 0.02,
+          "contact_slip_rmse_m_s": 0.03,
+          "gravity_rmse_deg": 5.0
+        },
+        "plateau_status": "not_established",
+        "plateau_definition": "five fixed-seed evaluations, physical score range <0.01; no automatic stopping or curriculum change",
+        "turn_boundary": {
+          "limit_deg": 30.0,
+          "recent_complete_episodes": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "pending": false,
+          "threshold": 0.95,
+          "window_size": 20,
+          "final_limit_deg": 10.0
+        },
+        "turn_curriculum": null
+      },
+      "target_task_command": [
+        0.0,
+        -0.038244880735874176,
+        0.0
+      ],
+      "trace_metrics": {
+        "available": true,
+        "scope": "one saved evaluation environment, 10 Hz; not the four-environment maximum",
+        "initial_root_basis": "source reference phase-zero root transform, as used by source reset",
+        "recorded_frames": 160,
+        "active_frames": 160,
+        "first_time_s": 0.020000000949949026,
+        "last_time_s": 15.920000756159425,
+        "recorded_environment_survived": true,
+        "max_turn_radius_m": 0.36661696849419245,
+        "final_xy_displacement_m": 0.36303406484055345,
+        "signed_final_heading_deg": -23.152397287216086,
+        "max_abs_final_heading_deg": 23.152397287216086,
+        "maximum_abs_heading_excursion_deg": 23.49349792699492,
+        "sparse_yaw_rate_integral_deg": 59.54350437515444,
+        "mean_actual_fixed_start_frame": [
+          -0.020565374894570755,
+          -0.01956873234406768,
+          0.06309126789856237
+        ],
+        "mean_horizontal_speed_m_s": 0.074608264209442,
+        "heading_definition": "unwrapped quaternion heading from phase-zero root; sparse yaw-rate integral reported separately",
+        "limitations": [
+          "Trace records only the first of four evaluation environments.",
+          "Samples run from 0.02 to 15.92 seconds, so maxima and the last 80 ms may be missed.",
+          "Quaternion net heading differs from an Euler/world angular-z integral when the torso rolls or pitches."
+        ],
+        "maximum_cross_track_m": 0.25324249267578125
+      }
+    },
+    "04_TURN_LEFT": {
+      "source_teacher_id": "06_BACKWARD",
+      "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323",
+      "checkpoint": {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323/06_BACKWARD/checkpoints/model_000121.pt",
+        "sha256": "0d05f71f888ba7dd2262dc0d1d4e40fcbc246d4368eb8347d83d6fce02b54bf8",
+        "iteration": 121
+      },
+      "reference": {
+        "survival_fraction": 1.0,
+        "mean_actual": [
+          -0.06472135335206985,
+          0.009364981204271317,
+          0.9991135597229004
+        ],
+        "mean_command": [
+          0.0,
+          0.0,
+          0.5235987755982988
+        ],
+        "xy_rmse_m_s": 0.1434032684734367,
+        "yaw_rmse_rad_s": 1.9303333384079335,
+        "gravity_rmse_deg": 4.6230959288799935,
+        "contact_phase_agreement": 0.7583593726158142,
+        "foot_rmse_m_per_foot": [
+          0.010284044388922579,
+          0.02076300382898517,
+          0.015306605985543145,
+          0.01132989327014094
+        ],
+        "contact_slip_rmse_m_s": 0.2262457060011256,
+        "absolute_mean_yaw_rate": 0.9991135597229004,
+        "velocity_frame": "source heading frame; not fixed episode-start frame",
+        "turn_direction_correct": true,
+        "max_abs_final_heading_deg": 909.8435158811986,
+        "max_turn_radius_m": 0.1544761478378374
+      },
+      "provenance": {
+        "checkpoint_sha256_verified": true,
+        "source_selection_path": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/baseline_sources.json",
+        "source_selection_sha256": "a1359a84a84673f9b8f3d7918346c936bb512a62fbadf84abba0c7fe58fcd294",
+        "evaluation_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323/06_BACKWARD/evaluations/independent_000121.json",
+        "evaluation_sha256": "017013d7a40363bf88ca63dcff91da8575610e717435ba7ed4d555e5ea18a1be",
+        "evaluation_matches_checkpoint": true,
+        "evaluation_seed": 947,
+        "evaluation_num_envs": 4,
+        "evaluation_horizon_s": 16.0,
+        "rmse_retargeting": "Exact aggregate second-moment recentering from source command to [0,0,+/-30deg/s]; all four source envs have 800 samples",
+        "task_difference": "This is the exact pre-transfer source checkpoint under its original translation task, not an evaluation after transfer into the turn task.",
+        "trace_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323/06_BACKWARD/videos/trace_000121.json",
+        "trace_sha256": "9004d48de0ab8312d02a3e0918a4c9ca54a5675479cadf56c405a9ca81b0abcd",
+        "trace_iteration_and_teacher_match": true,
+        "trace_binding": "Source trace filename and internal teacher/iteration match the exact evaluation; trace has no embedded checkpoint SHA",
+        "reference_archive_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_freshfeet4_20261029_032315/reference/06_BACKWARD.npz",
+        "reference_archive_sha256": "b654897723a43c1c1109e1d28b868cc536469ff447749df48164b7c31d3f112f"
+      },
+      "missing_metrics": [
+        "No source maximum_cross_track_m",
+        "Four-environment full-rate max_abs_final_heading_deg absent; reference contains clearly marked single-environment trace proxy",
+        "Four-environment full-rate max_turn_radius_m absent; reference contains clearly marked single-environment trace proxy"
+      ],
+      "proxy_metric_keys": [
+        "max_abs_final_heading_deg",
+        "max_turn_radius_m"
+      ],
+      "source_evaluation": {
+        "teacher_id": "06_BACKWARD",
+        "iteration": 121,
+        "checkpoint_iteration": 121,
+        "checkpoint": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323/06_BACKWARD/checkpoints/model_000121.pt",
+          "sha256": "0d05f71f888ba7dd2262dc0d1d4e40fcbc246d4368eb8347d83d6fce02b54bf8",
+          "iteration": 121,
+          "updated_unix": 1793217226.2989078,
+          "reason": "initial"
+        },
+        "independent": true,
+        "evaluation_seed": 947,
+        "reset": "reference_phase0 plus seeded uniform joint perturbation +/-0.005rad; reserved environments never used by optimizer",
+        "horizon_s": 16.0,
+        "num_envs": 4,
+        "survival_fraction": 1.0,
+        "q_tracking_rmse_rad": 0.1219179779291153,
+        "xy_rmse_m_s": 0.12837949395179749,
+        "yaw_rmse_rad_s": 2.120919704437256,
+        "mean_command": [
+          -0.07500000298023224,
+          0.0,
+          0.0
+        ],
+        "mean_actual": [
+          -0.06472135335206985,
+          0.009364981204271317,
+          0.9991135597229004
+        ],
+        "steps_per_foot": [
+          222.0,
+          153.0,
+          115.0,
+          148.0
+        ],
+        "step_scope": "Observed normal-force contact onset; not yet genuine-air-step acceptance",
+        "samples": 3200,
+        "accepted": false,
+        "first_fall_diagnostics": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "reward_cleanup_profile": "reference_local_v2",
+        "removed_cadence_terms": [],
+        "teacher_control_mode": "reference_plus_residual",
+        "reference_strength": 1.0,
+        "reference_time_scale": 1.0,
+        "created_unix": 1793217605.4151785,
+        "contact_phase_agreement": 0.7583593726158142,
+        "gravity_rmse_deg": 4.6230959288799935,
+        "acceptance_scope": "preliminary: four held-out envs, 16 seconds; not hardware validation",
+        "foot_rmse_m_per_foot": [
+          0.010284044388922579,
+          0.02076300382898517,
+          0.015306605985543145,
+          0.01132989327014094
+        ],
+        "contact_slip_rmse_m_s": 0.2262457060011256,
+        "actual_liftoffs_per_foot": [
+          218.0,
+          149.0,
+          111.0,
+          148.0
+        ],
+        "foot_reward_saturated_fraction": 0.156015625,
+        "physical_score": 0.2784788220626196,
+        "evaluation_limits": {
+          "velocity_rmse_m_s": 0.01875000074505806,
+          "yaw_rmse_rad_s": 0.08,
+          "worst_foot_rmse_m": 0.02,
+          "contact_slip_rmse_m_s": 0.03,
+          "gravity_rmse_deg": 5.0
+        },
+        "plateau_status": "not_established",
+        "plateau_definition": "five fixed-seed evaluations, physical score range <0.01; no automatic stopping or curriculum change",
+        "turn_boundary": {
+          "mode": "signed_velocity_integral_fixed",
+          "limit_m": 0.2,
+          "limit_deg": 30.0,
+          "recent_complete_episodes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pending": false,
+          "definition": "integral(yaw_dot dt); norm(integral(world_xy_velocity dt)); reset per episode"
+        },
+        "turn_curriculum": null
+      },
+      "target_task_command": [
+        0.0,
+        0.0,
+        0.5235987755982988
+      ],
+      "trace_metrics": {
+        "available": true,
+        "scope": "one saved evaluation environment, 10 Hz; not the four-environment maximum",
+        "initial_root_basis": "source reference phase-zero root transform, as used by source reset",
+        "recorded_frames": 160,
+        "active_frames": 160,
+        "first_time_s": 0.020000000949949026,
+        "last_time_s": 15.920000756159425,
+        "recorded_environment_survived": true,
+        "max_turn_radius_m": 0.1544761478378374,
+        "final_xy_displacement_m": 0.03952234882437902,
+        "signed_final_heading_deg": 909.8435158811986,
+        "max_abs_final_heading_deg": 909.8435158811986,
+        "maximum_abs_heading_excursion_deg": 909.8435158811986,
+        "sparse_yaw_rate_integral_deg": 851.102111360614,
+        "mean_actual_fixed_start_frame": [
+          -0.007890806237019,
+          -0.004476592612052285,
+          0.9333527614959166
+        ],
+        "mean_horizontal_speed_m_s": 0.12804852776829895,
+        "heading_definition": "unwrapped quaternion heading from phase-zero root; sparse yaw-rate integral reported separately",
+        "limitations": [
+          "Trace records only the first of four evaluation environments.",
+          "Samples run from 0.02 to 15.92 seconds, so maxima and the last 80 ms may be missed.",
+          "Quaternion net heading differs from an Euler/world angular-z integral when the torso rolls or pitches."
+        ]
+      }
+    },
+    "05_TURN_RIGHT": {
+      "source_teacher_id": "10_FORWARD_TROT",
+      "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323",
+      "checkpoint": {
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323/10_FORWARD_TROT/checkpoints/model_000121.pt",
+        "sha256": "937bb6d2ef82c0406157b49e46f1e1155a24bbc40d5af447fbb880e7f8af1f1d",
+        "iteration": 121
+      },
+      "reference": {
+        "survival_fraction": 1.0,
+        "mean_actual": [
+          0.037073682993650436,
+          0.0036715413443744183,
+          -0.9170445799827576
+        ],
+        "mean_command": [
+          0.0,
+          0.0,
+          -0.5235987755982988
+        ],
+        "xy_rmse_m_s": 0.12217450036360332,
+        "yaw_rmse_rad_s": 2.0697704520229943,
+        "gravity_rmse_deg": 4.404313443820261,
+        "contact_phase_agreement": 0.8274219036102295,
+        "foot_rmse_m_per_foot": [
+          0.015064470082168007,
+          0.01057748855045405,
+          0.014395174920482461,
+          0.015870288513922623
+        ],
+        "contact_slip_rmse_m_s": 0.15662433035327578,
+        "absolute_mean_yaw_rate": 0.9170445799827576,
+        "velocity_frame": "source heading frame; not fixed episode-start frame",
+        "turn_direction_correct": true,
+        "max_abs_final_heading_deg": 846.4060065652275,
+        "max_turn_radius_m": 0.2659903518045008
+      },
+      "provenance": {
+        "checkpoint_sha256_verified": true,
+        "source_selection_path": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/baseline_sources.json",
+        "source_selection_sha256": "a1359a84a84673f9b8f3d7918346c936bb512a62fbadf84abba0c7fe58fcd294",
+        "evaluation_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323/10_FORWARD_TROT/evaluations/independent_000121.json",
+        "evaluation_sha256": "175ffbf68bb965d5f3d2a1457d7a01daeef21c62b191c10ab787771160724139",
+        "evaluation_matches_checkpoint": true,
+        "evaluation_seed": 947,
+        "evaluation_num_envs": 4,
+        "evaluation_horizon_s": 16.0,
+        "rmse_retargeting": "Exact aggregate second-moment recentering from source command to [0,0,+/-30deg/s]; all four source envs have 800 samples",
+        "task_difference": "This is the exact pre-transfer source checkpoint under its original translation task, not an evaluation after transfer into the turn task.",
+        "trace_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323/10_FORWARD_TROT/videos/trace_000121.json",
+        "trace_sha256": "6ed519f6da2eebca4f3ee9e71897e2d4b5b8635aef320e62057ac97811308ec7",
+        "trace_iteration_and_teacher_match": true,
+        "trace_binding": "Source trace filename and internal teacher/iteration match the exact evaluation; trace has no embedded checkpoint SHA",
+        "reference_archive_path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_freshfeet4_20261029_032315/reference/10_FORWARD_TROT.npz",
+        "reference_archive_sha256": "8e892bb07426a8ca90f1e2a4e0c73d26633102d6b6cc6de0cbad994521aca837"
+      },
+      "missing_metrics": [
+        "No source maximum_cross_track_m",
+        "Four-environment full-rate max_abs_final_heading_deg absent; reference contains clearly marked single-environment trace proxy",
+        "Four-environment full-rate max_turn_radius_m absent; reference contains clearly marked single-environment trace proxy"
+      ],
+      "proxy_metric_keys": [
+        "max_abs_final_heading_deg",
+        "max_turn_radius_m"
+      ],
+      "source_evaluation": {
+        "teacher_id": "10_FORWARD_TROT",
+        "iteration": 121,
+        "checkpoint_iteration": 121,
+        "checkpoint": {
+          "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_terminal_integral_20261029_035323/10_FORWARD_TROT/checkpoints/model_000121.pt",
+          "sha256": "937bb6d2ef82c0406157b49e46f1e1155a24bbc40d5af447fbb880e7f8af1f1d",
+          "iteration": 121,
+          "updated_unix": 1793217226.327054,
+          "reason": "initial"
+        },
+        "independent": true,
+        "evaluation_seed": 947,
+        "reset": "reference_phase0 plus seeded uniform joint perturbation +/-0.005rad; reserved environments never used by optimizer",
+        "horizon_s": 16.0,
+        "num_envs": 4,
+        "survival_fraction": 1.0,
+        "q_tracking_rmse_rad": 0.11554475873708725,
+        "xy_rmse_m_s": 0.12243592739105225,
+        "yaw_rmse_rad_s": 2.229376792907715,
+        "mean_command": [
+          0.07500000298023224,
+          0.0,
+          0.0
+        ],
+        "mean_actual": [
+          0.037073682993650436,
+          0.0036715413443744183,
+          -0.9170445799827576
+        ],
+        "steps_per_foot": [
+          105.0,
+          84.0,
+          229.0,
+          155.0
+        ],
+        "step_scope": "Observed normal-force contact onset; not yet genuine-air-step acceptance",
+        "samples": 3200,
+        "accepted": false,
+        "first_fall_diagnostics": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "reward_cleanup_profile": "reference_local_v2",
+        "removed_cadence_terms": [],
+        "teacher_control_mode": "reference_plus_residual",
+        "reference_strength": 1.0,
+        "reference_time_scale": 1.0,
+        "created_unix": 1793217605.5610652,
+        "contact_phase_agreement": 0.8274219036102295,
+        "gravity_rmse_deg": 4.404313443820261,
+        "acceptance_scope": "preliminary: four held-out envs, 16 seconds; not hardware validation",
+        "foot_rmse_m_per_foot": [
+          0.015064470082168007,
+          0.01057748855045405,
+          0.014395174920482461,
+          0.015870288513922623
+        ],
+        "contact_slip_rmse_m_s": 0.15662433035327578,
+        "actual_liftoffs_per_foot": [
+          104.0,
+          80.0,
+          225.0,
+          155.0
+        ],
+        "foot_reward_saturated_fraction": 0.088984375,
+        "physical_score": 0.32582188331333434,
+        "evaluation_limits": {
+          "velocity_rmse_m_s": 0.01875000074505806,
+          "yaw_rmse_rad_s": 0.08,
+          "worst_foot_rmse_m": 0.02,
+          "contact_slip_rmse_m_s": 0.03,
+          "gravity_rmse_deg": 5.0
+        },
+        "plateau_status": "not_established",
+        "plateau_definition": "five fixed-seed evaluations, physical score range <0.01; no automatic stopping or curriculum change",
+        "turn_boundary": {
+          "mode": "signed_velocity_integral_fixed",
+          "limit_m": 0.2,
+          "limit_deg": 30.0,
+          "recent_complete_episodes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pending": false,
+          "definition": "integral(yaw_dot dt); norm(integral(world_xy_velocity dt)); reset per episode"
+        },
+        "turn_curriculum": null
+      },
+      "target_task_command": [
+        0.0,
+        0.0,
+        -0.5235987755982988
+      ],
+      "trace_metrics": {
+        "available": true,
+        "scope": "one saved evaluation environment, 10 Hz; not the four-environment maximum",
+        "initial_root_basis": "source reference phase-zero root transform, as used by source reset",
+        "recorded_frames": 160,
+        "active_frames": 160,
+        "first_time_s": 0.020000000949949026,
+        "last_time_s": 15.920000756159425,
+        "recorded_environment_survived": true,
+        "max_turn_radius_m": 0.2659903518045008,
+        "final_xy_displacement_m": 0.2659903518045008,
+        "signed_final_heading_deg": -846.4060065652275,
+        "max_abs_final_heading_deg": 846.4060065652275,
+        "maximum_abs_heading_excursion_deg": 848.5636220070354,
+        "sparse_yaw_rate_integral_deg": -878.2973949149372,
+        "mean_actual_fixed_start_frame": [
+          0.009983767239957777,
+          0.006304589970710246,
+          -0.9533171435410622
+        ],
+        "mean_horizontal_speed_m_s": 0.10942524027831901,
+        "heading_definition": "unwrapped quaternion heading from phase-zero root; sparse yaw-rate integral reported separately",
+        "limitations": [
+          "Trace records only the first of four evaluation environments.",
+          "Samples run from 0.02 to 15.92 seconds, so maxima and the last 80 ms may be missed.",
+          "Quaternion net heading differs from an Euler/world angular-z integral when the torso rolls or pitches."
+        ]
+      }
+    }
+  }
+}

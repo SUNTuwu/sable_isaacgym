@@ -1,0 +1,218 @@
+{
+  "schema": "sable-authored-motion/1",
+  "id": "06_BACKWARD",
+  "title": "后退｜数据集",
+  "fps": 50.0,
+  "samples": 51,
+  "duration_s": 1.0,
+  "joint_names": [
+    "spine_pitch",
+    "spine_roll",
+    "hip_roll",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "L_ankle_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "R_ankle_pitch",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch"
+  ],
+  "policy_joint_names": [
+    "spine_roll",
+    "hip_roll",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "L_ankle_pitch",
+    "R_ankle_pitch",
+    "spine_pitch"
+  ],
+  "policy_from_motion_indices": [
+    1,
+    2,
+    9,
+    10,
+    11,
+    3,
+    4,
+    12,
+    13,
+    14,
+    6,
+    7,
+    5,
+    8,
+    0
+  ],
+  "foot_order": [
+    "FL",
+    "FR",
+    "HL",
+    "HR"
+  ],
+  "units": {
+    "length": "m",
+    "angle": "rad",
+    "time": "s"
+  },
+  "quaternion_order": "wxyz",
+  "axes": "+X forward, +Y left, +Z up",
+  "source_clip": {
+    "id": "06_BACKWARD",
+    "title": "后退｜数据集",
+    "start": 376,
+    "end": 426,
+    "hold_end": 450,
+    "source": {
+      "type": "dataset_retarget",
+      "dataset": "Google motion_imitation / Laikago",
+      "file": "dog_backwards_trot",
+      "source_frames": [
+        0,
+        32
+      ],
+      "source_dt": 0.01667,
+      "mirrored": false,
+      "playback_duration_s": 1.0,
+      "translation_scale": 0.16,
+      "limb_scales": [
+        0.15,
+        0.15,
+        0.22,
+        0.22
+      ],
+      "lift_cap_m": 0.025,
+      "root_roll_pitch": "Sable neutral retained",
+      "root_yaw_delta_deg": 2.4489256267460386,
+      "root_delta_m": [
+        -0.14959575844317818,
+        0.005691807429128883,
+        0.0
+      ],
+      "anchoring": "source shoulder/hip pitch-relative vectors; mean-centred on Sable neutral vectors; per-limb scaling"
+    },
+    "rms_target_residual_mm": 0.0,
+    "max_target_residual_mm": 0.0,
+    "per_foot_max_mm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "initial_support_point_ik_max_error_mm": 0.002844551641111754,
+    "toe_tip_correction": "Original solved joint/root animation preserved; handles moved to FK distal tip of terminal capsule. Prior infeasible handles retained in backups/support_point_data.",
+    "seam_max_joint_difference_deg": 5.581801075264458,
+    "authored_sync": {
+      "clip": "06_BACKWARD",
+      "toe_pose_seam_mm": [
+        3.8062984834722433e-06,
+        1.498119231588582e-06,
+        2.299480914609357e-06,
+        3.2867468980593947e-07
+      ],
+      "max_joint_pose_seam_deg": 0.0,
+      "max_ik_residual_mm": 0.0038993462811377755,
+      "minimum_capsule_z_mm": -0.48262957555033315,
+      "cycle_transform": [
+        [
+          0.9990867077677827,
+          -0.04272880014384917,
+          0.0,
+          -0.14959575235843658
+        ],
+        [
+          0.04272880014384917,
+          0.9990867077677827,
+          0.0,
+          0.005691807251423597
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  },
+  "toe_definition": "Physical distal capsule tip, not capsule center or ground contact point",
+  "frame_interval": [
+    376,
+    426
+  ],
+  "cycle_transform_world": [
+    [
+      0.9990866780281067,
+      -0.04272880032658577,
+      0.0,
+      -0.14959575235843658
+    ],
+    [
+      0.04272880032658577,
+      0.9990866780281067,
+      0.0,
+      0.005691807251423597
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "quality": {
+    "max_ik_error_mm": 0.0038993462811377755,
+    "minimum_capsule_z_mm": -0.48262957555033315,
+    "ground_penetration_sample_fraction": 0.049019607843137254,
+    "max_joint_limit_violation_deg": 0.0,
+    "max_joint_pose_seam_deg": 0.0,
+    "toe_pose_seam_mm": [
+      7.206622880043354e-06,
+      6.1593860429379965e-06,
+      1.1967338959419167e-06,
+      9.783176824298286e-07
+    ],
+    "max_joint_velocity_seam_rad_s": 1.6064077615737915,
+    "max_authored_joint_velocity_rad_s": 7.656879723072052,
+    "root_displacement_world_m": [
+      -0.14959575235843658,
+      0.005691807251423597,
+      0.0
+    ],
+    "root_yaw_change_deg": 2.448925256729126,
+    "warnings": [
+      "foot_capsule_ground_penetration",
+      "joint_velocity_seam_not_closed"
+    ]
+  },
+  "training_status": "reference_only_requires_preflight",
+  "contact_labels_available": false,
+  "teacher_actions_available": false,
+  "torques_available": false,
+  "use": "Fit physically executable specialist teacher from scratch; do not use these q values as verified PD actions.",
+  "endpoint_note": "Includes both time endpoints. Do not concatenate until pose/velocity seams and cycle transform are handled."
+}

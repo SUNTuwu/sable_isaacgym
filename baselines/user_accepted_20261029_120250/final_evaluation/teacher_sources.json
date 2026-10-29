@@ -1,0 +1,82 @@
+{
+  "01_FORWARD_POLICY": {
+    "source_teacher_id": "01_FORWARD_POLICY",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/01_FORWARD_POLICY/checkpoints/model_002084.pt",
+      "sha256": "d7950745b9c0151eb985c92e591b82013e761e40e6d102c5f993877659ad4a23",
+      "iteration": 2084
+    },
+    "reason": "Exact checkpoint pinned by final evaluation manifest"
+  },
+  "04_TURN_LEFT": {
+    "source_teacher_id": "04_TURN_LEFT",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/04_TURN_LEFT/checkpoints/model_002084.pt",
+      "sha256": "0217649ce634bb872e516ce531caa46a26dafe176602041cfe9cbadbd951ff6e",
+      "iteration": 2084
+    },
+    "reason": "Exact checkpoint pinned by final evaluation manifest"
+  },
+  "05_TURN_RIGHT": {
+    "source_teacher_id": "05_TURN_RIGHT",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/05_TURN_RIGHT/checkpoints/model_002084.pt",
+      "sha256": "2955285677fb1f5e306f2de7804026fe4e624714009a4b56d5347a5ac38c8c0b",
+      "iteration": 2084
+    },
+    "reason": "Exact checkpoint pinned by final evaluation manifest"
+  },
+  "06_BACKWARD": {
+    "source_teacher_id": "06_BACKWARD",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/06_BACKWARD/checkpoints/model_002084.pt",
+      "sha256": "1e4f7e79c8c4ba09b9eafff92dc9bc35f6f0c6cf04ca482f431866fbeeff3fd2",
+      "iteration": 2084
+    },
+    "reason": "Exact checkpoint pinned by final evaluation manifest"
+  },
+  "02_STRAFE_LEFT": {
+    "source_teacher_id": "02_STRAFE_LEFT",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/02_STRAFE_LEFT/checkpoints/model_002084.pt",
+      "sha256": "b5d209e7bfbc12aafeb433eb575fa6ea9e4de4f97563277e2c53726681cb0105",
+      "iteration": 2084
+    },
+    "reason": "Exact checkpoint pinned by final evaluation manifest"
+  },
+  "03_STRAFE_RIGHT": {
+    "source_teacher_id": "03_STRAFE_RIGHT",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/03_STRAFE_RIGHT/checkpoints/model_002084.pt",
+      "sha256": "762b1340873141df51d89f26aecc9b2b82b4ae9ae97b0dcfa8aa702a6b43cfb9",
+      "iteration": 2084
+    },
+    "reason": "Exact checkpoint pinned by final evaluation manifest"
+  },
+  "09_BACKWARD_WALK": {
+    "source_teacher_id": "09_BACKWARD_WALK",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/09_BACKWARD_WALK/checkpoints/model_002084.pt",
+      "sha256": "2d04bfb846d33045abb074278f2339d91fac10fa95f68d79e4a9c0db2e790151",
+      "iteration": 2084
+    },
+    "reason": "Exact checkpoint pinned by final evaluation manifest"
+  },
+  "10_FORWARD_TROT": {
+    "source_teacher_id": "10_FORWARD_TROT",
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+    "checkpoint": {
+      "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/10_FORWARD_TROT/checkpoints/model_002084.pt",
+      "sha256": "be6f8b8fc804b2312675a50513b3050eadea78569521269148276f21c9faa6d4",
+      "iteration": 2084
+    },
+    "reason": "Exact checkpoint pinned by final evaluation manifest"
+  }
+}

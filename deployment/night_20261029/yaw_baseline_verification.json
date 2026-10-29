@@ -1,0 +1,13 @@
+{
+  "time": 1793220948.2105904,
+  "checkpoint": {
+    "path": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_20261029_041931/model_000028.pt",
+    "sha256": "fa613ad07350b6a929acf89f9abee51c83dcebae599ef715f0848cd50bb4ea90"
+  },
+  "evidence_run": "/root/gpufree-data/projects/sable-isaacgym/runs/yaw_sine_night_20261029_042158",
+  "checkpoint_iteration": 28,
+  "survival_fraction": 0.9375,
+  "angle_rmse_deg": 21.2689,
+  "accepted": false,
+  "note": "Survival baseline only, not angle-tracking acceptance"
+}

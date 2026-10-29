@@ -1,0 +1,103 @@
+{
+  "status": "awaiting_user_approval_no_deletions",
+  "groups": {
+    "dashboard_cache": {
+      "directories": 1,
+      "bytes": 6327007
+    },
+    "python_cache": {
+      "directories": 15,
+      "bytes": 4015868
+    }
+  },
+  "paths": [
+    {
+      "path": "deployment/legged_gym_cmd16_hist6_20261027/__pycache__",
+      "category": "python_cache",
+      "bytes": 491616
+    },
+    {
+      "path": "deployment/legged_gym_hind20_friction0_20261025/__pycache__",
+      "category": "python_cache",
+      "bytes": 75119
+    },
+    {
+      "path": "deployment/migration_20261029/__pycache__",
+      "category": "python_cache",
+      "bytes": 22011
+    },
+    {
+      "path": "deployment/teacher_bank_support_20261027/__pycache__",
+      "category": "python_cache",
+      "bytes": 13169
+    },
+    {
+      "path": "deployment/night_20261029/__pycache__",
+      "category": "python_cache",
+      "bytes": 960588
+    },
+    {
+      "path": "deployment/legged_gym_knee_termination_20261025/__pycache__",
+      "category": "python_cache",
+      "bytes": 7820
+    },
+    {
+      "path": "deployment/legged_gym_powered_ankles_20261026/__pycache__",
+      "category": "python_cache",
+      "bytes": 8253
+    },
+    {
+      "path": "deployment/legged_gym_speedtrack20_20261026/__pycache__",
+      "category": "python_cache",
+      "bytes": 50525
+    },
+    {
+      "path": "deployment/legged_gym_cmd16_hist6_20261027/tests/__pycache__",
+      "category": "python_cache",
+      "bytes": 4914
+    },
+    {
+      "path": "deployment/reference_v2_20261028/runtime/__pycache__",
+      "category": "python_cache",
+      "bytes": 2249011
+    },
+    {
+      "path": "deployment/reference_v2_20261028/runtime/tests/__pycache__",
+      "category": "python_cache",
+      "bytes": 73492
+    },
+    {
+      "path": "deployment/teacher_bank_support_20261027/verified_motion_rewards_v2/__pycache__",
+      "category": "python_cache",
+      "bytes": 13397
+    },
+    {
+      "path": "deployment/teacher_bank_support_20261027/verified_motion_rewards_v4/__pycache__",
+      "category": "python_cache",
+      "bytes": 15169
+    },
+    {
+      "path": "deployment/teacher_bank_support_20261027/verified_motion_rewards_v3/__pycache__",
+      "category": "python_cache",
+      "bytes": 15008
+    },
+    {
+      "path": "deployment/teacher_bank_support_20261027/verified_motion_rewards_v5/__pycache__",
+      "category": "python_cache",
+      "bytes": 15776
+    },
+    {
+      "path": "deployment/teacher_bank_dashboard_20261027_1720/telemetry_cache",
+      "category": "dashboard_cache",
+      "bytes": 6327007
+    }
+  ],
+  "protected": [
+    "runs/",
+    "baselines/",
+    "blender/",
+    "robot_authoring/source/",
+    "待删除/"
+  ],
+  "note": "User explicitly requires approval before any deletion; this file is a proposal only."
+}

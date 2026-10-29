@@ -1,0 +1,18 @@
+{
+  "pid": 180694,
+  "old_pid": 114397,
+  "command": [
+    "python3",
+    "/root/gpufree-data/projects/sable-isaacgym/deployment/teacher_bank_dashboard_20261027_1720/server.py",
+    "--project",
+    "/root/gpufree-data/projects/sable-isaacgym",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "11111"
+  ],
+  "sha256": "0f16ddd298e350cea4b4b34231f1886ee4c43b2273489ac46b0f79ee4d5ec64b",
+  "backup": "/root/gpufree-data/projects/sable-isaacgym/deployment/night_20261029/dashboard_server_before_final_overlay_0649.py",
+  "teachers": 9,
+  "time": 1793227769.6839888
+}

@@ -1,0 +1,332 @@
+{
+  "bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_guard_aggressive_20261028_004033",
+  "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_gaitbalance_20261027_235801",
+  "initial_iteration": 881,
+  "launch": {
+    "bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_guard_aggressive_20261028_004033",
+    "pid": 191234,
+    "deadline": "2026-10-28T01:40:47.182411+08:00",
+    "status": "training",
+    "watchdog_pid": 191235,
+    "sealer_pid": 191401,
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_gaitbalance_20261027_235801",
+    "source_iteration": 881,
+    "task_tracking_profile": "turn90_lateral_tracking_v1",
+    "step_quality_profile": "strict_steps_v1",
+    "ppo_smoke_updates": 1,
+    "formal_resumed_smoke_weights": false,
+    "command": [
+      "/root/gpufree-data/envs/sable-isaacgym-py38/bin/python",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_guard_aggressive_20261028_004033/runtime/teacher_bank_core.py",
+      "--reference",
+      "/root/gpufree-data/projects/sable-isaacgym/motion_library/pace30_switch_20261027/training_reference",
+      "--resume-bank",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_gaitbalance_20261027_235801",
+      "--control-mode",
+      "reference_plus_residual",
+      "--reference-strength",
+      "1",
+      "--time-scale",
+      "1",
+      "--offset-limit-deg",
+      "20",
+      "--imitation-scale",
+      ".2",
+      "--balance-first",
+      "--minimum-action-std",
+      ".15",
+      "--exploration-std",
+      ".15",
+      "--adaptive-curriculum",
+      "--motion-reward-module",
+      "--task-tracking-profile",
+      "turn90_lateral_tracking_v1",
+      "--step-quality-profile",
+      "strict_steps_v1",
+      "--translation-guard",
+      "--turn-speed-scale",
+      ".5",
+      "--bank",
+      "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_guard_aggressive_20261028_004033",
+      "--envs-per-teacher",
+      "2048",
+      "--minibatches",
+      "2",
+      "--deadline",
+      "2026-10-28T01:40:47.182411+08:00"
+    ]
+  },
+  "resume": {
+    "passed": true,
+    "source_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_gaitbalance_20261027_235801",
+    "sources": [
+      {
+        "teacher_id": "01_FORWARD_POLICY",
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_gaitbalance_20261027_235801/01_FORWARD_POLICY/checkpoints/model_000881.pt",
+        "sha256": "f426abbd1b0877397132fffd77513e7a3e468a6d8b841f4c5a6775b1a115a885",
+        "iteration": 881,
+        "policy_equal_before_intentional_change": true,
+        "policy_equal_except_log_std_after_change": true,
+        "optimizer_equal": true,
+        "intentional_change": null,
+        "observation_migration": {
+          "source_observations": 87,
+          "target_observations": 89,
+          "original_columns_equal": true,
+          "appended_columns_zero": true,
+          "adam_moments_zero_padded": true,
+          "initial_outputs_preserved": true
+        },
+        "curriculum_command_change": null,
+        "curriculum_state_restored": true
+      },
+      {
+        "teacher_id": "04_TURN_LEFT",
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_gaitbalance_20261027_235801/04_TURN_LEFT/checkpoints/model_000881.pt",
+        "sha256": "bf95771952d5799dd034565d560a1f534ac2ee068875bbe645e0b04ab35a27d9",
+        "iteration": 881,
+        "policy_equal_before_intentional_change": true,
+        "policy_equal_except_log_std_after_change": true,
+        "optimizer_equal": true,
+        "intentional_change": null,
+        "observation_migration": {
+          "source_observations": 87,
+          "target_observations": 89,
+          "original_columns_equal": true,
+          "appended_columns_zero": true,
+          "adam_moments_zero_padded": true,
+          "initial_outputs_preserved": true
+        },
+        "curriculum_command_change": {
+          "old_command": [
+            0.0,
+            0.0,
+            1.5707963705062866
+          ],
+          "new_command": [
+            0.0,
+            0.0,
+            0.7853981852531433
+          ],
+          "recalibrated_axes": [
+            "yaw_rad_s"
+          ],
+          "phase_failure_history_preserved": true,
+          "reason": "Task command changed; reset command-dependent progress gates and reward bandwidth, not policy or Adam"
+        },
+        "curriculum_state_restored": true
+      },
+      {
+        "teacher_id": "05_TURN_RIGHT",
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_gaitbalance_20261027_235801/05_TURN_RIGHT/checkpoints/model_000881.pt",
+        "sha256": "fd4a65223a4639133fa956e3baf669f643f1d1fd2fa11c78e75493674fa1e24d",
+        "iteration": 881,
+        "policy_equal_before_intentional_change": true,
+        "policy_equal_except_log_std_after_change": true,
+        "optimizer_equal": true,
+        "intentional_change": null,
+        "observation_migration": {
+          "source_observations": 87,
+          "target_observations": 89,
+          "original_columns_equal": true,
+          "appended_columns_zero": true,
+          "adam_moments_zero_padded": true,
+          "initial_outputs_preserved": true
+        },
+        "curriculum_command_change": {
+          "old_command": [
+            0.0,
+            0.0,
+            -1.5707963705062866
+          ],
+          "new_command": [
+            0.0,
+            0.0,
+            -0.7853981852531433
+          ],
+          "recalibrated_axes": [
+            "yaw_rad_s"
+          ],
+          "phase_failure_history_preserved": true,
+          "reason": "Task command changed; reset command-dependent progress gates and reward bandwidth, not policy or Adam"
+        },
+        "curriculum_state_restored": true
+      },
+      {
+        "teacher_id": "06_BACKWARD",
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_gaitbalance_20261027_235801/06_BACKWARD/checkpoints/model_000881.pt",
+        "sha256": "d4fc29cf0e2e014018776bca3ee8bd2fdb4401ca95ed821e4bae3f9925d9efd4",
+        "iteration": 881,
+        "policy_equal_before_intentional_change": true,
+        "policy_equal_except_log_std_after_change": true,
+        "optimizer_equal": true,
+        "intentional_change": null,
+        "observation_migration": {
+          "source_observations": 87,
+          "target_observations": 89,
+          "original_columns_equal": true,
+          "appended_columns_zero": true,
+          "adam_moments_zero_padded": true,
+          "initial_outputs_preserved": true
+        },
+        "curriculum_command_change": null,
+        "curriculum_state_restored": true
+      },
+      {
+        "teacher_id": "02_STRAFE_LEFT",
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_gaitbalance_20261027_235801/02_STRAFE_LEFT/checkpoints/model_000881.pt",
+        "sha256": "df2fc942b5e33dbc99b7c0c4100b5da82104dab82603b461c3e18678c1d76a63",
+        "iteration": 881,
+        "policy_equal_before_intentional_change": true,
+        "policy_equal_except_log_std_after_change": true,
+        "optimizer_equal": true,
+        "intentional_change": null,
+        "observation_migration": {
+          "source_observations": 87,
+          "target_observations": 89,
+          "original_columns_equal": true,
+          "appended_columns_zero": true,
+          "adam_moments_zero_padded": true,
+          "initial_outputs_preserved": true
+        },
+        "curriculum_command_change": null,
+        "curriculum_state_restored": true
+      },
+      {
+        "teacher_id": "03_STRAFE_RIGHT",
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_gaitbalance_20261027_235801/03_STRAFE_RIGHT/checkpoints/model_000881.pt",
+        "sha256": "6cb06dd302eb42170558a1a4c533d9a4e2a11aa2b28cc564e488ca663317a67e",
+        "iteration": 881,
+        "policy_equal_before_intentional_change": true,
+        "policy_equal_except_log_std_after_change": true,
+        "optimizer_equal": true,
+        "intentional_change": null,
+        "observation_migration": {
+          "source_observations": 87,
+          "target_observations": 89,
+          "original_columns_equal": true,
+          "appended_columns_zero": true,
+          "adam_moments_zero_padded": true,
+          "initial_outputs_preserved": true
+        },
+        "curriculum_command_change": null,
+        "curriculum_state_restored": true
+      },
+      {
+        "teacher_id": "09_BACKWARD_WALK",
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_gaitbalance_20261027_235801/09_BACKWARD_WALK/checkpoints/model_000881.pt",
+        "sha256": "e284953c2eae80fb401b5eec37e10b7873114e22551daaaf04c921f18a8b3054",
+        "iteration": 881,
+        "policy_equal_before_intentional_change": true,
+        "policy_equal_except_log_std_after_change": true,
+        "optimizer_equal": true,
+        "intentional_change": null,
+        "observation_migration": {
+          "source_observations": 87,
+          "target_observations": 89,
+          "original_columns_equal": true,
+          "appended_columns_zero": true,
+          "adam_moments_zero_padded": true,
+          "initial_outputs_preserved": true
+        },
+        "curriculum_command_change": null,
+        "curriculum_state_restored": true
+      },
+      {
+        "teacher_id": "10_FORWARD_TROT",
+        "path": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_gaitbalance_20261027_235801/10_FORWARD_TROT/checkpoints/model_000881.pt",
+        "sha256": "c469e9ffb4ad57ba6966145d52e92b43086aeb509f1cb9cbb90b999dd6f57dae",
+        "iteration": 881,
+        "policy_equal_before_intentional_change": true,
+        "policy_equal_except_log_std_after_change": true,
+        "optimizer_equal": true,
+        "intentional_change": null,
+        "observation_migration": {
+          "source_observations": 87,
+          "target_observations": 89,
+          "original_columns_equal": true,
+          "appended_columns_zero": true,
+          "adam_moments_zero_padded": true,
+          "initial_outputs_preserved": true
+        },
+        "curriculum_command_change": null,
+        "curriculum_state_restored": true
+      }
+    ],
+    "initial_iteration": 881,
+    "new_environments_reset": true,
+    "old_rollout_storage_reused": false
+  },
+  "runtime_hashes_verified": true,
+  "source_sealed_and_archived": true,
+  "cpu_contract_passed": true,
+  "actual_ppo_smoke_complete": true,
+  "probe": {
+    "status": "completed",
+    "pid": 192276,
+    "bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_guard_aggressive_20261028_004033",
+    "core": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_guard_aggressive_20261028_004033/runtime/teacher_bank_core.py",
+    "started_unix": 1793119399.0503387,
+    "updated_unix": 1793119453.850435,
+    "wall_s": 54.80009651184082,
+    "iteration": 882,
+    "teachers": 8,
+    "executed_simulation_s": 4.000000189989805,
+    "early_all_first_episodes_failed": false,
+    "all_checkpoint_hashes_verified": true
+  },
+  "training_commands": [
+    [
+      0.15866637229919434,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.7853981852531433
+    ],
+    [
+      0.0,
+      0.0,
+      -0.7853981852531433
+    ],
+    [
+      -0.1496027261018753,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0609702430665493,
+      0.0
+    ],
+    [
+      0.0,
+      -0.0609702430665493,
+      0.0
+    ],
+    [
+      -0.15864817798137665,
+      0.0,
+      0.0
+    ],
+    [
+      0.14923083782196045,
+      0.0,
+      0.0
+    ]
+  ],
+  "translation_guard": {
+    "enabled": true,
+    "heading_limit_deg": 10.0,
+    "cross_track_limit_m": 0.1,
+    "scope": "All six pure translation teachers; turns exempt. No warmup or grace period.",
+    "heading": "Actual root heading relative to episode reset heading, wrapped signed angle; not roll/pitch and not angular-velocity magnitude.",
+    "path": "Fixed world line through actual reset rootXY, aligned with commanded body-frame XY rotated by reset heading. Perpendicular XY error, not height or along-path progress.",
+    "termination": "Immediately terminate on abs(heading)>10deg OR abs(cross_track)>.100m; mark task failure, not timeout, so no timeout-value bootstrap. Existing physical failures retained.",
+    "observation": "Append heading_error/10deg and cross_track/.100m, clipped+/-3; zero for turns. Actor/critic89D,15actions; migrate87D network and Adam moments with zero columns."
+  },
+  "teacher_observations": 89,
+  "scope": "Reward/boundary implementation and bounded4s independent probe; not skill acceptance."
+}

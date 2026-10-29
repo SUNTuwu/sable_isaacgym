@@ -1,0 +1,85 @@
+{
+  "id": "08_LATERAL_TROT_RIGHT",
+  "file": "08_LATERAL_TROT_RIGHT.npz",
+  "title": "右横移 trot｜对角交替",
+  "fps": 50,
+  "samples": 51,
+  "period_s": 1.0,
+  "joint_names": [
+    "spine_pitch",
+    "spine_roll",
+    "hip_roll",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "L_ankle_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "R_ankle_pitch",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch"
+  ],
+  "policy_joint_names": [
+    "spine_roll",
+    "hip_roll",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "L_ankle_pitch",
+    "R_ankle_pitch",
+    "spine_pitch"
+  ],
+  "foot_order": [
+    "FL",
+    "FR",
+    "HL",
+    "HR"
+  ],
+  "source_metadata": "../motions/08_LATERAL_TROT_RIGHT.json",
+  "processing": {
+    "periodic_filter": "Endpoint-drift removal, five Fourier harmonics; analytic periodic q derivatives",
+    "harmonics": 5,
+    "source_npz_sha256": "34886fc77d05d6b1581cd02e277bfc94bc05ce31cb322ce43396bfbd69b62ba7",
+    "root_cycle_translation_m": [
+      0.0,
+      -0.02500000037252903,
+      0.0
+    ],
+    "root_cycle_yaw_rad": 0.0,
+    "ground_correction": {
+      "method": "Smooth periodic vertical-root upper envelope; joint FK preserved",
+      "margin_m": 0.00025,
+      "extra_margin_m": 5e-05,
+      "maximum_root_raise_m": 5e-05,
+      "estimated_contact_height_threshold_m": 0.003
+    }
+  },
+  "quality": {
+    "minimum_capsule_z_mm": 0.6743289467285637,
+    "max_joint_pose_seam_deg": 0.0,
+    "max_joint_velocity_seam_rad_s": 0.0,
+    "max_joint_limit_violation_deg": 0.0,
+    "max_joint_change_from_authored_deg": 1.4123702624293313,
+    "max_joint_velocity_rad_s": 1.9013087968596523,
+    "turn_target_reprojection_error_mm": null,
+    "max_root_raise_mm": 0.05,
+    "mean_geometric_contact_count": 2.784313725490196,
+    "physical_validation_passed": false
+  },
+  "native_command_world_mean": [
+    0.0,
+    -0.02500000037252903,
+    0.0
+  ],
+  "native_yaw_rate_rad_s": 0.0
+}

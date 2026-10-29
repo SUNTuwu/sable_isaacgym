@@ -1,0 +1,316 @@
+{
+  "status": "stopped_at_deadline",
+  "run_dir": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s",
+  "pid": 223668,
+  "started_unix": 1793233972.4655607,
+  "deadline": "2026-10-29T08:32:52.465561+08:00",
+  "updated_unix": 1793234101.4314349,
+  "num_envs": 32,
+  "training_envs": 0,
+  "reserved_evaluation_envs": 32,
+  "initialization": "all_eight_current_teachers_resumed_with_Adam",
+  "reward_cleanup_profile": "reference_local_v2",
+  "removed_cadence_terms": [],
+  "teacher_control_mode": "reference_plus_residual",
+  "reference_strength": 1.0,
+  "reference_time_scale": 1.0,
+  "offset_limit_deg": 20.0,
+  "imitation_reward_scale": 0.0,
+  "reference_sampling": "Pre-action observation uses phase_t; env advances phase by dt before composing full q_ref(phase_t+dt)+bounded offset. q_default is only the lower PD-coordinate conversion origin.",
+  "trace_is_BC_dataset": false,
+  "student_distillation_label": "Collect pre-action326D observation -> complete clipped executed_target_full, never residual_action alone",
+  "teachers": [
+    {
+      "id": "01_FORWARD_POLICY",
+      "title": "前进 walk｜腾讯动捕·左主控",
+      "run_dir": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s/01_FORWARD_POLICY",
+      "reference_metadata": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/reference/01_FORWARD_POLICY.json",
+      "status": "training"
+    },
+    {
+      "id": "04_TURN_LEFT",
+      "title": "左转 trot｜复用已训练旋转候选",
+      "run_dir": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s/04_TURN_LEFT",
+      "reference_metadata": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/reference/04_TURN_LEFT.json",
+      "status": "training"
+    },
+    {
+      "id": "05_TURN_RIGHT",
+      "title": "右转 trot｜复用已训练旋转候选",
+      "run_dir": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s/05_TURN_RIGHT",
+      "reference_metadata": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/reference/05_TURN_RIGHT.json",
+      "status": "training"
+    },
+    {
+      "id": "06_BACKWARD",
+      "title": "后退 trot｜Google动捕·左主控",
+      "run_dir": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s/06_BACKWARD",
+      "reference_metadata": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/reference/06_BACKWARD.json",
+      "status": "training"
+    },
+    {
+      "id": "02_STRAFE_LEFT",
+      "title": "左横移 pace｜APEX",
+      "run_dir": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s/02_STRAFE_LEFT",
+      "reference_metadata": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/reference/02_STRAFE_LEFT.json",
+      "status": "training"
+    },
+    {
+      "id": "03_STRAFE_RIGHT",
+      "title": "右横移 pace｜左移镜像",
+      "run_dir": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s/03_STRAFE_RIGHT",
+      "reference_metadata": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/reference/03_STRAFE_RIGHT.json",
+      "status": "training"
+    },
+    {
+      "id": "09_BACKWARD_WALK",
+      "title": "后退 walk｜腾讯动捕倒放·左主控",
+      "run_dir": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s/09_BACKWARD_WALK",
+      "reference_metadata": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/reference/09_BACKWARD_WALK.json",
+      "status": "training"
+    },
+    {
+      "id": "10_FORWARD_TROT",
+      "title": "前进 trot｜Google动捕倒放·左主控",
+      "run_dir": "/root/gpufree-data/projects/sable-isaacgym/results/final_evaluation/deadline_20261028T231501_191618/bank_32env_24s/10_FORWARD_TROT",
+      "reference_metadata": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810/reference/10_FORWARD_TROT.json",
+      "status": "training"
+    }
+  ],
+  "initial_iteration": 2084,
+  "resume_start_iteration": 2084,
+  "resume_from_bank": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+  "ppo_minibatches": 2,
+  "pace_stability_enabled": false,
+  "pace_stability_metadata": null,
+  "pace_stability_origin_iteration": 2084,
+  "training_objective": "reference_and_task_tracking",
+  "exploration_normalized_std_initial": 0.15,
+  "minimum_action_std": 0.02,
+  "exploration_physical_std_deg_initial": 3.008028424436822,
+  "intentional_std_change_on_resume": false,
+  "turn_slew_definition": "Turn residual offset changes by at most turn_offset_rate_deg_s*dt, inferred from previous actually executed target and previous reference; first reset command warm-starts the existing balance correction",
+  "turn_reference_time_scale": 1.0,
+  "turn_offset_rate_deg_s": 0.0,
+  "turn_lift_config": {
+    "schema": "diagnostic-tip-upstrokes/v2",
+    "diagnostic_only": true,
+    "rise_hysteresis_m": 0.0005,
+    "superseded_schema": null,
+    "teachers": {
+      "01_FORWARD_POLICY": {
+        "hard_limit": false,
+        "frequency_weight": 0.0,
+        "jitter_weight": 0.0
+      },
+      "04_TURN_LEFT": {
+        "hard_limit": false,
+        "frequency_weight": 0.0,
+        "jitter_weight": 0.0
+      },
+      "05_TURN_RIGHT": {
+        "hard_limit": false,
+        "frequency_weight": 0.0,
+        "jitter_weight": 0.0
+      },
+      "06_BACKWARD": {
+        "hard_limit": false,
+        "frequency_weight": 0.0,
+        "jitter_weight": 0.0
+      },
+      "02_STRAFE_LEFT": {
+        "hard_limit": false,
+        "frequency_weight": 0.0,
+        "jitter_weight": 0.0
+      },
+      "03_STRAFE_RIGHT": {
+        "hard_limit": false,
+        "frequency_weight": 0.0,
+        "jitter_weight": 0.0
+      },
+      "09_BACKWARD_WALK": {
+        "hard_limit": false,
+        "frequency_weight": 0.0,
+        "jitter_weight": 0.0
+      },
+      "10_FORWARD_TROT": {
+        "hard_limit": false,
+        "frequency_weight": 0.0,
+        "jitter_weight": 0.0
+      }
+    },
+    "acceptance": "No count ratio, cadence ceiling, cooldown or frequency termination. Counts are diagnostic only."
+  },
+  "teacher_reference_periods_s": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "teacher_observations": 94,
+  "added_observation": "yaw integral + contact swing ages and cycle counts; no lift budget",
+  "turn_speed_scale": 1.0,
+  "translation_guard_enabled": false,
+  "translation_guard_metadata": null,
+  "step_quality_profile": "legacy",
+  "task_tracking_profile": "legacy",
+  "task_target_scope": "explicit source commands; body-relative end effectors; no world reference XY/yaw tracking",
+  "reference_guidance": "loose_tracking",
+  "adaptive_tolerances_enabled": false,
+  "motion_reward_module_enabled": false,
+  "walk_event_weight_scale": 0.25,
+  "raw_reference_commands": [
+    [
+      0.07500000298023224,
+      0.0,
+      0.0
+    ],
+    [
+      -0.07500000298023224,
+      0.0,
+      0.0
+    ],
+    [
+      0.07500000298023224,
+      0.0,
+      0.0
+    ],
+    [
+      -0.07500000298023224,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.038244880735874176,
+      0.0
+    ],
+    [
+      0.0,
+      -0.038244880735874176,
+      0.0
+    ],
+    [
+      -0.07500000298023224,
+      0.0,
+      0.0
+    ],
+    [
+      0.07500000298023224,
+      0.0,
+      0.0
+    ]
+  ],
+  "training_commands": [
+    [
+      0.07500000298023224,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.5235987901687622
+    ],
+    [
+      0.0,
+      0.0,
+      -0.5235987901687622
+    ],
+    [
+      -0.07500000298023224,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.038244880735874176,
+      0.0
+    ],
+    [
+      0.0,
+      -0.038244880735874176,
+      0.0
+    ],
+    [
+      -0.07500000298023224,
+      0.0,
+      0.0
+    ],
+    [
+      0.07500000298023224,
+      0.0,
+      0.0
+    ]
+  ],
+  "reward_metadata": {
+    "task_boundary_settlement": "Only natural physical death or full episode timeout; signed integral(yaw_dot), norm integral(world XY velocity); translations30deg, turns0.20m. No early task-boundary termination.",
+    "turn_command": "fixed +/-30deg/s",
+    "profile": "reference_local_v2",
+    "weights": {
+      "velocity": 4.0,
+      "yaw": 4.0,
+      "foot_local": 4.0,
+      "cross_motion": -0.2,
+      "heading": 0.0,
+      "translation_yaw_rate": -2.0,
+      "contact_timing": -2.0,
+      "slip": -1.5,
+      "gravity_alignment": -2.0,
+      "body_height": -0.5,
+      "target_acceleration": -0.3,
+      "joint_acceleration": -0.05,
+      "torque": -0.1,
+      "joint_limits": -0.5,
+      "symmetry": -0.5
+    },
+    "reference_amplitude": 1.0,
+    "control": "q_ref + bounded offset",
+    "foot_frame": "fore: shoulder midpoint/chest; hind: hip midpoint/calibrated pelvis; no global XY/yaw imitation",
+    "gravity_alignment_definition": "-2*(gravity_angle_error/10deg)^2; exact match zero, no positive baseline; root/chest only",
+    "foot_local_definition": "4*mean(exp(-sum((error/[0.040,0.040,0.020])^2))); loose body-local guide",
+    "cross_motion_definition": "turns: -2*min((horizontal_speed/0.03)^2,4), cap -8/s; translations unchanged: -0.2*u^2/(1+u^2/4), u=cross_speed/0.06, cap -0.8/s",
+    "contact_timing_definition": "-2*mean(actual_contact != (reference_contact_probability>=0.5)); every control step, all four feet; no timing deadband",
+    "translation_yaw_rate_definition": "translations only: -2*min((yaw_rate_error/0.10rad_s)^2,4), cap -8/s; pure turns excluded",
+    "historical_boundary_curriculum_not_active": "turns only; reset-relative rootXY radius 0.30m -> 0.20m once >=19/20 complete held-out episodes survive without crossing. Translations: reset-relative yaw 30deg -> 20deg -> 10deg, same independent 19/20 full-episode gate; replaces continuous heading-integral penalty. Other previous-version rewards preserved.",
+    "turn_task_revision": {
+      "yaw": "Dense cycle progress: 6*T*(0.99*Phi(p_new)-Phi(p_old))/dt; p=signed integral(yaw_rate*dt)/(abs(command)*T); Phi=min(p,1)-0.15*max(p-1,0)^2 bounded below at -2. Complete-cycle discounted sum=6*T*0.99^N*Phi(p_final). Initial partial cycle excluded; only a physical-fall terminal cancels unfinished potential. Artificial timeouts retain Phi(next) to match gamma*V(pre_reset_obs) bootstrap; complete wraps retain cycle payoff. Raw timeout rollout return excludes the critic bootstrap and is not a completed-cycle-only score.",
+      "foot_weight": 2,
+      "foot_sigma_xyz_m": [
+        0.06,
+        0.06,
+        0.025
+      ],
+      "period": "unchanged reference phase/contact timing; full-cycle cadence count checked",
+      "cycle_event": "up to +2 per completed cycle, drift/phase gated; reverse negative, extra/missing lifts -0.1 each; partial reset cycles excluded",
+      "other_six_teachers": "unchanged"
+    },
+    "fall_definition": "per fall -(20 + sum of other same-transition negative costs); timeout excluded; displayed rates are not per-event amounts",
+    "event_costs": {
+      "liftoff_per_foot": 0.01,
+      "additional_liftoff_same_reference_cycle": 0.04,
+      "short_swing_max_per_foot": 0.05,
+      "short_swing_threshold": "0.5 * reference swing duration"
+    },
+    "contact_detector": "Force hysteresis: contact >=1N; leave <=0.3N AND capsule clearance >1mm; no long debounce; reset air is not a liftoff",
+    "symmetry": "Straight walk/trot only; actual anatomy-local XY compared to mirrored opposite foot half a reference period earlier",
+    "aggregation": "sum of continuous rates * dt + event costs; no positive-only clipping",
+    "removed": "All v44 reward modules, strict step width/height/distance/angle targets, raw upstroke taxes, cadence budgets, inverse duration, extra alive rewards, joint pose/velocity imitation, hard-coded waist=-40deg termination",
+    "termination": "Nonfinite, severe tilt/low body, prohibited body/knee contact, passive coupling; time limit. No cadence termination."
+  },
+  "policy_resume_from": "/root/gpufree-data/projects/sable-isaacgym/runs/teacher_bank_fullref_referencev2_straightcross_20261029_080810",
+  "reward_profile_source": null,
+  "fresh_teacher_ids": [],
+  "gait_replacement": {
+    "02_STRAFE_LEFT": "07_LATERAL_TROT_LEFT",
+    "03_STRAFE_RIGHT": "08_LATERAL_TROT_RIGHT"
+  },
+  "waist_pitch_locked": true,
+  "waist_pitch_target_deg": -18.806024294659668,
+  "exploration_active_joints": 14,
+  "iteration": 2084
+}

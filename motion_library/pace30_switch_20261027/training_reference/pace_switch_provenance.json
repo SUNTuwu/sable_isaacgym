@@ -1,0 +1,68 @@
+{
+  "clips": [
+    {
+      "id": "02_STRAFE_LEFT",
+      "sha256": "eba7f4b19aec3c862ecc4b23c69ca98d7c7b0ca066243e273670ab1a5810cd3c",
+      "period_s": 1.0,
+      "cycle_displacement_m": [
+        -0.005243229679763317,
+        0.06096676364541054,
+        0.0
+      ],
+      "same_side_height_correlation": [
+        0.9915068163473145,
+        0.9684650334830374
+      ],
+      "diagonal_height_correlation": [
+        -0.6058784824519947,
+        -0.6262758393629317
+      ],
+      "quality": {
+        "minimum_capsule_z_mm": 0.6090824157720032,
+        "max_joint_pose_seam_deg": 0.0,
+        "max_joint_velocity_seam_rad_s": 0.0,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_change_from_authored_deg": 6.820047773380467,
+        "max_joint_velocity_rad_s": 6.288957910056618,
+        "turn_target_reprojection_error_mm": null,
+        "max_root_raise_mm": 0.05,
+        "mean_geometric_contact_count": 1.8823529411764706,
+        "physical_validation_passed": false
+      }
+    },
+    {
+      "id": "03_STRAFE_RIGHT",
+      "sha256": "aa29688084ed4a02eae3839a3ef6f507b16d14bee44f54572f3828a476211a68",
+      "period_s": 1.0,
+      "cycle_displacement_m": [
+        -0.005243229679763317,
+        -0.06096676364541054,
+        0.0
+      ],
+      "same_side_height_correlation": [
+        0.9803390807759665,
+        0.9915337123215892
+      ],
+      "diagonal_height_correlation": [
+        -0.6037608042504401,
+        -0.5587022533758872
+      ],
+      "quality": {
+        "minimum_capsule_z_mm": 0.29999999999999816,
+        "max_joint_pose_seam_deg": 0.0,
+        "max_joint_velocity_seam_rad_s": 0.0,
+        "max_joint_limit_violation_deg": 0.0,
+        "max_joint_change_from_authored_deg": 7.006588691801994,
+        "max_joint_velocity_rad_s": 6.2008574139464825,
+        "turn_target_reprojection_error_mm": null,
+        "max_root_raise_mm": 0.11624445828820235,
+        "mean_geometric_contact_count": 1.9607843137254901,
+        "physical_validation_passed": false
+      }
+    }
+  ],
+  "source_blender": "E:\\1_project_E\\code\\remote_sable_robot\\blender\\motion_edit_20261027\\sable_motion_edit.blend",
+  "source_blender_sha256": "11c2fa0165d90590fc3875597f6d7b639a1fc2ba18c876bffa6e03b9c747d166",
+  "backup_sha256": "1628796febdaa726b5b86c3535d422958c423868b70791fe3a2393fa494cb73f",
+  "six_unchanged_references_verified": true
+}

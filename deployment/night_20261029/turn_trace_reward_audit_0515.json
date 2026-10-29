@@ -1,0 +1,38 @@
+[
+  {
+    "label": "right_baseline",
+    "samples": 160,
+    "mean_yaw": -0.9533171435410622,
+    "yaw_stdev": 1.8764079604731465,
+    "reverse_fraction": 0.275,
+    "mean_instant_yaw_reward": -1.2018028355303436,
+    "mean_cycle_yaw_reward": 0.31629865303671006,
+    "mean_cross_reward": -2.1706603841218097,
+    "mean_velocity_reward": 0.2961710781934305,
+    "scope": "Approximate offline10Hz singleenvironment trace; not authoritative50Hz allenv reward"
+  },
+  {
+    "label": "right_degraded",
+    "samples": 160,
+    "mean_yaw": -0.07511289274552838,
+    "yaw_stdev": 1.075476785264413,
+    "reverse_fraction": 0.475,
+    "mean_instant_yaw_reward": -1.099658532683649,
+    "mean_cycle_yaw_reward": 0.434456767450225,
+    "mean_cross_reward": -1.8069501655139482,
+    "mean_velocity_reward": 0.4951857295636115,
+    "scope": "Approximate offline10Hz singleenvironment trace; not authoritative50Hz allenv reward"
+  },
+  {
+    "label": "left_baseline",
+    "samples": 160,
+    "mean_yaw": 0.9333527614959166,
+    "yaw_stdev": 1.7937660044235988,
+    "reverse_fraction": 0.36875,
+    "mean_instant_yaw_reward": -1.308878036349571,
+    "mean_cycle_yaw_reward": 0.38014930775630495,
+    "mean_cross_reward": -2.3523866056016,
+    "mean_velocity_reward": 0.20931323201914429,
+    "scope": "Approximate offline10Hz singleenvironment trace; not authoritative50Hz allenv reward"
+  }
+]

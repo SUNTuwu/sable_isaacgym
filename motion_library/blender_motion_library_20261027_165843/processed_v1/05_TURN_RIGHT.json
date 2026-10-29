@@ -1,0 +1,92 @@
+{
+  "id": "05_TURN_RIGHT",
+  "file": "05_TURN_RIGHT.npz",
+  "title": "右转｜手调左转镜像",
+  "fps": 50,
+  "samples": 51,
+  "period_s": 1.0,
+  "joint_names": [
+    "spine_pitch",
+    "spine_roll",
+    "hip_roll",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "L_ankle_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "R_ankle_pitch",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch"
+  ],
+  "policy_joint_names": [
+    "spine_roll",
+    "hip_roll",
+    "L_shoulder_roll",
+    "L_shoulder_pitch",
+    "L_elbow_pitch",
+    "L_hip_pitch",
+    "L_knee_pitch",
+    "R_shoulder_roll",
+    "R_shoulder_pitch",
+    "R_elbow_pitch",
+    "R_hip_pitch",
+    "R_knee_pitch",
+    "L_ankle_pitch",
+    "R_ankle_pitch",
+    "spine_pitch"
+  ],
+  "foot_order": [
+    "FL",
+    "FR",
+    "HL",
+    "HR"
+  ],
+  "source_metadata": "../motions/05_TURN_RIGHT.json",
+  "processing": {
+    "periodic_filter": "Endpoint-drift removal, five Fourier harmonics; analytic periodic q derivatives",
+    "harmonics": 5,
+    "source_npz_sha256": "e1b23fb67075acf223c4d37f4b15e9c4f1ac648cb792e43d26aaea3b60903464",
+    "root_cycle_translation_m": [
+      -0.01526972558349371,
+      0.01100306585431099,
+      0.0
+    ],
+    "root_cycle_yaw_rad": -1.7379031165024905,
+    "turn_variant": {
+      "original_yaw_rad": -1.7379031165024905,
+      "desired_yaw_rad": -0.17453292519943295,
+      "horizontal_body_relative_foot_scale": 0.10042730434287868,
+      "root_translation": "in_place",
+      "max_reprojection_error_mm": 0.596906010771556
+    },
+    "ground_correction": {
+      "method": "Smooth periodic vertical-root upper envelope; joint FK preserved",
+      "margin_m": 0.00025,
+      "extra_margin_m": 5e-05,
+      "maximum_root_raise_m": 0.007556135121423628,
+      "estimated_contact_height_threshold_m": 0.003
+    }
+  },
+  "quality": {
+    "minimum_capsule_z_mm": 0.30000000000000165,
+    "max_joint_pose_seam_deg": 0.0,
+    "max_joint_velocity_seam_rad_s": 0.0,
+    "max_joint_limit_violation_deg": 0.0,
+    "max_joint_change_from_authored_deg": 35.673683122245656,
+    "max_joint_velocity_rad_s": 5.26349578747323,
+    "turn_target_reprojection_error_mm": 0.596906010771556,
+    "max_root_raise_mm": 7.556135121423629,
+    "mean_geometric_contact_count": 1.0588235294117647,
+    "physical_validation_passed": false
+  },
+  "native_command_world_mean": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "native_yaw_rate_rad_s": -0.17453292519943298
+}

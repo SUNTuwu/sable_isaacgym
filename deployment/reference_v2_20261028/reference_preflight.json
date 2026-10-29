@@ -1,0 +1,404 @@
+[
+  {
+    "id": "01_FORWARD_POLICY",
+    "source_clip_id": "01_FORWARD_WALK",
+    "title": "前进 walk｜腾讯动捕·左主控",
+    "command": [
+      0.075,
+      0.0,
+      0.0
+    ],
+    "period_s": 1.0,
+    "symmetry_enabled": true,
+    "source": {
+      "dataset": "Tencent Lifelike Agility",
+      "file": "dog_quad_walk_001.bvh",
+      "selected_cycle": {
+        "file": "dog_quad_walk_001.bvh",
+        "start_index": 11502,
+        "end_index": 11601,
+        "time_s": [
+          95.84996166,
+          96.67496133
+        ],
+        "period_s": 0.82499967,
+        "event_order": [
+          "FL",
+          "HR",
+          "FR",
+          "HL"
+        ],
+        "contact_onset_phases": {
+          "0": 0.0,
+          "1": 0.5252525252525253,
+          "2": 0.6868686868686869,
+          "3": 0.21212121212121213
+        },
+        "duty": [
+          0.6666666666666666,
+          0.6464646464646465,
+          0.5656565656565656,
+          0.5252525252525253
+        ],
+        "minimum_supports": 2,
+        "yaw_range_deg": 4.601681971026512,
+        "velocity_cv": 0.11485181163483654,
+        "speed_m_s": 0.989590120462853,
+        "side_travel_m": -0.034374602184154016,
+        "source_mirror_halfphase_rmse_m": 0.05915766589521896,
+        "score": 0.6053266182678688
+      },
+      "url": "https://github.com/Tencent-RoboticsX/lifelike-agility-and-play",
+      "source_sha256": "ddefe1465b2bfc5d6c6fabd2d10c8e43dd36766727ff73bff03ccc411a6ec602",
+      "phase_correction": "FL0, HR.25, FR.5, HL.75; source left templates retained, right mirrored half-period",
+      "raw_scaled_cycle_translation_m": 0.1469540741070805,
+      "reachable_stride_projection": "Cycle translation capped75mm to respect measured shoulder height and fore-elbow extension limit; no joint geometry changed",
+      "contact_projection": {
+        "stance_fraction": 0.65,
+        "touchdown_phases": [
+          0.0,
+          0.5,
+          0.75,
+          0.25
+        ],
+        "method": "Ground-lock stance XY; retain captured swing progress/height shape; solve capsule clearance rather than treating marker height as sole clearance"
+      }
+    },
+    "ground_lift_mm": 0.12220412191614503,
+    "reference_coordinate": "FL/FR relative chest midpoint; HL/HR relative pelvis midpoint, expressed in respective torso frames",
+    "world_xy_yaw_used_for_tracking": false,
+    "samples": 101,
+    "source_seam_max_deg": 3.4150945850063755e-06,
+    "swing_time_s": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "minimum_capsule_height_mm": 0.49999999999999956,
+    "max_reference_joint_speed_rad_s": 5.964091631790052,
+    "physical_validation_passed": false
+  },
+  {
+    "id": "09_BACKWARD_WALK",
+    "source_clip_id": "02_BACKWARD_WALK",
+    "title": "后退 walk｜腾讯动捕倒放·左主控",
+    "command": [
+      -0.075,
+      0.0,
+      0.0
+    ],
+    "period_s": 1.0,
+    "symmetry_enabled": true,
+    "source": {
+      "dataset": "Tencent Lifelike Agility",
+      "file": "dog_quad_walk_001.bvh",
+      "selected_cycle": {
+        "file": "dog_quad_walk_001.bvh",
+        "start_index": 11502,
+        "end_index": 11601,
+        "time_s": [
+          95.84996166,
+          96.67496133
+        ],
+        "period_s": 0.82499967,
+        "event_order": [
+          "FL",
+          "HR",
+          "FR",
+          "HL"
+        ],
+        "contact_onset_phases": {
+          "0": 0.0,
+          "1": 0.5252525252525253,
+          "2": 0.6868686868686869,
+          "3": 0.21212121212121213
+        },
+        "duty": [
+          0.6666666666666666,
+          0.6464646464646465,
+          0.5656565656565656,
+          0.5252525252525253
+        ],
+        "minimum_supports": 2,
+        "yaw_range_deg": 4.601681971026512,
+        "velocity_cv": 0.11485181163483654,
+        "speed_m_s": 0.989590120462853,
+        "side_travel_m": -0.034374602184154016,
+        "source_mirror_halfphase_rmse_m": 0.05915766589521896,
+        "score": 0.6053266182678688
+      },
+      "url": "https://github.com/Tencent-RoboticsX/lifelike-agility-and-play",
+      "source_sha256": "ddefe1465b2bfc5d6c6fabd2d10c8e43dd36766727ff73bff03ccc411a6ec602",
+      "phase_correction": "FL0, HR.25, FR.5, HL.75; source left templates retained, right mirrored half-period",
+      "raw_scaled_cycle_translation_m": 0.1469540741070805,
+      "reachable_stride_projection": "Cycle translation capped75mm to respect measured shoulder height and fore-elbow extension limit; no joint geometry changed",
+      "contact_projection": {
+        "stance_fraction": 0.65,
+        "touchdown_phases": [
+          0.0,
+          0.5,
+          0.75,
+          0.25
+        ],
+        "method": "Ground-lock stance XY; retain captured swing progress/height shape; solve capsule clearance rather than treating marker height as sole clearance"
+      },
+      "derived": "Reverse the public forward walk, not an independently captured backward walk"
+    },
+    "ground_lift_mm": 0.12220471798748316,
+    "reference_coordinate": "FL/FR relative chest midpoint; HL/HR relative pelvis midpoint, expressed in respective torso frames",
+    "world_xy_yaw_used_for_tracking": false,
+    "samples": 101,
+    "source_seam_max_deg": 6.830189170012751e-06,
+    "swing_time_s": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "minimum_capsule_height_mm": 0.5000000000000066,
+    "max_reference_joint_speed_rad_s": 5.964089722943245,
+    "physical_validation_passed": false
+  },
+  {
+    "id": "10_FORWARD_TROT",
+    "source_clip_id": "03_FORWARD_TROT",
+    "title": "前进 trot｜Google动捕倒放·左主控",
+    "command": [
+      0.075,
+      0.0,
+      0.0
+    ],
+    "period_s": 1.0,
+    "symmetry_enabled": true,
+    "source": {
+      "dataset": "Google motion_imitation / Laikago",
+      "file": "dog_backwards_trot.json",
+      "url": "https://github.com/google-research/motion_imitation",
+      "source_sha256": "b8cdc28bf7ed18825611ef316a2d2c8bd862b6367b7906293abcbe5ad2892b42",
+      "phase_correction": "Left hind shifted to half-cycle from left fore; right generated by sagittal mirror and half-cycle shift",
+      "raw_scaled_cycle_translation_m": -0.11227799999999999,
+      "reachable_stride_projection": "Cycle translation capped75mm to respect measured shoulder height and fore-elbow extension limit; no joint geometry changed",
+      "contact_projection": {
+        "stance_fraction": 0.55,
+        "touchdown_phases": [
+          0.14500000000000002,
+          0.645,
+          0.645,
+          0.14500000000000002
+        ],
+        "method": "Ground-lock stance XY; retain captured swing progress/height shape; solve capsule clearance rather than treating marker height as sole clearance"
+      },
+      "derived": "Reverse public backward trot"
+    },
+    "ground_lift_mm": 1.276481961082905,
+    "reference_coordinate": "FL/FR relative chest midpoint; HL/HR relative pelvis midpoint, expressed in respective torso frames",
+    "world_xy_yaw_used_for_tracking": false,
+    "samples": 101,
+    "source_seam_max_deg": 2.0490567510038253e-05,
+    "swing_time_s": [
+      0.33,
+      0.33,
+      0.34,
+      0.34
+    ],
+    "minimum_capsule_height_mm": 0.4999999999999987,
+    "max_reference_joint_speed_rad_s": 6.066239980277138,
+    "physical_validation_passed": false
+  },
+  {
+    "id": "06_BACKWARD",
+    "source_clip_id": "04_BACKWARD_TROT",
+    "title": "后退 trot｜Google动捕·左主控",
+    "command": [
+      -0.075,
+      0.0,
+      0.0
+    ],
+    "period_s": 1.0,
+    "symmetry_enabled": true,
+    "source": {
+      "dataset": "Google motion_imitation / Laikago",
+      "file": "dog_backwards_trot.json",
+      "url": "https://github.com/google-research/motion_imitation",
+      "source_sha256": "b8cdc28bf7ed18825611ef316a2d2c8bd862b6367b7906293abcbe5ad2892b42",
+      "phase_correction": "Left hind shifted to half-cycle from left fore; right generated by sagittal mirror and half-cycle shift",
+      "raw_scaled_cycle_translation_m": -0.11227799999999999,
+      "reachable_stride_projection": "Cycle translation capped75mm to respect measured shoulder height and fore-elbow extension limit; no joint geometry changed",
+      "contact_projection": {
+        "stance_fraction": 0.55,
+        "touchdown_phases": [
+          0.14500000000000002,
+          0.645,
+          0.645,
+          0.14500000000000002
+        ],
+        "method": "Ground-lock stance XY; retain captured swing progress/height shape; solve capsule clearance rather than treating marker height as sole clearance"
+      }
+    },
+    "ground_lift_mm": 1.2764844980046819,
+    "reference_coordinate": "FL/FR relative chest midpoint; HL/HR relative pelvis midpoint, expressed in respective torso frames",
+    "world_xy_yaw_used_for_tracking": false,
+    "samples": 101,
+    "source_seam_max_deg": 6.830189170012751e-06,
+    "swing_time_s": [
+      0.33,
+      0.33,
+      0.34,
+      0.34
+    ],
+    "minimum_capsule_height_mm": 0.5000000000000057,
+    "max_reference_joint_speed_rad_s": 6.0662466496331895,
+    "physical_validation_passed": false
+  },
+  {
+    "id": "02_STRAFE_LEFT",
+    "source_clip_id": "05_STRAFE_LEFT",
+    "title": "左横移 pace｜APEX",
+    "command": [
+      0.0,
+      0.038244880703173854,
+      0.0
+    ],
+    "period_s": 1.0,
+    "symmetry_enabled": false,
+    "source": {
+      "dataset": "APEX/STMR Go1 sidesteps",
+      "file": "sidesteps_go1.csv",
+      "frames": [
+        25,
+        90
+      ],
+      "url": "https://github.com/marmotlab/APEX",
+      "source_sha256": "e33658aca259e4fae805ba3c4d1250c32b2c920633e5ebcb290368e74176538d",
+      "symmetry": "Opposite skills are mirrored; no forced same-clip sagittal mirror"
+    },
+    "ground_lift_mm": 0.09647957387498877,
+    "reference_coordinate": "FL/FR relative chest midpoint; HL/HR relative pelvis midpoint, expressed in respective torso frames",
+    "world_xy_yaw_used_for_tracking": false,
+    "samples": 101,
+    "source_seam_max_deg": 0.0,
+    "swing_time_s": [
+      0.33,
+      0.28,
+      0.31,
+      0.25
+    ],
+    "minimum_capsule_height_mm": 0.499999999999997,
+    "max_reference_joint_speed_rad_s": 8.473533421718015,
+    "physical_validation_passed": false
+  },
+  {
+    "id": "03_STRAFE_RIGHT",
+    "source_clip_id": "06_STRAFE_RIGHT",
+    "title": "右横移 pace｜左移镜像",
+    "command": [
+      0.0,
+      -0.038244880703173854,
+      0.0
+    ],
+    "period_s": 1.0,
+    "symmetry_enabled": false,
+    "source": {
+      "dataset": "APEX/STMR Go1 sidesteps",
+      "file": "sidesteps_go1.csv",
+      "frames": [
+        25,
+        90
+      ],
+      "url": "https://github.com/marmotlab/APEX",
+      "source_sha256": "e33658aca259e4fae805ba3c4d1250c32b2c920633e5ebcb290368e74176538d",
+      "symmetry": "Opposite skills are mirrored; no forced same-clip sagittal mirror",
+      "derived": "Sagittal reflection of left strafe"
+    },
+    "ground_lift_mm": 0.0964795492619506,
+    "reference_coordinate": "FL/FR relative chest midpoint; HL/HR relative pelvis midpoint, expressed in respective torso frames",
+    "world_xy_yaw_used_for_tracking": false,
+    "samples": 101,
+    "source_seam_max_deg": 0.0,
+    "swing_time_s": [
+      0.28,
+      0.33,
+      0.25,
+      0.31
+    ],
+    "minimum_capsule_height_mm": 0.5000000000000013,
+    "max_reference_joint_speed_rad_s": 8.473533421718015,
+    "physical_validation_passed": false
+  },
+  {
+    "id": "04_TURN_LEFT",
+    "source_clip_id": "07_TURN_LEFT",
+    "title": "左转｜AMP开源动捕",
+    "command": [
+      0.0,
+      0.0,
+      0.86895160841653
+    ],
+    "period_s": 2.0,
+    "symmetry_enabled": false,
+    "source": {
+      "dataset": "AMP_for_hardware / A1",
+      "file": "leftturn0.json",
+      "frames": [
+        0,
+        45
+      ],
+      "url": "https://github.com/escontra/AMP_for_hardware",
+      "source_sha256": "83db728d7008b7157829e2a84e426a570048a2dd0ed23551137874e56ab9d7d1",
+      "symmetry": "Whole right-turn clip mirrored from left-turn; retain native net turn angle"
+    },
+    "ground_lift_mm": 0.04334057902788012,
+    "reference_coordinate": "FL/FR relative chest midpoint; HL/HR relative pelvis midpoint, expressed in respective torso frames",
+    "world_xy_yaw_used_for_tracking": false,
+    "samples": 101,
+    "source_seam_max_deg": 0.0,
+    "swing_time_s": [
+      0.68,
+      0.64,
+      0.4,
+      1.06
+    ],
+    "minimum_capsule_height_mm": 0.5000000000000039,
+    "max_reference_joint_speed_rad_s": 1.4519994763749795,
+    "physical_validation_passed": false
+  },
+  {
+    "id": "05_TURN_RIGHT",
+    "source_clip_id": "08_TURN_RIGHT",
+    "title": "右转｜左转镜像",
+    "command": [
+      0.0,
+      0.0,
+      -0.86895160841653
+    ],
+    "period_s": 2.0,
+    "symmetry_enabled": false,
+    "source": {
+      "dataset": "AMP_for_hardware / A1",
+      "file": "leftturn0.json",
+      "frames": [
+        0,
+        45
+      ],
+      "url": "https://github.com/escontra/AMP_for_hardware",
+      "source_sha256": "83db728d7008b7157829e2a84e426a570048a2dd0ed23551137874e56ab9d7d1",
+      "symmetry": "Whole right-turn clip mirrored from left-turn; retain native net turn angle",
+      "derived": "Sagittal reflection of left turn"
+    },
+    "ground_lift_mm": 0.04334011611177363,
+    "reference_coordinate": "FL/FR relative chest midpoint; HL/HR relative pelvis midpoint, expressed in respective torso frames",
+    "world_xy_yaw_used_for_tracking": false,
+    "samples": 101,
+    "source_seam_max_deg": 0.0,
+    "swing_time_s": [
+      0.64,
+      0.68,
+      1.06,
+      0.4
+    ],
+    "minimum_capsule_height_mm": 0.5000000000000022,
+    "max_reference_joint_speed_rad_s": 1.4519994771864386,
+    "physical_validation_passed": false
+  }
+]

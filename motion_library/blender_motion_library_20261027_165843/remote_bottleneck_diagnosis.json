@@ -1,0 +1,439 @@
+{
+  "observed_utc": "2026-10-27T08:49:49Z",
+  "latest_completed_run": "cmd16_hist6_s3_ppo_20261027_123803",
+  "latest_checkpoint_iteration": 166,
+  "latest_checkpoint_role": "diagnosis_only_DO_NOT_INITIALIZE_TEACHERS_OR_STUDENT",
+  "current_remote_state": "Training paused; no training process; RTX 4090 observed idle",
+  "evaluation_scope": {
+    "seed": 947,
+    "horizon_s": 16.0,
+    "environments_per_scenario": 4,
+    "full_task_accepted": false,
+    "fresh_evaluation_run_by_this_delivery": false
+  },
+  "scenarios": [
+    {
+      "name": "forward09",
+      "initial_command": [
+        0.09,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "survival_fraction": 1.0,
+      "mean_duration_s": 16.00017547607422,
+      "xy_rmse_m_s": 0.014767509891826795,
+      "yaw_rmse_rad_s": 0.11289753506641438,
+      "mean_actual_xyz_command_units": [
+        0.08705766499042511,
+        -0.0008354337769560516,
+        0.004716779571026564
+      ],
+      "steps_per_foot": [
+        59,
+        58,
+        60,
+        58
+      ]
+    },
+    {
+      "name": "forward105",
+      "initial_command": [
+        0.105,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "survival_fraction": 0.75,
+      "mean_duration_s": 12.3251314163208,
+      "xy_rmse_m_s": 0.03701923672195259,
+      "yaw_rmse_rad_s": 0.2335987882401656,
+      "mean_actual_xyz_command_units": [
+        0.09767784923315048,
+        0.0014601243892684579,
+        -0.014322192408144474
+      ],
+      "steps_per_foot": [
+        42,
+        45,
+        45,
+        44
+      ]
+    },
+    {
+      "name": "forward12",
+      "initial_command": [
+        0.12,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "survival_fraction": 0.5,
+      "mean_duration_s": 8.68008804321289,
+      "xy_rmse_m_s": 0.0614122743822223,
+      "yaw_rmse_rad_s": 0.31382120899888877,
+      "mean_actual_xyz_command_units": [
+        0.10885640978813171,
+        -0.0071572195738554,
+        0.04891325160861015
+      ],
+      "steps_per_foot": [
+        30,
+        28,
+        30,
+        30
+      ]
+    },
+    {
+      "name": "stop",
+      "initial_command": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "survival_fraction": 1.0,
+      "mean_duration_s": 16.00017547607422,
+      "xy_rmse_m_s": 0.000725140190375467,
+      "yaw_rmse_rad_s": 0.004550237554944187,
+      "mean_actual_xyz_command_units": [
+        -1.4008220205141697e-05,
+        -3.1087799925444415e-06,
+        0.0005827774875797331
+      ],
+      "steps_per_foot": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "start_stop",
+      "initial_command": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "survival_fraction": 0.75,
+      "mean_duration_s": 15.000152587890625,
+      "xy_rmse_m_s": 0.03231473895252019,
+      "yaw_rmse_rad_s": 0.20669088069832495,
+      "mean_actual_xyz_command_units": [
+        0.06795242428779602,
+        0.0007707299664616585,
+        -0.009443382732570171
+      ],
+      "steps_per_foot": [
+        39,
+        40,
+        41,
+        38
+      ]
+    },
+    {
+      "name": "speed_switch",
+      "initial_command": [
+        0.09,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "survival_fraction": 1.0,
+      "mean_duration_s": 16.00017547607422,
+      "xy_rmse_m_s": 0.016694783164101747,
+      "yaw_rmse_rad_s": 0.12652069820190082,
+      "mean_actual_xyz_command_units": [
+        0.09503550827503204,
+        -0.0007625125581398606,
+        0.004745229613035917
+      ],
+      "steps_per_foot": [
+        59,
+        58,
+        59,
+        60
+      ]
+    },
+    {
+      "name": "reverse",
+      "initial_command": [
+        -0.04,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "survival_fraction": 0.0,
+      "mean_duration_s": 1.789999008178711,
+      "xy_rmse_m_s": 0.1689971113294178,
+      "yaw_rmse_rad_s": 0.8222336310468839,
+      "mean_actual_xyz_command_units": [
+        -0.00031101779313758016,
+        -0.0614556260406971,
+        0.3128347396850586
+      ],
+      "steps_per_foot": [
+        2,
+        2,
+        2,
+        0
+      ]
+    },
+    {
+      "name": "left",
+      "initial_command": [
+        0.0,
+        0.04,
+        0.0,
+        1.0
+      ],
+      "survival_fraction": 0.0,
+      "mean_duration_s": 1.1199995279312134,
+      "xy_rmse_m_s": 0.2838906222075607,
+      "yaw_rmse_rad_s": 2.079776252627192,
+      "mean_actual_xyz_command_units": [
+        -0.04221651703119278,
+        0.2113555371761322,
+        -1.3414305448532104
+      ],
+      "steps_per_foot": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "right",
+      "initial_command": [
+        0.0,
+        -0.04,
+        0.0,
+        1.0
+      ],
+      "survival_fraction": 0.0,
+      "mean_duration_s": 0.9299997091293335,
+      "xy_rmse_m_s": 0.2752372663940261,
+      "yaw_rmse_rad_s": 2.854624076427607,
+      "mean_actual_xyz_command_units": [
+        -0.02371927537024021,
+        -0.27016308903694153,
+        2.543675184249878
+      ],
+      "steps_per_foot": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "turn_left",
+      "initial_command": [
+        0.0,
+        0.0,
+        0.35,
+        1.0
+      ],
+      "survival_fraction": 1.0,
+      "mean_duration_s": 16.00017547607422,
+      "xy_rmse_m_s": 0.04945825824340845,
+      "yaw_rmse_rad_s": 0.37290288178665454,
+      "mean_actual_xyz_command_units": [
+        0.009886110201478004,
+        0.0036199004389345646,
+        0.0640498623251915
+      ],
+      "steps_per_foot": [
+        59,
+        58,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "turn_right",
+      "initial_command": [
+        0.0,
+        0.0,
+        -0.35,
+        1.0
+      ],
+      "survival_fraction": 1.0,
+      "mean_duration_s": 16.00017547607422,
+      "xy_rmse_m_s": 0.05074201271079884,
+      "yaw_rmse_rad_s": 0.35865318985853606,
+      "mean_actual_xyz_command_units": [
+        0.011082068085670471,
+        -0.0017183180898427963,
+        -0.07678336650133133
+      ],
+      "steps_per_foot": [
+        59,
+        59,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "combined",
+      "initial_command": [
+        0.07,
+        0.03,
+        0.25,
+        1.0
+      ],
+      "survival_fraction": 0.75,
+      "mean_duration_s": 12.210131645202637,
+      "xy_rmse_m_s": 0.023927769723207936,
+      "yaw_rmse_rad_s": 0.2579054966953873,
+      "mean_actual_xyz_command_units": [
+        0.06544309854507446,
+        0.023592563346028328,
+        0.10501345992088318
+      ],
+      "steps_per_foot": [
+        45,
+        43,
+        45,
+        44
+      ]
+    },
+    {
+      "name": "lateral_switch",
+      "initial_command": [
+        0.0,
+        0.04,
+        0.0,
+        1.0
+      ],
+      "survival_fraction": 0.0,
+      "mean_duration_s": 1.2399994134902954,
+      "xy_rmse_m_s": 0.24871829702392115,
+      "yaw_rmse_rad_s": 2.0882305606188356,
+      "mean_actual_xyz_command_units": [
+        -0.006781245581805706,
+        0.20939871668815613,
+        -1.4592094421386719
+      ],
+      "steps_per_foot": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "yaw_switch",
+      "initial_command": [
+        0.0,
+        0.0,
+        0.35,
+        1.0
+      ],
+      "survival_fraction": 1.0,
+      "mean_duration_s": 16.00017547607422,
+      "xy_rmse_m_s": 0.03970116812240013,
+      "yaw_rmse_rad_s": 0.2801220288603654,
+      "mean_actual_xyz_command_units": [
+        0.0065503171645104885,
+        -9.307383879786357e-05,
+        0.0005774765741080046
+      ],
+      "steps_per_foot": [
+        35,
+        36,
+        0,
+        2
+      ]
+    }
+  ],
+  "training_frontier_alpha": 0.375,
+  "actual_command_coverage_examples": {
+    "reverse": {
+      "intended_goal": [
+        -0.04,
+        0,
+        0
+      ],
+      "actual_training_command": [
+        0.050625,
+        0.0,
+        0.0
+      ],
+      "novel_std_floor_triggered": false,
+      "reverse_hind_floor_triggered": false
+    },
+    "left": {
+      "intended_goal": [
+        0,
+        0.04,
+        0
+      ],
+      "actual_training_command": [
+        0.065625,
+        0.015,
+        0.0
+      ],
+      "novel_std_floor_triggered": false,
+      "reverse_hind_floor_triggered": false
+    },
+    "right": {
+      "intended_goal": [
+        0,
+        -0.04,
+        0
+      ],
+      "actual_training_command": [
+        0.065625,
+        -0.015,
+        0.0
+      ],
+      "novel_std_floor_triggered": false,
+      "reverse_hind_floor_triggered": false
+    },
+    "turn_left": {
+      "intended_goal": [
+        0,
+        0,
+        0.35
+      ],
+      "actual_training_command": [
+        0.065625,
+        0.0,
+        0.13124999999999998
+      ],
+      "novel_std_floor_triggered": false,
+      "reverse_hind_floor_triggered": false
+    },
+    "turn_right": {
+      "intended_goal": [
+        0,
+        0,
+        -0.35
+      ],
+      "actual_training_command": [
+        0.065625,
+        0.0,
+        -0.13124999999999998
+      ],
+      "novel_std_floor_triggered": false,
+      "reverse_hind_floor_triggered": false
+    }
+  },
+  "evidence_backed_findings": [
+    "At alpha=.375 the sampled pure reverse family remains positive vx; pure lateral/yaw retain vx=.065625.",
+    "Current sampled new-direction intermediate commands do not activate vx<.03 exploration floor or vx<-.01 reverse floor.",
+    "75% moving-start curriculum adds an initial forward hold/blend; remaining direct starts still target the interpolated command.",
+    "Pure turn evaluation: front feet make about 59 steps over four environments, rear feet only 0-2; mean yaw response is much smaller than command.",
+    "Training frequency remains exactly 1 Hz; there is no completed frequency-switch curriculum or multi-gait training evidence.",
+    "Reference execution is removed (0 calls); latest frozen PPO has no new authored trajectory prior.",
+    "Latest checkpoint regressed old-domain forward105/forward12 survival to 75%/50% in this four-env-per-scenario test.",
+    "New contact-force/slip terms exist in current development source, but are absent from this frozen training config.",
+    "Contact diagnostics provide per-foot normal forces and reconstructed whole-body resultant, not measured per-foot tangential forces or yaw couples."
+  ],
+  "interpretation": "Forward-biased initialization and actual curriculum coverage plausibly sustain ineffective inherited motion. Evidence does not isolate one universal cause or establish a motor-capacity limit.",
+  "user_decision": "Start specialist teachers from random weights using retargeted authored references; then train/distill a fresh conditional student. Do not use latest training weights.",
+  "scope": "Upload and diagnostic handoff only. No training, optimizer changes, checkpoint selection or pause-marker removal performed."
+}

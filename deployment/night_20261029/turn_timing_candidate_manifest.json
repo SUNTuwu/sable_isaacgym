@@ -1,0 +1,45 @@
+{
+  "schema": "turn-timing-candidate/v1",
+  "deployed_by_this_agent": false,
+  "gpu_used": false,
+  "cpu_tests": 12,
+  "files": [
+    {
+      "candidate": "deployment\\night_20261029\\audited_core_timing_candidate.py",
+      "deploy_runtime_name": "teacher_bank_core.py",
+      "source_sha256": "45bac31a73281d0e3bbe68c60a8920f92b95df77cbd3129a39da2063e448b937",
+      "sha256": "66a2b26dbcfe6712c16d0bfb4b74949c6486ba2f7571c3c74dabd9508ff94142"
+    },
+    {
+      "candidate": "deployment\\night_20261029\\teacher_turn_cycles_timing_candidate.py",
+      "deploy_runtime_name": "teacher_turn_cycles.py",
+      "source_sha256": "a74b620e17f71fc9f9849a3bd4fbcacccc87c8acee9734e09984c4d985cb80eb",
+      "sha256": "b37a665c12e8847d8997cb5e4cdd334dd91a60aeb9cc2f43d91433b3fedf6fff"
+    },
+    {
+      "candidate": "deployment\\night_20261029\\audited_rewards_timing_candidate.py",
+      "deploy_runtime_name": "teacher_reference_rewards_v2.py",
+      "source_sha256": "7446e12ffba86a9baf497f290c3c334b6a4f3721282b68198b0d23755a0705f0",
+      "sha256": "22c65f6117d3c614becc46f59d038ec23c8b84923278f89dca4e112819984a62"
+    },
+    {
+      "candidate": "deployment\\night_20261029\\turn_phase_clock_candidate.py",
+      "deploy_runtime_name": "turn_phase_clock_candidate.py",
+      "sha256": "bda0cfb748ad32c88a624254a0907a1382b4dabd97ba916df7dbfdbf82ecfa48"
+    }
+  ],
+  "preserved": [
+    "Policy AST",
+    "PPO update AST",
+    "main/Adam resume AST",
+    "six translation phase bitwise",
+    "other reward functions AST",
+    "all current live weights",
+    "fall20 invariant at turn yaw cap1.2"
+  ],
+  "notes": [
+    "Timeout potential is continuation-shaped and requires the existing gamma*V(pre_reset_obs) bootstrap. Raw truncated evaluation returns omit that critic term.",
+    "A physical fall still cancels unfinished potential and does not bootstrap.",
+    "Clock fix is turn-only; reset phase distribution and reference period are unchanged."
+  ]
+}

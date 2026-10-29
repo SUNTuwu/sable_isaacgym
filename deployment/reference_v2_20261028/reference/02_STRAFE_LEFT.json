@@ -1,0 +1,37 @@
+{
+  "id": "02_STRAFE_LEFT",
+  "source_clip_id": "05_STRAFE_LEFT",
+  "title": "左横移 pace｜APEX",
+  "command": [
+    0.0,
+    0.038244880703173854,
+    0.0
+  ],
+  "period_s": 1.0,
+  "symmetry_enabled": false,
+  "source": {
+    "dataset": "APEX/STMR Go1 sidesteps",
+    "file": "sidesteps_go1.csv",
+    "frames": [
+      25,
+      90
+    ],
+    "url": "https://github.com/marmotlab/APEX",
+    "source_sha256": "e33658aca259e4fae805ba3c4d1250c32b2c920633e5ebcb290368e74176538d",
+    "symmetry": "Opposite skills are mirrored; no forced same-clip sagittal mirror"
+  },
+  "ground_lift_mm": 0.09647957387498877,
+  "reference_coordinate": "FL/FR relative chest midpoint; HL/HR relative pelvis midpoint, expressed in respective torso frames",
+  "world_xy_yaw_used_for_tracking": false,
+  "samples": 101,
+  "source_seam_max_deg": 0.0,
+  "swing_time_s": [
+    0.33,
+    0.28,
+    0.31,
+    0.25
+  ],
+  "minimum_capsule_height_mm": 0.499999999999997,
+  "max_reference_joint_speed_rad_s": 8.473533421718015,
+  "physical_validation_passed": false
+}

@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sable · 专项教师训练</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><div class="brand"><span class="logo">S</span><div><div class="eyebrow">SABLE ROBOT · MOTION LAB</div><h1>专项教师训练</h1></div></div><div class="connection"><span id="connection-dot"></span><span id="connection">连接中</span><small id="clock">—</small></div></header>
+<main>
+<section class="intro"><div><div class="section-label">TEACHER BANK</div><h2 id="bank-title">等待训练任务</h2><p id="bank-subtitle">独立专项教师从零学习，通过验收后再蒸馏为统一策略。</p></div><div class="init-badge"><span id="weights-label">独立权重</span><b id="weights-origin">FROM SCRATCH</b><span id="teacher-control-mode" class="control-badge">控制方式待记录</span><span id="priority-mode" class="priority-badge hidden">平衡优先</span></div></section>
+<section class="overview"><article><span>教师状态</span><strong id="teacher-count">—</strong><small id="teacher-summary">等待任务清单</small></article><article><span>GPU 使用率</span><strong id="gpu-use">—</strong><small id="gpu-name">GPU 数据加载中</small></article><article><span>显存占用</span><strong id="gpu-memory">—</strong><small id="gpu-temp">—</small></article><article><span>独立评估周期</span><strong id="eval-period">3 <em>min</em></strong><small id="last-sync">每 3 秒同步状态</small></article></section>
+<div id="bank-telemetry" class="bank-telemetry">训练吞吐与耗时将在实际启动后显示。</div>
+<div id="run-provenance" class="run-provenance hidden"></div>
+<div id="alerts" class="alerts"></div>
+<section class="workspace"><div class="teachers"><div class="list-heading"><h3>动作教师</h3><span id="bank-state" class="tag">等待</span></div><div id="teacher-grid" class="teacher-grid"></div><div id="empty" class="empty"><span class="empty-symbol">↗</span><h3>教师任务准备中</h3><p>参考动作、质量检查与训练入口就绪后，这里将显示各教师的实际状态。</p><code>runs/teacher_bank_*/teacher_bank.json</code></div></div>
+<aside id="detail" class="detail"><div class="detail-heading"><div><div class="section-label">SELECTED TEACHER</div><h3 id="detail-title">选择一个动作教师</h3></div><span id="detail-state" class="tag">—</span></div><div id="detail-body" class="muted">点击教师卡片，查看奖励曲线、参考质量、真实检查点和训练视频。</div></aside></section>
+<footer><span id="source-path">等待训练目录</span><span>缺失指标显示 — · 存活率不等于动作通过验收</span></footer>
+</main><script src="/trace.js"></script><script src="/diagnostics.js?v=yaw-integral-1"></script><script src="/app.js"></script>
+</body></html>
